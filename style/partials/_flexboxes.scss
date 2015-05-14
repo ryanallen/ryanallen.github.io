@@ -1,0 +1,6 @@
+.shell {
+	@include			     flex(1);      ///	flex1
+	background-color:  hsl(0,0,15);  /// dark brown (15 brightness)
+	height:            100%;         /// makes for no scrolling
+	padding:           $rem2;        /// 14px
+}
