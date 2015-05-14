@@ -4,3 +4,12 @@
 	height:            100%;         /// makes for no scrolling
 	padding:           $rem2;        /// 14px
 }
+
+.frame {
+	@include			    flex(1);		             /// flex1
+	background-color:	hsl(0,0,50);             /// background 50% lightness
+	border-radius:		$rem2;		               /// rounded corners
+	box-shadow:			  0 $rem1 0 0 hsl(0,0,10); /// 90deg shadow, no blur, dark value
+	flex-direction:		column;		               /// flexbox stacks vertically in a column
+	padding:		      $rem2;		               /// sets the size of the frame
+}
