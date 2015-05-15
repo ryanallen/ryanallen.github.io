@@ -1,0 +1,14 @@
+///////////////////////////////////////////
+///	UNIQUE STYLES FOR PORTRAIT SCREENS	///
+///////////////////////////////////////////
+
+@media all and (orientation: portrait) {
+
+	.choices {
+		flex-direction: column;	///	stacks all 4 choice buttons vertically when in portrait
+	}
+
+	.bioware-style-conversation-wheel {
+		display: none;	///	hides conversation wheel when in portrait
+	}
+}
