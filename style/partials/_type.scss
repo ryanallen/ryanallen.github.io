@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Passion+One);
+
+h2 {
+	font-family: 'Lato', sans-serif; ///	sanserif fallback
+	font-size:   2.2vw;                ///	responsive type huzzah
+	margin:      0;                  ///	no margin
+	padding:     0;                  ///	no padding
+	font-weight: normal;             ///	normal weight
+}
