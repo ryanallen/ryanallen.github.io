@@ -41,6 +41,18 @@
   flex-direction: column;   /// vertically stacks choice buttons
 }
 
+.choices__button {
+  @include          flex(1);                  /// button fills the box
+  align-items:      center;                   /// centers text on the y axis
+  background-color: hsl(0,0,40);
+  margin:           $rem1;
+  box-shadow:       0 0.5rem 0 0 hsl(0,0,20); /// lower than choices to reflect less lighting, also not inset
+  border-radius:    $rem1;
+  justify-content:  center;                   /// centers text on the x axis
+  color:            hsl(0,0,70);
+    &:hover { background-color: hsl(0,0,35); box-shadow: none; }  /// nested sass parent selctor for hover effect
+}
+
 .bioware-style-conversation-wheel {
   @include  flex(1);  /// button fills the box
   /// this selector hides when in portrait (media_queries.scss)
