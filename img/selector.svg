@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="bioware-style-conversation-wheel"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1600 1600"
+	 enable-background="new 0 0 1600 1600" xml:space="preserve">
+<path id="selector-outside" fill="#686868" d="M448,265.6l-214.4-30.4l32,212.8c-139.2,212.8-139.2,489.6,0,702.4l-30.4,214.4
+	l212.8-30.4c212.8,139.2,489.6,139.2,702.4,0l214.4,30.4l-30.4-212.8c139.2-212.8,139.2-489.6,0-702.4l30.4-214.4L1152,265.6
+	C939.2,124.8,660.8,124.8,448,265.6z M1139.2,460.8c187.2,187.2,187.2,491.2,0,678.4s-491.2,187.2-678.4,0s-187.2-491.2,0-678.4
+	S952,273.6,1139.2,460.8z"/>
+<circle id="selector-inside" fill="#606060" cx="800" cy="800" r="240"/>
+</svg>
