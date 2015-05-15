@@ -13,3 +13,25 @@
 	flex-direction:		column;		               /// flexbox stacks vertically in a column
 	padding:		      $rem2;		               /// sets the size of the frame
 }
+
+.scene {
+  @include        flex(2);                        /// 2/3 of the vertical
+  border-radius:  $rem1;                          /// smaller corners for inner containers, .5 instead of 1
+  box-shadow:     inset 0 $rem1 0 0 hsl(0,0,10);  /// dark inner (inset) drop shadow
+  margin-bottom:  $rem2;                          /// bottom margin set to keep from touching choices
+  background-color: hsl(0,0,20);                  /// dark bg but not too dark 
+}
+
+///////////////
+/// CHOICES ///
+///////////////
+  
+
+.choices {
+  @include          flex(1);                        /// container fills all space
+  background-color: hsl(0,0,30);
+  border-radius:    $rem1;                          /// smaller corners for inner containers, .5 instead of 1
+  box-shadow:       inset 0 $rem1 0 0 hsl(0,0,20);  /// dark inner (inset) drop shadow
+  padding:          $rem2;                          /// sets the size of the frame
+  /// _meda-queries.scss orientation changes this to column
+}
