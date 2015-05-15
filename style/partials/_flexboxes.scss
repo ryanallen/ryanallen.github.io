@@ -36,6 +36,12 @@
   /// _meda-queries.scss orientation changes this to column
 }
 
+.choice-button-container {
+  @include        flex(4);  /// flex units 4 (separates left and right buttons)
+  flex-direction: column;   /// vertically stacks choice buttons
+}
+
 .bioware-style-conversation-wheel {
   @include  flex(1);  /// button fills the box
   /// this selector hides when in portrait (media_queries.scss)
+}
