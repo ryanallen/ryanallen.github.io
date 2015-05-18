@@ -59,6 +59,18 @@ h2 {
   background-color: #333333;
   background-image: url(../img/stars.svg); }
 
+.astronaut {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-image: url(../img/astronaut-ryan.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  margin-top: 2vmin; }
+
 .choices {
   display: -webkit-flex;
   display: -ms-flexbox;

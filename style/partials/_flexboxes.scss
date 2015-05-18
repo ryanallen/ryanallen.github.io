@@ -22,6 +22,14 @@
   }
 }
 
+.astronaut {
+  @include        flex(1);
+  background-image:     url(#{$img-path}astronaut-ryan.svg);
+  background-position:  bottom;
+  background-repeat:    no-repeat;
+  margin-top:       2vmin;  /// keep hat out of the inset shadow
+}
+
 ///////////////
 /// CHOICES ///
 ///////////////
