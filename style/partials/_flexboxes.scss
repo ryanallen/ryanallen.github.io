@@ -14,12 +14,12 @@
 	padding:		      $rem2;		               /// sets the size of the frame
 }
 
-.scene {
-  @include        flex(2);                        /// 2/3 of the vertical
-  border-radius:  $rem1;                          /// smaller corners for inner containers, .5 instead of 1
-  box-shadow:     inset 0 $rem1 0 0 hsl(0,0,10);  /// dark inner (inset) drop shadow
-  margin-bottom:  $rem2;                          /// bottom margin set to keep from touching choices
-  background-color: hsl(0,0,20);                  /// dark bg but not too dark 
+.space {
+  @include  scene(2);     /// flexbox unit is 2
+    background: {       /// : needs to replace the - for nested properties
+      color:    hsl(0,0,20);
+      image:    url(#{$img-path}stars.svg);
+  }
 }
 
 ///////////////

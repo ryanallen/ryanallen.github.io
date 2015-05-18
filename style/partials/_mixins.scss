@@ -2,3 +2,10 @@
 	display: 	flex;
 	flex:		$flexunit;
 }
+
+@mixin scene($flex-size) {
+  @include        flex($flex-size);               /// 2/3 of the vertical
+  border-radius:  $rem1;                          /// smaller corners for inner containers, .5 instead of 1
+  box-shadow:     inset 0 $rem1 0 0 hsl(0,0,10);  /// dark inner (inset) drop shadow
+  margin-bottom:  $rem2;                          /// bottom margin set to keep from touching choices
+}
