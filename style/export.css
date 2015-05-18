@@ -87,7 +87,7 @@ h2 {
   background-image: url(../img/chat-arrow.svg);
   background-position: bottom;
   background-repeat: no-repeat;
-  margin-bottom: 4vmin; }
+  margin-bottom: 8vmin; }
 
 .character {
   display: -webkit-flex;
@@ -213,4 +213,20 @@ h2 {
     flex-direction: column; }
 
   .bioware-style-conversation-wheel {
-    display: none; } }
+    display: none; }
+
+  .character {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex: 8;
+    -ms-flex: 8;
+    flex: 8; }
+
+  .planet {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex: 4;
+    -ms-flex: 4;
+    flex: 4; } }
