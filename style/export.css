@@ -19,7 +19,7 @@ h1 {
   text-align: center;
   margin: 0;
   padding: 0;
-  color: #cccccc; }
+  color: #333333; }
 
 h2 {
   font-family: 'Lato', sans-serif;
@@ -66,28 +66,40 @@ h2 {
   background-color: #333333;
   background-image: url(../img/stars.svg); }
 
-.character {
+.scenery {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 12;
+  -ms-flex: 12;
+  flex: 12;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.chat-arrow {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  background-image: url(../img/chat-arrow.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  margin-bottom: 4vmin; }
+
+.character {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
   background-image: url(../img/astronaut-ryan.svg);
   background-position: bottom;
   background-repeat: no-repeat;
   margin-top: 2vmin; }
-
-.scenery {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
 
 .objects {
   display: -webkit-flex;
@@ -104,7 +116,7 @@ h2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-image: url(../img/space-adventure__planet.svg);
+  background-image: url(../img/planet.svg);
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 2vmin; }
@@ -116,7 +128,7 @@ h2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-image: url(../img/space-adventure__comet.svg);
+  background-image: url(../img/comet.svg);
   background-position: center;
   background-repeat: no-repeat; }
 
@@ -133,7 +145,7 @@ h2 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: rgba(153, 153, 153, 0.5);
+  background-color: #999999;
   border-radius: 1.5rem;
   padding: 1vmin;
   margin: 3vmin 0 3vmin 3vmin; }

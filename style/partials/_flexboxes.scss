@@ -22,17 +22,25 @@
   }
 }
 
+.scenery {
+  @include  flex(12);        /// sets size of the container
+  flex-direction: column;   /// vertically stacks choice buttons
+}
+
+.chat-arrow {
+  @include        flex(1);
+  background-image:     url(#{$img-path}chat-arrow.svg);
+  background-position:  bottom;
+  background-repeat:    no-repeat;
+  margin-bottom:        4vmin;  /// bottom margin to align with chat bubble
+}
+
 .character {
-  @include              flex(1);
+  @include              flex(4);
   background-image:     url(#{$img-path}astronaut-ryan.svg);
   background-position:  bottom;
   background-repeat:    no-repeat;
   margin-top:           2vmin;  /// top buffer
-}
-
-.scenery {
-  @include  flex(2);        /// sets size of the container
-  flex-direction: column;   /// vertically stacks choice buttons
 }
 
 .objects {
@@ -41,7 +49,7 @@
 
 .planet {
   @include              flex(1);
-  background-image:     url(#{$img-path}space-adventure__planet.svg);
+  background-image:     url(#{$img-path}planet.svg);
   background-position:  center;
   background-repeat:    no-repeat;
   margin-top:           2vmin;  /// top buffer
@@ -49,7 +57,7 @@
 
 .comet {
   @include              flex(1);
-  background-image:     url(#{$img-path}space-adventure__comet.svg);
+  background-image:     url(#{$img-path}comet.svg);
   background-position:  center;
   background-repeat:    no-repeat;
 }
@@ -58,7 +66,7 @@
   @include          flex(1);          /// 3/4 of the area is chat
   align-items:      center;         /// vertically align text
   justify-content:  center;         /// centers text on the x axis
-  background-color: hsla(0,0,60,.5);        /// space is dark. the chat clouds are too
+  background-color: hsl(0,0,60);        /// space is dark. the chat clouds are too
   border-radius:    $rem2;          /// absolute rounded corners
   padding:          1vmin;          /// relative to keep text from fighting with edges
   margin:           3vmin 0 3vmin 3vmin;  /// no right margin
