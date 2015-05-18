@@ -35,7 +35,7 @@ h2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: #262626;
+  background-color: #272725;
   height: 100%;
   padding: 1.5rem; }
 
@@ -46,9 +46,9 @@ h2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: gray;
+  background-color: #6b6b61;
   border-radius: 1.5rem;
-  box-shadow: 0 1rem 0 0 #1a1a1a;
+  box-shadow: 0 1rem 0 0 #1a1a19;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -63,7 +63,7 @@ h2 {
   flex: 2;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #333333;
+  background-color: #2e3138;
   background-image: url(../img/stars.svg); }
 
 .scenery {
@@ -145,7 +145,7 @@ h2 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: #999999;
+  background-color: #9e9e94;
   border-radius: 1.5rem;
   padding: 1vmin;
   margin: 3vmin 0 3vmin 3vmin; }
