@@ -72,9 +72,10 @@ h2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-bottom: 10vmin; }
 
 .chat-arrow {
   display: -webkit-flex;
@@ -84,8 +85,9 @@ h2 {
   -ms-flex: 1;
   flex: 1;
   background-image: url(../img/chat-arrow.svg);
-  background-position: center;
-  background-repeat: no-repeat; }
+  background-position: bottom;
+  background-repeat: no-repeat;
+  margin-bottom: 10vmin; }
 
 .character {
   display: -webkit-flex;
