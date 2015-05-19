@@ -15,18 +15,19 @@ a:link {
 
 h1 {
   font-family: 'Passion One', cursive;
-  font-size: 5vw;
+  font-size: 4.5vw;
   text-align: center;
   margin: 0;
   padding: 0;
-  color: #333333; }
+  color: #29303d; }
 
 h2 {
   font-family: 'Lato', sans-serif;
   font-size: 2.2vw;
   margin: 0;
   padding: 0;
-  font-weight: normal; }
+  font-weight: normal;
+  color: #9ebdfa; }
 
 .shell {
   display: -webkit-flex;

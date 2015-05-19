@@ -81,7 +81,7 @@
   @include          flex(1);                        /// container fills all space
   background-color: hsl(0,0,30);
   border-radius:    $rem1;                          /// smaller corners for inner containers, .5 instead of 1
-  box-shadow:       inset 0 $rem1 0 0 hsl(0,0,20);  /// dark inner (inset) drop shadow
+  box-shadow:       inset 0 $rem1 0 0 hsl(200,0,20);  /// dark inner (inset) drop shadow
   padding:          $rem2;                          /// sets the size of the frame
   /// _meda-queries.scss orientation changes this to column
 }

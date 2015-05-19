@@ -2,11 +2,11 @@
 
 h1 {
 	font-family: 'Passion One', cursive; ///	cursive fallback if font fails
-	font-size:   5vw;                    ///	responsive type huzzah
+	font-size:   4.5vw;                  ///	responsive type huzzah
 	text-align:  center;					       ///	horizontally centered
 	margin:      0;                      ///	no margin
 	padding:     0;                      ///	no padding
-  color:       hsl(0,0,20);
+  color:       hsl(220,20,20);         /// dark blue
 }
 
 h2 {
@@ -15,4 +15,5 @@ h2 {
 	margin:      0;                  ///	no margin
 	padding:     0;                  ///	no padding
 	font-weight: normal;             ///	normal weight
+  color:       hsl(220,90,80);
 }
