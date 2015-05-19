@@ -48,7 +48,7 @@
   justify-content:  center;         /// centers text on the x axis
   background-color: $color7;
   padding:          5vmin;          /// relative to keep text from fighting with edges
-  margin:           0 0 0 $rem1;    /// aligned with buttons
+  margin:           0 -1px 0 $rem1;    /// aligned with buttons, negative to fix svg tearing in webkit shaboy!
 }
 
 ///////////////

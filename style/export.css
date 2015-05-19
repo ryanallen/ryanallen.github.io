@@ -111,7 +111,7 @@ h2 {
   justify-content: center;
   background-color: #ffb07e;
   padding: 5vmin;
-  margin: 0 0 0 1rem; }
+  margin: 0 -1px 0 1rem; }
 
 .choices {
   display: -webkit-flex;
