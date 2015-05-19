@@ -21,6 +21,16 @@ h1 {
   padding: 0;
   color: #48002f; }
 
+h1 a:link {
+  text-decoration: none;
+  box-shadow: inset 0 -20px 0 0 #ff8851;
+  text-decoration: none;
+  color: #da303a;
+  padding: 0 6px; }
+
+h1 a:hover {
+  background: #ff8851; }
+
 h2 {
   font-family: 'Lato', sans-serif;
   font-size: 2.2vw;
