@@ -1,38 +1,37 @@
 .shell {
 	@include			     flex(1);      ///	flex1
-	background-color:  hsl(60,2,15);  /// dark brown (15 brightness)
+    background: {             /// : needs to replace the - for nested properties
+      color:        $color1;
+      image:        url(#{$img-path}stars.svg);
+    }
 	height:            100%;         /// makes for no scrolling
 	padding:           $rem2;        /// 14px
 }
 
 .frame {
 	@include			    flex(1);		             /// flex1
-	background-color:	hsl(60,5,40);             /// background 50% lightness
-	border-radius:		$rem2;		               /// rounded corners
-	box-shadow:			  0 $rem1 0 0 hsl(60,2,10); /// 90deg shadow, no blur, dark value
+  background-image: url(#{$img-path}planet-comet.svg);
+  background-repeat: no-repeat;
 	flex-direction:		column;		               /// flexbox stacks vertically in a column
-	padding:		      $rem2;		               /// sets the size of the frame
+	///padding:		      $rem2;		               /// sets the size of the frame
 }
 
 .space {
   @include          scene(2); /// flexbox unit is 2
-    background: {             /// : needs to replace the - for nested properties
-      color:        hsl(220,10,20);
-      image:        url(#{$img-path}stars.svg);
-  }
 }
 
 .scenery {
-  @include  flex(12);        /// sets size of the container
-  flex-direction: column;   /// vertically stacks choice buttons
+  @include          flex(12);        /// sets size of the container
+  flex-direction:   column;          /// vertically stacks choice buttons
+  justify-content:  center;          /// centers chat box
 }
 
 .chat-arrow {
   @include        flex(1);
   background-image:     url(#{$img-path}chat-arrow.svg);
-  background-position:  bottom;
+  background-position:  center;
   background-repeat:    no-repeat;
-  margin-bottom:        8vmin;  /// bottom margin to align with chat bubble
+
 }
 
 .character {
@@ -43,33 +42,13 @@
   margin-top:           2vmin;  /// top buffer
 }
 
-.objects {
-  @include  flex(1);  /// objects fill entire container
-}
-
-.planet {
-  @include              flex(1);
-  background-image:     url(#{$img-path}planet.svg);
-  background-position:  center;
-  background-repeat:    no-repeat;
-  margin-top:           2vmin;  /// top buffer
-}
-
-.comet {
-  @include              flex(1);
-  background-image:     url(#{$img-path}comet.svg);
-  background-position:  center;
-  background-repeat:    no-repeat;
-}
-
 .chat {
-  @include          flex(1);          /// 3/4 of the area is chat
+  display:          flex;           /// no include to keep it from growing
   align-items:      center;         /// vertically align text
   justify-content:  center;         /// centers text on the x axis
-  background-color: hsl(60,5,60);        /// space is dark. the chat clouds are too
-  border-radius:    $rem2;          /// absolute rounded corners
-  padding:          1vmin;          /// relative to keep text from fighting with edges
-  margin:           3vmin 0 3vmin 3vmin;  /// no right margin
+  background-color: $color7;
+  padding:          5vmin;          /// relative to keep text from fighting with edges
+  margin:           0 0 0 $rem1;    /// aligned with buttons
 }
 
 ///////////////
@@ -79,11 +58,6 @@
 
 .choices {
   @include          flex(1);                        /// container fills all space
-  background-color: hsl(0,0,30);
-  border-radius:    $rem1;                          /// smaller corners for inner containers, .5 instead of 1
-  box-shadow:       inset 0 $rem1 0 0 hsl(200,0,20);  /// dark inner (inset) drop shadow
-  padding:          $rem2;                          /// sets the size of the frame
-  /// _meda-queries.scss orientation changes this to column
 }
 
 .choice-button-container {
@@ -94,16 +68,9 @@
 .choices__button {
   @include          flex(1);                  /// button fills the box
   align-items:      center;                   /// centers text on the y axis
-  background-color: hsl(0,0,40);
-  margin:           $rem1;
-  box-shadow:       0 0.5rem 0 0 hsl(0,0,20); /// lower than choices to reflect less lighting, also not inset
-  border-radius:    $rem1;
+  background-color: $color2;
+  margin:           0 $rem1 $rem2 $rem1;
   justify-content:  center;                   /// centers text on the x axis
   color:            hsl(0,0,70);
-    &:hover { background-color: hsl(0,0,35); box-shadow: none; }  /// nested sass parent selctor for hover effect
-}
-
-.bioware-style-conversation-wheel {
-  @include  flex(1);  /// button fills the box
-  /// this selector hides when in portrait (media_queries.scss)
+    &:hover { background-color: $color3;}  /// nested sass parent selctor for hover effect
 }

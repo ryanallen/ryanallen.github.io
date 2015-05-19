@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300|Passion+One);
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Rancho);
 * {
   box-sizing: border-box; }
 
@@ -14,12 +14,12 @@ a:link {
   text-decoration: none; }
 
 h1 {
-  font-family: 'Passion One', cursive;
-  font-size: 4.5vw;
+  font-family: 'Rancho', cursive;
+  font-size: 4vw;
   text-align: center;
   margin: 0;
   padding: 0;
-  color: #29303d; }
+  color: #48002f; }
 
 h2 {
   font-family: 'Lato', sans-serif;
@@ -27,7 +27,7 @@ h2 {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  color: #9ebdfa; }
+  color: #ffb07e; }
 
 .shell {
   display: -webkit-flex;
@@ -36,7 +36,8 @@ h2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: #272725;
+  background-color: #110022;
+  background-image: url(../img/stars.svg);
   height: 100%;
   padding: 1.5rem; }
 
@@ -47,13 +48,11 @@ h2 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: #6b6b61;
-  border-radius: 1.5rem;
-  box-shadow: 0 1rem 0 0 #1a1a19;
+  background-image: url(../img/planet-comet.svg);
+  background-repeat: no-repeat;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 1.5rem; }
+  flex-direction: column; }
 
 .space {
   display: -webkit-flex;
@@ -61,11 +60,7 @@ h2 {
   display: flex;
   -webkit-flex: 2;
   -ms-flex: 2;
-  flex: 2;
-  border-radius: 1rem;
-  margin-bottom: 1.5rem;
-  background-color: #2e3138;
-  background-image: url(../img/stars.svg); }
+  flex: 2; }
 
 .scenery {
   display: -webkit-flex;
@@ -76,7 +71,10 @@ h2 {
   flex: 12;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .chat-arrow {
   display: -webkit-flex;
@@ -86,9 +84,8 @@ h2 {
   -ms-flex: 1;
   flex: 1;
   background-image: url(../img/chat-arrow.svg);
-  background-position: bottom;
-  background-repeat: no-repeat;
-  margin-bottom: 8vmin; }
+  background-position: center;
+  background-repeat: no-repeat; }
 
 .character {
   display: -webkit-flex;
@@ -102,54 +99,19 @@ h2 {
   background-repeat: no-repeat;
   margin-top: 2vmin; }
 
-.objects {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
-
-.planet {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background-image: url(../img/planet.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 2vmin; }
-
-.comet {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background-image: url(../img/comet.svg);
-  background-position: center;
-  background-repeat: no-repeat; }
-
 .chat {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: #9e9e94;
-  border-radius: 1.5rem;
-  padding: 1vmin;
-  margin: 3vmin 0 3vmin 3vmin; }
+  background-color: #ffb07e;
+  padding: 5vmin;
+  margin: 0 0 0 1rem; }
 
 .choices {
   display: -webkit-flex;
@@ -157,11 +119,7 @@ h2 {
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
-  background-color: #4d4d4d;
-  border-radius: 1rem;
-  box-shadow: inset 0 1rem 0 0 #333333;
-  padding: 1.5rem; }
+  flex: 1; }
 
 .choice-button-container {
   display: -webkit-flex;
@@ -184,27 +142,19 @@ h2 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #666666;
-  margin: 1rem;
-  box-shadow: 0 0.5rem 0 0 #333333;
-  border-radius: 1rem;
+  background-color: #48002f;
+  margin: 0 1rem 1.5rem 1rem;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   color: #b3b3b3; }
   .choices__button:hover {
-    background-color: #595959;
-    box-shadow: none; }
-
-.bioware-style-conversation-wheel {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
+    background-color: #9b1033; }
 
 @media all and (orientation: portrait) {
+  h1 {
+    font-size: 7vw; }
+
   h2 {
     font-size: 4.5vw; }
 
@@ -212,9 +162,6 @@ h2 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-
-  .bioware-style-conversation-wheel {
-    display: none; }
 
   .character {
     display: -webkit-flex;

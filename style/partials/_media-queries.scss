@@ -4,10 +4,10 @@
 
 @media all and (orientation: portrait) {
 
+  h1 {font-size: 7vw;}
   h2 {font-size: 4.5vw;}/// controls choice button font-size in portrait
 
 	.choices {flex-direction: column;}///	stacks all 4 choice buttons vertically when in portrait
-	.bioware-style-conversation-wheel {display: none;}///	hides conversation wheel when in portrait
   .character {@include flex(8);}/// bigger character in portrait
   .planet {@include flex(4);}///bigger planet in portrait
 }

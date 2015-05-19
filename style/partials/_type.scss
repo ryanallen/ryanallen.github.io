@@ -1,12 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300|Passion+One);
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Rancho);
 
 h1 {
-	font-family: 'Passion One', cursive; ///	cursive fallback if font fails
-	font-size:   4.5vw;                  ///	responsive type huzzah
+	font-family: 'Rancho', cursive; ///	cursive fallback if font fails
+	font-size:   4vw;                  ///	responsive type huzzah
 	text-align:  center;					       ///	horizontally centered
 	margin:      0;                      ///	no margin
 	padding:     0;                      ///	no padding
-  color:       hsl(220,20,20);         /// dark blue
+  color:       $color2;                ///  
+
 }
 
 h2 {
@@ -15,5 +16,5 @@ h2 {
 	margin:      0;                  ///	no margin
 	padding:     0;                  ///	no padding
 	font-weight: normal;             ///	normal weight
-  color:       hsl(220,90,80);
+  color:       $color7;
 }
