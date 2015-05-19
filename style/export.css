@@ -38,8 +38,7 @@ h2 {
   flex: 1;
   background-color: #110022;
   background-image: url(../img/stars.svg);
-  height: 100%;
-  padding: 1.5rem; }
+  height: 100%; }
 
 .frame {
   display: -webkit-flex;
@@ -60,7 +59,8 @@ h2 {
   display: flex;
   -webkit-flex: 2;
   -ms-flex: 2;
-  flex: 2; }
+  flex: 2;
+  padding: 0 1.5rem; }
 
 .scenery {
   display: -webkit-flex;
@@ -132,7 +132,7 @@ h2 {
   -ms-flex-direction: column;
   flex-direction: column; }
 
-.choices__button {
+.button {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -143,12 +143,11 @@ h2 {
   -ms-flex-align: center;
   align-items: center;
   background-color: #48002f;
-  margin: 0 1rem 1.5rem 1rem;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   color: #b3b3b3; }
-  .choices__button:hover {
+  .button:hover {
     background-color: #9b1033; }
 
 @media all and (orientation: portrait) {
