@@ -94,6 +94,20 @@ h2 {
   justify-content: flex-end;
   margin-bottom: 10vmin; }
 
+.chat {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #ffb07e;
+  padding: 5vmin;
+  margin: 0 -1px 0 1rem; }
+
 .chat-arrow {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -117,20 +131,6 @@ h2 {
   background-position: bottom;
   background-repeat: no-repeat;
   margin-top: 2vmin; }
-
-.chat {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-color: #ffb07e;
-  padding: 5vmin;
-  margin: 0 -1px 0 1rem; }
 
 .choices {
   display: -webkit-flex;

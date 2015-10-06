@@ -28,6 +28,16 @@
   margin-bottom:    10vmin;
 }
 
+.chat {
+  display:          flex;           /// 7 units - no include to keep it from growing
+  align-items:      center;         /// vertically align text
+  justify-content:  center;         /// centers text on the x axis
+  background-color: $color7;
+  padding:          5vmin;          /// relative to keep text from fighting with edges
+  margin:           0 -1px 0 $rem1; /// aligned with buttons, negative to fix svg tearing 
+                                    /// in webkit shaboy!
+}
+
 .chat-arrow {
   @include        flex(1);
   background-image:     url(#{$img-path}chat-arrow.svg);
@@ -43,16 +53,6 @@
   background-position:  bottom;
   background-repeat:    no-repeat;
   margin-top:           2vmin;  /// top buffer
-}
-
-.chat {
-  display:          flex;           /// no include to keep it from growing
-  align-items:      center;         /// vertically align text
-  justify-content:  center;         /// centers text on the x axis
-  background-color: $color7;
-  padding:          5vmin;          /// relative to keep text from fighting with edges
-  margin:           0 -1px 0 $rem1; /// aligned with buttons, negative to fix svg tearing 
-                                    /// in webkit shaboy!
 }
 
 ///////////////
