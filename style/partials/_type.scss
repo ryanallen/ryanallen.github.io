@@ -22,6 +22,10 @@ h1 a:hover {
   background: $color6;
 }
 
+h1 a:visited {
+  color:$color4;
+}
+
 h2 {
 	font-family: 'Lato', sans-serif; ///	sanserif fallback
 	font-size:   2.2vw;              ///	responsive type huzzah

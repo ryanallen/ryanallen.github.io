@@ -31,6 +31,9 @@ h1 a:link {
 h1 a:hover {
   background: #ff8851; }
 
+h1 a:visited {
+  color: #da303a; }
+
 h2 {
   font-family: 'Lato', sans-serif;
   font-size: 2.2vw;
