@@ -164,6 +164,8 @@ h2 {
 
 .button_cta {
   background-color: #9b1033; }
+  .button_cta:hover {
+    background-color: #da303a; }
 
 @media all and (orientation: portrait) {
   h1 {
