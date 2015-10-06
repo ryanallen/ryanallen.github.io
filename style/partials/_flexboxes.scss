@@ -29,7 +29,7 @@
 }
 
 .chat {
-  display:          flex;           /// 7 units - no include to keep it from growing
+  display:          flex;           /// 7 units - no include to keep it from filling all empty space
   align-items:      center;         /// vertically align text
   justify-content:  center;         /// centers text on the x axis
   background-color: $color7;
@@ -48,7 +48,7 @@
 }
 
 .character {
-  @include              flex(4);
+  @include              flex(3);
   background-image:     url(#{$img-path}astronaut-ryan.svg);
   background-position:  bottom;
   background-repeat:    no-repeat;
@@ -65,7 +65,7 @@
 }
 
 .choice-button-container {
-  @include        flex(4);  /// flex units 4 (separates left and right buttons)
+  @include        flex(1);  /// flex units 4 (separates left and right buttons)
   flex-direction: column;   /// vertically stacks choice buttons
 }
 
@@ -83,3 +83,8 @@
   background-color:             $color3;  /// this is set in .import.scss
     &:hover { background-color: $color4;} /// brighter than normal button hover
 }
+
+/////////////////
+/// PORTFOLIO ///
+/////////////////
+
