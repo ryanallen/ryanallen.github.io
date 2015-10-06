@@ -2,11 +2,11 @@
 
 h1 {
 	font-family: 'Rancho', cursive; ///	cursive fallback if font fails
-	font-size:   4vw;                  ///	responsive type huzzah
-	text-align:  center;					       ///	horizontally centered
-	margin:      0;                      ///	no margin
-	padding:     0;                      ///	no padding
-  color:       $color2;                ///  
+	font-size:   4vw;               ///	responsive type huzzah
+	text-align:  center;			      ///	horizontally centered
+	margin:      0;                 ///	no margin
+	padding:     0;                 ///	no padding
+  color:       $color2;           ///  this is set in import.scss
 
 }
 

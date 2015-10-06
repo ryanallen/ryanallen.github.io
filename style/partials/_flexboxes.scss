@@ -51,7 +51,8 @@
   justify-content:  center;         /// centers text on the x axis
   background-color: $color7;
   padding:          5vmin;          /// relative to keep text from fighting with edges
-  margin:           0 -1px 0 $rem1;    /// aligned with buttons, negative to fix svg tearing in webkit shaboy!
+  margin:           0 -1px 0 $rem1; /// aligned with buttons, negative to fix svg tearing 
+                                    /// in webkit shaboy!
 }
 
 ///////////////
@@ -60,7 +61,7 @@
   
 
 .choices {
-  @include          flex(1);                        /// container fills all space
+  @include          flex(1);  /// container fills all space
 }
 
 .choice-button-container {
@@ -74,5 +75,5 @@
   background-color: $color2;
   justify-content:  center;                   /// centers text on the x axis
   color:            hsl(0,0,70);
-    &:hover { background-color: $color3;}  /// nested sass parent selctor for hover effect
+    &:hover { background-color: $color3;}     /// nested sass parent selctor for hover effect
 }
