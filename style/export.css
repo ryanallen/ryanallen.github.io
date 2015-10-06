@@ -144,7 +144,7 @@ h2 {
   -ms-flex-direction: column;
   flex-direction: column; }
 
-.button {
+.button, .button_cta {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -159,8 +159,11 @@ h2 {
   -ms-flex-pack: center;
   justify-content: center;
   color: #b3b3b3; }
-  .button:hover {
+  .button:hover, .button_cta:hover {
     background-color: #9b1033; }
+
+.button_cta {
+  background-color: #9b1033; }
 
 @media all and (orientation: portrait) {
   h1 {

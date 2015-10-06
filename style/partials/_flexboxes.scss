@@ -77,3 +77,8 @@
   color:            hsl(0,0,70);
     &:hover { background-color: $color3;}     /// nested sass parent selctor for hover effect
 }
+
+.button_cta {
+  @extend .button;              /// .button is base
+  background-color: $color3;  /// this is set in .import.scss
+}
