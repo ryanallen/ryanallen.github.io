@@ -13,7 +13,6 @@ h1 {
 h1 a:link {
   text-decoration: none;
   box-shadow: inset 0 -20px 0 0 $color6;
-  text-decoration: none;
   color:$color4;
   padding:  0 6px;
 }
@@ -24,6 +23,12 @@ h1 a:hover {
 
 h1 a:visited {
   color:$color4;
+}
+
+em {
+  text-decoration: none;
+  color:$color3;
+  padding:  0 6px; 
 }
 
 h2 {
