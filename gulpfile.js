@@ -7,7 +7,7 @@ var paths = { prefix: 'style/export.css' };
 gulp.task('prefix', function () {
     return gulp.src('style/export.css')
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 5 versions'],
             cascade: false
         }))
         .pipe(gulp.dest('style'));
