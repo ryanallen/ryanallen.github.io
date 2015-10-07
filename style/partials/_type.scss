@@ -2,12 +2,11 @@
 
 h1 {
 	font-family: 'Rancho', cursive; ///	cursive fallback if font fails
-	font-size:   4vw;               ///	responsive type huzzah
+	font-size:   $h1;               ///	responsive type huzzah
 	text-align:  center;			      ///	horizontally centered
 	margin:      0;                 ///	no margin
 	padding:     0;                 ///	no padding
   color:       $color2;           ///  this is set in import.scss
-
 }
 
 h1 a:link {
@@ -38,4 +37,14 @@ h2 {
 	padding:     0;                  ///	no padding
 	font-weight: normal;             ///	normal weight
   color:       $color7;
+}
+
+///MODIFIERS
+
+.smaller-type {
+font-size:  $h1/2;
+}
+
+.smaller-type a:link {
+  box-shadow: inset 0 -10px 0 0 $color6;
 }

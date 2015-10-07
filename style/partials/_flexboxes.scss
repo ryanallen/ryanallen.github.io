@@ -28,12 +28,6 @@
   margin-bottom:    10vmin;
 }
 
-.scenery_no-bm {
-  @include          flex(12);        /// sets size of the container
-  flex-direction:   column;          /// vertically stacked
-  justify-content:  flex-end;        /// centers chat box
-}
-
 .chat {
   display:          flex;           /// 7 units - no include to keep it from filling all empty space
   align-items:      center;         /// vertically align text
@@ -43,7 +37,6 @@
   margin:           0 -1px 0 $rem1; /// aligned with buttons, negative to fix svg tearing 
                                     /// in webkit shaboy!
 }
-
 
 .chat-arrow {
   @include        flex(1);
@@ -89,20 +82,4 @@
   @extend                       .button;  /// .button is base
   background-color:             $color3;  /// this is set in .import.scss
     &:hover { background-color: $color4;} /// brighter than normal button hover
-}
-
-/////////////////
-/// PORTFOLIO ///
-/////////////////
-
-.icon-row {
-  @include  flex(1);
-  background-color: $color1_5;
-}
-.icon-row_main {
-  @include  flex(3);
-  background-color: $color1_5;
-}
-.icon {
-  @include  flex(1);
 }

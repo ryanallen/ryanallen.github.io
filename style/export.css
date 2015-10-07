@@ -46,6 +46,12 @@ h2 {
   font-weight: normal;
   color: #ffb07e; }
 
+.smaller-type {
+  font-size: 2vw; }
+
+.smaller-type a:link {
+  box-shadow: inset 0 -10px 0 0 #ff8851; }
+
 .shell {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,20 +99,6 @@ h2 {
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin-bottom: 10vmin; }
-
-.scenery_no-bm {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 12;
-  -ms-flex: 12;
-  flex: 12;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
 
 .chat {
   display: -webkit-flex;
@@ -187,32 +179,6 @@ h2 {
   background-color: #9b1033; }
   .button_cta:hover {
     background-color: #da303a; }
-
-.icon-row {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background-color: rgba(17, 0, 34, 0.8); }
-
-.icon-row_main {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 3;
-  -ms-flex: 3;
-  flex: 3;
-  background-color: rgba(17, 0, 34, 0.8); }
-
-.icon {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
 
 @media all and (orientation: portrait) {
   h1 {
