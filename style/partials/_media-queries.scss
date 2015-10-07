@@ -6,6 +6,9 @@
 
  	h1 {font-size: 5vw;}								/// controls chat size in portrait
  	h2 {font-size: 4.5vw;}							/// controls choice button font-size in portrait
+ 	.smaller-type {font-size:	$h1/1.5;}	/// controls chat size in portrat for portfolio
+ 	.smaller-type a:link {
+  	box-shadow: inset 0 -5px 0 0 $color6;}	/// reduces line height for portrait view in portfolio
 
 	.choices {flex-direction: column;}	///	stacks all 4 choice buttons vertically when in portrait
  	.character {@include flex(6);}			/// bigger character in portrait
