@@ -1,31 +1,30 @@
 .shell {
-	@include			     flex(1);      ///	flex1
-    background: {             /// : needs to replace the - for nested properties
+	@include			    flex(1);      ///	flex1
+    background: {                 /// : needs to replace the - for nested properties
       color:        $color1;
       image:        url(#{$img-path}stars.svg);
     }
 	height:            100%;         /// makes for no scrolling
-	///padding:           $rem2;        /// 14px
+	///padding:           $rem2;     /// 14px
 }
 
 .frame {
-	@include			    flex(1);		             /// flex1
+	@include			    flex(1);		    /// flex1
   background-image: url(#{$img-path}planet-comet.svg);
   background-repeat: no-repeat;
-	flex-direction:		column;		               /// flexbox stacks vertically in a column
-	///padding:		      $rem2;		               /// sets the size of the frame
+	flex-direction:		column;		      /// flexbox stacks vertically in a column
 }
 
 .space {
-  @include          scene(2); /// flexbox unit is 2
-  padding:          $rem2 $rem2 0;        /// 14px
+  @include          flex(2);        /// flexbox unit is 2
+  padding:          $rem2 $rem2 0;  /// 14px
 }
 
 .scenery {
   @include          flex(12);        /// sets size of the container
   flex-direction:   column;          /// vertically stacked
   justify-content:  flex-end;        /// centers chat box
-  margin-bottom:    10vmin;
+  margin-bottom:    10vmin;          ///  keeps chat box from touching choices
 }
 
 .chat {
