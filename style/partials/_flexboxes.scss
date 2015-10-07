@@ -23,8 +23,8 @@
 
 .scenery {
   @include          flex(12);        /// sets size of the container
-  flex-direction:   column;          /// vertically stacks choice buttons
-  justify-content:  flex-end;          /// centers chat box
+  flex-direction:   column;          /// vertically stacked
+  justify-content:  flex-end;        /// centers chat box
   margin-bottom:    10vmin;
 }
 
@@ -83,8 +83,3 @@
   background-color:             $color3;  /// this is set in .import.scss
     &:hover { background-color: $color4;} /// brighter than normal button hover
 }
-
-/////////////////
-/// PORTFOLIO ///
-/////////////////
-

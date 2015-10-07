@@ -4,7 +4,7 @@
 }
 
 @mixin scene($flex-size) {
-  @include        flex($flex-size); /// 2/3 of the vertical
+  @include        flex($flex-size); /// 
   ///border-radius:  $rem1;         /// smaller corners for inner containers, .5 instead of 1
   ///margin-bottom:  $rem2;         /// bottom margin set to keep from touching choices
 }

@@ -46,6 +46,12 @@ h2 {
   font-weight: normal;
   color: #ffb07e; }
 
+.smaller-type {
+  font-size: 2vw; }
+
+.smaller-type a:link {
+  box-shadow: inset 0 -10px 0 0 #ff8851; }
+
 .shell {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -192,12 +198,4 @@ h2 {
     display: flex;
     -webkit-flex: 6;
     -ms-flex: 6;
-    flex: 6; }
-
-  .planet {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex: 4;
-    -ms-flex: 4;
-    flex: 4; } }
+    flex: 6; } }
