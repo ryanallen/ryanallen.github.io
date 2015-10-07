@@ -23,9 +23,15 @@
 
 .scenery {
   @include          flex(12);        /// sets size of the container
-  flex-direction:   column;          /// vertically stacks choice buttons
-  justify-content:  flex-end;          /// centers chat box
+  flex-direction:   column;          /// vertically stacked
+  justify-content:  flex-end;        /// centers chat box
   margin-bottom:    10vmin;
+}
+
+.scenery_no-bm {
+  @include          flex(12);        /// sets size of the container
+  flex-direction:   column;          /// vertically stacked
+  justify-content:  flex-end;        /// centers chat box
 }
 
 .chat {
@@ -37,6 +43,7 @@
   margin:           0 -1px 0 $rem1; /// aligned with buttons, negative to fix svg tearing 
                                     /// in webkit shaboy!
 }
+
 
 .chat-arrow {
   @include        flex(1);
@@ -88,3 +95,14 @@
 /// PORTFOLIO ///
 /////////////////
 
+.icon-row {
+  @include  flex(1);
+  background-color: $color1_5;
+}
+.icon-row_main {
+  @include  flex(3);
+  background-color: $color1_5;
+}
+.icon {
+  @include  flex(1);
+}

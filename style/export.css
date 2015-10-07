@@ -94,6 +94,20 @@ h2 {
   justify-content: flex-end;
   margin-bottom: 10vmin; }
 
+.scenery_no-bm {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 12;
+  -ms-flex: 12;
+  flex: 12;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
 .chat {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -174,6 +188,32 @@ h2 {
   .button_cta:hover {
     background-color: #da303a; }
 
+.icon-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: rgba(17, 0, 34, 0.8); }
+
+.icon-row_main {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: rgba(17, 0, 34, 0.8); }
+
+.icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
 @media all and (orientation: portrait) {
   h1 {
     font-size: 5vw; }
@@ -192,12 +232,4 @@ h2 {
     display: flex;
     -webkit-flex: 6;
     -ms-flex: 6;
-    flex: 6; }
-
-  .planet {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex: 4;
-    -ms-flex: 4;
-    flex: 4; } }
+    flex: 6; } }
