@@ -55,11 +55,9 @@ h2 {
 .shell {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  -webkit-box-flex: 1;
   flex: 1;
   background-color: #110022;
   background-image: url(../img/stars.svg);
@@ -68,63 +66,49 @@ h2 {
 .frame {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  -webkit-box-flex: 1;
   flex: 1;
   background-image: url(../img/planet-comet.svg);
   background-repeat: no-repeat;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column; }
 
 .space {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 2;
   -ms-flex: 2;
-  -webkit-box-flex: 2;
   flex: 2;
   padding: 1.5rem 1.5rem 0; }
 
 .scenery {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 12;
   -ms-flex: 12;
-  -webkit-box-flex: 12;
   flex: 12;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
-  -webkit-box-pack: end;
   justify-content: flex-end;
   margin-bottom: 10vmin; }
 
 .chat {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  -webkit-box-align: center;
   align-items: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  -webkit-box-pack: center;
   justify-content: center;
   background-color: #ffb07e;
   padding: 5vmin;
@@ -133,11 +117,9 @@ h2 {
 .chat-arrow {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  -webkit-box-flex: 1;
   flex: 1;
   background-image: url(../img/chat-arrow.svg);
   background-position: bottom;
@@ -147,11 +129,9 @@ h2 {
 .character {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 3;
   -ms-flex: 3;
-  -webkit-box-flex: 3;
   flex: 3;
   background-image: url(../img/astronaut-ryan.svg);
   background-position: bottom;
@@ -161,45 +141,35 @@ h2 {
 .choices {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  -webkit-box-flex: 1;
   flex: 1; }
 
 .choice-button-container {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  -webkit-box-flex: 1;
   flex: 1;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column; }
 
 .button, .button_cta {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -webkit-flex: 1;
   -ms-flex: 1;
-  -webkit-box-flex: 1;
   flex: 1;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  -webkit-box-align: center;
   align-items: center;
   background-color: #48002f;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  -webkit-box-pack: center;
   justify-content: center;
   color: #b3b3b3; }
   .button:hover, .button_cta:hover {
@@ -218,7 +188,7 @@ h2 {
     font-size: 4.5vw; }
 
   .smaller-type {
-    font-size: 2.5vh; }
+    font-size: 2.66667vw; }
 
   .smaller-type a:link {
     box-shadow: inset 0 -5px 0 0 #ff8851; }
@@ -226,16 +196,12 @@ h2 {
   .choices {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     flex-direction: column; }
 
   .character {
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: -webkit-box;
     display: flex;
     -webkit-flex: 6;
     -ms-flex: 6;
-    -webkit-box-flex: 6;
     flex: 6; } }
