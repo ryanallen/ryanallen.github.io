@@ -70,7 +70,7 @@
         const v = labels[i];
         if (!v) continue;
         const c = color(v);
-        img.data.set(v === k ? [c[0], c[1], c[2], 215] : [c[0], c[1], c[2], 70], i * 4);
+        img.data.set(v === k ? [c[0], c[1], c[2], 215] : [c[0], c[1], c[2], 45], i * 4);
       }
     }
     pg.putImageData(img, 0, 0);
