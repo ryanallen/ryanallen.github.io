@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trace the Voynich</title>
 <meta name="description" content="Help read the Voynich manuscript: check and fix the traced letters on Yale's scans, one letter at a time.">
-<link rel="stylesheet" href="style.css?v=41ce65b280">
+<link rel="stylesheet" href="style.css?v=9771173446">
 </head>
 <body>
 <header>
@@ -22,7 +22,7 @@
     <button id="add-letter" title="The word has a letter the reading left out, after this one">+ Letter after</button>
   </div>
   <div class="bar" id="tools">
-    <span class="group">Brush <button class="size" data-s="1">1</button><button class="size" data-s="2">2</button><button class="size" data-s="3">3</button><button class="size" data-s="5">5</button></span>
+    <span class="group">Brush <button id="bsmall" title="Smaller brush ([)">−</button><b id="bsize">2</b><button id="bbig" title="Bigger brush (])">+</button></span>
     <button id="erase" title="Erase this letter's pixels (E)">Erase</button>
     <span class="group"><button id="zoomout" title="Zoom out (-)">−</button><button id="fit" title="Fit">Fit</button><button id="zoomin" title="Zoom in (+)">+</button></span>
     <button id="hide" title="Hide the tracing (hold H)">Hide</button>
@@ -30,7 +30,7 @@
     <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
     <a id="to-page" href="#">See the page</a>
   </div>
-  <main class="stage" id="word-stage"><div class="layer" id="word-layer"><img id="crop" alt="" crossorigin="anonymous" draggable="false"><canvas id="paint"></canvas></div></main>
+  <div id="ring"></div><main class="stage" id="word-stage"><div class="layer" id="word-layer"><img id="crop" alt="" crossorigin="anonymous" draggable="false"><canvas id="paint"></canvas></div></main>
   <aside id="side">
     <div><b>Versions of this letter</b> <span class="hint">click one to start from it</span><div id="versions" class="strip"></div></div>
     <div><b>Examples of <span id="example-name"></span></b> <span class="hint">traced on other pages</span><div id="examples" class="strip"></div></div>
@@ -60,13 +60,13 @@
   <h2>How it works</h2>
   <p>No one has read the Voynich manuscript. A computer has traced its letters, pixel by pixel, but it makes mistakes. You check them, one letter at a time.</p>
   <ul>
-    <li>The letter to check is in bright color; the rest of the word is faint. Paint over its ink with the brush, and erase what isn't its ink. Hold H (or press Hide) to see the page underneath. Esc goes back to the page, and from a page to the list of pages.</li>
+    <li>The letter to check is in bright color; the rest of the word is faint. Paint over its ink with the brush, and erase what isn't its ink. Hold H (or press Hide) to see the page underneath. [ and ] make the brush smaller and bigger. Esc goes back to the page, and from a page to the list of pages.</li>
     <li>If it is a different letter, pick it under "It's". Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
     <li>When the letter is right, press the button and the next one comes. Your work saves as you go; there is nothing to send.</li>
     <li>When two people's versions of a letter agree, it is verified. Missing words can be added from a page: "+ Add a missing word".</li>
   </ul>
   <form method="dialog"><button class="primary">Start</button></form>
 </dialog>
-<script src="app.js?v=41ce65b280"></script>
+<script src="app.js?v=9771173446"></script>
 </body>
 </html>

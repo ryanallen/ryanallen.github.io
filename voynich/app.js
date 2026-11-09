@@ -92,7 +92,7 @@
     $('move').classList.toggle('on', L.moving);
     $('hide').classList.toggle('on', L.hidden);
     wstage.classList.toggle('moving', L.moving || L.space);
-    document.querySelectorAll('.size').forEach(b => b.classList.toggle('on', +b.dataset.s === L.brush));
+    $('bsize').textContent = L.brush;
     $('go').textContent = L.changed ? 'Save and next →' : 'Looks right →';
   }
 
@@ -257,7 +257,24 @@
     L.stroke = { last: p };
     dab(p.x, p.y); drawWord(); capture(wstage, e);
   });
+  // the cursor is a box the size of the brush, on the pixels a dab would paint
+  const ring = $('ring');
+  let lastPointer = null;
+  function showRing(e) {
+    if (e) lastPointer = e;
+    e = lastPointer;
+    if (!e || !L.word || L.moving || L.space || (L.stroke && L.stroke.pan)) { ring.style.display = 'none'; return; }
+    const r = paint.getBoundingClientRect(), half = Math.floor(L.brush / 2);
+    const x = Math.floor((e.clientX - r.left) / L.zoom) - half, y = Math.floor((e.clientY - r.top) / L.zoom) - half;
+    Object.assign(ring.style, { display: 'block', left: r.left + x * L.zoom + 'px', top: r.top + y * L.zoom + 'px',
+      width: L.brush * L.zoom + 'px', height: L.brush * L.zoom + 'px',
+      borderColor: L.erasing ? '#fff' : `rgb(${color(L.k)})` });
+  }
+  wstage.addEventListener('pointerleave', () => { ring.style.display = 'none'; lastPointer = null; });
+  wstage.addEventListener('scroll', () => showRing());
+  function setBrush(n) { L.brush = Math.max(1, Math.min(30, n)); marks(); showRing(); }
   wstage.addEventListener('pointermove', e => {
+    showRing(e);
     const s = L.stroke;
     if (!s) return;
     if (s.pan) { wstage.scrollLeft = s.l - (e.clientX - s.x); wstage.scrollTop = s.t - (e.clientY - s.y); return; }
@@ -333,7 +350,8 @@
   $('zoomin').onclick = () => zoomWord(1.25);
   $('zoomout').onclick = () => zoomWord(0.8);
   $('fit').onclick = fitWord;
-  document.querySelectorAll('.size').forEach(b => b.onclick = () => { L.brush = +b.dataset.s; marks(); });
+  $('bsmall').onclick = () => setBrush(L.brush - 1);
+  $('bbig').onclick = () => setBrush(L.brush + 1);
   $('name').onchange = () => {
     L.reading[L.k - 1] = $('name').value;
     changed(); ask(); versionStrip(); examplesFor($('name').value); $('name').blur();
@@ -603,6 +621,8 @@
       if (e.key === '+' || e.key === '=') zoomWord(1.25);
       if (e.key === '-') zoomWord(0.8);
       if (e.key === 'e' || e.key === 'E') $('erase').click();
+      if (e.key === '[') setBrush(L.brush - 1);
+      if (e.key === ']') setBrush(L.brush + 1);
       if (e.key === 'Enter') goNext();
     }
     if (inPage && P.info) {
