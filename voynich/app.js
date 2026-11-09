@@ -92,7 +92,7 @@
     $('move').classList.toggle('on', L.moving);
     $('hide').classList.toggle('on', L.hidden);
     wstage.classList.toggle('moving', L.moving || L.space);
-    $('bsize').textContent = L.brush;
+    document.querySelectorAll('.sz').forEach(b => b.classList.toggle('on', +b.dataset.s === L.brush));
     $('go').textContent = L.changed ? 'Save and next →' : 'Looks right →';
   }
 
@@ -227,10 +227,10 @@
     return { x: Math.floor((e.clientX - r.left) / L.zoom), y: Math.floor((e.clientY - r.top) / L.zoom) };
   }
   function dab(x, y) {
-    const half = Math.floor(L.brush / 2), { w, h } = L.word;
-    for (let yy = y - half; yy < y - half + L.brush; yy++) {
+    const { w, h } = L.word;
+    for (let yy = y; yy < y + L.brush; yy++) {
       if (yy < 0 || yy >= h) continue;
-      for (let xx = x - half; xx < x - half + L.brush; xx++) {
+      for (let xx = x; xx < x + L.brush; xx++) {
         if (xx < 0 || xx >= w) continue;
         const i = yy * w + xx;
         if (L.erasing) { if (L.labels[i] === L.k) L.labels[i] = 0; } else L.labels[i] = L.k;
@@ -264,15 +264,15 @@
     if (e) lastPointer = e;
     e = lastPointer;
     if (!e || !L.word || L.moving || L.space || (L.stroke && L.stroke.pan)) { ring.style.display = 'none'; return; }
-    const r = paint.getBoundingClientRect(), half = Math.floor(L.brush / 2);
-    const x = Math.floor((e.clientX - r.left) / L.zoom) - half, y = Math.floor((e.clientY - r.top) / L.zoom) - half;
-    Object.assign(ring.style, { display: 'block', left: r.left + x * L.zoom + 'px', top: r.top + y * L.zoom + 'px',
-      width: L.brush * L.zoom + 'px', height: L.brush * L.zoom + 'px',
-      borderColor: L.erasing ? '#fff' : `rgb(${color(L.k)})` });
+    const r = paint.getBoundingClientRect();
+    const x = Math.floor((e.clientX - r.left) / L.zoom), y = Math.floor((e.clientY - r.top) / L.zoom);
+    if (x < 0 || y < 0 || x >= L.word.w || y >= L.word.h) { ring.style.display = 'none'; return; }
+    Object.assign(ring.style, { display: 'block', left: r.left + x * L.zoom - 1 + 'px', top: r.top + y * L.zoom - 1 + 'px',
+      width: L.brush * L.zoom + 'px', height: L.brush * L.zoom + 'px' });
   }
   wstage.addEventListener('pointerleave', () => { ring.style.display = 'none'; lastPointer = null; });
   wstage.addEventListener('scroll', () => showRing());
-  function setBrush(n) { L.brush = Math.max(1, Math.min(30, n)); marks(); showRing(); }
+  function setBrush(n) { L.brush = Math.max(1, Math.min(4, n)); marks(); showRing(); }
   wstage.addEventListener('pointermove', e => {
     showRing(e);
     const s = L.stroke;
@@ -350,8 +350,7 @@
   $('zoomin').onclick = () => zoomWord(1.25);
   $('zoomout').onclick = () => zoomWord(0.8);
   $('fit').onclick = fitWord;
-  $('bsmall').onclick = () => setBrush(L.brush - 1);
-  $('bbig').onclick = () => setBrush(L.brush + 1);
+  document.querySelectorAll('.sz').forEach(b => b.onclick = () => setBrush(+b.dataset.s));
   $('name').onchange = () => {
     L.reading[L.k - 1] = $('name').value;
     changed(); ask(); versionStrip(); examplesFor($('name').value); $('name').blur();

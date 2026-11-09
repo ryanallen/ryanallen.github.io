@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trace the Voynich</title>
 <meta name="description" content="Help read the Voynich manuscript: check and fix the traced letters on Yale's scans, one letter at a time.">
-<link rel="stylesheet" href="style.css?v=9771173446">
+<link rel="stylesheet" href="style.css?v=3d8ac8915a">
 </head>
 <body>
 <header>
@@ -22,7 +22,7 @@
     <button id="add-letter" title="The word has a letter the reading left out, after this one">+ Letter after</button>
   </div>
   <div class="bar" id="tools">
-    <span class="group">Brush <button id="bsmall" title="Smaller brush ([)">−</button><b id="bsize">2</b><button id="bbig" title="Bigger brush (])">+</button></span>
+    <span class="group" title="[ and ] change the brush">Brush <button class="sz" data-s="1">1</button><button class="sz" data-s="2">2</button><button class="sz" data-s="3">3</button><button class="sz" data-s="4">4</button></span>
     <button id="erase" title="Erase this letter's pixels (E)">Erase</button>
     <span class="group"><button id="zoomout" title="Zoom out (-)">−</button><button id="fit" title="Fit">Fit</button><button id="zoomin" title="Zoom in (+)">+</button></span>
     <button id="hide" title="Hide the tracing (hold H)">Hide</button>
@@ -67,6 +67,6 @@
   </ul>
   <form method="dialog"><button class="primary">Start</button></form>
 </dialog>
-<script src="app.js?v=9771173446"></script>
+<script src="app.js?v=3d8ac8915a"></script>
 </body>
 </html>
