@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trace the Voynich</title>
+<meta name="description" content="Help read the Voynich manuscript: trace the letters of one word at a time on Yale's scans.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Trace the Voynich</h1>
+  <p id="stats"></p>
+</header>
+<section id="intro">
+  <p>No one has read the Voynich manuscript. To read it we first need every letter of it, pixel by pixel. Pick a letter below, then paint over its ink in the word in the middle of the picture. Every letter has its own color. Your work saves as you paint; when two people's tracings of a word agree, the word is done.</p>
+</section>
+<nav id="tools">
+  <span id="letters"></span>
+  <button id="erase" title="Eraser (E)">Erase</button>
+  <span class="group">Brush <button class="size" data-s="1">1</button><button class="size on" data-s="2">2</button><button class="size" data-s="3">3</button><button class="size" data-s="5">5</button></span>
+  <span class="group"><button id="zoomout" aria-label="Zoom out" title="Zoom out (-)">−</button><button id="zoomin" aria-label="Zoom in" title="Zoom in (+)">+</button></span>
+  <button id="move" title="Move the picture instead of painting (hold Space)">Move</button>
+  <button id="hide" title="Hide your tracing (hold Alt)">Hide</button>
+  <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
+</nav>
+<main id="stage"><div id="layer"><img id="scan" alt="" crossorigin="anonymous" draggable="false"><canvas id="paint"></canvas></div></main>
+<footer>
+  <span id="word"></span>
+  <span id="status"></span>
+  <button id="skip" title="Another word instead">Skip</button>
+  <button id="next" class="primary">Next word →</button>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
