@@ -1,32 +1,26 @@
-// Trace the Voynich: one word at a time, painted letter by letter on Yale's
-// scan, saved two seconds after the last stroke.
+// Trace the Voynich: check and fix the computer's tracing one letter at a
+// time, see every version and examples of each letter, look at whole pages,
+// and add the words the tracing missed. Saves two seconds after each change.
 (() => {
   const API = 'https://voynich-tracing.norml.workers.dev';
   const COLORS = [[230, 25, 75], [60, 180, 75], [0, 130, 200], [245, 130, 48], [145, 30, 180], [70, 240, 240],
     [240, 50, 230], [128, 128, 0], [0, 0, 128], [170, 110, 40], [128, 0, 0], [0, 128, 128], [0, 255, 0],
     [255, 100, 0], [255, 0, 160], [0, 80, 255], [150, 220, 0], [220, 0, 100], [0, 180, 230], [100, 0, 220]];
+  const NEW_MARGIN = 30;
   const $ = id => document.getElementById(id);
-  const stage = $('stage'), layer = $('layer'), scan = $('scan'), canvas = $('paint'), g = canvas.getContext('2d');
-  const status = $('status');
+  const color = k => COLORS[(k - 1) % COLORS.length];
 
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch { return null; } },
     set(k, v) { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch { /* private window */ } },
   };
-  // the tracer id: made once, or set from a link ending #t=<id>
-  const fromLink = /(?:^|&)t=([a-z0-9-]{12,64})/.exec(location.hash.slice(1));
-  if (fromLink) { store.set('voynich-tracer', fromLink[1]); history.replaceState(null, '', location.pathname); }
+  const fromLink = /(?:^|[&#])t=([a-z0-9-]{12,64})/.exec(location.hash);
+  if (fromLink) { store.set('voynich-tracer', fromLink[1]); location.hash = '#/'; }
   let tracer = store.get('voynich-tracer');
   if (!tracer) {
     tracer = Array.from(crypto.getRandomValues(new Uint8Array(12)), b => b.toString(16).padStart(2, '0')).join('');
     store.set('voynich-tracer', tracer);
   }
-
-  let word = null, labels = null, cur = 1, brush = 2, erasing = false, zoom = 2, undo = [], stroke = null;
-  let moving = false, spaceHeld = false, hidden = false, dirty = false, timer = null, saving = null;
-  const skipped = [];
-
-  function say(text, bad = false) { status.textContent = text; status.classList.toggle('bad', bad); }
 
   async function deflate(bytes) {
     const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('deflate-raw'));
@@ -40,227 +34,588 @@
     const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
     return new Uint8Array(await new Response(stream).arrayBuffer());
   }
-
-  function draw() {
-    const img = g.createImageData(word.w, word.h);
-    if (!hidden) {
-      for (let i = 0; i < labels.length; i++) {
-        const k = labels[i];
-        if (!k) continue;
-        const c = COLORS[(k - 1) % COLORS.length];
-        img.data.set([c[0], c[1], c[2], 200], i * 4);
-      }
-    }
-    g.putImageData(img, 0, 0);
+  const getJSON = async url => { const r = await fetch(url); if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status); return r.json(); };
+  const cropURL = (iiif, x, y, w, h) => `${iiif}/${x},${y},${w},${h}/full/0/default.jpg`;
+  function loadImage(src) {
+    return new Promise((ok, bad) => { const i = new Image(); i.crossOrigin = 'anonymous'; i.onload = () => ok(i); i.onerror = bad; i.src = src; });
   }
 
-  function size() {
-    if (!word) return;
-    layer.style.width = word.w * zoom + 'px';
-    layer.style.height = word.h * zoom + 'px';
-  }
-  function fit() {
-    zoom = Math.max(1, Math.min(8, (stage.clientWidth - 24) / word.w, (stage.clientHeight - 24) / word.h));
-    size();
-  }
-  function setZoom(f) {
-    const cx = (stage.scrollLeft + stage.clientWidth / 2) / zoom, cy = (stage.scrollTop + stage.clientHeight / 2) / zoom;
-    zoom = Math.max(1, Math.min(16, zoom * f));
-    size();
-    stage.scrollLeft = cx * zoom - stage.clientWidth / 2;
-    stage.scrollTop = cy * zoom - stage.clientHeight / 2;
-  }
+  let pagesData = null, examplesData = null;
+  const pages = async () => pagesData || (pagesData = await getJSON('data/pages.json'));
+  const examples = async () => examplesData || (examplesData = await getJSON('data/examples.json'));
 
-  function letterButtons() {
-    const box = $('letters');
-    box.replaceChildren();
-    word.reading.forEach((name, i) => {
-      const b = document.createElement('button');
-      const c = COLORS[i % COLORS.length];
-      b.className = 'letter';
-      b.dataset.k = i + 1;
-      b.title = `Letter ${i + 1}: ${name}`;
-      b.innerHTML = `<i style="background:rgb(${c})"></i>`;
-      b.append(name);
-      b.onclick = () => pick(i + 1);
-      box.append(b);
-    });
-    pick(1);
-  }
-  function pick(k) {
-    cur = k; erasing = false; moving = false; marks();
-  }
-  function marks() {
-    document.querySelectorAll('.letter').forEach(b => b.classList.toggle('on', !erasing && +b.dataset.k === cur));
-    $('erase').classList.toggle('on', erasing);
-    $('move').classList.toggle('on', moving);
-    stage.classList.toggle('moving', moving || spaceHeld);
-    document.querySelectorAll('.size').forEach(b => b.classList.toggle('on', +b.dataset.s === brush));
-    $('hide').classList.toggle('on', hidden);
-  }
-
-  function point(e) {
-    const r = canvas.getBoundingClientRect();
-    return { x: Math.floor((e.clientX - r.left) / zoom), y: Math.floor((e.clientY - r.top) / zoom) };
-  }
-  function dab(x, y) {
-    const half = Math.floor(brush / 2);
-    for (let yy = y - half; yy < y - half + brush; yy++) {
-      if (yy < 0 || yy >= word.h) continue;
-      for (let xx = x - half; xx < x - half + brush; xx++) {
-        if (xx < 0 || xx >= word.w) continue;
-        labels[yy * word.w + xx] = erasing ? 0 : cur;
-      }
-    }
-  }
-  function line(a, b) {
-    const n = Math.max(Math.abs(b.x - a.x), Math.abs(b.y - a.y), 1);
-    for (let i = 0; i <= n; i++) dab(Math.round(a.x + (b.x - a.x) * i / n), Math.round(a.y + (b.y - a.y) * i / n));
-  }
-
-  stage.addEventListener('pointerdown', e => {
-    if (!word || moving || spaceHeld || e.button !== 0) {
-      if (word && (moving || spaceHeld || e.button === 1)) {
-        stroke = { pan: true, x: e.clientX, y: e.clientY, l: stage.scrollLeft, t: stage.scrollTop };
-        try { stage.setPointerCapture(e.pointerId); } catch { /* a synthetic pointer */ }
-      }
-      return;
-    }
-    e.preventDefault();
-    undo.push(labels.slice());
-    if (undo.length > 60) undo.shift();
-    const p = point(e);
-    stroke = { last: p };
-    dab(p.x, p.y);
-    draw();
-    try { stage.setPointerCapture(e.pointerId); } catch { /* a synthetic pointer */ }
-  });
-  stage.addEventListener('pointermove', e => {
-    if (!stroke) return;
-    if (stroke.pan) {
-      stage.scrollLeft = stroke.l - (e.clientX - stroke.x);
-      stage.scrollTop = stroke.t - (e.clientY - stroke.y);
-      return;
-    }
-    const p = point(e);
-    line(stroke.last, p);
-    stroke.last = p;
-    draw();
-  });
-  const end = () => {
-    if (stroke && !stroke.pan) changed();
-    stroke = null;
-  };
-  stage.addEventListener('pointerup', end);
-  stage.addEventListener('pointercancel', end);
-  stage.addEventListener('wheel', e => {
-    if (e.ctrlKey || e.metaKey) { e.preventDefault(); setZoom(e.deltaY < 0 ? 1.25 : 0.8); }
-  }, { passive: false });
-
-  function changed() {
-    dirty = true;
-    store.set('voynich-draft:' + word.id, JSON.stringify(Array.from(labels.entries()).filter(([, v]) => v)));
-    say('Saving soon…');
-    clearTimeout(timer);
-    timer = setTimeout(save, 2000);
-  }
-
-  async function save() {
-    clearTimeout(timer);
-    if (!dirty || !word) return saving;
-    dirty = false;
-    const sent = word;
-    const body = JSON.stringify({ word: sent.id, tracer, labels: await deflate(labels) });
-    saving = (async () => {
-      try {
-        const r = await fetch(API + '/api/trace', { method: 'POST', headers: { 'content-type': 'application/json' }, body });
-        const j = await r.json().catch(() => ({}));
-        if (sent !== word) return;
-        if (j.done) { say('Your tracing matches another — this word is done. Thank you!'); store.set('voynich-draft:' + sent.id, null); }
-        else if (r.ok) say(j.saved ? 'Saved' : 'Nothing painted yet');
-        else { say('Not saved: ' + (j.error || r.status), true); if (r.status >= 500) dirty = true; }
-      } catch {
-        dirty = true;
-        say('Not saved — no connection. It will try again.', true);
-        timer = setTimeout(save, 10000);
-      }
-    })();
-    return saving;
-  }
-
-  async function load(next) {
-    say('Loading a word…');
-    let j;
-    try {
-      const r = await fetch(next ? `${API}/api/next?tracer=${tracer}&skip=${skipped.slice(-40).join(',')}`
-        : `${API}/api/word/${encodeURIComponent(store.get('voynich-word'))}?tracer=${tracer}`);
-      j = await r.json();
-    } catch {
-      say('Could not reach the server. Try again in a minute.', true);
-      return;
-    }
-    if (!next && (!j.word || j.word.done)) return load(true);
-    if (!j.word) { say('Every word is done or traced by you. Thank you!'); return; }
-    word = j.word;
-    store.set('voynich-word', word.id);
-    labels = new Uint8Array(word.w * word.h);
-    const draft = store.get('voynich-draft:' + word.id);
-    if (draft) for (const [i, v] of JSON.parse(draft)) labels[i] = v;
-    else if (j.mine) labels = await inflate(j.mine);
-    undo = [];
-    canvas.width = word.w;
-    canvas.height = word.h;
-    scan.src = `${word.iiif}/${word.x},${word.y},${word.w},${word.h}/full/0/default.jpg`;
-    $('word').textContent = `Word ${word.id} · ${word.reading.join(' ')}`;
-    letterButtons();
-    fit();
-    draw();
-    stage.scrollLeft = (layer.offsetWidth - stage.clientWidth) / 2;
-    stage.scrollTop = 0;
-    say(draft ? 'Your unsaved painting is back' : 'Pick a letter, then paint over its ink');
-    if (draft) { dirty = true; timer = setTimeout(save, 2000); }
+  function views(name) {
+    for (const v of ['letter-view', 'page-view', 'pages-view']) $(v).hidden = v !== name;
   }
 
   async function stats() {
     try {
-      const s = await (await fetch(API + '/api/stats')).json();
-      $('stats').textContent = `${(s.done || 0).toLocaleString()} words done · ${(s.tracings || 0).toLocaleString()} tracings so far`;
-    } catch { /* stats are a nicety */ }
+      const s = await getJSON(API + '/api/stats');
+      $('stats').textContent = `${(s.letters || 0).toLocaleString()} letters verified · ${(s.done || 0).toLocaleString()} words · ${(s.tracings || 0).toLocaleString()} versions so far`;
+    } catch { /* a nicety */ }
   }
 
-  $('next').onclick = async () => { await save(); await load(true); stats(); };
-  $('skip').onclick = async () => { await save(); if (word) skipped.push(word.id); await load(true); };
-  $('erase').onclick = () => { erasing = true; moving = false; marks(); };
-  $('move').onclick = () => { moving = !moving; marks(); };
-  $('hide').onclick = () => { hidden = !hidden; draw(); marks(); };
-  $('undo').onclick = () => { if (undo.length) { labels = undo.pop(); draw(); changed(); } };
-  $('zoomin').onclick = () => setZoom(1.25);
-  $('zoomout').onclick = () => setZoom(0.8);
-  document.querySelectorAll('.size').forEach(b => b.onclick = () => { brush = +b.dataset.s; marks(); });
+  // ---- the letter task ----------------------------------------------------
+  const L = { word: null, k: 1, labels: null, reading: [], checked: [], start: null, zoom: 3, brush: 2, erasing: false,
+    hidden: false, moving: false, space: false, undo: [], stroke: null, dirty: false, timer: null, add: null, versions: [], changed: false };
+  const wstage = $('word-stage'), wlayer = $('word-layer'), crop = $('crop'), paint = $('paint'), pg = paint.getContext('2d');
 
+  function say(text, bad = false) { $('status').textContent = text; $('status').classList.toggle('bad', bad); }
+
+  function drawWord() {
+    const { word, labels, k } = L;
+    const img = pg.createImageData(word.w, word.h);
+    if (!L.hidden) {
+      for (let i = 0; i < labels.length; i++) {
+        const v = labels[i];
+        if (!v) continue;
+        const c = color(v);
+        img.data.set(v === k ? [c[0], c[1], c[2], 215] : [c[0], c[1], c[2], 70], i * 4);
+      }
+    }
+    pg.putImageData(img, 0, 0);
+  }
+  function sizeWord() { wlayer.style.width = L.word.w * L.zoom + 'px'; wlayer.style.height = L.word.h * L.zoom + 'px'; }
+  function fitWord() {
+    L.zoom = Math.max(0.5, Math.min(10, (wstage.clientWidth - 20) / L.word.w, (wstage.clientHeight - 20) / L.word.h));
+    sizeWord();
+  }
+  function zoomWord(f) {
+    const cx = (wstage.scrollLeft + wstage.clientWidth / 2) / L.zoom, cy = (wstage.scrollTop + wstage.clientHeight / 2) / L.zoom;
+    L.zoom = Math.max(0.25, Math.min(16, L.zoom * f));
+    sizeWord();
+    wstage.scrollLeft = cx * L.zoom - wstage.clientWidth / 2;
+    wstage.scrollTop = cy * L.zoom - wstage.clientHeight / 2;
+  }
+  function marks() {
+    $('erase').classList.toggle('on', L.erasing);
+    $('move').classList.toggle('on', L.moving);
+    $('hide').classList.toggle('on', L.hidden);
+    wstage.classList.toggle('moving', L.moving || L.space);
+    document.querySelectorAll('.size').forEach(b => b.classList.toggle('on', +b.dataset.s === L.brush));
+    $('go').textContent = L.changed ? 'Save and next →' : 'Looks right →';
+  }
+
+  async function names() {
+    const ex = await examples();
+    const all = Object.keys(ex).sort((a, b) => (a.startsWith('@') - b.startsWith('@')) || a.localeCompare(b));
+    const sel = $('name');
+    sel.replaceChildren();
+    const current = L.reading[L.k - 1];
+    for (const n of all.includes(current) ? all : [current, ...all]) {
+      const o = document.createElement('option');
+      o.value = n; o.textContent = n;
+      sel.append(o);
+    }
+    sel.value = current;
+  }
+
+  function ask() {
+    const c = color(L.k);
+    $('ask-text').innerHTML = `Letter ${L.k} of ${L.reading.length} in <span class="hint">${L.reading.map((n, i) => i + 1 === L.k ? `<b style="color:rgb(${c})">${n}</b>` : n).join(' ')}</span> — color its ink`;
+    $('where').textContent = `${L.word.id}${(L.word.verified || '')[L.k - 1] === '1' ? ' · this letter is verified' : ''}`;
+  }
+
+  async function examplesFor(name) {
+    $('example-name').textContent = name;
+    const box = $('examples');
+    box.replaceChildren();
+    const list = (await examples())[name] || [];
+    if (!list.length) { box.textContent = 'No examples yet'; return; }
+    for (const e of list) {
+      const fig = document.createElement('figure'), cv = document.createElement('canvas'), cap = document.createElement('figcaption');
+      cap.textContent = e.page;
+      fig.append(cv, cap);
+      fig.title = `${name} in ${e.word}`;
+      fig.onclick = () => { location.hash = `#/p/${e.page}`; };
+      box.append(fig);
+      Promise.all([loadImage(cropURL(e.iiif, e.x, e.y, e.w, e.h)), inflate(e.grid)]).then(([img, grid]) => {
+        cv.width = e.w; cv.height = e.h;
+        const g = cv.getContext('2d');
+        g.drawImage(img, 0, 0);
+        const d = g.getImageData(0, 0, e.w, e.h);
+        for (let i = 0; i < grid.length; i++) if (grid[i]) d.data.set([230, 25, 75, 255], i * 4);
+        g.putImageData(d, 0, 0);
+        cv.style.width = Math.round(64 * e.w / e.h) + 'px';
+      }).catch(() => {});
+    }
+  }
+
+  function versionStrip() {
+    const box = $('versions');
+    box.replaceChildren();
+    const k = L.k;
+    for (const v of L.versions) {
+      const fig = document.createElement('figure'), cv = document.createElement('canvas'), cap = document.createElement('figcaption');
+      const name = v.reading[k - 1];
+      cap.textContent = `${v.label}${name !== undefined && name !== L.reading[k - 1] ? ' · ' + name : ''}${v.checked && v.checked.includes(k) ? ' ✓' : ''}`;
+      fig.append(cv, cap);
+      fig.classList.toggle('on', v === L.start);
+      fig.title = 'Start this letter from this version';
+      box.append(fig);
+      cv.width = L.word.w; cv.height = L.word.h;
+      const g = cv.getContext('2d');
+      const paintIt = () => {
+        g.drawImage(crop, 0, 0);
+        const d = g.getImageData(0, 0, L.word.w, L.word.h);
+        for (let i = 0; i < v.labels.length; i++) if (v.labels[i] === k) d.data.set([...color(k), 255], i * 4);
+        g.putImageData(d, 0, 0);
+      };
+      crop.complete && crop.naturalWidth ? paintIt() : crop.addEventListener('load', paintIt, { once: true });
+      cv.style.width = Math.round(64 * L.word.w / L.word.h) + 'px';
+      fig.onclick = () => {
+        // take this version's pixels of this letter, keep the rest of the word as it is
+        L.undo.push(L.labels.slice());
+        for (let i = 0; i < L.labels.length; i++) {
+          if (L.labels[i] === k) L.labels[i] = 0;
+          if (v.labels[i] === k) L.labels[i] = k;
+        }
+        L.start = v;
+        if (v.reading[k - 1] !== undefined && v.reading.length === L.reading.length) L.reading[k - 1] = v.reading[k - 1];
+        changed(); drawWord(); versionStrip(); names(); ask(); examplesFor(L.reading[k - 1]);
+      };
+    }
+  }
+
+  async function openLetter(id, k) {
+    views('letter-view');
+    say('Loading…');
+    await save();
+    let data;
+    const pending = JSON.parse(sessionStorage.getItem('voynich-add:' + id) || 'null');
+    try { data = await getJSON(`${API}/api/word/${encodeURIComponent(id)}?tracer=${tracer}`); } catch (e) {
+      if (!pending) { say('Could not open that word: ' + e.message, true); return; }
+      data = { word: pending.word, versions: [] };
+    }
+    const word = data.word;
+    L.add = pending && !data.versions.length ? pending.add : null;
+    const ai = await inflate(word.ai);
+    const versions = [{ label: word.kind === 'new' ? 'Added' : 'Computer', labels: ai, reading: word.reading, checked: [] }];
+    let mine = null, n = 0;
+    for (const v of data.versions) {
+      const labels = await inflate(v.labels);
+      const item = { label: v.mine ? 'Yours' : `Person ${++n}`, labels, reading: v.reading, checked: v.checked };
+      if (v.mine) mine = item;
+      versions.push(item);
+    }
+    const sameWord = L.word && L.word.id === id;
+    L.word = word;
+    L.versions = versions;
+    if (!sameWord) {
+      const draft = JSON.parse(store.get('voynich-draft:' + id) || 'null');
+      const base = mine || versions[0];
+      L.labels = draft ? Uint8Array.from(draft.labels) : base.labels.slice();
+      L.reading = draft ? draft.reading : base.reading.slice();
+      L.checked = draft ? draft.checked : (mine ? mine.checked.slice() : []);
+      L.start = base;
+      L.undo = [];
+      L.changed = !!draft;
+      crop.src = cropURL(word.iiif, word.x, word.y, word.w, word.h);
+      paint.width = word.w; paint.height = word.h;
+      fitWord();
+      if (draft) { L.dirty = true; L.timer = setTimeout(save, 2000); }
+    }
+    L.k = Math.max(1, Math.min(k, L.reading.length));
+    if (sameWord) L.changed = false;
+    $('to-page').href = `#/p/${word.page}`;
+    marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]);
+    say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
+  }
+
+  function pointWord(e) {
+    const r = paint.getBoundingClientRect();
+    return { x: Math.floor((e.clientX - r.left) / L.zoom), y: Math.floor((e.clientY - r.top) / L.zoom) };
+  }
+  function dab(x, y) {
+    const half = Math.floor(L.brush / 2), { w, h } = L.word;
+    for (let yy = y - half; yy < y - half + L.brush; yy++) {
+      if (yy < 0 || yy >= h) continue;
+      for (let xx = x - half; xx < x - half + L.brush; xx++) {
+        if (xx < 0 || xx >= w) continue;
+        const i = yy * w + xx;
+        if (L.erasing) { if (L.labels[i] === L.k) L.labels[i] = 0; } else L.labels[i] = L.k;
+      }
+    }
+  }
+  function strokeTo(a, b) {
+    const n = Math.max(Math.abs(b.x - a.x), Math.abs(b.y - a.y), 1);
+    for (let i = 0; i <= n; i++) dab(Math.round(a.x + (b.x - a.x) * i / n), Math.round(a.y + (b.y - a.y) * i / n));
+  }
+  function capture(el, e) { try { el.setPointerCapture(e.pointerId); } catch { /* a synthetic pointer */ } }
+
+  wstage.addEventListener('pointerdown', e => {
+    if (!L.word) return;
+    if (L.moving || L.space || e.button === 1) {
+      L.stroke = { pan: true, x: e.clientX, y: e.clientY, l: wstage.scrollLeft, t: wstage.scrollTop };
+      capture(wstage, e); return;
+    }
+    if (e.button !== 0) return;
+    e.preventDefault();
+    L.undo.push(L.labels.slice());
+    if (L.undo.length > 60) L.undo.shift();
+    const p = pointWord(e);
+    L.stroke = { last: p };
+    dab(p.x, p.y); drawWord(); capture(wstage, e);
+  });
+  wstage.addEventListener('pointermove', e => {
+    const s = L.stroke;
+    if (!s) return;
+    if (s.pan) { wstage.scrollLeft = s.l - (e.clientX - s.x); wstage.scrollTop = s.t - (e.clientY - s.y); return; }
+    const p = pointWord(e);
+    strokeTo(s.last, p); s.last = p; drawWord();
+  });
+  const endStroke = () => { if (L.stroke && !L.stroke.pan) changed(); L.stroke = null; };
+  wstage.addEventListener('pointerup', endStroke);
+  wstage.addEventListener('pointercancel', endStroke);
+  wstage.addEventListener('wheel', e => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); zoomWord(e.deltaY < 0 ? 1.25 : 0.8); } }, { passive: false });
+
+  function changed() {
+    L.changed = true; L.dirty = true;
+    store.set('voynich-draft:' + L.word.id, JSON.stringify({ labels: Array.from(L.labels), reading: L.reading, checked: L.checked }));
+    say('Saving soon…'); marks();
+    clearTimeout(L.timer);
+    L.timer = setTimeout(save, 2000);
+  }
+
+  async function save() {
+    clearTimeout(L.timer);
+    if (!L.dirty || !L.word) return;
+    L.dirty = false;
+    const word = L.word;
+    const body = { word: word.id, tracer, labels: await deflate(L.labels), reading: L.reading, checked: L.checked };
+    if (L.add) body.add = L.add;
+    try {
+      const r = await fetch(API + '/api/trace', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok) {
+        store.set('voynich-draft:' + word.id, null);
+        if (L.add) { sessionStorage.removeItem('voynich-add:' + word.id); L.add = null; }
+        if (j.verified) word.verified = j.verified;
+        if (word === L.word) say(j.done ? 'Every letter of this word is verified. Thank you!' : 'Saved');
+      } else {
+        if (r.status >= 500 || r.status === 429) L.dirty = true;
+        say('Not saved: ' + (j.error || r.status), true);
+      }
+    } catch {
+      L.dirty = true;
+      say('Not saved — no connection. It will try again.', true);
+      L.timer = setTimeout(save, 10000);
+    }
+  }
+
+  async function goNext() {
+    if (!L.checked.includes(L.k)) L.checked.push(L.k);
+    L.dirty = true;
+    await save();
+    // the next letter of this word not verified and not yet checked by you, else another word
+    for (let k = L.k + 1; k <= L.reading.length; k++) {
+      if ((L.word.verified || '')[k - 1] !== '1' && !L.checked.includes(k)) { location.hash = `#/w/${L.word.id}/${k}`; return; }
+    }
+    nextTask();
+  }
+  const skipped = [];
+  async function nextTask() {
+    say('Finding the next letter…');
+    try {
+      const j = await getJSON(`${API}/api/next?tracer=${tracer}&skip=${skipped.slice(-50).join(',')}`);
+      if (!j.word) { say('Nothing left for you to check. Thank you!'); return; }
+      location.hash = `#/w/${j.word}/${j.letter}`;
+    } catch (e) { say('Could not reach the server: ' + e.message, true); }
+    stats();
+  }
+
+  $('go').onclick = goNext;
+  $('skip').onclick = async () => { await save(); if (L.word) skipped.push(L.word.id); nextTask(); };
+  $('erase').onclick = () => { L.erasing = !L.erasing; L.moving = false; marks(); };
+  $('move').onclick = () => { L.moving = !L.moving; marks(); };
+  $('hide').onclick = () => { L.hidden = !L.hidden; drawWord(); marks(); };
+  $('undo').onclick = () => { if (L.undo.length) { L.labels = L.undo.pop(); drawWord(); changed(); } };
+  $('zoomin').onclick = () => zoomWord(1.25);
+  $('zoomout').onclick = () => zoomWord(0.8);
+  $('fit').onclick = fitWord;
+  document.querySelectorAll('.size').forEach(b => b.onclick = () => { L.brush = +b.dataset.s; marks(); });
+  $('name').onchange = () => {
+    L.reading[L.k - 1] = $('name').value;
+    changed(); ask(); versionStrip(); examplesFor($('name').value); $('name').blur();
+  };
+  $('remove-letter').onclick = () => {
+    if (L.reading.length < 2) { say('A word needs at least one letter', true); return; }
+    if (!confirm(`Take "${L.reading[L.k - 1]}" out of this word? Its pixels go too.`)) return;
+    L.undo.push(L.labels.slice());
+    for (let i = 0; i < L.labels.length; i++) {
+      const v = L.labels[i];
+      L.labels[i] = v === L.k ? 0 : v > L.k ? v - 1 : v;
+    }
+    L.reading.splice(L.k - 1, 1);
+    L.checked = L.checked.filter(c => c !== L.k).map(c => c > L.k ? c - 1 : c);
+    L.word.verified = '';
+    changed();
+    const to = `#/w/${L.word.id}/${Math.min(L.k, L.reading.length)}`;
+    if (location.hash === to) openLetter(L.word.id, Math.min(L.k, L.reading.length)); else location.hash = to;
+  };
+  $('add-letter').onclick = () => {
+    if (L.reading.length >= 20) return;
+    L.undo.push(L.labels.slice());
+    for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > L.k) L.labels[i]++;
+    L.reading.splice(L.k, 0, '?');
+    L.checked = L.checked.map(c => c > L.k ? c + 1 : c);
+    L.word.verified = '';
+    changed();
+    location.hash = `#/w/${L.word.id}/${L.k + 1}`;
+  };
+
+  // ---- the page view ------------------------------------------------------
+  const P = { page: null, info: null, words: [], scale: 1, zoom: 1, hidden: false, boxing: false, drag: null, box: null, untraced: [] };
+  const pstage = $('page-stage'), player = $('page-layer'), ptrace = $('page-trace'), hoverbox = $('hoverbox'), drawbox = $('drawbox');
+
+  async function openPage(page) {
+    views('page-view');
+    await save();
+    const list = await pages();
+    const i = list.findIndex(p => p.page === page);
+    if (i < 0) { $('p-status').textContent = 'No such page'; return; }
+    const info = list[i];
+    $('page-name').textContent = page;
+    $('prev-page').href = i ? `#/p/${list[i - 1].page}` : '#/pages';
+    $('next-page').href = i + 1 < list.length ? `#/p/${list[i + 1].page}` : '#/pages';
+    $('p-status').textContent = 'Loading the page…';
+    P.page = page; P.info = info;
+    P.scale = Math.min(1, 2400 / info.width);
+    player.querySelectorAll('img').forEach(i => i.remove());
+    for (const im of info.images) {
+      const img = document.createElement('img');
+      img.crossOrigin = 'anonymous';
+      img.src = `${im.iiif}/full/${Math.round(im.w * P.scale)},/0/default.jpg`;
+      img.dataset.offset = im.offset; img.dataset.w = im.w; img.dataset.h = im.h;
+      player.insertBefore(img, ptrace);
+    }
+    const [data, untraced] = await Promise.all([getJSON(`${API}/api/page/${page}`), getJSON(`data/untraced/${page}.json`).catch(() => [])]);
+    P.untraced = untraced;
+    ptrace.width = Math.round(info.width * P.scale); ptrace.height = Math.round(info.height * P.scale);
+    const g = ptrace.getContext('2d');
+    g.clearRect(0, 0, ptrace.width, ptrace.height);
+    P.words = [];
+    const tmp = document.createElement('canvas'), tg = tmp.getContext('2d');
+    for (const w of data.words) {
+      const grid = await inflate(w.ai);
+      const im = info.images.find(m => m.iiif === w.iiif) || info.images[0];
+      const px = w.x + im.offset;
+      let x0 = 1e9, y0 = 1e9, x1 = -1, y1 = -1;
+      tmp.width = w.w; tmp.height = w.h;
+      const d = tg.createImageData(w.w, w.h);
+      for (let i = 0; i < grid.length; i++) {
+        const v = grid[i];
+        if (!v) continue;
+        const x = i % w.w, y = (i / w.w) | 0;
+        if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+        d.data.set([...color(v), 190], i * 4);
+      }
+      tg.putImageData(d, 0, 0);
+      g.imageSmoothingEnabled = false;
+      g.drawImage(tmp, px * P.scale, w.y * P.scale, w.w * P.scale, w.h * P.scale);
+      const box = x1 >= 0 ? { x0: px + x0, y0: w.y + y0, x1: px + x1 + 1, y1: w.y + y1 + 1 }
+        : w.box ? { x0: w.box[0], y0: w.box[1], x1: w.box[2], y1: w.box[3] } : { x0: px, y0: w.y, x1: px + w.w, y1: w.y + w.h };
+      P.words.push({ ...box, id: w.id, reading: w.reading, verified: w.verified, done: w.done });
+    }
+    fitPage();
+    const missing = untraced.length;
+    $('p-status').textContent = `${data.words.length} words traced${missing ? `, ${missing} missing — add them with "+ Add a missing word"` : ''}. Click a word to check its letters.`;
+  }
+  function sizePage() {
+    const W = P.info.width * P.zoom, H = P.info.height * P.zoom;
+    player.style.width = W + 'px'; player.style.height = H + 'px';
+    for (const im of player.querySelectorAll('img')) {
+      im.style.left = im.dataset.offset * P.zoom + 'px';
+      im.style.width = im.dataset.w * P.zoom + 'px'; im.style.height = im.dataset.h * P.zoom + 'px';
+    }
+    ptrace.style.visibility = P.hidden ? 'hidden' : 'visible';
+    if (P.box) drawBox();
+  }
+  function fitPage() {
+    P.zoom = Math.min((pstage.clientWidth - 20) / P.info.width, (pstage.clientHeight - 20) / P.info.height);
+    sizePage(); pstage.scrollTop = 0; pstage.scrollLeft = 0;
+  }
+  function zoomPage(f) {
+    const cx = (pstage.scrollLeft + pstage.clientWidth / 2) / P.zoom, cy = (pstage.scrollTop + pstage.clientHeight / 2) / P.zoom;
+    P.zoom = Math.max(0.05, Math.min(3, P.zoom * f));
+    sizePage();
+    pstage.scrollLeft = cx * P.zoom - pstage.clientWidth / 2; pstage.scrollTop = cy * P.zoom - pstage.clientHeight / 2;
+  }
+  function pagePoint(e) {
+    const r = player.getBoundingClientRect();
+    return { x: (e.clientX - r.left) / P.zoom, y: (e.clientY - r.top) / P.zoom };
+  }
+  function hit(p) {
+    const hits = P.words.filter(b => p.x >= b.x0 - 4 && p.x <= b.x1 + 4 && p.y >= b.y0 - 4 && p.y <= b.y1 + 4);
+    hits.sort((a, b) => (a.x1 - a.x0) * (a.y1 - a.y0) - (b.x1 - b.x0) * (b.y1 - b.y0));
+    return hits[0] || null;
+  }
+  function hover(b) {
+    hoverbox.style.display = b ? 'block' : 'none';
+    if (!b) return;
+    Object.assign(hoverbox.style, { left: b.x0 * P.zoom + 'px', top: b.y0 * P.zoom + 'px', width: Math.max(8, (b.x1 - b.x0) * P.zoom) + 'px', height: Math.max(8, (b.y1 - b.y0) * P.zoom) + 'px' });
+    hoverbox.title = b.id;
+    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · verified' : ''} — click to check it`;
+  }
+  function drawBox() {
+    const b = P.box;
+    Object.assign(drawbox.style, { display: 'block', left: b.x0 * P.zoom + 'px', top: b.y0 * P.zoom + 'px', width: (b.x1 - b.x0) * P.zoom + 'px', height: (b.y1 - b.y0) * P.zoom + 'px' });
+  }
+  function toggleBoxing() {
+    P.boxing = !P.boxing;
+    $('p-add').classList.toggle('on', P.boxing);
+    pstage.classList.toggle('boxing', P.boxing);
+    if (!P.boxing) cancelAdd();
+    else $('p-status').textContent = 'Draw a box round a word that has no colors';
+  }
+  function cancelAdd() { P.box = null; P.drag = null; drawbox.style.display = 'none'; $('addpanel').hidden = true; }
+  function guesses() {
+    const b = P.box, cx = (b.x0 + b.x1) / 2, cy = (b.y0 + b.y1) / 2, num = id => +id.split('.w').pop();
+    return P.untraced.map(u => {
+      const line = P.words.filter(w => w.id.startsWith(u.locus + '.w'));
+      if (!line.length) return { u, score: 1e9 + u.n };
+      const ys = line.map(w => (w.y0 + w.y1) / 2).sort((a, c) => a - c), yc = ys[ys.length >> 1];
+      const before = line.filter(w => num(w.id) < u.n).sort((a, c) => num(c.id) - num(a.id))[0];
+      const after = line.filter(w => num(w.id) > u.n).sort((a, c) => num(a.id) - num(c.id))[0];
+      const lo = before ? before.x1 : -1e9, hi = after ? after.x0 : 1e9, dx = cx < lo ? lo - cx : cx > hi ? cx - hi : 0;
+      return { u, score: Math.abs(cy - yc) + dx * 0.5 };
+    }).sort((a, c) => a.score - c.score).map(g => g.u);
+  }
+  function openAddPanel() {
+    const sel = $('addword');
+    sel.replaceChildren();
+    const list = guesses();
+    if (!list.length) { $('p-status').textContent = 'Every word of this page\'s transcription is traced'; cancelAdd(); return; }
+    list.forEach((u, i) => { const o = document.createElement('option'); o.value = u.word; o.textContent = `${u.word}  ·  ${u.reading.join(' ')}${i ? '' : '   (best guess)'}`; sel.append(o); });
+    sel.selectedIndex = 0;
+    const r = drawbox.getBoundingClientRect(), panel = $('addpanel');
+    panel.hidden = false;
+    panel.style.left = Math.max(8, Math.min(innerWidth - panel.offsetWidth - 8, r.left)) + 'px';
+    panel.style.top = (r.bottom + 8 + panel.offsetHeight < innerHeight ? r.bottom + 8 : Math.max(8, r.top - panel.offsetHeight - 8)) + 'px';
+    sel.focus();
+  }
+  async function addWord() {
+    const id = $('addword').value, u = P.untraced.find(x => x.word === id), b = P.box;
+    if (!u || !b) return;
+    const box = [b.x0, b.y0, b.x1, b.y1].map(Math.round);
+    const im = P.info.images.find(m => box[0] >= m.offset && box[2] <= m.offset + m.w);
+    if (!im) { $('p-status').textContent = 'Draw the box inside one picture'; return; }
+    const lx0 = Math.max(0, box[0] - im.offset - NEW_MARGIN), ly0 = Math.max(0, box[1] - NEW_MARGIN);
+    const lx1 = Math.min(im.w, box[2] - im.offset + NEW_MARGIN), ly1 = Math.min(im.h, box[3] + NEW_MARGIN);
+    const add = { iiif: im.iiif, box: [box[0] - im.offset, box[1], box[2] - im.offset, box[3]], crop: [lx0, ly0, lx1 - lx0, ly1 - ly0] };
+    const blank = await deflate(new Uint8Array((lx1 - lx0) * (ly1 - ly0)));
+    const word = { id, page: P.page, iiif: im.iiif, x: lx0, y: ly0, w: lx1 - lx0, h: ly1 - ly0, reading: u.reading, ai: blank, kind: 'new', box: add.box, verified: '', done: false };
+    sessionStorage.setItem('voynich-add:' + id, JSON.stringify({ word, add }));
+    cancelAdd(); toggleBoxing();
+    L.word = null;
+    location.hash = `#/w/${id}/1`;
+  }
+
+  pstage.addEventListener('pointerdown', e => {
+    if (!P.info) return;
+    if (P.boxing && e.button === 0) {
+      e.preventDefault(); $('addpanel').hidden = true;
+      const p = pagePoint(e); P.drag = p; P.box = { x0: p.x, y0: p.y, x1: p.x, y1: p.y }; drawBox(); capture(pstage, e); return;
+    }
+    P.pan = { x: e.clientX, y: e.clientY, l: pstage.scrollLeft, t: pstage.scrollTop, moved: false };
+    capture(pstage, e);
+  });
+  pstage.addEventListener('pointermove', e => {
+    if (!P.info) return;
+    if (P.drag) {
+      const p = pagePoint(e);
+      P.box = { x0: Math.min(P.drag.x, p.x), y0: Math.min(P.drag.y, p.y), x1: Math.max(P.drag.x, p.x), y1: Math.max(P.drag.y, p.y) };
+      drawBox(); return;
+    }
+    if (P.pan) {
+      if (Math.hypot(e.clientX - P.pan.x, e.clientY - P.pan.y) > 5) P.pan.moved = true;
+      if (P.pan.moved) { pstage.scrollLeft = P.pan.l - (e.clientX - P.pan.x); pstage.scrollTop = P.pan.t - (e.clientY - P.pan.y); }
+      return;
+    }
+    if (!P.boxing) hover(hit(pagePoint(e)));
+  });
+  pstage.addEventListener('pointerup', e => {
+    if (P.drag) {
+      P.drag = null;
+      if (P.box.x1 - P.box.x0 < 6 || P.box.y1 - P.box.y0 < 6) { cancelAdd(); return; }
+      openAddPanel(); return;
+    }
+    const clicked = P.pan && !P.pan.moved;
+    P.pan = null;
+    if (clicked && !P.boxing) {
+      const b = hit(pagePoint(e));
+      if (b) {
+        const open = [...b.reading.keys()].find(i => (b.verified || '')[i] !== '1');
+        L.word = null;
+        location.hash = `#/w/${b.id}/${(open ?? 0) + 1}`;
+      }
+    }
+  });
+  pstage.addEventListener('wheel', e => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); zoomPage(e.deltaY < 0 ? 1.25 : 0.8); } }, { passive: false });
+  $('p-zoomin').onclick = () => zoomPage(1.25);
+  $('p-zoomout').onclick = () => zoomPage(0.8);
+  $('p-fit').onclick = fitPage;
+  $('p-hide').onclick = () => { P.hidden = !P.hidden; $('p-hide').classList.toggle('on', P.hidden); sizePage(); };
+  $('p-add').onclick = toggleBoxing;
+  $('addgo').onclick = addWord;
+  $('addcancel').onclick = cancelAdd;
+  $('addword').ondblclick = addWord;
+  $('addword').onkeydown = e => { e.stopPropagation(); if (e.key === 'Enter') { e.preventDefault(); addWord(); } if (e.key === 'Escape') cancelAdd(); };
+
+  // ---- the page list ------------------------------------------------------
+  async function openPages() {
+    views('pages-view');
+    await save();
+    const list = await pages();
+    const box = $('page-list');
+    if (box.childElementCount) return;
+    for (const p of list) {
+      const a = document.createElement('a');
+      a.href = `#/p/${p.page}`;
+      a.innerHTML = `${p.page}<span>${p.words} words</span>`;
+      box.append(a);
+    }
+  }
+
+  // ---- keys and routes ----------------------------------------------------
   document.addEventListener('keydown', e => {
-    if (!word) return;
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); $('undo').click(); return; }
-    if (e.code === 'Space') { e.preventDefault(); spaceHeld = true; marks(); return; }
-    if (e.key === 'Alt') { e.preventDefault(); hidden = true; draw(); return; }
-    if (e.key === '+' || e.key === '=') return setZoom(1.25);
-    if (e.key === '-') return setZoom(0.8);
-    if (e.key === 'e' || e.key === 'E') { if (!word.reading.includes(e.key)) { $('erase').click(); return; } }
-    const k = word.reading.indexOf(e.key);
-    if (k >= 0 && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      // the same letter twice in a word: each press moves to its next one
-      const all = word.reading.map((n, i) => n === e.key ? i + 1 : 0).filter(Boolean);
-      pick(all[(all.indexOf(cur) + 1) % all.length] || all[0]);
+    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') return;
+    const inLetter = !$('letter-view').hidden, inPage = !$('page-view').hidden;
+    if (e.key === 'Alt') { e.preventDefault(); if (inLetter) { L.hidden = true; drawWord(); } if (inPage) { P.hidden = true; sizePage(); } return; }
+    if (inLetter && L.word) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); $('undo').click(); return; }
+      if (e.code === 'Space') { e.preventDefault(); L.space = true; marks(); return; }
+      if (e.key === '+' || e.key === '=') zoomWord(1.25);
+      if (e.key === '-') zoomWord(0.8);
+      if (e.key === 'e' || e.key === 'E') $('erase').click();
+      if (e.key === 'Enter') goNext();
+    }
+    if (inPage && P.info) {
+      if (e.key === '+' || e.key === '=') zoomPage(1.25);
+      if (e.key === '-') zoomPage(0.8);
+      if (e.key === 'b' || e.key === 'B') toggleBoxing();
+      if (e.key === 'Escape' && P.boxing) toggleBoxing();
     }
   });
   document.addEventListener('keyup', e => {
-    if (e.code === 'Space') { spaceHeld = false; marks(); }
-    if (e.key === 'Alt') { hidden = false; draw(); }
+    if (e.code === 'Space') { L.space = false; marks(); }
+    if (e.key === 'Alt') { if (L.word) { L.hidden = false; drawWord(); } if (P.info) { P.hidden = $('p-hide').classList.contains('on'); sizePage(); } }
   });
-  window.addEventListener('blur', () => { spaceHeld = false; marks(); });
-  window.addEventListener('pagehide', () => { if (dirty) save(); });
-  window.addEventListener('resize', () => word && fit());
+  window.addEventListener('blur', () => { L.space = false; marks(); });
+  window.addEventListener('pagehide', () => { if (L.dirty) save(); });
 
-  load(!store.get('voynich-word'));
+  async function route() {
+    const h = location.hash;
+    let m;
+    if ((m = /^#\/w\/([^/]+)\/(\d+)$/.exec(h))) return openLetter(decodeURIComponent(m[1]), +m[2]);
+    if ((m = /^#\/p\/([^/]+)$/.exec(h))) return openPage(decodeURIComponent(m[1]));
+    if (h === '#/pages') return openPages();
+    views('letter-view');
+    return nextTask();
+  }
+  window.addEventListener('hashchange', route);
+  $('help-open').onclick = () => $('help').showModal();
+  if (!store.get('voynich-seen-help')) { store.set('voynich-seen-help', '1'); $('help').showModal(); }
+  route();
   stats();
 })();
