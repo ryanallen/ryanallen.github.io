@@ -579,9 +579,24 @@
 
   // ---- keys and routes ----------------------------------------------------
   document.addEventListener('keydown', e => {
-    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') return;
+    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT' || $('help').open) return;
     const inLetter = !$('letter-view').hidden, inPage = !$('page-view').hidden;
-    if (e.key === 'Alt') { e.preventDefault(); if (inLetter) { L.hidden = true; drawWord(); } if (inPage) { P.hidden = true; sizePage(); } return; }
+    // hold H to see the page under the tracing
+    if ((e.key === 'h' || e.key === 'H') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault();
+      if (inLetter && L.word && !L.hidden) { L.hidden = true; drawWord(); }
+      if (inPage && P.info && !P.hidden) { P.hidden = true; sizePage(); }
+      return;
+    }
+    // Esc goes back: from a letter to its page, from a page to the list of pages
+    if (e.key === 'Escape') {
+      if (inLetter && L.word) { e.preventDefault(); location.hash = `#/p/${L.word.page}`; return; }
+      if (inPage && P.info) {
+        e.preventDefault();
+        if (P.boxing) toggleBoxing(); else location.hash = '#/pages';
+        return;
+      }
+    }
     if (inLetter && L.word) {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); $('undo').click(); return; }
       if (e.code === 'Space') { e.preventDefault(); L.space = true; marks(); return; }
@@ -594,12 +609,14 @@
       if (e.key === '+' || e.key === '=') zoomPage(1.25);
       if (e.key === '-') zoomPage(0.8);
       if (e.key === 'b' || e.key === 'B') toggleBoxing();
-      if (e.key === 'Escape' && P.boxing) toggleBoxing();
     }
   });
   document.addEventListener('keyup', e => {
     if (e.code === 'Space') { L.space = false; marks(); }
-    if (e.key === 'Alt') { if (L.word) { L.hidden = false; drawWord(); } if (P.info) { P.hidden = $('p-hide').classList.contains('on'); sizePage(); } }
+    if (e.key === 'h' || e.key === 'H') {
+      if (L.word) { L.hidden = $('hide').classList.contains('on'); drawWord(); }
+      if (P.info) { P.hidden = $('p-hide').classList.contains('on'); sizePage(); }
+    }
   });
   window.addEventListener('blur', () => { L.space = false; marks(); });
   window.addEventListener('pagehide', () => { if (L.dirty) save(); });
