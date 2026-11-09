@@ -122,7 +122,7 @@
     if (!word || moving || spaceHeld || e.button !== 0) {
       if (word && (moving || spaceHeld || e.button === 1)) {
         stroke = { pan: true, x: e.clientX, y: e.clientY, l: stage.scrollLeft, t: stage.scrollTop };
-        stage.setPointerCapture(e.pointerId);
+        try { stage.setPointerCapture(e.pointerId); } catch { /* a synthetic pointer */ }
       }
       return;
     }
@@ -133,7 +133,7 @@
     stroke = { last: p };
     dab(p.x, p.y);
     draw();
-    stage.setPointerCapture(e.pointerId);
+    try { stage.setPointerCapture(e.pointerId); } catch { /* a synthetic pointer */ }
   });
   stage.addEventListener('pointermove', e => {
     if (!stroke) return;
@@ -259,7 +259,7 @@
   });
   window.addEventListener('blur', () => { spaceHeld = false; marks(); });
   window.addEventListener('pagehide', () => { if (dirty) save(); });
-  window.addEventListener('resize', () => word && size());
+  window.addEventListener('resize', () => word && fit());
 
   load(!store.get('voynich-word'));
   stats();
