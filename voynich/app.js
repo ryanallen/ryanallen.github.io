@@ -442,9 +442,10 @@
     for (const b of P.words) {
       if (!b.done && !b.mine) continue;
       const x = (b.x0 - 3) * P.scale, y = (b.y0 - 3) * P.scale, bw = (b.x1 - b.x0 + 6) * P.scale, bh = (b.y1 - b.y0 + 6) * P.scale;
-      g.lineWidth = Math.max(2, 3 * P.scale);
-      if (b.done) { g.fillStyle = 'rgba(40, 200, 90, 0.42)'; g.fillRect(x, y, bw, bh); g.strokeStyle = 'rgb(40, 200, 90)'; }
-      else g.strokeStyle = 'rgb(255, 200, 40)';
+      g.lineWidth = Math.max(4, 9 * P.scale);
+      g.fillStyle = b.done ? 'rgba(40, 200, 90, 0.45)' : 'rgba(255, 200, 40, 0.22)';
+      g.strokeStyle = b.done ? 'rgb(40, 200, 90)' : 'rgb(255, 200, 40)';
+      g.fillRect(x, y, bw, bh);
       g.strokeRect(x, y, bw, bh);
     }
     fitPage();
