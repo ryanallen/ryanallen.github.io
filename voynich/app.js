@@ -651,6 +651,34 @@
   }
   window.addEventListener('hashchange', route);
   $('help-open').onclick = () => $('help').showModal();
+
+  // The name for the credits, kept on the Worker against this browser's tracer id.
+  const creditLink = `${location.origin}${location.pathname}#t=${tracer}`;
+  $('credit-link').textContent = creditLink;
+  $('credit-link').href = creditLink;
+  $('credit-open').onclick = async () => {
+    $('credit-status').textContent = '';
+    $('credit-status').className = 'hint';
+    $('credit').showModal();
+    try { $('credit-name').value = (await getJSON(`${API}/api/name?tracer=${tracer}`)).name; } catch { /* leave it as typed */ }
+  };
+  $('credit-close').onclick = () => $('credit').close();
+  $('credit-link').onclick = e => { e.preventDefault(); navigator.clipboard?.writeText(creditLink).then(() => { $('credit-status').textContent = 'Link copied.'; }); };
+  $('credit-save').onclick = async () => {
+    const name = $('credit-name').value.trim();
+    try {
+      const r = await fetch(`${API}/api/name`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ tracer, name }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || r.status);
+      $('credit-status').className = 'hint';
+      $('credit-status').textContent = name ? `Saved. You'll be credited as ${j.name}.` : 'Saved. You stay anonymous.';
+    } catch (e) {
+      $('credit-status').className = 'hint bad';
+      $('credit-status').textContent = `Not saved: ${e.message}`;
+    }
+  };
+  $('credit-name').onkeydown = e => { e.stopPropagation(); if (e.key === 'Enter') $('credit-save').click(); };
+  $('credit-name').onkeyup = e => e.stopPropagation();
   if (!store.get('voynich-seen-help')) { store.set('voynich-seen-help', '1'); $('help').showModal(); }
   route();
   stats();

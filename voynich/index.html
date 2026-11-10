@@ -17,13 +17,13 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=3d8ac8915a">
+<link rel="stylesheet" href="style.css?v=eaf0cfb420">
 </head>
 <body>
 <header>
   <h1><a href="#/">Trace the Voynich</a></h1>
   <span id="stats"></span>
-  <nav><a href="#/">Next letter</a><a href="#/pages">Pages</a><button id="help-open" class="link">How it works</button></nav>
+  <nav><a href="#/">Next letter</a><a href="#/pages">Pages</a><button id="help-open" class="link">How it works</button><button id="credit-open" class="link">Get credited</button></nav>
 </header>
 
 <section id="letter-view" hidden>
@@ -76,9 +76,19 @@
     <li>If it is a different letter, pick it under "It's". Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
     <li>When the letter is right, press the button and the next one comes. Your work saves as you go; there is nothing to send.</li>
     <li>When two people's versions of a letter agree, it is verified. Missing words can be added from a page: "+ Add a missing word".</li>
+    <li>You stay anonymous unless you want credit. "Get credited" at the top takes a name or handle for the credits when the work is released.</li>
   </ul>
   <form method="dialog"><button class="primary">Start</button></form>
 </dialog>
-<script src="app.js?v=3d8ac8915a"></script>
+
+<dialog id="credit">
+  <h2>Get credited</h2>
+  <p>Everyone who helps is credited when the glyph map, the OCR and the font are released. Leave the name or handle you want listed, or leave it empty to stay anonymous. It is only shown in the credits, never beside your tracings.</p>
+  <p><input id="credit-name" maxlength="40" placeholder="Name or handle" autocomplete="nickname"></p>
+  <p id="credit-status" class="hint"></p>
+  <p class="hint">Your work is tied to this browser. To trace from another device and keep one credit, open this link there: <a id="credit-link" href="#"></a></p>
+  <div class="row"><button id="credit-save" class="primary">Save</button> <button id="credit-close">Close</button></div>
+</dialog>
+<script src="app.js?v=eaf0cfb420"></script>
 </body>
 </html>

@@ -48,6 +48,9 @@ footer.bar{border-top:1px solid var(--line);border-bottom:none}
 #addword{font:14px ui-monospace,Consolas,monospace;width:100%;background:#111318}
 dialog{background:var(--panel);color:var(--text);border:1px solid #6d737e;border-radius:10px;max-width:560px}
 dialog::backdrop{background:#0009}
+#credit-name{font:inherit;width:100%;padding:6px 9px;border:1px solid #41454e;border-radius:6px;background:var(--bg);color:var(--text)}
+#credit-link{word-break:break-all}
+#credit-status.bad{color:#ffb2a5}
 @media (max-width:600px){
   header,.bar,#side{padding-left:16px;padding-right:16px}
   #ask{font-size:14px}
