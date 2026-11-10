@@ -587,13 +587,34 @@
     await save();
     const list = await pages();
     const box = $('page-list');
-    if (box.childElementCount) return;
-    for (const p of list) {
-      const a = document.createElement('a');
-      a.href = `#/p/${p.page}`;
-      a.innerHTML = `${p.page}<span>${p.words} words</span>`;
-      box.append(a);
+    if (!box.childElementCount) {
+      for (const p of list) {
+        const a = document.createElement('a');
+        a.href = `#/p/${p.page}`;
+        a.dataset.page = p.page;
+        a.innerHTML = `<b>${p.page}</b>${p.uv ? '<i class="uvtag" title="This page has UV scans">UV</i>' : ''}<span class="count">${p.words} words</span><span class="done"></span><span class="meter"><span></span></span>`;
+        box.append(a);
+      }
     }
+    // how far each page has got, from the Worker; a page list without it still works
+    let prog;
+    try { prog = await getJSON(API + '/api/progress'); } catch { return; }
+    let started = 0, finished = 0;
+    for (const a of box.children) {
+      const p = prog[a.dataset.page];
+      if (!p || !p.words) continue;
+      const share = p.done / p.words;
+      a.classList.toggle('started', p.worked > 0);
+      a.classList.toggle('finished', p.done === p.words);
+      a.querySelector('.done').textContent = p.done ? `${p.done} done` : p.worked ? `${p.worked} in progress` : '';
+      a.querySelector('.meter span').style.width = `${Math.max(share, p.worked ? 0.03 : 0) * 100}%`;
+      a.title = `${p.done} of ${p.words} words done, ${p.worked} worked on, ${p.letters} letters verified`;
+      if (p.worked) started++;
+      if (p.done === p.words) finished++;
+    }
+    $('pages-hint').textContent = started
+      ? `${started} of ${list.length} pages started${finished ? `, ${finished} finished` : ''}. Pick any page, or one nobody has touched yet.`
+      : 'Pick a page to see its tracings. Nobody has started any yet, so any page is a first.';
   }
 
   // ---- the UV scans -------------------------------------------------------
