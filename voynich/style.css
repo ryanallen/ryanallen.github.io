@@ -40,7 +40,7 @@ footer.bar{border-top:1px solid var(--line);border-bottom:none}
 #where{color:var(--muted);font-size:12px}
 #status{flex:1;font-size:12px;color:#a8dfbc}
 #status.bad{color:#ffb2a5}
-#page-list{padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;overflow:auto}
+#page-list{flex:1;min-height:0;grid-auto-rows:max-content;align-content:start;padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;overflow:auto}
 #page-list a{display:block;position:relative;padding:8px 8px 12px;background:#20242b;border:1px solid var(--line);border-radius:6px;text-decoration:none;overflow:hidden}
 #page-list a:hover{border-color:#6d737e}
 #page-list a span{display:block;color:var(--muted);font-size:12px}
