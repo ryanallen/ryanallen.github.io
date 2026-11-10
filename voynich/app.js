@@ -203,7 +203,8 @@
     L.versions = versions;
     if (!sameWord) {
       const draft = JSON.parse(store.get('voynich-draft:' + id) || 'null');
-      const base = mine || versions[0];
+      // a word someone added has a blank computer version: start from the latest person's instead
+      const base = mine || (word.kind === 'new' && versions.length > 1 ? versions[versions.length - 1] : versions[0]);
       L.labels = draft ? Uint8Array.from(draft.labels) : base.labels.slice();
       L.reading = draft ? draft.reading : base.reading.slice();
       L.checked = draft ? draft.checked : (mine ? mine.checked.slice() : []);
@@ -220,6 +221,7 @@
     $('to-page').href = `#/p/${word.page}`;
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]);
     if (!sameWord) wordUV();
+    if (word.done) { say('This word is done: two people agreed on every letter. Press Skip for another.'); return; }
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
 
@@ -407,7 +409,7 @@
       img.dataset.offset = im.offset; img.dataset.w = im.w; img.dataset.h = im.h;
       player.insertBefore(img, ptrace);
     }
-    const [data, untraced] = await Promise.all([getJSON(`${API}/api/page/${page}`), getJSON(`data/untraced/${page}.json`).catch(() => [])]);
+    const [data, untraced] = await Promise.all([getJSON(`${API}/api/page/${page}?tracer=${tracer}`), getJSON(`data/untraced/${page}.json`).catch(() => [])]);
     P.untraced = untraced;
     ptrace.width = Math.round(info.width * P.scale); ptrace.height = Math.round(info.height * P.scale);
     const g = ptrace.getContext('2d');
@@ -415,7 +417,8 @@
     P.words = [];
     const tmp = document.createElement('canvas'), tg = tmp.getContext('2d');
     for (const w of data.words) {
-      const grid = await inflate(w.ai);
+      // your own version where you have one, else the latest for a word someone added, else the computer's
+      const grid = await inflate(w.mine || w.latest || w.ai);
       const im = info.images.find(m => m.iiif === w.iiif) || info.images[0];
       const px = w.x + im.offset;
       let x0 = 1e9, y0 = 1e9, x1 = -1, y1 = -1;
@@ -433,12 +436,23 @@
       g.drawImage(tmp, px * P.scale, w.y * P.scale, w.w * P.scale, w.h * P.scale);
       const box = x1 >= 0 ? { x0: px + x0, y0: w.y + y0, x1: px + x1 + 1, y1: w.y + y1 + 1 }
         : w.box ? { x0: w.box[0], y0: w.box[1], x1: w.box[2], y1: w.box[3] } : { x0: px, y0: w.y, x1: px + w.w, y1: w.y + w.h };
-      P.words.push({ ...box, id: w.id, reading: w.reading, verified: w.verified, done: w.done });
+      P.words.push({ ...box, id: w.id, reading: w.reading, verified: w.verified, done: w.done, mine: !!w.mine });
+    }
+    // done words under a see-through green box, so nobody spends time on them; your words outlined in gold
+    for (const b of P.words) {
+      if (!b.done && !b.mine) continue;
+      const x = (b.x0 - 3) * P.scale, y = (b.y0 - 3) * P.scale, bw = (b.x1 - b.x0 + 6) * P.scale, bh = (b.y1 - b.y0 + 6) * P.scale;
+      g.lineWidth = Math.max(2, 3 * P.scale);
+      if (b.done) { g.fillStyle = 'rgba(40, 200, 90, 0.42)'; g.fillRect(x, y, bw, bh); g.strokeStyle = 'rgb(40, 200, 90)'; }
+      else g.strokeStyle = 'rgb(255, 200, 40)';
+      g.strokeRect(x, y, bw, bh);
     }
     fitPage();
     pageUV();
     const missing = untraced.length;
-    $('p-status').textContent = `${data.words.length} words traced${missing ? `, ${missing} missing — add them with "+ Add a missing word"` : ''}. Click a word to check its letters.`;
+    const mineN = P.words.filter(b => b.mine).length, doneN = P.words.filter(b => b.done).length;
+    $('p-status').textContent = `${data.words.length} words traced${missing ? `, ${missing} missing — add them with "+ Add a missing word"` : ''}. Click a word to check its letters.`
+      + (mineN ? ` Gold boxes: the ${mineN} you worked on.` : '') + (doneN ? ` Green boxes: ${doneN} done, no need to check them.` : '');
   }
   function sizePage() {
     const W = P.info.width * P.zoom, H = P.info.height * P.zoom;
@@ -474,7 +488,7 @@
     if (!b) return;
     Object.assign(hoverbox.style, { left: b.x0 * P.zoom + 'px', top: b.y0 * P.zoom + 'px', width: Math.max(8, (b.x1 - b.x0) * P.zoom) + 'px', height: Math.max(8, (b.y1 - b.y0) * P.zoom) + 'px' });
     hoverbox.title = b.id;
-    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · verified' : ''} — click to check it`;
+    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · done, two people agreed on every letter' : `${b.mine ? ' · you worked on this one' : ''} — click to check it`}`;
   }
   function drawBox() {
     const b = P.box;
@@ -563,6 +577,7 @@
     P.pan = null;
     if (clicked && !P.boxing) {
       const b = hit(pagePoint(e));
+      if (b && b.done) { $('p-status').textContent = `${b.id} is done: two people agreed on every letter. Pick a word without a green box.`; return; }
       if (b) {
         const open = [...b.reading.keys()].find(i => (b.verified || '')[i] !== '1');
         L.word = null;
