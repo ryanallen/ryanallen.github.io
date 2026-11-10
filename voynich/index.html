@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=eaf0cfb420">
+<link rel="stylesheet" href="style.css?v=cbaa44b947">
 </head>
 <body>
 <header>
@@ -38,11 +38,12 @@
     <button id="erase" title="Erase this letter's pixels (E)">Erase</button>
     <span class="group"><button id="zoomout" title="Zoom out (-)">−</button><button id="fit" title="Fit">Fit</button><button id="zoomin" title="Zoom in (+)">+</button></span>
     <button id="hide" title="Hide the tracing (hold H)">Hide</button>
+    <span class="group" id="uv-group" hidden><button id="uv" title="This page has 2014 UV scans: show one under the tracing (tap Shift)">UV</button><select id="uv-kind" title="Which UV scan"></select></span>
     <button id="move" title="Drag to move instead of painting (or hold Space)">Move</button>
     <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
     <a id="to-page" href="#">See the page</a>
   </div>
-  <div id="ring"></div><main class="stage" id="word-stage"><div class="layer" id="word-layer"><img id="crop" alt="" crossorigin="anonymous" draggable="false"><canvas id="paint"></canvas></div></main>
+  <div id="ring"></div><main class="stage" id="word-stage"><div class="layer" id="word-layer"><img id="crop" alt="" crossorigin="anonymous" draggable="false"><canvas id="uvcrop" hidden></canvas><canvas id="paint"></canvas></div></main>
   <aside id="side">
     <div><b>Versions of this letter</b> <span class="hint">click one to start from it</span><div id="versions" class="strip"></div></div>
     <div><b>Examples of <span id="example-name"></span></b> <span class="hint">traced on other pages</span><div id="examples" class="strip"></div></div>
@@ -59,6 +60,7 @@
     <a id="prev-page" href="#">← Previous</a><b id="page-name"></b><a id="next-page" href="#">Next →</a>
     <span class="group"><button id="p-zoomout">−</button><button id="p-fit">Fit</button><button id="p-zoomin">+</button></span>
     <button id="p-hide" title="Hide the tracings (hold H)">Hide tracings</button>
+    <span class="group" id="p-uv-group" hidden><button id="p-uv" title="This page has 2014 UV scans: show one under the tracings (tap Shift)">UV</button><select id="p-uv-kind" title="Which UV scan"></select></span>
     <button id="p-add" title="Draw a box round a word with no tracing (B)">+ Add a missing word</button>
     <span id="p-status" class="hint">Click a word to check its letters. Drag to move.</span>
   </div>
@@ -89,6 +91,6 @@
   <p class="hint">Your work is tied to this browser. To trace from another device and keep one credit, open this link there: <a id="credit-link" href="#"></a></p>
   <div class="row"><button id="credit-save" class="primary">Save</button> <button id="credit-close">Close</button></div>
 </dialog>
-<script src="app.js?v=eaf0cfb420"></script>
+<script src="app.js?v=cbaa44b947"></script>
 </body>
 </html>

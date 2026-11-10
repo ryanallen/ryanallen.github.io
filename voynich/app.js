@@ -219,6 +219,7 @@
     if (sameWord) L.changed = false;
     $('to-page').href = `#/p/${word.page}`;
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]);
+    if (!sameWord) wordUV();
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
 
@@ -435,6 +436,7 @@
       P.words.push({ ...box, id: w.id, reading: w.reading, verified: w.verified, done: w.done });
     }
     fitPage();
+    pageUV();
     const missing = untraced.length;
     $('p-status').textContent = `${data.words.length} words traced${missing ? `, ${missing} missing — add them with "+ Add a missing word"` : ''}. Click a word to check its letters.`;
   }
@@ -594,6 +596,81 @@
     }
   }
 
+  // ---- the UV scans -------------------------------------------------------
+  // The pages with 2014 multispectral scans carry "uv": {kind: label} in pages.json,
+  // their views in data/uv/<page>-<kind>.jpg in the Yale image's pixels, and each
+  // word's small shift onto them in data/uv/<page>.json (null: the scan misses it).
+  // Every other page shows no UV control at all.
+  const UV = { on: store.get('voynich-uv') === '1', kind: store.get('voynich-uv-kind') || 'glow', images: {}, shifts: {} };
+  const uvImage = (page, kind) => UV.images[page + kind] || (UV.images[page + kind] = loadImage(`data/uv/${page}-${kind}.jpg`));
+  const uvShifts = page => UV.shifts[page] || (UV.shifts[page] = getJSON(`data/uv/${page}.json`).catch(() => ({})));
+  const uvKinds = async page => ((await pages()).find(p => p.page === page) || {}).uv || null;
+  function uvControls(group, button, select, kinds) {
+    $(group).hidden = !kinds;
+    if (!kinds) return;
+    if (!kinds[UV.kind]) UV.kind = Object.keys(kinds)[0];
+    const sel = $(select);
+    if (sel.dataset.kinds !== Object.keys(kinds).join()) {
+      sel.replaceChildren(...Object.entries(kinds).map(([k, label]) => { const o = document.createElement('option'); o.value = k; o.textContent = label; return o; }));
+      sel.dataset.kinds = Object.keys(kinds).join();
+    }
+    sel.value = UV.kind;
+    $(button).classList.toggle('on', UV.on);
+  }
+  async function wordUV() {
+    const word = L.word, layer = $('uvcrop');
+    if (!word) return;
+    const kinds = await uvKinds(word.page);
+    const shift = kinds ? (await uvShifts(word.page))[word.id] : null;
+    const usable = kinds && shift !== null ? kinds : null;  // a word the scan misses, or a page with none
+    if (L.word !== word) return;
+    uvControls('uv-group', 'uv', 'uv-kind', usable);
+    if (!usable || !UV.on) { layer.hidden = true; return; }
+    const [dx, dy] = shift || [0, 0];
+    const kind = UV.kind;
+    const img = await uvImage(word.page, kind).catch(() => null);
+    if (L.word !== word || UV.kind !== kind || !UV.on) return;
+    if (!img) { layer.hidden = true; say('The UV scan did not load', true); return; }
+    layer.width = word.w; layer.height = word.h;
+    const g = layer.getContext('2d');
+    g.fillStyle = '#282828';
+    g.fillRect(0, 0, word.w, word.h);
+    g.drawImage(img, word.x - dx, word.y - dy, word.w, word.h, 0, 0, word.w, word.h);
+    layer.hidden = false;
+  }
+  async function pageUV() {
+    const info = P.info;
+    if (!info) return;
+    const kinds = info.uv && info.images.length === 1 ? info.uv : null;
+    uvControls('p-uv-group', 'p-uv', 'p-uv-kind', kinds);
+    const img = player.querySelector('img');
+    if (!img) return;
+    if (!img.dataset.yale) img.dataset.yale = img.src;
+    const want = kinds && UV.on ? `data/uv/${info.page}-${UV.kind}.jpg` : img.dataset.yale;
+    if (img.getAttribute('src') !== want) img.src = want;
+  }
+  function refreshUV() {
+    store.set('voynich-uv', UV.on ? '1' : '0');
+    store.set('voynich-uv-kind', UV.kind);
+    if (!$('letter-view').hidden) wordUV();
+    if (!$('page-view').hidden) pageUV();
+  }
+  const toggleUV = () => { UV.on = !UV.on; refreshUV(); };
+  $('uv').onclick = toggleUV;
+  $('p-uv').onclick = toggleUV;
+  for (const id of ['uv-kind', 'p-uv-kind']) $(id).onchange = e => { UV.kind = e.target.value; UV.on = true; e.target.blur(); refreshUV(); };
+  // a tap of Shift on its own, as in Glyph Painter, shows or hides the UV scan where there is one
+  let shiftTap = false;
+  document.addEventListener('keydown', e => { shiftTap = e.key === 'Shift' && !e.repeat; }, true);
+  document.addEventListener('pointerdown', () => { shiftTap = false; }, true);
+  document.addEventListener('keyup', e => {
+    if (e.key !== 'Shift' || !shiftTap) return;
+    shiftTap = false;
+    if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName) || $('help').open || $('credit').open) return;
+    const group = !$('letter-view').hidden ? 'uv-group' : !$('page-view').hidden ? 'p-uv-group' : null;
+    if (group && !$(group).hidden) toggleUV();
+  }, true);
+
   // ---- keys and routes ----------------------------------------------------
   document.addEventListener('keydown', e => {
     if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT' || $('help').open) return;
@@ -656,9 +733,17 @@
   const creditLink = `${location.origin}${location.pathname}#t=${tracer}`;
   $('credit-link').textContent = creditLink;
   $('credit-link').href = creditLink;
+  // The header says the name the Worker holds, so a visitor sees at once if it was lost.
+  function showCredit(name) {
+    $('credit-open').textContent = name ? `Credited as ${name}` : 'Get credited';
+    $('credit-open').title = name ? 'Change or remove your name for the credits' : 'Leave a name for the credits';
+  }
+  showCredit(store.get('voynich-credit') || '');
+  getJSON(`${API}/api/name?tracer=${tracer}`).then(r => { store.set('voynich-credit', r.name || null); showCredit(r.name); }).catch(() => {});
   $('credit-open').onclick = async () => {
     $('credit-status').textContent = '';
     $('credit-status').className = 'hint';
+    $('credit-name').value = store.get('voynich-credit') || '';
     $('credit').showModal();
     try { $('credit-name').value = (await getJSON(`${API}/api/name?tracer=${tracer}`)).name; } catch { /* leave it as typed */ }
   };
@@ -672,6 +757,8 @@
       if (!r.ok) throw new Error(j.error || r.status);
       $('credit-status').className = 'hint';
       $('credit-status').textContent = name ? `Saved. You'll be credited as ${j.name}.` : 'Saved. You stay anonymous.';
+      store.set('voynich-credit', j.name || null);
+      showCredit(j.name);
     } catch (e) {
       $('credit-status').className = 'hint bad';
       $('credit-status').textContent = `Not saved: ${e.message}`;
