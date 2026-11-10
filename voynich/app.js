@@ -611,7 +611,8 @@
     if (!kinds[UV.kind]) UV.kind = Object.keys(kinds)[0];
     const sel = $(select);
     if (sel.dataset.kinds !== Object.keys(kinds).join()) {
-      sel.replaceChildren(...Object.entries(kinds).map(([k, label]) => { const o = document.createElement('option'); o.value = k; o.textContent = label; return o; }));
+      // glow first: an object puts the key "365" before "glow"
+      sel.replaceChildren(...Object.entries(kinds).sort(([a], [b]) => (a !== 'glow') - (b !== 'glow')).map(([k, label]) => { const o = document.createElement('option'); o.value = k; o.textContent = label; return o; }));
       sel.dataset.kinds = Object.keys(kinds).join();
     }
     sel.value = UV.kind;
