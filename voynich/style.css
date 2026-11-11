@@ -8,6 +8,10 @@ a{color:#dbe3ec}
 header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:5px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
 h1{font-size:16px;margin:0}h1 a{text-decoration:none;color:var(--text)}
 #stats{color:var(--muted);font-size:12px}
+#book-meter{display:inline-flex;align-items:center;gap:6px;font-size:12px}#book-meter[hidden]{display:none}
+#book-meter .track{display:block;width:160px;height:8px;border-radius:4px;background:#2a2f37;overflow:hidden}
+#book-bar{display:block;height:100%;width:0;background:#4fbf72}
+#book-pct{color:#7fd89a}
 header nav{margin-left:auto;display:flex;gap:12px;align-items:center}
 .bar{display:flex;gap:5px;flex-wrap:wrap;align-items:center;padding:4px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
 .group{display:inline-flex;gap:3px;align-items:center;color:var(--muted)}

@@ -48,11 +48,21 @@
     for (const v of ['letter-view', 'page-view', 'pages-view']) $(v).hidden = v !== name;
   }
 
+  // The whole book's progress in the header: a bar of letters verified, from the
+  // page counts, and the count of versions people have saved.
   async function stats() {
-    try {
-      const s = await getJSON(API + '/api/stats');
-      $('stats').textContent = `${(s.letters || 0).toLocaleString()} letters verified · ${(s.done || 0).toLocaleString()} words · ${(s.tracings || 0).toLocaleString()} versions so far`;
-    } catch { /* a nicety */ }
+    const n = x => (x || 0).toLocaleString();
+    const [prog, s] = await Promise.all([getJSON(API + '/api/progress').catch(() => null), getJSON(API + '/api/stats').catch(() => ({}))]);
+    if (!prog) return;
+    let words = 0, done = 0, worked = 0, letters = 0, total = 0;
+    for (const p of Object.values(prog)) { words += p.words; done += p.done; worked += p.worked; letters += p.letters; total += p.total || 0; }
+    if (!total) return;
+    const share = letters / total;
+    $('book-meter').hidden = false;
+    $('book-bar').style.width = `${letters ? Math.max(share * 100, 0.5) : 0}%`;
+    $('book-pct').textContent = `${(share * 100).toFixed(share && share < 0.1 ? 2 : 1)}% done`;
+    $('stats').textContent = `${n(letters)} of ${n(total)} letters verified · ${n(done)} of ${n(words)} words done · ${n(worked)} words worked on · ${n(s.tracings)} versions saved`;
+    $('book-meter').title = `${n(letters)} of ${n(total)} letters verified by two people`;
   }
 
   // ---- the letter task ----------------------------------------------------
