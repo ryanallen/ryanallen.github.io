@@ -443,7 +443,11 @@
     for (const im of info.images) {
       const img = document.createElement('img');
       img.crossOrigin = 'anonymous';
-      img.src = `${im.iiif}/full/${Math.round(im.w * P.scale)},/0/default.jpg`;
+      // a small scan first, which Yale sends in half a second, then the sharp one in its place
+      const sharp = `${im.iiif}/full/${Math.round(im.w * P.scale)},/0/default.jpg`;
+      const preview = `${im.iiif}/full/600,/0/default.jpg`;
+      img.src = preview; img.dataset.yale = sharp;
+      loadImage(sharp).then(() => { if (img.isConnected && img.getAttribute('src') === preview) img.src = sharp; }).catch(() => {});
       img.dataset.offset = im.offset; img.dataset.w = im.w; img.dataset.h = im.h;
       player.insertBefore(img, ptrace);
     }
@@ -732,8 +736,10 @@
     const img = player.querySelector('img');
     if (!img) return;
     if (!img.dataset.yale) img.dataset.yale = img.src;
-    const want = kinds && UV.on ? `data/uv/${info.page}-${UV.kind}.jpg` : img.dataset.yale;
-    if (img.getAttribute('src') !== want) img.src = want;
+    // Yale's scan, small or sharp, stays as it is unless a UV view is on or coming off
+    const src = img.getAttribute('src');
+    if (kinds && UV.on) { const want = `data/uv/${info.page}-${UV.kind}.jpg`; if (src !== want) img.src = want; }
+    else if (src.startsWith('data/uv/')) img.src = img.dataset.yale;
   }
   function refreshUV() {
     store.set('voynich-uv', UV.on ? '1' : '0');
