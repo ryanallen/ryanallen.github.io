@@ -46,8 +46,9 @@
   }
 
   let pagesData = null, examplesData = null;
-  const pages = async () => pagesData || (pagesData = await getJSON('data/pages.json'));
-  const examples = async () => examplesData || (examplesData = await getJSON('data/examples.json'));
+  // the promise is kept, so callers at the same moment share one download
+  const pages = () => pagesData || (pagesData = getJSON('data/pages.json').catch(e => { pagesData = null; throw e; }));
+  const examples = () => examplesData || (examplesData = getJSON('data/examples.json').catch(e => { examplesData = null; throw e; }));
 
   function views(name) {
     for (const v of ['letter-view', 'page-view', 'pages-view']) $(v).hidden = v !== name;
@@ -411,12 +412,17 @@
   // too, so the next word opens at once. Kept a minute at most.
   let ahead = null;
   const wordAhead = new Map();
-  function askNext(skip) { return getJSON(`${API}/api/next?tracer=${tracer}&skip=${skip.slice(-50).join(',')}`); }
+  function askNext(skip) {
+    return getJSON(`${API}/api/next?tracer=${tracer}&with=word&skip=${skip.slice(-50).join(',')}`).then(j => {
+      if (j.data) { wordAhead.set(j.word, { data: j.data, at: Date.now() }); const w = j.data.word; loadImage(cropURL(w.iiif, w.x, w.y, w.w, w.h)).catch(() => {}); }
+      return j;
+    });
+  }
   function fetchAhead() {
     if (!L.word) return;
     const current = L.word.id;
     const p = askNext([...skipped, current]).then(async j => {
-      if (!j.word || j.word === current) return j;
+      if (!j.word || j.word === current || j.data) return j;
       const data = await getJSON(`${API}/api/word/${encodeURIComponent(j.word)}?tracer=${tracer}`);
       wordAhead.set(j.word, { data, at: Date.now() });
       const w = data.word;
