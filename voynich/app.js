@@ -48,21 +48,26 @@
     for (const v of ['letter-view', 'page-view', 'pages-view']) $(v).hidden = v !== name;
   }
 
-  // The whole book's progress in the header: a bar of letters verified, from the
-  // page counts, and the count of versions people have saved.
+  // The whole book's progress under the header: the letters people have checked,
+  // filling toward the next goal so the bar moves with every few letters.
+  const GOALS = [50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000];
   async function stats() {
     const n = x => (x || 0).toLocaleString();
-    const [prog, s] = await Promise.all([getJSON(API + '/api/progress').catch(() => null), getJSON(API + '/api/stats').catch(() => ({}))]);
+    const prog = await getJSON(API + '/api/progress').catch(() => null);
     if (!prog) return;
-    let words = 0, done = 0, worked = 0, letters = 0, total = 0;
-    for (const p of Object.values(prog)) { words += p.words; done += p.done; worked += p.worked; letters += p.letters; total += p.total || 0; }
+    let checked = 0, total = 0, worked = 0, letters = 0;
+    for (const p of Object.values(prog)) { checked += p.checked || 0; total += p.total || 0; worked += p.worked; letters += p.letters; }
     if (!total) return;
-    const share = letters / total;
-    $('book-meter').hidden = false;
-    $('book-bar').style.width = `${letters ? Math.max(share * 100, 0.5) : 0}%`;
-    $('book-pct').textContent = `${(share * 100).toFixed(share && share < 0.1 ? 2 : 1)}% done`;
-    $('stats').textContent = `${n(letters)} of ${n(total)} letters verified · ${n(done)} of ${n(words)} words done · ${n(worked)} words worked on · ${n(s.tracings)} versions saved`;
-    $('book-meter').title = `${n(letters)} of ${n(total)} letters verified by two people`;
+    const goals = [...GOALS.filter(g => g < total), total];
+    const at = goals.findIndex(g => checked < g), goal = at < 0 ? total : goals[at], from = at > 0 ? goals[at - 1] : 0;
+    $('book').hidden = false;
+    $('book-count').textContent = n(checked);
+    $('book-goal').innerHTML = at < 0 ? 'Every letter checked!'
+      : `<b>${n(goal - checked)}</b> to go to ${n(goal)}${goal === total ? ', the whole book' : ''}`;
+    $('book-steps').textContent = `Goal ${at < 0 ? goals.length : at + 1} of ${goals.length}`;
+    $('book-reached').textContent = from ? `${n(from)} reached` : '';
+    requestAnimationFrame(() => { $('book-bar').style.width = `${Math.min(100, checked / goal * 100)}%`; });
+    $('stats').textContent = `${n(worked)} words worked on · ${n(letters)} letters verified by two people · ${(checked / total * 100).toFixed(2)}% of the book's ${n(total)} letters checked`;
   }
 
   // ---- the letter task ----------------------------------------------------

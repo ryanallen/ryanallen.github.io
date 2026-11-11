@@ -17,15 +17,18 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=00ec66a0dc">
+<link rel="stylesheet" href="style.css?v=0a4db707d2">
 </head>
 <body>
 <header>
   <h1><a href="#/">Trace the Voynich</a></h1>
-  <span id="book-meter" hidden><span class="track"><span id="book-bar"></span></span><b id="book-pct"></b></span>
-  <span id="stats"></span>
   <nav><a href="#/">Next letter</a><a href="#/pages">Pages</a><button id="help-open" class="link">How it works</button><button id="credit-open" class="link">Get credited</button></nav>
 </header>
+<div id="book" hidden>
+  <div class="book-head"><span><b id="book-count"></b> letters checked by people</span><span id="book-goal"></span></div>
+  <div class="book-track"><div id="book-bar"></div><span id="book-reached"></span><span id="book-steps"></span></div>
+  <div id="stats"></div>
+</div>
 
 <section id="letter-view" hidden>
   <div class="bar" id="ask">
@@ -92,6 +95,6 @@
   <p class="hint">Your work is tied to this browser. To trace from another device and keep one credit, open this link there: <a id="credit-link" href="#"></a></p>
   <div class="row"><button id="credit-save" class="primary">Save</button> <button id="credit-close">Close</button></div>
 </dialog>
-<script src="app.js?v=00ec66a0dc"></script>
+<script src="app.js?v=0a4db707d2"></script>
 </body>
 </html>
