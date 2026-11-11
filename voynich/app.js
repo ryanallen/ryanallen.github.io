@@ -9,6 +9,11 @@
   const NEW_MARGIN = 30;
   const $ = id => document.getElementById(id);
   const color = k => COLORS[(k - 1) % COLORS.length];
+  // a letter's color as one 32-bit pixel (canvas bytes are r, g, b, a in memory), so a
+  // whole tracing is filled with plain integer writes instead of an array a pixel
+  const LITTLE = new Uint8Array(new Uint32Array([1]).buffer)[0] === 1;
+  const packed = (c, a) => LITTLE ? ((a << 24) | (c[2] << 16) | (c[1] << 8) | c[0]) >>> 0 : ((c[0] << 24) | (c[1] << 16) | (c[2] << 8) | a) >>> 0;
+  const pixel = (k, a) => packed(color(k), a);
 
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch { return null; } },
@@ -51,9 +56,18 @@
   // The whole book's progress under the header: the letters people have checked,
   // filling toward the next goal so the bar moves with every few letters.
   const GOALS = [50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000];
+  // /api/progress is asked for once and shared by the header and the page list for 30 seconds
+  let progressAsk = null, progressAt = 0;
+  function progressData() {
+    if (!progressAsk || Date.now() - progressAt > 30000) {
+      progressAt = Date.now();
+      progressAsk = getJSON(API + '/api/progress').catch(e => { progressAsk = null; throw e; });
+    }
+    return progressAsk;
+  }
   async function stats() {
     const n = x => (x || 0).toLocaleString();
-    const prog = await getJSON(API + '/api/progress').catch(() => null);
+    const prog = await progressData().catch(() => null);
     if (!prog) return;
     let checked = 0, total = 0, worked = 0, letters = 0;
     for (const p of Object.values(prog)) { checked += p.checked || 0; total += p.total || 0; worked += p.worked; letters += p.letters; }
@@ -77,19 +91,25 @@
 
   function say(text, bad = false) { $('status').textContent = text; $('status').classList.toggle('bad', bad); }
 
-  function drawWord() {
+  // The word's tracing, drawn at most once a frame however fast the pointer moves.
+  let wordImage = null, wordFrame = 0;
+  function drawWordNow() {
+    wordFrame = 0;
     const { word, labels, k } = L;
-    const img = pg.createImageData(word.w, word.h);
+    if (!wordImage || wordImage.width !== word.w || wordImage.height !== word.h) wordImage = pg.createImageData(word.w, word.h);
+    const px = new Uint32Array(wordImage.data.buffer);
+    px.fill(0);
     if (!L.hidden) {
+      const bright = pixel(k, 215), faint = [];
       for (let i = 0; i < labels.length; i++) {
         const v = labels[i];
         if (!v) continue;
-        const c = color(v);
-        img.data.set(v === k ? [c[0], c[1], c[2], 215] : [c[0], c[1], c[2], 45], i * 4);
+        px[i] = v === k ? bright : (faint[v] || (faint[v] = pixel(v, 45)));
       }
     }
-    pg.putImageData(img, 0, 0);
+    pg.putImageData(wordImage, 0, 0);
   }
+  function drawWord() { if (!wordFrame) wordFrame = requestAnimationFrame(drawWordNow); }
   function sizeWord() { wlayer.style.width = L.word.w * L.zoom + 'px'; wlayer.style.height = L.word.h * L.zoom + 'px'; }
   function fitWord() {
     L.zoom = Math.max(0.5, Math.min(10, (wstage.clientWidth - 20) / L.word.w, (wstage.clientHeight - 20) / L.word.h));
@@ -149,7 +169,8 @@
         const g = cv.getContext('2d');
         g.drawImage(img, 0, 0);
         const d = g.getImageData(0, 0, e.w, e.h);
-        for (let i = 0; i < grid.length; i++) if (grid[i]) d.data.set([230, 25, 75, 255], i * 4);
+        const px = new Uint32Array(d.data.buffer), red = packed([230, 25, 75], 255);
+        for (let i = 0; i < grid.length; i++) if (grid[i]) px[i] = red;
         g.putImageData(d, 0, 0);
         cv.style.width = Math.round(64 * e.w / e.h) + 'px';
       }).catch(() => {});
@@ -173,7 +194,8 @@
       const paintIt = () => {
         g.drawImage(crop, 0, 0);
         const d = g.getImageData(0, 0, L.word.w, L.word.h);
-        for (let i = 0; i < v.labels.length; i++) if (v.labels[i] === k) d.data.set([...color(k), 255], i * 4);
+        const px = new Uint32Array(d.data.buffer), c = pixel(k, 255);
+        for (let i = 0; i < v.labels.length; i++) if (v.labels[i] === k) px[i] = c;
         g.putImageData(d, 0, 0);
       };
       crop.complete && crop.naturalWidth ? paintIt() : crop.addEventListener('load', paintIt, { once: true });
@@ -204,11 +226,11 @@
     }
     const word = data.word;
     L.add = pending && !data.versions.length ? pending.add : null;
-    const ai = await inflate(word.ai);
+    const [ai, ...grids] = await Promise.all([word.ai, ...data.versions.map(v => v.labels)].map(inflate));
     const versions = [{ label: word.kind === 'new' ? 'Added' : 'Computer', labels: ai, reading: word.reading, checked: [] }];
     let mine = null, n = 0;
-    for (const v of data.versions) {
-      const labels = await inflate(v.labels);
+    for (const [j, v] of data.versions.entries()) {
+      const labels = grids[j];
       const item = { label: v.mine ? 'Yours' : `Person ${++n}`, labels, reading: v.reading, checked: v.checked };
       if (v.mine) mine = item;
       versions.push(item);
@@ -414,6 +436,7 @@
     $('prev-page').href = i ? `#/p/${list[i - 1].page}` : '#/pages';
     $('next-page').href = i + 1 < list.length ? `#/p/${list[i + 1].page}` : '#/pages';
     $('p-status').textContent = 'Loading the page…';
+    const load = P.load = (P.load || 0) + 1;
     P.page = page; P.info = info;
     P.scale = Math.min(1, 2400 / info.width);
     player.querySelectorAll('img').forEach(i => i.remove());
@@ -424,35 +447,45 @@
       img.dataset.offset = im.offset; img.dataset.w = im.w; img.dataset.h = im.h;
       player.insertBefore(img, ptrace);
     }
-    const [data, untraced] = await Promise.all([getJSON(`${API}/api/page/${page}?tracer=${tracer}`), getJSON(`data/untraced/${page}.json`).catch(() => [])]);
+    const [data, own, untraced] = await Promise.all([getJSON(`${API}/api/page/${page}`),
+      getJSON(`${API}/api/mine/${page}?tracer=${tracer}`).catch(() => ({ mine: {}, latest: {} })), getJSON(`data/untraced/${page}.json`).catch(() => [])]);
+    for (const w of data.words) { w.mine = own.mine[w.id]; w.latest = own.latest[w.id]; }
+    const grids = await Promise.all(data.words.map(w => inflate(w.mine || w.latest || w.ai)));
+    if (load !== P.load) return;  // another page was opened while this one loaded
     P.untraced = untraced;
     ptrace.width = Math.round(info.width * P.scale); ptrace.height = Math.round(info.height * P.scale);
     const g = ptrace.getContext('2d');
     g.clearRect(0, 0, ptrace.width, ptrace.height);
     P.words = [];
-    const tmp = document.createElement('canvas'), tg = tmp.getContext('2d');
-    for (const w of data.words) {
+    // every word's pixels written into one image the size of the page, then drawn once:
+    // a word's crop is mostly margin, so only its inked pixels are touched
+    const W = info.width, H = info.height;
+    const sheet = new ImageData(W, H), out = new Uint32Array(sheet.data.buffer);
+    const alpha = [];
+    for (const [j, w] of data.words.entries()) {
       // your own version where you have one, else the latest for a word someone added, else the computer's
-      const grid = await inflate(w.mine || w.latest || w.ai);
+      const grid = grids[j];
       const im = info.images.find(m => m.iiif === w.iiif) || info.images[0];
       const px = w.x + im.offset;
       let x0 = 1e9, y0 = 1e9, x1 = -1, y1 = -1;
-      tmp.width = w.w; tmp.height = w.h;
-      const d = tg.createImageData(w.w, w.h);
-      for (let i = 0; i < grid.length; i++) {
-        const v = grid[i];
-        if (!v) continue;
-        const x = i % w.w, y = (i / w.w) | 0;
-        if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
-        d.data.set([...color(v), 190], i * 4);
+      for (let y = 0, i = 0; y < w.h; y++) {
+        const row = (w.y + y) * W + px;
+        for (let x = 0; x < w.w; x++, i++) {
+          const v = grid[i];
+          if (!v) continue;
+          if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+          if (w.y + y < H && px + x < W) out[row + x] = alpha[v] || (alpha[v] = pixel(v, 190));
+        }
       }
-      tg.putImageData(d, 0, 0);
-      g.imageSmoothingEnabled = false;
-      g.drawImage(tmp, px * P.scale, w.y * P.scale, w.w * P.scale, w.h * P.scale);
       const box = x1 >= 0 ? { x0: px + x0, y0: w.y + y0, x1: px + x1 + 1, y1: w.y + y1 + 1 }
         : w.box ? { x0: w.box[0], y0: w.box[1], x1: w.box[2], y1: w.box[3] } : { x0: px, y0: w.y, x1: px + w.w, y1: w.y + w.h };
       P.words.push({ ...box, id: w.id, reading: w.reading, verified: w.verified, done: w.done, mine: !!w.mine });
     }
+    const tmp = document.createElement('canvas');
+    tmp.width = W; tmp.height = H;
+    tmp.getContext('2d').putImageData(sheet, 0, 0);
+    g.imageSmoothingEnabled = false;
+    g.drawImage(tmp, 0, 0, ptrace.width, ptrace.height);
     // done words under a see-through green box, so nobody spends time on them; your words outlined in gold
     for (const b of P.words) {
       if (!b.done && !b.mine) continue;
@@ -629,7 +662,7 @@
     }
     // how far each page has got, from the Worker; a page list without it still works
     let prog;
-    try { prog = await getJSON(API + '/api/progress'); } catch { return; }
+    try { prog = await progressData(); } catch { return; }
     let started = 0, finished = 0;
     for (const a of box.children) {
       const p = prog[a.dataset.page];
