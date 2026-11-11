@@ -57,22 +57,35 @@
   // The whole book's progress under the header: the letters people have checked,
   // filling toward the next goal so the bar moves with every few letters.
   const GOALS = [50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000];
-  // /api/progress is asked for once and shared by the header and the page list for 30 seconds
+  // /api/progress is asked for once and shared by the header and the page list for 10 seconds
   let progressAsk = null, progressAt = 0;
   function progressData() {
-    if (!progressAsk || Date.now() - progressAt > 30000) {
+    if (!progressAsk || Date.now() - progressAt > 10000) {
       progressAt = Date.now();
       progressAsk = getJSON(API + '/api/progress').catch(e => { progressAsk = null; throw e; });
     }
     return progressAsk;
   }
+  // Letters this visitor checks first are added to the bar at once. A count fetched after
+  // a check already holds it, so only checks made since the last fetch began are added.
+  const book = { checked: 0, total: 0, worked: 0, letters: 0, at: 0 };
+  let bumps = [];
+  function bump() { bumps.push(Date.now()); drawBook(); }
   async function stats() {
-    const n = x => (x || 0).toLocaleString();
+    const at = Date.now();
     const prog = await progressData().catch(() => null);
     if (!prog) return;
     let checked = 0, total = 0, worked = 0, letters = 0;
     for (const p of Object.values(prog)) { checked += p.checked || 0; total += p.total || 0; worked += p.worked; letters += p.letters; }
     if (!total) return;
+    Object.assign(book, { checked, total, worked, letters, at: Math.min(at, progressAt) });
+    drawBook();
+  }
+  function drawBook() {
+    if (!book.total) return;
+    bumps = bumps.filter(t => t >= book.at);
+    const n = x => (x || 0).toLocaleString();
+    const { total, worked, letters } = book, checked = Math.min(total, book.checked + bumps.length);
     const goals = [...GOALS.filter(g => g < total), total];
     const at = goals.findIndex(g => checked < g), goal = at < 0 ? total : goals[at], from = at > 0 ? goals[at - 1] : 0;
     $('book').hidden = false;
@@ -398,6 +411,8 @@
   }
 
   async function goNext() {
+    // the first check of this letter by anyone moves the book's bar now
+    if (!L.checked.includes(L.k) && !L.versions.some(v => v.checked && v.checked.includes(L.k))) bump();
     if (!L.checked.includes(L.k)) L.checked.push(L.k);
     L.dirty = true;
     save();
@@ -716,7 +731,7 @@
   // ---- the page list ------------------------------------------------------
   async function openPages() {
     views('pages-view');
-    await save();
+    save();
     const list = await pages();
     const box = $('page-list');
     if (!box.childElementCount) {
