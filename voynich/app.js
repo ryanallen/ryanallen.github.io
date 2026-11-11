@@ -163,13 +163,13 @@
     const c = color(L.k);
     $('ask-text').innerHTML = `Letter ${L.k} of ${L.reading.length} in <span class="hint">${L.reading.map((n, i) => i + 1 === L.k ? `<b style="color:rgb(${c})">${n}</b>` : n).join(' ')}</span> — color its ink`;
     $('where').textContent = `${L.word.id}${(L.word.verified || '')[L.k - 1] === '1' ? ' · this letter is verified' : ''}`;
-    // the stack buttons name the letter each would join, and stand greyed where there is none
-    const before = L.reading[L.k - 2], after = L.reading[L.k];
-    $('stack-left').textContent = before ? `← Stack with ${before}` : '← Stack';
-    $('stack-left').disabled = !before;
-    $('stack-right').textContent = after ? `Stack with ${after} →` : 'Stack →';
-    $('stack-right').disabled = !after;
-    $('unstack-letter').disabled = !L.reading[L.k - 1].includes('+');
+    // one Stack menu: the letters this one can join, by name, and Unstack when it is stacked
+    const before = L.reading[L.k - 2], after = L.reading[L.k], menu = $('stack');
+    menu.replaceChildren(new Option('Stack', ''));
+    if (before) menu.append(new Option(`with ${before} (before)`, 'left'));
+    if (after) menu.append(new Option(`with ${after} (after)`, 'right'));
+    if (L.reading[L.k - 1].includes('+')) menu.append(new Option('Unstack', 'unstack'));
+    menu.value = '';
   }
 
   async function examplesFor(name) {
@@ -525,9 +525,15 @@
     const to = `#/w/${L.word.id}/${a}`;
     if (location.hash === to) openLetter(L.word.id, a); else location.hash = to;
   }
-  $('stack-left').onclick = () => { if (L.k > 1) stackAt(L.k - 1); else say('This is the first letter: there is none before it to stack with', true); };
-  $('stack-right').onclick = () => { if (L.k < L.reading.length) stackAt(L.k); else say('This is the last letter: there is none after it to stack with', true); };
-  $('unstack-letter').onclick = () => {
+  $('stack').onchange = () => {
+    const pick = $('stack').value;
+    $('stack').value = '';
+    $('stack').blur();
+    if (pick === 'left' && L.k > 1) stackAt(L.k - 1);
+    else if (pick === 'right' && L.k < L.reading.length) stackAt(L.k);
+    else if (pick === 'unstack') unstack();
+  };
+  function unstack() {
     const name = L.reading[L.k - 1], parts = name.split('+'), add = parts.length - 1;
     if (!add) { say('This letter is not stacked', true); return; }
     if (L.reading.length + add > 20) { say('A word holds at most 20 letters', true); return; }
@@ -547,7 +553,7 @@
     const to = `#/w/${L.word.id}/${L.k}`;
     if (location.hash === to) openLetter(L.word.id, L.k); else location.hash = to;
     if (!memo) say(`No record of which ink was whose here, so it all stays on ${parts[0]}: paint ${parts.slice(1).join(' and ')} again`, true);
-  };
+  }
   $('add-letter').onclick = () => {
     if (L.reading.length >= 20) return;
     L.undo.push(L.labels.slice());
