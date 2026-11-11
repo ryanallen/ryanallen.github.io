@@ -216,10 +216,14 @@
 
   async function openLetter(id, k) {
     views('letter-view');
-    say('Loading…');
-    await save();
+    const sameWord = L.word && L.word.id === id;
+    const load = L.load = (L.load || 0) + 1;
+    if (!sameWord) say('Loading…');
+    save();
     let data;
     const pending = JSON.parse(sessionStorage.getItem('voynich-add:' + id) || 'null');
+    // the next letter of the word already open needs nothing new from the server
+    if (sameWord && L.versions.length) return showLetter(k, true);
     try { data = await getJSON(`${API}/api/word/${encodeURIComponent(id)}?tracer=${tracer}`); } catch (e) {
       if (!pending) { say('Could not open that word: ' + e.message, true); return; }
       data = { word: pending.word, versions: [] };
@@ -235,7 +239,7 @@
       if (v.mine) mine = item;
       versions.push(item);
     }
-    const sameWord = L.word && L.word.id === id;
+    if (load !== L.load) return;  // another letter was opened while this one loaded
     L.word = word;
     L.versions = versions;
     if (!sameWord) {
@@ -253,6 +257,10 @@
       fitWord();
       if (draft) { L.dirty = true; L.timer = setTimeout(save, 2000); }
     }
+    showLetter(k, sameWord);
+  }
+  function showLetter(k, sameWord) {
+    const word = L.word;
     L.k = Math.max(1, Math.min(k, L.reading.length));
     if (sameWord) L.changed = false;
     $('to-page').href = `#/p/${word.page}`;
@@ -334,36 +342,62 @@
     L.timer = setTimeout(save, 2000);
   }
 
+  // Saves go out in the background, one waiting save per word, newest wins; a save the
+  // network drops is tried again, so nobody waits on the server to move to the next letter.
+  const outbox = new Map();
+  let retry = 0;
+  async function send(id) {
+    const job = outbox.get(id);
+    if (!job || job.sending) return job && job.sending;
+    const { body, word } = job;
+    job.sending = (async () => {
+      try {
+        const text = JSON.stringify(body);  // keepalive lets a save finish after the tab closes, for bodies under 64 KB
+        const r = await fetch(API + '/api/trace', { method: 'POST', headers: { 'content-type': 'text/plain;charset=UTF-8' }, body: text, keepalive: text.length < 60000 });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok) {
+          if (outbox.get(id) === job) { outbox.delete(id); store.set('voynich-draft:' + id, null); }
+          if (body.add) sessionStorage.removeItem('voynich-add:' + id);
+          if (j.verified) word.verified = j.verified;
+          if (word === L.word && !L.dirty) say(j.done ? 'Every letter of this word is verified. Thank you!' : 'Saved');
+          if (j.done) progressAsk = null;
+        } else if (r.status >= 500 || r.status === 429) {
+          throw new Error(j.error || r.status);
+        } else {
+          if (outbox.get(id) === job) outbox.delete(id);
+          say('Not saved: ' + (j.error || r.status), true);
+        }
+      } catch {
+        say('Not saved — no connection. It will try again.', true);
+        clearTimeout(retry); retry = setTimeout(() => { for (const k of outbox.keys()) send(k); }, 10000);
+      } finally {
+        job.sending = null;
+        const now = outbox.get(id);
+        if (now && now !== job && !now.sending) send(id);  // a newer save came in while this one went out
+      }
+    })();
+    return job.sending;
+  }
   async function save() {
     clearTimeout(L.timer);
     if (!L.dirty || !L.word) return;
     L.dirty = false;
-    const word = L.word;
-    const body = { word: word.id, tracer, labels: await deflate(L.labels), reading: L.reading, checked: L.checked };
-    if (L.add) body.add = L.add;
-    try {
-      const r = await fetch(API + '/api/trace', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
-      const j = await r.json().catch(() => ({}));
-      if (r.ok) {
-        store.set('voynich-draft:' + word.id, null);
-        if (L.add) { sessionStorage.removeItem('voynich-add:' + word.id); L.add = null; }
-        if (j.verified) word.verified = j.verified;
-        if (word === L.word) say(j.done ? 'Every letter of this word is verified. Thank you!' : 'Saved');
-      } else {
-        if (r.status >= 500 || r.status === 429) L.dirty = true;
-        say('Not saved: ' + (j.error || r.status), true);
-      }
-    } catch {
-      L.dirty = true;
-      say('Not saved — no connection. It will try again.', true);
-      L.timer = setTimeout(save, 10000);
-    }
+    // everything is copied before the first wait, since the next word may open meanwhile
+    const word = L.word, labels = L.labels.slice();
+    const body = { word: word.id, tracer, labels: null, reading: L.reading.slice(), checked: L.checked.slice() };
+    if (L.add) { body.add = L.add; L.add = null; }
+    body.labels = await deflate(labels);
+    const old = outbox.get(word.id);
+    if (old && old.body.add && !body.add) body.add = old.body.add;  // a word added on the page goes with its box until it lands
+    outbox.set(word.id, { body, word, sending: null });
+    if (old && old.sending) return old.sending;  // sent as soon as the one going out lands
+    return send(word.id);
   }
 
   async function goNext() {
     if (!L.checked.includes(L.k)) L.checked.push(L.k);
     L.dirty = true;
-    await save();
+    save();
     // the next letter of this word not verified and not yet checked by you, else another word
     for (let k = L.k + 1; k <= L.reading.length; k++) {
       if ((L.word.verified || '')[k - 1] !== '1' && !L.checked.includes(k)) { location.hash = `#/w/${L.word.id}/${k}`; return; }
@@ -382,7 +416,7 @@
   }
 
   $('go').onclick = goNext;
-  $('skip').onclick = async () => { await save(); if (L.word) skipped.push(L.word.id); nextTask(); };
+  $('skip').onclick = async () => { save(); if (L.word) skipped.push(L.word.id); nextTask(); };
   $('erase').onclick = () => { L.erasing = !L.erasing; L.moving = false; marks(); };
   $('move').onclick = () => { L.moving = !L.moving; marks(); };
   $('hide').onclick = () => { L.hidden = !L.hidden; drawWord(); marks(); };
@@ -807,7 +841,7 @@
     }
   });
   window.addEventListener('blur', () => { L.space = false; marks(); });
-  window.addEventListener('pagehide', () => { if (L.dirty) save(); });
+  window.addEventListener('pagehide', () => { if (L.dirty) save(); for (const k of outbox.keys()) send(k); });
 
   async function route() {
     const h = location.hash;
