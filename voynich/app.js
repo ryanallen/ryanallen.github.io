@@ -224,7 +224,9 @@
     const pending = JSON.parse(sessionStorage.getItem('voynich-add:' + id) || 'null');
     // the next letter of the word already open needs nothing new from the server
     if (sameWord && L.versions.length) return showLetter(k, true);
-    try { data = await getJSON(`${API}/api/word/${encodeURIComponent(id)}?tracer=${tracer}`); } catch (e) {
+    const early = wordAhead.get(id);
+    wordAhead.clear();
+    try { data = early && Date.now() - early.at < 60000 ? early.data : await getJSON(`${API}/api/word/${encodeURIComponent(id)}?tracer=${tracer}`); } catch (e) {
       if (!pending) { say('Could not open that word: ' + e.message, true); return; }
       data = { word: pending.word, versions: [] };
     }
@@ -265,7 +267,7 @@
     if (sameWord) L.changed = false;
     $('to-page').href = `#/p/${word.page}`;
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]);
-    if (!sameWord) wordUV();
+    if (!sameWord) { wordUV(); if (!word.done) fetchAhead(); }
     if (word.done) { say('This word is done: two people agreed on every letter. Press Skip for another.'); return; }
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
@@ -405,10 +407,32 @@
     nextTask();
   }
   const skipped = [];
+  // The word after this one is fetched while the visitor works on this one, its crop
+  // too, so the next word opens at once. Kept a minute at most.
+  let ahead = null;
+  const wordAhead = new Map();
+  function askNext(skip) { return getJSON(`${API}/api/next?tracer=${tracer}&skip=${skip.slice(-50).join(',')}`); }
+  function fetchAhead() {
+    if (!L.word) return;
+    const current = L.word.id;
+    const p = askNext([...skipped, current]).then(async j => {
+      if (!j.word || j.word === current) return j;
+      const data = await getJSON(`${API}/api/word/${encodeURIComponent(j.word)}?tracer=${tracer}`);
+      wordAhead.set(j.word, { data, at: Date.now() });
+      const w = data.word;
+      loadImage(cropURL(w.iiif, w.x, w.y, w.w, w.h)).catch(() => {});
+      return j;
+    });
+    p.catch(() => {});
+    ahead = { from: current, at: Date.now(), p };
+  }
   async function nextTask() {
     say('Finding the next letter…');
     try {
-      const j = await getJSON(`${API}/api/next?tracer=${tracer}&skip=${skipped.slice(-50).join(',')}`);
+      const pre = ahead && ahead.from === (L.word && L.word.id) && Date.now() - ahead.at < 60000 ? ahead.p : null;
+      ahead = null;
+      let j = pre ? await pre.catch(() => null) : null;
+      if (!j || !j.word || skipped.includes(j.word) || (L.word && j.word === L.word.id)) j = await askNext(skipped);
       if (!j.word) { say('Nothing left for you to check. Thank you!'); return; }
       location.hash = `#/w/${j.word}/${j.letter}`;
     } catch (e) { say('Could not reach the server: ' + e.message, true); }
