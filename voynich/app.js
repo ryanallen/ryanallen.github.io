@@ -178,7 +178,7 @@
       fig.title = `${name} in ${e.word}`;
       fig.onclick = () => { location.hash = `#/p/${e.page}`; };
       box.append(fig);
-      Promise.all([loadImage(cropURL(e.iiif, e.x, e.y, e.w, e.h)), inflate(e.grid)]).then(([img, grid]) => {
+      Promise.all([loadImage(e.img || cropURL(e.iiif, e.x, e.y, e.w, e.h)), inflate(e.grid)]).then(([img, grid]) => {
         cv.width = e.w; cv.height = e.h;
         const g = cv.getContext('2d');
         g.drawImage(img, 0, 0);
