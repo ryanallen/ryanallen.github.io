@@ -489,6 +489,37 @@
     const to = `#/w/${L.word.id}/${Math.min(L.k, L.reading.length)}`;
     if (location.hash === to) openLetter(L.word.id, Math.min(L.k, L.reading.length)); else location.hash = to;
   };
+  // A stacked glyph, letters written over one another as one shape (a bench gallows), is one letter
+  // whose name lists its parts: c+t+h. Stack joins this letter with the next; Unstack splits it again.
+  $('stack-letter').onclick = () => {
+    if (L.k >= L.reading.length) { say('Stack joins this letter with the next one, and this is the last', true); return; }
+    const joined = `${L.reading[L.k - 1]}+${L.reading[L.k]}`;
+    if (joined.length > 20) { say('That stack is too long to save', true); return; }
+    L.undo.push(L.labels.slice());
+    for (let i = 0; i < L.labels.length; i++) {
+      const v = L.labels[i];
+      L.labels[i] = v === L.k + 1 ? L.k : v > L.k + 1 ? v - 1 : v;
+    }
+    L.reading.splice(L.k - 1, 2, joined);
+    L.checked = L.checked.filter(c => c !== L.k && c !== L.k + 1).map(c => c > L.k + 1 ? c - 1 : c);
+    L.word.verified = '';
+    changed();
+    const to = `#/w/${L.word.id}/${L.k}`;
+    if (location.hash === to) openLetter(L.word.id, L.k); else location.hash = to;
+  };
+  $('unstack-letter').onclick = () => {
+    const parts = L.reading[L.k - 1].split('+'), add = parts.length - 1;
+    if (!add) { say('This letter is not stacked', true); return; }
+    if (L.reading.length + add > 20) { say('A word holds at most 20 letters', true); return; }
+    L.undo.push(L.labels.slice());
+    for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > L.k) L.labels[i] += add;
+    L.reading.splice(L.k - 1, 1, ...parts);
+    L.checked = L.checked.filter(c => c !== L.k).map(c => c > L.k ? c + add : c);
+    L.word.verified = '';
+    changed();
+    const to = `#/w/${L.word.id}/${L.k}`;
+    if (location.hash === to) openLetter(L.word.id, L.k); else location.hash = to;
+  };
   $('add-letter').onclick = () => {
     if (L.reading.length >= 20) return;
     L.undo.push(L.labels.slice());

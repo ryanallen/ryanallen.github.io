@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=51f836eb64">
+<link rel="stylesheet" href="style.css?v=a95c86e1e4">
 </head>
 <body>
 <header>
@@ -36,6 +36,8 @@
     <label>It's <select id="name"></select></label>
     <button id="remove-letter" title="This is not a letter of the word">Not a letter</button>
     <button id="add-letter" title="The word has a letter the reading left out, after this one">+ Letter after</button>
+    <button id="stack-letter" title="This letter and the next are written over one another as one shape, like the bench in c+t+h">Stack with next</button>
+    <button id="unstack-letter" title="Split a stacked letter back into its letters; its ink stays on the first">Unstack</button>
   </div>
   <div class="bar" id="tools">
     <span class="group" title="[ and ] change the brush">Brush <button class="sz" data-s="1">1</button><button class="sz" data-s="2">2</button><button class="sz" data-s="3">3</button><button class="sz" data-s="4">4</button></span>
@@ -95,6 +97,6 @@
   <p class="hint">Your work is tied to this browser. To trace from another device and keep one credit, open this link there: <a id="credit-link" href="#"></a></p>
   <div class="row"><button id="credit-save" class="primary">Save</button> <button id="credit-close">Close</button></div>
 </dialog>
-<script src="app.js?v=51f836eb64"></script>
+<script src="app.js?v=a95c86e1e4"></script>
 </body>
 </html>
