@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search the Voynich</title>
+<meta name="description" content="Search the Voynich manuscript for any word or run of letters and see every hit lit on Yale's scans, down to the ink of the letters.">
+<link rel="stylesheet" href="style.css?v=80c443c59b">
+<style>
+  #search-bar input{font:inherit;font-size:16px;padding:4px 9px;min-width:0;flex:1 1 220px;max-width:360px;background:var(--bg);color:var(--text);border:1px solid #41454e;border-radius:6px}
+  #summary{padding:6px 12px;color:var(--muted);font-size:13px}#summary b{color:var(--text)}
+  #grid{flex:1;overflow:auto;display:flex;flex-wrap:wrap;gap:8px;padding:8px 12px;align-content:flex-start}
+  .thumb{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--muted);font-size:12px;cursor:pointer;background:none;border:0;padding:0}
+  .thumb .pic{position:relative;display:block;background:#2a2620;border-radius:3px;box-shadow:0 0 0 1px #0006;overflow:hidden}
+  .thumb .pic img{display:block}.thumb .pic canvas{position:absolute;left:0;top:0}
+  .thumb:hover .pic,.thumb:focus-visible .pic{box-shadow:0 0 0 2px var(--accent)}
+  #view{position:fixed;inset:0;background:#000d;display:flex;flex-direction:column;z-index:20}#view[hidden]{display:none}
+  #view .bar{justify-content:space-between}
+  #view-wrap{flex:1;overflow:auto;text-align:center}
+  #view-stack{position:relative;display:inline-block;margin:8px auto}
+  #view-stack canvas{display:block;max-width:none}#view-ink{position:absolute;left:0;top:0}
+  .key{display:inline-flex;gap:10px;font-size:12px;color:var(--muted)}.key i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="search.html">Search the Voynich</a></h1>
+  <nav><a href="./">Trace the Voynich</a></nav>
+</header>
+<form class="bar" id="search-bar" role="search">
+  <input id="q" type="search" placeholder="EVA letters, like otedy or ^qo*$" aria-label="Search" autocomplete="off" spellcheck="false">
+  <select id="reader" aria-label="Transcription" title="Which reading of the text to search">
+    <option value="BEST">Best reading</option><option value="ZL">Zandbergen–Landini</option><option value="VT">voynichese.com</option><option value="IT">Takahashi</option><option value="RF">Reference</option>
+  </select>
+  <select id="match" aria-label="Match" title="Where a match may fall">
+    <option value="any">Anywhere in a word</option><option value="exact">Whole word</option><option value="across">Across spaces</option>
+  </select>
+</form>
+<div id="summary">Type EVA letters. <b>*</b> is one or more letters, <b>^</b> a word's start, <b>$</b> its end.</div>
+<div id="grid"></div>
+<div id="view" hidden>
+  <div class="bar"><span id="view-title"></span>
+    <span class="key"><span><i style="background:#ff3b5c"></i>traced by hand</span><span><i style="background:#ff9f1c"></i>checked by hand</span><span><i style="background:#c77dff"></i>placed by the model</span><span><i style="border:2px dashed #7fd3ff"></i>word box, no letters</span></span>
+    <a href="#" id="view-close">Close</a></div>
+  <div id="view-wrap"><div id="view-stack"><canvas id="view-canvas"></canvas><canvas id="view-ink"></canvas></div></div>
+</div>
+<script src="search.js?v=80c443c59b"></script>
+<script src="search-page.js?v=80c443c59b"></script>
+</body>
+</html>
