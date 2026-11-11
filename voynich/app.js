@@ -163,6 +163,13 @@
     const c = color(L.k);
     $('ask-text').innerHTML = `Letter ${L.k} of ${L.reading.length} in <span class="hint">${L.reading.map((n, i) => i + 1 === L.k ? `<b style="color:rgb(${c})">${n}</b>` : n).join(' ')}</span> — color its ink`;
     $('where').textContent = `${L.word.id}${(L.word.verified || '')[L.k - 1] === '1' ? ' · this letter is verified' : ''}`;
+    // the stack buttons name the letter each would join, and stand greyed where there is none
+    const before = L.reading[L.k - 2], after = L.reading[L.k];
+    $('stack-left').textContent = before ? `← Stack with ${before}` : '← Stack';
+    $('stack-left').disabled = !before;
+    $('stack-right').textContent = after ? `Stack with ${after} →` : 'Stack →';
+    $('stack-right').disabled = !after;
+    $('unstack-letter').disabled = !L.reading[L.k - 1].includes('+');
   }
 
   async function examplesFor(name) {
@@ -490,35 +497,56 @@
     if (location.hash === to) openLetter(L.word.id, Math.min(L.k, L.reading.length)); else location.hash = to;
   };
   // A stacked glyph, letters written over one another as one shape (a bench gallows), is one letter
-  // whose name lists its parts: c+t+h. Stack joins this letter with the next; Unstack splits it again.
-  $('stack-letter').onclick = () => {
-    if (L.k >= L.reading.length) { say('Stack joins this letter with the next one, and this is the last', true); return; }
-    const joined = `${L.reading[L.k - 1]}+${L.reading[L.k]}`;
+  // whose name lists its parts: c+t+h. "← Stack" joins this letter with the one before, "Stack →" with
+  // the one after; Unstack splits it again. Stacking remembers, in this browser, which pixels were which
+  // part, so Unstack gives each letter its own ink back (ink erased or painted since stays as it is now).
+  // A stack made elsewhere has no such record, and its ink stays on its first letter to be painted apart.
+  const stackKey = id => 'voynich-stacks:' + id;
+  const stackMemos = id => { try { return JSON.parse(store.get(stackKey(id)) || '{}'); } catch { return {}; } };
+  function stackAt(a) {
+    // letters a and a + 1 (counted from 1) become one stacked letter at a
+    const left = L.reading[a - 1], right = L.reading[a], joined = `${left}+${right}`;
     if (joined.length > 20) { say('That stack is too long to save', true); return; }
+    const memos = stackMemos(L.word.id), ml = memos[left] && new Map(memos[left]), mr = memos[right] && new Map(memos[right]);
+    const nl = left.split('+').length, memo = [];
     L.undo.push(L.labels.slice());
     for (let i = 0; i < L.labels.length; i++) {
       const v = L.labels[i];
-      L.labels[i] = v === L.k + 1 ? L.k : v > L.k + 1 ? v - 1 : v;
+      if (v === a) memo.push([i, ml ? ml.get(i) || 0 : 0]);
+      else if (v === a + 1) memo.push([i, nl + (mr ? mr.get(i) || 0 : 0)]);
+      L.labels[i] = v === a + 1 ? a : v > a + 1 ? v - 1 : v;
     }
-    L.reading.splice(L.k - 1, 2, joined);
-    L.checked = L.checked.filter(c => c !== L.k && c !== L.k + 1).map(c => c > L.k + 1 ? c - 1 : c);
+    memos[joined] = memo;
+    store.set(stackKey(L.word.id), JSON.stringify(memos));
+    L.reading.splice(a - 1, 2, joined);
+    L.checked = L.checked.filter(c => c !== a && c !== a + 1).map(c => c > a + 1 ? c - 1 : c);
     L.word.verified = '';
     changed();
-    const to = `#/w/${L.word.id}/${L.k}`;
-    if (location.hash === to) openLetter(L.word.id, L.k); else location.hash = to;
-  };
+    const to = `#/w/${L.word.id}/${a}`;
+    if (location.hash === to) openLetter(L.word.id, a); else location.hash = to;
+  }
+  $('stack-left').onclick = () => { if (L.k > 1) stackAt(L.k - 1); else say('This is the first letter: there is none before it to stack with', true); };
+  $('stack-right').onclick = () => { if (L.k < L.reading.length) stackAt(L.k); else say('This is the last letter: there is none after it to stack with', true); };
   $('unstack-letter').onclick = () => {
-    const parts = L.reading[L.k - 1].split('+'), add = parts.length - 1;
+    const name = L.reading[L.k - 1], parts = name.split('+'), add = parts.length - 1;
     if (!add) { say('This letter is not stacked', true); return; }
     if (L.reading.length + add > 20) { say('A word holds at most 20 letters', true); return; }
+    const memos = stackMemos(L.word.id), memo = memos[name] && new Map(memos[name]);
     L.undo.push(L.labels.slice());
-    for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > L.k) L.labels[i] += add;
+    for (let i = 0; i < L.labels.length; i++) {
+      const v = L.labels[i];
+      if (v === L.k) L.labels[i] = L.k + Math.min(add, memo ? memo.get(i) || 0 : 0);
+      else if (v > L.k) L.labels[i] = v + add;
+    }
+    delete memos[name];
+    store.set(stackKey(L.word.id), Object.keys(memos).length ? JSON.stringify(memos) : null);
     L.reading.splice(L.k - 1, 1, ...parts);
     L.checked = L.checked.filter(c => c !== L.k).map(c => c > L.k ? c + add : c);
     L.word.verified = '';
     changed();
     const to = `#/w/${L.word.id}/${L.k}`;
     if (location.hash === to) openLetter(L.word.id, L.k); else location.hash = to;
+    if (!memo) say(`No record of which ink was whose here, so it all stays on ${parts[0]}: paint ${parts.slice(1).join(' and ')} again`, true);
   };
   $('add-letter').onclick = () => {
     if (L.reading.length >= 20) return;

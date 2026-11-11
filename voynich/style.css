@@ -69,6 +69,7 @@ dialog::backdrop{background:#0009}
 #credit-name{font:inherit;width:100%;padding:6px 9px;border:1px solid #41454e;border-radius:6px;background:var(--bg);color:var(--text)}
 #credit-link{word-break:break-all}
 #credit-status.bad{color:#ffb2a5}
+button:disabled{opacity:.4;cursor:default}
 @media (max-width:600px){
   header,.bar,#side{padding-left:16px;padding-right:16px}
   #ask{font-size:14px}
