@@ -183,7 +183,7 @@
       const k = i + 1, open = k === L.k;
       return plus(i) + `<span class="tile${open ? ' open' : ''}${L.fresh === k ? ' fresh' : ''}" style="--c:rgb(${color(k)})">`
         + `<button class="rl" data-k="${k}" title="${open ? 'The letter you are painting' : `Go to letter ${k}`}">${esc(n)}</button>`
-        + (open ? `<button class="del" title="Delete this letter (Delete key)" aria-label="Delete ${esc(n)}">×</button>` : '') + '</span>';
+        + (open ? `<button class="del" title="Delete this letter" aria-label="Delete ${esc(n)}">×</button>` : '') + '</span>';
     }).join('') + plus(L.reading.length);
     L.fresh = 0;
     $('ask-text').innerHTML = `<span class="ask-what">Letter ${L.k} of ${L.reading.length}</span><span class="tiles">${tiles}</span>`;
@@ -1042,7 +1042,6 @@
       if (e.key === '[') setBrush(L.brush - 1);
       if (e.key === ']') setBrush(L.brush + 1);
       if (e.key === 'Enter') goNext();
-      if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); $('remove-letter').click(); }
     }
     if (inPage && P.info) {
       if (e.key === '+' || e.key === '=') zoomPage(1.25);

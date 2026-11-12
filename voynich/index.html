@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=5ba69cc746">
+<link rel="stylesheet" href="style.css?v=4cd5ac64f9">
 </head>
 <body>
 <header>
@@ -34,7 +34,7 @@
   <div class="bar" id="ask">
     <span id="ask-text"></span>
     <label>It's <select id="name"></select></label>
-    <button id="remove-letter" title="Take this letter out of the word, with its pixels (Delete key; Undo puts it back)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>Delete letter</button>
+    <button id="remove-letter" title="Take this letter out of the word, with its pixels (Undo puts it back)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>Delete letter</button>
     <select id="stack" title="Letters written over one another as one shape, like the bench in c+t+h"><option value="">Stack</option></select>
   </div>
   <div class="bar" id="tools">
@@ -79,7 +79,7 @@
   <p>No one has read the Voynich manuscript. A computer has traced its letters, pixel by pixel, but it makes mistakes. You check them, one letter at a time.</p>
   <ul>
     <li>The letter to check is in bright color; the rest of the word is faint. Paint over its ink with the brush, and erase what isn't its ink. Shift-click draws a straight line from where your last stroke ended. Hold H (or press Hide) to see the page underneath, and U shows the UV scan on pages that have one. [ and ] make the brush smaller and bigger. Esc goes back to the page, and from a page to the list of pages.</li>
-    <li>If it is a different letter, pick it under "It's". The word's letters are listed at the top: click one to go to it, a + between them to add a letter the reading left out, or the × beside the bright one (or Delete letter, or the Delete key) to take it out. Undo puts it back. Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
+    <li>If it is a different letter, pick it under "It's". The word's letters are listed at the top: click one to go to it, a + between them to add a letter the reading left out, or the × on the outlined one (or Delete letter) to take it out. Undo puts it back. Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
     <li>When the letter is right, press the button and the next one comes. Your work saves as you go; there is nothing to send.</li>
     <li>When two people's versions of a letter agree, it is verified. Missing words can be added from a page: "+ Add a missing word".</li>
     <li>You stay anonymous unless you want credit. "Get credited" at the top takes a name or handle for the credits when the work is released.</li>
@@ -101,6 +101,6 @@
   <p id="credits-list"></p>
   <form method="dialog"><button class="primary">Close</button></form>
 </dialog>
-<script src="app.js?v=5ba69cc746"></script>
+<script src="app.js?v=4cd5ac64f9"></script>
 </body>
 </html>
