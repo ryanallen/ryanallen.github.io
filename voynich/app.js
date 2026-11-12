@@ -103,6 +103,21 @@
     hidden: false, moving: false, space: false, undo: [], stroke: null, anchor: null, dirty: false, timer: null, add: null, versions: [], changed: false };
   const wstage = $('word-stage'), wlayer = $('word-layer'), crop = $('crop'), paint = $('paint'), pg = paint.getContext('2d');
 
+  // a word's letters added or deleted, said in a toast with Undo beside it
+  let toastTimer = 0;
+  function toast(text) {
+    let t = $('toast');
+    if (!t) { t = document.createElement('div'); t.id = 'toast'; t.setAttribute('role', 'status'); document.body.append(t); }
+    const msg = document.createElement('span'), undo = document.createElement('button');
+    msg.textContent = text;
+    undo.textContent = 'Undo';
+    undo.onclick = () => { t.classList.remove('show'); $('undo').click(); };
+    t.replaceChildren(msg, undo);
+    t.classList.toggle('del', text.startsWith('Deleted'));
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 4000);
+  }
   function say(text, bad = false) { $('status').textContent = text; $('status').classList.toggle('bad', bad); }
 
   // The word's tracing, drawn at most once a frame however fast the pointer moves.
@@ -160,13 +175,18 @@
   }
 
   function ask() {
-    const c = color(L.k);
-    // the word's letters, each one a button to go to it, with a + before, between and after them
-    // to add a letter there, as under the word in Glyph Painter
+    // the word as a row of letter tiles in their paint colors: click a tile to go to that letter,
+    // the round + between tiles to add a letter there, the red × on the open tile to delete it
     const esc = n => n.replace(/[&<>"]/g, ch => `&#${ch.charCodeAt(0)};`);
-    const plus = at => `<button class="ins" data-at="${at}" title="Add a letter here">+</button>`;
-    $('ask-text').innerHTML = `Letter ${L.k} of ${L.reading.length} in <span class="reading">${plus(0)}${L.reading.map((n, i) => (i + 1 === L.k
-      ? `<b style="color:rgb(${c})">${esc(n)}</b>` : `<button class="rl" data-k="${i + 1}" title="Go to letter ${i + 1}">${esc(n)}</button>`) + plus(i + 1)).join('')}</span> — color its ink`;
+    const plus = at => `<button class="ins" data-at="${at}" title="${esc(insertWhere(at))}" aria-label="${esc(insertWhere(at))}"><span>+</span></button>`;
+    const tiles = L.reading.map((n, i) => {
+      const k = i + 1, open = k === L.k;
+      return plus(i) + `<span class="tile${open ? ' open' : ''}${L.fresh === k ? ' fresh' : ''}" style="--c:rgb(${color(k)})">`
+        + `<button class="rl" data-k="${k}" title="${open ? 'The letter you are painting' : `Go to letter ${k}`}">${esc(n)}</button>`
+        + (open ? `<button class="del" title="Delete this letter (Delete key)" aria-label="Delete ${esc(n)}">×</button>` : '') + '</span>';
+    }).join('') + plus(L.reading.length);
+    L.fresh = 0;
+    $('ask-text').innerHTML = `<span class="ask-what">Letter ${L.k} of ${L.reading.length}</span><span class="tiles">${tiles}</span>`;
     $('where').textContent = `${L.word.id}${(L.word.verified || '')[L.k - 1] === '1' ? ' · this letter is verified' : ''}`;
     // one Stack menu: the letters this one can join, by name, and Unstack when it is stacked
     const before = L.reading[L.k - 2], after = L.reading[L.k], menu = $('stack');
@@ -295,7 +315,9 @@
     $('to-page').href = `#/p/${word.page}`;
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]);
     if (!sameWord) { wordUV(); if (!word.done) fetchAhead(); }
+    closePicker();
     if (word.done) { say('This word is done: two people agreed on every letter. Press Skip for another.'); return; }
+    if (L.note) { toast(L.note); L.note = ''; }
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
 
@@ -493,7 +515,19 @@
   $('erase').onclick = () => { L.erasing = !L.erasing; L.moving = false; marks(); };
   $('move').onclick = () => { L.moving = !L.moving; marks(); };
   $('hide').onclick = () => { L.hidden = !L.hidden; drawWord(); marks(); };
-  $('undo').onclick = () => { if (L.undo.length) { const u = L.undo.pop(); if ('anchor' in u) L.anchor = u.anchor; L.labels = u; drawWord(); changed(); } };
+  // a change to the word's letters is undone whole: its reading, the letters checked and the pixels
+  const snapshot = () => Object.assign(L.labels.slice(), { reading: L.reading.slice(), checked: L.checked.slice(), k: L.k });
+  $('undo').onclick = () => {
+    if (!L.undo.length) return;
+    const u = L.undo.pop();
+    if ('anchor' in u) L.anchor = u.anchor;
+    L.labels = u;
+    if (!u.reading) { drawWord(); changed(); return; }
+    L.reading = u.reading; L.checked = u.checked; L.word.verified = '';
+    changed();
+    const to = `#/w/${L.word.id}/${u.k}`;
+    if (location.hash === to) openLetter(L.word.id, u.k); else location.hash = to;
+  };
   $('zoomin').onclick = () => zoomWord(1.25);
   $('zoomout').onclick = () => zoomWord(0.8);
   $('fit').onclick = fitWord;
@@ -504,12 +538,12 @@
   };
   $('remove-letter').onclick = () => {
     if (L.reading.length < 2) { say('A word needs at least one letter', true); return; }
-    if (!confirm(`Take "${L.reading[L.k - 1]}" out of this word? Its pixels go too.`)) return;
-    L.undo.push(L.labels.slice());
+    L.undo.push(snapshot());
     for (let i = 0; i < L.labels.length; i++) {
       const v = L.labels[i];
       L.labels[i] = v === L.k ? 0 : v > L.k ? v - 1 : v;
     }
+    L.note = `Deleted “${L.reading[L.k - 1]}”`;
     L.reading.splice(L.k - 1, 1);
     L.checked = L.checked.filter(c => c !== L.k).map(c => c > L.k ? c - 1 : c);
     L.word.verified = '';
@@ -530,7 +564,7 @@
     if (joined.length > 20) { say('That stack is too long to save', true); return; }
     const memos = stackMemos(L.word.id), ml = memos[left] && new Map(memos[left]), mr = memos[right] && new Map(memos[right]);
     const nl = left.split('+').length, memo = [];
-    L.undo.push(L.labels.slice());
+    L.undo.push(snapshot());
     for (let i = 0; i < L.labels.length; i++) {
       const v = L.labels[i];
       if (v === a) memo.push([i, ml ? ml.get(i) || 0 : 0]);
@@ -559,7 +593,7 @@
     if (!add) { say('This letter is not stacked', true); return; }
     if (L.reading.length + add > 20) { say('A word holds at most 20 letters', true); return; }
     const memos = stackMemos(L.word.id), memo = memos[name] && new Map(memos[name]);
-    L.undo.push(L.labels.slice());
+    L.undo.push(snapshot());
     for (let i = 0; i < L.labels.length; i++) {
       const v = L.labels[i];
       if (v === L.k) L.labels[i] = L.k + Math.min(add, memo ? memo.get(i) || 0 : 0);
@@ -580,35 +614,65 @@
   function insertLetter(at, name) {
     // the new letter is number at + 1; every letter from there on moves up one
     if (L.reading.length >= 20) { say('A word holds at most 20 letters', true); return; }
-    L.undo.push(L.labels.slice());
+    L.undo.push(snapshot());
     for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > at) L.labels[i]++;
     L.reading.splice(at, 0, name);
     L.checked = L.checked.map(c => c > at ? c + 1 : c);
+    L.fresh = at + 1;
+    L.note = `Added “${name}”: paint its ink`;
     L.word.verified = '';
     changed();
     const to = `#/w/${L.word.id}/${at + 1}`;
     if (location.hash === to) openLetter(L.word.id, at + 1); else location.hash = to;
   }
-  $('ask-text').onclick = async e => {
-    const letter = e.target.closest('.rl'), ins = e.target.closest('.ins');
-    (letter || ins)?.blur();
-    if (letter) { location.hash = `#/w/${L.word.id}/${letter.dataset.k}`; return; }
-    if (!ins) return;
+  function insertWhere(at) {
+    const r = L.reading;
+    return at === 0 ? `Add a letter before ${r[0]}` : at === r.length ? `Add a letter after ${r[r.length - 1]}` : `Add a letter between ${r[at - 1]} and ${r[at]}`;
+  }
+  // the letters to add, as a grid of tiles opened under the + that was clicked
+  function closePicker() {
+    const p = $('pick-letter');
+    if (p) p.remove();
+    document.querySelectorAll('.ins.picking').forEach(b => b.classList.remove('picking'));
+    document.removeEventListener('pointerdown', pickerOutside, true);
+    document.removeEventListener('keydown', pickerKey, true);
+  }
+  function pickerOutside(e) { if (!e.target.closest('#pick-letter')) closePicker(); }
+  function pickerKey(e) { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closePicker(); } }
+  async function openPicker(button, at) {
+    closePicker();
     if (L.reading.length >= 20) { say('A word holds at most 20 letters', true); return; }
-    const at = +ins.dataset.at, menu = document.createElement('select');
-    menu.className = 'ins-pick';
-    menu.title = 'The letter to add here';
-    menu.append(new Option('Add which letter?', ''));
+    const pop = document.createElement('div');
+    pop.id = 'pick-letter';
+    pop.className = 'pick-pop';
+    const head = document.createElement('div'), title = document.createElement('b'), close = document.createElement('button');
+    head.className = 'pick-head';
+    title.textContent = insertWhere(at);
+    close.className = 'pick-close'; close.textContent = '×'; close.title = 'Cancel (Esc)'; close.onclick = closePicker;
+    head.append(title, close);
+    const grid = document.createElement('div');
+    grid.className = 'pick-grid';
     const all = Object.keys(await examples()).sort((a, b) => (a.startsWith('@') - b.startsWith('@')) || a.localeCompare(b));
-    for (const n of all) menu.append(new Option(n, n));
-    ins.replaceWith(menu);
-    let gone = false;
-    const done = () => { if (gone) return; gone = true; const v = menu.value; if (v) insertLetter(at, v); else ask(); };
-    menu.onchange = done;
-    menu.onblur = done;
-    menu.onkeydown = e => { e.stopPropagation(); if (e.key === 'Escape') { menu.value = ''; done(); } };
-    menu.focus();
-    try { menu.showPicker(); } catch { /* the menu stays open for a click */ }
+    for (const n of all) {
+      const b = document.createElement('button');
+      b.textContent = n;
+      b.title = `Add ${n}`;
+      b.onclick = () => { closePicker(); insertLetter(at, n); };
+      grid.append(b);
+    }
+    pop.append(head, grid);
+    document.body.append(pop);
+    const r = button.getBoundingClientRect();
+    pop.style.left = Math.max(16, Math.min(r.left - 20, innerWidth - pop.offsetWidth - 16)) + 'px';
+    pop.style.top = r.bottom + 8 + 'px';
+    button.classList.add('picking');
+    setTimeout(() => { document.addEventListener('pointerdown', pickerOutside, true); document.addEventListener('keydown', pickerKey, true); });
+  }
+  $('ask-text').onclick = e => {
+    const letter = e.target.closest('.rl'), ins = e.target.closest('.ins');
+    if (e.target.closest('.del')) { $('remove-letter').click(); return; }
+    if (letter) { letter.blur(); if (+letter.dataset.k !== L.k) location.hash = `#/w/${L.word.id}/${letter.dataset.k}`; return; }
+    if (ins) openPicker(ins, +ins.dataset.at);
   };
 
   // ---- the page view ------------------------------------------------------
@@ -978,6 +1042,7 @@
       if (e.key === '[') setBrush(L.brush - 1);
       if (e.key === ']') setBrush(L.brush + 1);
       if (e.key === 'Enter') goNext();
+      if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); $('remove-letter').click(); }
     }
     if (inPage && P.info) {
       if (e.key === '+' || e.key === '=') zoomPage(1.25);

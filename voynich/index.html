@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=bd0a9b18cc">
+<link rel="stylesheet" href="style.css?v=5ba69cc746">
 </head>
 <body>
 <header>
@@ -34,17 +34,17 @@
   <div class="bar" id="ask">
     <span id="ask-text"></span>
     <label>It's <select id="name"></select></label>
-    <button id="remove-letter" title="This is not a letter of the word">Not a letter</button>
+    <button id="remove-letter" title="Take this letter out of the word, with its pixels (Delete key; Undo puts it back)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>Delete letter</button>
     <select id="stack" title="Letters written over one another as one shape, like the bench in c+t+h"><option value="">Stack</option></select>
   </div>
   <div class="bar" id="tools">
     <span class="group" title="[ and ] change the brush">Brush <button class="sz" data-s="1">1</button><button class="sz" data-s="2">2</button><button class="sz" data-s="3">3</button><button class="sz" data-s="4">4</button></span>
-    <button id="erase" title="Erase this letter's pixels (E)">Erase</button>
-    <span class="group"><button id="zoomout" title="Zoom out (-)">−</button><button id="fit" title="Fit">Fit</button><button id="zoomin" title="Zoom in (+)">+</button></span>
-    <button id="hide" title="Hide the tracing (hold H)">Hide</button>
-    <span class="group" id="uv-group" hidden><button id="uv" title="This page has 2014 UV scans: show one under the tracing (U)">UV</button><select id="uv-kind" title="Which UV scan"></select></span>
-    <button id="move" title="Drag to move instead of painting (or hold Space)">Move</button>
-    <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
+    <button id="erase" title="Erase this letter's pixels (E)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 21-4-4a2 2 0 0 1 0-3L14 3a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3L10 21z"/><path d="m9 9 6 6"/></svg>Erase</button>
+    <span class="group"><button id="zoomout" title="Zoom out (-)" aria-label="Zoom out"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M7 10.5h7M16 16l5 5"/></svg></button><button id="fit" title="Fit"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Fit</button><button id="zoomin" title="Zoom in (+)" aria-label="Zoom in"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M7 10.5h7m-3.5-3.5v7M16 16l5 5"/></svg></button></span>
+    <button id="hide" title="Hide the tracing (hold H)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/></svg>Hide</button>
+    <span class="group" id="uv-group" hidden><button id="uv" title="This page has 2014 UV scans: show one under the tracing (U)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>UV</button><select id="uv-kind" title="Which UV scan"></select></span>
+    <button id="move" title="Drag to move instead of painting (or hold Space)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M9 6l3-3 3 3M9 18l3 3 3-3M6 9l-3 3 3 3M18 9l3 3-3 3"/></svg>Move</button>
+    <button id="undo" title="Undo (Ctrl+Z)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-2"/></svg>Undo</button>
     <a id="to-page" href="#">See the page</a>
   </div>
   <div id="ring"></div><main class="stage" id="word-stage"><div class="layer" id="word-layer"><img id="crop" alt="" crossorigin="anonymous" draggable="false"><canvas id="uvcrop" hidden></canvas><canvas id="paint"></canvas></div></main>
@@ -54,7 +54,7 @@
   </aside>
   <footer class="bar">
     <span id="where"></span><span id="status"></span>
-    <button id="skip">Skip</button>
+    <button id="skip"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 8 7-8 7z"/><path d="M17 5v14"/></svg>Skip</button>
     <button id="go" class="primary">Looks right →</button>
   </footer>
 </section>
@@ -62,10 +62,10 @@
 <section id="page-view" hidden>
   <div class="bar">
     <a id="prev-page" href="#">← Previous</a><b id="page-name"></b><a id="next-page" href="#">Next →</a>
-    <span class="group"><button id="p-zoomout">−</button><button id="p-fit">Fit</button><button id="p-zoomin">+</button></span>
-    <button id="p-hide" title="Hide the tracings (hold H)">Hide tracings</button>
-    <span class="group" id="p-uv-group" hidden><button id="p-uv" title="This page has 2014 UV scans: show one under the tracings (U)">UV</button><select id="p-uv-kind" title="Which UV scan"></select></span>
-    <button id="p-add" title="Draw a box round a word with no tracing (B)">+ Add a missing word</button>
+    <span class="group"><button id="p-zoomout" title="Zoom out (-)" aria-label="Zoom out"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M7 10.5h7M16 16l5 5"/></svg></button><button id="p-fit" title="Fit"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Fit</button><button id="p-zoomin" title="Zoom in (+)" aria-label="Zoom in"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M7 10.5h7m-3.5-3.5v7M16 16l5 5"/></svg></button></span>
+    <button id="p-hide" title="Hide the tracings (hold H)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/></svg>Hide tracings</button>
+    <span class="group" id="p-uv-group" hidden><button id="p-uv" title="This page has 2014 UV scans: show one under the tracings (U)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>UV</button><select id="p-uv-kind" title="Which UV scan"></select></span>
+    <button id="p-add" title="Draw a box round a word with no tracing (B)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1" stroke-dasharray="3 2"/><path d="M12 9v6M9 12h6"/></svg>Add a missing word</button>
     <span id="p-status" class="hint">Click a word to check its letters. Drag to move.</span>
   </div>
   <main class="stage" id="page-stage"><div class="layer" id="page-layer"><canvas id="page-trace"></canvas><div id="hoverbox"></div><div id="drawbox"></div></div></main>
@@ -79,7 +79,7 @@
   <p>No one has read the Voynich manuscript. A computer has traced its letters, pixel by pixel, but it makes mistakes. You check them, one letter at a time.</p>
   <ul>
     <li>The letter to check is in bright color; the rest of the word is faint. Paint over its ink with the brush, and erase what isn't its ink. Shift-click draws a straight line from where your last stroke ended. Hold H (or press Hide) to see the page underneath, and U shows the UV scan on pages that have one. [ and ] make the brush smaller and bigger. Esc goes back to the page, and from a page to the list of pages.</li>
-    <li>If it is a different letter, pick it under "It's". The word's letters are listed at the top: click one to go to it, or a + between them to add a letter the reading left out. Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
+    <li>If it is a different letter, pick it under "It's". The word's letters are listed at the top: click one to go to it, a + between them to add a letter the reading left out, or the × beside the bright one (or Delete letter, or the Delete key) to take it out. Undo puts it back. Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
     <li>When the letter is right, press the button and the next one comes. Your work saves as you go; there is nothing to send.</li>
     <li>When two people's versions of a letter agree, it is verified. Missing words can be added from a page: "+ Add a missing word".</li>
     <li>You stay anonymous unless you want credit. "Get credited" at the top takes a name or handle for the credits when the work is released.</li>
@@ -101,6 +101,6 @@
   <p id="credits-list"></p>
   <form method="dialog"><button class="primary">Close</button></form>
 </dialog>
-<script src="app.js?v=bd0a9b18cc"></script>
+<script src="app.js?v=5ba69cc746"></script>
 </body>
 </html>
