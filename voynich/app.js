@@ -408,10 +408,19 @@
     })();
     return job.sending;
   }
+  // nothing differs from the version the visitor started from: no pixel, no letter name
+  function unchanged() {
+    const a = L.labels, b = L.start && L.start.labels;
+    if (L.add || !b || a.length !== b.length || L.reading.join() !== L.start.reading.join()) return false;
+    for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+    return true;
+  }
   async function save() {
     clearTimeout(L.timer);
     if (!L.dirty || !L.word) return;
     L.dirty = false;
+    // a word opened and left as it was is not saved, so it goes to the next person as if never served
+    if (unchanged()) return;
     // everything is copied before the first wait, since the next word may open meanwhile
     const word = L.word, labels = L.labels.slice();
     const body = { word: word.id, tracer, labels: null, reading: L.reading.slice(), checked: L.checked.slice() };
@@ -426,7 +435,7 @@
 
   async function goNext() {
     // the first check of this letter by anyone moves the book's bar now
-    if (!L.checked.includes(L.k) && !L.versions.some(v => v.checked && v.checked.includes(L.k))) bump();
+    if (!unchanged() && !L.checked.includes(L.k) && !L.versions.some(v => v.checked && v.checked.includes(L.k))) bump();
     if (!L.checked.includes(L.k)) L.checked.push(L.k);
     L.dirty = true;
     save();
