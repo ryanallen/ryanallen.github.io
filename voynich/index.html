@@ -17,12 +17,12 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=47a3324eca">
+<link rel="stylesheet" href="style.css?v=b4108acf7e">
 </head>
 <body>
 <header>
   <h1><a href="#/">Trace the Voynich</a></h1>
-  <nav><a href="#/">Next letter</a><a href="#/pages">Pages</a><a href="search.html">Search</a><button id="help-open" class="link">How it works</button><button id="credit-open" class="link">Get credited</button></nav>
+  <nav><a href="#/">Next letter</a><a href="#/pages">Pages</a><a href="search.html">Search</a><button id="help-open" class="link">How it works</button><button id="credits-open" class="link">Credits</button><button id="credit-open" class="link">Get credited</button></nav>
 </header>
 <div id="book" hidden>
   <div class="book-head"><span><b id="book-count"></b> letters checked by people</span><span id="book-goal"></span></div>
@@ -90,12 +90,18 @@
 
 <dialog id="credit">
   <h2>Get credited</h2>
-  <p>Everyone who helps is credited when the glyph map, the OCR and the font are released. Leave the name or handle you want listed, or leave it empty to stay anonymous. It is only shown in the credits, never beside your tracings.</p>
+  <p>Everyone who helps is credited when the glyph map, the OCR and the font are released. Leave the name or handle you want listed, or leave it empty to stay anonymous. It is only shown in the Credits list, never beside your tracings.</p>
   <p><input id="credit-name" maxlength="40" placeholder="Name or handle" autocomplete="nickname"></p>
   <p id="credit-status" class="hint"></p>
   <p class="hint">Your work is tied to this browser. To trace from another device and keep one credit, open this link there: <a id="credit-link" href="#"></a></p>
   <div class="row"><button id="credit-save" class="primary">Save</button> <button id="credit-close">Close</button></div>
 </dialog>
-<script src="app.js?v=47a3324eca"></script>
+<dialog id="credits">
+  <h2>Credits</h2>
+  <p>Thank you to everyone tracing the Voynich, and to these people by name. Everyone else traces anonymously.</p>
+  <p id="credits-list"></p>
+  <form method="dialog"><button class="primary">Close</button></form>
+</dialog>
+<script src="app.js?v=b4108acf7e"></script>
 </body>
 </html>

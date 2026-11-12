@@ -918,7 +918,7 @@
   document.addEventListener('keyup', e => {
     if (e.key !== 'Shift' || !shiftTap) return;
     shiftTap = false;
-    if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName) || $('help').open || $('credit').open) return;
+    if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName) || $('help').open || $('credit').open || $('credits').open) return;
     const group = !$('letter-view').hidden ? 'uv-group' : !$('page-view').hidden ? 'p-uv-group' : null;
     if (group && !$(group).hidden) toggleUV();
   }, true);
@@ -980,6 +980,17 @@
   }
   window.addEventListener('hashchange', route);
   $('help-open').onclick = () => $('help').showModal();
+  // the Credits list: every name left under "Get credited", most agreed letters first
+  $('credits-open').onclick = async () => {
+    $('credits-list').className = 'hint';
+    $('credits-list').textContent = 'Loading…';
+    $('credits').showModal();
+    try {
+      const { names } = await getJSON(`${API}/api/credit-list`);
+      $('credits-list').className = '';
+      $('credits-list').textContent = names.length ? names.join(' · ') : 'No one has left a name yet.';
+    } catch (e) { $('credits-list').className = 'hint bad'; $('credits-list').textContent = `Couldn't load the credits: ${e.message}`; }
+  };
 
   // The name for the credits, kept on the Worker against this browser's tracer id.
   const creditLink = `${location.origin}${location.pathname}#t=${tracer}`;
