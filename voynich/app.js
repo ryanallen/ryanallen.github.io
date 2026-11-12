@@ -197,6 +197,44 @@
     menu.value = '';
   }
 
+  // How often the book has this word with each letter in the open letter's place, in the search's
+  // best reading (data/search/text.json, fetched the first time it is wanted): the letter now
+  // picked first, then every other that makes a word the book has, most often first. Clicking one
+  // makes it this letter, as "It's" does.
+  let bookFreq = null;
+  const freqs = () => bookFreq || (bookFreq = getJSON('data/search/text.json')
+    .then(t => VoynichSearch.prepare(t).readers.BEST.freq).catch(e => { bookFreq = null; throw e; }));
+  async function bookWords() {
+    const box = $('book-words'), k = L.k, reading = L.reading.slice(), id = L.word.id;
+    const kl = VoynichSearch.keyLetters, before = reading.slice(0, k - 1).map(kl).join(''), after = reading.slice(k).map(kl).join('');
+    $('book-words-hint').textContent = `with letter ${k} as each letter it could be`;
+    let freq, names;
+    try { [freq, names] = await Promise.all([freqs(), examples().then(Object.keys)]); }
+    catch { box.textContent = 'The word counts did not load'; return; }
+    if (!L.word || L.word.id !== id || L.k !== k || L.reading.join() !== reading.join()) return;
+    const now = reading[k - 1], seen = new Set(), rows = [];
+    for (const n of [now, ...names]) {
+      const text = before + kl(n) + after;
+      if (seen.has(text)) continue;
+      seen.add(text);
+      const count = freq[text] || 0;
+      if (count || n === now) rows.push({ n, text, count, now: n === now });
+    }
+    rows.sort((a, b) => b.now - a.now || b.count - a.count);
+    const esc = s => s.replace(/[&<>"]/g, ch => `&#${ch.charCodeAt(0)};`);
+    box.innerHTML = rows.map(r => `<button class="count${r.now ? ' now' : ''}" data-n="${esc(r.n)}" title="${r.now
+      ? `${r.text}: ${r.count} times in the book` : `Make letter ${k} ${esc(r.n)}`}">${esc(before)}<b>${esc(kl(r.n))}</b>${esc(after)} <span>${r.count}</span></button>`).join('')
+      + (rows.length < 2 ? '<span class="hint">no other letter here makes a word the book has</span>' : '')
+      + ` <a class="hint" href="search.html#q=${encodeURIComponent(before + '*' + after)}&m=exact" target="_blank" rel="noopener">every word like it</a>`;
+  }
+  $('book-words').onclick = e => {
+    const b = e.target.closest('.count');
+    if (!b || b.classList.contains('now')) return;
+    $('name').value = b.dataset.n;
+    if ($('name').value !== b.dataset.n) $('name').append(new Option(b.dataset.n, b.dataset.n)), $('name').value = b.dataset.n;
+    $('name').onchange();
+  };
+
   async function examplesFor(name) {
     $('example-name').textContent = name;
     const box = $('examples');
@@ -313,7 +351,7 @@
     L.k = Math.max(1, Math.min(k, L.reading.length));
     if (sameWord) L.changed = false;
     $('to-page').href = `#/p/${word.page}`;
-    marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]);
+    marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]); bookWords();
     if (!sameWord) { wordUV(); if (!word.done) fetchAhead(); }
     closePicker();
     if (word.done) { say('This word is done: two people agreed on every letter. Press Skip for another.'); return; }
@@ -534,7 +572,7 @@
   document.querySelectorAll('.sz').forEach(b => b.onclick = () => setBrush(+b.dataset.s));
   $('name').onchange = () => {
     L.reading[L.k - 1] = $('name').value;
-    changed(); ask(); versionStrip(); examplesFor($('name').value); $('name').blur();
+    changed(); ask(); versionStrip(); examplesFor($('name').value); bookWords(); $('name').blur();
   };
   $('remove-letter').onclick = () => {
     if (L.reading.length < 2) { say('A word needs at least one letter', true); return; }
