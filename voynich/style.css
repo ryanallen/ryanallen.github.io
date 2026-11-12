@@ -29,6 +29,12 @@ button.primary{background:var(--accent);color:#171a20;border-color:var(--accent)
 button.link{background:none;border:none;color:#dbe3ec;text-decoration:underline;padding:0;min-height:0}
 #ask{font-size:15px}
 #ask-text b{font-size:20px}
+.reading{display:inline-flex;flex-wrap:wrap;align-items:center;gap:1px;vertical-align:middle}
+.reading .rl,.reading .ins{min-height:26px;padding:0 5px;border:none;background:none;font-weight:400;color:var(--muted,#9aa0aa)}
+.reading .rl:hover{color:var(--text);background:var(--button)}
+.reading .ins{padding:0 3px;opacity:.45}
+.reading .ins:hover{opacity:1;background:var(--button);color:var(--text)}
+.ins-pick{min-height:26px;padding:0 4px}
 #name{font-size:16px}
 .chip{display:inline-block;width:12px;height:12px;border-radius:50%;margin:0 4px -1px 0;box-shadow:0 0 0 1px #fff4}
 .stage{flex:1;min-height:200px;overflow:auto;background:#0b0c0f;touch-action:none;cursor:crosshair;position:relative}

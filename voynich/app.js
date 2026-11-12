@@ -161,7 +161,12 @@
 
   function ask() {
     const c = color(L.k);
-    $('ask-text').innerHTML = `Letter ${L.k} of ${L.reading.length} in <span class="hint">${L.reading.map((n, i) => i + 1 === L.k ? `<b style="color:rgb(${c})">${n}</b>` : n).join(' ')}</span> — color its ink`;
+    // the word's letters, each one a button to go to it, with a + before, between and after them
+    // to add a letter there, as under the word in Glyph Painter
+    const esc = n => n.replace(/[&<>"]/g, ch => `&#${ch.charCodeAt(0)};`);
+    const plus = at => `<button class="ins" data-at="${at}" title="Add a letter here">+</button>`;
+    $('ask-text').innerHTML = `Letter ${L.k} of ${L.reading.length} in <span class="reading">${plus(0)}${L.reading.map((n, i) => (i + 1 === L.k
+      ? `<b style="color:rgb(${c})">${esc(n)}</b>` : `<button class="rl" data-k="${i + 1}" title="Go to letter ${i + 1}">${esc(n)}</button>`) + plus(i + 1)).join('')}</span> — color its ink`;
     $('where').textContent = `${L.word.id}${(L.word.verified || '')[L.k - 1] === '1' ? ' · this letter is verified' : ''}`;
     // one Stack menu: the letters this one can join, by name, and Unstack when it is stacked
     const before = L.reading[L.k - 2], after = L.reading[L.k], menu = $('stack');
@@ -570,15 +575,40 @@
     if (location.hash === to) openLetter(L.word.id, L.k); else location.hash = to;
     if (!memo) say(`No record of which ink was whose here, so it all stays on ${parts[0]}: paint ${parts.slice(1).join(' and ')} again`, true);
   }
-  $('add-letter').onclick = () => {
-    if (L.reading.length >= 20) return;
+  // A letter the reading left out goes in where its + is, under the name picked for it,
+  // and becomes the letter to paint.
+  function insertLetter(at, name) {
+    // the new letter is number at + 1; every letter from there on moves up one
+    if (L.reading.length >= 20) { say('A word holds at most 20 letters', true); return; }
     L.undo.push(L.labels.slice());
-    for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > L.k) L.labels[i]++;
-    L.reading.splice(L.k, 0, '?');
-    L.checked = L.checked.map(c => c > L.k ? c + 1 : c);
+    for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > at) L.labels[i]++;
+    L.reading.splice(at, 0, name);
+    L.checked = L.checked.map(c => c > at ? c + 1 : c);
     L.word.verified = '';
     changed();
-    location.hash = `#/w/${L.word.id}/${L.k + 1}`;
+    const to = `#/w/${L.word.id}/${at + 1}`;
+    if (location.hash === to) openLetter(L.word.id, at + 1); else location.hash = to;
+  }
+  $('ask-text').onclick = async e => {
+    const letter = e.target.closest('.rl'), ins = e.target.closest('.ins');
+    (letter || ins)?.blur();
+    if (letter) { location.hash = `#/w/${L.word.id}/${letter.dataset.k}`; return; }
+    if (!ins) return;
+    if (L.reading.length >= 20) { say('A word holds at most 20 letters', true); return; }
+    const at = +ins.dataset.at, menu = document.createElement('select');
+    menu.className = 'ins-pick';
+    menu.title = 'The letter to add here';
+    menu.append(new Option('Add which letter?', ''));
+    const all = Object.keys(await examples()).sort((a, b) => (a.startsWith('@') - b.startsWith('@')) || a.localeCompare(b));
+    for (const n of all) menu.append(new Option(n, n));
+    ins.replaceWith(menu);
+    let gone = false;
+    const done = () => { if (gone) return; gone = true; const v = menu.value; if (v) insertLetter(at, v); else ask(); };
+    menu.onchange = done;
+    menu.onblur = done;
+    menu.onkeydown = e => { e.stopPropagation(); if (e.key === 'Escape') { menu.value = ''; done(); } };
+    menu.focus();
+    try { menu.showPicker(); } catch { /* the menu stays open for a click */ }
   };
 
   // ---- the page view ------------------------------------------------------
@@ -911,16 +941,12 @@
   $('uv').onclick = toggleUV;
   $('p-uv').onclick = toggleUV;
   for (const id of ['uv-kind', 'p-uv-kind']) $(id).onchange = e => { UV.kind = e.target.value; UV.on = true; e.target.blur(); refreshUV(); };
-  // a tap of Shift on its own, as in Glyph Painter, shows or hides the UV scan where there is one
-  let shiftTap = false;
-  document.addEventListener('keydown', e => { shiftTap = e.key === 'Shift' && !e.repeat; }, true);
-  document.addEventListener('pointerdown', () => { shiftTap = false; }, true);
-  document.addEventListener('keyup', e => {
-    if (e.key !== 'Shift' || !shiftTap) return;
-    shiftTap = false;
+  // U shows or hides the UV scan where there is one (Shift is the straight line)
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'u' && e.key !== 'U' || e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
     if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName) || $('help').open || $('credit').open || $('credits').open) return;
     const group = !$('letter-view').hidden ? 'uv-group' : !$('page-view').hidden ? 'p-uv-group' : null;
-    if (group && !$(group).hidden) toggleUV();
+    if (group && !$(group).hidden) { e.preventDefault(); toggleUV(); }
   }, true);
 
   // ---- keys and routes ----------------------------------------------------
