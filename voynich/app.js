@@ -100,7 +100,7 @@
 
   // ---- the letter task ----------------------------------------------------
   const L = { word: null, k: 1, labels: null, reading: [], checked: [], start: null, zoom: 3, brush: 2, erasing: false,
-    hidden: false, moving: false, space: false, undo: [], stroke: null, dirty: false, timer: null, add: null, versions: [], changed: false };
+    hidden: false, moving: false, space: false, undo: [], stroke: null, anchor: null, dirty: false, timer: null, add: null, versions: [], changed: false };
   const wstage = $('word-stage'), wlayer = $('word-layer'), crop = $('crop'), paint = $('paint'), pg = paint.getContext('2d');
 
   function say(text, bad = false) { $('status').textContent = text; $('status').classList.toggle('bad', bad); }
@@ -274,6 +274,7 @@
       L.checked = draft ? draft.checked : (mine ? mine.checked.slice() : []);
       L.start = base;
       L.undo = [];
+      L.anchor = null;
       L.changed = !!draft;
       crop.src = cropURL(word.iiif, word.x, word.y, word.w, word.h);
       paint.width = word.w; paint.height = word.h;
@@ -322,11 +323,16 @@
     }
     if (e.button !== 0) return;
     e.preventDefault();
-    L.undo.push(L.labels.slice());
+    const before = L.labels.slice();
+    before.anchor = L.anchor;
+    L.undo.push(before);
     if (L.undo.length > 60) L.undo.shift();
     const p = pointWord(e);
-    L.stroke = { last: p };
-    dab(p.x, p.y); drawWord(); capture(wstage, e);
+    // Shift-click draws a straight line from where the last stroke ended, as in Glyph Painter
+    const straight = !!(e.shiftKey && L.anchor);
+    L.stroke = { last: p, straight };
+    if (straight) strokeTo(L.anchor, p); else dab(p.x, p.y);
+    drawWord(); capture(wstage, e);
   });
   // the cursor is a box the size of the brush, on the pixels a dab would paint
   const ring = $('ring');
@@ -349,10 +355,11 @@
     const s = L.stroke;
     if (!s) return;
     if (s.pan) { wstage.scrollLeft = s.l - (e.clientX - s.x); wstage.scrollTop = s.t - (e.clientY - s.y); return; }
+    if (s.straight) return;
     const p = pointWord(e);
     strokeTo(s.last, p); s.last = p; drawWord();
   });
-  const endStroke = () => { if (L.stroke && !L.stroke.pan) changed(); L.stroke = null; };
+  const endStroke = () => { if (L.stroke && !L.stroke.pan) { L.anchor = L.stroke.last; changed(); } L.stroke = null; };
   wstage.addEventListener('pointerup', endStroke);
   wstage.addEventListener('pointercancel', endStroke);
   wstage.addEventListener('wheel', e => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); zoomWord(e.deltaY < 0 ? 1.25 : 0.8); } }, { passive: false });
@@ -472,7 +479,7 @@
   $('erase').onclick = () => { L.erasing = !L.erasing; L.moving = false; marks(); };
   $('move').onclick = () => { L.moving = !L.moving; marks(); };
   $('hide').onclick = () => { L.hidden = !L.hidden; drawWord(); marks(); };
-  $('undo').onclick = () => { if (L.undo.length) { L.labels = L.undo.pop(); drawWord(); changed(); } };
+  $('undo').onclick = () => { if (L.undo.length) { const u = L.undo.pop(); if ('anchor' in u) L.anchor = u.anchor; L.labels = u; drawWord(); changed(); } };
   $('zoomin').onclick = () => zoomWord(1.25);
   $('zoomout').onclick = () => zoomWord(0.8);
   $('fit').onclick = fitWord;
