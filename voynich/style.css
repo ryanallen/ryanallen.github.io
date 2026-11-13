@@ -58,6 +58,8 @@ button:has(> .ic:only-child) .ic,#zoomout .ic,#zoomin .ic,#p-zoomout .ic,#p-zoom
 #word-stage{cursor:none}#word-stage.moving{cursor:grab}
 #ring{position:fixed;z-index:10;display:none;pointer-events:none;border:1px solid #fff;outline:1px solid #000}
 .layer{position:relative;margin:10px auto}
+#word-content{position:absolute;transform-origin:center center}
+#turn-angle{min-width:31px;text-align:center;font-variant-numeric:tabular-nums}
 .layer canvas[hidden],.group[hidden]{display:none}.layer img,.layer canvas{position:absolute;left:0;top:0;width:100%;height:100%;image-rendering:pixelated;user-select:none;-webkit-user-select:none;pointer-events:none}
 #page-stage{cursor:pointer}#page-stage.boxing{cursor:crosshair}
 #hoverbox,#drawbox{position:absolute;display:none;pointer-events:none;box-sizing:border-box}

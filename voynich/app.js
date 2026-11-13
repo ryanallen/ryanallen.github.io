@@ -100,8 +100,8 @@
 
   // ---- the letter task ----------------------------------------------------
   const L = { word: null, k: 1, labels: null, reading: [], checked: [], start: null, zoom: 3, brush: 2, erasing: false,
-    hidden: false, moving: false, space: false, undo: [], stroke: null, anchor: null, dirty: false, timer: null, add: null, versions: [], changed: false };
-  const wstage = $('word-stage'), wlayer = $('word-layer'), crop = $('crop'), paint = $('paint'), pg = paint.getContext('2d');
+    hidden: false, moving: false, space: false, undo: [], stroke: null, anchor: null, dirty: false, timer: null, add: null, versions: [], changed: false, turn: 0 };
+  const wstage = $('word-stage'), wlayer = $('word-layer'), wcontent = $('word-content'), crop = $('crop'), paint = $('paint'), pg = paint.getContext('2d');
 
   // a word's letters added or deleted, said in a toast with Undo beside it
   let toastTimer = 0;
@@ -139,9 +139,22 @@
     pg.putImageData(wordImage, 0, 0);
   }
   function drawWord() { if (!wordFrame) wordFrame = requestAnimationFrame(drawWordNow); }
-  function sizeWord() { wlayer.style.width = L.word.w * L.zoom + 'px'; wlayer.style.height = L.word.h * L.zoom + 'px'; }
+  function turnedSize() {
+    const a = L.turn * Math.PI / 180, c = Math.abs(Math.cos(a)), s = Math.abs(Math.sin(a));
+    return { w: L.word.w * c + L.word.h * s, h: L.word.w * s + L.word.h * c };
+  }
+  function sizeWord() {
+    const w = L.word.w * L.zoom, h = L.word.h * L.zoom, bounds = turnedSize();
+    const bw = bounds.w * L.zoom, bh = bounds.h * L.zoom;
+    Object.assign(wlayer.style, { width: bw + 'px', height: bh + 'px' });
+    Object.assign(wcontent.style, { width: w + 'px', height: h + 'px', left: (bw - w) / 2 + 'px',
+      top: (bh - h) / 2 + 'px', transform: `rotate(${L.turn}deg)` });
+    $('turn-angle').textContent = L.turn + '°';
+    showRing();
+  }
   function fitWord() {
-    L.zoom = Math.max(0.5, Math.min(10, (wstage.clientWidth - 20) / L.word.w, (wstage.clientHeight - 20) / L.word.h));
+    const bounds = turnedSize();
+    L.zoom = Math.max(0.25, Math.min(10, (wstage.clientWidth - 20) / bounds.w, (wstage.clientHeight - 20) / bounds.h));
     sizeWord();
   }
   function zoomWord(f) {
@@ -150,6 +163,12 @@
     sizeWord();
     wstage.scrollLeft = cx * L.zoom - wstage.clientWidth / 2;
     wstage.scrollTop = cy * L.zoom - wstage.clientHeight / 2;
+  }
+  function setTurn(degrees) {
+    if (!L.word) return;
+    L.turn = ((degrees % 360) + 360) % 360;
+    store.set('voynich-turn:' + L.word.id, String(L.turn));
+    fitWord();
   }
   function marks() {
     $('erase').classList.toggle('on', L.erasing);
@@ -339,6 +358,8 @@
       L.undo = [];
       L.anchor = null;
       L.changed = !!draft;
+      const savedTurn = store.get('voynich-turn:' + id);
+      L.turn = savedTurn === null ? (id === 'f67v2.8.w2' ? 180 : 0) : ((Number(savedTurn) || 0) % 360 + 360) % 360;
       crop.src = cropURL(word.iiif, word.x, word.y, word.w, word.h);
       paint.width = word.w; paint.height = word.h;
       fitWord();
@@ -360,8 +381,10 @@
   }
 
   function pointWord(e) {
-    const r = paint.getBoundingClientRect();
-    return { x: Math.floor((e.clientX - r.left) / L.zoom), y: Math.floor((e.clientY - r.top) / L.zoom) };
+    const r = wlayer.getBoundingClientRect(), a = L.turn * Math.PI / 180;
+    const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+    return { x: Math.floor((Math.cos(a) * dx + Math.sin(a) * dy) / L.zoom + L.word.w / 2),
+      y: Math.floor((-Math.sin(a) * dx + Math.cos(a) * dy) / L.zoom + L.word.h / 2) };
   }
   function dab(x, y) {
     const { w, h } = L.word;
@@ -406,11 +429,14 @@
     if (e) lastPointer = e;
     e = lastPointer;
     if (!e || !L.word || L.moving || L.space || (L.stroke && L.stroke.pan)) { ring.style.display = 'none'; return; }
-    const r = paint.getBoundingClientRect();
-    const x = Math.floor((e.clientX - r.left) / L.zoom), y = Math.floor((e.clientY - r.top) / L.zoom);
+    const r = wlayer.getBoundingClientRect(), { x, y } = pointWord(e);
     if (x < 0 || y < 0 || x >= L.word.w || y >= L.word.h) { ring.style.display = 'none'; return; }
-    Object.assign(ring.style, { display: 'block', left: r.left + x * L.zoom - 1 + 'px', top: r.top + y * L.zoom - 1 + 'px',
-      width: L.brush * L.zoom + 'px', height: L.brush * L.zoom + 'px' });
+    const a = L.turn * Math.PI / 180, dx = (x + L.brush / 2 - L.word.w / 2) * L.zoom;
+    const dy = (y + L.brush / 2 - L.word.h / 2) * L.zoom;
+    const side = L.brush * L.zoom;
+    Object.assign(ring.style, { display: 'block', left: r.left + r.width / 2 + Math.cos(a) * dx - Math.sin(a) * dy - side / 2 - 1 + 'px',
+      top: r.top + r.height / 2 + Math.sin(a) * dx + Math.cos(a) * dy - side / 2 - 1 + 'px',
+      width: side + 'px', height: side + 'px', transform: `rotate(${L.turn}deg)` });
   }
   wstage.addEventListener('pointerleave', () => { ring.style.display = 'none'; lastPointer = null; });
   wstage.addEventListener('scroll', () => showRing());
@@ -569,6 +595,11 @@
   $('zoomin').onclick = () => zoomWord(1.25);
   $('zoomout').onclick = () => zoomWord(0.8);
   $('fit').onclick = fitWord;
+  $('turn-left').onclick = () => setTurn(L.turn - 15);
+  $('turn-right').onclick = () => setTurn(L.turn + 15);
+  $('turn-half').onclick = () => setTurn(L.turn + 180);
+  $('turn-reset').onclick = () => setTurn(0);
+  new ResizeObserver(() => { if (L.word && !$('letter-view').hidden) fitWord(); }).observe(wstage);
   document.querySelectorAll('.sz').forEach(b => b.onclick = () => setBrush(+b.dataset.s));
   $('name').onchange = () => {
     L.reading[L.k - 1] = $('name').value;
