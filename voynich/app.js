@@ -100,7 +100,7 @@
 
   // ---- the letter task ----------------------------------------------------
   const L = { word: null, k: 1, labels: null, reading: [], checked: [], start: null, zoom: 3, brush: 2, erasing: false,
-    hidden: false, moving: false, space: false, undo: [], stroke: null, anchor: null, dirty: false, timer: null, add: null, versions: [], changed: false, turn: 0 };
+    hidden: false, hidePinned: false, hideHeld: false, moving: false, space: false, undo: [], stroke: null, anchor: null, dirty: false, timer: null, add: null, versions: [], changed: false, turn: 0 };
   const wstage = $('word-stage'), wlayer = $('word-layer'), wcontent = $('word-content'), crop = $('crop'), paint = $('paint'), pg = paint.getContext('2d');
 
   // a word's letters added or deleted, said in a toast with Undo beside it
@@ -177,6 +177,10 @@
     wstage.classList.toggle('moving', L.moving || L.space);
     document.querySelectorAll('.sz').forEach(b => b.classList.toggle('on', +b.dataset.s === L.brush));
     $('go').textContent = L.changed ? 'Save and next →' : 'Looks right →';
+  }
+  function letterHide() {
+    L.hidden = L.hidePinned || L.hideHeld;
+    drawWord(); marks();
   }
 
   async function names() {
@@ -578,7 +582,7 @@
   $('skip').onclick = async () => { save(); if (L.word) skipped.push(L.word.id); nextTask(); };
   $('erase').onclick = () => { L.erasing = !L.erasing; L.moving = false; marks(); };
   $('move').onclick = () => { L.moving = !L.moving; marks(); };
-  $('hide').onclick = () => { L.hidden = !L.hidden; drawWord(); marks(); };
+  $('hide').onclick = () => { L.hidePinned = !L.hidePinned; letterHide(); };
   // a change to the word's letters is undone whole: its reading, the letters checked and the pixels
   const snapshot = () => Object.assign(L.labels.slice(), { reading: L.reading.slice(), checked: L.checked.slice(), k: L.k });
   $('undo').onclick = () => {
@@ -745,7 +749,7 @@
   };
 
   // ---- the page view ------------------------------------------------------
-  const P = { page: null, info: null, words: [], scale: 1, zoom: 1, hidden: false, boxing: false, drag: null, box: null, untraced: [] };
+  const P = { page: null, info: null, words: [], scale: 1, zoom: 1, hidden: false, hidePinned: false, hideHeld: false, boxing: false, drag: null, box: null, untraced: [] };
   const pstage = $('page-stage'), player = $('page-layer'), ptrace = $('page-trace'), hoverbox = $('hoverbox'), drawbox = $('drawbox');
 
   async function openPage(page) {
@@ -965,7 +969,12 @@
   $('p-zoomin').onclick = () => zoomPage(1.25);
   $('p-zoomout').onclick = () => zoomPage(0.8);
   $('p-fit').onclick = fitPage;
-  $('p-hide').onclick = () => { P.hidden = !P.hidden; $('p-hide').classList.toggle('on', P.hidden); sizePage(); };
+  function pageHide() {
+    P.hidden = P.hidePinned || P.hideHeld;
+    $('p-hide').classList.toggle('on', P.hidden);
+    sizePage();
+  }
+  $('p-hide').onclick = () => { P.hidePinned = !P.hidePinned; pageHide(); };
   $('p-add').onclick = toggleBoxing;
   $('addgo').onclick = addWord;
   $('addcancel').onclick = cancelAdd;
@@ -1089,8 +1098,8 @@
     // hold H to see the page under the tracing
     if ((e.key === 'h' || e.key === 'H') && !e.ctrlKey && !e.metaKey && !e.altKey) {
       e.preventDefault();
-      if (inLetter && L.word && !L.hidden) { L.hidden = true; drawWord(); }
-      if (inPage && P.info && !P.hidden) { P.hidden = true; sizePage(); }
+      if (inLetter && L.word) { L.hideHeld = true; letterHide(); }
+      if (inPage && P.info) { P.hideHeld = true; pageHide(); }
       return;
     }
     // Esc goes back: from a letter to its page, from a page to the list of pages
@@ -1121,11 +1130,18 @@
   document.addEventListener('keyup', e => {
     if (e.code === 'Space') { L.space = false; marks(); }
     if (e.key === 'h' || e.key === 'H') {
-      if (L.word) { L.hidden = $('hide').classList.contains('on'); drawWord(); }
-      if (P.info) { P.hidden = $('p-hide').classList.contains('on'); sizePage(); }
+      L.hideHeld = false;
+      P.hideHeld = false;
+      if (L.word) letterHide();
+      if (P.info) pageHide();
     }
   });
-  window.addEventListener('blur', () => { L.space = false; marks(); });
+  window.addEventListener('blur', () => {
+    L.space = false; L.hideHeld = false; P.hideHeld = false;
+    if (L.word) letterHide();
+    if (P.info) pageHide();
+    marks();
+  });
   window.addEventListener('pagehide', () => { if (L.dirty) save(); for (const k of outbox.keys()) send(k); });
 
   async function route() {
