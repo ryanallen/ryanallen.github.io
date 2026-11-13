@@ -51,7 +51,7 @@
   const examples = () => examplesData || (examplesData = getJSON('data/examples.json').catch(e => { examplesData = null; throw e; }));
 
   function views(name) {
-    for (const v of ['letter-view', 'page-view', 'pages-view']) $(v).hidden = v !== name;
+    for (const v of ['letter-view', 'page-view', 'pages-view', 'my-words-view']) $(v).hidden = v !== name;
   }
 
   // The whole book's progress under the header: the letters people have checked,
@@ -1017,6 +1017,28 @@
       : 'Pick a page to see its tracings. Nobody has started any yet, so any page is a first.';
   }
 
+  async function openMyWords() {
+    views('my-words-view');
+    save();
+    const box = $('my-words-list');
+    box.textContent = 'Loading…';
+    try {
+      const { words } = await getJSON(`${API}/api/my-words?tracer=${tracer}`);
+      box.replaceChildren();
+      if (!words.length) { box.textContent = 'No words worked on in this browser yet.'; return; }
+      for (const w of words) {
+        const a = document.createElement('a');
+        a.href = `#/w/${w.id}/1`;
+        const title = document.createElement('b'), detail = document.createElement('span');
+        title.textContent = `${w.id} · ${w.reading.join(' ')}`;
+        detail.textContent = w.redo ? 'Retrace' : w.done ? 'Verified' : `${w.checked.length} letters checked`;
+        if (w.redo) detail.className = 'redo';
+        a.append(title, detail);
+        box.append(a);
+      }
+    } catch (e) { box.textContent = `Could not load your words: ${e.message}`; }
+  }
+
   // ---- the UV scans -------------------------------------------------------
   // The pages with 2014 multispectral scans carry "uv": {kind: label} in pages.json,
   // their views in data/uv/<page>-<kind>.jpg in the Yale image's pixels, and each
@@ -1150,6 +1172,7 @@
     if ((m = /^#\/w\/([^/]+)\/(\d+)$/.exec(h))) return openLetter(decodeURIComponent(m[1]), +m[2]);
     if ((m = /^#\/p\/([^/]+)$/.exec(h))) return openPage(decodeURIComponent(m[1]));
     if (h === '#/pages') return openPages();
+    if (h === '#/my-words') return openMyWords();
     views('letter-view');
     return nextTask();
   }

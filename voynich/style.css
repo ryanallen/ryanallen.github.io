@@ -90,6 +90,11 @@ footer.bar{border-top:1px solid var(--line);border-bottom:none}
 #page-list .meter span{height:100%;width:0;background:#4fbf72}
 #page-list a.started{border-color:#3d5c47}
 #page-list a.finished{background:#1d2c22;border-color:#4fbf72}
+#my-words-list{padding:12px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;align-content:start}
+#my-words-list a{display:block;padding:10px;background:#20242b;border:1px solid var(--line);border-radius:6px;text-decoration:none}
+#my-words-list a:hover{border-color:#6d737e}
+#my-words-list span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+#my-words-list .redo{color:#ffca70}
 #page-list .uvtag{position:absolute;top:8px;right:8px;font:600 10px/1 system-ui,sans-serif;font-style:normal;color:#c9b8ff;border:1px solid #6b5bb0;border-radius:4px;padding:2px 4px}
 #addpanel{position:fixed;z-index:20;background:var(--panel);border:1px solid #6d737e;border-radius:8px;padding:10px;box-shadow:0 10px 30px #000a;display:flex;flex-direction:column;gap:8px;max-width:min(520px,calc(100vw - 32px))}
 #addpanel[hidden]{display:none}

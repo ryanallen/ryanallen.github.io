@@ -17,12 +17,12 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=2a39397ebb">
+<link rel="stylesheet" href="style.css?v=e7e7ec8aa6">
 </head>
 <body>
 <header>
   <h1><a href="#/">Trace the Voynich</a></h1>
-  <nav><a href="#/">Next letter</a><a href="#/pages">Pages</a><a href="search.html">Search</a><button id="help-open" class="link">How it works</button><button id="credits-open" class="link">Credits</button><button id="credit-open" class="link">Get credited</button></nav>
+  <nav><a href="#/">Next letter</a><a href="#/my-words">My words</a><a href="#/pages">Pages</a><a href="search.html">Search</a><button id="help-open" class="link">How it works</button><button id="credits-open" class="link">Credits</button><button id="credit-open" class="link">Get credited</button></nav>
 </header>
 <div id="book" hidden>
   <div class="book-head"><span><b id="book-count"></b> letters checked by people</span><span id="book-goal"></span></div>
@@ -75,6 +75,7 @@
 </section>
 
 <section id="pages-view" hidden><div class="bar"><b>Pages</b> <span class="hint" id="pages-hint">pick a page to see its tracings</span></div><main id="page-list"></main></section>
+<section id="my-words-view" hidden><div class="bar"><b>My words</b> <span class="hint">Your past words; rejected versions are marked Retrace.</span></div><main id="my-words-list"></main></section>
 
 <dialog id="help">
   <h2>How it works</h2>
@@ -104,6 +105,6 @@
   <form method="dialog"><button class="primary">Close</button></form>
 </dialog>
 <script src="search.js?v=a78082c7bf"></script>
-<script src="app.js?v=2a39397ebb"></script>
+<script src="app.js?v=e7e7ec8aa6"></script>
 </body>
 </html>
