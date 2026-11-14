@@ -408,7 +408,10 @@
     const [ai, ...grids] = await Promise.all([word.ai, ...data.versions.map(v => v.labels)].map(inflate));
     const versions = [{ label: word.kind === 'new' ? 'Added' : 'Computer', labels: ai, reading: word.reading, checked: [] }];
     let mine = null, n = 0;
+    // a second check is independent: it starts from the computer's tracing and shows no one else's
+    const second = !!data.second;
     for (const [j, v] of data.versions.entries()) {
+      if (second && !v.mine) continue;
       const labels = grids[j];
       const item = { label: v.mine ? 'Yours' : `Person ${++n}`, labels, reading: v.reading, checked: v.checked };
       if (v.mine) mine = item;
@@ -416,11 +419,12 @@
     }
     if (load !== L.load) return;  // another letter was opened while this one loaded
     L.word = word;
+    L.second = second;
     L.versions = versions;
     if (!sameWord) {
       const draft = JSON.parse(store.get('voynich-draft:' + id) || 'null');
       // a word someone added has a blank computer version: start from the latest person's instead
-      const base = mine || (word.kind === 'new' && versions.length > 1 ? versions[versions.length - 1] : versions[0]);
+      const base = mine || (!second && word.kind === 'new' && versions.length > 1 ? versions[versions.length - 1] : versions[0]);
       L.labels = draft ? Uint8Array.from(draft.labels) : base.labels.slice();
       L.reading = draft ? draft.reading : base.reading.slice();
       L.checked = draft ? draft.checked : (mine ? mine.checked.slice() : []);
@@ -443,9 +447,9 @@
     if (sameWord) L.changed = false;
     $('to-page').href = `#/p/${word.page}`;
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]); bookWords();
-    if (!sameWord) { wordUV(); if (!word.done) fetchAhead(); }
+    if (!sameWord) { wordUV(); if (!word.done || L.second) fetchAhead(); }
     closePicker();
-    if (word.done) { say('This word is done: it was checked and approved. Press Skip for another.'); return; }
+    if (word.done && !L.second) { say('This word is done: it was checked and approved. Press Skip for another.'); return; }
     if (L.note) { toast(L.note); L.note = ''; }
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
