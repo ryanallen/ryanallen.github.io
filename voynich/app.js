@@ -137,6 +137,7 @@
       }
     }
     pg.putImageData(wordImage, 0, 0);
+    if (!L.hidden) drawBreaks();
   }
   function drawWord() { if (!wordFrame) wordFrame = requestAnimationFrame(drawWordNow); }
   function turnedSize() {
@@ -201,7 +202,8 @@
     // the word as a row of letter tiles in their paint colors: click a tile to go to that letter,
     // the round + between tiles to add a letter there, the red × on the open tile to delete it
     const esc = n => n.replace(/[&<>"]/g, ch => `&#${ch.charCodeAt(0)};`);
-    const plus = at => `<button class="ins" data-at="${at}" title="${esc(insertWhere(at))}" aria-label="${esc(insertWhere(at))}"><span>+</span></button>`;
+    const gaps = breaksHere();
+    const plus = at => `<button class="ins${gaps.includes(at) ? ' brk' : ''}" data-at="${at}" title="${esc(insertWhere(at))}" aria-label="${esc(insertWhere(at))}"><span>+</span></button>`;
     const tiles = L.reading.map((n, i) => {
       const k = i + 1, open = k === L.k;
       return plus(i) + `<span class="tile${open ? ' open' : ''}${L.fresh === k ? ' fresh' : ''}" style="--c:rgb(${color(k)})">`
@@ -218,6 +220,70 @@
     if (after) menu.append(new Option(`with ${after} (after)`, 'right'));
     if (L.reading[L.k - 1].includes('+')) menu.append(new Option('Unstack', 'unstack'));
     menu.value = '';
+    // one Two words? menu: each gap of the reading, marked ones offered to take away
+    const bm = $('break');
+    bm.replaceChildren(new Option('Two words?', ''));
+    for (let a = 1; a < L.reading.length; a++) {
+      const left = L.reading.slice(0, a).join(' '), right = L.reading.slice(a).join(' ');
+      bm.append(new Option(gaps.includes(a) ? `✓ ${left} | ${right} (take away)` : `${left} | ${right}`, String(a)));
+    }
+    bm.disabled = L.reading.length < 2;
+    bm.value = '';
+  }
+
+  // A word the computer read as one that is really two: the visitor marks the gap. It is only
+  // noted, for the analysis (POST /api/break); the word, its box and its tracing stay as they are.
+  // Each mark is kept in this browser with the reading it was made on, and shown only while the
+  // word still reads the same.
+  const breakKey = id => 'voynich-breaks:' + id;
+  const breakMarks = id => { try { return JSON.parse(store.get(breakKey(id)) || '[]'); } catch { return []; } };
+  function breaksHere() {
+    if (!L.word) return [];
+    const r = JSON.stringify(L.reading);
+    return breakMarks(L.word.id).filter(m => JSON.stringify(m.reading) === r).map(m => m.after);
+  }
+  async function markBreak(after) {
+    const id = L.word.id, reading = L.reading.slice(), r = JSON.stringify(reading);
+    const marks = breakMarks(id), had = marks.some(m => m.after === after && JSON.stringify(m.reading) === r);
+    const rest = marks.filter(m => !(m.after === after && JSON.stringify(m.reading) === r));
+    store.set(breakKey(id), rest.length || !had ? JSON.stringify(had ? rest : [...rest, { after, reading }]) : null);
+    ask(); drawWord();
+    say(had ? 'Break taken away' : `Noted: you marked a break after ${reading.slice(0, after).join(' ')}. We'll look at word breaks when we analyze the text.`);
+    try {
+      const res = await fetch(API + '/api/break', { method: 'POST', headers: { 'content-type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify({ word: id, tracer, after, reading, on: !had }) });
+      if (!res.ok) say((await res.json().catch(() => ({}))).error || 'The break was not sent', true);
+    } catch { say('The break was not sent: no connection', true); }
+  }
+  $('break').onchange = () => {
+    const a = Number($('break').value);
+    $('break').value = '';
+    $('break').blur();
+    if (a >= 1 && a < L.reading.length) markBreak(a);
+  };
+  // the dashed line between two letters on the crop: midway between the left letter's
+  // rightmost painted pixel and the right letter's leftmost; nothing when either is unpainted
+  function drawBreaks() {
+    const { word, labels } = L, w = word.w, h = word.h;
+    for (const a of breaksHere()) {
+      let right = -1, left = Infinity;
+      for (let i = 0; i < labels.length; i++) {
+        const v = labels[i];
+        if (v === a) right = Math.max(right, i % w);
+        else if (v === a + 1) left = Math.min(left, i % w);
+      }
+      if (right < 0 || left === Infinity) continue;
+      const x = Math.round((right + left) / 2) + 0.5;
+      pg.save();
+      pg.lineWidth = 1;
+      pg.setLineDash([4, 3]);
+      pg.strokeStyle = 'rgba(20,20,20,0.9)';
+      pg.beginPath(); pg.moveTo(x, 0); pg.lineTo(x, h); pg.stroke();
+      pg.lineDashOffset = 3.5;
+      pg.strokeStyle = 'rgba(255,255,255,0.95)';
+      pg.beginPath(); pg.moveTo(x, 0); pg.lineTo(x, h); pg.stroke();
+      pg.restore();
+    }
   }
 
   // How often the book has this word with each letter in the open letter's place, in the search's

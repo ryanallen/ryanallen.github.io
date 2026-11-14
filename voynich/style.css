@@ -39,6 +39,7 @@ button.link{background:none;border:none;color:#dbe3ec;text-decoration:underline;
 .tile .del:hover{background:#ef5a43;transform:scale(1.15)}
 .tiles .ins{width:24px;min-height:34px;padding:0;border:none;background:none;display:grid;place-items:center}
 .tiles .ins span{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px dashed #646b77;color:#8d949f;font-size:14px;font-weight:700;line-height:1;transition:all .12s}
+.tiles .ins.brk{border-left:2px dashed #e8e8e8;border-right:2px dashed #e8e8e8;width:28px;margin:0 3px}
 .tiles .ins:hover span,.tiles .ins:focus-visible span,.tiles .ins.picking span{width:22px;height:22px;border:1px solid #4fbf72;background:#4fbf72;color:#0b0d10}
 .tile.fresh .rl{animation:fresh 1.4s ease-out}
 @keyframes fresh{0%{box-shadow:0 0 0 7px #4fbf72bb;transform:scale(1.18)}100%{box-shadow:0 0 0 0 #4fbf7200;transform:scale(1)}}
