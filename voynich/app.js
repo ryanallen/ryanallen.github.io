@@ -95,7 +95,7 @@
     $('book-steps').textContent = `Goal ${at < 0 ? goals.length : at + 1} of ${goals.length}`;
     $('book-reached').textContent = from ? `${n(from)} reached` : '';
     requestAnimationFrame(() => { $('book-bar').style.width = `${Math.min(100, checked / goal * 100)}%`; });
-    $('stats').textContent = `${n(worked)} words worked on · ${n(letters)} letters verified by two people · ${(checked / total * 100).toFixed(2)}% of the book's ${n(total)} letters checked`;
+    $('stats').textContent = `${n(worked)} words worked on · ${n(letters)} letters approved · ${(checked / total * 100).toFixed(2)}% of the book's ${n(total)} letters checked`;
   }
 
   // ---- the letter task ----------------------------------------------------
@@ -445,7 +445,7 @@
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]); bookWords();
     if (!sameWord) { wordUV(); if (!word.done) fetchAhead(); }
     closePicker();
-    if (word.done) { say('This word is done: two people agreed on every letter. Press Skip for another.'); return; }
+    if (word.done) { say('This word is done: it was checked and approved. Press Skip for another.'); return; }
     if (L.note) { toast(L.note); L.note = ''; }
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
@@ -550,7 +550,7 @@
           if (outbox.get(id) === job) { outbox.delete(id); store.set('voynich-draft:' + id, null); }
           if (body.add) sessionStorage.removeItem('voynich-add:' + id);
           if (j.verified) word.verified = j.verified;
-          if (word === L.word && !L.dirty) say(j.done ? 'Every letter of this word is verified. Thank you!' : 'Saved');
+          if (word === L.word && !L.dirty) say('Saved');
           if (j.done) progressAsk = null;
         } else if (r.status >= 500 || r.status === 429) {
           throw new Error(j.error || r.status);
@@ -600,9 +600,9 @@
     if (!L.checked.includes(L.k)) L.checked.push(L.k);
     L.dirty = true;
     save();
-    // the next letter of this word not verified and not yet checked by you, else another word
+    // the next letter of this word nobody has checked yet, else another word: one person's check is enough
     for (let k = L.k + 1; k <= L.reading.length; k++) {
-      if ((L.word.verified || '')[k - 1] !== '1' && !L.checked.includes(k)) { location.hash = `#/w/${L.word.id}/${k}`; return; }
+      if ((L.word.verified || '')[k - 1] !== '1' && !L.checked.includes(k) && !L.versions.some(v => !v.mine && v.checked && v.checked.includes(k))) { location.hash = `#/w/${L.word.id}/${k}`; return; }
     }
     nextTask();
   }
@@ -934,7 +934,7 @@
     if (!b) return;
     Object.assign(hoverbox.style, { left: b.x0 * P.zoom + 'px', top: b.y0 * P.zoom + 'px', width: Math.max(8, (b.x1 - b.x0) * P.zoom) + 'px', height: Math.max(8, (b.y1 - b.y0) * P.zoom) + 'px' });
     hoverbox.title = b.id;
-    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · done, two people agreed on every letter' : `${b.mine ? ' · you worked on this one' : ''} — click to check it`}`;
+    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · done, checked and approved' : `${b.mine ? ' · you worked on this one' : ''} — click to check it`}`;
   }
   function drawBox() {
     const b = P.box;
@@ -1023,7 +1023,7 @@
     P.pan = null;
     if (clicked && !P.boxing) {
       const b = hit(pagePoint(e));
-      if (b && b.done) { $('p-status').textContent = `${b.id} is done: two people agreed on every letter. Pick a word without a green box.`; return; }
+      if (b && b.done) { $('p-status').textContent = `${b.id} is done: checked and approved. Pick a word without a green box.`; return; }
       if (b) {
         const open = [...b.reading.keys()].find(i => (b.verified || '')[i] !== '1');
         L.word = null;
@@ -1074,7 +1074,7 @@
       a.classList.toggle('finished', p.done === p.words);
       a.querySelector('.done').textContent = p.done ? `${p.done} done` : p.worked ? `${p.worked} in progress` : '';
       a.querySelector('.meter span').style.width = `${Math.max(share, p.worked ? 0.03 : 0) * 100}%`;
-      a.title = `${p.done} of ${p.words} words done, ${p.worked} worked on, ${p.letters} letters verified`;
+      a.title = `${p.done} of ${p.words} words done, ${p.worked} worked on, ${p.letters} letters approved`;
       if (p.worked) started++;
       if (p.done === p.words) finished++;
     }
@@ -1097,7 +1097,7 @@
         a.href = `#/w/${w.id}/1`;
         const title = document.createElement('b'), detail = document.createElement('span');
         title.textContent = `${w.id} · ${w.reading.join(' ')}`;
-        detail.textContent = w.redo ? 'Retrace' : w.done ? 'Verified' : `${w.checked.length} letters checked`;
+        detail.textContent = w.redo ? 'Retrace' : w.done ? 'Approved' : `${w.checked.length} letters checked`;
         if (w.redo) detail.className = 'redo';
         a.append(title, detail);
         box.append(a);
@@ -1244,7 +1244,7 @@
   }
   window.addEventListener('hashchange', route);
   $('help-open').onclick = () => $('help').showModal();
-  // the Credits list: every name left under "Get credited", most agreed letters first
+  // the Credits list: every name left under "Get credited", most approved words first
   $('credits-open').onclick = async () => {
     $('credits-list').className = 'hint';
     $('credits-list').textContent = 'Loading…';
