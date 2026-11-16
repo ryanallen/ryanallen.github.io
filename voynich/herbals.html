@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich herbal likenesses</title>
+<meta name="description" content="Voynich plant drawings set beside drawings in Penn's Erbario, a north Italian herbal of the 1400s, with the Erbario's own name and note in English.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}
+  #intro b{color:var(--text)}
+  #cards{display:flex;flex-direction:column;gap:14px;padding:8px 12px 24px;max-width:1100px}
+  .card{background:#ffffff08;border:1px solid #41454e;border-radius:8px;padding:10px}
+  .card h2{font-size:15px;margin:0 0 8px;color:var(--text)}
+  .card h2 small{color:var(--muted);font-weight:normal}
+  .pics{display:flex;gap:10px;flex-wrap:wrap}
+  .pics figure{margin:0;flex:1 1 260px;min-width:0;text-align:center}
+  .pics img{max-width:100%;max-height:420px;border-radius:4px;background:#2a2620}
+  .pics figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+  .card p{font-size:14px;margin:8px 0 0;line-height:1.45}
+  .card .why{color:var(--muted);font-size:13px}
+  .verdict{display:inline-block;border-radius:10px;padding:1px 8px;font-size:12px;margin-left:6px;vertical-align:1px}
+  .verdict.close{background:#2e7d32;color:#fff}.verdict.partial{background:#8a6d1f;color:#fff}
+  .card a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="herbals.html">Voynich herbal likenesses</a></h1>
+  <nav><a href="./">Trace the Voynich</a> · <a href="search.html">Search</a></nav>
+</header>
+<div id="intro">Each Voynich page here has a plant drawn in some way like one in <b>Penn's <i>Erbario</i></b> (Oversize LJS 419), a herbal written in northern Italy in the 1400s. Beside each pair: what agrees, what does not, and the <i>Erbario</i>'s own name for its plant and what its note says, put into English. A <b>partial</b> likeness is one feature shared, most often a way of drawing the root; it is a lead, not an identification.</div>
+<div id="cards">Loading…</div>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  try {
+    const [data, pages] = await Promise.all([fetch('data/erbario.json').then(r => r.json()), fetch('data/pages.json').then(r => r.json())]);
+    const byPage = Object.fromEntries(pages.map(p => [p.page, p]));
+    $('cards').replaceChildren();
+    for (const x of data.likenesses) {
+      const p = byPage[x.voynich];
+      const vimg = p ? `${p.images[0].iiif}/full/480,/0/default.jpg` : '';
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<h2>Voynich ${esc(x.voynich)} and <i>Erbario</i> fol. ${esc(x.folio)} <small>${esc(x.name)}</small><span class="verdict ${esc(x.verdict)}">${esc(x.verdict)}</span></h2>
+        <div class="pics">
+          <figure><img loading="lazy" src="${esc(x.img)}" alt="Erbario fol. ${esc(x.folio)}"><figcaption><i>Erbario</i> fol. ${esc(x.folio)}, <a href="${esc(x.source)}">the whole page</a>. Penn Libraries, public domain</figcaption></figure>
+          <figure><img loading="lazy" src="${esc(vimg)}" alt="Voynich ${esc(x.voynich)}"><figcaption>Voynich ${esc(x.voynich)}, Beinecke MS 408 (Yale)</figcaption></figure>
+        </div>
+        <p><b>Agrees:</b> ${esc(x.agrees)}.</p>
+        <p class="why"><b>Does not:</b> ${esc(x.disagrees)}.</p>
+        ${x.note ? `<p><b>The <i>Erbario</i>'s note:</b> ${esc(x.note)}</p>` : ''}`;
+      $('cards').append(card);
+    }
+    if (!data.likenesses.length) $('cards').textContent = 'No likenesses yet.';
+  } catch (e) { $('cards').textContent = 'The likenesses did not load: ' + e.message; }
+})();
+</script>
+</body>
+</html>

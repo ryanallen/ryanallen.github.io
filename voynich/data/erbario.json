@@ -1,0 +1,89 @@
+{
+ "credit": "Erbario, Penn Libraries Oversize LJS 419, public domain (OPenn)",
+ "likenesses": [
+  {
+   "voynich": "f11v",
+   "erbario": "67r.a",
+   "folio": "67r",
+   "name": "Teodorse (not identified)",
+   "note": "",
+   "agrees": "leaves painted in a checkered pattern of two or three colors, a whole crown of them",
+   "disagrees": "the Erbario has five stalks each ending in one checkered heart-shaped leaf over a pale blue root; the Voynich has one dome of overlapping green and brown scales over fine roots",
+   "verdict": "partial",
+   "img": "data/erbario/67r.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0136_web.jpg"
+  },
+  {
+   "voynich": "f43v",
+   "erbario": "32r.a",
+   "folio": "32r",
+   "name": "Izolarichas (not identified)",
+   "note": "",
+   "agrees": "a root coiled like a serpent or a knotted cord at the foot of the stem",
+   "disagrees": "the Erbario root is knotted into a loop, red, with heart-shaped leaves and blue trumpet flowers; the Voynich coil is a brown S under a separate plant, with no leaves or flowers that agree",
+   "verdict": "partial",
+   "img": "data/erbario/32r.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0066_web.jpg"
+  },
+  {
+   "voynich": "f52r",
+   "erbario": "15r.a",
+   "folio": "15r",
+   "name": "Grantia (not identified)",
+   "note": "",
+   "agrees": "a red root drawn as a geometric figure below a tuft of upright leaves",
+   "disagrees": "the Erbario quatrefoil with six curling tails against the Voynich ring on a bar; flowers on long stalks in the Erbario, none so on the Voynich",
+   "verdict": "partial",
+   "img": "data/erbario/15r.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0032_web.jpg"
+  },
+  {
+   "voynich": "f52r",
+   "erbario": "34r.a",
+   "folio": "34r",
+   "name": "Augales (not identified)",
+   "note": "",
+   "agrees": "a root drawn as a symmetric geometric figure in red, below a tuft of upright pointed leaves",
+   "disagrees": "the Erbario root is a four-lobed quatrefoil ringed in yellow with a blue center; the Voynich root is a red ring knotted onto a horizontal bar; the leaves differ in form and color",
+   "verdict": "partial",
+   "img": "data/erbario/34r.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0070_web.jpg"
+  },
+  {
+   "voynich": "f54v",
+   "erbario": "47r.a",
+   "folio": "47r",
+   "name": "Bifiles or basosiles (not identified)",
+   "note": "",
+   "agrees": "a root drawn as a chain of linked swollen segments",
+   "disagrees": "the Erbario chains are flat, red, ringed with blue and cross like a pair of tongs; the Voynich chain is one brown run of round knobs; the leaves and flowers do not agree",
+   "verdict": "partial",
+   "img": "data/erbario/47r.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0096_web.jpg"
+  },
+  {
+   "voynich": "f65r",
+   "erbario": "95r.a",
+   "folio": "95r",
+   "name": "Dropwort, Filipendula vulgaris: the tubers strung on the roots as drawn",
+   "note": "",
+   "agrees": "roots strung with swollen spindle-shaped tubers on thin threads, spreading from one crown; a leafy plant above with no flower in the Erbario",
+   "disagrees": "the leaves: finely cut fern-like sprays in the Erbario, broad lobed leaves in the Voynich; the Voynich has a starry umbel at the top and its tubers are joined end to end, not strung apart",
+   "verdict": "partial",
+   "img": "data/erbario/95r.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0192_web.jpg"
+  },
+  {
+   "voynich": "f93v",
+   "erbario": "6v.a",
+   "folio": "6v",
+   "name": "Asphodel, the herb of Saturn",
+   "note": "The herb of Saturn is much worth for pain of the kidneys and of the feet. Also, whoever has pain in the feet, let him eat of the root of the said herb, cooked, and he will be freed. It is also worth for the falling sickness [?] and against demons, carrying the said root on one's body [...] in such a way that he will be freed, and no demon can stay in the house where the said root is. Also it is worth for the pain of childbirth, so that she will give birth at once, without pain, if she carries some of the said root with her [...]. Also this root is worth [...] by night, so that neither demons nor men can do harm.",
+   "agrees": "a cluster of large swollen tuberous roots under the stem",
+   "disagrees": "the Erbario asphodel is naturalistic, long strap leaves and a flower spike; the Voynich has whorls of spiky leaves up a tall stem and red berries; only the tubers agree",
+   "verdict": "partial",
+   "img": "data/erbario/6v.a.jpg",
+   "source": "https://openn.library.upenn.edu/Data/0001/ljs419/data/web/0265_0015_web.jpg"
+  }
+ ]
+}
