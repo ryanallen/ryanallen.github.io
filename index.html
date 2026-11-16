@@ -412,17 +412,16 @@
   .honors li:nth-child(4n+1)::before { display: none; }
   @media (min-width: 901px) {
     .honors ul { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-    .honors li { grid-column: span 3; }
-    .honors li:nth-child(n+5):nth-child(-n+7) { grid-column: span 4; }
-    .honors li:nth-child(8)::before { display: none; }
-    .honors li:nth-child(9)::before { display: block; }
+    .honors li { grid-column: span 4; }
+    .honors li:nth-child(4n+1)::before { display: block; }
+    .honors li:nth-child(3n+1)::before { display: none; }
   }
   .honors.in li { opacity: 1; transform: none; }
   .honors.in li i { transform: none; }
   .honors.in li, .honors.in li i { transition-delay: calc(var(--k, 0) * 120ms + 400ms); }
   @media (max-width: 900px) { .honors ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } .honors li:nth-child(4n+1)::before { display: block; }
     .honors li:nth-child(2n+1)::before { display: none; } }
-  @media (min-width: 701px) and (max-width: 900px) {
+  @media (min-width: 561px) and (max-width: 900px) {
     .honors li:last-child:nth-child(odd) { grid-column: 1 / -1; width: 50%; justify-self: center; }
   }
   @media (max-width: 560px) { .honors ul { grid-template-columns: 1fr; } .honors li:nth-child(n)::before { display: block; } .honors li:first-child::before { display: none; }
@@ -542,17 +541,15 @@
 </section>
 <section class="honors" id="honors"><canvas aria-hidden="true"></canvas><h2>Honors</h2>
 <div class="billion"><b>$1B+</b><span>Earned by teams I've been part of</span></div><ul aria-label="Honors">
-  <li style="--k:0"><img class="h-logo" src="media/logos/gdc.svg" alt="" loading="lazy"><b>Best in Play</b><i></i><span>Game Developers Conference<br>Monsters Invade Oz</span></li>
-  <li style="--k:1"><img class="h-logo" src="media/logos/appstore.svg" alt="" loading="lazy"><b>Top 10 App Store</b><i></i><span>Most downloaded at launch<br>Monsters Invade Oz</span></li>
+  <li style="--k:0"><img class="h-logo" src="media/logos/appstore.svg" alt="" loading="lazy"><b>Multiple #1 Apps</b><i></i><span>Apple App Store &amp; Google Play<br>Free and paid charts</span></li>
+  <li style="--k:1"><img class="h-logo" src="media/logos/gdc.svg" alt="" loading="lazy"><b>Best in Play</b><i></i><span>Game Developers Conference<br>Monsters Invade Oz</span></li>
   <li style="--k:2"><img class="h-logo" src="media/logos/aaf.svg" alt="" loading="lazy"><b>Gold ADDY</b><i></i><span>American Advertising Federation<br>Lexus</span></li>
   <li style="--k:3"><img class="h-logo" src="media/logos/siriusxm.svg" alt="" loading="lazy"><b>The Howard Stern Show</b><i></i><span>Repeat guest, apps featured<br>Dapper Gentlemen</span></li>
   <li style="--k:4"><b>30M+ Downloads</b><i></i><span>In 94 countries<br>Dapper Gentlemen</span></li>
   <li style="--k:5"><b>Successful Exit</b><i></i><span>Acquired by HIPO<br>Swing Dev</span></li>
   <li style="--k:6"><b>Most Innovative Organization</b><i></i><span>Trade Show Executive · Cosmoprof North America<br>Online education, live streaming, membership &amp; payments</span></li>
   <li style="--k:7"><b>Most Innovative New Product</b><i></i><span>SEMA Show<br>Plasmaglow</span></li>
-  <li style="--k:8"><img class="h-logo" src="media/logos/appstore.svg" alt="" loading="lazy"><b>#1 Paid &amp; Free</b><i></i><span>Every App Store country<br>Ugly Meter</span></li>
-  <li style="--k:9"><img class="h-logo" src="media/logos/appstore.svg" alt="" loading="lazy"><b>Top 100 App Store</b><i></i><span>Securely password manager<br>Dapper Gentlemen</span></li>
-  <li style="--k:10"><b>U.S. Patent</b><i></i><span>Wireless door locking system<br><a href="https://patents.google.com/patent/US9353551B2/en" target="_blank" rel="noopener">US 9,353,551 B2 ↗</a></span></li>
+  <li style="--k:8"><b>U.S. Patent</b><i></i><span>Wireless door locking system<br><a href="https://patents.google.com/patent/US9353551B2/en" target="_blank" rel="noopener">US 9,353,551 B2 ↗</a></span></li>
 </ul></section>
 <section class="contact" id="contact"><div>
   <a class="mail" href="mailto:hi@ryanallen.com">hi@ryanallen.com</a>
@@ -836,10 +833,9 @@ const ROLES = [
     hero: [{ img: 'images/gdc-best-in-play.jpg', d: 'screen' }],
     tiles: [
       { name: 'Best in Play', logo: 'gdc', img: 'images/gdc-best-in-play.jpg', d: 'screen', stat: 'Game Developers Conference' },
-      { name: 'App Store', logo: 'appstore', figure: 'Top 10', stat: 'Most downloaded at launch' },
       { name: 'Assets Drawn', figure: '15,000+', stat: 'Illustrated and animated' },
     ] },
-  { name: 'Dapper Gentlemen', sub: 'Studio', line: 'A studio I co-founded and ran. Ugly Meter reached #1 on both the paid and free App Store charts in every country where it was available, and our password manager Securely made the top 100. Our own apps were downloaded more than 30 million times in 94 countries, and I became a repeat guest on The Howard Stern Show. I am also a co-inventor on a granted U.S. patent for a wireless door lock. Clients hired us too, Microsoft, BMW, Disney and Google Ventures among them, and I worked on all of it, from the first sales call to launch.',
+  { name: 'Dapper Gentlemen', sub: 'Studio', line: 'A studio I co-founded and ran. We made multiple #1 apps across the Apple App Store and Google Play, including the free and paid iPad charts. Ugly Meter reached #1 on both the free and paid App Store charts in every country where it was available. Our own apps were downloaded more than 30 million times in 94 countries, and I became a repeat guest on The Howard Stern Show. I am also a co-inventor on a granted U.S. patent for a wireless door lock. Clients hired us too, Microsoft, BMW, Disney and Google Ventures among them, and I worked on all of it, from the first sales call to launch.',
     facts: [['Role', 'Co-Founder · Head of Product'], ['Areas', 'Product · Design · Sales · Hiring · Client Work'], ['Clients', 'Microsoft · BMW · Disney · Google Ventures']],
     hero: [{ img: 'images/howard-stern-web.webp', d: 'screen' }, { ui: 'cards', d: 'phone' }],
     tiles: [
@@ -849,9 +845,8 @@ const ROLES = [
       { name: 'Disney', art: '<div class="art"><img src="media/clients/disney.svg" alt="" loading="lazy" style="width:46%;left:27%;top:30%"></div>', stat: 'Client work' },
       { name: 'BMW', art: '<div class="art"><img src="media/clients/bmw.svg" alt="" loading="lazy" style="width:24%;left:38%;top:30%"></div>', stat: 'Client work' },
       { name: 'Google Ventures', art: '<div class="art"><img src="media/clients/google-ventures.svg" alt="" loading="lazy" style="width:30%;left:35%;top:30%"></div>', stat: 'Client work' },
-      { name: 'Own Apps', art: '<div class="art"><img src="media/stores/apple.svg" alt="" loading="lazy" style="width:11%;left:14%;top:30%"><img src="media/stores/googleplay.svg" alt="" loading="lazy" style="width:11%;right:14%;top:44%"></div>', ui: 'appcycle', d: 'phone', stat: 'Multiple #1 most downloaded apps in the world' },
-      { name: 'Ugly Meter', logo: 'appstore', figure: '#1', stat: 'Paid and free charts in every country' },
-      { name: 'Securely', logo: 'appstore', figure: 'Top 100', stat: 'Password manager' },
+      { name: 'Own Apps', art: '<div class="art"><img src="media/stores/apple.svg" alt="" loading="lazy" style="width:11%;left:14%;top:30%"><img src="media/stores/googleplay.svg" alt="" loading="lazy" style="width:11%;right:14%;top:44%"></div>', ui: 'appcycle', d: 'phone', stat: 'Multiple #1 apps on Apple and Google' },
+      { name: 'Ugly Meter', logo: 'appstore', figure: '#1', stat: 'Free and paid charts, including iPad' },
       { name: 'Wireless Door Lock', figure: 'Patent', stat: 'US 9,353,551 B2' },
       { name: 'Sales', ui: 'roadmap', d: 'screen' },
       { name: 'Hiring', ui: 'avatars', d: 'phone' },
@@ -937,7 +932,6 @@ const TIPS = {
   },
   'Monsters Invade Oz': {
     'Best in Play': `Our game was named Best in Play at GDC.`,
-    'App Store': `We reached the App Store top ten at launch.`,
     'Assets Drawn': `I illustrated and animated more than 15,000 assets for the game.`,
   },
   'Dapper Gentlemen': {
@@ -947,9 +941,8 @@ const TIPS = {
     Disney: `I worked with Disney through the studio I co-founded.`,
     BMW: `I worked with BMW through the studio I co-founded.`,
     'Google Ventures': `I worked with Google Ventures through the studio I co-founded.`,
-    'Own Apps': `We made our own apps and put them in millions of hands.`,
-    'Ugly Meter': `Ugly Meter reached #1 on both the paid and free App Store charts in every country where it was available.`,
-    Securely: `Our password manager reached the App Store top 100.`,
+    'Own Apps': `We made multiple #1 apps across the Apple App Store and Google Play.`,
+    'Ugly Meter': `Ugly Meter reached #1 on the free and paid App Store charts, including iPad.`,
     'Wireless Door Lock': `I am a co-inventor on U.S. patent 9,353,551 B2 for a wireless door locking system.`,
     Sales: `I took client work from the first sales call through launch.`,
     Hiring: `I helped build the team that made the work.`,
