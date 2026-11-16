@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich labels</title>
+<meta name="description" content="Every label in the Voynich manuscript beside the thing it stands next to, with the pictures, the month names and other Latin-alphabet notes, the words that gather by topic, and the tests of whether any label names what it is drawn beside.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #an-intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#an-intro b{color:var(--text)}
+  #an-found{margin:6px 12px;padding:8px 12px;border:1px solid #41454e;border-radius:8px;max-width:900px;font-size:13px;color:var(--muted)}
+  #an-found li{margin:3px 0}#an-found b{color:var(--text)}
+  #an-jump{padding:4px 12px;font-size:13px;color:var(--muted)}#an-jump a{color:var(--accent);margin-right:10px;white-space:nowrap}
+  #an-filters{display:flex;flex-wrap:wrap;gap:8px 14px;padding:4px 12px;font-size:13px;color:var(--muted)}
+  #an-filters label{display:inline-flex;gap:4px;align-items:center}
+  h2.an-kind{font-size:18px;margin:22px 12px 4px;color:var(--text)}
+  p.an-note{margin:0 12px 8px;font-size:13px;color:var(--muted);max-width:900px}
+  .an-grid{display:flex;flex-wrap:wrap;gap:10px;padding:0 12px}
+  .an-card{width:230px;background:#ffffff08;border:1px solid #41454e;border-radius:8px;padding:6px;font-size:12px;color:var(--muted)}
+  .an-card>img{width:100%;height:200px;object-fit:contain;background:#2a2620;border-radius:4px;display:block}
+  .an-card b{color:var(--text);font-size:13px}
+  .an-labs{margin:4px 0 0;padding:0;list-style:none}
+  .an-labs li{display:flex;flex-wrap:wrap;gap:2px 6px;align-items:center;margin:3px 0;min-width:0}
+  .an-labs img{height:28px;max-width:110px;object-fit:contain;background:#2a2620;border-radius:3px}
+  .an-w{font-family:ui-monospace,monospace;font-size:12px;color:var(--accent);overflow-wrap:anywhere;min-width:0}
+  .an-v{display:inline-block;border-radius:9px;padding:0 7px;font-size:11px;color:#fff;margin-left:4px;background:#555}
+  .an-v.secure{background:#2e7d32}.an-v.likely{background:#4f7d2e}.an-v.possible{background:#8a6d1f}
+  .an-fin{font-size:10px;color:#c9a26b;margin-left:4px}
+  .an-tbl{margin:0 12px 10px;border-collapse:collapse;font-size:12px;color:var(--muted);display:block;overflow-x:auto;max-width:calc(100vw - 24px)}
+  .an-tbl th,.an-tbl td{border-bottom:1px solid #41454e;padding:3px 8px;text-align:left;vertical-align:top}
+  .an-tbl th{color:var(--text);font-weight:normal}
+  details.an-more{margin:0 12px 10px;font-size:13px;color:var(--muted)}details.an-more summary{cursor:pointer;color:var(--accent)}
+  @media (max-width:480px){.an-card{width:calc(50% - 5px);box-sizing:border-box}.an-card>img{height:140px}}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="anchors.html">Voynich labels</a></h1>
+  <nav><a href="./">Trace the Voynich</a> · <a href="search.html">Search</a> · <a href="herbals.html">Herbal likenesses</a> · <a href="plants.html">Plants</a> · <a href="drawings.html">Drawings</a> · <a href="grid.html">Sign grid</a> · <a href="fingerprints.html">Fingerprints</a></nav>
+</header>
+<div id="an-intro">The manuscript writes single words, <b>labels</b>, beside its stars, zodiac women, jars and the roots and leaves of the pharmaceutical pages. Here every label stands with the thing it was found beside, its picture from Yale's scan, and its reading in EVA (click a word to find it everywhere else). Below the pictures: the tests of whether a label names what it stands beside, the words that gather by topic, and every note in the Latin alphabet, the month names among them. Pages marked <span class="an-fin">final</span> are held out for the last test and counted in nothing here.</div>
+<div id="an-found"></div>
+<div id="an-filters">
+  <label><input type="checkbox" id="an-crops" checked> show each label's own picture</label>
+  <label><input type="checkbox" id="an-final" checked> held-out pages</label>
+</div>
+<div id="an-jump"></div>
+<div id="an-out">Loading…</div>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const word = w => `<a class="an-w" href="search.html#q=${encodeURIComponent(String(w).split('.')[0])}&m=exact">${esc(w)}</a>`;
+  const pic = (base, r, size) => `${esc(base)}/${r.join(',')}/${size}/0/default.jpg`;
+  let d;
+  try { d = await (await fetch('data/anchors.json')).json(); } catch (e) { $('an-out').textContent = 'The labels did not load: ' + e.message; return; }
+  const s = d.summary;
+  $('an-found').innerHTML = `<b>What was found</b> (development pages only)<ul>
+    <li><b>${s.matched} of ${s.labels}</b> labels are tied to a thing on their page (${s.placed} placed).</li>
+    <li><b>No label names what it stands beside, as far as repeats can show.</b> ${esc(s.pairs[1] || '')}. ${esc(s.pairs[2] || '')}.</li>
+    <li>Every identified picture against its words, names shuffled: ${esc(s.matches)}.</li>
+    <li><b>Some words follow their pages' topic within one scribe's hand</b>: the biological and stars words below.</li></ul>`;
+  function draw() {
+    const out = $('an-out'); out.replaceChildren();
+    const jump = [];
+    const sec = (id, title, note) => {
+      const h = document.createElement('h2'); h.className = 'an-kind'; h.id = id; h.textContent = title; out.append(h);
+      jump.push(`<a href="#${id}">${esc(title.replace(/ \(\d+\)$/, ''))}</a>`);
+      if (note) { const p = document.createElement('p'); p.className = 'an-note'; p.innerHTML = note; out.append(p); }
+    };
+    for (const [k, title] of d.kinds) {
+      const rows = d.things.filter(t => t.kind === k && ($('an-final').checked || t.set !== 'final'));
+      if (!rows.length) continue;
+      sec('k-' + k.replace(/\W/g, ''), `${title} (${rows.length})`, k === 'specimen' ? 'Each root or leaf drawn in a pharmaceutical row, with the label written over or under it.' : '');
+      const g = document.createElement('div'); g.className = 'an-grid'; out.append(g);
+      for (const t of rows) {
+        const many = t.labels.length > 10;
+        const labs = t.labels.map(l => `<li>${$('an-crops').checked && l.region && !many ? `<img loading="lazy" alt="label ${esc(l.locus)}" src="${pic(t.iiif, l.region, '!220,60')}">` : ''}${word(l.eva)} <span>${esc(l.locus)}</span></li>`).join('');
+        const c = document.createElement('div'); c.className = 'an-card';
+        c.innerHTML = `<img loading="lazy" alt="${esc(t.named || t.id)}, ${esc(t.page)}" src="${pic(t.iiif, t.region, '!400,400')}">
+          <b>${esc(t.named || t.id)}</b>${t.verdict ? `<span class="an-v ${esc(t.verdict)}">${esc(t.verdict)}</span>` : ''}${t.set === 'final' ? '<span class="an-fin">final</span>' : ''}<br>${esc(t.page)} · ${t.labels.length} label${t.labels.length > 1 ? 's' : ''}
+          ${many ? `<details><summary>the labels</summary><ul class="an-labs">${labs}</ul></details>` : `<ul class="an-labs">${labs}</ul>`}`;
+        g.append(c);
+      }
+    }
+    const tbl = (head, rows) => `<table class="an-tbl"><tr>${head.map(h => `<th>${esc(h)}</th>`).join('')}</tr>${rows.map(r => `<tr>${r.map(x => `<td>${x}</td>`).join('')}</tr>`).join('')}</table>`;
+    sec('an-pairs', 'Specimens that copy herbal plants', 'Petersen and Knowles found pharmaceutical fragments that copy herbal drawings. Where Zandbergen\'s transliteration ties the fragment to its label, is the label written on the herbal page too?');
+    out.insertAdjacentHTML('beforeend', tbl(['specimen', 'like', 'herbal page', 'its plant', 'label', 'on the herbal page', 'nearest word there'],
+      d.pairs.filter(p => $('an-final').checked || p.set !== 'final').map(p => [esc(p.pharma) + (p.set === 'final' ? '<span class="an-fin">final</span>' : ''), esc(p.strength.split(',')[0]), esc(p.herbal), esc(p.plant), word(p.eva), p.on === '0' ? 'no' : esc(p.on), word(p.best)])));
+    sec('an-matches', 'Pictures drawn more than once', 'For each thing drawn two or more times, the word on or beside the most of its drawings, and how often a random set of drawings shares a word as widely (p).');
+    out.insertAdjacentHTML('beforeend', tbl(['thing', 'drawn', 'pages', 'shared word', 'on', 'p'], d.matches.map(m => [esc(m.name), m.drawn, esc(m.pages), m.word ? word(m.word) : '', esc(m.with), esc(m.p)])));
+    sec('an-bax', "Bax's sign values on the plants", "Stephen Bax (2014) proposed sounds for fourteen signs from ten plant and star names. Applied to the first word of each identified plant he did not use (? is a sign he gave no sound):");
+    out.insertAdjacentHTML('beforeend', tbl(['page', 'plant', 'first word', 'read as', 'a name of its plant', 'names of other plants it opens'], d.bax.map(b => [esc(b.page), esc(b.plant), word(b.first_word), esc(b.reading), esc(b.own_matches || 'none'), esc(b.other_matches || 'none')])));
+    sec('an-topics', `Words that gather by topic (${d.topics.length})`, 'Repeated words that keep to some pages more than a shuffled text would, and still do so within one scribe\'s hand. Grouped by the section on the largest share of whose pages each stands.');
+    const bySec = {};
+    for (const t of d.topics) (bySec[t.keeps_to] ??= []).push(t);
+    const SN = {H: 'Herbal', S: 'Stars', B: 'Biological (the pools)', P: 'Pharmaceutical', T: 'Text', C: 'Cosmological', Z: 'Zodiac', A: 'Astronomical'};
+    for (const [k, ts] of Object.entries(bySec)) {
+      out.insertAdjacentHTML('beforeend', `<details class="an-more" open><summary>${esc(SN[k] || k)} (${ts.length})</summary>${tbl(['word', 'times', 'pages', 'its sections', 'its hands', 'within its hand', 'also a label'], ts.map(t => [word(t.word), t.count, t.pages, esc(t.sections), esc(t.hands), esc(t.within), t.label ? 'yes' : '']))}</details>`);
+    }
+    sec('an-latin', `Notes in the Latin alphabet (${d.latin.length})`, 'Everything written in Roman letters: the month names at the zodiac centres, the owner\'s name on f1r, the notes on f17r and f116v, the colour notes under the paint. Each with whose reading it is.');
+    out.insertAdjacentHTML('beforeend', tbl(['page', 'where', 'text', 'meaning', 'language', 'read by'], d.latin.map(n => [esc(n.page), esc(n.where), esc(n.text), esc(n.translation), esc(n.language), esc(n.credit)])));
+    out.insertAdjacentHTML('beforeend', `<details class="an-more"><summary>Labels tied to nothing (${d.unmatched.length})</summary>${tbl(['label', 'page', 'why'], d.unmatched.map(u => [word(u.eva) + ' ' + esc(u.locus), esc(u.page), esc(u.why)]))}</details>`);
+    $('an-jump').innerHTML = jump.join(' ');
+  }
+  $('an-crops').onchange = $('an-final').onchange = draw;
+  draw();
+})();
+</script>
+</body>
+</html>
