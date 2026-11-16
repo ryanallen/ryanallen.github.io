@@ -17,12 +17,12 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=e0d52308b0">
+<link rel="stylesheet" href="style.css?v=bbebc7dfa4">
 </head>
 <body>
 <header>
   <h1><a href="#/">Trace the Voynich</a></h1>
-  <nav><a href="#/">Next letter</a><a href="#/my-words">My words</a><a href="#/pages">Pages</a><a href="search.html">Search</a><a href="herbals.html">Herbals</a><a href="plants.html">Plants</a><a href="drawings.html">Drawings</a><a href="anchors.html">Labels</a><a href="calendar.html">Calendar</a><a href="grid.html">Sign grid</a><a href="fingerprints.html">Fingerprints</a><a href="candidates.html">Candidates</a><button id="help-open" class="link">How it works</button><button id="credits-open" class="link">Credits</button><button id="credit-open" class="link">Get credited</button></nav>
+  <nav><a href="#/">Next letter</a><a href="#/my-words">My words</a><a href="#/pages">Pages</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><button id="help-open" class="link">How it works</button><button id="credits-open" class="link">Credits</button><button id="credit-open" class="link">Get credited</button></nav>
 </header>
 <div id="book" hidden>
   <div class="book-head"><span><b id="book-count"></b> letters checked by people</span><span id="book-goal"></span></div>
@@ -37,6 +37,7 @@
     <button id="remove-letter" title="Take this letter out of the word, with its pixels (Undo puts it back)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>Delete letter</button>
     <select id="stack" title="Letters written over one another as one shape, like the bench in c+t+h"><option value="">Stack</option></select>
     <select id="break" title="This is really two words: mark where one ends and the next begins"><option value="">Two words?</option></select>
+    <select id="grow" title="The box cut off part of the word: make it bigger on one side, or smaller again (it stops at your paint). Ryan reviews the new box"><option value="">Box</option><option value="left">Grow ← left</option><option value="right">Grow right →</option><option value="top">Grow ↑ top</option><option value="bottom">Grow ↓ bottom</option><option value="all">Grow all sides</option><option value="shrink-left">Shrink left in →</option><option value="shrink-right">Shrink right in ←</option><option value="shrink-top">Shrink top in ↓</option><option value="shrink-bottom">Shrink bottom in ↑</option><option value="shrink-all">Shrink all sides</option></select>
   </div>
   <div class="bar" id="tools">
     <span class="group" title="[ and ] change the brush">Brush <button class="sz" data-s="1">1</button><button class="sz" data-s="2">2</button><button class="sz" data-s="3">3</button><button class="sz" data-s="4">4</button></span>
@@ -88,6 +89,7 @@
     <li>When the letter is right, press the button and the next one comes. Your work saves as you go; there is nothing to send.</li>
     <li>One person's check of a letter is enough: it goes to Ryan, who reviews every tracing, and a word is done once Ryan approves it. When every letter has been checked once, words come round again for a second, independent check. Missing words can be added from a page: "+ Add a missing word".</li>
     <li>If the computer read two words as one, pick the gap under "Two words?". A dashed line marks it, and we note it for when we analyze the text; the tracing goes on as one word.</li>
+    <li>If the box cut off part of the word, pick a side under "Box" to make it bigger there, 40 pixels at a time, or smaller again. Your painting stays. The new box is yours alone until Ryan reviews your version.</li>
     <li>You stay anonymous unless you want credit. "Get credited" at the top takes a name or handle for the credits when the work is released.</li>
   </ul>
   <form method="dialog"><button class="primary">Start</button></form>
@@ -117,7 +119,7 @@
   <p id="wrong-status" class="hint">Ryan reviews it. The word stays approved until then.</p>
   <div class="row"><button id="wrong-go" class="primary">Continue</button> <button id="wrong-close">Cancel</button></div>
 </dialog>
-<script src="search.js?v=e328b17fd3"></script>
-<script src="app.js?v=e0d52308b0"></script>
+<script src="search.js?v=ccd12aae97"></script>
+<script src="app.js?v=bbebc7dfa4"></script>
 </body>
 </html>

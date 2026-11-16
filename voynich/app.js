@@ -43,6 +43,17 @@
   }
   const getJSON = async url => { const r = await fetch(url); if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status); return r.json(); };
   const cropURL = (iiif, x, y, w, h) => `${iiif}/${x},${y},${w},${h}/full/0/default.jpg`;
+  // a box on the page as [x, y, w, h]
+  const boxOf = w => [w.x, w.y, w.w, w.h];
+  const sameBox = (a, b) => a.every((v, i) => v === b[i]);
+  // a letter grid cut from one box on the page into another: what they share is kept, the rest is blank
+  function reframe(grid, from, to) {
+    if (sameBox(from, to)) return grid.slice();
+    const [fx, fy, fw, fh] = from, [tx, ty, tw, th] = to, out = new Uint8Array(tw * th);
+    const x0 = Math.max(fx, tx), y0 = Math.max(fy, ty), x1 = Math.min(fx + fw, tx + tw), y1 = Math.min(fy + fh, ty + th);
+    for (let y = y0; y < y1; y++) out.set(grid.subarray((y - fy) * fw + x0 - fx, (y - fy) * fw + x1 - fx), (y - ty) * tw + x0 - tx);
+    return out;
+  }
   function loadImage(src) {
     return new Promise((ok, bad) => { const i = new Image(); i.crossOrigin = 'anonymous'; i.onload = () => ok(i); i.onerror = bad; i.src = src; });
   }
@@ -264,6 +275,68 @@
     $('break').blur();
     if (a >= 1 && a < L.reading.length) markBreak(a);
   };
+  // Box: the word's box cut off part of the word, so the visitor cuts the picture again from the page,
+  // GROW_STEP pixels bigger on one side (no further than GROW_MAX past the word's box, or the edge of
+  // Yale's image), or smaller again, stopping at their own paint. Their painting keeps its pixels.
+  // The new box is their version's alone (sent with each save as crop) until Ryan approves the version.
+  const GROW_STEP = 40, GROW_MAX = 200;
+  function setFrame(f) {
+    Object.assign(L.word, { x: f[0], y: f[1], w: f[2], h: f[3] });
+    for (const v of L.versions) v.labels = reframe(v.grid0, v.crop0, f);
+    crop.src = cropURL(L.word.iiif, ...f);
+    paint.width = f[2]; paint.height = f[3];
+    fitWord(); drawWord(); versionStrip(); wordUV();
+  }
+  async function growBox(side) {
+    if (!L.word || locked() || L.add) return;
+    const word = L.word, cur = boxOf(word), [bx, by, bw, bh] = L.box;
+    const s = side.replace('shrink-', ''), all = s === 'all';
+    const l = all || s === 'left', r = all || s === 'right', t = all || s === 'top', b = all || s === 'bottom';
+    const x0 = cur[0], y0 = cur[1], x1 = cur[0] + cur[2], y1 = cur[1] + cur[3];
+    let nx0 = x0, ny0 = y0, nx1 = x1, ny1 = y1;
+    const shrink = side.startsWith('shrink-');
+    if (shrink) {
+      // the painted ink's bounds on the page; the box stops there, and at 8 pixels across
+      let ix0 = x1, iy0 = y1, ix1 = x0, iy1 = y0;
+      for (let i = 0; i < L.labels.length; i++) {
+        if (!L.labels[i]) continue;
+        const x = x0 + i % cur[2], y = y0 + Math.floor(i / cur[2]);
+        ix0 = Math.min(ix0, x); iy0 = Math.min(iy0, y); ix1 = Math.max(ix1, x + 1); iy1 = Math.max(iy1, y + 1);
+      }
+      if (l) nx0 = Math.min(x0 + GROW_STEP, ix0, x1 - 8);
+      if (t) ny0 = Math.min(y0 + GROW_STEP, iy0, y1 - 8);
+      if (r) nx1 = Math.max(x1 - GROW_STEP, ix1, nx0 + 8);
+      if (b) ny1 = Math.max(y1 - GROW_STEP, iy1, ny0 + 8);
+    } else {
+      if (l) nx0 = Math.max(0, bx - GROW_MAX, x0 - GROW_STEP);
+      if (t) ny0 = Math.max(0, by - GROW_MAX, y0 - GROW_STEP);
+      if (r) nx1 = Math.min(bx + bw + GROW_MAX, x1 + GROW_STEP);
+      if (b) ny1 = Math.min(by + bh + GROW_MAX, y1 + GROW_STEP);
+    }
+    let f = [nx0, ny0, nx1 - nx0, ny1 - ny0];
+    const nothing = () => say(shrink ? 'Your paint is at that edge already' : 'The box can grow no further that way', true);
+    if (sameBox(f, cur)) { nothing(); return; }
+    say(shrink ? 'Making the box smaller…' : 'Cutting a bigger box from the page…');
+    const img = await loadImage(cropURL(word.iiif, ...f)).catch(() => null);
+    if (L.word !== word || !sameBox(boxOf(word), cur)) return;  // another word opened, or the box changed meanwhile
+    if (!img) { say('The picture did not load. Try again.', true); return; }
+    // Yale's image ends before the box does: the box stops at its edge
+    f = [f[0], f[1], Math.min(f[2], img.naturalWidth), Math.min(f[3], img.naturalHeight)];
+    if (sameBox(f, cur)) { say('The page ends there', true); return; }
+    L.undo.push(Object.assign(L.labels.slice(), { frame: cur, anchor: L.anchor }));
+    L.labels = reframe(L.labels, cur, f);
+    L.anchor = null;
+    setFrame(f);
+    changed();
+    say(sameBox(f, L.box) ? 'The box is back to the word\'s own' : `Box ${shrink ? 'smaller' : 'bigger'}. Ryan sees your box when he reviews your version.`);
+  }
+  $('grow').onchange = () => {
+    const side = $('grow').value;
+    $('grow').value = '';
+    $('grow').blur();
+    if (side) growBox(side);
+  };
+
   // the dashed line between two letters on the crop: midway between the left letter's
   // rightmost painted pixel and the right letter's leftmost; nothing when either is unpainted
   function drawBreaks() {
@@ -409,14 +482,18 @@
     const word = data.word;
     L.add = pending && !data.versions.length ? pending.add : null;
     const [ai, ...grids] = await Promise.all([word.ai, ...data.versions.map(v => v.labels)].map(inflate));
-    const versions = [{ label: word.kind === 'new' ? 'Added' : 'Computer', labels: ai, reading: word.reading, checked: [] }];
+    // each version keeps its grid as saved (grid0) in the box it was saved in (crop0), and is shown
+    // cut into the box being painted (labels)
+    const box = boxOf(word);
+    const versions = [{ label: word.kind === 'new' ? 'Added' : 'Computer', labels: ai, grid0: ai, crop0: box, reading: word.reading, checked: [] }];
     let mine = null, n = 0;
     // a second check is independent: it starts from the computer's tracing and shows no one else's
     const second = !!data.second;
     for (const [j, v] of data.versions.entries()) {
       if (second && !v.mine) continue;
       const labels = grids[j];
-      const item = { label: v.mine ? 'Yours' : v.approved ? 'Approved' : `Person ${++n}`, labels, reading: v.reading, checked: v.checked, approved: v.approved, retraced: v.retraced };
+      const item = { label: v.mine ? 'Yours' : v.approved ? 'Approved' : `Person ${++n}`, labels, grid0: labels, crop0: v.crop || box,
+        reading: v.reading, checked: v.checked, approved: v.approved, retraced: v.retraced };
       if (v.mine) mine = item;
       versions.push(item);
     }
@@ -428,12 +505,19 @@
     L.retrace = L.canRetrace && (retracing.has(id) || !!(mine && mine.retraced));
     L.versions = versions;
     if (!sameWord) {
-      const draft = JSON.parse(store.get('voynich-draft:' + id) || 'null');
+      let draft = JSON.parse(store.get('voynich-draft:' + id) || 'null');
       // a word someone added has a blank computer version: start from the latest person's instead;
       // a retrace starts from the approved version, to fix only what is wrong in it
       const approvedVersion = versions.find(v => v.approved);
       const base = L.retrace ? (mine && mine.retraced ? mine : approvedVersion || mine || versions[0])
         : mine || (!second && word.kind === 'new' && versions.length > 1 ? versions[versions.length - 1] : versions[0]);
+      // the box painted in: the draft's, else the starting version's
+      const frame = draft && draft.crop ? draft.crop : base.crop0;
+      if (draft && draft.labels.length !== frame[2] * frame[3]) draft = null;
+      L.box = box;
+      L.loadFrame = frame;
+      Object.assign(word, { x: frame[0], y: frame[1], w: frame[2], h: frame[3] });
+      for (const v of versions) v.labels = reframe(v.grid0, v.crop0, frame);
       L.labels = draft ? Uint8Array.from(draft.labels) : base.labels.slice();
       L.reading = draft ? draft.reading : base.reading.slice();
       L.checked = draft ? draft.checked : (mine && base === mine ? mine.checked.slice() : []);
@@ -459,6 +543,7 @@
     if (!sameWord) { wordUV(); if (!word.done || L.second) fetchAhead(); }
     closePicker();
     $('retrace').hidden = !(word.done && !L.second && !L.retrace && L.canRetrace);
+    $('grow').hidden = locked() || !!L.add;
     if (locked()) {
       say(L.canRetrace ? 'This word is done: it was checked and approved. If its colors are wrong, press Retrace it; the owner reviews your retrace.'
         : 'This word is done: your version of it was approved. Press Skip for another.');
@@ -589,7 +674,7 @@
 
   function changed() {
     L.changed = true; L.dirty = true;
-    store.set('voynich-draft:' + L.word.id, JSON.stringify({ labels: Array.from(L.labels), reading: L.reading, checked: L.checked }));
+    store.set('voynich-draft:' + L.word.id, JSON.stringify({ labels: Array.from(L.labels), reading: L.reading, checked: L.checked, crop: boxOf(L.word) }));
     say('Saving soon…'); marks();
     clearTimeout(L.timer);
     L.timer = setTimeout(save, 2000);
@@ -634,7 +719,7 @@
   // nothing differs from the version the visitor started from: no pixel, no letter name
   function unchanged() {
     const a = L.labels, b = L.start && L.start.labels;
-    if (L.add || !b || a.length !== b.length || L.reading.join() !== L.start.reading.join()) return false;
+    if (L.add || !b || a.length !== b.length || L.reading.join() !== L.start.reading.join() || !sameBox(boxOf(L.word), L.loadFrame)) return false;
     for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
     return true;
   }
@@ -648,7 +733,7 @@
     const word = L.word, labels = L.labels.slice();
     const body = { word: word.id, tracer, labels: null, reading: L.reading.slice(), checked: L.checked.slice() };
     if (L.retrace) body.retrace = true;
-    if (L.add) { body.add = L.add; L.add = null; }
+    if (L.add) { body.add = L.add; L.add = null; } else body.crop = boxOf(word);  // the box this version is in
     body.labels = await deflate(labels);
     const old = outbox.get(word.id);
     if (old && old.body.add && !body.add) body.add = old.body.add;  // a word added on the page goes with its box until it lands
@@ -730,6 +815,7 @@
     const u = L.undo.pop();
     if ('anchor' in u) L.anchor = u.anchor;
     L.labels = u;
+    if (u.frame) { setFrame(u.frame); changed(); return; }  // a grown or shrunk box goes back as it was
     if (!u.reading) { drawWord(); changed(); return; }
     L.reading = u.reading; L.checked = u.checked; L.word.verified = '';
     changed();
@@ -920,7 +1006,12 @@
     }
     const [data, own, untraced] = await Promise.all([getJSON(`${API}/api/page/${page}`),
       getJSON(`${API}/api/mine/${page}?tracer=${tracer}`).catch(() => ({ mine: {}, latest: {} })), getJSON(`data/untraced/${page}.json`).catch(() => [])]);
-    for (const w of data.words) { w.mine = own.mine[w.id]; w.latest = own.latest[w.id]; }
+    // a version in a box of its own is drawn in that box
+    for (const w of data.words) {
+      w.mine = own.mine[w.id]; w.latest = own.latest[w.id];
+      const c = (w.mine ? own.mineCrop : w.latest ? own.latestCrop : null) || {};
+      if (c[w.id]) [w.x, w.y, w.w, w.h] = c[w.id];
+    }
     const grids = await Promise.all(data.words.map(w => inflate(w.mine || w.latest || w.ai)));
     if (load !== P.load) return;  // another page was opened while this one loaded
     P.untraced = untraced;
@@ -1350,6 +1441,8 @@
     try { $('credit-name').value = (await getJSON(`${API}/api/name?tracer=${tracer}`)).name; } catch { /* leave it as typed */ }
   };
   $('credit-close').onclick = () => $('credit').close();
+  // the research pages' "Get credited" link lands here as ?credit and opens the same box
+  if (new URLSearchParams(location.search).has('credit')) $('credit-open').click();
   $('credit-link').onclick = e => { e.preventDefault(); navigator.clipboard?.writeText(creditLink).then(() => { $('credit-status').textContent = 'Link copied.'; }); };
   $('credit-save').onclick = async () => {
     const name = $('credit-name').value.trim();
