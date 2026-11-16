@@ -26,6 +26,8 @@
     tracer = Array.from(crypto.getRandomValues(new Uint8Array(12)), b => b.toString(16).padStart(2, '0')).join('');
     store.set('voynich-tracer', tracer);
   }
+  // the approved words this visitor chose to retrace, since they think the approved tracing is wrong
+  const retracing = new Set((() => { try { return JSON.parse(store.get('voynich-retrace') || '[]'); } catch { return []; } })());
 
   async function deflate(bytes) {
     const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('deflate-raw'));
@@ -105,14 +107,15 @@
 
   // a word's letters added or deleted, said in a toast with Undo beside it
   let toastTimer = 0;
-  function toast(text) {
+  // withUndo false: a notice alone, with nothing to undo
+  function toast(text, withUndo = true) {
     let t = $('toast');
     if (!t) { t = document.createElement('div'); t.id = 'toast'; t.setAttribute('role', 'status'); document.body.append(t); }
     const msg = document.createElement('span'), undo = document.createElement('button');
     msg.textContent = text;
     undo.textContent = 'Undo';
     undo.onclick = () => { t.classList.remove('show'); $('undo').click(); };
-    t.replaceChildren(msg, undo);
+    t.replaceChildren(...(withUndo ? [msg, undo] : [msg]));
     t.classList.toggle('del', text.startsWith('Deleted'));
     t.classList.add('show');
     clearTimeout(toastTimer);
@@ -413,21 +416,27 @@
     for (const [j, v] of data.versions.entries()) {
       if (second && !v.mine) continue;
       const labels = grids[j];
-      const item = { label: v.mine ? 'Yours' : `Person ${++n}`, labels, reading: v.reading, checked: v.checked };
+      const item = { label: v.mine ? 'Yours' : v.approved ? 'Approved' : `Person ${++n}`, labels, reading: v.reading, checked: v.checked, approved: v.approved, retraced: v.retraced };
       if (v.mine) mine = item;
       versions.push(item);
     }
     if (load !== L.load) return;  // another letter was opened while this one loaded
     L.word = word;
     L.second = second;
+    L.canRetrace = !!data.retrace && !second;
+    // a retrace goes on once begun: chosen here, or a version of theirs saved since the approve
+    L.retrace = L.canRetrace && (retracing.has(id) || !!(mine && mine.retraced));
     L.versions = versions;
     if (!sameWord) {
       const draft = JSON.parse(store.get('voynich-draft:' + id) || 'null');
-      // a word someone added has a blank computer version: start from the latest person's instead
-      const base = mine || (!second && word.kind === 'new' && versions.length > 1 ? versions[versions.length - 1] : versions[0]);
+      // a word someone added has a blank computer version: start from the latest person's instead;
+      // a retrace starts from the approved version, to fix only what is wrong in it
+      const approvedVersion = versions.find(v => v.approved);
+      const base = L.retrace ? (mine && mine.retraced ? mine : approvedVersion || mine || versions[0])
+        : mine || (!second && word.kind === 'new' && versions.length > 1 ? versions[versions.length - 1] : versions[0]);
       L.labels = draft ? Uint8Array.from(draft.labels) : base.labels.slice();
       L.reading = draft ? draft.reading : base.reading.slice();
-      L.checked = draft ? draft.checked : (mine ? mine.checked.slice() : []);
+      L.checked = draft ? draft.checked : (mine && base === mine ? mine.checked.slice() : []);
       L.start = base;
       L.undo = [];
       L.anchor = null;
@@ -449,7 +458,13 @@
     marks(); ask(); drawWord(); versionStrip(); names(); examplesFor(L.reading[L.k - 1]); bookWords();
     if (!sameWord) { wordUV(); if (!word.done || L.second) fetchAhead(); }
     closePicker();
-    if (word.done && !L.second) { say('This word is done: it was checked and approved. Press Skip for another.'); return; }
+    $('retrace').hidden = !(word.done && !L.second && !L.retrace && L.canRetrace);
+    if (locked()) {
+      say(L.canRetrace ? 'This word is done: it was checked and approved. If its colors are wrong, press Retrace it; the owner reviews your retrace.'
+        : 'This word is done: your version of it was approved. Press Skip for another.');
+      return;
+    }
+    if (L.retrace && !sameWord) toast('Retracing an approved word: fix what is wrong, letter by letter. It stays approved until the owner reviews yours.', false);
     if (L.note) { toast(L.note); L.note = ''; }
     say(L.checked.includes(L.k) ? 'You checked this letter already; change it if you like' : 'Paint over this letter\'s ink, or press Looks right');
   }
@@ -477,8 +492,21 @@
   }
   function capture(el, e) { try { el.setPointerCapture(e.pointerId); } catch { /* a synthetic pointer */ } }
 
+  // an approved word takes no paint, unless this visitor is giving it a second check or retracing it
+  const locked = () => !!(L.word && L.word.done && !L.second && !L.retrace);
+  $('retrace').onclick = () => {
+    if (!L.word) return;
+    const id = L.word.id;
+    retracing.add(id);
+    store.set('voynich-retrace', JSON.stringify([...retracing].slice(-200)));
+    L.word = null;
+    const to = `#/w/${id}/1`;
+    if (location.hash === to) openLetter(id, 1); else location.hash = to;
+  };
+
   wstage.addEventListener('pointerdown', e => {
     if (!L.word) return;
+    if (locked() && !(L.moving || L.space || e.button === 1)) return;
     if (L.moving || L.space || e.button === 1) {
       L.stroke = { pan: true, x: e.clientX, y: e.clientY, l: wstage.scrollLeft, t: wstage.scrollTop };
       capture(wstage, e); return;
@@ -589,6 +617,7 @@
     // everything is copied before the first wait, since the next word may open meanwhile
     const word = L.word, labels = L.labels.slice();
     const body = { word: word.id, tracer, labels: null, reading: L.reading.slice(), checked: L.checked.slice() };
+    if (L.retrace) body.retrace = true;
     if (L.add) { body.add = L.add; L.add = null; }
     body.labels = await deflate(labels);
     const old = outbox.get(word.id);
@@ -599,6 +628,17 @@
   }
 
   async function goNext() {
+    if (locked()) { nextTask(); return; }
+    // a retrace goes through every letter of the word, each approved already
+    if (L.retrace) {
+      if (!L.checked.includes(L.k)) L.checked.push(L.k);
+      L.dirty = true;
+      save();
+      if (L.k < L.reading.length) { location.hash = `#/w/${L.word.id}/${L.k + 1}`; return; }
+      toast(unchanged() ? 'Nothing changed, so nothing was sent.' : 'Thank you: your retrace goes to the owner to review.', false);
+      nextTask();
+      return;
+    }
     // the first check of this letter by anyone moves the book's bar now
     if (!unchanged() && !L.checked.includes(L.k) && !L.versions.some(v => v.checked && v.checked.includes(L.k))) bump();
     if (!L.checked.includes(L.k)) L.checked.push(L.k);
@@ -938,7 +978,7 @@
     if (!b) return;
     Object.assign(hoverbox.style, { left: b.x0 * P.zoom + 'px', top: b.y0 * P.zoom + 'px', width: Math.max(8, (b.x1 - b.x0) * P.zoom) + 'px', height: Math.max(8, (b.y1 - b.y0) * P.zoom) + 'px' });
     hoverbox.title = b.id;
-    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · done, checked and approved' : `${b.mine ? ' · you worked on this one' : ''} — click to check it`}`;
+    $('p-status').textContent = `${b.id}: ${b.reading.join(' ')}${b.done ? ' · done, checked and approved — click to see it, and retrace it if it is wrong' :`${b.mine ? ' · you worked on this one' : ''} — click to check it`}`;
   }
   function drawBox() {
     const b = P.box;
@@ -1027,7 +1067,8 @@
     P.pan = null;
     if (clicked && !P.boxing) {
       const b = hit(pagePoint(e));
-      if (b && b.done) { $('p-status').textContent = `${b.id} is done: checked and approved. Pick a word without a green box.`; return; }
+      // an approved word opens to look at, with Retrace it there for a visitor who thinks it is wrong
+      if (b && b.done) { L.word = null; location.hash = `#/w/${b.id}/1`; return; }
       if (b) {
         const open = [...b.reading.keys()].find(i => (b.verified || '')[i] !== '1');
         L.word = null;
