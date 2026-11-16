@@ -25,6 +25,11 @@
   .cd-m{width:96px;padding:3px 4px;border-radius:5px;font-size:11px;line-height:1.3}
   .cd-m.match{background:#2e8b5740;color:#cfe9d6}.cd-m.fail{background:#c0504d40;color:#f1d0cf}.cd-m.untested{background:#ffffff10}
   .cd-m span{display:block;font-family:ui-monospace,monospace}
+  .cd-r{margin:8px 12px;max-width:900px;font-size:13px;color:var(--muted)}.cd-r summary{cursor:pointer;color:var(--text)}
+  .cd-r .wrap{overflow-x:auto}.cd-r table{border-collapse:collapse;font-size:12px;margin-top:6px;min-width:620px}
+  .cd-r th,.cd-r td{padding:2px 6px;border-bottom:1px solid #41454e;text-align:left;vertical-align:top}
+  .cd-r td.m{font-family:ui-monospace,monospace;color:var(--text)}.cd-r .ok{color:#7fc97f}.cd-r .no{color:#e08a87}.cd-r .so{color:#d9b56b}
+  .cd-r .key{margin:4px 0}
   @media (max-width:480px){.cd-m{width:calc(33% - 4px);box-sizing:border-box}.cd-c dl{grid-template-columns:1fr}}
 </style>
 </head>
@@ -75,6 +80,21 @@
       }).join('');
       out.insertAdjacentHTML('beforeend', `<div class="cd-c" id="c-${esc(c.id)}-${esc(c.version)}"><h3>${esc(c.id)} v${esc(c.version)}<span class="cd-v v-${vk === 'pass' ? 'pass' : vk === 'none' ? 'none' : 'fail'}">${esc(vt)}</span></h3>
         <dl><dt>P, the text</dt><dd>${esc(c.P)}</dd><dt>E, into signs</dt><dd>${esc(c.E)}</dd><dt>T, further</dt><dd>${esc(c.T)}</dd><dt>Source</dt><dd>${esc(c.source)}</dd><dt>Method</dt><dd>${esc(c.method)}</dd></dl>${exps}</div>`);
+      const rd = (d.readings || {})[c.id];
+      if (rd && rd.length && c === cs.filter(x => x.id === c.id).slice(-1)[0]) {
+        const flags = r => [r.joined === '1' && 'joined across a space', r.emended === '1' && 'emended from the photograph',
+          r.own_doubt === '1' && 'his own doubt', r.not_hebrew === '1' && 'loanword or name'].filter(Boolean).join('; ');
+        const gcls = g => g === 'grid' ? 'ok' : g.startsWith('unwritten') || g.startsWith('dropped') ? 'so' : 'no';
+        const per = r => r.torah === 'yes' ? 'in the Torah' : r.klein || '';
+        const pcls = r => r.torah === 'yes' || r.klein === 'Biblical' ? 'ok' : r.klein === 'unattested' ? 'no' : r.klein ? 'so' : '';
+        const heb = rd.filter(r => r.skeleton);
+        const clean = heb.filter(r => r.grid === 'grid' && !flags(r) && pcls(r) === 'ok').length;
+        const rows = rd.map(r => `<tr><td>${esc(r.locus)}</td><td class="m">${esc(r.eva)}</td><td class="m">${esc(r.reading)}</td><td>${esc(r.gloss)}</td>` +
+          `<td class="${gcls(r.grid)}">${esc(r.grid === 'grid' ? 'his grid makes it' : r.grid)}</td><td class="${pcls(r)}">${esc(per(r))}</td><td>${esc(flags(r))}</td></tr>`).join('');
+        out.insertAdjacentHTML('beforeend', `<details class="cd-r"><summary>His own readings of f1r and f2v, checked word by word: ${clean} of ${rd.length} need no help</summary>
+          <div class="key">Each word he reads in his paper, beside the EVA word it stands on (ZL 3b, paired by order). <b>Grid</b>: whether his own sign table (version 4) turns the EVA into his Hebrew; "unwritten" names Hebrew letters the Voynich word does not write, "dropped" Voynich signs his Hebrew leaves out, "against" a sign read as a letter his table does not give it. <b>Period</b>: in the Torah when its letters are a word of the Torah, though not always in his sense (his by-form bˁm "with" is the Torah's "in the people"), or else from Klein's <i>Comprehensive Etymological Dictionary of the Hebrew Language</i> (1987), which he cites: Biblical, PBH (post-Biblical, Mishnah and Talmud), or unattested in the form or sense he gives.</div>
+          <div class="wrap"><table><thead><tr><th>Line</th><th>EVA</th><th>His reading</th><th>Meaning</th><th>Grid</th><th>Period</th><th>Help needed</th></tr></thead><tbody>${rows}</tbody></table></div></details>`);
+      }
       if (c.experiments.some(e => e.run_at)) sum.push(`<li><b>${esc(c.id)} v${esc(c.version)}</b>: ${esc(vt)}. ${esc(brief(c.experiments.filter(e => e.run_at).slice(-1)[0].result))}.</li>`);
     }
   }
