@@ -1,0 +1,839 @@
+{
+ "finding": [
+  "Not a plain alphabet writing Latin or Italian: its next-sign entropy is 2.17 bits, where a Latin herbal, Macer's verse and Italian recipes give 2.92 to 3.41.",
+  "Not a syllabary like Linear B: the signs fall into clear columns, but the signs that swap at the ends of word families all join one row, a single set of endings.",
+  "Closest to a cipher in its letters, furthest in its order: Greshko's Naibbe cipher matches its entropy (2.08) but has none of its word repeats, one-sign neighbours, line-edge signs or paragraph-opening gallows."
+ ],
+ "columns": [
+  {
+   "column": 1,
+   "signs": [
+    {
+     "sign": "e",
+     "row": 4,
+     "n": 15938,
+     "initial": 0.0051,
+     "medial": 0.9908,
+     "final": 0.0043,
+     "alone": 0.0001,
+     "nearest": "h:0.24 k:0.26 d:0.27",
+     "pictures": [
+      "data/examples/61.jpg",
+      "data/examples/62.jpg",
+      "data/examples/63.jpg",
+      "data/examples/64.jpg"
+     ]
+    },
+    {
+     "sign": "h",
+     "row": 7,
+     "n": 14305,
+     "initial": 0.0,
+     "medial": 0.9976,
+     "final": 0.0033,
+     "alone": 0.0,
+     "nearest": "e:0.24 t:0.25 k:0.25",
+     "pictures": [
+      "data/examples/85.jpg",
+      "data/examples/86.jpg",
+      "data/examples/87.jpg",
+      "data/examples/88.jpg"
+     ]
+    },
+    {
+     "sign": "d",
+     "row": 1,
+     "n": 10306,
+     "initial": 0.2602,
+     "medial": 0.7125,
+     "final": 0.0409,
+     "alone": 0.0013,
+     "nearest": "f:0.24 e:0.27 t:0.28",
+     "pictures": [
+      "data/examples/53.jpg",
+      "data/examples/54.jpg",
+      "data/examples/55.jpg",
+      "data/examples/56.jpg"
+     ]
+    },
+    {
+     "sign": "k",
+     "row": 9,
+     "n": 8797,
+     "initial": 0.0805,
+     "medial": 0.9157,
+     "final": 0.0057,
+     "alone": 0.0002,
+     "nearest": "t:0.01 f:0.12 p:0.19",
+     "pictures": [
+      "data/examples/107.jpg",
+      "data/examples/108.jpg",
+      "data/examples/109.jpg",
+      "data/examples/110.jpg"
+     ]
+    },
+    {
+     "sign": "t",
+     "row": 12,
+     "n": 5631,
+     "initial": 0.1264,
+     "medial": 0.8694,
+     "final": 0.0071,
+     "alone": 0.0,
+     "nearest": "k:0.01 f:0.08 p:0.13",
+     "pictures": [
+      "data/examples/179.jpg",
+      "data/examples/180.jpg",
+      "data/examples/181.jpg",
+      "data/examples/182.jpg"
+     ]
+    },
+    {
+     "sign": "p",
+     "row": 10,
+     "n": 1253,
+     "initial": 0.3065,
+     "medial": 0.6792,
+     "final": 0.0144,
+     "alone": 0.0,
+     "nearest": "f:0.02 t:0.13 k:0.19",
+     "pictures": [
+      "data/examples/147.jpg",
+      "data/examples/148.jpg",
+      "data/examples/149.jpg",
+      "data/examples/150.jpg"
+     ]
+    },
+    {
+     "sign": "f",
+     "row": 5,
+     "n": 383,
+     "initial": 0.1958,
+     "medial": 0.7728,
+     "final": 0.0313,
+     "alone": 0.0,
+     "nearest": "p:0.02 t:0.08 k:0.12",
+     "pictures": [
+      "data/examples/69.jpg",
+      "data/examples/70.jpg",
+      "data/examples/71.jpg",
+      "data/examples/72.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "column": 2,
+   "signs": [
+    {
+     "sign": "y",
+     "row": 1,
+     "n": 14372,
+     "initial": 0.1005,
+     "medial": 0.0544,
+     "final": 0.8459,
+     "alone": 0.0048,
+     "nearest": "g:0.05 m:0.20 r:0.22",
+     "pictures": [
+      "data/examples/198.jpg",
+      "data/examples/199.jpg",
+      "data/examples/200.jpg",
+      "data/examples/201.jpg"
+     ]
+    },
+    {
+     "sign": "l",
+     "row": 1,
+     "n": 8424,
+     "initial": 0.1126,
+     "medial": 0.4261,
+     "final": 0.4874,
+     "alone": 0.0042,
+     "nearest": "r:0.07 m:0.21 g:0.26",
+     "pictures": [
+      "data/examples/115.jpg",
+      "data/examples/116.jpg",
+      "data/examples/117.jpg",
+      "data/examples/118.jpg"
+     ]
+    },
+    {
+     "sign": "r",
+     "row": 1,
+     "n": 5987,
+     "initial": 0.0407,
+     "medial": 0.2742,
+     "final": 0.7068,
+     "alone": 0.01,
+     "nearest": "m:0.05 l:0.07 g:0.12",
+     "pictures": [
+      "data/examples/163.jpg",
+      "data/examples/164.jpg",
+      "data/examples/165.jpg",
+      "data/examples/166.jpg"
+     ]
+    },
+    {
+     "sign": "n",
+     "row": 1,
+     "n": 4771,
+     "initial": 0.0,
+     "medial": 0.0321,
+     "final": 0.9679,
+     "alone": 0.0004,
+     "nearest": "g:0.19 y:0.25 m:0.27",
+     "pictures": [
+      "data/examples/131.jpg",
+      "data/examples/132.jpg",
+      "data/examples/133.jpg",
+      "data/examples/134.jpg"
+     ]
+    },
+    {
+     "sign": "m",
+     "row": 1,
+     "n": 887,
+     "initial": 0.0011,
+     "medial": 0.0598,
+     "final": 0.9434,
+     "alone": 0.0034,
+     "nearest": "r:0.05 g:0.11 y:0.20",
+     "pictures": [
+      "data/examples/123.jpg",
+      "data/examples/124.jpg",
+      "data/examples/125.jpg",
+      "data/examples/126.jpg"
+     ]
+    },
+    {
+     "sign": "g",
+     "row": 6,
+     "n": 128,
+     "initial": 0.0083,
+     "medial": 0.0769,
+     "final": 0.9167,
+     "alone": 0.0625,
+     "nearest": "y:0.05 m:0.11 r:0.12",
+     "pictures": [
+      "data/examples/77.jpg",
+      "data/examples/78.jpg",
+      "data/examples/79.jpg",
+      "data/examples/80.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "column": 3,
+   "signs": [
+    {
+     "sign": "o",
+     "row": 1,
+     "n": 20124,
+     "initial": 0.3442,
+     "medial": 0.6447,
+     "final": 0.0327,
+     "alone": 0.0024,
+     "nearest": "a:0.28 p:0.31 e:0.31",
+     "pictures": [
+      "data/examples/139.jpg",
+      "data/examples/140.jpg",
+      "data/examples/141.jpg",
+      "data/examples/142.jpg"
+     ]
+    },
+    {
+     "sign": "a",
+     "row": 2,
+     "n": 11598,
+     "initial": 0.1059,
+     "medial": 0.9226,
+     "final": 0.0044,
+     "alone": 0.0001,
+     "nearest": "e:0.28 o:0.28 i:0.30",
+     "pictures": [
+      "data/examples/34.jpg",
+      "data/examples/35.jpg",
+      "data/examples/36.jpg",
+      "data/examples/37.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "column": 4,
+   "signs": [
+    {
+     "sign": "c",
+     "row": 3,
+     "n": 10567,
+     "initial": 0.4985,
+     "medial": 0.5018,
+     "final": 0.0,
+     "alone": 0.0,
+     "nearest": "s:0.07 p:0.37 o:0.38",
+     "pictures": [
+      "data/examples/45.jpg",
+      "data/examples/46.jpg",
+      "data/examples/47.jpg",
+      "data/examples/48.jpg"
+     ]
+    },
+    {
+     "sign": "s",
+     "row": 1,
+     "n": 5882,
+     "initial": 0.5795,
+     "medial": 0.2815,
+     "final": 0.1426,
+     "alone": 0.0269,
+     "nearest": "c:0.07 q:0.36 p:0.38",
+     "pictures": [
+      "data/examples/171.jpg",
+      "data/examples/172.jpg",
+      "data/examples/173.jpg",
+      "data/examples/174.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "column": 5,
+   "signs": [
+    {
+     "sign": "i",
+     "row": 8,
+     "n": 8945,
+     "initial": 0.0012,
+     "medial": 0.9978,
+     "final": 0.001,
+     "alone": 0.0,
+     "nearest": "a:0.30 e:0.41 k:0.43",
+     "pictures": [
+      "data/examples/93.jpg",
+      "data/examples/94.jpg",
+      "data/examples/95.jpg",
+      "data/examples/96.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "column": 6,
+   "signs": [
+    {
+     "sign": "q",
+     "row": 11,
+     "n": 4216,
+     "initial": 0.9822,
+     "medial": 0.0179,
+     "final": 0.0,
+     "alone": 0.0,
+     "nearest": "s:0.36 c:0.52 p:0.56",
+     "pictures": [
+      "data/examples/155.jpg",
+      "data/examples/156.jpg",
+      "data/examples/157.jpg",
+      "data/examples/158.jpg"
+     ]
+    }
+   ]
+  }
+ ],
+ "currier": [
+  [
+   "g",
+   "iiin",
+   "iin",
+   "in",
+   "l",
+   "m",
+   "n",
+   "r",
+   "y"
+  ],
+  [
+   "ckh",
+   "d",
+   "e",
+   "f",
+   "h",
+   "k",
+   "p",
+   "t"
+  ],
+  [
+   "c",
+   "ch",
+   "cph",
+   "cth",
+   "o",
+   "q",
+   "sh"
+  ],
+  [
+   "a",
+   "i"
+  ],
+  [
+   "s"
+  ]
+ ],
+ "families": [
+  {
+   "stem": "che",
+   "endings": [
+    "dy:362",
+    "y:245",
+    "ol:114",
+    "ey:112",
+    "or:68",
+    "ky:49",
+    "ar:37",
+    "o:30",
+    "os:28",
+    "s:25"
+   ],
+   "words": 1186,
+   "pages": 155
+  },
+  {
+   "stem": "she",
+   "endings": [
+    "dy:306",
+    "y:200",
+    "ey:101",
+    "ol:77",
+    "or:36",
+    "ky:28",
+    "o:24",
+    "ar:19",
+    "al:13",
+    "d:13"
+   ],
+   "words": 900,
+   "pages": 141
+  },
+  {
+   "stem": "dai",
+   "endings": [
+    "in:623",
+    "n:170",
+    "r:68",
+    "ir:14",
+    "m:8",
+    "s:2",
+    "g:2"
+   ],
+   "words": 887,
+   "pages": 176
+  },
+  {
+   "stem": "qoke",
+   "endings": [
+    "ey:254",
+    "dy:224",
+    "y:85",
+    "ol:34",
+    "ed:13",
+    "or:12",
+    "eo:8",
+    "es:7",
+    "ar:6",
+    "d:5"
+   ],
+   "words": 667,
+   "pages": 90
+  },
+  {
+   "stem": "daii",
+   "endings": [
+    "n:623",
+    "in:14",
+    "r:14",
+    "ny:3",
+    "dy:3"
+   ],
+   "words": 657,
+   "pages": 168
+  },
+  {
+   "stem": "cho",
+   "endings": [
+    "l:266",
+    "r:162",
+    "dy:65",
+    "ky:31",
+    "ty:27",
+    "s:24",
+    "ly:12",
+    "m:11",
+    "ry:10",
+    "d:6"
+   ],
+   "words": 650,
+   "pages": 153
+  },
+  {
+   "stem": "qok",
+   "endings": [
+    "al:141",
+    "ar:126",
+    "y:115",
+    "ey:85",
+    "ol:67",
+    "or:21",
+    "am:20",
+    "l:9",
+    "an:8",
+    "ed:5"
+   ],
+   "words": 620,
+   "pages": 114
+  },
+  {
+   "stem": "qoka",
+   "endings": [
+    "in:233",
+    "l:141",
+    "r:126",
+    "m:20",
+    "ly:14",
+    "ir:14",
+    "n:8",
+    "s:3",
+    "dy:2"
+   ],
+   "words": 561,
+   "pages": 74
+  },
+  {
+   "stem": "qokee",
+   "endings": [
+    "y:254",
+    "dy:236",
+    "ey:20",
+    "d:13",
+    "o:8",
+    "ol:7",
+    "s:7",
+    "or:4",
+    "os:3",
+    "al:2"
+   ],
+   "words": 560,
+   "pages": 73
+  },
+  {
+   "stem": "oke",
+   "endings": [
+    "ey:147",
+    "dy:110",
+    "y:49",
+    "ol:46",
+    "or:16",
+    "al:12",
+    "es:12",
+    "o:9",
+    "eo:8",
+    "os:8"
+   ],
+   "words": 443,
+   "pages": 106
+  },
+  {
+   "stem": "qokai",
+   "endings": [
+    "n:233",
+    "in:179",
+    "r:14"
+   ],
+   "words": 426,
+   "pages": 61
+  },
+  {
+   "stem": "oka",
+   "endings": [
+    "in:114",
+    "r:112",
+    "l:107",
+    "m:29",
+    "ly:22",
+    "ir:15",
+    "ry:10",
+    "n:7",
+    "s:3",
+    "ld:2"
+   ],
+   "words": 423,
+   "pages": 93
+  },
+  {
+   "stem": "ched",
+   "endings": [
+    "y:362",
+    "al:20",
+    "ar:19",
+    "am:5",
+    "or:2",
+    "as:2"
+   ],
+   "words": 410,
+   "pages": 74
+  },
+  {
+   "stem": "ote",
+   "endings": [
+    "dy:138",
+    "ey:117",
+    "y:46",
+    "ol:27",
+    "os:21",
+    "or:10",
+    "es:9",
+    "ed:7",
+    "o:7",
+    "ar:5"
+   ],
+   "words": 398,
+   "pages": 95
+  },
+  {
+   "stem": "ota",
+   "endings": [
+    "r:102",
+    "l:95",
+    "in:77",
+    "m:40",
+    "ly:14",
+    "ir:7",
+    "ry:5",
+    "s:3",
+    "n:2"
+   ],
+   "words": 345,
+   "pages": 95
+  },
+  {
+   "stem": "shed",
+   "endings": [
+    "y:306",
+    "al:11",
+    "ar:4",
+    "am:3"
+   ],
+   "words": 324,
+   "pages": 61
+  },
+  {
+   "stem": "okee",
+   "endings": [
+    "y:147",
+    "dy:88",
+    "ey:19",
+    "ol:12",
+    "s:12",
+    "or:8",
+    "o:8",
+    "os:6",
+    "ar:4",
+    "om:3"
+   ],
+   "words": 313,
+   "pages": 88
+  },
+  {
+   "stem": "cheo",
+   "endings": [
+    "l:114",
+    "r:68",
+    "dy:66",
+    "s:28",
+    "m:7",
+    "ky:6",
+    "ty:3",
+    "d:3",
+    "ls:2",
+    "ry:2"
+   ],
+   "words": 303,
+   "pages": 108
+  },
+  {
+   "stem": "sho",
+   "endings": [
+    "l:139",
+    "r:77",
+    "dy:43",
+    "d:8",
+    "s:8",
+    "ty:6",
+    "ky:5",
+    "k:4",
+    "m:4",
+    "ry:2"
+   ],
+   "words": 300,
+   "pages": 129
+  },
+  {
+   "stem": "okai",
+   "endings": [
+    "in:158",
+    "n:114",
+    "r:15",
+    "ir:5",
+    "ry:2"
+   ],
+   "words": 294,
+   "pages": 91
+  },
+  {
+   "stem": "aii",
+   "endings": [
+    "n:246",
+    "in:27",
+    "r:13",
+    "ny:4"
+   ],
+   "words": 290,
+   "pages": 91
+  },
+  {
+   "stem": "cth",
+   "endings": [
+    "y:88",
+    "ol:47",
+    "ey:40",
+    "or:35",
+    "ar:14",
+    "al:7",
+    "dy:6",
+    "o:6",
+    "om:5",
+    "hy:4"
+   ],
+   "words": 263,
+   "pages": 99
+  },
+  {
+   "stem": "otee",
+   "endings": [
+    "y:117",
+    "dy:84",
+    "os:10",
+    "s:9",
+    "d:7",
+    "ol:6",
+    "ey:4",
+    "o:4",
+    "am:3",
+    "or:3"
+   ],
+   "words": 255,
+   "pages": 69
+  },
+  {
+   "stem": "qokeed",
+   "endings": [
+    "y:236",
+    "ar:4",
+    "al:2"
+   ],
+   "words": 242,
+   "pages": 43
+  },
+  {
+   "stem": "chee",
+   "endings": [
+    "y:112",
+    "dy:44",
+    "s:23",
+    "ky:17",
+    "or:14",
+    "o:7",
+    "ol:7",
+    "os:4",
+    "ey:3",
+    "b:3"
+   ],
+   "words": 238,
+   "pages": 86
+  },
+  {
+   "stem": "qot",
+   "endings": [
+    "y:63",
+    "ar:43",
+    "al:41",
+    "ol:29",
+    "ey:18",
+    "or:18",
+    "am:8",
+    "eo:5",
+    "o:3",
+    "l:2"
+   ],
+   "words": 232,
+   "pages": 87
+  },
+  {
+   "stem": "shee",
+   "endings": [
+    "y:101",
+    "dy:58",
+    "ky:12",
+    "ol:10",
+    "s:7",
+    "ty:6",
+    "o:5",
+    "or:5",
+    "ey:4",
+    "t:4"
+   ],
+   "words": 225,
+   "pages": 86
+  },
+  {
+   "stem": "sai",
+   "endings": [
+    "in:119",
+    "n:59",
+    "r:23",
+    "m:3",
+    "ir:3",
+    "no:2"
+   ],
+   "words": 209,
+   "pages": 90
+  },
+  {
+   "stem": "otai",
+   "endings": [
+    "in:97",
+    "n:77",
+    "r:7",
+    "ir:2"
+   ],
+   "words": 183,
+   "pages": 70
+  },
+  {
+   "stem": "sheo",
+   "endings": [
+    "l:77",
+    "r:36",
+    "dy:30",
+    "s:10",
+    "d:7",
+    "ky:5",
+    "y:2",
+    "ls:2",
+    "ty:2",
+    "ly:2"
+   ],
+   "words": 175,
+   "pages": 86
+  }
+ ]
+}

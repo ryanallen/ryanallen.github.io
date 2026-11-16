@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich sign grid</title>
+<meta name="description" content="The Voynich signs grouped by how they behave, as Kober and Ventris grouped Linear B's, with no sound values: where each sign stands in a word, which signs behave alike, and the word families that share a stem.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#intro b{color:var(--text)}
+  #finding{margin:6px 12px 10px;padding:8px 12px;border-left:3px solid var(--accent);max-width:880px;font-size:14px;color:var(--text)}
+  #finding p{margin:4px 0}
+  h2.col{font-size:16px;margin:18px 12px 6px;color:var(--text)}
+  .grid{display:flex;flex-wrap:wrap;gap:10px;padding:0 12px}
+  .sign{width:200px;background:#ffffff08;border:1px solid #41454e;border-radius:8px;padding:6px;font-size:12px;color:var(--muted)}
+  .sign .pics{display:flex;gap:3px;height:64px;background:#2a2620;border-radius:4px;padding:3px;justify-content:center;overflow:hidden}
+  .sign .pics img{height:58px;max-width:23%;min-width:0;object-fit:contain}
+  .sign b{color:var(--text);font-size:15px;font-family:ui-monospace,monospace}
+  .place{display:flex;height:10px;border-radius:3px;overflow:hidden;margin:4px 0;background:#ffffff10}
+  .place span{display:block;height:10px;flex:none}
+  .bi{background:#4a6fa5}.bm{background:#8a8f98}.bf{background:#b5523b}.ba{background:#7a9a5a}
+  .key{padding:2px 12px;font-size:12px;color:var(--muted)}.key i{display:inline-block;width:10px;height:10px;margin:0 3px 0 10px;vertical-align:middle;border-radius:2px}
+  table{border-collapse:collapse;margin:4px 12px;font-size:13px;color:var(--muted)}td,th{padding:3px 8px;border-bottom:1px solid #41454e;text-align:left}
+  td.w{font-family:ui-monospace,monospace;color:var(--text)}
+  @media (max-width:480px){.sign{width:calc(50% - 5px);box-sizing:border-box}table{font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="grid.html">Voynich sign grid</a></h1>
+  <nav><a href="./">Trace the Voynich</a> · <a href="search.html">Search</a> · <a href="herbals.html">Herbal likenesses</a> · <a href="plants.html">Plants</a> · <a href="drawings.html">Drawings</a></nav>
+</header>
+<div id="intro">The Voynich signs grouped by how they behave, as Alice Kober and Michael Ventris grouped the signs of Linear B before anyone could read it, with <b>no sound values</b>. Each column holds signs that stand in like places and among like neighbours; the bar under each sign shows how often it opens a word, stands inside one, ends one, or is a word alone. Counted on the 187 development pages of the Zandbergen–Landini transliteration in EVA; the pictures are the signs as the tracing site keeps them.</div>
+<div id="finding"></div>
+<div class="key"><i class="bi"></i>opens a word<i class="bm"></i>inside<i class="bf"></i>ends a word<i class="ba"></i>a word alone</div>
+<div id="out">Loading…</div>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  let d;
+  try { d = await (await fetch('data/grid.json')).json(); } catch (e) { $('out').textContent = 'The grid did not load: ' + e.message; return; }
+  $('finding').innerHTML = d.finding.map(f => `<p>${esc(f)}</p>`).join('');
+  const out = $('out'); out.replaceChildren();
+  const pct = v => Math.round(v * 100);
+  for (const c of d.columns) {
+    const h = document.createElement('h2'); h.className = 'col';
+    h.textContent = `Column ${c.column}: ${c.signs.map(s => s.sign).join(' ')}`; out.append(h);
+    const g = document.createElement('div'); g.className = 'grid'; out.append(g);
+    for (const s of c.signs) {
+      const e = document.createElement('div'); e.className = 'sign';
+      const rest = Math.max(0, 1 - s.initial - s.final - s.alone);
+      e.innerHTML = `<div class="pics">${s.pictures.map(p => `<img loading="lazy" alt="${esc(s.sign)}" src="${esc(p)}">`).join('')}</div>
+        <b>${esc(s.sign)}</b> · ${s.n.toLocaleString()} times · row ${s.row}
+        <div class="place"><span class="bi" style="width:${pct(s.initial)}%"></span><span class="bm" style="width:${pct(rest)}%"></span><span class="bf" style="width:${pct(s.final)}%"></span><span class="ba" style="width:${pct(s.alone)}%"></span></div>
+        opens ${pct(s.initial)}% · ends ${pct(s.final)}%<br>nearest by context: ${esc(s.nearest)}`;
+      g.append(e);
+    }
+  }
+  const h = document.createElement('h2'); h.className = 'col'; h.textContent = 'The same columns in Currier\'s units (ch, sh, the bench gallows and the i runs as one sign)'; out.append(h);
+  const p = document.createElement('div'); p.className = 'key'; p.innerHTML = d.currier.map((c, i) => `<b>${i + 1}</b>: ${c.map(esc).join(' ')}`).join(' &nbsp; '); out.append(p);
+  const h2 = document.createElement('h2'); h2.className = 'col'; h2.textContent = 'The largest word families: one stem, many endings (Kober\'s triplets)'; out.append(h2);
+  const t = document.createElement('table');
+  t.innerHTML = '<tr><th>stem</th><th>words</th><th>pages</th><th>endings (how many words)</th></tr>' +
+    d.families.map(f => `<tr><td class="w">${esc(f.stem)}-</td><td>${f.words}</td><td>${f.pages}</td><td class="w">${f.endings.map(esc).join(' ')}</td></tr>`).join('');
+  out.append(t);
+})();
+</script>
+</body>
+</html>
