@@ -1,0 +1,4352 @@
+{
+ "kinds": [
+  "zodiac sign",
+  "creature",
+  "building",
+  "place",
+  "star",
+  "diagram",
+  "figure",
+  "object",
+  "water"
+ ],
+ "drawings": [
+  {
+   "id": "f70v2.a",
+   "page": "f70v2",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Pisces",
+   "verdict": "secure",
+   "features": "two fish lying head to tail in the center circle, one above the other, tied by a line, with a word between them",
+   "reason": "two fish tied by a line; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Pisces",
+     "by": "Jim Reeds (checklist)",
+     "where": "#273, voynich.nu/hist/reeds/checklist.txt; #379"
+    }
+   ],
+   "words": [
+    "oteoal (beside, f70v2.32)",
+    "al (beside, f70v2.32)",
+    "teodaiin (beside, f70v2.32)",
+    "aiin (beside, f70v2.32)",
+    "daim (beside, f70v2.32)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006200",
+   "region": [
+    1632,
+    1536,
+    639,
+    510
+   ]
+  },
+  {
+   "id": "f70v1.a",
+   "page": "f70v1",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Aries",
+   "verdict": "secure",
+   "features": "a horned goat or ram with a dark green head standing on a ground line in the center circle",
+   "reason": "a horned ram or goat eating from a bush, the dark half of the sign; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Aries, dark, a goat-like ram eating from a bush, as the Persian Aries",
+     "by": "René Zandbergen",
+     "where": "#761, voynich.nu/q10; #1609 (Barbara)"
+    }
+   ],
+   "words": [
+    "ypsharal (label, f70v1.11)",
+    "araydy (label, f70v1.17)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006201",
+   "region": [
+    1369,
+    1443,
+    565,
+    439
+   ]
+  },
+  {
+   "id": "f71r.a",
+   "page": "f71r",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Aries",
+   "verdict": "secure",
+   "features": "a ram, lighter, standing in the center circle",
+   "reason": "the lighter half of the sign; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Aries, light",
+     "by": "René Zandbergen",
+     "where": "#764, voynich.nu/q11; #273"
+    }
+   ],
+   "words": [
+    "otoloaram (label, f71r.14)",
+    "oteeol (label, f71r.15)",
+    "oteeol (on, f71r.18)",
+    "otal.chs (on, f71r.18)",
+    "char (on, f71r.18)",
+    "cheky (on, f71r.18)",
+    "chotshy (on, f71r.18)",
+    "okeeody (on, f71r.18)",
+    "oteey (on, f71r.18)",
+    "chekea' (on, f71r.18)",
+    "okeol (beside, f71r.18)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006202",
+   "region": [
+    991,
+    1467,
+    765,
+    627
+   ]
+  },
+  {
+   "id": "f71v.a",
+   "page": "f71v",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Taurus",
+   "verdict": "secure",
+   "features": "a bull, pale red, lying or striding in the center circle",
+   "reason": "a bull, the lighter half of the sign; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Taurus, light",
+     "by": "Jim Reeds (checklist)",
+     "where": "#273, voynich.nu/hist/reeds/checklist.txt"
+    }
+   ],
+   "words": [
+    "ochey (beside, f71v.1)",
+    "?chey (on, f71v.1)",
+    "otcheodal (beside, f71v.1)",
+    "sheealody (on, f71v.1)",
+    "okeo (beside, f71v.12)",
+    "sholshdy (label, f71v.17)",
+    "okeey (beside, f71v.18)",
+    "okeosar (beside, f71v.18)",
+    "otaiin (on, f71v.18)",
+    "chkeeal (on, f71v.18)",
+    "okal (on, f71v.18)",
+    "cheekaiin (on, f71v.18)",
+    "okaiin (on, f71v.18)",
+    "okchor (on, f71v.18)",
+    "dar (on, f71v.18)",
+    "oteey (on, f71v.18)",
+    "kal (on, f71v.18)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    1101,
+    1229,
+    614,
+    461
+   ]
+  },
+  {
+   "id": "f72r1.a",
+   "page": "f72r1",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Taurus",
+   "verdict": "secure",
+   "features": "a red bull with a green collar or head striding in the center circle",
+   "reason": "a red bull, the darker half of the sign; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Taurus, dark",
+     "by": "Jim Reeds (checklist)",
+     "where": "#273, voynich.nu/hist/reeds/checklist.txt"
+    }
+   ],
+   "words": [
+    "otainy (label, f72r1.17)",
+    "aroly (beside, f72r1.18)",
+    "okees (beside, f72r1.18)",
+    "okeor (beside, f72r1.18)",
+    "chol (beside, f72r1.18)",
+    "o (beside, f72r1.18)",
+    "oteos (beside, f72r1.18)",
+    "aiin (beside, f72r1.18)",
+    "chal (beside, f72r1.18)",
+    "otaiin (beside, f72r1.18)",
+    "atchor (on, f72r1.18)",
+    "chckhy (on, f72r1.18)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    2988,
+    1270,
+    376,
+    352
+   ]
+  },
+  {
+   "id": "f72r2.a",
+   "page": "f72r2",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Gemini",
+   "verdict": "secure",
+   "features": "a man and a woman in long green and blue clothes holding hands in the center",
+   "reason": "drawn as a man and a woman holding hands, the fourteenth-century form; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Gemini as a man and a woman, the fourteenth-century form",
+     "by": "Barbara; Robert Firth",
+     "where": "#1609, a2010G.txt message 129; #1334"
+    }
+   ],
+   "words": [
+    "ainaly (label, f72r2.30)",
+    "otoar (on, f72r2.32)",
+    "air.aloy (on, f72r2.32)",
+    "okaiin (beside, f72r2.32)",
+    "otees (beside, f72r2.32)",
+    "chs (beside, f72r2.32)",
+    "chchs.ar (beside, f72r2.32)",
+    "aly (beside, f72r2.32)",
+    "taly (beside, f72r2.32)",
+    "dar (beside, f72r2.32)",
+    "otchey (beside, f72r2.32)",
+    "okaiin (beside, f72r2.32)",
+    "olaiin (beside, f72r2.32)",
+    "y (beside, f72r2.32)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    4923,
+    1199,
+    376,
+    447
+   ]
+  },
+  {
+   "id": "f72r3.a",
+   "page": "f72r3",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Cancer",
+   "verdict": "secure",
+   "features": "a red crab, or crayfish, in the center circle, with a small green creature above it",
+   "reason": "drawn as two crayfish or lobsters, a doubling Barbara traces to a Persian Scorpio; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Cancer as two lobsters or crayfish, from a doubled Persian Scorpio",
+     "by": "René Zandbergen; Barbara",
+     "where": "#769, voynich.nu/q11; #1609; #1644"
+    }
+   ],
+   "words": [
+    "ytoar (label, f72r3.30)",
+    "okeos (on, f72r3.34)",
+    "aiin.olaiin (on, f72r3.34)",
+    "oraiin (on, f72r3.34)",
+    "octheolarl (on, f72r3.34)",
+    "okeeody (on, f72r3.34)",
+    "oteos (on, f72r3.34)",
+    "aiin.koly (on, f72r3.34)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    6847,
+    1294,
+    352,
+    328
+   ]
+  },
+  {
+   "id": "f72v3.a",
+   "page": "f72v3",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Leo",
+   "verdict": "secure",
+   "features": "a faint lion in the center circle, barely colored",
+   "reason": "a faint lion; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Leo as a heraldic leopard",
+     "by": "a member of the voynich.nu list",
+     "where": "#1503, 17 September 1993"
+    }
+   ],
+   "words": [
+    "okeolyd (label, f72v3.19)",
+    "choleey (label, f72v3.21)",
+    "okesees.ar.chkeeol (on, f72v3.33)",
+    "okeolaiin (beside, f72v3.33)",
+    "chalal (beside, f72v3.33)",
+    "ykeeodarar (beside, f72v3.33)",
+    "oleeody.shedy (on, f72v3.33)",
+    "solar (beside, f72v3.33)",
+    "aldy (beside, f72v3.33)",
+    "oteor (beside, f72v3.33)",
+    "cheor (on, f72v3.33)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+   "region": [
+    1902,
+    1507,
+    650,
+    501
+   ]
+  },
+  {
+   "id": "f72v2.a",
+   "page": "f72v2",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Virgo",
+   "verdict": "secure",
+   "features": "a woman in a long blue dress holding a flower in the center circle",
+   "reason": "a woman holding a flower, her dress dated by Roger Wieck to 1420 to 1430; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Virgo, her dress of 1420 to 1430",
+     "by": "Roger Wieck (Morgan Library)",
+     "where": "#771, voynich.nu/q11/index.html#f72v2"
+    }
+   ],
+   "words": [
+    "okaiin (label, f72v2.21)",
+    "otaiin (beside, f72v2.33)",
+    "otshedy (on, f72v2.33)",
+    "chokeedy (on, f72v2.33)",
+    "otes.al.al.ar (on, f72v2.33)",
+    "chetolain (on, f72v2.33)",
+    "sheodaly (beside, f72v2.33)",
+    "okealy (beside, f72v2.33)",
+    "rary (beside, f72v2.33)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+   "region": [
+    4411,
+    1439,
+    463,
+    519
+   ]
+  },
+  {
+   "id": "f72v1.a",
+   "page": "f72v1",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Libra",
+   "verdict": "secure",
+   "features": "a pair of scales hanging from a stand in the center circle",
+   "reason": "a pair of scales, the Latin form; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Libra as scales, the Latin form, not the Greek yoke",
+     "by": "a member of the voynich.nu list",
+     "where": "#772, voynich.nu/q11; #1503"
+    }
+   ],
+   "words": [
+    "okydy (label, f72v1.24)",
+    "oiiny (label, f72v1.26)",
+    "oeey (label, f72v1.27)",
+    "otalal (beside, f72v1.33)",
+    "dalal (on, f72v1.33)",
+    "ykeols (on, f72v1.33)",
+    "oteo.r.aiin (on, f72v1.33)",
+    "yotoam (on, f72v1.33)",
+    "oteey (beside, f72v1.33)",
+    "saiin (beside, f72v1.33)",
+    "oteeos.am (on, f72v1.33)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006205",
+   "region": [
+    1448,
+    1438,
+    453,
+    450
+   ]
+  },
+  {
+   "id": "f73r.a",
+   "page": "f73r",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Scorpio",
+   "verdict": "secure",
+   "features": "a green-gray four-legged creature with a curled tail under a star in the center circle, standing for the scorpion",
+   "reason": "drawn as a lizard or salamander, not a scorpion, as in the Compost et Kalendrier des Bergers (Paris 1499); the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Scorpio as a lizard or salamander, not a scorpion",
+     "by": "René Zandbergen; Robert Firth",
+     "where": "#775, voynich.nu/q11; #1334; #1654 (the Compost et Kalendrier des Bergers, Paris 1499)"
+    }
+   ],
+   "words": [
+    "okary (label, f73r.23)",
+    "okeeody (label, f73r.24)",
+    "oky (label, f73r.26)",
+    "chefy (label, f73r.27)",
+    "otal (label, f73r.28)",
+    "chek (label, f73r.29)",
+    "okeeos (label, f73r.32)",
+    "osaiin (on, f73r.33)",
+    "chedain (on, f73r.33)",
+    "oteey (on, f73r.33)",
+    "chedaly (beside, f73r.33)",
+    "okechs (on, f73r.33)",
+    "chepcheesaly (on, f73r.33)",
+    "oteodal (on, f73r.33)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006206",
+   "region": [
+    1000,
+    1514,
+    456,
+    456
+   ]
+  },
+  {
+   "id": "f73v.a",
+   "page": "f73v",
+   "kind": "zodiac sign",
+   "count": 1,
+   "named": "Sagittarius",
+   "verdict": "secure",
+   "features": "a man in a blue coat holding a crossbow in the center circle",
+   "reason": "a crossbowman on two legs, as in German manuscripts of 1400 to 1500; the month name written on the page and the sign's place in the cycle (Pisces, Aries twice, Taurus twice, then in order to Sagittarius) settle it",
+   "proposals": [
+    {
+     "named": "Sagittarius as a crossbowman, as in German manuscripts of 1400 to 1500",
+     "by": "Ponzi and Worley; J. K. Petersen",
+     "where": "#379; #1343; #1631 (Robert Steele, Nature vol. 122)"
+    }
+   ],
+   "words": [
+    "otedy (label, f73v.23)",
+    "oky (label, f73v.25)",
+    "ykeee (label, f73v.29)",
+    "ykey (label, f73v.31)",
+    "otedchor (on, f73v.33)",
+    "alar (on, f73v.33)",
+    "olkcho (on, f73v.33)",
+    "otolam (on, f73v.33)",
+    "o.kees.char.y (on, f73v.33)",
+    "ytaly (on, f73v.33)",
+    "alaly (on, f73v.33)",
+    "otaram (on, f73v.33)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006207",
+   "region": [
+    1398,
+    1442,
+    452,
+    536
+   ]
+  },
+  {
+   "id": "f102r2.a",
+   "page": "f102r2",
+   "kind": "creature",
+   "count": 2,
+   "named": "a frog and a lizard",
+   "verdict": "likely",
+   "features": "a small blue creature with spread limbs at the top and a smaller pale one beneath it, read as a frog and a lizard by voynich.nu",
+   "reason": "the pale lower creature squats with bent legs as a frog; the blue upper one has spread limbs and a tail; Zandbergen reads them as a frog and a smaller lizard",
+   "proposals": [
+    {
+     "named": "a frog and a smaller lizard",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html; #1688, a2011F.txt message 722"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    6933,
+    309,
+    464,
+    721
+   ]
+  },
+  {
+   "id": "f34v.a",
+   "page": "f34v",
+   "kind": "creature",
+   "count": 1,
+   "named": "a root drawn as a four-legged animal",
+   "verdict": "likely",
+   "features": "the root drawn as a long low body with legs at each end and a face at the center",
+   "reason": "the root has a body, four legs and a head with a face, as voynich.nu reads it; which animal is not drawn clearly enough to say",
+   "proposals": [
+    {
+     "named": "a root drawn as an animal",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006141",
+   "region": [
+    505,
+    2903,
+    2247,
+    732
+   ]
+  },
+  {
+   "id": "f90v1.a",
+   "page": "f90v1",
+   "kind": "creature",
+   "count": 1,
+   "named": "a root drawn as a four-legged animal",
+   "verdict": "likely",
+   "features": "the root drawn as a four-legged animal with a long tail, clawed feet and a raised head",
+   "reason": "a long body with a tail, four clawed feet and a raised end like a head, as voynich.nu reads it",
+   "proposals": [
+    {
+     "named": "a root drawn as an animal",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [
+    "ksheodal (beside, f90v1.7)",
+    "sheody (beside, f90v1.7)",
+    "qocheoto (beside, f90v1.7)",
+    "shokol (beside, f90v1.7)",
+    "qokeshs (beside, f90v1.7)",
+    "yteody (beside, f90v1.7)",
+    "podaihey (beside, f90v1.7)",
+    "daiin (on, f90v1.8)",
+    "okeeey (on, f90v1.8)",
+    "cheo (on, f90v1.8)",
+    "qotecheor (on, f90v1.8)",
+    "cthodaim (on, f90v1.8)",
+    "s (on, f90v1.8)",
+    "cheol (on, f90v1.8)",
+    "chor (on, f90v1.8)",
+    "okeam (on, f90v1.8)",
+    "sheor (on, f90v1.9)",
+    "ol (on, f90v1.9)",
+    "qokeeoky (on, f90v1.9)",
+    "okeeol (on, f90v1.9)",
+    "okeeodaiin (on, f90v1.9)",
+    "ytol (on, f90v1.9)",
+    "sor (on, f90v1.9)",
+    "asiin (on, f90v1.9)",
+    "aiin (on, f90v1.9)",
+    "ykeeor (on, f90v1.10)",
+    "cheos (on, f90v1.10)",
+    "qkhey (on, f90v1.10)",
+    "cheos (on, f90v1.10)",
+    "oteol (on, f90v1.10)",
+    "okechod (on, f90v1.10)",
+    "oeey (on, f90v1.10)",
+    "keeos (on, f90v1.10)",
+    "aiiin (on, f90v1.10)",
+    "deeocthey (on, f90v1.11)",
+    "keeeol (on, f90v1.11)",
+    "sheol (on, f90v1.11)",
+    "c'tsheol (on, f90v1.11)",
+    "daiin (on, f90v1.11)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006237",
+   "region": [
+    493,
+    2514,
+    1873,
+    1060
+   ]
+  },
+  {
+   "id": "f25v.a",
+   "page": "f25v",
+   "kind": "creature",
+   "count": 1,
+   "named": "a small dragon",
+   "verdict": "likely",
+   "features": "a small four-legged creature with a long neck and tail and a crest or ears, standing at the plant's foot, its mouth at the lowest leaf",
+   "reason": "a scaled four-legged beast with a long neck, ears or crest and clawed feet, eating from the leaf, as voynich.nu and the list read it; it has no wings, which bestiary dragons mostly have; Hoffmann's reading of it as a sign for tarragon (\"little dragon\") is a plant question left to the plant identifications",
+   "proposals": [
+    {
+     "named": "a dragon, a memory aid for tarragon (Artemisia dracunculus, \"little dragon\")",
+     "by": "Don Hoffmann",
+     "where": "#1479, voynich.nu mailing list message 220, 29 February 2012"
+    },
+    {
+     "named": "a dragon eating from a leaf",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html; #1688, a2011F.txt message 722"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006123",
+   "region": [
+    2136,
+    2814,
+    528,
+    603
+   ]
+  },
+  {
+   "id": "f43v.a",
+   "page": "f43v",
+   "kind": "creature",
+   "count": 1,
+   "named": "a snake drawn as the root",
+   "verdict": "likely",
+   "features": "the left plant's root coiled like a snake, three turns",
+   "reason": "the root coils three times and ends in a head with an eye and a bristled neck",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006159",
+   "region": [
+    628,
+    2488,
+    477,
+    804
+   ]
+  },
+  {
+   "id": "f79v.c",
+   "page": "f79v",
+   "kind": "creature",
+   "count": 3,
+   "named": "small four-legged animals",
+   "verdict": "likely",
+   "features": "several small four-legged animals at the foot of the pool, one like a lizard, ink with a little green",
+   "reason": "several small animals with legs and tails at the foot of the pool, one like a lizard; what kind each is cannot be told",
+   "proposals": [
+    {
+     "named": "several animals",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [
+    "qokeedy (beside, f79v.39)",
+    "ykeey (beside, f79v.39)",
+    "sheey (beside, f79v.39)",
+    "or (beside, f79v.39)",
+    "or (beside, f79v.39)",
+    "aiin (beside, f79v.39)",
+    "yefaiin (beside, f79v.39)",
+    "chcthhy (beside, f79v.39)",
+    "dor (beside, f79v.39)",
+    "yty (beside, f79v.39)",
+    "qokees (beside, f79v.40)",
+    "aiin (beside, f79v.40)",
+    "okain (beside, f79v.40)",
+    "ol (beside, f79v.40)",
+    "oiin (beside, f79v.40)",
+    "qokoin (beside, f79v.40)",
+    "sheky (beside, f79v.40)",
+    "qokeedy (beside, f79v.40)",
+    "qokar (beside, f79v.40)",
+    "ol (beside, f79v.40)",
+    "yshedy (on, f79v.41)",
+    "qokeey (on, f79v.41)",
+    "okain (on, f79v.41)",
+    "ol.keey (on, f79v.41)",
+    "daldy (on, f79v.41)",
+    "chedy (on, f79v.41)",
+    "raiin (on, f79v.41)",
+    "orain (on, f79v.41)",
+    "okchedy (on, f79v.42)",
+    "qokain (on, f79v.42)",
+    "sheky (on, f79v.42)",
+    "chedy (on, f79v.42)",
+    "ol.ain.y.daral (on, f79v.42)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006217",
+   "region": [
+    847,
+    2939,
+    1753,
+    678
+   ]
+  },
+  {
+   "id": "f49r.a",
+   "page": "f49r",
+   "kind": "creature",
+   "count": 2,
+   "named": "two snakes",
+   "verdict": "likely",
+   "features": "two long wavy snake-like bodies lying between the roots along the page foot",
+   "reason": "two long wavy bodies along the page foot, the right one ending in a head, as voynich.nu and Zandbergen read them",
+   "proposals": [
+    {
+     "named": "two snakes",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html; #1688, a2011F.txt message 722"
+    }
+   ],
+   "words": [
+    "sheor (beside, f49r.18)",
+    "cheol (beside, f49r.18)",
+    "od (beside, f49r.18)",
+    "cho (beside, f49r.18)",
+    "dcheeey (beside, f49r.18)",
+    "qot.chotchy (beside, f49r.18)",
+    "dcheo (beside, f49r.19)",
+    "r (beside, f49r.19)",
+    "cheey (beside, f49r.19)",
+    "keolchey (beside, f49r.19)",
+    "chokchol (beside, f49r.19)",
+    "chokan (beside, f49r.19)",
+    "qotcho (on, f49r.20)",
+    "chods (on, f49r.20)",
+    "cho (on, f49r.20)",
+    "chochy (on, f49r.20)",
+    "chs (on, f49r.20)",
+    "oriin (on, f49r.20)",
+    "odcho (on, f49r.21)",
+    "chor (on, f49r.21)",
+    "ety (on, f49r.21)",
+    "shol (on, f49r.21)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006170",
+   "region": [
+    451,
+    2834,
+    2107,
+    803
+   ]
+  },
+  {
+   "id": "f7v.a",
+   "page": "f7v",
+   "kind": "creature",
+   "count": 1,
+   "named": "a bird",
+   "verdict": "possible",
+   "features": "a small drawn shape on forked stalks with two dark dots, where line 7's third word (f7v.7.w3) runs into it, at the top of the plant's stalk; read as a bird by the owner while keying that word",
+   "reason": "the owner reads it as a bird; at the page's scale it is two dark round heads on forked stalks at the top of the plant, where f7v.7.w3 runs into them, which could as well be the plant's own seed heads, and no published reading names it",
+   "proposals": [
+    {
+     "named": "a bird",
+     "by": "the owner",
+     "where": "tickets/the-drawing-identifications.md, Why (the owner's message)"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006089",
+   "region": [
+    1595,
+    987,
+    278,
+    253
+   ]
+  },
+  {
+   "id": "f116v.a",
+   "page": "f116v",
+   "kind": "creature",
+   "count": 1,
+   "named": "a sheep or a goat",
+   "verdict": "possible",
+   "features": "a small four-legged animal with a raised head, perhaps horns, in the left margin by the marginal writing, ink only; read by voynich.nu as a sheep or a goat",
+   "reason": "a small four-legged animal with a raised head drawn faintly in ink by the marginal writing; no horns or fleece can be made out, so sheep, goat or dog are all open",
+   "proposals": [
+    {
+     "named": "a sheep or a goat",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006277",
+   "region": [
+    296,
+    394,
+    209,
+    209
+   ]
+  },
+  {
+   "id": "f86v3.b",
+   "page": "f86v3",
+   "kind": "creature",
+   "count": 2,
+   "named": "two birds",
+   "verdict": "possible",
+   "features": "two small birds, one sitting as if on a nest, one flying, drawn faintly in ink between the streams",
+   "reason": "two faint ink shapes, one sitting, one flying, as voynich.nu reads them; at the scan's scale they are a few lines",
+   "proposals": [
+    {
+     "named": "two birds, one nesting, one flying",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006230",
+   "region": [
+    3244,
+    1702,
+    644,
+    460
+   ]
+  },
+  {
+   "id": "f80v.c",
+   "page": "f80v",
+   "kind": "creature",
+   "count": 1,
+   "named": "a scaly four-legged animal",
+   "verdict": "unknown",
+   "features": "a scaly, hump-backed four-legged animal with clawed feet standing on a blue-edged rim above a woman in a tub, ink with a little green; the unidentified animal voynich.nu lists",
+   "reason": "hump-backed, scaled and clawed, standing on a rim above a woman in a tub; voynich.nu leaves it unidentified and so does this reading",
+   "proposals": [
+    {
+     "named": "an unidentified animal",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006219",
+   "region": [
+    557,
+    1064,
+    346,
+    272
+   ]
+  },
+  {
+   "id": "fRos.j",
+   "page": "fRos",
+   "kind": "building",
+   "count": 1,
+   "named": "a castle with swallowtail merlons",
+   "verdict": "likely",
+   "features": "a castle with towers and battlements on the left edge of the top-right circle, the swallowtail merlons argued over for dating",
+   "reason": "towers and walls with swallowtail (Ghibelline) battlements, a north Italian form, as voynich.nu and the list read it; which castle, if any, is open (Lake Garda, a fantasy, a town sign)",
+   "proposals": [
+    {
+     "named": "a north Italian castle with swallowtail (Ghibelline) merlons",
+     "by": "René Zandbergen",
+     "where": "#376 and #812, voynich.nu/q14/index.html; #916; #1567"
+    },
+    {
+     "named": "a fantasy castle",
+     "by": "René Zandbergen",
+     "where": "#1585, a2011 message 303"
+    },
+    {
+     "named": "the Scaliger castle on Lake Garda",
+     "by": "j.haley",
+     "where": "#1597, a2008L.txt messages 107 and 123"
+    },
+    {
+     "named": "a town icon, as on maps",
+     "by": "Rich SantaColoma",
+     "where": "#1626 and #1703, a2013B.txt message 207"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    5814,
+    824,
+    460,
+    654
+   ]
+  },
+  {
+   "id": "fRos.k",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "a map of linked places",
+   "verdict": "possible",
+   "features": "the causeways, tubes and roads linking the nine circles, read by some as a map",
+   "reason": "causeways and roads join the nine circles as a map joins towns; Zandbergen is not convinced, and no place on it is named",
+   "proposals": [
+    {
+     "named": "a map",
+     "by": "many",
+     "where": "#376, voynich.nu/illustr.html; #1703"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    266,
+    174,
+    7588,
+    6885
+   ]
+  },
+  {
+   "id": "fRos.e",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "a walled city at the center",
+   "verdict": "possible",
+   "features": "the center circle: rings of beads and towers round a central dome of loops, six tubes leading out",
+   "reason": "rings of towers round a central dome; Barbara reads it as Jerusalem at the center of a world map",
+   "proposals": [
+    {
+     "named": "Jerusalem at the center of a world map, with Islamic towers",
+     "by": "Barbara",
+     "where": "#1609, a2010G.txt message 129"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    3091,
+    2384,
+    2558,
+    2558
+   ]
+  },
+  {
+   "id": "fRos.a",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the top-left circle: a ring of beads and loops round an oval of blue-flecked cells",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    1148,
+    441,
+    1236,
+    1676
+   ]
+  },
+  {
+   "id": "fRos.b",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the top-center circle: a ring of petal-like cells round sixteen blue and yellow rays from a hub",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    3619,
+    354,
+    1676,
+    1764
+   ]
+  },
+  {
+   "id": "fRos.c",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the top-right circle: a disc of dots ringed by loops, with a castle at the corner above it",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    5737,
+    441,
+    2030,
+    2030
+   ]
+  },
+  {
+   "id": "fRos.d",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the middle-left circle: a disc of tubes and loops, pale yellow",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    1236,
+    2825,
+    1764,
+    1764
+   ]
+  },
+  {
+   "id": "fRos.f",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the middle-right circle: a disc split by a line, cells and loops within",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    5737,
+    2912,
+    1764,
+    1856
+   ]
+  },
+  {
+   "id": "fRos.g",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the bottom-left circle: a ring of loops round a dark beaded oval",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    1236,
+    5029,
+    1589,
+    1676
+   ]
+  },
+  {
+   "id": "fRos.h",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the bottom-center circle: a six-armed blue star on a field of yellow dots",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    3353,
+    4942,
+    2117,
+    1943
+   ]
+  },
+  {
+   "id": "fRos.i",
+   "page": "fRos",
+   "kind": "place",
+   "count": 1,
+   "named": "one of the nine linked circles",
+   "verdict": "unknown",
+   "features": "the bottom-right circle: a ring of loops with a striped panel and a small blue star",
+   "reason": "a circle of loops, cells, rays or tubes linked to the others by causeways; no reading names it as a place",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    5650,
+    5029,
+    2117,
+    1943
+   ]
+  },
+  {
+   "id": "f67r2.b",
+   "page": "f67r2",
+   "kind": "star",
+   "count": 1,
+   "named": "a star",
+   "verdict": "secure",
+   "features": "an eight-pointed star at the center of the moon wheel",
+   "reason": "an eight-pointed star drawn at the center",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006194",
+   "region": [
+    3504,
+    1216,
+    319,
+    476
+   ]
+  },
+  {
+   "id": "f68v2.b",
+   "page": "f68v2",
+   "kind": "star",
+   "count": 40,
+   "named": "stars",
+   "verdict": "secure",
+   "features": "the small stars in sectors round the center, in rings of text; the count is by eye at sheet scale, within about five",
+   "reason": "drawn stars in sectors round the center",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+   "region": [
+    3598,
+    779,
+    1945,
+    1834
+   ]
+  },
+  {
+   "id": "f58r.a",
+   "page": "f58r",
+   "kind": "star",
+   "count": 3,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "stars of seven or eight points drawn inside the text at the paragraph starts, ink, uncolored; the count is ZL's paragraph starts (3), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006188",
+   "region": [
+    100,
+    100,
+    2592,
+    3499
+   ]
+  },
+  {
+   "id": "f58v.a",
+   "page": "f58v",
+   "kind": "star",
+   "count": 4,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "stars of seven or eight points drawn inside the text at the paragraph starts, ink, uncolored; the count is ZL's paragraph starts (4), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006189",
+   "region": [
+    101,
+    101,
+    2784,
+    3518
+   ]
+  },
+  {
+   "id": "f103r.a",
+   "page": "f103r",
+   "kind": "star",
+   "count": 18,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (18), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006254",
+   "region": [
+    51,
+    101,
+    660,
+    3551
+   ]
+  },
+  {
+   "id": "f103v.a",
+   "page": "f103v",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006255",
+   "region": [
+    2073,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f104r.a",
+   "page": "f104r",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006256",
+   "region": [
+    51,
+    102,
+    661,
+    3557
+   ]
+  },
+  {
+   "id": "f104v.a",
+   "page": "f104v",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006257",
+   "region": [
+    2052,
+    99,
+    642,
+    3457
+   ]
+  },
+  {
+   "id": "f105r.a",
+   "page": "f105r",
+   "kind": "star",
+   "count": 10,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (10), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006258",
+   "region": [
+    50,
+    101,
+    654,
+    3520
+   ]
+  },
+  {
+   "id": "f105v.a",
+   "page": "f105v",
+   "kind": "star",
+   "count": 10,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (10), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006259",
+   "region": [
+    1971,
+    99,
+    642,
+    3454
+   ]
+  },
+  {
+   "id": "f106r.a",
+   "page": "f106r",
+   "kind": "star",
+   "count": 15,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (15), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006260",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f106v.a",
+   "page": "f106v",
+   "kind": "star",
+   "count": 15,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (15), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006261",
+   "region": [
+    1979,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f107r.a",
+   "page": "f107r",
+   "kind": "star",
+   "count": 14,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (14), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006262",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f107v.a",
+   "page": "f107v",
+   "kind": "star",
+   "count": 15,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (15), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006263",
+   "region": [
+    1999,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f108r.a",
+   "page": "f108r",
+   "kind": "star",
+   "count": 14,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (14), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006264",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f108v.a",
+   "page": "f108v",
+   "kind": "star",
+   "count": 7,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (7), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006265",
+   "region": [
+    1957,
+    99,
+    642,
+    3459
+   ]
+  },
+  {
+   "id": "f111r.a",
+   "page": "f111r",
+   "kind": "star",
+   "count": 6,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (6), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006266",
+   "region": [
+    50,
+    101,
+    656,
+    3531
+   ]
+  },
+  {
+   "id": "f111v.a",
+   "page": "f111v",
+   "kind": "star",
+   "count": 8,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (8), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006267",
+   "region": [
+    1977,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f112r.a",
+   "page": "f112r",
+   "kind": "star",
+   "count": 11,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (11), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006268",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f112v.a",
+   "page": "f112v",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006269",
+   "region": [
+    1974,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f113r.a",
+   "page": "f113r",
+   "kind": "star",
+   "count": 16,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (16), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006270",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f113v.a",
+   "page": "f113v",
+   "kind": "star",
+   "count": 15,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (15), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006271",
+   "region": [
+    1977,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f114r.a",
+   "page": "f114r",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006272",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f114v.a",
+   "page": "f114v",
+   "kind": "star",
+   "count": 12,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (12), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006273",
+   "region": [
+    1982,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f115r.a",
+   "page": "f115r",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006274",
+   "region": [
+    50,
+    101,
+    656,
+    3534
+   ]
+  },
+  {
+   "id": "f115v.a",
+   "page": "f115v",
+   "kind": "star",
+   "count": 13,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (13), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006275",
+   "region": [
+    1987,
+    99,
+    641,
+    3451
+   ]
+  },
+  {
+   "id": "f116r.a",
+   "page": "f116r",
+   "kind": "star",
+   "count": 8,
+   "named": "stars marking paragraph starts",
+   "verdict": "secure",
+   "features": "a star of seven or eight points in the left margin at each paragraph start, many with a tail running to the line, some with a red center; the count is ZL's paragraph starts (8), the stars matched to them by eye on f103r (18) and f58r (3)",
+   "reason": "drawn stars of seven or eight points, one at each paragraph start; what each star stands for is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006276",
+   "region": [
+    50,
+    101,
+    656,
+    3535
+   ]
+  },
+  {
+   "id": "f67v1.b",
+   "page": "f67v1",
+   "kind": "star",
+   "count": 40,
+   "named": "stars, each labeled",
+   "verdict": "secure",
+   "features": "the stars in the wheel's twelve sectors round the sun, three colored green, each with a label; the count is by eye at sheet scale, within about three",
+   "reason": "drawn stars, each with a label, in the twelve sectors",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+   "region": [
+    2658,
+    263,
+    2207,
+    2469
+   ]
+  },
+  {
+   "id": "f68r1.c",
+   "page": "f68r1",
+   "kind": "star",
+   "count": 29,
+   "named": "stars, each labeled",
+   "verdict": "secure",
+   "features": "the stars scattered between the two faces, each with a label; the count is by eye at sheet scale, within about three",
+   "reason": "drawn stars with a label beside each",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    268,
+    697,
+    1957,
+    1876
+   ]
+  },
+  {
+   "id": "f68r2.c",
+   "page": "f68r2",
+   "kind": "star",
+   "count": 31,
+   "named": "stars, each labeled",
+   "verdict": "secure",
+   "features": "the stars scattered between the two faces, each with a label; the count is by eye at sheet scale, within about three",
+   "reason": "drawn stars with a label beside each",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    2554,
+    804,
+    1904,
+    1876
+   ]
+  },
+  {
+   "id": "f68r1.b",
+   "page": "f68r1",
+   "kind": "star",
+   "count": 1,
+   "named": "the moon",
+   "verdict": "likely",
+   "features": "a face in a blue crescent with a ring of text, at the bottom: the moon",
+   "reason": "a face in a blue crescent",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    1046,
+    2465,
+    322,
+    429
+   ]
+  },
+  {
+   "id": "f68r2.a",
+   "page": "f68r2",
+   "kind": "star",
+   "count": 1,
+   "named": "the moon",
+   "verdict": "likely",
+   "features": "a face in a crescent with a ring of text, at the top: the moon",
+   "reason": "a face in a crescent",
+   "proposals": [],
+   "words": [
+    "qoeeckhy (beside, f68r2.4)",
+    "qockheol (beside, f68r2.4)",
+    "qokeol (beside, f68r2.4)",
+    "sain (beside, f68r2.5)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    3357,
+    778,
+    375,
+    293
+   ]
+  },
+  {
+   "id": "f86v4.b",
+   "page": "f86v4",
+   "kind": "star",
+   "count": 1,
+   "named": "the moon",
+   "verdict": "likely",
+   "features": "a crescent moon with a face at the center",
+   "reason": "a crescent with a face",
+   "proposals": [
+    {
+     "named": "the moon",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+   "region": [
+    4068,
+    1605,
+    213,
+    236
+   ]
+  },
+  {
+   "id": "f67r1.a",
+   "page": "f67r1",
+   "kind": "star",
+   "count": 1,
+   "named": "the sun",
+   "verdict": "likely",
+   "features": "the sun as a face in a disc with sixteen long rays colored red and blue alternately",
+   "reason": "a face in a disc with sixteen long rays, the sun's usual form; an eclipse of 1547 has been proposed and cannot be shown",
+   "proposals": [
+    {
+     "named": "the annular eclipse of 12 November 1547",
+     "by": "a member of the voynich.nu list",
+     "where": "#1675, a2010B.txt"
+    },
+    {
+     "named": "the sun",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006194",
+   "region": [
+    625,
+    1216,
+    1321,
+    1535
+   ]
+  },
+  {
+   "id": "f68v1.a",
+   "page": "f68v1",
+   "kind": "star",
+   "count": 1,
+   "named": "the sun",
+   "verdict": "likely",
+   "features": "the sun as a white disc with a face or rose, its rays blue and white, filled with small stars",
+   "reason": "a white disc with a face, its rays blue and white",
+   "proposals": [
+    {
+     "named": "the sun",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [
+    "okeyteey (beside, f68v1.1)",
+    "cthody (beside, f68v1.1)",
+    "chesokcho.teody (beside, f68v1.1)",
+    "cheos (beside, f68v1.1)",
+    "chkorchy (beside, f68v1.1)",
+    "oteeol (beside, f68v1.2)",
+    "sheo (beside, f68v1.2)",
+    "s (beside, f68v1.2)",
+    "cheoekeey (on, f68v1.2)",
+    "cheodaiir (beside, f68v1.2)",
+    "cheekchey (beside, f68v1.2)",
+    "chkeody (beside, f68v1.2)",
+    "okchy (beside, f68v1.2)",
+    "teeos (on, f68v1.2)",
+    "sh (beside, f68v1.2)",
+    "cheo.eky (beside, f68v1.2)",
+    "dair (on, f68v1.3)",
+    "apeeety (beside, f68v1.3)",
+    "sair (beside, f68v1.4)",
+    "oteeor (beside, f68v1.5)",
+    "okechdaral (beside, f68v1.6)",
+    "otol (on, f68v1.7)",
+    "ches (on, f68v1.7)",
+    "otaly (beside, f68v1.7)",
+    "okeey (on, f68v1.8)",
+    "chek (on, f68v1.8)",
+    "chekeys (on, f68v1.8)",
+    "dar (on, f68v1.9)",
+    "shes (on, f68v1.9)",
+    "shokey (on, f68v1.9)",
+    "oteodain (beside, f68v1.10)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+   "region": [
+    6295,
+    1278,
+    1196,
+    1278
+   ]
+  },
+  {
+   "id": "f68r3.b",
+   "page": "f68r3",
+   "kind": "star",
+   "count": 60,
+   "named": "the Pleiades among the stars",
+   "verdict": "possible",
+   "features": "the stars in sectors round the central face, in rows and clusters, one cluster read as the Pleiades; the count is by eye at sheet scale, within about five",
+   "reason": "one cluster of seven small stars drawn close together, as the Pleiades are; Zandbergen gives the seven planets as the other reading, and Schaefer's date for an occultation rests on it",
+   "proposals": [
+    {
+     "named": "the Pleiades, seven small stars close together",
+     "by": "René Zandbergen",
+     "where": "#375 and #749, voynich.nu/q09/index.html#f68r3"
+    },
+    {
+     "named": "the seven planets",
+     "by": "René Zandbergen",
+     "where": "#749, voynich.nu/q09/index.html#f68r3"
+    },
+    {
+     "named": "the Pleiades on the evening before the Moon occults them",
+     "by": "Bradley Schaefer",
+     "where": "#1675 and #1837, a2009B.txt message 23"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    4724,
+    482,
+    3001,
+    2519
+   ]
+  },
+  {
+   "id": "f68r3.a",
+   "page": "f68r3",
+   "kind": "star",
+   "count": 1,
+   "named": "the moon",
+   "verdict": "possible",
+   "features": "a face in a yellow disc at the center: the sun or the moon",
+   "reason": "a face in a yellow disc at the center, joined by a line to the group of seven stars, as Zandbergen notes",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    5689,
+    1554,
+    322,
+    429
+   ]
+  },
+  {
+   "id": "f67v1.a",
+   "page": "f67v1",
+   "kind": "star",
+   "count": 1,
+   "named": "the sun and the moon together",
+   "verdict": "possible",
+   "features": "the sun as a face with long wavy rays, a blue crescent across it",
+   "reason": "a rayed face with a blue crescent across it",
+   "proposals": [
+    {
+     "named": "the sun",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+   "region": [
+    3288,
+    1208,
+    736,
+    893
+   ]
+  },
+  {
+   "id": "f68r2.b",
+   "page": "f68r2",
+   "kind": "star",
+   "count": 1,
+   "named": "the sun or a moon",
+   "verdict": "possible",
+   "features": "a face in a disc ringed blue and white, at the bottom: the sun or a moon",
+   "reason": "a face in a ringed disc at the bottom, opposite the crescent",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    3278,
+    2358,
+    375,
+    429
+   ]
+  },
+  {
+   "id": "f68r1.a",
+   "page": "f68r1",
+   "kind": "star",
+   "count": 1,
+   "named": "the sun or the full moon",
+   "verdict": "possible",
+   "features": "a face in a disc with a ring of text, at the top: the sun or the full moon",
+   "reason": "a face in a plain disc at the top, opposite a crescent",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+   "region": [
+    1046,
+    564,
+    322,
+    375
+   ]
+  },
+  {
+   "id": "f70r2.a",
+   "page": "f70r2",
+   "kind": "star",
+   "count": 1,
+   "named": "the sun or the moon",
+   "verdict": "possible",
+   "features": "the sun as a face in a disc, its long blue rays shaded, two dark blue patches among them",
+   "reason": "a face in a disc with long shaded rays; voynich.nu lists the page among those with the moon",
+   "proposals": [
+    {
+     "named": "the moon",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+   "region": [
+    5620,
+    1049,
+    1258,
+    1439
+   ]
+  },
+  {
+   "id": "f68v2.a",
+   "page": "f68v2",
+   "kind": "star",
+   "count": 1,
+   "named": "a star or a flower at the center",
+   "verdict": "unknown",
+   "features": "a blue eight-petalled star or flower at the center with a yellow heart",
+   "reason": "an eight-petalled blue shape with a yellow heart, which could be a star, the sun or a flower",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+   "region": [
+    4211,
+    1360,
+    694,
+    612
+   ]
+  },
+  {
+   "id": "f70r2.b",
+   "page": "f70r2",
+   "kind": "diagram",
+   "count": 1,
+   "named": "rings of text round the face",
+   "verdict": "secure",
+   "features": "the rings of text round the rayed sun",
+   "reason": "the rings are text, drawn as a wheel",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+   "region": [
+    5501,
+    659,
+    1917,
+    2339
+   ]
+  },
+  {
+   "id": "f68v1.b",
+   "page": "f68v1",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a wheel of the heavens with stars",
+   "verdict": "likely",
+   "features": "a wheel of sectors round the sun with stars and labels between the rays, ringed by text",
+   "reason": "sectors round the sun with stars and labels between the rays",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+   "region": [
+    5657,
+    722,
+    2334,
+    2167
+   ]
+  },
+  {
+   "id": "f67r1.b",
+   "page": "f67r1",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a wheel of twelve sectors with stars",
+   "verdict": "likely",
+   "features": "a wheel of twelve sectors round the sun, each with small stars and a label, ringed by text",
+   "reason": "twelve sectors round the sun, each with its stars and label, as the months or signs are drawn in period calendars",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006194",
+   "region": [
+    147,
+    792,
+    2300,
+    2382
+   ]
+  },
+  {
+   "id": "f67r2.a",
+   "page": "f67r2",
+   "kind": "diagram",
+   "count": 1,
+   "named": "the moon in its phases",
+   "verdict": "likely",
+   "features": "a wheel of twelve sectors, each with a moon drawn red and yellow in a different phase, round a star at the center, ringed by red text",
+   "reason": "a moon in each of twelve sectors, each a different phase",
+   "proposals": [
+    {
+     "named": "the moon in its phases",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006194",
+   "region": [
+    2552,
+    371,
+    2355,
+    2328
+   ]
+  },
+  {
+   "id": "f67v2.b",
+   "page": "f67v2",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a T-O world map",
+   "verdict": "possible",
+   "features": "a T-O map: a disc split blue, red and green with a cross of lines and small figures, at the lower left",
+   "reason": "a disc split into three by a T, as voynich.nu reads it; its parts are colored, not labeled as Asia, Europe and Africa, so the map stays a reading",
+   "proposals": [
+    {
+     "named": "a T-O world map",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+   "region": [
+    160,
+    2232,
+    370,
+    530
+   ]
+  },
+  {
+   "id": "f68v3.a",
+   "page": "f68v3",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a diagram of the heavens",
+   "verdict": "possible",
+   "features": "an oval of text round a ring of shell- or cloud-like loops enclosing a mottled blue field scattered with small stars and labels, read by some as the Milky Way or a map",
+   "reason": "a mottled blue field scattered with stars in a ring of loops; Newbold's Andromeda nebula is not possible, and Velinska likens it to the spheres of Oresme's Traité de la sphère, BnF Français 565",
+   "proposals": [
+    {
+     "named": "the Andromeda nebula",
+     "by": "William Newbold",
+     "where": "#273 and #375, voynich.nu; #750, which holds it not possible"
+    },
+    {
+     "named": "a diagram like Nicole Oresme's Traité de la sphère, BnF Français 565",
+     "by": "Ellie Velinska",
+     "where": "#376, voynich.nu/extra/sp_illustr.html"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+   "region": [
+    833,
+    666,
+    2613,
+    2447
+   ]
+  },
+  {
+   "id": "f69r.a",
+   "page": "f69r",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a winds diagram",
+   "verdict": "possible",
+   "features": "a wheel of sixteen green and blue spokes in a rim of cells, a star at the hub, labels between the spokes",
+   "reason": "sixteen spokes round a hub in a rim of cells, which Velinska likens to the winds diagram of Oxford, St John's College MS 17, fol. 40v; no wind is drawn as a figure",
+   "proposals": [
+    {
+     "named": "a winds diagram like Oxford, St John's College MS 17, fol. 40v",
+     "by": "Ellie Velinska",
+     "where": "#376 and #520, voynich.nu/extra/sp_illustr.html#winds69r"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006198",
+   "region": [
+    336,
+    815,
+    2288,
+    1907
+   ]
+  },
+  {
+   "id": "f85r2.a",
+   "page": "f85r2",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a cosmological diagram with four corner shapes",
+   "verdict": "unknown",
+   "features": "a page with a blue whirl at the center, four shell- or wind-like shapes in the corners, crossed by lines, in rings of text",
+   "reason": "a blue whirl at the center with four shell- or wind-like shapes at the corners; the corners may be winds, but nothing names them",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+   "region": [
+    60,
+    360,
+    2798,
+    3309
+   ]
+  },
+  {
+   "id": "f69v.a",
+   "page": "f69v",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a wheel diagram",
+   "verdict": "unknown",
+   "features": "a wheel of blue and green spokes with knobbed ends round a pale hub, in rings of text",
+   "reason": "spokes with knobbed ends round a pale hub, in rings of text; nothing names it",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+   "region": [
+    780,
+    659,
+    2036,
+    2220
+   ]
+  },
+  {
+   "id": "f70r1.a",
+   "page": "f70r1",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a wheel diagram",
+   "verdict": "unknown",
+   "features": "a disc with a wavy blue-flecked edge and lobes, spokes meeting at a hub, in rings of text",
+   "reason": "a lobed disc with spokes to a hub, in rings of text; nothing names it",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+   "region": [
+    3079,
+    481,
+    2339,
+    2517
+   ]
+  },
+  {
+   "id": "f86v4.a",
+   "page": "f86v4",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a wheel of cells round a disc",
+   "verdict": "unknown",
+   "features": "a wheel of shell- or cloud-like cells, blue-flecked, round a pale disc, in rings of text",
+   "reason": "shell- or cloud-like cells round a pale disc, in rings of text; nothing names it",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+   "region": [
+    3430,
+    993,
+    1465,
+    1652
+   ]
+  },
+  {
+   "id": "f57v.b",
+   "page": "f57v",
+   "kind": "diagram",
+   "count": 1,
+   "named": "a wheel with a ring of 17 signs repeated four times",
+   "verdict": "unknown",
+   "features": "a wheel of four rings, the second written with a run of 17 signs repeated four times, the center holding the four figures",
+   "reason": "the wheel is plain; its 17-sign ring has been read as an alphabet and as astrolabe numbers, and neither reading is shown",
+   "proposals": [
+    {
+     "named": "a ring of 17 signs, read as an alphabet or as astrolabe numbers",
+     "by": "Denis Mardle; Dana Scott",
+     "where": "#1048; #1377; #1539"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006187",
+   "region": [
+    533,
+    266,
+    2294,
+    2402
+   ]
+  },
+  {
+   "id": "f116v.b",
+   "page": "f116v",
+   "kind": "figure",
+   "count": 1,
+   "named": "a naked woman",
+   "verdict": "secure",
+   "features": "a naked woman standing below the animal in the left margin, her hair bound up, ink only, in the style of the biological pages' women",
+   "reason": "a standing figure with a woman's body and bound hair, drawn as the biological pages' women are",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006277",
+   "region": [
+    345,
+    616,
+    209,
+    357
+   ]
+  },
+  {
+   "id": "f75r.a",
+   "page": "f75r",
+   "kind": "figure",
+   "count": 8,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women standing in a green stream that runs down from a tub at the top, a group of four in a pool at the foot; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006208",
+   "region": [
+    692,
+    115,
+    1900,
+    3110
+   ]
+  },
+  {
+   "id": "f75v.a",
+   "page": "f75v",
+   "kind": "figure",
+   "count": 21,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "a row of naked women sitting in a long green pool fed by a pipe from above, more in a pale pool below; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006209",
+   "region": [
+    344,
+    57,
+    2174,
+    3205
+   ]
+  },
+  {
+   "id": "f76v.a",
+   "page": "f76v",
+   "kind": "figure",
+   "count": 6,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women in the left margin standing on tubes and spouts, one at the top right; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006211",
+   "region": [
+    398,
+    114,
+    2160,
+    3299
+   ]
+  },
+  {
+   "id": "f77r.a",
+   "page": "f77r",
+   "kind": "figure",
+   "count": 5,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women along a pipe that runs across the top and down the side, with tubes and a blue globe; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006212",
+   "region": [
+    58,
+    115,
+    2586,
+    2874
+   ]
+  },
+  {
+   "id": "f77v.a",
+   "page": "f77v",
+   "kind": "figure",
+   "count": 7,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women at the ends of pipes and in tubs, a blue pool at the top center; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006213",
+   "region": [
+    508,
+    113,
+    2312,
+    3044
+   ]
+  },
+  {
+   "id": "f78r.a",
+   "page": "f78r",
+   "kind": "figure",
+   "count": 18,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women in two green pools, the upper fed by a chain of pipes from a spray at the top; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006214",
+   "region": [
+    58,
+    115,
+    2151,
+    3154
+   ]
+  },
+  {
+   "id": "f78v.a",
+   "page": "f78v",
+   "kind": "figure",
+   "count": 11,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "a row of naked women in a green pool on an arcade of arches, a pipe running down from the top; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006215",
+   "region": [
+    763,
+    338,
+    1695,
+    1754
+   ]
+  },
+  {
+   "id": "f79r.a",
+   "page": "f79r",
+   "kind": "figure",
+   "count": 7,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women in the margin on tubes, one at the foot in a green pool; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006216",
+   "region": [
+    58,
+    115,
+    2691,
+    3092
+   ]
+  },
+  {
+   "id": "f79v.a",
+   "page": "f79v",
+   "kind": "figure",
+   "count": 5,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women down the left margin, one at the top left holding a cross, more in a green pool at the foot; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006217",
+   "region": [
+    508,
+    114,
+    2206,
+    3447
+   ]
+  },
+  {
+   "id": "f80r.a",
+   "page": "f80r",
+   "kind": "figure",
+   "count": 16,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "a row of naked women across the top, some with crowns or holding things, more in a blue pool below; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006218",
+   "region": [
+    85,
+    114,
+    2670,
+    3066
+   ]
+  },
+  {
+   "id": "f80v.a",
+   "page": "f80v",
+   "kind": "figure",
+   "count": 9,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women round the text, one holding a large ring, one a herb-like thing, a blue stream across the foot; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006219",
+   "region": [
+    453,
+    114,
+    2259,
+    3390
+   ]
+  },
+  {
+   "id": "f81r.a",
+   "page": "f81r",
+   "kind": "figure",
+   "count": 14,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women in two green pools joined by a pipe down the left side; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006220",
+   "region": [
+    284,
+    227,
+    2220,
+    2957
+   ]
+  },
+  {
+   "id": "f81v.a",
+   "page": "f81v",
+   "kind": "figure",
+   "count": 18,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "two rows of naked women in one green pool fed by a pipe from the upper left; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006221",
+   "region": [
+    672,
+    1289,
+    2016,
+    1848
+   ]
+  },
+  {
+   "id": "f82r.a",
+   "page": "f82r",
+   "kind": "figure",
+   "count": 15,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women at the top and in the margin, a woman lying in a green tub, a crowd in a green pool at the foot; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006222",
+   "region": [
+    45,
+    170,
+    2661,
+    3453
+   ]
+  },
+  {
+   "id": "f82v.a",
+   "page": "f82v",
+   "kind": "figure",
+   "count": 12,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women at the top round a blue cloud and arcs, in the margin on tubes, in a green pool with arcs at the foot; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006223",
+   "region": [
+    495,
+    111,
+    2186,
+    3308
+   ]
+  },
+  {
+   "id": "f83r.a",
+   "page": "f83r",
+   "kind": "figure",
+   "count": 7,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women down the left margin, one under a blue arc pouring from her hands; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006224",
+   "region": [
+    45,
+    115,
+    2661,
+    3508
+   ]
+  },
+  {
+   "id": "f83v.a",
+   "page": "f83v",
+   "kind": "figure",
+   "count": 5,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women round two great green globes joined by a tube, two embracing at the lower right in a green channel; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006225",
+   "region": [
+    465,
+    170,
+    2332,
+    2627
+   ]
+  },
+  {
+   "id": "f84r.a",
+   "page": "f84r",
+   "kind": "figure",
+   "count": 30,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women in three pools, the top one under a canopy of scaled arches with pipes, the bottom pale blue; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006226",
+   "region": [
+    72,
+    130,
+    2319,
+    3308
+   ]
+  },
+  {
+   "id": "f84v.a",
+   "page": "f84v",
+   "kind": "figure",
+   "count": 10,
+   "named": "naked women",
+   "verdict": "secure",
+   "features": "naked women drawn in two blue circles or pools at the right, joined by a pipe; the count is by eye at sheet scale, within about three",
+   "reason": "drawn women with bodies and hair plain to see, standing or sitting in the water",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006227",
+   "region": [
+    1676,
+    552,
+    890,
+    1824
+   ]
+  },
+  {
+   "id": "f70v2.b",
+   "page": "f70v2",
+   "kind": "figure",
+   "count": 29,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in concentric rings, most standing in tubs or barrels, each holding a star on a line; the count as Zandbergen gives it, counted one by one in calendar.tsv",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006200",
+   "region": [
+    609,
+    385,
+    2686,
+    2814
+   ]
+  },
+  {
+   "id": "f70v1.b",
+   "page": "f70v1",
+   "kind": "figure",
+   "count": 15,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in two rings, standing in tubs or barrels, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006201",
+   "region": [
+    488,
+    503,
+    2010,
+    2447
+   ]
+  },
+  {
+   "id": "f71r.b",
+   "page": "f71r",
+   "kind": "figure",
+   "count": 15,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in two rings, many in colored barrels, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006202",
+   "region": [
+    128,
+    446,
+    2297,
+    2616
+   ]
+  },
+  {
+   "id": "f71v.b",
+   "page": "f71v",
+   "kind": "figure",
+   "count": 15,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in two rings, faint red, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    282,
+    308,
+    2048,
+    2251
+   ]
+  },
+  {
+   "id": "f72r1.b",
+   "page": "f72r1",
+   "kind": "figure",
+   "count": 15,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in two rings, some naked, some in barrels, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    2425,
+    423,
+    1879,
+    1927
+   ]
+  },
+  {
+   "id": "f72r2.b",
+   "page": "f72r2",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    4454,
+    187,
+    1527,
+    2445
+   ]
+  },
+  {
+   "id": "f72r3.b",
+   "page": "f72r3",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+   "region": [
+    6095,
+    282,
+    1925,
+    2398
+   ]
+  },
+  {
+   "id": "f72v3.b",
+   "page": "f72v3",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+   "region": [
+    1017,
+    354,
+    2474,
+    3134
+   ]
+  },
+  {
+   "id": "f72v2.b",
+   "page": "f72v2",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+   "region": [
+    3662,
+    519,
+    2132,
+    2479
+   ]
+  },
+  {
+   "id": "f72v1.b",
+   "page": "f72v1",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006205",
+   "region": [
+    379,
+    450,
+    2282,
+    2593
+   ]
+  },
+  {
+   "id": "f73r.b",
+   "page": "f73r",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star, a few at the top outside the circle",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006206",
+   "region": [
+    143,
+    286,
+    2284,
+    2512
+   ]
+  },
+  {
+   "id": "f73v.b",
+   "page": "f73v",
+   "kind": "figure",
+   "count": 30,
+   "named": "women each holding a star",
+   "verdict": "secure",
+   "features": "the women round the sign in rings, naked, each holding a star",
+   "reason": "drawn women round the sign, each with a star and a label; thirty to a sign, so perhaps one to a day or a degree, which is a reading",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006207",
+   "region": [
+    576,
+    283,
+    2319,
+    2545
+   ]
+  },
+  {
+   "id": "f66r.a",
+   "page": "f66r",
+   "kind": "figure",
+   "count": 1,
+   "named": "a person lying dead or sick",
+   "verdict": "likely",
+   "features": "a person lying on the ground at the foot of the page, dead or sick, with small round objects beside the head, ink only",
+   "reason": "a figure lies on its side with limbs slack beside small round objects and an open jar, as voynich.nu and SantaColoma read it",
+   "proposals": [
+    {
+     "named": "a dead or sick person with small objects",
+     "by": "René Zandbergen",
+     "where": "#386, voynich.nu/illustr.html#obj; #1546 and #1664, Rich SantaColoma, May 2008"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006192",
+   "region": [
+    227,
+    3213,
+    452,
+    351
+   ]
+  },
+  {
+   "id": "f42v.a",
+   "page": "f42v",
+   "kind": "figure",
+   "count": 1,
+   "named": "a star with an eye",
+   "verdict": "likely",
+   "features": "a star or sun with an eye or face, drawn on the tip of the stalk above the leaves",
+   "reason": "a yellow star of many points with a dark eye or mask at its center, on the tip of the stalk; a star is plain, what it stands for is not",
+   "proposals": [],
+   "words": [
+    "taiin (beside, f42v.1)",
+    "shols (beside, f42v.1)",
+    "chol (beside, f42v.1)",
+    "chy (beside, f42v.2)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006157",
+   "region": [
+    1884,
+    201,
+    352,
+    465
+   ]
+  },
+  {
+   "id": "f67v2.c",
+   "page": "f67v2",
+   "kind": "figure",
+   "count": 4,
+   "named": "the four winds",
+   "verdict": "likely",
+   "features": "four small blue or green figures at the quarters round the center, blowing or pouring, each with a label",
+   "reason": "four small figures at the quarters round the center, blowing or pouring, as winds are drawn at the corners of period world diagrams",
+   "proposals": [],
+   "words": [
+    "okeal (beside, f67v2.9)",
+    "okaldam (beside, f67v2.9)",
+    "koain (beside, f67v2.10)",
+    "opal (beside, f67v2.10)",
+    "ol (beside, f67v2.10)",
+    "ofolain (beside, f67v2.10)",
+    "oar (beside, f67v2.10)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+   "region": [
+    398,
+    743,
+    1646,
+    1381
+   ]
+  },
+  {
+   "id": "f86v3.a",
+   "page": "f86v3",
+   "kind": "figure",
+   "count": 4,
+   "named": "the four winds",
+   "verdict": "likely",
+   "features": "four cloud- or wind-like shapes in the corners, scaled or feathered, each pouring a stream toward the center, two with hands or faces",
+   "reason": "four cloud-like shapes at the corners each pour a stream toward the center, as winds are drawn at the corners of period world diagrams; Barbara reads the circle as a T-O map with the four winds",
+   "proposals": [
+    {
+     "named": "the four winds",
+     "by": "Barbara",
+     "where": "#1840, a2011E.txt"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006230",
+   "region": [
+    2370,
+    184,
+    2346,
+    3495
+   ]
+  },
+  {
+   "id": "f46v.a",
+   "page": "f46v",
+   "kind": "figure",
+   "count": 1,
+   "named": "a root drawn as a face",
+   "verdict": "possible",
+   "features": "the root drawn as a face: two red eye or lip shapes at the crown, the rootlets spread like hair",
+   "reason": "two red shapes at the crown read as eyes or lips with rootlets spread like hair; voynich.nu lists it among roots drawn as animals",
+   "proposals": [
+    {
+     "named": "a root drawn as an animal",
+     "by": "René Zandbergen",
+     "where": "#384, voynich.nu/illustr.html"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006165",
+   "region": [
+    503,
+    2563,
+    1256,
+    1181
+   ]
+  },
+  {
+   "id": "f17r.a",
+   "page": "f17r",
+   "kind": "figure",
+   "count": 1,
+   "named": "eyes drawn into the root",
+   "verdict": "possible",
+   "features": "two eye shapes, red outlined, drawn into the root",
+   "reason": "two red-outlined almond shapes with a dark center, as voynich.nu reads them; they could be a root's buds colored, since nothing else of a face is drawn",
+   "proposals": [
+    {
+     "named": "eyes in the root",
+     "by": "René Zandbergen",
+     "where": "#386, voynich.nu/illustr.html#obj"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006106",
+   "region": [
+    1572,
+    2795,
+    225,
+    424
+   ]
+  },
+  {
+   "id": "f67v2.a",
+   "page": "f67v2",
+   "kind": "figure",
+   "count": 1,
+   "named": "the sun or a face at the center",
+   "verdict": "possible",
+   "features": "a green square at the center holding a face or rose, with lines out to the four quarters",
+   "reason": "a face or rose in a green square with lines out to the quarters; Newbold's eclipse is not shown by anything drawn",
+   "proposals": [
+    {
+     "named": "an eclipse",
+     "by": "William Newbold",
+     "where": "#273, voynich.nu/hist/reeds/checklist.txt"
+    }
+   ],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+   "region": [
+    1221,
+    1248,
+    293,
+    345
+   ]
+  },
+  {
+   "id": "f57v.a",
+   "page": "f57v",
+   "kind": "figure",
+   "count": 4,
+   "named": "four figures in the inner ring",
+   "verdict": "unknown",
+   "features": "four small figures in the inner ring, one a face in a sun-like disc, one a cloud-like shape, two standing, ink only",
+   "reason": "a sun-like face, a cloud-like shape and two heads; they have been read as seasons, winds or the figure holding an egg-shaped object, and nothing on the page settles which",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006187",
+   "region": [
+    1206,
+    829,
+    804,
+    1156
+   ]
+  },
+  {
+   "id": "f85r2.b",
+   "page": "f85r2",
+   "kind": "figure",
+   "count": 4,
+   "named": "four small figures round the center",
+   "verdict": "unknown",
+   "features": "four small figures round the blue whirl, one with a small bottle, one with a chain and a stick, one with a flower, as voynich.nu lists them",
+   "reason": "one holds a bottle, one a chain and stick, one a flower, as voynich.nu lists them; nothing says who they are",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+   "region": [
+    1203,
+    1144,
+    1113,
+    1263
+   ]
+  },
+  {
+   "id": "f79v.d",
+   "page": "f79v",
+   "kind": "object",
+   "count": 1,
+   "named": "a Latin cross",
+   "verdict": "secure",
+   "features": "a Latin cross held up by the woman at the top left",
+   "reason": "a woman holds up a cross with equal arms and a longer foot, the book's only Christian sign, as voynich.nu notes; Zandbergen adds that it dates nothing",
+   "proposals": [
+    {
+     "named": "a Latin cross, the book's only Christian symbol",
+     "by": "René Zandbergen",
+     "where": "#385, voynich.nu/illustr.html#detail; #1521, a1999A.txt message 8"
+    }
+   ],
+   "words": [
+    "poldshedy (beside, f79v.1)",
+    "qoteedy (beside, f79v.2)",
+    "dolsheol (on, f79v.3)",
+    "qokeedy (on, f79v.4)",
+    "qokeedy (beside, f79v.4)",
+    "qolkeedy (on, f79v.5)",
+    "ycheckhey (on, f79v.6)",
+    "qokshey (on, f79v.7)",
+    "qokeedy (beside, f79v.7)",
+    "ychedy (on, f79v.8)",
+    "qotey (beside, f79v.8)",
+    "sar (beside, f79v.9)",
+    "ol (beside, f79v.9)",
+    "sheey (beside, f79v.9)",
+    "pchedy (beside, f79v.10)",
+    "lsheckhedy (beside, f79v.10)"
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006217",
+   "region": [
+    594,
+    198,
+    594,
+    619
+   ]
+  },
+  {
+   "id": "f88r.a",
+   "page": "f88r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall jar of red and green tiers with a lid, on a footed stand, at the top of the row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+   "region": [
+    117,
+    237,
+    331,
+    984
+   ]
+  },
+  {
+   "id": "f88r.b",
+   "page": "f88r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall jar of red and green tiers with a pointed lid, on a footed stand, at the middle row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+   "region": [
+    174,
+    1295,
+    361,
+    1071
+   ]
+  },
+  {
+   "id": "f88r.c",
+   "page": "f88r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall jar of red and green tiers with a lid, on a footed stand, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+   "region": [
+    149,
+    2465,
+    361,
+    1145
+   ]
+  },
+  {
+   "id": "f88v.a",
+   "page": "f88v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall jar of red tiers with white bands, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    504,
+    239,
+    353,
+    869
+   ]
+  },
+  {
+   "id": "f88v.b",
+   "page": "f88v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a jar of red tiers with a knobbed lid, at the middle row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    504,
+    1246,
+    353,
+    554
+   ]
+  },
+  {
+   "id": "f88v.c",
+   "page": "f88v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall jar of red tiers with a heart-shaped finial, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    466,
+    2065,
+    453,
+    1284
+   ]
+  },
+  {
+   "id": "f89r1.a",
+   "page": "f89r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a slender jar with a lid on a stem, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    2945,
+    353,
+    227,
+    969
+   ]
+  },
+  {
+   "id": "f89r1.b",
+   "page": "f89r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red bulbous jar with a lid on a stem, at the second row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    2945,
+    1423,
+    340,
+    491
+   ]
+  },
+  {
+   "id": "f89r1.c",
+   "page": "f89r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a slender jar with a round red body, at the third row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    2945,
+    1964,
+    277,
+    604
+   ]
+  },
+  {
+   "id": "f89r1.d",
+   "page": "f89r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red jar on a tall stem, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    2945,
+    2619,
+    340,
+    969
+   ]
+  },
+  {
+   "id": "f89r2.a",
+   "page": "f89r2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a slender jar of bands on a stem, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5355,
+    264,
+    252,
+    844
+   ]
+  },
+  {
+   "id": "f89r2.b",
+   "page": "f89r2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red bulbous jar with a lid on a stem, at the second row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5355,
+    1246,
+    277,
+    667
+   ]
+  },
+  {
+   "id": "f89r2.c",
+   "page": "f89r2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a banded column jar, at the third row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5355,
+    1964,
+    252,
+    604
+   ]
+  },
+  {
+   "id": "f89r2.d",
+   "page": "f89r2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a jar with a round green and red body on a stem, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5355,
+    2619,
+    277,
+    969
+   ]
+  },
+  {
+   "id": "f89v2.a",
+   "page": "f89v2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a blue and green jar with a lid, on a footed stand, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+   "region": [
+    254,
+    254,
+    432,
+    914
+   ]
+  },
+  {
+   "id": "f89v2.b",
+   "page": "f89v2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall blue jar of bulges with a pointed lid, at the middle row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+   "region": [
+    292,
+    1295,
+    394,
+    978
+   ]
+  },
+  {
+   "id": "f89v2.c",
+   "page": "f89v2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a round blue jar on a stem, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+   "region": [
+    317,
+    2298,
+    406,
+    762
+   ]
+  },
+  {
+   "id": "f89v1.a",
+   "page": "f89v1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a green jar with a domed lid, on a footed stand, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+   "region": [
+    690,
+    251,
+    527,
+    1103
+   ]
+  },
+  {
+   "id": "f89v1.b",
+   "page": "f89v1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall blue and green jar of bulges with a pointed lid, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+   "region": [
+    715,
+    1467,
+    439,
+    1291
+   ]
+  },
+  {
+   "id": "f99r.a",
+   "page": "f99r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid and a label band, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    238,
+    188,
+    389,
+    866
+   ]
+  },
+  {
+   "id": "f99r.b",
+   "page": "f99r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid and a label band, at the second row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    238,
+    1029,
+    389,
+    552
+   ]
+  },
+  {
+   "id": "f99r.c",
+   "page": "f99r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid and a label band, at the third row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    238,
+    1631,
+    389,
+    615
+   ]
+  },
+  {
+   "id": "f99r.d",
+   "page": "f99r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid and a label band, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    238,
+    2334,
+    389,
+    690
+   ]
+  },
+  {
+   "id": "f99v.a",
+   "page": "f99v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red and blue banded cylinder jar with a lid, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    382,
+    222,
+    357,
+    789
+   ]
+  },
+  {
+   "id": "f99v.b",
+   "page": "f99v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded cylinder jar, at the second row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    382,
+    1011,
+    357,
+    505
+   ]
+  },
+  {
+   "id": "f99v.c",
+   "page": "f99v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded cylinder jar, at the third row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    382,
+    1516,
+    357,
+    665
+   ]
+  },
+  {
+   "id": "f99v.d",
+   "page": "f99v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded cylinder jar, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    382,
+    2292,
+    357,
+    616
+   ]
+  },
+  {
+   "id": "f100r.a",
+   "page": "f100r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006248",
+   "region": [
+    150,
+    150,
+    213,
+    538
+   ]
+  },
+  {
+   "id": "f100r.b",
+   "page": "f100r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded cylinder jar with a lid, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006248",
+   "region": [
+    150,
+    1628,
+    250,
+    601
+   ]
+  },
+  {
+   "id": "f100v.a",
+   "page": "f100v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red and blue cylinder jar with a lid, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    768,
+    149,
+    235,
+    508
+   ]
+  },
+  {
+   "id": "f101r.a",
+   "page": "f101r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a cylinder jar cut by the page edge, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    2962,
+    186,
+    235,
+    532
+   ]
+  },
+  {
+   "id": "f101r.b",
+   "page": "f101r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a blue and white banded cylinder jar cut by the page edge, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    2962,
+    1635,
+    235,
+    632
+   ]
+  },
+  {
+   "id": "f101r.c",
+   "page": "f101r",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a small round-topped jar or pot among the plants of the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    3705,
+    2984,
+    235,
+    409
+   ]
+  },
+  {
+   "id": "f101v.a",
+   "page": "f101v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006250",
+   "region": [
+    287,
+    159,
+    254,
+    542
+   ]
+  },
+  {
+   "id": "f101v.b",
+   "page": "f101v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a blue and red banded cylinder jar, at the second row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006250",
+   "region": [
+    287,
+    766,
+    254,
+    605
+   ]
+  },
+  {
+   "id": "f101v.c",
+   "page": "f101v",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red and blue banded cylinder jar, at the third row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006250",
+   "region": [
+    287,
+    1403,
+    254,
+    892
+   ]
+  },
+  {
+   "id": "f102r1.a",
+   "page": "f102r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar with a lid, at the top row on the left",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    2890,
+    219,
+    232,
+    644
+   ]
+  },
+  {
+   "id": "f102r1.b",
+   "page": "f102r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded cylinder jar, at the middle row on the left",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    2890,
+    1082,
+    232,
+    515
+   ]
+  },
+  {
+   "id": "f102r1.c",
+   "page": "f102r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded cylinder jar with a lid, at the bottom row on the left",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    2890,
+    1816,
+    232,
+    644
+   ]
+  },
+  {
+   "id": "f102r1.d",
+   "page": "f102r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red cylinder jar at the right edge, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    5247,
+    335,
+    232,
+    696
+   ]
+  },
+  {
+   "id": "f102r1.e",
+   "page": "f102r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a green and red banded jar at the right edge, at the middle row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    5247,
+    1133,
+    232,
+    747
+   ]
+  },
+  {
+   "id": "f102r1.f",
+   "page": "f102r1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a red banded jar at the right edge, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    5247,
+    1906,
+    232,
+    657
+   ]
+  },
+  {
+   "id": "f102v2.a",
+   "page": "f102v2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall blue and white jar of rings on a footed stand, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006252",
+   "region": [
+    278,
+    443,
+    253,
+    873
+   ]
+  },
+  {
+   "id": "f102v2.b",
+   "page": "f102v2",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall blue and white jar of rings on a footed stand, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006252",
+   "region": [
+    278,
+    1480,
+    253,
+    987
+   ]
+  },
+  {
+   "id": "f102v1.a",
+   "page": "f102v1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a tall jar of red and blue bands on a stem, at the top row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006253",
+   "region": [
+    296,
+    246,
+    283,
+    1060
+   ]
+  },
+  {
+   "id": "f102v1.b",
+   "page": "f102v1",
+   "kind": "object",
+   "count": 1,
+   "named": "a pharmacy jar",
+   "verdict": "secure",
+   "features": "a jar of red and blue bands on a stem, at the bottom row",
+   "reason": "a lidded, banded container standing among plant parts on the pharmaceutical pages, the shape of the period's albarelli and footed drug jars; what it holds is unknown",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006253",
+   "region": [
+    296,
+    1738,
+    283,
+    826
+   ]
+  },
+  {
+   "id": "f33v.a",
+   "page": "f33v",
+   "kind": "object",
+   "count": 3,
+   "named": "three spoked wheels",
+   "verdict": "possible",
+   "features": "three round wheel-like discs with spokes and knobbed rims, lying on the ground at the roots",
+   "reason": "three round discs with spokes and knobbed rims on the ground at the root; they may be tubers or seed heads drawn as wheels, and no published reading names them",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006139",
+   "region": [
+    503,
+    3191,
+    2312,
+    553
+   ]
+  },
+  {
+   "id": "f83r.c",
+   "page": "f83r",
+   "kind": "object",
+   "count": 1,
+   "named": "a many-armed blue shape",
+   "verdict": "unknown",
+   "features": "a blue many-armed shape at the end of a pipe, like a spray head or a creature",
+   "reason": "it could be a spray head, a cloud or a creature, and nothing settles which",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006224",
+   "region": [
+    1009,
+    2604,
+    452,
+    397
+   ]
+  },
+  {
+   "id": "f75r.b",
+   "page": "f75r",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006208",
+   "region": [
+    692,
+    115,
+    1900,
+    3110
+   ]
+  },
+  {
+   "id": "f75v.b",
+   "page": "f75v",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006209",
+   "region": [
+    344,
+    57,
+    2174,
+    3205
+   ]
+  },
+  {
+   "id": "f76v.b",
+   "page": "f76v",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006211",
+   "region": [
+    398,
+    114,
+    2160,
+    3299
+   ]
+  },
+  {
+   "id": "f77r.b",
+   "page": "f77r",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006212",
+   "region": [
+    58,
+    115,
+    2586,
+    2874
+   ]
+  },
+  {
+   "id": "f77v.b",
+   "page": "f77v",
+   "kind": "water",
+   "count": 3,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006213",
+   "region": [
+    508,
+    113,
+    2312,
+    3044
+   ]
+  },
+  {
+   "id": "f78r.b",
+   "page": "f78r",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006214",
+   "region": [
+    58,
+    115,
+    2151,
+    3154
+   ]
+  },
+  {
+   "id": "f78v.b",
+   "page": "f78v",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006215",
+   "region": [
+    763,
+    338,
+    1695,
+    1754
+   ]
+  },
+  {
+   "id": "f79r.b",
+   "page": "f79r",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006216",
+   "region": [
+    58,
+    115,
+    2691,
+    3092
+   ]
+  },
+  {
+   "id": "f79v.b",
+   "page": "f79v",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006217",
+   "region": [
+    508,
+    114,
+    2206,
+    3447
+   ]
+  },
+  {
+   "id": "f80r.b",
+   "page": "f80r",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006218",
+   "region": [
+    85,
+    114,
+    2670,
+    3066
+   ]
+  },
+  {
+   "id": "f80v.b",
+   "page": "f80v",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006219",
+   "region": [
+    453,
+    114,
+    2259,
+    3390
+   ]
+  },
+  {
+   "id": "f81r.b",
+   "page": "f81r",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006220",
+   "region": [
+    284,
+    227,
+    2220,
+    2957
+   ]
+  },
+  {
+   "id": "f81v.b",
+   "page": "f81v",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006221",
+   "region": [
+    672,
+    1289,
+    2016,
+    1848
+   ]
+  },
+  {
+   "id": "f82r.b",
+   "page": "f82r",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006222",
+   "region": [
+    45,
+    170,
+    2661,
+    3453
+   ]
+  },
+  {
+   "id": "f82v.b",
+   "page": "f82v",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006223",
+   "region": [
+    495,
+    111,
+    2186,
+    3308
+   ]
+  },
+  {
+   "id": "f83r.b",
+   "page": "f83r",
+   "kind": "water",
+   "count": 1,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006224",
+   "region": [
+    45,
+    115,
+    2661,
+    3508
+   ]
+  },
+  {
+   "id": "f83v.b",
+   "page": "f83v",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006225",
+   "region": [
+    465,
+    170,
+    2332,
+    2627
+   ]
+  },
+  {
+   "id": "f84r.b",
+   "page": "f84r",
+   "kind": "water",
+   "count": 3,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006226",
+   "region": [
+    72,
+    130,
+    2319,
+    3308
+   ]
+  },
+  {
+   "id": "f84v.b",
+   "page": "f84v",
+   "kind": "water",
+   "count": 2,
+   "named": "pools, tubs and pipes",
+   "verdict": "secure",
+   "features": "the pools, tubes and channels the women stand or sit in, green or blue washed",
+   "reason": "green or blue washed pools joined by tubes; whether they are baths, springs or the body's organs is a reading left open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006227",
+   "region": [
+    1676,
+    552,
+    890,
+    1824
+   ]
+  }
+ ]
+}
