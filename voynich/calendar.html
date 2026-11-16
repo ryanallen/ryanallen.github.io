@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich calendar</title>
+<meta name="description" content="The Voynich zodiac pages read as a calendar: every woman in ring order with her tub and label, the bathing pools grouped by the color of their water, and each sign beside three German zodiacs of the 1400s.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #ca-intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#ca-intro b{color:var(--text)}
+  #ca-found{margin:6px 12px;padding:8px 12px;border:1px solid #41454e;border-radius:8px;max-width:900px;font-size:13px;color:var(--muted)}
+  #ca-found li{margin:3px 0}#ca-found b{color:var(--text)}
+  #ca-jump{padding:4px 12px;font-size:13px;color:var(--muted)}#ca-jump a{color:var(--accent);margin-right:10px;white-space:nowrap}
+  h2.ca-h{font-size:18px;margin:22px 12px 4px;color:var(--text)}
+  p.ca-note{margin:0 12px 8px;font-size:13px;color:var(--muted);max-width:900px}
+  .ca-sign{display:flex;flex-wrap:wrap;gap:12px;padding:0 12px 10px;align-items:flex-start}
+  .ca-sign>figure{margin:0;width:260px;font-size:12px;color:var(--muted)}
+  .ca-sign>figure img{width:100%;border-radius:6px;background:#2a2620}
+  .ca-grid{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+  .ca-w{width:112px;font-size:11px;color:var(--muted);background:#ffffff08;border:1px solid #41454e;border-radius:6px;padding:3px}
+  .ca-w img{width:100%;height:104px;object-fit:cover;border-radius:4px;background:#2a2620;display:block}
+  .ca-w b{color:var(--accent);font-family:ui-monospace,monospace;font-weight:normal;overflow-wrap:anywhere}
+  .ca-tub{color:#7fc97f}.ca-fin{font-size:10px;color:#c9a26b}
+  .ca-pools{display:flex;flex-wrap:wrap;gap:8px;padding:0 12px}
+  .ca-pool{width:200px;font-size:12px;color:var(--muted)}.ca-pool img{width:100%;height:150px;object-fit:cover;border-radius:6px}
+  .ca-cmp{margin:0 12px 10px;border-collapse:collapse;font-size:12px;color:var(--muted);display:block;overflow-x:auto;max-width:calc(100vw - 24px)}
+  .ca-cmp td,.ca-cmp th{border-bottom:1px solid #41454e;padding:4px;vertical-align:top;text-align:left}
+  .ca-cmp th{color:var(--text);font-weight:normal}
+  .ca-cmp img{width:150px;height:150px;object-fit:contain;background:#2a2620;border-radius:4px}
+  @media (max-width:480px){.ca-sign>figure{width:100%}.ca-w{width:calc(33% - 4px);box-sizing:border-box}.ca-pool{width:calc(50% - 4px)}}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="calendar.html">Voynich calendar</a></h1>
+  <nav><a href="./">Trace the Voynich</a> · <a href="search.html">Search</a> · <a href="herbals.html">Herbal likenesses</a> · <a href="plants.html">Plants</a> · <a href="drawings.html">Drawings</a> · <a href="anchors.html">Labels</a> · <a href="grid.html">Sign grid</a> · <a href="fingerprints.html">Fingerprints</a></nav>
+</header>
+<div id="ca-intro">Twelve pages of the Voynich manuscript ring each zodiac sign with small women, each holding a star with a word beside her, and some standing in tubs. Here every woman is shown in her ring, in order clockwise from the top, with her tub and her label (click a label to find the word everywhere). Below: the bathing section's pools grouped by the color of their water, and each sign set beside three German zodiacs of the 1400s. Pages marked <span class="ca-fin">final</span> are held out for the last test.</div>
+<div id="ca-found"><b>What was found</b><ul>
+  <li><b>One woman per degree.</b> Every sign has 30 women (Aries and Taurus as two pages of 15; Pisces 29), months of 31 days included: the pages count degrees of a sign, not days.</li>
+  <li><b>Tubs only in March, April and May</b> (Pisces, Aries, Taurus), the months the bathing calendars of the 1400s set for bathing, with herb baths in May.</li>
+  <li><b>The labels do not repeat</b> at the same degree from sign to sign, as a calendar's would.</li>
+  <li><b>Green water is the rule</b> in the bathing pools (18 of 24), with no pattern by page.</li>
+  <li><b>The nearest zodiac:</b> St. Gallen Cod. Sang. 827 (Lake Constance, 1425–1428) alone shares the crossbowman Sagittarius and the lizard-like Scorpio.</li></ul></div>
+<div id="ca-jump"></div>
+<div id="ca-out">Loading…</div>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const pic = (base, r, size) => `${esc(base)}/${r.join(',')}/${size}/0/default.jpg`;
+  const word = w => `<a href="search.html#q=${encodeURIComponent(String(w).split('.')[0])}&m=exact"><b>${esc(w)}</b></a>`;
+  let d;
+  try { d = await (await fetch('data/calendar.json')).json(); } catch (e) { $('ca-out').textContent = 'The calendar did not load: ' + e.message; return; }
+  const out = $('ca-out'); out.replaceChildren();
+  const jump = [];
+  const h = (id, t, note) => { out.insertAdjacentHTML('beforeend', `<h2 class="ca-h" id="${id}">${esc(t)}</h2>${note ? `<p class="ca-note">${note}</p>` : ''}`); jump.push(`<a href="#${id}">${esc(t)}</a>`); };
+  for (const s of d.signs) {
+    h('s-' + s.page, `${s.sign}, ${s.month} (${s.page})`, `${s.women.length} women${s.set === 'final' ? ' <span class="ca-fin">final</span>' : ''}`);
+    const ws = s.women.map(w => `<div class="ca-w">${w.region ? `<img loading="lazy" alt="woman ${esc(w.woman)}" src="${pic(s.iiif, w.region, '!220,220')}">` : ''}ring ${esc(w.ring)} · ${esc(w.place)}${w.tub === 'yes' ? ' · <span class="ca-tub">tub</span>' : ''}<br>${w.eva ? word(w.eva) : 'no label'}</div>`).join('');
+    out.insertAdjacentHTML('beforeend', `<div class="ca-sign"><figure><img loading="lazy" alt="${esc(s.sign)} on ${esc(s.page)}" src="${pic(s.iiif, s.whole, '!520,520')}"><figcaption>the whole page</figcaption></figure><div class="ca-grid">${ws}</div></div>`);
+  }
+  h('pools', `The bathing pools by the color of their water (${d.pools.length})`, 'Every pool on the bathing pages whose paint the measurement found, grouped green and blue.');
+  for (const c of ['green', 'blue']) {
+    const ps = d.pools.filter(p => p.class === c);
+    out.insertAdjacentHTML('beforeend', `<p class="ca-note"><b>${c}</b> (${ps.length})</p><div class="ca-pools">${ps.map(p => `<div class="ca-pool"><img loading="lazy" alt="${esc(p.page)} ${c} pool" src="${pic(p.iiif, p.region, '!400,300')}">${esc(p.page)}${p.set === 'final' ? ' <span class="ca-fin">final</span>' : ''}</div>`).join('')}</div>`);
+  }
+  h('compare', 'Each sign beside three German zodiacs', 'Morgan M.384 (Rhineland, later 1400s; the whole page), St. Gallen Cod. Sang. 827 (Lake Constance, 1425–1428) and Heidelberg Cod. Pal. germ. 832 (Regensburg, after 1491).');
+  out.insertAdjacentHTML('beforeend', `<table class="ca-cmp"><tr><th>Sign</th><th>Voynich</th><th>M.384</th><th>Cod. Sang. 827</th><th>Cod. Pal. germ. 832</th></tr>${d.compare.map(c => `<tr><td>${esc(c.sign)}<br>${esc(c.voynich)}</td><td>${c.region ? `<img loading="lazy" alt="Voynich ${esc(c.sign)}" src="${pic(c.iiif, c.region, '!300,300')}">` : ''}</td><td><img loading="lazy" alt="M.384 ${esc(c.sign)}" src="${esc(c.morgan)}"></td><td><img loading="lazy" alt="827 ${esc(c.sign)}" src="${esc(c.csg)}"></td><td><img loading="lazy" alt="832 ${esc(c.sign)}" src="${esc(c.cpg)}"></td></tr>`).join('')}</table>`);
+  $('ca-jump').innerHTML = jump.join(' ');
+})();
+</script>
+</body>
+</html>

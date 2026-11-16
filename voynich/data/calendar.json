@@ -1,0 +1,4899 @@
+{
+"signs": [
+{
+"page": "f70v2",
+"sign": "Pisces",
+"month": "mars",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006200",
+"region": [
+1632,
+1536,
+639,
+510
+],
+"whole": [
+0,
+0,
+3946,
+3772
+],
+"women": [
+{
+"woman": "f70v2.24",
+"ring": "2",
+"place": "1",
+"eva": "otalar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2049,
+722,
+453,
+453
+]
+},
+{
+"woman": "f70v2.8",
+"ring": "2",
+"place": "2",
+"eva": "okala",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2155,
+470,
+453,
+453
+]
+},
+{
+"woman": "f70v2.9",
+"ring": "2",
+"place": "3",
+"eva": "otody",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2482,
+596,
+453,
+453
+]
+},
+{
+"woman": "f70v2.25",
+"ring": "2",
+"place": "4",
+"eva": "otalam",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2399,
+998,
+453,
+453
+]
+},
+{
+"woman": "f70v2.10",
+"ring": "2",
+"place": "5",
+"eva": "otald",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2698,
+820,
+453,
+453
+]
+},
+{
+"woman": "f70v2.11",
+"ring": "2",
+"place": "6",
+"eva": "otaldar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2874,
+1149,
+453,
+453
+]
+},
+{
+"woman": "f70v2.26",
+"ring": "2",
+"place": "7",
+"eva": "dolaram",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2560,
+1534,
+453,
+453
+]
+},
+{
+"woman": "f70v2.12",
+"ring": "2",
+"place": "8",
+"eva": "okody",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2940,
+1541,
+453,
+453
+]
+},
+{
+"woman": "f70v2.13",
+"ring": "2",
+"place": "9",
+"eva": "opysam",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2814,
+1941,
+453,
+453
+]
+},
+{
+"woman": "f70v2.27",
+"ring": "2",
+"place": "10",
+"eva": "okaram",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2374,
+2049,
+453,
+453
+]
+},
+{
+"woman": "f70v2.14",
+"ring": "2",
+"place": "11",
+"eva": "chckhhy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2570,
+2303,
+453,
+453
+]
+},
+{
+"woman": "f70v2.15",
+"ring": "2",
+"place": "12",
+"eva": "otaly",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2241,
+2550,
+453,
+453
+]
+},
+{
+"woman": "f70v2.28",
+"ring": "2",
+"place": "13",
+"eva": "oteosal",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1982,
+2288,
+453,
+453
+]
+},
+{
+"woman": "f70v2.16",
+"ring": "2",
+"place": "14",
+"eva": "otal.arar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1765,
+2693,
+453,
+453
+]
+},
+{
+"woman": "f70v2.29",
+"ring": "2",
+"place": "15",
+"eva": "salols",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1448,
+2273,
+453,
+453
+]
+},
+{
+"woman": "f70v2.17",
+"ring": "2",
+"place": "16",
+"eva": "otaldy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1300,
+2588,
+453,
+453
+]
+},
+{
+"woman": "f70v2.18",
+"ring": "2",
+"place": "17",
+"eva": "okeoly",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1016,
+2311,
+453,
+453
+]
+},
+{
+"woman": "f70v2.30",
+"ring": "2",
+"place": "18",
+"eva": "okaldal",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1071,
+1911,
+453,
+453
+]
+},
+{
+"woman": "f70v2.19",
+"ring": "2",
+"place": "19",
+"eva": "okydy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+767,
+1969,
+453,
+453
+]
+},
+{
+"woman": "f70v2.20",
+"ring": "2",
+"place": "20",
+"eva": "okees",
+"tub": "yes",
+"clothed": "no",
+"region": [
+616,
+1484,
+453,
+453
+]
+},
+{
+"woman": "f70v2.31",
+"ring": "2",
+"place": "21",
+"eva": "ykolaiin",
+"tub": "yes",
+"clothed": "no",
+"region": [
+996,
+1330,
+453,
+453
+]
+},
+{
+"woman": "f70v2.4",
+"ring": "2",
+"place": "22",
+"eva": "otar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+956,
+1064,
+453,
+453
+]
+},
+{
+"woman": "f70v2.2",
+"ring": "2",
+"place": "23",
+"eva": "otalalg",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1081,
+860,
+453,
+453
+]
+},
+{
+"woman": "f70v2.22",
+"ring": "2",
+"place": "24",
+"eva": "otar.am",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1101,
+855,
+453,
+453
+]
+},
+{
+"woman": "f70v2.3",
+"ring": "2",
+"place": "25",
+"eva": "ykary",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1194,
+890,
+453,
+453
+]
+},
+{
+"woman": "f70v2.7",
+"ring": "2",
+"place": "26",
+"eva": "oty.ar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1476,
+659,
+453,
+453
+]
+},
+{
+"woman": "f70v2.5",
+"ring": "2",
+"place": "27",
+"eva": "oty",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1441,
+292,
+453,
+453
+]
+},
+{
+"woman": "f70v2.23",
+"ring": "2",
+"place": "28",
+"eva": "otar.al",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1635,
+785,
+453,
+453
+]
+},
+{
+"woman": "f70v2.6",
+"ring": "2",
+"place": "29",
+"eva": "oky.ody",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1675,
+375,
+453,
+453
+]
+}
+]
+},
+{
+"page": "f70v1",
+"sign": "Aries",
+"month": "aberil",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006201",
+"region": [
+1369,
+1443,
+565,
+439
+],
+"whole": [
+0,
+0,
+2980,
+3700
+],
+"women": [
+{
+"woman": "f70v1.14",
+"ring": "1",
+"place": "1",
+"eva": "otalaiin",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1690,
+1036,
+444,
+444
+]
+},
+{
+"woman": "f70v1.15",
+"ring": "1",
+"place": "2",
+"eva": "oteo.alals.araly",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1897,
+1596,
+444,
+444
+]
+},
+{
+"woman": "f70v1.16",
+"ring": "1",
+"place": "3",
+"eva": "oteoeey.otal.okealar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1352,
+1914,
+444,
+444
+]
+},
+{
+"woman": "f70v1.17",
+"ring": "1",
+"place": "4",
+"eva": "otear.araydy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1019,
+1371,
+444,
+444
+]
+},
+{
+"woman": "f70v1.13",
+"ring": "1",
+"place": "5",
+"eva": "okoly",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1288,
+1043,
+444,
+444
+]
+},
+{
+"woman": "f70v1.11",
+"ring": "2",
+"place": "1",
+"eva": "otal.ypsharal",
+"tub": "yes",
+"clothed": "no",
+"region": [
+787,
+1088,
+444,
+444
+]
+},
+{
+"woman": "f70v1.3",
+"ring": "3",
+"place": "1",
+"eva": "opchey.sal",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1727,
+599,
+444,
+444
+]
+},
+{
+"woman": "f70v1.4",
+"ring": "3",
+"place": "2",
+"eva": "otakaizan",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2252,
+1041,
+444,
+444
+]
+},
+{
+"woman": "f70v1.5",
+"ring": "3",
+"place": "3",
+"eva": "okalal",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2370,
+1537,
+444,
+444
+]
+},
+{
+"woman": "f70v1.6",
+"ring": "3",
+"place": "4",
+"eva": "otaly",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2215,
+1998,
+444,
+444
+]
+},
+{
+"woman": "f70v1.7",
+"ring": "3",
+"place": "5",
+"eva": "oalcheg",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1931,
+2294,
+444,
+444
+]
+},
+{
+"woman": "f70v1.8",
+"ring": "3",
+"place": "6",
+"eva": "otchodals",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1330,
+2378,
+444,
+444
+]
+},
+{
+"woman": "f70v1.9",
+"ring": "3",
+"place": "7",
+"eva": "okolshy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+876,
+2148,
+444,
+444
+]
+},
+{
+"woman": "f70v1.10",
+"ring": "3",
+"place": "8",
+"eva": "otshshdy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+567,
+1707,
+444,
+444
+]
+},
+{
+"woman": "f70v1.2",
+"ring": "3",
+"place": "9",
+"eva": "otalchy.tar.am.dy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+1120,
+654,
+444,
+444
+]
+}
+]
+},
+{
+"page": "f71r",
+"sign": "Aries",
+"month": "aberil",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006202",
+"region": [
+991,
+1467,
+765,
+627
+],
+"whole": [
+0,
+0,
+2794,
+3762
+],
+"women": [
+{
+"woman": "f71r.14",
+"ring": "1",
+"place": "1",
+"eva": "otoloaram",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1505,
+1279,
+451,
+451
+]
+},
+{
+"woman": "f71r.15",
+"ring": "1",
+"place": "2",
+"eva": "oteeol",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1500,
+1884,
+451,
+451
+]
+},
+{
+"woman": "f71r.16",
+"ring": "2",
+"place": "1",
+"eva": "otolchd",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+833,
+2069,
+451,
+451
+]
+},
+{
+"woman": "f71r.17",
+"ring": "2",
+"place": "2",
+"eva": "otaldar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+461,
+1445,
+451,
+451
+]
+},
+{
+"woman": "f71r.13",
+"ring": "2",
+"place": "3",
+"eva": "otolchdy",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1008,
+961,
+451,
+451
+]
+},
+{
+"woman": "f71r.4",
+"ring": "3",
+"place": "1",
+"eva": "oteoaldy",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1342,
+559,
+451,
+451
+]
+},
+{
+"woman": "f71r.5",
+"ring": "3",
+"place": "2",
+"eva": "oteolar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1788,
+848,
+451,
+451
+]
+},
+{
+"woman": "f71r.6",
+"ring": "3",
+"place": "3",
+"eva": "okeoaly",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+2011,
+1344,
+451,
+451
+]
+},
+{
+"woman": "f71r.7",
+"ring": "3",
+"place": "4",
+"eva": "otaleky",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1971,
+1911,
+451,
+451
+]
+},
+{
+"woman": "f71r.8",
+"ring": "3",
+"place": "5",
+"eva": "otalsar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1480,
+2413,
+451,
+451
+]
+},
+{
+"woman": "f71r.9",
+"ring": "3",
+"place": "6",
+"eva": "cheary",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+890,
+2505,
+451,
+451
+]
+},
+{
+"woman": "f71r.10",
+"ring": "3",
+"place": "7",
+"eva": "oteotey.rary",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+271,
+2064,
+451,
+451
+]
+},
+{
+"woman": "f71r.11",
+"ring": "3",
+"place": "8",
+"eva": "otalaly",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+105,
+1480,
+451,
+451
+]
+},
+{
+"woman": "f71r.2",
+"ring": "3",
+"place": "9",
+"eva": "oteos.arar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+311,
+915,
+451,
+451
+]
+},
+{
+"woman": "f71r.3",
+"ring": "3",
+"place": "10",
+"eva": "okldam",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+785,
+587,
+451,
+451
+]
+}
+]
+},
+{
+"page": "f71v",
+"sign": "Taurus",
+"month": "may",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+1101,
+1229,
+614,
+461
+],
+"whole": [
+0,
+0,
+2330,
+3018
+],
+"women": [
+{
+"woman": "f71v.14",
+"ring": "1",
+"place": "1",
+"eva": "otalody",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1527,
+883,
+362,
+362
+]
+},
+{
+"woman": "f71v.15",
+"ring": "1",
+"place": "2",
+"eva": "otalaiin",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1668,
+1394,
+362,
+362
+]
+},
+{
+"woman": "f71v.16",
+"ring": "1",
+"place": "3",
+"eva": "otar.shar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1088,
+1654,
+362,
+362
+]
+},
+{
+"woman": "f71v.17",
+"ring": "1",
+"place": "4",
+"eva": "sholshdy",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+833,
+1169,
+362,
+362
+]
+},
+{
+"woman": "f71v.13",
+"ring": "1",
+"place": "5",
+"eva": "ofaifom",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1072,
+859,
+362,
+362
+]
+},
+{
+"woman": "f71v.4",
+"ring": "2",
+"place": "1",
+"eva": "okolar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1495,
+503,
+362,
+362
+]
+},
+{
+"woman": "f71v.5",
+"ring": "2",
+"place": "2",
+"eva": "otchody",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1853,
+781,
+362,
+362
+]
+},
+{
+"woman": "f71v.6",
+"ring": "2",
+"place": "3",
+"eva": "alcphy",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+2012,
+1151,
+362,
+362
+]
+},
+{
+"woman": "f71v.7",
+"ring": "2",
+"place": "4",
+"eva": "otaiin",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1974,
+1547,
+362,
+362
+]
+},
+{
+"woman": "f71v.8",
+"ring": "2",
+"place": "5",
+"eva": "okaraiin",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1545,
+1966,
+362,
+362
+]
+},
+{
+"woman": "f71v.9",
+"ring": "2",
+"place": "6",
+"eva": "otar.ar.aly",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1042,
+1986,
+362,
+362
+]
+},
+{
+"woman": "f71v.10",
+"ring": "2",
+"place": "7",
+"eva": "opalar.am.dan",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+577,
+1602,
+362,
+362
+]
+},
+{
+"woman": "f71v.11",
+"ring": "2",
+"place": "8",
+"eva": "opalor.ar",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+483,
+1135,
+362,
+362
+]
+},
+{
+"woman": "f71v.2",
+"ring": "2",
+"place": "9",
+"eva": "char.arom",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+714,
+696,
+362,
+362
+]
+},
+{
+"woman": "f71v.3",
+"ring": "2",
+"place": "10",
+"eva": "chfaly",
+"tub": "yes",
+"clothed": "unclear",
+"region": [
+1097,
+479,
+362,
+362
+]
+}
+]
+},
+{
+"page": "f72r1",
+"sign": "Taurus",
+"month": "may",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+2988,
+1270,
+376,
+352
+],
+"whole": [
+2330,
+0,
+2101,
+3018
+],
+"women": [
+{
+"woman": "f72r1.14",
+"ring": "1",
+"place": "1",
+"eva": "otchoshy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+3280,
+839,
+362,
+362
+]
+},
+{
+"woman": "f72r1.15",
+"ring": "1",
+"place": "2",
+"eva": "otchdal",
+"tub": "yes",
+"clothed": "no",
+"region": [
+3509,
+1217,
+362,
+362
+]
+},
+{
+"woman": "f72r1.16",
+"ring": "1",
+"place": "3",
+"eva": "okeey.ary",
+"tub": "yes",
+"clothed": "no",
+"region": [
+3119,
+1640,
+362,
+362
+]
+},
+{
+"woman": "f72r1.17",
+"ring": "1",
+"place": "4",
+"eva": "otainy",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2738,
+1475,
+362,
+362
+]
+},
+{
+"woman": "f72r1.13",
+"ring": "1",
+"place": "5",
+"eva": "ofaralar",
+"tub": "yes",
+"clothed": "no",
+"region": [
+2769,
+867,
+362,
+362
+]
+},
+{
+"woman": "f72r1.4",
+"ring": "2",
+"place": "1",
+"eva": "oaiin.ar.ary",
+"tub": "no",
+"clothed": "no",
+"region": [
+3161,
+481,
+362,
+362
+]
+},
+{
+"woman": "f72r1.5",
+"ring": "2",
+"place": "2",
+"eva": "okalam",
+"tub": "no",
+"clothed": "no",
+"region": [
+3549,
+634,
+362,
+362
+]
+},
+{
+"woman": "f72r1.6",
+"ring": "2",
+"place": "3",
+"eva": "ytalshdy",
+"tub": "no",
+"clothed": "no",
+"region": [
+3724,
+934,
+362,
+362
+]
+},
+{
+"woman": "f72r1.7",
+"ring": "2",
+"place": "4",
+"eva": "char.alif",
+"tub": "no",
+"clothed": "no",
+"region": [
+3793,
+1324,
+362,
+362
+]
+},
+{
+"woman": "f72r1.8",
+"ring": "2",
+"place": "5",
+"eva": "otaraldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+3646,
+1660,
+362,
+362
+]
+},
+{
+"woman": "f72r1.9",
+"ring": "2",
+"place": "6",
+"eva": "otaiin.otain",
+"tub": "no",
+"clothed": "no",
+"region": [
+3101,
+1972,
+362,
+362
+]
+},
+{
+"woman": "f72r1.10",
+"ring": "2",
+"place": "7",
+"eva": "otalef.ys.ainam",
+"tub": "no",
+"clothed": "no",
+"region": [
+2449,
+1666,
+362,
+362
+]
+},
+{
+"woman": "f72r1.11",
+"ring": "2",
+"place": "8",
+"eva": "ochol.sharam",
+"tub": "no",
+"clothed": "no",
+"region": [
+2292,
+1225,
+362,
+362
+]
+},
+{
+"woman": "f72r1.2",
+"ring": "2",
+"place": "9",
+"eva": "oshodady",
+"tub": "no",
+"clothed": "no",
+"region": [
+2415,
+827,
+362,
+362
+]
+},
+{
+"woman": "f72r1.3",
+"ring": "2",
+"place": "10",
+"eva": "chdaiirdainy",
+"tub": "no",
+"clothed": "no",
+"region": [
+2734,
+529,
+362,
+362
+]
+}
+]
+},
+{
+"page": "f72r2",
+"sign": "Gemini",
+"month": "jong",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+4923,
+1199,
+376,
+447
+],
+"whole": [
+4430,
+0,
+1579,
+3018
+],
+"women": [
+{
+"woman": "f72r2.24",
+"ring": "1",
+"place": "1",
+"eva": "ralal",
+"tub": "no",
+"clothed": "no",
+"region": [
+4963,
+893,
+362,
+362
+]
+},
+{
+"woman": "f72r2.25",
+"ring": "1",
+"place": "2",
+"eva": "okam",
+"tub": "no",
+"clothed": "no",
+"region": [
+5180,
+915,
+362,
+362
+]
+},
+{
+"woman": "f72r2.26",
+"ring": "1",
+"place": "3",
+"eva": "otalshy",
+"tub": "no",
+"clothed": "no",
+"region": [
+5331,
+1117,
+362,
+362
+]
+},
+{
+"woman": "f72r2.27",
+"ring": "1",
+"place": "4",
+"eva": "okaldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+5279,
+1443,
+362,
+362
+]
+},
+{
+"woman": "f72r2.28",
+"ring": "1",
+"place": "5",
+"eva": "chosar",
+"tub": "no",
+"clothed": "no",
+"region": [
+5011,
+1614,
+362,
+362
+]
+},
+{
+"woman": "f72r2.29",
+"ring": "1",
+"place": "6",
+"eva": "otam",
+"tub": "no",
+"clothed": "no",
+"region": [
+4788,
+1612,
+362,
+362
+]
+},
+{
+"woman": "f72r2.30",
+"ring": "1",
+"place": "7",
+"eva": "ainaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+4633,
+1455,
+362,
+362
+]
+},
+{
+"woman": "f72r2.31",
+"ring": "1",
+"place": "8",
+"eva": "okarcham",
+"tub": "no",
+"clothed": "no",
+"region": [
+4607,
+1121,
+362,
+362
+]
+},
+{
+"woman": "f72r2.23",
+"ring": "1",
+"place": "9",
+"eva": "otal",
+"tub": "no",
+"clothed": "no",
+"region": [
+4766,
+915,
+362,
+362
+]
+},
+{
+"woman": "f72r2.x1",
+"ring": "2",
+"place": "",
+"eva": "",
+"tub": "no",
+"clothed": "no",
+"region": null
+},
+{
+"woman": "f72r2.9",
+"ring": "2",
+"place": "1",
+"eva": "okal",
+"tub": "no",
+"clothed": "no",
+"region": [
+4969,
+551,
+362,
+362
+]
+},
+{
+"woman": "f72r2.10",
+"ring": "2",
+"place": "2",
+"eva": "okaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+5221,
+571,
+362,
+362
+]
+},
+{
+"woman": "f72r2.11",
+"ring": "2",
+"place": "3",
+"eva": "okal",
+"tub": "no",
+"clothed": "no",
+"region": [
+5450,
+765,
+362,
+362
+]
+},
+{
+"woman": "f72r2.12",
+"ring": "2",
+"place": "4",
+"eva": "okeey.ary",
+"tub": "no",
+"clothed": "no",
+"region": [
+5603,
+990,
+362,
+362
+]
+},
+{
+"woman": "f72r2.13",
+"ring": "2",
+"place": "5",
+"eva": "oteeary",
+"tub": "no",
+"clothed": "no",
+"region": [
+5617,
+1362,
+362,
+362
+]
+},
+{
+"woman": "f72r2.14",
+"ring": "2",
+"place": "6",
+"eva": "otair.dy",
+"tub": "no",
+"clothed": "no",
+"region": [
+5470,
+1714,
+362,
+362
+]
+},
+{
+"woman": "f72r2.15",
+"ring": "2",
+"place": "7",
+"eva": "okaircham",
+"tub": "no",
+"clothed": "no",
+"region": [
+5130,
+1964,
+362,
+362
+]
+},
+{
+"woman": "f72r2.16",
+"ring": "2",
+"place": "8",
+"eva": "okeal",
+"tub": "no",
+"clothed": "no",
+"region": [
+4798,
+1946,
+362,
+362
+]
+},
+{
+"woman": "f72r2.17",
+"ring": "2",
+"place": "9",
+"eva": "otarcr",
+"tub": "no",
+"clothed": "no",
+"region": [
+4551,
+1839,
+362,
+362
+]
+},
+{
+"woman": "f72r2.18",
+"ring": "2",
+"place": "10",
+"eva": "okaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+4414,
+1692,
+362,
+362
+]
+},
+{
+"woman": "f72r2.19",
+"ring": "2",
+"place": "11",
+"eva": "orary",
+"tub": "no",
+"clothed": "no",
+"region": [
+4303,
+1531,
+362,
+362
+]
+},
+{
+"woman": "f72r2.20",
+"ring": "2",
+"place": "12",
+"eva": "okyd",
+"tub": "no",
+"clothed": "no",
+"region": [
+4265,
+1183,
+362,
+362
+]
+},
+{
+"woman": "f72r2.21",
+"ring": "2",
+"place": "13",
+"eva": "otolam",
+"tub": "no",
+"clothed": "no",
+"region": [
+4321,
+968,
+362,
+362
+]
+},
+{
+"woman": "f72r2.7",
+"ring": "2",
+"place": "14",
+"eva": "otaraldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+4438,
+724,
+362,
+362
+]
+},
+{
+"woman": "f72r2.8",
+"ring": "2",
+"place": "15",
+"eva": "okalar",
+"tub": "no",
+"clothed": "no",
+"region": [
+4702,
+585,
+362,
+362
+]
+},
+{
+"woman": "f72r2.3",
+"ring": "3",
+"place": "1",
+"eva": "okaram",
+"tub": "no",
+"clothed": "no",
+"region": [
+5005,
+215,
+362,
+362
+]
+},
+{
+"woman": "f72r2.4",
+"ring": "3",
+"place": "2",
+"eva": "okairy",
+"tub": "no",
+"clothed": "no",
+"region": [
+5261,
+231,
+362,
+362
+]
+},
+{
+"woman": "f72r2.5",
+"ring": "3",
+"place": "3",
+"eva": "okealar",
+"tub": "no",
+"clothed": "no",
+"region": [
+5577,
+346,
+362,
+362
+]
+},
+{
+"woman": "f72r2.1",
+"ring": "3",
+"place": "4",
+"eva": "ofchdamy",
+"tub": "no",
+"clothed": "no",
+"region": [
+4352,
+302,
+362,
+362
+]
+},
+{
+"woman": "f72r2.2",
+"ring": "3",
+"place": "5",
+"eva": "oklairdy",
+"tub": "no",
+"clothed": "no",
+"region": [
+4702,
+225,
+362,
+362
+]
+}
+]
+},
+{
+"page": "f72r3",
+"sign": "Cancer",
+"month": "iollet",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+6847,
+1294,
+352,
+328
+],
+"whole": [
+6010,
+0,
+2855,
+3018
+],
+"women": [
+{
+"woman": "f72r3.28",
+"ring": "1",
+"place": "1",
+"eva": "yfary",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6936,
+962,
+362,
+362
+]
+},
+{
+"woman": "f72r3.29",
+"ring": "1",
+"place": "2",
+"eva": "oraiiral",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7171,
+1197,
+362,
+362
+]
+},
+{
+"woman": "f72r3.30",
+"ring": "1",
+"place": "3",
+"eva": "ytoar.shar",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7078,
+1571,
+362,
+362
+]
+},
+{
+"woman": "f72r3.31",
+"ring": "1",
+"place": "4",
+"eva": "octho",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6706,
+1640,
+362,
+362
+]
+},
+{
+"woman": "f72r3.32",
+"ring": "1",
+"place": "5",
+"eva": "aral",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6525,
+1398,
+362,
+362
+]
+},
+{
+"woman": "f72r3.33",
+"ring": "1",
+"place": "6",
+"eva": "oletal",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6529,
+1394,
+362,
+362
+]
+},
+{
+"woman": "f72r3.27",
+"ring": "1",
+"place": "7",
+"eva": "opalal",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6700,
+982,
+362,
+362
+]
+},
+{
+"woman": "f72r3.16",
+"ring": "2",
+"place": "1",
+"eva": "ytairal",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6998,
+604,
+362,
+362
+]
+},
+{
+"woman": "f72r3.17",
+"ring": "2",
+"place": "2",
+"eva": "oeeesaiin",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7284,
+738,
+362,
+362
+]
+},
+{
+"woman": "f72r3.18",
+"ring": "2",
+"place": "3",
+"eva": "ory",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7471,
+968,
+362,
+362
+]
+},
+{
+"woman": "f72r3.19",
+"ring": "2",
+"place": "4",
+"eva": "ochey.fydy",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7511,
+1260,
+362,
+362
+]
+},
+{
+"woman": "f72r3.20",
+"ring": "2",
+"place": "5",
+"eva": "of.o.eeesaly",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7428,
+1600,
+362,
+362
+]
+},
+{
+"woman": "f72r3.21",
+"ring": "2",
+"place": "6",
+"eva": "ykaraiin.airal",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6901,
+1954,
+362,
+362
+]
+},
+{
+"woman": "f72r3.22",
+"ring": "2",
+"place": "7",
+"eva": "okalar",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6376,
+1835,
+362,
+362
+]
+},
+{
+"woman": "f72r3.23",
+"ring": "2",
+"place": "8",
+"eva": "orara",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6139,
+1485,
+362,
+362
+]
+},
+{
+"woman": "f72r3.24",
+"ring": "2",
+"place": "9",
+"eva": "olaiin.olaikhy",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6207,
+1105,
+362,
+362
+]
+},
+{
+"woman": "f72r3.25",
+"ring": "2",
+"place": "10",
+"eva": "olfsheoral",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6352,
+771,
+362,
+362
+]
+},
+{
+"woman": "f72r3.15",
+"ring": "2",
+"place": "11",
+"eva": "oralkam",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6527,
+702,
+362,
+362
+]
+},
+{
+"woman": "f72r3.4",
+"ring": "3",
+"place": "1",
+"eva": "oraiinam",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6994,
+338,
+362,
+362
+]
+},
+{
+"woman": "f72r3.5",
+"ring": "3",
+"place": "2",
+"eva": "osarsheeeo",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7432,
+497,
+362,
+362
+]
+},
+{
+"woman": "f72r3.6",
+"ring": "3",
+"place": "3",
+"eva": "otoaiin",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7632,
+795,
+362,
+362
+]
+},
+{
+"woman": "f72r3.7",
+"ring": "3",
+"place": "4",
+"eva": "opoiiinoin.al.ches",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7793,
+1342,
+362,
+362
+]
+},
+{
+"woman": "f72r3.8",
+"ring": "3",
+"place": "5",
+"eva": "ypaiin.alaly",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7525,
+1940,
+362,
+362
+]
+},
+{
+"woman": "f72r3.9",
+"ring": "3",
+"place": "6",
+"eva": "oteey.daiin",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+7024,
+2235,
+362,
+362
+]
+},
+{
+"woman": "f72r3.10",
+"ring": "3",
+"place": "7",
+"eva": "oeeodaiin",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6515,
+2203,
+362,
+362
+]
+},
+{
+"woman": "f72r3.11",
+"ring": "3",
+"place": "8",
+"eva": "ofsholdy",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6191,
+2022,
+362,
+362
+]
+},
+{
+"woman": "f72r3.12",
+"ring": "3",
+"place": "9",
+"eva": "opoeey.okaiin",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+5919,
+1463,
+362,
+362
+]
+},
+{
+"woman": "f72r3.13",
+"ring": "3",
+"place": "10",
+"eva": "ykolairol",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6040,
+708,
+362,
+362
+]
+},
+{
+"woman": "f72r3.2",
+"ring": "3",
+"place": "11",
+"eva": "olkalaiin",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6340,
+447,
+362,
+362
+]
+},
+{
+"woman": "f72r3.3",
+"ring": "3",
+"place": "12",
+"eva": "olalsy",
+"tub": "unclear",
+"clothed": "no",
+"region": [
+6750,
+316,
+362,
+362
+]
+}
+]
+},
+{
+"page": "f72v3",
+"sign": "Leo",
+"month": "augst",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+"region": [
+1902,
+1507,
+650,
+501
+],
+"whole": [
+0,
+0,
+3490,
+3794
+],
+"women": [
+{
+"woman": "f72v3.12",
+"ring": "1",
+"place": "1",
+"eva": "sheeos.ocfhhy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1975,
+1814,
+455,
+455
+]
+},
+{
+"woman": "f72v3.19",
+"ring": "1",
+"place": "2",
+"eva": "okeolyd",
+"tub": "no",
+"clothed": "no",
+"region": [
+1740,
+1485,
+455,
+455
+]
+},
+{
+"woman": "f72v3.22",
+"ring": "2",
+"place": "1",
+"eva": "oky",
+"tub": "no",
+"clothed": "no",
+"region": [
+2084,
+923,
+455,
+455
+]
+},
+{
+"woman": "f72v3.23",
+"ring": "2",
+"place": "2",
+"eva": "chcthhy",
+"tub": "no",
+"clothed": "no",
+"region": [
+2319,
+1022,
+455,
+455
+]
+},
+{
+"woman": "f72v3.24",
+"ring": "2",
+"place": "3",
+"eva": "laly",
+"tub": "no",
+"clothed": "no",
+"region": [
+2545,
+1113,
+455,
+455
+]
+},
+{
+"woman": "f72v3.25",
+"ring": "2",
+"place": "4",
+"eva": "oeedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+2638,
+1371,
+455,
+455
+]
+},
+{
+"woman": "f72v3.26",
+"ring": "2",
+"place": "5",
+"eva": "odairan",
+"tub": "no",
+"clothed": "no",
+"region": [
+2658,
+1695,
+455,
+455
+]
+},
+{
+"woman": "f72v3.27",
+"ring": "2",
+"place": "6",
+"eva": "okary",
+"tub": "no",
+"clothed": "no",
+"region": [
+2481,
+1958,
+455,
+455
+]
+},
+{
+"woman": "f72v3.28",
+"ring": "2",
+"place": "7",
+"eva": "oeesaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+2183,
+2132,
+455,
+455
+]
+},
+{
+"woman": "f72v3.29",
+"ring": "2",
+"place": "8",
+"eva": "oteesed",
+"tub": "no",
+"clothed": "no",
+"region": [
+1748,
+2082,
+455,
+455
+]
+},
+{
+"woman": "f72v3.30",
+"ring": "2",
+"place": "9",
+"eva": "opal",
+"tub": "no",
+"clothed": "no",
+"region": [
+1510,
+1824,
+455,
+455
+]
+},
+{
+"woman": "f72v3.31",
+"ring": "2",
+"place": "10",
+"eva": "otaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+1419,
+1583,
+455,
+455
+]
+},
+{
+"woman": "f72v3.32",
+"ring": "2",
+"place": "11",
+"eva": "otaly.yty",
+"tub": "no",
+"clothed": "no",
+"region": [
+1596,
+1123,
+455,
+455
+]
+},
+{
+"woman": "f72v3.21",
+"ring": "2",
+"place": "12",
+"eva": "choleey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1687,
+1141,
+455,
+455
+]
+},
+{
+"woman": "f72v3.5",
+"ring": "3",
+"place": "1",
+"eva": "okey",
+"tub": "no",
+"clothed": "no",
+"region": [
+2170,
+470,
+455,
+455
+]
+},
+{
+"woman": "f72v3.6",
+"ring": "3",
+"place": "2",
+"eva": "otcheody",
+"tub": "no",
+"clothed": "no",
+"region": [
+2484,
+572,
+455,
+455
+]
+},
+{
+"woman": "f72v3.7",
+"ring": "3",
+"place": "3",
+"eva": "okyeeshy",
+"tub": "no",
+"clothed": "no",
+"region": [
+2792,
+761,
+455,
+455
+]
+},
+{
+"woman": "f72v3.8",
+"ring": "3",
+"place": "4",
+"eva": "c'yofaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+2967,
+1022,
+455,
+455
+]
+},
+{
+"woman": "f72v3.17",
+"ring": "3",
+"place": "5",
+"eva": "okaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+3043,
+1303,
+455,
+455
+]
+},
+{
+"woman": "f72v3.10",
+"ring": "3",
+"place": "6",
+"eva": "otoly",
+"tub": "no",
+"clothed": "no",
+"region": [
+3071,
+1568,
+455,
+455
+]
+},
+{
+"woman": "f72v3.11",
+"ring": "3",
+"place": "7",
+"eva": "ofalals",
+"tub": "no",
+"clothed": "no",
+"region": [
+2985,
+2001,
+455,
+455
+]
+},
+{
+"woman": "f72v3.14",
+"ring": "3",
+"place": "8",
+"eva": "oteey.deeal",
+"tub": "no",
+"clothed": "no",
+"region": [
+2322,
+2448,
+455,
+455
+]
+},
+{
+"woman": "f72v3.13",
+"ring": "3",
+"place": "9",
+"eva": "daiin.chepy",
+"tub": "no",
+"clothed": "no",
+"region": [
+2254,
+2613,
+455,
+455
+]
+},
+{
+"woman": "f72v3.15",
+"ring": "3",
+"place": "10",
+"eva": "chealpy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1389,
+2355,
+455,
+455
+]
+},
+{
+"woman": "f72v3.16",
+"ring": "3",
+"place": "11",
+"eva": "okeeol",
+"tub": "no",
+"clothed": "no",
+"region": [
+1136,
+2008,
+455,
+455
+]
+},
+{
+"woman": "f72v3.9",
+"ring": "3",
+"place": "12",
+"eva": "okaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+1055,
+1692,
+455,
+455
+]
+},
+{
+"woman": "f72v3.18",
+"ring": "3",
+"place": "13",
+"eva": "okaldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1055,
+1409,
+455,
+455
+]
+},
+{
+"woman": "f72v3.2",
+"ring": "3",
+"place": "14",
+"eva": "ocham",
+"tub": "no",
+"clothed": "no",
+"region": [
+1247,
+868,
+455,
+455
+]
+},
+{
+"woman": "f72v3.3",
+"ring": "3",
+"place": "15",
+"eva": "orchey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1624,
+567,
+455,
+455
+]
+},
+{
+"woman": "f72v3.4",
+"ring": "3",
+"place": "16",
+"eva": "okam",
+"tub": "no",
+"clothed": "no",
+"region": [
+1892,
+488,
+455,
+455
+]
+}
+]
+},
+{
+"page": "f72v2",
+"sign": "Virgo",
+"month": "septe(m)b(r)",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+"region": [
+4411,
+1439,
+463,
+519
+],
+"whole": [
+3490,
+0,
+2486,
+3794
+],
+"women": [
+{
+"woman": "f72v2.23",
+"ring": "1",
+"place": "1",
+"eva": "oeedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+4557,
+1050,
+455,
+455
+]
+},
+{
+"woman": "f72v2.24",
+"ring": "1",
+"place": "2",
+"eva": "opalg",
+"tub": "no",
+"clothed": "no",
+"region": [
+4777,
+1131,
+455,
+455
+]
+},
+{
+"woman": "f72v2.25",
+"ring": "1",
+"place": "3",
+"eva": "okeeom",
+"tub": "no",
+"clothed": "no",
+"region": [
+4843,
+1384,
+455,
+455
+]
+},
+{
+"woman": "f72v2.26",
+"ring": "1",
+"place": "4",
+"eva": "olkar",
+"tub": "no",
+"clothed": "no",
+"region": [
+4871,
+1710,
+455,
+455
+]
+},
+{
+"woman": "f72v2.27",
+"ring": "1",
+"place": "5",
+"eva": "oeedaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+4699,
+1948,
+455,
+455
+]
+},
+{
+"woman": "f72v2.28",
+"ring": "1",
+"place": "6",
+"eva": "cheosy",
+"tub": "no",
+"clothed": "no",
+"region": [
+4464,
+2064,
+455,
+455
+]
+},
+{
+"woman": "f72v2.29",
+"ring": "1",
+"place": "7",
+"eva": "ofcheay",
+"tub": "no",
+"clothed": "no",
+"region": [
+4143,
+2034,
+455,
+455
+]
+},
+{
+"woman": "f72v2.30",
+"ring": "1",
+"place": "8",
+"eva": "yteedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+3986,
+1862,
+455,
+455
+]
+},
+{
+"woman": "f72v2.31",
+"ring": "1",
+"place": "9",
+"eva": "onaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+3902,
+1634,
+455,
+455
+]
+},
+{
+"woman": "f72v2.32",
+"ring": "1",
+"place": "10",
+"eva": "okeorar",
+"tub": "no",
+"clothed": "no",
+"region": [
+3930,
+1351,
+455,
+455
+]
+},
+{
+"woman": "f72v2.21",
+"ring": "1",
+"place": "11",
+"eva": "okaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+4077,
+1174,
+455,
+455
+]
+},
+{
+"woman": "f72v2.22",
+"ring": "1",
+"place": "12",
+"eva": "ockhol",
+"tub": "no",
+"clothed": "no",
+"region": [
+4332,
+1062,
+455,
+455
+]
+},
+{
+"woman": "f72v2.5",
+"ring": "2",
+"place": "1",
+"eva": "air.aim",
+"tub": "no",
+"clothed": "no",
+"region": [
+4664,
+678,
+455,
+455
+]
+},
+{
+"woman": "f72v2.6",
+"ring": "2",
+"place": "2",
+"eva": "oshesy",
+"tub": "no",
+"clothed": "no",
+"region": [
+4962,
+852,
+455,
+455
+]
+},
+{
+"woman": "f72v2.7",
+"ring": "2",
+"place": "3",
+"eva": "okeary",
+"tub": "no",
+"clothed": "no",
+"region": [
+5202,
+1120,
+455,
+455
+]
+},
+{
+"woman": "f72v2.19",
+"ring": "2",
+"place": "4",
+"eva": "cheoldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+5311,
+1416,
+455,
+455
+]
+},
+{
+"woman": "f72v2.8",
+"ring": "2",
+"place": "5",
+"eva": "cheoetey",
+"tub": "no",
+"clothed": "no",
+"region": [
+5278,
+1806,
+455,
+455
+]
+},
+{
+"woman": "f72v2.10",
+"ring": "2",
+"place": "6",
+"eva": "sheoeky",
+"tub": "no",
+"clothed": "no",
+"region": [
+5129,
+2135,
+455,
+455
+]
+},
+{
+"woman": "f72v2.11",
+"ring": "2",
+"place": "7",
+"eva": "oteodar",
+"tub": "no",
+"clothed": "no",
+"region": [
+4942,
+2312,
+455,
+455
+]
+},
+{
+"woman": "f72v2.12",
+"ring": "2",
+"place": "8",
+"eva": "ofchdysd",
+"tub": "no",
+"clothed": "no",
+"region": [
+4653,
+2461,
+455,
+455
+]
+},
+{
+"woman": "f72v2.13",
+"ring": "2",
+"place": "9",
+"eva": "oteoyd",
+"tub": "no",
+"clothed": "no",
+"region": [
+4358,
+2519,
+455,
+455
+]
+},
+{
+"woman": "f72v2.14",
+"ring": "2",
+"place": "10",
+"eva": "yteody",
+"tub": "no",
+"clothed": "no",
+"region": [
+4064,
+2456,
+455,
+455
+]
+},
+{
+"woman": "f72v2.15",
+"ring": "2",
+"place": "11",
+"eva": "okeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+3806,
+2281,
+455,
+455
+]
+},
+{
+"woman": "f72v2.16",
+"ring": "2",
+"place": "12",
+"eva": "okeoldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+3599,
+2056,
+455,
+455
+]
+},
+{
+"woman": "f72v2.17",
+"ring": "2",
+"place": "13",
+"eva": "ykeeor",
+"tub": "no",
+"clothed": "no",
+"region": [
+3493,
+1824,
+455,
+455
+]
+},
+{
+"woman": "f72v2.18",
+"ring": "2",
+"place": "14",
+"eva": "opaiinam",
+"tub": "no",
+"clothed": "no",
+"region": [
+3465,
+1505,
+455,
+455
+]
+},
+{
+"woman": "f72v2.9",
+"ring": "2",
+"place": "15",
+"eva": "cheoldy",
+"tub": "no",
+"clothed": "no",
+"region": [
+3556,
+1229,
+455,
+455
+]
+},
+{
+"woman": "f72v2.2",
+"ring": "2",
+"place": "16",
+"eva": "oeedey",
+"tub": "no",
+"clothed": "no",
+"region": [
+3725,
+941,
+455,
+455
+]
+},
+{
+"woman": "f72v2.3",
+"ring": "2",
+"place": "17",
+"eva": "oeeodaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+3983,
+736,
+455,
+455
+]
+},
+{
+"woman": "f72v2.4",
+"ring": "2",
+"place": "18",
+"eva": "okeoram",
+"tub": "no",
+"clothed": "no",
+"region": [
+4307,
+632,
+455,
+455
+]
+}
+]
+},
+{
+"page": "f72v1",
+"sign": "Libra",
+"month": "octe(m)bre",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006205",
+"region": [
+1448,
+1438,
+453,
+450
+],
+"whole": [
+0,
+0,
+2979,
+3712
+],
+"women": [
+{
+"woman": "f72v1.26",
+"ring": "1",
+"place": "1",
+"eva": "oiiny",
+"tub": "no",
+"clothed": "no",
+"region": [
+1586,
+1123,
+445,
+445
+]
+},
+{
+"woman": "f72v1.27",
+"ring": "1",
+"place": "2",
+"eva": "oeey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1789,
+1279,
+445,
+445
+]
+},
+{
+"woman": "f72v1.28",
+"ring": "1",
+"place": "3",
+"eva": "okedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1807,
+1618,
+445,
+445
+]
+},
+{
+"woman": "f72v1.29",
+"ring": "1",
+"place": "4",
+"eva": "ypaim",
+"tub": "no",
+"clothed": "no",
+"region": [
+1663,
+1839,
+445,
+445
+]
+},
+{
+"woman": "f72v1.30",
+"ring": "1",
+"place": "5",
+"eva": "okalair",
+"tub": "no",
+"clothed": "no",
+"region": [
+1428,
+1915,
+445,
+445
+]
+},
+{
+"woman": "f72v1.31",
+"ring": "1",
+"place": "6",
+"eva": "oeeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1185,
+1811,
+445,
+445
+]
+},
+{
+"woman": "f72v1.32",
+"ring": "1",
+"place": "7",
+"eva": "okeol",
+"tub": "no",
+"clothed": "no",
+"region": [
+1047,
+1628,
+445,
+445
+]
+},
+{
+"woman": "f72v1.23",
+"ring": "1",
+"place": "8",
+"eva": "oeeoly",
+"tub": "no",
+"clothed": "no",
+"region": [
+1057,
+1398,
+445,
+445
+]
+},
+{
+"woman": "f72v1.24",
+"ring": "1",
+"place": "9",
+"eva": "okydy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1146,
+1183,
+445,
+445
+]
+},
+{
+"woman": "f72v1.25",
+"ring": "1",
+"place": "10",
+"eva": "okeey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1356,
+1081,
+445,
+445
+]
+},
+{
+"woman": "f72v1.7",
+"ring": "2",
+"place": "1",
+"eva": "ocfh'hy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1512,
+616,
+445,
+445
+]
+},
+{
+"woman": "f72v1.8",
+"ring": "2",
+"place": "2",
+"eva": "oees",
+"tub": "no",
+"clothed": "no",
+"region": [
+1727,
+683,
+445,
+445
+]
+},
+{
+"woman": "f72v1.9",
+"ring": "2",
+"place": "3",
+"eva": "okeeoly",
+"tub": "no",
+"clothed": "no",
+"region": [
+1982,
+797,
+445,
+445
+]
+},
+{
+"woman": "f72v1.10",
+"ring": "2",
+"place": "4",
+"eva": "odal",
+"tub": "no",
+"clothed": "no",
+"region": [
+2133,
+975,
+445,
+445
+]
+},
+{
+"woman": "f72v1.11",
+"ring": "2",
+"place": "5",
+"eva": "aiinod",
+"tub": "no",
+"clothed": "no",
+"region": [
+2257,
+1225,
+445,
+445
+]
+},
+{
+"woman": "f72v1.12",
+"ring": "2",
+"place": "6",
+"eva": "oddy",
+"tub": "no",
+"clothed": "no",
+"region": [
+2289,
+1450,
+445,
+445
+]
+},
+{
+"woman": "f72v1.13",
+"ring": "2",
+"place": "7",
+"eva": "oteod",
+"tub": "no",
+"clothed": "no",
+"region": [
+2274,
+1715,
+445,
+445
+]
+},
+{
+"woman": "f72v1.14",
+"ring": "2",
+"place": "8",
+"eva": "yteod",
+"tub": "no",
+"clothed": "no",
+"region": [
+2195,
+1935,
+445,
+445
+]
+},
+{
+"woman": "f72v1.15",
+"ring": "2",
+"place": "9",
+"eva": "okody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1960,
+2225,
+445,
+445
+]
+},
+{
+"woman": "f72v1.16",
+"ring": "2",
+"place": "10",
+"eva": "okal",
+"tub": "no",
+"clothed": "no",
+"region": [
+1750,
+2336,
+445,
+445
+]
+},
+{
+"woman": "f72v1.17",
+"ring": "2",
+"place": "11",
+"eva": "ytaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+1502,
+2358,
+445,
+445
+]
+},
+{
+"woman": "f72v1.18",
+"ring": "2",
+"place": "12",
+"eva": "oeeeos",
+"tub": "no",
+"clothed": "no",
+"region": [
+1230,
+2339,
+445,
+445
+]
+},
+{
+"woman": "f72v1.19",
+"ring": "2",
+"place": "13",
+"eva": "oteofy",
+"tub": "no",
+"clothed": "no",
+"region": [
+896,
+2230,
+445,
+445
+]
+},
+{
+"woman": "f72v1.20",
+"ring": "2",
+"place": "14",
+"eva": "cheoepy",
+"tub": "no",
+"clothed": "no",
+"region": [
+681,
+1985,
+445,
+445
+]
+},
+{
+"woman": "f72v1.21",
+"ring": "2",
+"place": "15",
+"eva": "ykeedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+579,
+1740,
+445,
+445
+]
+},
+{
+"woman": "f72v1.2",
+"ring": "2",
+"place": "16",
+"eva": "oeeoty",
+"tub": "no",
+"clothed": "no",
+"region": [
+510,
+1463,
+445,
+445
+]
+},
+{
+"woman": "f72v1.3",
+"ring": "2",
+"place": "17",
+"eva": "octhy",
+"tub": "no",
+"clothed": "no",
+"region": [
+624,
+1143,
+445,
+445
+]
+},
+{
+"woman": "f72v1.4",
+"ring": "2",
+"place": "18",
+"eva": "oteoly",
+"tub": "no",
+"clothed": "no",
+"region": [
+745,
+918,
+445,
+445
+]
+},
+{
+"woman": "f72v1.5",
+"ring": "2",
+"place": "19",
+"eva": "okeoly",
+"tub": "no",
+"clothed": "no",
+"region": [
+1007,
+695,
+445,
+445
+]
+},
+{
+"woman": "f72v1.6",
+"ring": "2",
+"place": "20",
+"eva": "oeees",
+"tub": "no",
+"clothed": "no",
+"region": [
+1252,
+631,
+445,
+445
+]
+}
+]
+},
+{
+"page": "f73r",
+"sign": "Scorpio",
+"month": "nove(m)bre",
+"set": "final",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006206",
+"region": [
+1000,
+1514,
+456,
+456
+],
+"whole": [
+0,
+0,
+2833,
+3761
+],
+"women": [
+{
+"woman": "f73r.24",
+"ring": "1",
+"place": "1",
+"eva": "okeeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1286,
+1224,
+451,
+451
+]
+},
+{
+"woman": "f73r.25",
+"ring": "1",
+"place": "2",
+"eva": "oyteedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1414,
+1459,
+451,
+451
+]
+},
+{
+"woman": "f73r.26",
+"ring": "1",
+"place": "3",
+"eva": "oky",
+"tub": "no",
+"clothed": "no",
+"region": [
+1344,
+1705,
+451,
+451
+]
+},
+{
+"woman": "f73r.27",
+"ring": "1",
+"place": "4",
+"eva": "chefy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1148,
+1868,
+451,
+451
+]
+},
+{
+"woman": "f73r.28",
+"ring": "1",
+"place": "5",
+"eva": "otal",
+"tub": "no",
+"clothed": "no",
+"region": [
+918,
+1850,
+451,
+451
+]
+},
+{
+"woman": "f73r.29",
+"ring": "1",
+"place": "6",
+"eva": "chek",
+"tub": "no",
+"clothed": "no",
+"region": [
+722,
+1715,
+451,
+451
+]
+},
+{
+"woman": "f73r.30",
+"ring": "1",
+"place": "7",
+"eva": "ar",
+"tub": "no",
+"clothed": "no",
+"region": [
+647,
+1550,
+451,
+451
+]
+},
+{
+"woman": "f73r.31",
+"ring": "1",
+"place": "8",
+"eva": "kar",
+"tub": "no",
+"clothed": "no",
+"region": [
+659,
+1407,
+451,
+451
+]
+},
+{
+"woman": "f73r.32",
+"ring": "1",
+"place": "9",
+"eva": "okeeos",
+"tub": "no",
+"clothed": "no",
+"region": [
+800,
+1221,
+451,
+451
+]
+},
+{
+"woman": "f73r.23",
+"ring": "1",
+"place": "10",
+"eva": "okary",
+"tub": "no",
+"clothed": "no",
+"region": [
+893,
+1183,
+451,
+451
+]
+},
+{
+"woman": "f73r.21",
+"ring": "2",
+"place": "1",
+"eva": "otey",
+"tub": "no",
+"clothed": "no",
+"region": [
+677,
+1073,
+451,
+451
+]
+},
+{
+"woman": "f73r.8",
+"ring": "3",
+"place": "1",
+"eva": "oteedyl",
+"tub": "no",
+"clothed": "no",
+"region": [
+1173,
+765,
+451,
+451
+]
+},
+{
+"woman": "f73r.9",
+"ring": "3",
+"place": "2",
+"eva": "ykeedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1404,
+865,
+451,
+451
+]
+},
+{
+"woman": "f73r.10",
+"ring": "3",
+"place": "3",
+"eva": "okeey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1607,
+1058,
+451,
+451
+]
+},
+{
+"woman": "f73r.11",
+"ring": "3",
+"place": "4",
+"eva": "okeedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1753,
+1309,
+451,
+451
+]
+},
+{
+"woman": "f73r.12",
+"ring": "3",
+"place": "5",
+"eva": "ykeeory",
+"tub": "no",
+"clothed": "no",
+"region": [
+1735,
+1597,
+451,
+451
+]
+},
+{
+"woman": "f73r.13",
+"ring": "3",
+"place": "6",
+"eva": "oteeosy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1625,
+1923,
+451,
+451
+]
+},
+{
+"woman": "f73r.14",
+"ring": "3",
+"place": "7",
+"eva": "shekal",
+"tub": "no",
+"clothed": "no",
+"region": [
+1402,
+2121,
+451,
+451
+]
+},
+{
+"woman": "f73r.15",
+"ring": "3",
+"place": "8",
+"eva": "oteedyy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1098,
+2227,
+451,
+451
+]
+},
+{
+"woman": "f73r.16",
+"ring": "3",
+"place": "9",
+"eva": "okedal",
+"tub": "no",
+"clothed": "no",
+"region": [
+790,
+2199,
+451,
+451
+]
+},
+{
+"woman": "f73r.17",
+"ring": "3",
+"place": "10",
+"eva": "chdy",
+"tub": "no",
+"clothed": "no",
+"region": [
+597,
+2084,
+451,
+451
+]
+},
+{
+"woman": "f73r.18",
+"ring": "3",
+"place": "11",
+"eva": "dalshey",
+"tub": "no",
+"clothed": "no",
+"region": [
+419,
+1840,
+451,
+451
+]
+},
+{
+"woman": "f73r.19",
+"ring": "3",
+"place": "12",
+"eva": "opaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+313,
+1587,
+451,
+451
+]
+},
+{
+"woman": "f73r.20",
+"ring": "3",
+"place": "13",
+"eva": "okeos",
+"tub": "no",
+"clothed": "no",
+"region": [
+354,
+1251,
+451,
+451
+]
+},
+{
+"woman": "f73r.6",
+"ring": "3",
+"place": "14",
+"eva": "otaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+582,
+950,
+451,
+451
+]
+},
+{
+"woman": "f73r.7",
+"ring": "3",
+"place": "15",
+"eva": "okeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+880,
+752,
+451,
+451
+]
+},
+{
+"woman": "f73r.2",
+"ring": "4",
+"place": "1",
+"eva": "chockhy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1008,
+364,
+451,
+451
+]
+},
+{
+"woman": "f73r.3",
+"ring": "4",
+"place": "2",
+"eva": "otedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1269,
+386,
+451,
+451
+]
+},
+{
+"woman": "f73r.4",
+"ring": "4",
+"place": "3",
+"eva": "yteeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1504,
+481,
+451,
+451
+]
+},
+{
+"woman": "f73r.1",
+"ring": "4",
+"place": "4",
+"eva": "otaly",
+"tub": "no",
+"clothed": "no",
+"region": [
+720,
+381,
+451,
+451
+]
+}
+]
+},
+{
+"page": "f73v",
+"sign": "Sagittarius",
+"month": "decebre",
+"set": "final",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006207",
+"region": [
+1398,
+1442,
+452,
+536
+],
+"whole": [
+0,
+0,
+2979,
+3724
+],
+"women": [
+{
+"woman": "f73v.24",
+"ring": "1",
+"place": "1",
+"eva": "eeed",
+"tub": "no",
+"clothed": "no",
+"region": [
+1420,
+1115,
+447,
+447
+]
+},
+{
+"woman": "f73v.25",
+"ring": "1",
+"place": "2",
+"eva": "oky",
+"tub": "no",
+"clothed": "no",
+"region": [
+1666,
+1179,
+447,
+447
+]
+},
+{
+"woman": "f73v.26",
+"ring": "1",
+"place": "3",
+"eva": "oia",
+"tub": "no",
+"clothed": "no",
+"region": [
+1783,
+1301,
+447,
+447
+]
+},
+{
+"woman": "f73v.27",
+"ring": "1",
+"place": "4",
+"eva": "okal",
+"tub": "no",
+"clothed": "no",
+"region": [
+1845,
+1509,
+447,
+447
+]
+},
+{
+"woman": "f73v.28",
+"ring": "1",
+"place": "5",
+"eva": "ykey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1790,
+1656,
+447,
+447
+]
+},
+{
+"woman": "f73v.29",
+"ring": "1",
+"place": "6",
+"eva": "ykeee",
+"tub": "no",
+"clothed": "no",
+"region": [
+1624,
+1807,
+447,
+447
+]
+},
+{
+"woman": "f73v.30",
+"ring": "1",
+"place": "7",
+"eva": "okeod",
+"tub": "no",
+"clothed": "no",
+"region": [
+1395,
+1867,
+447,
+447
+]
+},
+{
+"woman": "f73v.31",
+"ring": "1",
+"place": "8",
+"eva": "ykey",
+"tub": "no",
+"clothed": "no",
+"region": [
+1212,
+1740,
+447,
+447
+]
+},
+{
+"woman": "f73v.32",
+"ring": "1",
+"place": "9",
+"eva": "ypal",
+"tub": "no",
+"clothed": "no",
+"region": [
+1038,
+1554,
+447,
+447
+]
+},
+{
+"woman": "f73v.23",
+"ring": "1",
+"place": "10",
+"eva": "otedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1169,
+1224,
+447,
+447
+]
+},
+{
+"woman": "f73v.9",
+"ring": "2",
+"place": "1",
+"eva": "eery",
+"tub": "no",
+"clothed": "no",
+"region": [
+1609,
+770,
+447,
+447
+]
+},
+{
+"woman": "f73v.10",
+"ring": "2",
+"place": "2",
+"eva": "okeor",
+"tub": "no",
+"clothed": "no",
+"region": [
+1840,
+829,
+447,
+447
+]
+},
+{
+"woman": "f73v.11",
+"ring": "2",
+"place": "3",
+"eva": "ofals",
+"tub": "no",
+"clothed": "no",
+"region": [
+2008,
+966,
+447,
+447
+]
+},
+{
+"woman": "f73v.12",
+"ring": "2",
+"place": "4",
+"eva": "ykeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+2120,
+1169,
+447,
+447
+]
+},
+{
+"woman": "f73v.13",
+"ring": "2",
+"place": "5",
+"eva": "oteody",
+"tub": "no",
+"clothed": "no",
+"region": [
+2165,
+1408,
+447,
+447
+]
+},
+{
+"woman": "f73v.14",
+"ring": "2",
+"place": "6",
+"eva": "ypaiin",
+"tub": "no",
+"clothed": "no",
+"region": [
+2135,
+1671,
+447,
+447
+]
+},
+{
+"woman": "f73v.15",
+"ring": "2",
+"place": "7",
+"eva": "yfaiin.y",
+"tub": "no",
+"clothed": "no",
+"region": [
+1984,
+1956,
+447,
+447
+]
+},
+{
+"woman": "f73v.16",
+"ring": "2",
+"place": "8",
+"eva": "ofcheesy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1703,
+2177,
+447,
+447
+]
+},
+{
+"woman": "f73v.17",
+"ring": "2",
+"place": "9",
+"eva": "oraiiny",
+"tub": "no",
+"clothed": "no",
+"region": [
+1358,
+2195,
+447,
+447
+]
+},
+{
+"woman": "f73v.18",
+"ring": "2",
+"place": "10",
+"eva": "ykeeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1048,
+2068,
+447,
+447
+]
+},
+{
+"woman": "f73v.19",
+"ring": "2",
+"place": "11",
+"eva": "okeos",
+"tub": "no",
+"clothed": "no",
+"region": [
+824,
+1855,
+447,
+447
+]
+},
+{
+"woman": "f73v.20",
+"ring": "2",
+"place": "12",
+"eva": "ykeear",
+"tub": "no",
+"clothed": "no",
+"region": [
+727,
+1619,
+447,
+447
+]
+},
+{
+"woman": "f73v.21",
+"ring": "2",
+"place": "13",
+"eva": "qokeoly",
+"tub": "no",
+"clothed": "no",
+"region": [
+745,
+1321,
+447,
+447
+]
+},
+{
+"woman": "f73v.6",
+"ring": "2",
+"place": "14",
+"eva": "okeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+847,
+1010,
+447,
+447
+]
+},
+{
+"woman": "f73v.7",
+"ring": "2",
+"place": "15",
+"eva": "sheol",
+"tub": "no",
+"clothed": "no",
+"region": [
+1090,
+822,
+447,
+447
+]
+},
+{
+"woman": "f73v.8",
+"ring": "2",
+"place": "16",
+"eva": "odees",
+"tub": "no",
+"clothed": "no",
+"region": [
+1370,
+720,
+447,
+447
+]
+},
+{
+"woman": "f73v.3",
+"ring": "3",
+"place": "1",
+"eva": "oteedy",
+"tub": "no",
+"clothed": "no",
+"region": [
+1596,
+335,
+447,
+447
+]
+},
+{
+"woman": "f73v.4",
+"ring": "3",
+"place": "2",
+"eva": "eeeody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1864,
+402,
+447,
+447
+]
+},
+{
+"woman": "f73v.1",
+"ring": "3",
+"place": "3",
+"eva": "okol",
+"tub": "no",
+"clothed": "no",
+"region": [
+1023,
+400,
+447,
+447
+]
+},
+{
+"woman": "f73v.2",
+"ring": "3",
+"place": "4",
+"eva": "oteody",
+"tub": "no",
+"clothed": "no",
+"region": [
+1308,
+338,
+447,
+447
+]
+}
+]
+}
+],
+"pools": [
+{
+"region_id": "f75v.p2",
+"page": "f75v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006209",
+"region": [
+1148,
+1706,
+1138,
+324
+],
+"hue": 71
+},
+{
+"region_id": "f78r.p1",
+"page": "f78r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006214",
+"region": [
+1231,
+1289,
+1015,
+687
+],
+"hue": 73
+},
+{
+"region_id": "f78r.p2",
+"page": "f78r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006214",
+"region": [
+1196,
+2753,
+995,
+639
+],
+"hue": 72
+},
+{
+"region_id": "f78v.p1",
+"page": "f78v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006215",
+"region": [
+993,
+1500,
+1683,
+504
+],
+"hue": 73
+},
+{
+"region_id": "f79r.p1",
+"page": "f79r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006216",
+"region": [
+88,
+2796,
+766,
+618
+],
+"hue": 73
+},
+{
+"region_id": "f79v.p2",
+"page": "f79v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006217",
+"region": [
+886,
+3006,
+1661,
+508
+],
+"hue": 73
+},
+{
+"region_id": "f80r.p1",
+"page": "f80r",
+"class": "blue",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006218",
+"region": [
+602,
+1764,
+784,
+122
+],
+"hue": 192
+},
+{
+"region_id": "f81r.p1",
+"page": "f81r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006220",
+"region": [
+433,
+252,
+1565,
+516
+],
+"hue": 79
+},
+{
+"region_id": "f81r.p2",
+"page": "f81r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006220",
+"region": [
+588,
+2626,
+1293,
+498
+],
+"hue": 77
+},
+{
+"region_id": "f81v.p1",
+"page": "f81v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006221",
+"region": [
+1067,
+2122,
+1524,
+798
+],
+"hue": 81
+},
+{
+"region_id": "f81v.p2",
+"page": "f81v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006221",
+"region": [
+2712,
+2922,
+124,
+600
+],
+"hue": 71
+},
+{
+"region_id": "f82r.p1",
+"page": "f82r",
+"class": "green",
+"set": "final",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006222",
+"region": [
+152,
+2764,
+1630,
+756
+],
+"hue": 79
+},
+{
+"region_id": "f82v.p1",
+"page": "f82v",
+"class": "blue",
+"set": "final",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006223",
+"region": [
+1615,
+344,
+314,
+181
+],
+"hue": 192
+},
+{
+"region_id": "f82v.p2",
+"page": "f82v",
+"class": "green",
+"set": "final",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006223",
+"region": [
+551,
+1224,
+410,
+361
+],
+"hue": 84
+},
+{
+"region_id": "f82v.p3",
+"page": "f82v",
+"class": "green",
+"set": "final",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006223",
+"region": [
+769,
+2802,
+1832,
+638
+],
+"hue": 72
+},
+{
+"region_id": "f83v.p1",
+"page": "f83v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006225",
+"region": [
+1726,
+699,
+872,
+473
+],
+"hue": 85
+},
+{
+"region_id": "f83v.p2",
+"page": "f83v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006225",
+"region": [
+1120,
+773,
+591,
+470
+],
+"hue": 86
+},
+{
+"region_id": "f83v.p3",
+"page": "f83v",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006225",
+"region": [
+1827,
+2346,
+620,
+497
+],
+"hue": 82
+},
+{
+"region_id": "f84r.p1",
+"page": "f84r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006226",
+"region": [
+237,
+582,
+2167,
+305
+],
+"hue": 86
+},
+{
+"region_id": "f84r.p2",
+"page": "f84r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006226",
+"region": [
+1341,
+1673,
+684,
+382
+],
+"hue": 83
+},
+{
+"region_id": "f84r.p3",
+"page": "f84r",
+"class": "green",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006226",
+"region": [
+499,
+1698,
+662,
+372
+],
+"hue": 88
+},
+{
+"region_id": "f84v.p1",
+"page": "f84v",
+"class": "blue",
+"set": "development",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006227",
+"region": [
+1952,
+579,
+365,
+449
+],
+"hue": 194
+}
+],
+"compare": [
+{
+"sign": "Pisces",
+"page": "f70v2",
+"voynich": "two fish one above the other, a line joining their mouths",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.014r.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_019.jp2/pct:15.00,26.25,13.75,13.13/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A098r.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006200",
+"region": [
+1632,
+1536,
+639,
+510
+]
+},
+{
+"sign": "Aries",
+"page": "f70v1",
+"voynich": "a thin ram eating from a bush",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.005v.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_017.jp2/pct:12.00,11.25,20.00,16.88/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A092v.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006201",
+"region": [
+1369,
+1443,
+565,
+439
+]
+},
+{
+"sign": "Taurus",
+"page": "f71v",
+"voynich": "a bull eating from a manger",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.006v.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_017.jp2/pct:12.00,29.07,20.00,15.00/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A093r.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+1101,
+1229,
+614,
+461
+]
+},
+{
+"sign": "Gemini",
+"page": "f72r2",
+"voynich": "a clothed man and woman holding hands",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.007v.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_017.jp2/pct:12.00,44.44,20.00,15.56/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A093v.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+4923,
+1199,
+376,
+447
+]
+},
+{
+"sign": "Cancer",
+"page": "f72r3",
+"voynich": "two crayfish, mouths joined",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.008v.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_017.jp2/pct:12.00,60.01,20.00,15.00/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A094r.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+"region": [
+6847,
+1294,
+352,
+328
+]
+},
+{
+"sign": "Leo",
+"page": "f72v3",
+"voynich": "a maneless lion, tail curled up",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.009v.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_017.jp2/pct:12.00,75.95,20.00,15.94/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A094v.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+"region": [
+1902,
+1507,
+650,
+501
+]
+},
+{
+"sign": "Virgo",
+"page": "f72v2",
+"voynich": "a clothed woman in a blue gown holding a star",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.010r.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_018.jp2/pct:25.00,11.25,18.75,15.00/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A095r.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+"region": [
+4411,
+1439,
+463,
+519
+]
+},
+{
+"sign": "Libra",
+"page": "f72v1",
+"voynich": "a balance, no hand holding it",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.011r.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_018.jp2/pct:25.00,27.19,18.75,15.00/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A095v.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006205",
+"region": [
+1448,
+1438,
+453,
+450
+]
+},
+{
+"sign": "Scorpio",
+"page": "f73r",
+"voynich": "a four-legged beast like a lizard: as in Cod. Sang. 827 alone",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.011v.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_018.jp2/pct:25.00,43.13,18.75,15.00/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A096r.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006206",
+"region": [
+1000,
+1514,
+456,
+456
+]
+},
+{
+"sign": "Sagittarius",
+"page": "f73v",
+"voynich": "a standing crossbowman: as in Cod. Sang. 827 alone",
+"morgan": "https://ica.themorgan.org/icaimages/3/m384.012r.jpg",
+"csg": "https://media.e-codices.ch/iip/csg/csg-0827/csg-0827_018.jp2/pct:25.00,59.07,18.75,15.94/!300,300/0/default.jpg",
+"cpg": "https://digi.ub.uni-heidelberg.de/iiif/2/cpg832%3A096v.jpg/pct:14,7,40,30/!300,300/0/default.jpg",
+"iiif": "https://collections.library.yale.edu/iiif/2/1006207",
+"region": [
+1398,
+1442,
+452,
+536
+]
+}
+]
+}
