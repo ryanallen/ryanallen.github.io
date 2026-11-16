@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich language fingerprints</title>
+<meta name="description" content="The Voynich text's numbers beside the languages around it in the 1400s, a cipher and text generators: which come nearest, and how the pages group by their own numbers.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#intro b{color:var(--text)}
+  #finding{margin:6px 12px 10px;padding:8px 12px;border-left:3px solid var(--accent);max-width:880px;font-size:14px;color:var(--text)}
+  #finding p{margin:4px 0}
+  h2.sec{font-size:17px;margin:20px 12px 6px;color:var(--text)}
+  .rank{padding:0 12px;max-width:900px}
+  .rrow{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin:3px 0}
+  .rrow .name{width:300px;flex:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)}
+  .rrow .track{flex:1;height:12px;background:#ffffff10;border-radius:3px;overflow:hidden}
+  .rrow .fill{display:block;height:12px}
+  .lang{background:#4a6fa5}.gen{background:#8a8f98}.ciph{background:#b5523b}
+  .rrow .d{width:40px;flex:none;text-align:right;font-variant-numeric:tabular-nums}
+  .key{padding:2px 12px;font-size:12px;color:var(--muted)}.key i{display:inline-block;width:10px;height:10px;margin:0 3px 0 10px;vertical-align:middle;border-radius:2px}
+  .gmeta{padding:0 12px 6px;font-size:13px;color:var(--muted);max-width:900px}
+  .pages{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px}
+  .pg{width:96px;font-size:11px;color:var(--muted);text-align:center}
+  .pg img{width:96px;height:128px;object-fit:contain;background:#2a2620;border-radius:4px;display:block}
+  @media (max-width:480px){.rrow .name{width:140px}.pg{width:calc(25% - 5px)}.pg img{width:100%;height:100px}}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="fingerprints.html">Voynich language fingerprints</a></h1>
+  <nav><a href="./">Trace the Voynich</a> · <a href="search.html">Search</a> · <a href="herbals.html">Herbal likenesses</a> · <a href="plants.html">Plants</a> · <a href="drawings.html">Drawings</a> · <a href="grid.html">Sign grid</a></nav>
+</header>
+<div id="intro">The Voynich text measured the same way as the languages a writer in the Alps of the early 1400s could have known: <b>Latin, German, northern Italian, French, Czech, Hebrew, Greek and Arabic</b>, each its nearest free text of the period, plain and with its words abbreviated, its vowels taken out or written as a syllabary. Beside them stand a cipher made to look like the Voynich and texts generated from rules. Each bar is a text's distance from the Voynich on four groups of numbers: its letters, its words, the order of its words, and how predictable it is to a small language model. Shorter is nearer; the bars start a little short of the nearest, so the gaps show. Counted on the 187 development pages.</div>
+<div id="finding"></div>
+<h2 class="sec">Nearest first</h2>
+<div class="key"><i class="lang"></i>a language<i class="ciph"></i>a cipher<i class="gen"></i>generated text</div>
+<div class="rank" id="rank">Loading…</div>
+<h2 class="sec">The pages, grouped by their own numbers</h2>
+<div class="gmeta">The pages were grouped with no labels given, from the shares of their commonest signs, a few of Zandbergen's criteria and their word lengths. The groups follow the scribes.</div>
+<div id="groups"></div>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  let d;
+  try { d = await (await fetch('data/fingerprints.json')).json(); } catch (e) { $('rank').textContent = 'The fingerprints did not load: ' + e.message; return; }
+  $('finding').innerHTML = d.finding.map(f => `<p>${esc(f)}</p>`).join('');
+  const max = Math.max(...d.ranking.map(r => r.distance)), min = Math.min(...d.ranking.map(r => r.distance)) * 0.8;
+  const cls = r => r.language === 'generated' ? 'gen' : r.language.startsWith('Naibbe') ? 'ciph' : 'lang';
+  const label = r => (r.language === 'generated' ? (/shuffled|last sign/.test(r.text) ? 'the Voynich remade: ' : '') + r.text.replace('generated: ', '') : `${r.language}: ${r.text.replace(/^[a-z]+-/, '').replace(/-/g, ' ')}`) + (r.form && !['plain', 'eva'].includes(r.form) ? ` (${r.form})` : '');
+  $('rank').innerHTML = d.ranking.map(r => `<div class="rrow"><span class="name" title="${esc(label(r))}">${esc(label(r))}</span><span class="track"><span class="fill ${cls(r)}" style="width:${(100 * (r.distance - min) / (max - min)).toFixed(1)}%"></span></span><span class="d">${r.distance.toFixed(2)}</span></div>`).join('');
+  const out = $('groups');
+  for (const g of d.groups) {
+    const h = document.createElement('h2'); h.className = 'sec'; h.textContent = `Group ${g.group}: ${g.pages.length} pages`; out.append(h);
+    const m = document.createElement('div'); m.className = 'gmeta';
+    m.innerHTML = `Currier language ${esc(g.currier)} · hand ${esc(g.hand)} · section ${esc(g.section)}<br>Nearest: ${esc(g.nearest)}`; out.append(m);
+    const p = document.createElement('div'); p.className = 'pages'; out.append(p);
+    p.innerHTML = g.pages.map(x => `<div class="pg"><img loading="lazy" alt="${esc(x.page)}" src="${esc(x.iiif)}/${esc(x.region)}/!150,200/0/default.jpg">${esc(x.page)}</div>`).join('');
+  }
+})();
+</script>
+</body>
+</html>

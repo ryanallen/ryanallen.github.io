@@ -1,0 +1,1803 @@
+{
+ "finding": [
+  "No language comes near: every language text, in every form, stands at 1.9 or more from the Voynich, within 0.25 of one another.",
+  "Nearer than any language stand a self-citation generator (1.18) and the Naibbe cipher (1.72); per sign, the Voynich is as predictable as they are and more than any language.",
+  "Of the languages, Latin herbal verse (Macer) and the Veneto Erbario come first, by margins too small to rank on.",
+  "The pages fall into three groups by their own numbers, and the groups follow the scribes: one writing system in several hands, not several books in several languages."
+ ],
+ "ranking": [
+  {
+   "rank": 1,
+   "text": "generated: self-citation text (Timm and Schinner)",
+   "language": "generated",
+   "kind": "generated (Timm and Schinner's own output)",
+   "form": "eva",
+   "distance": 1.182
+  },
+  {
+   "rank": 2,
+   "text": "generated: words shuffled",
+   "language": "generated",
+   "kind": "generated from the Voynich's first block",
+   "form": "eva",
+   "distance": 1.62
+  },
+  {
+   "rank": 3,
+   "text": "cipher-naibbe-pliny",
+   "language": "Naibbe cipher",
+   "kind": "cipher of natural history",
+   "form": "plain",
+   "distance": 1.716
+  },
+  {
+   "rank": 4,
+   "text": "generated: last sign drawn at random (u/whiteapplex)",
+   "language": "generated",
+   "kind": "generated from the Voynich's first block",
+   "form": "eva",
+   "distance": 1.886
+  },
+  {
+   "rank": 5,
+   "text": "latin-macer",
+   "language": "Latin",
+   "kind": "herbal verse",
+   "form": "plain",
+   "distance": 1.889
+  },
+  {
+   "rank": 6,
+   "text": "italian-erbario",
+   "language": "Italian (Veneto) and Latin",
+   "kind": "herbal labels",
+   "form": "plain",
+   "distance": 1.942
+  },
+  {
+   "rank": 7,
+   "text": "latin-trotula",
+   "language": "Latin",
+   "kind": "women's medicine",
+   "form": "vowels-out",
+   "distance": 1.979
+  },
+  {
+   "rank": 8,
+   "text": "czech-dalimil",
+   "language": "Czech",
+   "kind": "verse chronicle",
+   "form": "plain",
+   "distance": 2.008
+  },
+  {
+   "rank": 9,
+   "text": "hebrew-tanakh",
+   "language": "Hebrew",
+   "kind": "scripture",
+   "form": "plain",
+   "distance": 2.02
+  },
+  {
+   "rank": 10,
+   "text": "greek-nt",
+   "language": "Greek",
+   "kind": "scripture",
+   "form": "plain",
+   "distance": 2.043
+  },
+  {
+   "rank": 11,
+   "text": "french-menagier",
+   "language": "French",
+   "kind": "household book",
+   "form": "plain",
+   "distance": 2.089
+  },
+  {
+   "rank": 12,
+   "text": "italian-ricette",
+   "language": "Italian (Tuscan)",
+   "kind": "recipes",
+   "form": "plain",
+   "distance": 2.128
+  },
+  {
+   "rank": 13,
+   "text": "latin-naibbe-plain",
+   "language": "Latin",
+   "kind": "natural history of trees",
+   "form": "vowels-out",
+   "distance": 2.17
+  },
+  {
+   "rank": 14,
+   "text": "italian-erbario",
+   "language": "Italian (Veneto) and Latin",
+   "kind": "herbal labels",
+   "form": "abbreviated",
+   "distance": 2.175
+  },
+  {
+   "rank": 15,
+   "text": "latin-alchemical-herbal",
+   "language": "Latin",
+   "kind": "herbal",
+   "form": "plain",
+   "distance": 2.184
+  },
+  {
+   "rank": 16,
+   "text": "czech-dalimil",
+   "language": "Czech",
+   "kind": "verse chronicle",
+   "form": "vowels-out",
+   "distance": 2.187
+  },
+  {
+   "rank": 17,
+   "text": "latin-macer",
+   "language": "Latin",
+   "kind": "herbal verse",
+   "form": "abbreviated",
+   "distance": 2.22
+  },
+  {
+   "rank": 18,
+   "text": "latin-trotula",
+   "language": "Latin",
+   "kind": "women's medicine",
+   "form": "plain",
+   "distance": 2.248
+  },
+  {
+   "rank": 19,
+   "text": "french-menagier",
+   "language": "French",
+   "kind": "household book",
+   "form": "abbreviated",
+   "distance": 2.275
+  },
+  {
+   "rank": 20,
+   "text": "latin-macer",
+   "language": "Latin",
+   "kind": "herbal verse",
+   "form": "vowels-out",
+   "distance": 2.277
+  },
+  {
+   "rank": 21,
+   "text": "latin-alchemical-herbal",
+   "language": "Latin",
+   "kind": "herbal",
+   "form": "vowels-out",
+   "distance": 2.282
+  },
+  {
+   "rank": 22,
+   "text": "czech-dalimil",
+   "language": "Czech",
+   "kind": "verse chronicle",
+   "form": "abbreviated",
+   "distance": 2.297
+  },
+  {
+   "rank": 23,
+   "text": "italian-ricette",
+   "language": "Italian (Tuscan)",
+   "kind": "recipes",
+   "form": "abbreviated",
+   "distance": 2.347
+  },
+  {
+   "rank": 24,
+   "text": "german-guter-spise",
+   "language": "German (East Franconian)",
+   "kind": "recipes",
+   "form": "plain",
+   "distance": 2.353
+  }
+ ],
+ "groups": [
+  {
+   "group": 1,
+   "pages": [
+    {
+     "page": "f100r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006248",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f100v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+     "region": "0,0,2950,3715",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f101r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+     "region": "2950,0,4536,3715",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f101v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006250",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f17v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006107",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f23v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006119",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f24r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006120",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f24v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006121",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f31v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006135",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f3r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006080",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f3v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006081",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f52v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006177",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f58r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006188",
+     "region": "full",
+     "hand": "3",
+     "currier": "A",
+     "section": "S"
+    },
+    {
+     "page": "f67r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006194",
+     "region": "0,0,2510,3738",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f67r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006194",
+     "region": "2510,0,2462,3738",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f67v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+     "region": "2500,0,2559,3753",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f67v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006195",
+     "region": "0,0,2500,3753",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f68r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+     "region": "0,0,2500,3828",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f68r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+     "region": "2500,0,2020,3828",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f68r3",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006196",
+     "region": "4520,0,3473,3828",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f68v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+     "region": "5590,0,2545,3843",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f68v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+     "region": "3560,0,2030,3843",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f68v3",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006197",
+     "region": "0,0,3560,3843",
+     "hand": "4",
+     "currier": "-",
+     "section": "A"
+    },
+    {
+     "page": "f69r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006198",
+     "region": "full",
+     "hand": "4",
+     "currier": "-",
+     "section": "C"
+    },
+    {
+     "page": "f69v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+     "region": "0,0,3030,3876",
+     "hand": "4",
+     "currier": "-",
+     "section": "C"
+    },
+    {
+     "page": "f70r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+     "region": "3030,0,2440,3876",
+     "hand": "4",
+     "currier": "-",
+     "section": "C"
+    },
+    {
+     "page": "f70r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006199",
+     "region": "5470,0,3416,3876",
+     "hand": "4",
+     "currier": "-",
+     "section": "C"
+    },
+    {
+     "page": "f70v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006201",
+     "region": "full",
+     "hand": "4",
+     "currier": "-",
+     "section": "C"
+    },
+    {
+     "page": "f70v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006200",
+     "region": "full",
+     "hand": "4",
+     "currier": "-",
+     "section": "C"
+    },
+    {
+     "page": "f71r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006202",
+     "region": "full",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f71v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+     "region": "0,0,2330,3018",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f72r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+     "region": "2330,0,2100,3018",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f72r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+     "region": "4430,0,1580,3018",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f72r3",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006203",
+     "region": "6010,0,2855,3018",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f72v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006205",
+     "region": "full",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f72v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+     "region": "3490,0,2486,3794",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f72v3",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006204",
+     "region": "0,0,3490,3794",
+     "hand": "4",
+     "currier": "-",
+     "section": "Z"
+    },
+    {
+     "page": "f87r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006232",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f87v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1043429",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f88r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f88v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+     "region": "0,0,2920,3777",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f89r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+     "region": "5330,0,3748,3777",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f89v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+     "region": "0,0,3000,3761",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f89v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f90r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+     "region": "3000,0,2380,3761",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f90v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006237",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f90v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006236",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f93r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006238",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f93v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006239",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f96r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006244",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f96v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006245",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "fRos",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+     "region": "full",
+     "hand": "4",
+     "currier": "B",
+     "section": "T"
+    }
+   ],
+   "currier": "A:26 -:24 B:2",
+   "hand": "1:25 4:25 2:1 3:1",
+   "section": "H:17 A:10 P:9 Z:8 C:6 T:1 S:1",
+   "nearest": "hebrew-tanakh (plain) 1.55; latin-macer (plain) 1.63; latin-trotula (vowels-out) 1.68"
+  },
+  {
+   "group": 2,
+   "pages": [
+    {
+     "page": "f103r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006254",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f103v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006255",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f104r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006256",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f104v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006257",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f107r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006262",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f107v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006263",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f108r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006264",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f108v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006265",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f111r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006266",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f111v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006267",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f112r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006268",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f112v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006269",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f115r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006274",
+     "region": "full",
+     "hand": "@",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f115v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006275",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f116r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006276",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "S"
+    },
+    {
+     "page": "f18v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006109",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f23r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006118",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f26r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006124",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f26v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006125",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f31r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006134",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f33r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006138",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f33v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006139",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f34r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006140",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f34v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006141",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f39r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006150",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f39v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006151",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f40r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006152",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f40v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006153",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f41r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006154",
+     "region": "full",
+     "hand": "5",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f41v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006155",
+     "region": "full",
+     "hand": "5",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f43r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006158",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f43v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006159",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f46r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006164",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f46v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006165",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f48r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006168",
+     "region": "full",
+     "hand": "5",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f48v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006169",
+     "region": "full",
+     "hand": "5",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f50r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006172",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f50v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006173",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f55r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006182",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f55v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006183",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f58v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006189",
+     "region": "full",
+     "hand": "3",
+     "currier": "A",
+     "section": "S"
+    },
+    {
+     "page": "f75r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006208",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f75v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006209",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f76r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006210",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f76v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006211",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f78r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006214",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f78v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006215",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f79r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006216",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f79v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006217",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f80r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006218",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f80v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006219",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f81r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006220",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f81v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006221",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f83r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006224",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f83v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006225",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f84r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006226",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f84v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006227",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "B"
+    },
+    {
+     "page": "f85r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006228",
+     "region": "full",
+     "hand": "2",
+     "currier": "B",
+     "section": "T"
+    },
+    {
+     "page": "f85r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+     "region": "0,0,3005,3890",
+     "hand": "2",
+     "currier": "B",
+     "section": "T"
+    },
+    {
+     "page": "f86v3",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006230",
+     "region": "2325,0,2572,3788",
+     "hand": "2",
+     "currier": "B",
+     "section": "T"
+    },
+    {
+     "page": "f86v4",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+     "region": "3005,0,2475,3890",
+     "hand": "2",
+     "currier": "B",
+     "section": "T"
+    },
+    {
+     "page": "f86v5",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006230",
+     "region": "0,0,2325,3788",
+     "hand": "2",
+     "currier": "B",
+     "section": "T"
+    },
+    {
+     "page": "f86v6",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006229",
+     "region": "5480,0,2274,3890",
+     "hand": "2",
+     "currier": "B",
+     "section": "T"
+    },
+    {
+     "page": "f89r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+     "region": "2920,0,2410,3777",
+     "hand": "1",
+     "currier": "A",
+     "section": "P"
+    },
+    {
+     "page": "f94r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006240",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f94v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006241",
+     "region": "0,0,2985,3801",
+     "hand": "3",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f95r1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006241",
+     "region": "2985,0,2505,3801",
+     "hand": "3",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f95r2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006241",
+     "region": "5490,0,2152,3801",
+     "hand": "3",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f95v1",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006243",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "H"
+    },
+    {
+     "page": "f95v2",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006242",
+     "region": "full",
+     "hand": "3",
+     "currier": "B",
+     "section": "H"
+    }
+   ],
+   "currier": "B:66 A:4",
+   "hand": "2:41 3:21 5:4 1:3 @:1",
+   "section": "H:31 S:16 B:16 T:6 P:1",
+   "nearest": "hebrew-tanakh (plain) 2.06; cipher-naibbe-pliny (plain) 2.08; italian-erbario (plain) 2.16"
+  },
+  {
+   "group": 3,
+   "pages": [
+    {
+     "page": "f10r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006094",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f10v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006095",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f11r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006096",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f13r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006098",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f13v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006099",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f14r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006100",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f14v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006101",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f15r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006102",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f15v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006103",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f17r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006106",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f18r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006108",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f19r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006110",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f19v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006111",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f1r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006076",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f1v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006077",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f20r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006112",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f20v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006113",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f21r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006114",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f21v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006115",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f22r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006116",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f22v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006117",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f25v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006123",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f27r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006126",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f27v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006127",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f28r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006128",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f28v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006129",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f29r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006130",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f29v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006131",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f2r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006078",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f2v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006079",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f30r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006132",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f30v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006133",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f32r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006136",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f32v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006137",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f36r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006144",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f36v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006145",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f37r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006146",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f37v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006147",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f44r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006160",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f44v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006161",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f45r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006162",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f45v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006163",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f49r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006170",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f49v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006171",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f4r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006082",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f4v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006083",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f52r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006176",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f53r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006178",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f53v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006179",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f56r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006184",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f56v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006185",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f6r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006086",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f6v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006087",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f7r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006088",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f7v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006089",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f8r",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006090",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    },
+    {
+     "page": "f8v",
+     "iiif": "https://collections.library.yale.edu/iiif/2/1006091",
+     "region": "full",
+     "hand": "1",
+     "currier": "A",
+     "section": "H"
+    }
+   ],
+   "currier": "A:57",
+   "hand": "1:57",
+   "section": "H:57",
+   "nearest": "latin-macer (plain) 1.71; greek-nt (plain) 1.89; latin-macer (abbreviated) 1.97"
+  }
+ ],
+ "perplexity": [
+  {
+   "text": "voynich-block1",
+   "form": "eva",
+   "gru": 3.3659,
+   "kn": 3.5223
+  },
+  {
+   "text": "voynich-block2",
+   "form": "eva",
+   "gru": 3.9505,
+   "kn": 4.2245
+  },
+  {
+   "text": "voynich-block3",
+   "form": "eva",
+   "gru": 4.41,
+   "kn": 4.7811
+  },
+  {
+   "text": "voynich-block4",
+   "form": "eva",
+   "gru": 3.056,
+   "kn": 3.1368
+  },
+  {
+   "text": "latin-alchemical-herbal",
+   "form": "plain",
+   "gru": 5.3236,
+   "kn": 3.904
+  },
+  {
+   "text": "latin-macer",
+   "form": "plain",
+   "gru": 8.231,
+   "kn": 6.1213
+  },
+  {
+   "text": "latin-trotula",
+   "form": "plain",
+   "gru": 7.7017,
+   "kn": 6.1116
+  },
+  {
+   "text": "latin-naibbe-plain",
+   "form": "plain",
+   "gru": 7.7424,
+   "kn": 6.6918
+  },
+  {
+   "text": "cipher-naibbe-pliny",
+   "form": "plain",
+   "gru": 3.5644,
+   "kn": 3.6458
+  },
+  {
+   "text": "italian-ricette",
+   "form": "plain",
+   "gru": 5.1945,
+   "kn": 3.4378
+  },
+  {
+   "text": "italian-erbario",
+   "form": "plain",
+   "gru": 8.7676,
+   "kn": 6.7841
+  },
+  {
+   "text": "german-guter-spise",
+   "form": "plain",
+   "gru": 5.7715,
+   "kn": 4.4819
+  },
+  {
+   "text": "french-menagier",
+   "form": "plain",
+   "gru": 7.6143,
+   "kn": 5.7665
+  },
+  {
+   "text": "czech-dalimil",
+   "form": "plain",
+   "gru": 10.6693,
+   "kn": 6.5483
+  },
+  {
+   "text": "hebrew-tanakh",
+   "form": "plain",
+   "gru": 5.6511,
+   "kn": 5.6162
+  },
+  {
+   "text": "greek-nt",
+   "form": "plain",
+   "gru": 7.2019,
+   "kn": 5.561
+  },
+  {
+   "text": "arabic-quran",
+   "form": "plain",
+   "gru": 9.1944,
+   "kn": 7.5942
+  },
+  {
+   "text": "generated: uniform signs",
+   "form": "eva",
+   "gru": 27.3948,
+   "kn": 39.7288
+  },
+  {
+   "text": "generated: signs at their frequencies",
+   "form": "eva",
+   "gru": 13.3417,
+   "kn": 18.3892
+  },
+  {
+   "text": "generated: words shuffled",
+   "form": "eva",
+   "gru": 3.53,
+   "kn": 3.6807
+  },
+  {
+   "text": "generated: grille of stems and endings",
+   "form": "eva",
+   "gru": 3.2612,
+   "kn": 3.3001
+  },
+  {
+   "text": "generated: last sign drawn at random (u/whiteapplex)",
+   "form": "eva",
+   "gru": 4.7953,
+   "kn": 5.1161
+  },
+  {
+   "text": "generated: self-citation text (Timm and Schinner)",
+   "form": "eva",
+   "gru": 3.9189,
+   "kn": 4.3183
+  }
+ ]
+}
