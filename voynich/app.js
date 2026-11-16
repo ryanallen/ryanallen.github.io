@@ -448,7 +448,7 @@
         g.putImageData(d, 0, 0);
       };
       crop.complete && crop.naturalWidth ? paintIt() : crop.addEventListener('load', paintIt, { once: true });
-      cv.style.width = Math.round(64 * L.word.w / L.word.h) + 'px';
+      cv.style.width = Math.min(240, Math.round(64 * L.word.w / L.word.h)) + 'px';
       fig.onclick = () => {
         // take this version's pixels of this letter, keep the rest of the word as it is
         L.undo.push(L.labels.slice());
