@@ -1,0 +1,4384 @@
+{
+ "height": 1500,
+ "plants": [
+  {
+   "id": "f2v.a",
+   "page": "f2v",
+   "plant": "water-lily (Nymphaea or Nymphoides)",
+   "verdict": "secure",
+   "reason": "one large round floating leaf notched at the stalk and a single cup-shaped flower; compared with the Nenufar of Egerton 747, the Manfredus, Casanatense 459 and Sloane 4016 and found drawn the same way, better (#1686); six proposers agree, Zandbergen by leaf and flower (#1633)",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "water-lily (Nymphaea odorata)",
+     "by": "a mailing-list member",
+     "where": "#1506, voynich.nu"
+    },
+    {
+     "plant": "fringed water-lily (Nymphoides peltata)",
+     "by": "Rene Zandbergen",
+     "where": "#1633, voynich.nu/hist/list/a1996.txt messages 138 and 379"
+    },
+    {
+     "plant": "water-lily (Nenufar)",
+     "by": "a mailing-list member",
+     "where": "#1686, voynich.nu"
+    },
+    {
+     "plant": "sea bindweed",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Water Lily (Nymphaea candida)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Nymphoides (Nymphoides)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006079",
+   "region": [
+    759,
+    177,
+    1671,
+    3468
+   ]
+  },
+  {
+   "id": "f17v.a",
+   "page": "f17v",
+   "plant": "black bryony (Tamus communis)",
+   "verdict": "likely",
+   "reason": "a long hairy root, oval pointed leaves and long sprays of small red berries; the Erbario's Vita nigra (fol. 13v) is black bryony with red berries; Petersen, funny bunny and Sherwood (yam, its family) agree",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "black bryony (Tamus communis), or Smilax, or Polygonum dumetorum",
+     "by": "Theodore Petersen",
+     "where": "#1589, voynich.nu/hist/list/a1998G.txt message 65"
+    },
+    {
+     "plant": "black bryony (Tamus communis)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Yams (Dioscorea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006107",
+   "region": [
+    403,
+    151,
+    2089,
+    3423
+   ]
+  },
+  {
+   "id": "f96v.a",
+   "page": "f96v",
+   "plant": "black bryony (Tamus communis)",
+   "verdict": "likely",
+   "reason": "a rough swollen root, arrowhead leaves and hanging clusters of small red berries, the plant of f17v and f99r (Zandbergen, #1589; Landini, #1427); Sherwood names it black bryony",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Black Bryony (Tamus communis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006245",
+   "region": [
+    320,
+    246,
+    2267,
+    3352
+   ]
+  },
+  {
+   "id": "f6v.a",
+   "page": "f6v",
+   "plant": "castor oil plant (Ricinus communis)",
+   "verdict": "likely",
+   "reason": "star-shaped palmate leaves and round spiny heads at the branch tips, the castor's leaf and capsule; drawn so as Cataputia maior in the Wenceslas herbal, the Manfredus and Sloane 4016 (#1684); thorn apple, globe thistle and sea holly proposed against it",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "castor oil plant (Ricinus communis)",
+     "by": "Diane O'Donovan",
+     "where": "#1684, #1840, #1843, voynich.nu/hist/list/a2012E.txt"
+    },
+    {
+     "plant": "castor oil plant (Ricinus communis)",
+     "by": "Dana Scott",
+     "where": "#1843, voynich.nu/hist/list/a2012E.txt messages 63-71"
+    },
+    {
+     "plant": "thorn apple (Datura stramonium)",
+     "by": "funny bunny",
+     "where": "#1684, #1840, voynich.nu/hist/list/a2010B.txt message 141"
+    },
+    {
+     "plant": "globe thistle (Echinops)",
+     "by": "Diane O'Donovan",
+     "where": "#1843, voynich.nu/hist/list/a2012E.txt messages 63-71"
+    },
+    {
+     "plant": "Sea Holly (Eryngium maritimum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006087",
+   "region": [
+    1063,
+    582,
+    1443,
+    2987
+   ]
+  },
+  {
+   "id": "f2r.a",
+   "page": "f2r",
+   "plant": "cornflower or knapweed (Centaurea)",
+   "verdict": "likely",
+   "reason": "deeply cut narrow leaves and three heads of fine florets on a scaly base, the Centaurea head; Scott (Centaurea cyanus) and Sherwood (Centaurea diffusa) agree on the genus",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "bachelor's button (Centaurea cyanus)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt"
+    },
+    {
+     "plant": "tree aloe (Aloe barberae)",
+     "by": "funny bunny",
+     "where": "#1612, voynich.nu/hist/list/a2011D.txt message 40"
+    },
+    {
+     "plant": "lotus (Nelumbo) leaf with a mallow-like flower",
+     "by": "Diane O'Donovan",
+     "where": "#1843, voynich.nu/hist/list/a2012E.txt messages 63-71"
+    },
+    {
+     "plant": "Cornflower (Centaurea cyanus)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Diffuse Knapweed (Centaurea diffusa)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006078",
+   "region": [
+    578,
+    302,
+    1885,
+    3368
+   ]
+  },
+  {
+   "id": "f15v.a",
+   "page": "f15v",
+   "plant": "herb Paris (Paris quadrifolia)",
+   "verdict": "likely",
+   "reason": "four broad leaves in a single whorl forming a cross, one with a dark round spot where herb Paris bears its one berry; the Erbario's .paris. (fol. 25r) is drawn as the same cross of four leaves; Petersen and Sherwood agree, garlic proposed against it",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "garlic (Allium)",
+     "by": "a mailing-list member",
+     "where": "#1442, voynich.nu/hist/list/a2008D.txt message 33"
+    },
+    {
+     "plant": "garlic (Allium)",
+     "by": "funny bunny",
+     "where": "#1835, voynich.nu/hist/list/a2008E.txt messages 26-34"
+    },
+    {
+     "plant": "herb Paris (Paris quadrifolia)",
+     "by": "Theodore Petersen",
+     "where": "#1589, voynich.nu/hist/list/a1998H.txt, as Zandbergen reports and doubts"
+    },
+    {
+     "plant": "Herb Paris (Paris quadrifolia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006103",
+   "region": [
+    1007,
+    378,
+    1636,
+    3247
+   ]
+  },
+  {
+   "id": "f94r.a",
+   "page": "f94r",
+   "plant": "moonwort (Botrychium lunaria)",
+   "verdict": "likely",
+   "reason": "rows of small round leaflets on curved stems and a spray of small dark round buds above, moonwort's leaflets and spore spike; the Erbario's Lunaria (fol. 79v) is drawn with the same rows of cupped leaflets; four proposers agree",
+   "women": "none found",
+   "women_source": "no chapter in Macer Floridus (Choulant 1832) and not named in the Latin gynaecology handbook (CELT L600011)",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "moonwort (Botrychium lunaria)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt to a2001K.txt"
+    },
+    {
+     "plant": "moonwort (Botrychium lunaria)",
+     "by": "Philip Marshall",
+     "where": "#1539, voynich.nu/hist/list/a2001E.txt message 14"
+    },
+    {
+     "plant": "Botrychium lunaria",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Moonwort Moonfern (Botrychium lunaria)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006240",
+   "region": [
+    175,
+    501,
+    2327,
+    3153
+   ]
+  },
+  {
+   "id": "f9v.a",
+   "page": "f9v",
+   "plant": "wild pansy (Viola tricolor)",
+   "verdict": "likely",
+   "reason": "large five-petaled blue flowers of the pansy form, one pale yellow, on a slender branching herb; seven proposers agree (Petersen, Ethel Voynich, Stolfi, Scott, Sherwood, funny bunny); no period drawing checked yet",
+   "women": "brings on the menses",
+   "women_source": "Macer Floridus, De viribus herbarum, ch. XL Violae, lines 1360-1365 (Choulant 1832): the seed in wine purges the menses, the decoction eases a swelling of the womb",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "wild pansy (Viola tricolor)",
+     "by": "Theodore Petersen",
+     "where": "#1612, voynich.nu/hist/list/a2011E.txt message 307"
+    },
+    {
+     "plant": "a violet (Viola)",
+     "by": "funny bunny",
+     "where": "#1612, voynich.nu/hist/list/a2011E.txt message 307"
+    },
+    {
+     "plant": "a violet (Viola)",
+     "by": "Ethel Voynich",
+     "where": "#1612, voynich.nu/hist/list/a2011E.txt message 314"
+    },
+    {
+     "plant": "a violet (Viola)",
+     "by": "Jorge Stolfi",
+     "where": "#1646, voynich.nu/hist/list/a1998J.txt message 37"
+    },
+    {
+     "plant": "Heartsease, Wild Pansy (Viola tricolor)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Viola (Violaceae)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006093",
+   "region": [
+    1266,
+    709,
+    1392,
+    2683
+   ]
+  },
+  {
+   "id": "f13r.a",
+   "page": "f13r",
+   "plant": "banana (Musa)",
+   "verdict": "possible",
+   "reason": "very large round leaves and a pointed flower bud; two proposers; a tropical plant hard to square with a European herbal",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "banana (Musa)",
+     "by": "funny bunny",
+     "where": "#1792, voynich.nu"
+    },
+    {
+     "plant": "Banana (Banana)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006098",
+   "region": [
+    447,
+    894,
+    1986,
+    2681
+   ]
+  },
+  {
+   "id": "f33r.a",
+   "page": "f33r",
+   "plant": "bladder campion (Silene vulgaris)",
+   "verdict": "possible",
+   "reason": "round flower heads with a ribbed swollen base like a campion's calyx; Sherwood and funny bunny",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "campion and mandrake",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Bladder Campion (Silene vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006138",
+   "region": [
+    200,
+    699,
+    2296,
+    2920
+   ]
+  },
+  {
+   "id": "f10r.a",
+   "page": "f10r",
+   "plant": "chicory (Cichorium intybus)",
+   "verdict": "possible",
+   "reason": "one blue thistle-like flower head; two proposers; the red tubers and toothed paired leaves do not fit",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "chicory (Cichorium)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Chicory Endive (Cichorium pumilum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006094",
+   "region": [
+    174,
+    1072,
+    2268,
+    2543
+   ]
+  },
+  {
+   "id": "f1v.a",
+   "page": "f1v",
+   "plant": "deadly nightshade (Atropa belladonna)",
+   "verdict": "possible",
+   "reason": "oval leaves and one dark round berry-like head at the top fit belladonna; three proposers agree, but the woven root and the alternately colored leaves fit no plant",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "nightshade (Solanum)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Deadly Nightshade (Atropa belladonna, Hyoscyamus niger, Solanum nigrum, Solanum dulcamara)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Deadly Nightshade (Atropa belladonna)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006077",
+   "region": [
+    329,
+    380,
+    2354,
+    3316
+   ]
+  },
+  {
+   "id": "f65r.a",
+   "page": "f65r",
+   "plant": "dropwort (Filipendula vulgaris)",
+   "verdict": "possible",
+   "reason": "roots of spindle tubers joined on threads, as the Erbario draws its Philipendula (fol. 95r); the broad lobed leaves and starry umbel do not fit dropwort",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Parthenium integrifolium",
+     "by": "funny bunny",
+     "where": "#1600, voynich.nu/hist/list/a2009F.txt message 121"
+    },
+    {
+     "plant": "saltwort",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "meadowsweet (Filipendula)",
+     "by": "the German Voynich wiki",
+     "where": "voynich-ms.de/wiki/F65r, Wayback copy of 27 February 2014"
+    },
+    {
+     "plant": "Ladies Mantle (Alchemilla vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006190",
+   "region": [
+    99,
+    99,
+    2372,
+    3509
+   ]
+  },
+  {
+   "id": "f16r.a",
+   "page": "f16r",
+   "plant": "hemp (Cannabis sativa)",
+   "verdict": "possible",
+   "reason": "palmate leaves of five to seven narrow pointed leaflets and dense clusters of small buds, the hemp leaf; Sherwood; funny bunny reads lavender",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "lavender (Lavandula)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Cannabis (Cannabis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006104",
+   "region": [
+    927,
+    301,
+    1353,
+    3257
+   ]
+  },
+  {
+   "id": "f51r.a",
+   "page": "f51r",
+   "plant": "henbane (Hyoscyamus niger)",
+   "verdict": "possible",
+   "reason": "hairy fringed leaves and five-petaled flowers; three proposers name henbane, two sea rocket",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "henbane (Hyoscyamus niger)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt"
+    },
+    {
+     "plant": "henbane with poppy",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "sea rocket (Cakile)",
+     "by": "SD",
+     "where": "#1624, voynich.nu/hist/list/a2012I.txt messages 63-316"
+    },
+    {
+     "plant": "Searocket (Cakile maritima)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006174",
+   "region": [
+    552,
+    251,
+    1957,
+    3413
+   ]
+  },
+  {
+   "id": "f7v.a",
+   "page": "f7v",
+   "plant": "lungwort (Pulmonaria)",
+   "verdict": "possible",
+   "reason": "oval hairy leaves with dark spots, lungwort's spotted leaf; one proposer (Scott); Sherwood reads bog myrtle",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "lungwort (Pulmonaria)",
+     "by": "Dana Scott",
+     "where": "#1835, voynich.nu/hist/list/a2008E.txt messages 26-34"
+    },
+    {
+     "plant": "Bog Myrtle (Myrica gale)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006089",
+   "region": [
+    962,
+    1088,
+    1418,
+    2531
+   ]
+  },
+  {
+   "id": "f30v.a",
+   "page": "f30v",
+   "plant": "meadowsweet (Filipendula ulmaria)",
+   "verdict": "possible",
+   "reason": "pinnate toothed leaves and sprays of small round seed heads; one proposer",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "meadowsweet (Filipendula ulmaria)",
+     "by": "Dana Scott",
+     "where": "#1835, voynich.nu/hist/list/a2008E.txt messages 26-34"
+    },
+    {
+     "plant": "henbane seeds",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Dodder (Cuscuta europaea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006133",
+   "region": [
+    754,
+    754,
+    1985,
+    2915
+   ]
+  },
+  {
+   "id": "f3v.a",
+   "page": "f3v",
+   "plant": "monkshood (Aconitum)",
+   "verdict": "possible",
+   "reason": "dark blue hooded flowers over star-shaped lobed leaves; the jointed horizontal root does not fit",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "monkshood (Aconitum)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Dungwort (Helleborus foetidus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006081",
+   "region": [
+    304,
+    203,
+    2202,
+    3341
+   ]
+  },
+  {
+   "id": "f21r.a",
+   "page": "f21r",
+   "plant": "rupturewort (Herniaria)",
+   "verdict": "possible",
+   "reason": "many slender stems crowded with tiny oval leaves; one proposer",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "rupturewort (Herniaria)",
+     "by": "Dana Scott",
+     "where": "#1660, voynich.nu/hist/list/a2001K.txt messages 23 and 35"
+    },
+    {
+     "plant": "Pimpernel (Anagallis arvensis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006114",
+   "region": [
+    499,
+    1847,
+    1797,
+    1747
+   ]
+  },
+  {
+   "id": "f56r.a",
+   "page": "f56r",
+   "plant": "sundew (Drosera)",
+   "verdict": "possible",
+   "reason": "radiating tufts of spiky leaves with dark blots; two proposers",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "sundew (Drosera)",
+     "by": "funny bunny",
+     "where": "#1600, voynich.nu/hist/list/a2009A.txt messages 158-163"
+    },
+    {
+     "plant": "Sundews (Drosera�)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006184",
+   "region": [
+    494,
+    470,
+    1977,
+    3139
+   ]
+  },
+  {
+   "id": "f93r.a",
+   "page": "f93r",
+   "plant": "sunflower (Helianthus annuus)",
+   "verdict": "possible",
+   "reason": "a huge dotted mound-shaped head over paired leaves; O'Neill's reading, which would make the book post-Columbian and is not generally accepted (#834); Sherwood reads artichoke",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "sunflower (Helianthus annuus)",
+     "by": "Hugh O'Neill",
+     "where": "#834, voynich.nu; #649, O'Neill (Speculum 19, 1944)"
+    },
+    {
+     "plant": "Artichoke (Cynara cardunculus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006238",
+   "region": [
+    401,
+    150,
+    2104,
+    3507
+   ]
+  },
+  {
+   "id": "f25v.a",
+   "page": "f25v",
+   "plant": "tarragon (Artemisia dracunculus)",
+   "verdict": "possible",
+   "reason": "the small dragon beside the root read as a pun on dragonwort; two proposers; the star-shaped rosette of narrow leaves fits tarragon loosely",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "tarragon (Artemisia dracunculus)",
+     "by": "Don Hoffmann",
+     "where": "#1479, voynich.nu, message 220, 29 February 2012"
+    },
+    {
+     "plant": "tarragon (dragonwort)",
+     "by": "funny bunny",
+     "where": "#1843, voynich.nu/hist/list/a2012E.txt messages 63-71"
+    },
+    {
+     "plant": "Woad (Isatis tinctoria)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006123",
+   "region": [
+    879,
+    729,
+    1859,
+    2965
+   ]
+  },
+  {
+   "id": "f14r.a",
+   "page": "f14r",
+   "plant": "viper's grass or bistort",
+   "verdict": "possible",
+   "reason": "long sword-like leaves and a single flower over a bud; two different proposals",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "amphibious bistort (Persicaria amphibia)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Black Salsify Vipers Grass (Scorzonera)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006100",
+   "region": [
+    848,
+    199,
+    1545,
+    3340
+   ]
+  },
+  {
+   "id": "f100r.a",
+   "page": "f100r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [
+    {
+     "plant": "pepper",
+     "by": "Hugh O'Neill",
+     "where": "#381, voynich.nu, O'Neill (Speculum 19, 1944)"
+    },
+    {
+     "plant": "Palma Christi (a hand-rooted orchid)",
+     "by": "two mailing-list members",
+     "where": "#1572, voynich.nu/hist/list/a2011G.txt messages 241 and 255"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006248",
+   "region": [
+    300,
+    50,
+    2354,
+    1077
+   ]
+  },
+  {
+   "id": "f100r.b",
+   "page": "f100r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006248",
+   "region": [
+    300,
+    1452,
+    2354,
+    851
+   ]
+  },
+  {
+   "id": "f100v.a",
+   "page": "f100v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    495,
+    74,
+    2454,
+    1164
+   ]
+  },
+  {
+   "id": "f100v.b",
+   "page": "f100v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    495,
+    1288,
+    2454,
+    991
+   ]
+  },
+  {
+   "id": "f101r.a",
+   "page": "f101r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    3000,
+    50,
+    4485,
+    817
+   ]
+  },
+  {
+   "id": "f101r.b",
+   "page": "f101r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    3000,
+    817,
+    4485,
+    421
+   ]
+  },
+  {
+   "id": "f101r.c",
+   "page": "f101r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006249",
+   "region": [
+    3000,
+    1932,
+    4485,
+    817
+   ]
+  },
+  {
+   "id": "f101v.a",
+   "page": "f101v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006250",
+   "region": [
+    504,
+    50,
+    2194,
+    1209
+   ]
+  },
+  {
+   "id": "f101v.b",
+   "page": "f101v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006250",
+   "region": [
+    504,
+    1260,
+    2194,
+    1008
+   ]
+  },
+  {
+   "id": "f102r1.a",
+   "page": "f102r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    3045,
+    52,
+    2421,
+    799
+   ]
+  },
+  {
+   "id": "f102r1.b",
+   "page": "f102r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    3045,
+    850,
+    2421,
+    773
+   ]
+  },
+  {
+   "id": "f102r1.c",
+   "page": "f102r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    3045,
+    2318,
+    2421,
+    1288
+   ]
+  },
+  {
+   "id": "f102r2.a",
+   "page": "f102r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [
+    {
+     "plant": "frog-bit (Hydrocharis morsus-ranae)",
+     "by": "a mailing-list member",
+     "where": "#1727, voynich.nu"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    5542,
+    52,
+    2635,
+    1571
+   ]
+  },
+  {
+   "id": "f102r2.b",
+   "page": "f102r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006251",
+   "region": [
+    5542,
+    2576,
+    2635,
+    1030
+   ]
+  },
+  {
+   "id": "f102v1.a",
+   "page": "f102v1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006253",
+   "region": [
+    542,
+    49,
+    2295,
+    1183
+   ]
+  },
+  {
+   "id": "f102v1.b",
+   "page": "f102v1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006253",
+   "region": [
+    542,
+    2021,
+    2295,
+    690
+   ]
+  },
+  {
+   "id": "f102v2.a",
+   "page": "f102v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006252",
+   "region": [
+    455,
+    101,
+    2525,
+    1037
+   ]
+  },
+  {
+   "id": "f102v2.b",
+   "page": "f102v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006252",
+   "region": [
+    455,
+    1265,
+    2525,
+    961
+   ]
+  },
+  {
+   "id": "f10v.a",
+   "page": "f10v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Twinflower (Linnaea borealis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006095",
+   "region": [
+    1139,
+    1215,
+    1620,
+    2379
+   ]
+  },
+  {
+   "id": "f11r.a",
+   "page": "f11r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Rosemary (Rosmarinus officinalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006096",
+   "region": [
+    75,
+    924,
+    2371,
+    2646
+   ]
+  },
+  {
+   "id": "f11v.a",
+   "page": "f11v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Turmeric (Curcuma longa)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006097",
+   "region": [
+    1132,
+    151,
+    1586,
+    3423
+   ]
+  },
+  {
+   "id": "f13v.a",
+   "page": "f13v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Honeysuckles Woodbines (Lonicera periclymenum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006099",
+   "region": [
+    1081,
+    377,
+    1307,
+    3242
+   ]
+  },
+  {
+   "id": "f14v.a",
+   "page": "f14v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Wood Betony Heal-all Sel-heal Woundwort (Stachys monnieri)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006101",
+   "region": [
+    981,
+    1031,
+    1735,
+    2590
+   ]
+  },
+  {
+   "id": "f15r.a",
+   "page": "f15r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Sow Thistles (Sonchus oleraceus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006102",
+   "region": [
+    423,
+    149,
+    1765,
+    3381
+   ]
+  },
+  {
+   "id": "f16v.a",
+   "page": "f16v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "sundew (Drosera rotundifolia)",
+     "by": "Don Hoffmann",
+     "where": "#1488, voynich.nu, message 58, 4 September 2012"
+    },
+    {
+     "plant": "Chrysanthemum (Chrysanthemum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006105",
+   "region": [
+    1087,
+    253,
+    1568,
+    3338
+   ]
+  },
+  {
+   "id": "f17r.a",
+   "page": "f17r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "gentian (Gentiana)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Cupids Dart (Catananche caerulea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006106",
+   "region": [
+    749,
+    674,
+    1722,
+    2870
+   ]
+  },
+  {
+   "id": "f18r.a",
+   "page": "f18r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Aster (Aster alpinus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006108",
+   "region": [
+    1023,
+    299,
+    1198,
+    3244
+   ]
+  },
+  {
+   "id": "f18v.a",
+   "page": "f18v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "stinking hellebore (Helleborus foetidus)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Fluted pumpkin (Telfairia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006109",
+   "region": [
+    580,
+    378,
+    1991,
+    3252
+   ]
+  },
+  {
+   "id": "f19r.a",
+   "page": "f19r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Greek Valerian (Polemonium coeruleum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006110",
+   "region": [
+    474,
+    674,
+    1921,
+    2820
+   ]
+  },
+  {
+   "id": "f19v.a",
+   "page": "f19v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Nailwort (Draba nivalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006111",
+   "region": [
+    1508,
+    201,
+    1106,
+    3266
+   ]
+  },
+  {
+   "id": "f20r.a",
+   "page": "f20r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "rosemary and wormwood",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Milk vetch (Astragalus hypoglottis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006112",
+   "region": [
+    649,
+    1622,
+    1572,
+    1971
+   ]
+  },
+  {
+   "id": "f20v.a",
+   "page": "f20v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Cardoon (Cynara cardunculus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006113",
+   "region": [
+    754,
+    1030,
+    1910,
+    2588
+   ]
+  },
+  {
+   "id": "f21v.a",
+   "page": "f21v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Burning bush False Dittany White Dittany Gas Plant (Dictamnus albus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006115",
+   "region": [
+    905,
+    804,
+    1633,
+    2839
+   ]
+  },
+  {
+   "id": "f22r.a",
+   "page": "f22r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Common Vervain Holy Herb (Verbena officinalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006116",
+   "region": [
+    973,
+    699,
+    1360,
+    2845
+   ]
+  },
+  {
+   "id": "f22v.a",
+   "page": "f22v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Tulip (Tulip)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006117",
+   "region": [
+    835,
+    202,
+    1847,
+    3340
+   ]
+  },
+  {
+   "id": "f23r.a",
+   "page": "f23r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Pasque flower (Pulsatilla vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006118",
+   "region": [
+    173,
+    865,
+    2198,
+    2519
+   ]
+  },
+  {
+   "id": "f23v.a",
+   "page": "f23v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Borage Star Flower (Borago officinalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006119",
+   "region": [
+    781,
+    479,
+    1789,
+    3150
+   ]
+  },
+  {
+   "id": "f24r.a",
+   "page": "f24r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "campion (Silene)",
+     "by": "Philip Marshall",
+     "where": "#1656, voynich.nu/hist/list/a2001E.txt message 6"
+    },
+    {
+     "plant": "birthwort (Aristolochia)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Cucumber (Cucumis sativus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006120",
+   "region": [
+    1215,
+    298,
+    1215,
+    3273
+   ]
+  },
+  {
+   "id": "f24v.a",
+   "page": "f24v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Sacred Fig Bo Tree (Ficus religiosa)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006121",
+   "region": [
+    1031,
+    603,
+    1659,
+    3017
+   ]
+  },
+  {
+   "id": "f25r.a",
+   "page": "f25r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "a mint (Mentha)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt"
+    },
+    {
+     "plant": "marsh St John's wort (Triadenum virginicum)",
+     "by": "Dana Scott",
+     "where": "#1835, voynich.nu/hist/list/a2008E.txt messages 26-34"
+    },
+    {
+     "plant": "Wild Thyme",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006122",
+   "region": [
+    799,
+    774,
+    1447,
+    2895
+   ]
+  },
+  {
+   "id": "f26r.a",
+   "page": "f26r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "comfrey with garlic",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Self heal (Prunella vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006124",
+   "region": [
+    699,
+    200,
+    1572,
+    3394
+   ]
+  },
+  {
+   "id": "f26v.a",
+   "page": "f26v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "a berry like blueberry",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Lentil (Lens culinaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006125",
+   "region": [
+    402,
+    251,
+    2337,
+    3442
+   ]
+  },
+  {
+   "id": "f27r.a",
+   "page": "f27r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Spinach (Spinacia oleracea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006126",
+   "region": [
+    848,
+    200,
+    898,
+    3469
+   ]
+  },
+  {
+   "id": "f27r.b",
+   "page": "f27r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006126",
+   "region": [
+    1597,
+    2246,
+    848,
+    1422
+   ]
+  },
+  {
+   "id": "f27v.a",
+   "page": "f27v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "French marigold (Tagetes patula)",
+     "by": "Dana Scott",
+     "where": "#1835, voynich.nu/hist/list/a2008E.txt messages 26-34"
+    },
+    {
+     "plant": "French Marigold (Tagetes patula)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Dianthus (Dianthus superbus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006127",
+   "region": [
+    553,
+    653,
+    2211,
+    3015
+   ]
+  },
+  {
+   "id": "f28r.a",
+   "page": "f28r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "plantain (Plantago)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Smearwort Birthwort Pipevine (Aristolochia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006128",
+   "region": [
+    923,
+    250,
+    1123,
+    2920
+   ]
+  },
+  {
+   "id": "f28v.a",
+   "page": "f28v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Dahlia (Dahlia imperialis)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Rhododendrons (Rhododendrons)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006129",
+   "region": [
+    1336,
+    983,
+    1386,
+    2545
+   ]
+  },
+  {
+   "id": "f29r.a",
+   "page": "f29r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Romaine Cos Lettuce (Lactuva sativa longifolia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006130",
+   "region": [
+    848,
+    649,
+    1597,
+    2994
+   ]
+  },
+  {
+   "id": "f29v.a",
+   "page": "f29v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Roman coriander (Nigella sativa)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006131",
+   "region": [
+    957,
+    201,
+    1737,
+    3424
+   ]
+  },
+  {
+   "id": "f30r.a",
+   "page": "f30r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Healall (Prunella vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006132",
+   "region": [
+    649,
+    649,
+    1722,
+    2994
+   ]
+  },
+  {
+   "id": "f31r.a",
+   "page": "f31r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "marshmallow and lemon balm",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Fleabane (Erigeron acris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006134",
+   "region": [
+    125,
+    474,
+    2321,
+    3169
+   ]
+  },
+  {
+   "id": "f31v.a",
+   "page": "f31v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Fernleaf yarrow (Achillea filipendulina)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Valerian (Valerian)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006135",
+   "region": [
+    729,
+    1206,
+    2010,
+    2462
+   ]
+  },
+  {
+   "id": "f32r.a",
+   "page": "f32r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Speedwell (Veronica triphyllos)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006136",
+   "region": [
+    821,
+    199,
+    1542,
+    3457
+   ]
+  },
+  {
+   "id": "f32v.a",
+   "page": "f32v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "gentian and hellebore",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Harebell (Campanula rotundifolia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006137",
+   "region": [
+    1231,
+    201,
+    1407,
+    3493
+   ]
+  },
+  {
+   "id": "f33v.a",
+   "page": "f33v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "sea thistle",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Masterwort (Astrantia major)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Feverfew (Tanacetum parthenium)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006139",
+   "region": [
+    402,
+    101,
+    2349,
+    3643
+   ]
+  },
+  {
+   "id": "f34r.a",
+   "page": "f34r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Anemone hortensis",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006140",
+   "region": [
+    75,
+    100,
+    2371,
+    3568
+   ]
+  },
+  {
+   "id": "f34v.a",
+   "page": "f34v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "peach (Prunus persica)",
+     "by": "Dana Scott",
+     "where": "#1660, voynich.nu/hist/list/a2001K.txt messages 23 and 35"
+    },
+    {
+     "plant": "fruit trees",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Honesty Money Plant (Lunaria annua)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006141",
+   "region": [
+    303,
+    884,
+    2449,
+    2777
+   ]
+  },
+  {
+   "id": "f35r.a",
+   "page": "f35r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Radicchio (Cichorium intybus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006142",
+   "region": [
+    749,
+    175,
+    1747,
+    3493
+   ]
+  },
+  {
+   "id": "f35v.a",
+   "page": "f35v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "an ophioglossaceous fern",
+     "by": "Philip Marshall",
+     "where": "#1656, voynich.nu/hist/list/a2001E.txt message 21"
+    },
+    {
+     "plant": "blackberry",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Blackcurrant (Ribes nigrum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006143",
+   "region": [
+    955,
+    126,
+    1797,
+    3568
+   ]
+  },
+  {
+   "id": "f36r.a",
+   "page": "f36r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Delphinium (Delphinium staphisagria)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006144",
+   "region": [
+    250,
+    724,
+    2221,
+    2944
+   ]
+  },
+  {
+   "id": "f36v.a",
+   "page": "f36v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Henbit (Lamium amplexicaule)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006145",
+   "region": [
+    578,
+    628,
+    2136,
+    3040
+   ]
+  },
+  {
+   "id": "f37r.a",
+   "page": "f37r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "dock (Rumex)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Mint (Mentha longifolia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006146",
+   "region": [
+    774,
+    624,
+    1697,
+    3019
+   ]
+  },
+  {
+   "id": "f37v.a",
+   "page": "f37v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "fedtschenkoi englerii",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Tassel flower (Emilia fosbergii)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006147",
+   "region": [
+    829,
+    126,
+    1922,
+    3543
+   ]
+  },
+  {
+   "id": "f38r.a",
+   "page": "f38r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "ergot of rye",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006148",
+   "region": [
+    75,
+    150,
+    1298,
+    3518
+   ]
+  },
+  {
+   "id": "f38v.a",
+   "page": "f38v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "artichoke (Cynara)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Myrtle Spurge (Euphorbia myrsinites)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006149",
+   "region": [
+    955,
+    101,
+    1457,
+    3593
+   ]
+  },
+  {
+   "id": "f39r.a",
+   "page": "f39r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006150",
+   "region": [
+    125,
+    998,
+    2371,
+    2645
+   ]
+  },
+  {
+   "id": "f39v.a",
+   "page": "f39v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006151",
+   "region": [
+    503,
+    628,
+    2236,
+    3040
+   ]
+  },
+  {
+   "id": "f3r.a",
+   "page": "f3r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Feathery amaranth (Celosia argentea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006080",
+   "region": [
+    955,
+    226,
+    1709,
+    3443
+   ]
+  },
+  {
+   "id": "f40r.a",
+   "page": "f40r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Storks bill (Erodium malacoides)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006152",
+   "region": [
+    100,
+    224,
+    2191,
+    3435
+   ]
+  },
+  {
+   "id": "f40v.a",
+   "page": "f40v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Epiphyllum oxypetalum",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Crocus (Crocus vernus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006153",
+   "region": [
+    854,
+    201,
+    1859,
+    3417
+   ]
+  },
+  {
+   "id": "f40v.b",
+   "page": "f40v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006153",
+   "region": [
+    126,
+    1759,
+    1005,
+    1859
+   ]
+  },
+  {
+   "id": "f41r.a",
+   "page": "f41r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "silphium and asafoetida",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Wild Marjoram (Origanum vulgare)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006154",
+   "region": [
+    499,
+    175,
+    1896,
+    3469
+   ]
+  },
+  {
+   "id": "f41v.a",
+   "page": "f41v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "elder or mulberry",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Coriander Cilantro (Coriandrum sativum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006155",
+   "region": [
+    578,
+    201,
+    2161,
+    3467
+   ]
+  },
+  {
+   "id": "f42r.a",
+   "page": "f42r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006156",
+   "region": [
+    175,
+    150,
+    2271,
+    3493
+   ]
+  },
+  {
+   "id": "f42v.a",
+   "page": "f42v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Columbine Culverwort (Aquilegia vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006157",
+   "region": [
+    829,
+    101,
+    1709,
+    3568
+   ]
+  },
+  {
+   "id": "f43r.a",
+   "page": "f43r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Chickweed (Stellaria media)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006158",
+   "region": [
+    75,
+    1025,
+    2526,
+    2626
+   ]
+  },
+  {
+   "id": "f43v.a",
+   "page": "f43v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Couch grass (Elytrigia repens)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006159",
+   "region": [
+    276,
+    854,
+    1482,
+    2814
+   ]
+  },
+  {
+   "id": "f43v.b",
+   "page": "f43v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006159",
+   "region": [
+    1131,
+    930,
+    1608,
+    2739
+   ]
+  },
+  {
+   "id": "f44r.a",
+   "page": "f44r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Mandrake (Mandragora officinarum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006160",
+   "region": [
+    398,
+    174,
+    1541,
+    3455
+   ]
+  },
+  {
+   "id": "f44v.a",
+   "page": "f44v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Celery (Apium graveolens)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006161",
+   "region": [
+    678,
+    829,
+    1709,
+    2789
+   ]
+  },
+  {
+   "id": "f45r.a",
+   "page": "f45r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Orach Saltbush (Atriplex hortensis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006162",
+   "region": [
+    371,
+    815,
+    1804,
+    2792
+   ]
+  },
+  {
+   "id": "f45v.a",
+   "page": "f45v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Lavender (Lavandula angustifolia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006163",
+   "region": [
+    126,
+    452,
+    2613,
+    3216
+   ]
+  },
+  {
+   "id": "f46r.a",
+   "page": "f46r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Oxeye Daisy (Leucanthemum vulgare)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006164",
+   "region": [
+    174,
+    818,
+    2306,
+    2802
+   ]
+  },
+  {
+   "id": "f46v.a",
+   "page": "f46v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "comfrey (Symphytum officinale)",
+     "by": "Don Hoffmann",
+     "where": "#1488, voynich.nu, message 58, 4 September 2012"
+    },
+    {
+     "plant": "Tanacetum parthenium, Chrysanthemum parthenium",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Ploughmans Spikenard Great Fleabane (Inula conyza)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006165",
+   "region": [
+    302,
+    553,
+    2111,
+    3116
+   ]
+  },
+  {
+   "id": "f47r.a",
+   "page": "f47r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Lady's Mantle, Lion's Foot (Alchemilla vulgaris Rosaceae)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Houseleek (Sempervivum tectorum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006166",
+   "region": [
+    347,
+    74,
+    1932,
+    3543
+   ]
+  },
+  {
+   "id": "f47v.a",
+   "page": "f47v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "mountain daisy (Arnica montana)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt"
+    },
+    {
+     "plant": "Arnica montana",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Lungwort (Pulmonaria officinalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006167",
+   "region": [
+    151,
+    101,
+    2588,
+    3568
+   ]
+  },
+  {
+   "id": "f48r.a",
+   "page": "f48r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "henbane (Hyoscyamus)",
+     "by": "SD",
+     "where": "#1624, voynich.nu/hist/list/a2012I.txt messages 63-316"
+    },
+    {
+     "plant": "False Hellebore (Adonis Vernalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006168",
+   "region": [
+    347,
+    620,
+    1785,
+    2950
+   ]
+  },
+  {
+   "id": "f48v.a",
+   "page": "f48v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Rue Herb of Grace (Ruta graveolens)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006169",
+   "region": [
+    402,
+    503,
+    2010,
+    3116
+   ]
+  },
+  {
+   "id": "f49r.a",
+   "page": "f49r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Blue Nile Lotus (Nymphaea caerulea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006170",
+   "region": [
+    50,
+    176,
+    2458,
+    3486
+   ]
+  },
+  {
+   "id": "f49v.a",
+   "page": "f49v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006171",
+   "region": [
+    829,
+    226,
+    1432,
+    3442
+   ]
+  },
+  {
+   "id": "f4r.a",
+   "page": "f4r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Alpine Saxifrage (Saxifraga cespitosa)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006082",
+   "region": [
+    1047,
+    175,
+    1396,
+    3316
+   ]
+  },
+  {
+   "id": "f4v.a",
+   "page": "f4v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Rampion (Campanula rapunculus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006083",
+   "region": [
+    1013,
+    253,
+    1493,
+    3291
+   ]
+  },
+  {
+   "id": "f50r.a",
+   "page": "f50r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Masterwort (Astrantia major)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006172",
+   "region": [
+    150,
+    500,
+    2351,
+    3151
+   ]
+  },
+  {
+   "id": "f50v.a",
+   "page": "f50v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "waratah (Telopea)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt"
+    },
+    {
+     "plant": "Telopea speciosissima",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Stiff Gentain (Gentiana frigida)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006173",
+   "region": [
+    578,
+    628,
+    1683,
+    3040
+   ]
+  },
+  {
+   "id": "f51v.a",
+   "page": "f51v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Sage (Salva officinalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006175",
+   "region": [
+    829,
+    151,
+    1633,
+    3518
+   ]
+  },
+  {
+   "id": "f52r.a",
+   "page": "f52r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "borage and liquorice",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Poppy Anemone (Anemone coronaria)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006176",
+   "region": [
+    175,
+    626,
+    2329,
+    3031
+   ]
+  },
+  {
+   "id": "f52v.a",
+   "page": "f52v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "nettle or thistle",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Fern (Polystichum setiferum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006177",
+   "region": [
+    754,
+    151,
+    1759,
+    3518
+   ]
+  },
+  {
+   "id": "f53r.a",
+   "page": "f53r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "nodding bur-marigold (Bidens cernua)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Sneezewort (Achillea Ptarmica)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006178",
+   "region": [
+    173,
+    99,
+    1804,
+    3509
+   ]
+  },
+  {
+   "id": "f53v.a",
+   "page": "f53v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Hawkweed (Hieracium aurantiacum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006179",
+   "region": [
+    503,
+    553,
+    1709,
+    3116
+   ]
+  },
+  {
+   "id": "f54r.a",
+   "page": "f54r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Cabbage thistle (Cirsium oleraceum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006180",
+   "region": [
+    124,
+    99,
+    2355,
+    3520
+   ]
+  },
+  {
+   "id": "f54v.a",
+   "page": "f54v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Bittersweet Nightshade (Solanum dulcamara)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Russian Sage (Perovskia atriplicifolia)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006181",
+   "region": [
+    653,
+    302,
+    1859,
+    3367
+   ]
+  },
+  {
+   "id": "f55r.a",
+   "page": "f55r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "opium poppy (Papaver somniferum)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Fumitory (Fumaria officinalis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006182",
+   "region": [
+    274,
+    648,
+    2218,
+    2990
+   ]
+  },
+  {
+   "id": "f55v.a",
+   "page": "f55v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "red-hot poker (Kniphofia)",
+     "by": "Dana Scott",
+     "where": "#1539, voynich.nu/hist/list/a2001E.txt message 14"
+    },
+    {
+     "plant": "Forest lily (Veltheima bracteata)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Broccoli (Broccoli)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006183",
+   "region": [
+    327,
+    101,
+    1985,
+    3568
+   ]
+  },
+  {
+   "id": "f56v.a",
+   "page": "f56v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Sago Palm (Cycas revoluta)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006185",
+   "region": [
+    754,
+    427,
+    1759,
+    3241
+   ]
+  },
+  {
+   "id": "f57r.a",
+   "page": "f57r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Blue Field Madder (Sherardia arvemsis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006186",
+   "region": [
+    149,
+    398,
+    2339,
+    3235
+   ]
+  },
+  {
+   "id": "f5r.a",
+   "page": "f5r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Wolfs Bane (Arnica montana)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006084",
+   "region": [
+    645,
+    1167,
+    1837,
+    2408
+   ]
+  },
+  {
+   "id": "f5v.a",
+   "page": "f5v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "agrimony (Agrimonia)",
+     "by": "Dana Scott",
+     "where": "#1656, voynich.nu/hist/list/a2001C.txt"
+    },
+    {
+     "plant": "Tennis Racket Plant (Agrimonia eupatoria)",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Mallow (Malva sylvestris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006085",
+   "region": [
+    557,
+    1013,
+    1974,
+    2582
+   ]
+  },
+  {
+   "id": "f65v.a",
+   "page": "f65v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Cornflower (Centaurea cyanus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006191",
+   "region": [
+    302,
+    75,
+    2211,
+    3543
+   ]
+  },
+  {
+   "id": "f66v.a",
+   "page": "f66v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Winter Savory (Satureja montana)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006193",
+   "region": [
+    452,
+    754,
+    1759,
+    2915
+   ]
+  },
+  {
+   "id": "f6r.a",
+   "page": "f6r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Bear Breeches (Acanthus mollis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006086",
+   "region": [
+    273,
+    248,
+    2187,
+    3255
+   ]
+  },
+  {
+   "id": "f7r.a",
+   "page": "f7r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "2 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "lotus",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Starflower (Trientalis europea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006088",
+   "region": [
+    422,
+    447,
+    2034,
+    3101
+   ]
+  },
+  {
+   "id": "f87r.a",
+   "page": "f87r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Summer Savory (Satureja hortensis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006232",
+   "region": [
+    649,
+    100,
+    1748,
+    3545
+   ]
+  },
+  {
+   "id": "f87v.a",
+   "page": "f87v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "4 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Senecio",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Primrose (Primula vulgaris)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Kleinia",
+     "by": "Dana Scott",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Lousewort Wood Bettony (Pedicularis flammea)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1043429",
+   "region": [
+    320,
+    567,
+    1356,
+    3032
+   ]
+  },
+  {
+   "id": "f87v.b",
+   "page": "f87v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1043429",
+   "region": [
+    1232,
+    296,
+    1232,
+    3303
+   ]
+  },
+  {
+   "id": "f88r.a",
+   "page": "f88r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+   "region": [
+    374,
+    100,
+    2116,
+    647
+   ]
+  },
+  {
+   "id": "f88r.b",
+   "page": "f88r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+   "region": [
+    374,
+    1170,
+    2116,
+    822
+   ]
+  },
+  {
+   "id": "f88r.c",
+   "page": "f88r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1037112",
+   "region": [
+    374,
+    2366,
+    2116,
+    1195
+   ]
+  },
+  {
+   "id": "f88v.a",
+   "page": "f88v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    378,
+    101,
+    2140,
+    730
+   ]
+  },
+  {
+   "id": "f88v.b",
+   "page": "f88v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    378,
+    1133,
+    2140,
+    630
+   ]
+  },
+  {
+   "id": "f88v.c",
+   "page": "f88v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    378,
+    2644,
+    2140,
+    1032
+   ]
+  },
+  {
+   "id": "f89r1.a",
+   "page": "f89r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    2970,
+    101,
+    2216,
+    1209
+   ]
+  },
+  {
+   "id": "f89r1.b",
+   "page": "f89r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    2970,
+    2644,
+    2216,
+    1032
+   ]
+  },
+  {
+   "id": "f89r2.a",
+   "page": "f89r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5431,
+    76,
+    2417,
+    932
+   ]
+  },
+  {
+   "id": "f89r2.b",
+   "page": "f89r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5431,
+    1259,
+    2417,
+    831
+   ]
+  },
+  {
+   "id": "f89r2.c",
+   "page": "f89r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006233",
+   "region": [
+    5431,
+    2392,
+    2417,
+    1284
+   ]
+  },
+  {
+   "id": "f89v1.a",
+   "page": "f89v1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+   "region": [
+    752,
+    150,
+    2131,
+    1103
+   ]
+  },
+  {
+   "id": "f89v1.b",
+   "page": "f89v1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+   "region": [
+    752,
+    2382,
+    2131,
+    1329
+   ]
+  },
+  {
+   "id": "f89v2.a",
+   "page": "f89v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+   "region": [
+    711,
+    102,
+    3453,
+    1168
+   ]
+  },
+  {
+   "id": "f89v2.b",
+   "page": "f89v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+   "region": [
+    711,
+    1270,
+    3453,
+    1422
+   ]
+  },
+  {
+   "id": "f89v2.c",
+   "page": "f89v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006234",
+   "region": [
+    711,
+    2692,
+    3453,
+    1117
+   ]
+  },
+  {
+   "id": "f8r.a",
+   "page": "f8r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Green Pea (Pisum sativum)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006090",
+   "region": [
+    248,
+    99,
+    1934,
+    3496
+   ]
+  },
+  {
+   "id": "f8v.a",
+   "page": "f8v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Comfrey (Symphytum officinale)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006091",
+   "region": [
+    481,
+    152,
+    1721,
+    3443
+   ]
+  },
+  {
+   "id": "f90r1.a",
+   "page": "f90r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+   "region": [
+    3075,
+    226,
+    2282,
+    3435
+   ]
+  },
+  {
+   "id": "f90r2.a",
+   "page": "f90r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006235",
+   "region": [
+    5455,
+    100,
+    2282,
+    3560
+   ]
+  },
+  {
+   "id": "f90v1.a",
+   "page": "f90v1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006237",
+   "region": [
+    296,
+    99,
+    2169,
+    3451
+   ]
+  },
+  {
+   "id": "f90v2.a",
+   "page": "f90v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006236",
+   "region": [
+    500,
+    175,
+    2001,
+    3477
+   ]
+  },
+  {
+   "id": "f93v.a",
+   "page": "f93v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Lupin (Lupinus)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006239",
+   "region": [
+    296,
+    99,
+    2169,
+    3500
+   ]
+  },
+  {
+   "id": "f94v.a",
+   "page": "f94v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Corncockle Red Campion (Agrostemma Githago)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Liquorice (Glycyrrhiza glabra)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    },
+    {
+     "plant": "Ribwort Plantain Kemps (Plantago lanceolata)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006241",
+   "region": [
+    380,
+    557,
+    2154,
+    3142
+   ]
+  },
+  {
+   "id": "f95r1.a",
+   "page": "f95r1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006241",
+   "region": [
+    3061,
+    557,
+    2407,
+    3142
+   ]
+  },
+  {
+   "id": "f95r2.a",
+   "page": "f95r2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006241",
+   "region": [
+    5566,
+    507,
+    2053,
+    3193
+   ]
+  },
+  {
+   "id": "f95v1.a",
+   "page": "f95v1",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006243",
+   "region": [
+    296,
+    690,
+    2366,
+    2908
+   ]
+  },
+  {
+   "id": "f95v2.a",
+   "page": "f95v2",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "no published proposal, and no plant in the period herbals read has these features together",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006242",
+   "region": [
+    300,
+    825,
+    2100,
+    2825
+   ]
+  },
+  {
+   "id": "f96r.a",
+   "page": "f96r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "1 proposal in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Garden Angelica (Angelica archangelica)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006244",
+   "region": [
+    75,
+    125,
+    2422,
+    3520
+   ]
+  },
+  {
+   "id": "f99r.a",
+   "page": "f99r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    502,
+    75,
+    2199,
+    929
+   ]
+  },
+  {
+   "id": "f99r.b",
+   "page": "f99r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    502,
+    1004,
+    2199,
+    753
+   ]
+  },
+  {
+   "id": "f99r.c",
+   "page": "f99r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    502,
+    1757,
+    2199,
+    753
+   ]
+  },
+  {
+   "id": "f99r.d",
+   "page": "f99r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006246",
+   "region": [
+    502,
+    2510,
+    2199,
+    1255
+   ]
+  },
+  {
+   "id": "f99v.a",
+   "page": "f99v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    542,
+    74,
+    2260,
+    912
+   ]
+  },
+  {
+   "id": "f99v.b",
+   "page": "f99v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    542,
+    986,
+    2260,
+    739
+   ]
+  },
+  {
+   "id": "f99v.c",
+   "page": "f99v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    542,
+    1725,
+    2260,
+    739
+   ]
+  },
+  {
+   "id": "f99v.d",
+   "page": "f99v",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "a row of several pharmaceutical specimens; each is judged with its label when the anchor words box it",
+   "women": "",
+   "women_source": "",
+   "pharma": true,
+   "proposals": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006247",
+   "region": [
+    542,
+    2465,
+    2260,
+    1232
+   ]
+  },
+  {
+   "id": "f9r.a",
+   "page": "f9r",
+   "plant": "",
+   "verdict": "unknown",
+   "reason": "3 proposals in plants-proposed.tsv, none borne out by both the features read and a period drawing; no one plant fits the features better than the rest",
+   "women": "",
+   "women_source": "",
+   "pharma": false,
+   "proposals": [
+    {
+     "plant": "Botrychium multifidum",
+     "by": "Dana Scott",
+     "where": "#1539, voynich.nu/hist/list/a2001E.txt message 14"
+    },
+    {
+     "plant": "sorrel (lapathus)",
+     "by": "funny bunny",
+     "where": "#1595, voynich.nu/hist/list/a2008E.txt"
+    },
+    {
+     "plant": "Casteroil (Ricinus communis)",
+     "by": "Edith Sherwood",
+     "where": "Julian Bunn, GA Sherman Voynich spreadsheet, julianbunn.org/Voynich/GA_Sherman_Voynich_Spreadsheet.htm"
+    }
+   ],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006092",
+   "region": [
+    274,
+    349,
+    2192,
+    3189
+   ]
+  }
+ ]
+}

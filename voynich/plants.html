@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich plants</title>
+<meta name="description" content="Every plant drawn in the Voynich manuscript, grouped by what it may be, with every published identification credited.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#intro b{color:var(--text)}
+  #filters{display:flex;flex-wrap:wrap;gap:8px;padding:4px 12px;font-size:13px;color:var(--muted)}
+  #filters label{display:inline-flex;gap:4px;align-items:center}
+  h2.group{font-size:16px;margin:16px 12px 6px;color:var(--text)}
+  .grid{display:flex;flex-wrap:wrap;gap:10px;padding:0 12px}
+  .card{width:220px;background:#ffffff08;border:1px solid #41454e;border-radius:8px;padding:6px;font-size:12px;color:var(--muted)}
+  .card img{width:100%;height:220px;object-fit:contain;background:#2a2620;border-radius:4px;display:block}
+  .card b{color:var(--text);font-size:13px}
+  .card details{margin-top:4px}.card summary{cursor:pointer;color:var(--accent)}
+  .card ul{margin:4px 0 0;padding-left:16px}
+  .v{display:inline-block;border-radius:9px;padding:0 7px;font-size:11px;color:#fff;margin-left:4px}
+  .v.secure{background:#2e7d32}.v.likely{background:#4f7d2e}.v.possible{background:#8a6d1f}.v.unknown{background:#555}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="plants.html">Voynich plants</a></h1>
+  <nav><a href="./">Trace the Voynich</a> · <a href="search.html">Search</a> · <a href="herbals.html">Herbal likenesses</a></nav>
+</header>
+<div id="intro">Every plant drawn on the Voynich herbal and pharmaceutical pages, grouped by how surely it can be named. <b>Secure</b>: its features and a period herbal's drawing agree. <b>Likely</b>: its features fit one plant better than the rest. <b>Possible</b>: one or two features fit. <b>Unknown</b>: nothing fits better than the rest. Open a card for every published identification and who made it.</div>
+<div id="filters">
+  <label><input type="checkbox" id="pharma" checked> pharmaceutical pages</label>
+  <label><input type="checkbox" id="unknown"> unknown</label>
+</div>
+<div id="out">Loading…</div>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const NAMES = {secure: 'Secure', likely: 'Likely', possible: 'Possible', unknown: 'Unknown'};
+  let data;
+  try { data = await (await fetch('data/plants.json')).json(); } catch (e) { $('out').textContent = 'The plants did not load: ' + e.message; return; }
+  function draw() {
+    const out = $('out'); out.replaceChildren();
+    for (const v of ['secure', 'likely', 'possible', 'unknown']) {
+      if (v === 'unknown' && !$('unknown').checked) continue;
+      const rows = data.plants.filter(p => p.verdict === v && ($('pharma').checked || !p.pharma));
+      if (!rows.length) continue;
+      const h = document.createElement('h2'); h.className = 'group'; h.textContent = `${NAMES[v]} (${rows.length})`; out.append(h);
+      const g = document.createElement('div'); g.className = 'grid'; out.append(g);
+      for (const p of rows) {
+        const [x, y, w, hh] = p.region;
+        const c = document.createElement('div'); c.className = 'card';
+        const props = p.proposals.map(q => `<li>${esc(q.plant)} (${esc(q.by)}; ${esc(q.where)})</li>`).join('');
+        c.innerHTML = `<img loading="lazy" alt="${esc(p.id)}" src="${esc(p.iiif)}/${x},${y},${w},${hh}/!400,400/0/default.jpg">
+          <b>${esc(p.plant || p.id)}</b><span class="v ${esc(p.verdict)}">${esc(p.verdict)}</span><br>${esc(p.page)}${p.pharma ? ', a row of pharmaceutical specimens' : ''}
+          <details><summary>Why, and who proposed what</summary><p>${esc(p.reason)}</p>${p.women ? `<p>Women's use: ${esc(p.women)}. ${esc(p.women_source)}</p>` : ''}${props ? `<ul>${props}</ul>` : '<p>No published proposal.</p>'}</details>`;
+        g.append(c);
+      }
+    }
+  }
+  $('pharma').onchange = $('unknown').onchange = draw;
+  draw();
+})();
+</script>
+</body>
+</html>
