@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=3431894ccb">
+<link rel="stylesheet" href="style.css?v=2d7b09b243">
 </head>
 <body>
 <header>
@@ -108,7 +108,16 @@
   <p id="credits-list"></p>
   <form method="dialog"><button class="primary">Close</button></form>
 </dialog>
-<script src="search.js?v=6f72591ae1"></script>
-<script src="app.js?v=3431894ccb"></script>
+<dialog id="wrong">
+  <h2>What is wrong with this word?</h2>
+  <p><label><input type="radio" name="why" value="colors" checked> The colors are on the wrong ink: I'll retrace it</label></p>
+  <p><label><input type="radio" name="why" value="box"> The box is round the wrong ink</label></p>
+  <p><label><input type="radio" name="why" value="other"> Something else: I'll retrace it</label></p>
+  <p><input id="wrong-text" maxlength="300" placeholder="Say more (optional)" style="width:100%"></p>
+  <p id="wrong-status" class="hint">Ryan reviews it. The word stays approved until then.</p>
+  <div class="row"><button id="wrong-go" class="primary">Continue</button> <button id="wrong-close">Cancel</button></div>
+</dialog>
+<script src="search.js?v=02e9f10558"></script>
+<script src="app.js?v=2d7b09b243"></script>
 </body>
 </html>

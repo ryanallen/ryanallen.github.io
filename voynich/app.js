@@ -494,15 +494,45 @@
 
   // an approved word takes no paint, unless this visitor is giving it a second check or retracing it
   const locked = () => !!(L.word && L.word.done && !L.second && !L.retrace);
+  // Retrace it first asks what is wrong: a note for the owner, then the retrace, unless only the box
+  // is wrong, which a retrace cannot fix
   $('retrace').onclick = () => {
     if (!L.word) return;
-    const id = L.word.id;
+    $('wrong-status').textContent = 'Ryan reviews it. The word stays approved until then.';
+    $('wrong-status').className = 'hint';
+    $('wrong-go').disabled = false;
+    document.querySelector('#wrong input[value=colors]').checked = true;
+    $('wrong-text').value = '';
+    $('wrong').showModal();
+  };
+  $('wrong-close').onclick = () => $('wrong').close();
+  $('wrong-go').onclick = async () => {
+    if (!L.word) return;
+    const id = L.word.id, why = document.querySelector('#wrong input[name=why]:checked').value;
+    $('wrong-go').disabled = true;
+    try {
+      const r = await fetch(API + '/api/retrace-note', { method: 'POST', headers: { 'content-type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify({ word: id, tracer, why, text: $('wrong-text').value.slice(0, 300) }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || r.status);
+    } catch (e) {
+      $('wrong-status').textContent = 'Not sent: ' + e.message;
+      $('wrong-status').className = 'hint bad';
+      $('wrong-go').disabled = false;
+      return;
+    }
+    $('wrong').close();
+    $('wrong-text').value = '';
+    if (why === 'box') { toast('Sent: Ryan will fix the box by hand. Thank you.', false); return; }
+    startRetrace(id);
+  };
+  function startRetrace(id) {
     retracing.add(id);
     store.set('voynich-retrace', JSON.stringify([...retracing].slice(-200)));
     L.word = null;
     const to = `#/w/${id}/1`;
     if (location.hash === to) openLetter(id, 1); else location.hash = to;
-  };
+  }
 
   wstage.addEventListener('pointerdown', e => {
     if (!L.word) return;
@@ -1219,14 +1249,14 @@
   // U shows or hides the UV scan where there is one (Shift is the straight line)
   document.addEventListener('keydown', e => {
     if (e.key !== 'u' && e.key !== 'U' || e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
-    if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName) || $('help').open || $('credit').open || $('credits').open) return;
+    if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName) || $('help').open || $('credit').open || $('credits').open || $('wrong').open) return;
     const group = !$('letter-view').hidden ? 'uv-group' : !$('page-view').hidden ? 'p-uv-group' : null;
     if (group && !$(group).hidden) { e.preventDefault(); toggleUV(); }
   }, true);
 
   // ---- keys and routes ----------------------------------------------------
   document.addEventListener('keydown', e => {
-    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT' || $('help').open) return;
+    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT' || $('help').open || $('wrong').open) return;
     const inLetter = !$('letter-view').hidden, inPage = !$('page-view').hidden;
     // hold H to see the page under the tracing
     if ((e.key === 'h' || e.key === 'H') && !e.ctrlKey && !e.metaKey && !e.altKey) {
