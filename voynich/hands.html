@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich hands</title>
+<meta name="description" content="How many scribes wrote the Voynich manuscript, measured from the ink of every letter: the pages grouped with no hand named, every proposed count of hands set beside the groups, the contested pages, and the later hands of the folio numbers, quire marks, month names and f116v.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #hd{max-width:960px;margin:0 auto;padding:8px 16px 40px;color:var(--muted);font-size:14px}
+  #hd b,#hd h2{color:var(--text)}#hd h2{font-size:17px;margin:24px 0 6px}
+  #hd .box{border:1px solid #41454e;border-radius:8px;padding:8px 12px;margin:8px 0}
+  #hd table{border-collapse:collapse;font-size:13px;margin:6px 0}#hd th,#hd td{padding:3px 8px;border-bottom:1px solid #41454e;text-align:left}
+  #hd .wrap{overflow-x:auto}#hd img{max-width:100%;background:#fff;border-radius:6px}
+  #hd .pages{font-family:ui-monospace,monospace;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+  #hd .bar{display:inline-block;height:10px;background:var(--accent);border-radius:3px;vertical-align:middle}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="hands.html">Voynich hands</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><a href="hands.html">Hands</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
+</header>
+<main id="hd">
+  <p>How many scribes wrote the Voynich manuscript? People have counted two (Grant), five (Davis) and up to a dozen (Currier), each by eye. Here every letter the tracing has keyed is measured from its own ink, against its line's height: size, slant, pen width and shape. The pages are then grouped <b>with no hand named to them</b>. A grouping counts only if a page's upper and lower halves, measured apart, land in the same group on at least 95% of pages.</p>
+  <div class="box" id="hd-found">Loading…</div>
+  <h2>How steady each count of hands is</h2>
+  <div id="hd-stab"></div>
+  <h2>The two hands</h2>
+  <div id="hd-hands"></div>
+  <p>The sign <b>d</b> from three pages of each group (drawn from the key's own ink). The third row is the zodiac labels, whose letters stand on painted ground, so their ink comes out broken:</p>
+  <img src="data/hands-d.png" alt="The sign d from pages of each group" loading="lazy">
+  <h2>Every proposal set beside the groups</h2>
+  <p>Agreement is the adjusted Rand index: 1 is the same grouping, 0 is no better than chance.</p>
+  <div class="wrap" id="hd-prop"></div>
+  <h2>The pages the proposals disagree on</h2>
+  <div class="wrap" id="hd-cont"></div>
+  <h2>The later hands</h2>
+  <p>The folio numbers, quire marks, month names, f116v's German lines, f49v's numerals and a colour word, each boxed on the Yale image, with the ink found inside. Darkness is the ink's gray over the parchment's (lower is darker). The text's own letters measure 0.70.</p>
+  <div class="wrap" id="hd-marks"></div>
+  <img src="data/hands-marks.png" alt="Each later-hand mark and the ink found in it" loading="lazy" style="width:100%;max-width:420px">
+</main>
+<script>
+(async () => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  let d;
+  try { d = await (await fetch('data/hands.json')).json(); } catch (e) { $('hd-found').textContent = 'The hands did not load: ' + e.message; return; }
+  const names = {davis: "Davis's five scribes (2020)", currier_hand: "Currier's hands 1-5, X, Y (1976)", currier_language: "Currier's two languages, A and B (Grant's two scribes)",
+                 kluge_b: "Kluge's kinds of B (herbal, biological, other)", section: 'The subject of the page alone'};
+  $('hd-found').innerHTML = `<b>Two hands, with confidence; more than two, the ink cannot confirm.</b> The two are the ones Currier saw by eye: an upright hand writing language A and a slanted hand writing language B. One group holds 110 of the 113 pages Davis gives her scribe 1. The other holds her scribes 2, 3 and 5, which do not come apart at any count. The colour of the ink says nothing of the hand, and the paint cannot sort painters. The herbal B pages are painted more neatly, though. ${esc(d.thin)} page and sign pairs had too few letters to measure.`;
+  $('hd-stab').innerHTML = d.stability.map(([k, v]) => `<div>${k} hands <span class="bar" style="width:${Math.round(v * 200)}px"></span> ${v.toFixed(2)}${v >= 0.95 ? ' <b>passes</b>' : ''}</div>`).join('');
+  $('hd-hands').innerHTML = Object.entries(d.hands).map(([h, g]) => `<div class="box"><b>Hand ${esc(h)}</b>: ${g.pages.length} pages. By Davis's scribes: ${Object.entries(g.davis).sort().map(([k, n]) => esc(k === '@' ? 'two' : k) + ': ' + n).join(', ')}. By Currier's languages: ${Object.entries(g.currier).sort().map(([k, n]) => esc(k || 'none') + ': ' + n).join(', ')}.<div class="pages">${g.pages.map(esc).join(' ')}</div></div>`).join('');
+  const rows = d.proposals.map(r => `<tr><td>${esc(names[r.proposal] || r.proposal)}</td><td>${esc(r.cut)}</td><td>${esc(r.ari_page)}</td><td>${esc(r.ari_bifolio)}</td><td>${esc(r.pages)}</td></tr>`).join('');
+  $('hd-prop').innerHTML = `<table><thead><tr><th>Proposal</th><th>Groups</th><th>Agreement by page</th><th>By bifolio</th><th>Pages compared</th></tr></thead><tbody>${rows}</tbody></table>`;
+  $('hd-cont').innerHTML = `<table><thead><tr><th>Page</th><th>Currier</th><th>Davis</th><th>The ink's group (mostly Davis's)</th></tr></thead><tbody>${d.contested.map(r => `<tr><td>${esc(r.page)}</td><td>${esc(r.currier)}</td><td>${esc(r.davis)}</td><td>${esc(r.cluster ? r.cluster + ' (' + r.cluster_mostly_davis + ')' : r.agrees_with)}</td></tr>`).join('')}</tbody></table>`;
+  $('hd-marks').innerHTML = `<table><thead><tr><th>Mark</th><th>Set</th><th>Page</th><th>Darkness</th><th>Red over green</th><th>Pen width (px)</th></tr></thead><tbody>${d.marks.filter(m => m.set !== 'text').map(m => `<tr><td>${esc(m.mark)}</td><td>${esc(m.set)}</td><td>${esc(m.page)}</td><td>${esc(m.darkness)}</td><td>${esc(m.red_green)}</td><td>${esc(m.stroke_px)}</td></tr>`).join('')}</tbody></table>`;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1607 @@
+{
+"stability": [
+[
+2,
+0.95
+],
+[
+3,
+0.923
+],
+[
+4,
+0.914
+],
+[
+5,
+0.909
+],
+[
+6,
+0.886
+],
+[
+7,
+0.868
+],
+[
+8,
+0.877
+],
+[
+9,
+0.873
+],
+[
+10,
+0.859
+],
+[
+11,
+0.859
+],
+[
+12,
+0.864
+]
+],
+"hands": {
+"A": {
+"pages": [
+"f1r",
+"f1v",
+"f2r",
+"f2v",
+"f3v",
+"f4r",
+"f4v",
+"f5r",
+"f5v",
+"f6r",
+"f6v",
+"f7r",
+"f7v",
+"f8r",
+"f8v",
+"f9r",
+"f9v",
+"f10r",
+"f10v",
+"f11r",
+"f11v",
+"f13r",
+"f13v",
+"f14r",
+"f14v",
+"f15r",
+"f15v",
+"f16r",
+"f16v",
+"f17r",
+"f17v",
+"f18r",
+"f18v",
+"f19r",
+"f19v",
+"f20r",
+"f20v",
+"f21r",
+"f21v",
+"f22r",
+"f22v",
+"f23r",
+"f23v",
+"f24v",
+"f25r",
+"f25v",
+"f27r",
+"f27v",
+"f28r",
+"f28v",
+"f29r",
+"f29v",
+"f30r",
+"f30v",
+"f32r",
+"f32v",
+"f35r",
+"f35v",
+"f36r",
+"f36v",
+"f37r",
+"f37v",
+"f38r",
+"f38v",
+"f41r",
+"f42r",
+"f42v",
+"f44r",
+"f44v",
+"f45r",
+"f45v",
+"f46v",
+"f47r",
+"f47v",
+"f49r",
+"f49v",
+"f51r",
+"f51v",
+"f52r",
+"f52v",
+"f53r",
+"f53v",
+"f54r",
+"f54v",
+"f56r",
+"f56v",
+"f57r",
+"f57v",
+"f58r",
+"f65v",
+"f66r",
+"f66v",
+"f69r",
+"f69v",
+"f71r",
+"f71v",
+"f73r",
+"f73v",
+"f87r",
+"f87v",
+"f88r",
+"f88v",
+"f93r",
+"f93v",
+"f96r",
+"f96v",
+"f99r",
+"f99v",
+"fRos",
+"f100r",
+"f100v",
+"f101r",
+"f101v",
+"f67r2",
+"f67v1",
+"f67v2",
+"f68r1",
+"f68r2",
+"f68r3",
+"f68v1",
+"f68v2",
+"f68v3",
+"f70r1",
+"f70r2",
+"f70v1",
+"f70v2",
+"f72r1",
+"f72r2",
+"f72r3",
+"f72v1",
+"f72v2",
+"f72v3",
+"f85r2",
+"f86v4",
+"f89r1",
+"f89v1",
+"f89v2",
+"f90r1",
+"f90r2",
+"f90v1",
+"f90v2",
+"f102r1",
+"f102r2",
+"f102v1",
+"f102v2"
+],
+"davis": {
+"1": 110,
+"5": 4,
+"2": 3,
+"3": 2,
+"4": 26
+},
+"currier": {
+"A": 110,
+"B": 8,
+"": 27
+}
+},
+"B": {
+"pages": [
+"f3r",
+"f24r",
+"f26r",
+"f26v",
+"f31r",
+"f31v",
+"f33r",
+"f33v",
+"f34r",
+"f34v",
+"f39r",
+"f39v",
+"f40r",
+"f40v",
+"f41v",
+"f43r",
+"f43v",
+"f46r",
+"f48r",
+"f48v",
+"f50r",
+"f50v",
+"f55r",
+"f55v",
+"f58v",
+"f75r",
+"f75v",
+"f76r",
+"f76v",
+"f77r",
+"f77v",
+"f78r",
+"f78v",
+"f79r",
+"f79v",
+"f80r",
+"f80v",
+"f81r",
+"f81v",
+"f82r",
+"f82v",
+"f83r",
+"f83v",
+"f84r",
+"f84v",
+"f94r",
+"f94v",
+"f103r",
+"f103v",
+"f104r",
+"f104v",
+"f105r",
+"f105v",
+"f106r",
+"f106v",
+"f107r",
+"f107v",
+"f108r",
+"f108v",
+"f111r",
+"f111v",
+"f112r",
+"f112v",
+"f113r",
+"f113v",
+"f114r",
+"f114v",
+"f115r",
+"f115v",
+"f116r",
+"f67r1",
+"f85r1",
+"f86v3",
+"f86v5",
+"f86v6",
+"f89r2",
+"f95r1",
+"f95r2",
+"f95v1",
+"f95v2"
+],
+"davis": {
+"1": 3,
+"2": 43,
+"5": 3,
+"3": 29,
+"@": 1,
+"4": 1
+},
+"currier": {
+"A": 4,
+"B": 75,
+"": 1
+}
+}
+},
+"proposals": [
+{
+"letters": "all",
+"cut": "2",
+"proposal": "currier_hand",
+"ari_page": "0.607",
+"pages": "160",
+"ari_bifolio": "0.604",
+"bifolios": "43",
+"stability": "0.950"
+},
+{
+"letters": "all",
+"cut": "2",
+"proposal": "currier_language",
+"ari_page": "0.770",
+"pages": "197",
+"ari_bifolio": "0.917",
+"bifolios": "48",
+"stability": "0.950"
+},
+{
+"letters": "all",
+"cut": "2",
+"proposal": "davis",
+"ari_page": "0.499",
+"pages": "224",
+"ari_bifolio": "0.594",
+"bifolios": "52",
+"stability": "0.950"
+},
+{
+"letters": "all",
+"cut": "2",
+"proposal": "kluge_b",
+"ari_page": "-0.018",
+"pages": "83",
+"ari_bifolio": "-0.018",
+"bifolios": "20",
+"stability": "0.950"
+},
+{
+"letters": "all",
+"cut": "2",
+"proposal": "section",
+"ari_page": "0.168",
+"pages": "225",
+"ari_bifolio": "0.208",
+"bifolios": "52",
+"stability": "0.950"
+},
+{
+"letters": "all",
+"cut": "3",
+"proposal": "currier_hand",
+"ari_page": "0.607",
+"pages": "160",
+"ari_bifolio": "0.604",
+"bifolios": "43",
+"stability": "0.923"
+},
+{
+"letters": "all",
+"cut": "3",
+"proposal": "currier_language",
+"ari_page": "0.770",
+"pages": "197",
+"ari_bifolio": "0.917",
+"bifolios": "48",
+"stability": "0.923"
+},
+{
+"letters": "all",
+"cut": "3",
+"proposal": "davis",
+"ari_page": "0.632",
+"pages": "224",
+"ari_bifolio": "0.705",
+"bifolios": "52",
+"stability": "0.923"
+},
+{
+"letters": "all",
+"cut": "3",
+"proposal": "kluge_b",
+"ari_page": "-0.018",
+"pages": "83",
+"ari_bifolio": "-0.018",
+"bifolios": "20",
+"stability": "0.923"
+},
+{
+"letters": "all",
+"cut": "3",
+"proposal": "section",
+"ari_page": "0.302",
+"pages": "225",
+"ari_bifolio": "0.324",
+"bifolios": "52",
+"stability": "0.923"
+}
+],
+"contested": [
+{
+"page": "f57v",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f89r1",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f89r2",
+"currier": "none",
+"davis": "1",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f89v1",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f89v2",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f90r1",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f90r2",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f90v1",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f90v2",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f99r",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f99v",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f100r",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f100v",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f101r",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f101v",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f102r1",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f102r2",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f102v1",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f102v2",
+"currier": "none",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f115r",
+"currier": "none",
+"davis": "2",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "Davis"
+},
+{
+"page": "f58r",
+"currier": "none",
+"davis": "3",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f58v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f65r",
+"currier": "none",
+"davis": "3",
+"cluster": "",
+"cluster_mostly_davis": "",
+"agrees_with": "not keyed"
+},
+{
+"page": "f65v",
+"currier": "none",
+"davis": "3",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f107r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f107v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f108r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f108v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f111r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f111v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f112r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f112v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f113r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f113v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f114r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f114v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f115v",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f116r",
+"currier": "none",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f67r1",
+"currier": "none",
+"davis": "4",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f67r2",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f67v1",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f67v2",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f68r1",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f68r2",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f68r3",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f68v1",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f68v2",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f68v3",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f69r",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f69v",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f70r1",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f70r2",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f70v1",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f70v2",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f71r",
+"currier": "none",
+"davis": "4",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f71v",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f72r1",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f72r2",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f72r3",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f72v1",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f72v2",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f72v3",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f73r",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f73v",
+"currier": "none",
+"davis": "4",
+"cluster": "2",
+"cluster_mostly_davis": "4",
+"agrees_with": "Davis"
+},
+{
+"page": "f66r",
+"currier": "none",
+"davis": "5",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f66v",
+"currier": "none",
+"davis": "5",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f41r",
+"currier": "2",
+"davis": "5",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f41v",
+"currier": "2",
+"davis": "5",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f48r",
+"currier": "2",
+"davis": "5",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f48v",
+"currier": "2",
+"davis": "5",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f57r",
+"currier": "2",
+"davis": "5",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "neither"
+},
+{
+"page": "f87r",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f87v",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f88r",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f88v",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f93r",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f93v",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f96r",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f96v",
+"currier": "4",
+"davis": "1",
+"cluster": "3",
+"cluster_mostly_davis": "1",
+"agrees_with": "Davis"
+},
+{
+"page": "f94r",
+"currier": "5",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f94v",
+"currier": "5",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f95r1",
+"currier": "5",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f95r2",
+"currier": "5",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f95v1",
+"currier": "5",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f95v2",
+"currier": "5",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f103r",
+"currier": "X",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f103v",
+"currier": "X",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f104r",
+"currier": "X",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f104v",
+"currier": "X",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f106r",
+"currier": "X",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f106v",
+"currier": "X",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f105r",
+"currier": "Y",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f105v",
+"currier": "Y",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "neither"
+},
+{
+"page": "f115r lines 1-12",
+"currier": "",
+"davis": "2",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "530 letters"
+},
+{
+"page": "f115r lines 13-",
+"currier": "",
+"davis": "3",
+"cluster": "1",
+"cluster_mostly_davis": "2",
+"agrees_with": "1320 letters"
+}
+],
+"marks": [
+{
+"mark": "fol-f2r",
+"set": "foliation",
+"page": "f2r",
+"ink_px": "599",
+"height_px": "42",
+"stroke_px": "3.16",
+"slant": "-73.7",
+"darkness": "0.642",
+"red_green": "1.27",
+"red_blue": "1.655"
+},
+{
+"mark": "fol-f17r",
+"set": "foliation",
+"page": "f17r",
+"ink_px": "1660",
+"height_px": "103",
+"stroke_px": "4.26",
+"slant": "66.8",
+"darkness": "0.598",
+"red_green": "1.243",
+"red_blue": "1.561"
+},
+{
+"mark": "fol-f25r",
+"set": "foliation",
+"page": "f25r",
+"ink_px": "1096",
+"height_px": "61",
+"stroke_px": "3.4",
+"slant": "-84.1",
+"darkness": "0.729",
+"red_green": "1.217",
+"red_blue": "1.527"
+},
+{
+"mark": "fol-f33r",
+"set": "foliation",
+"page": "f33r",
+"ink_px": "1972",
+"height_px": "84",
+"stroke_px": "5.01",
+"slant": "-63.3",
+"darkness": "0.548",
+"red_green": "1.238",
+"red_blue": "1.54"
+},
+{
+"mark": "fol-f43r",
+"set": "foliation",
+"page": "f43r",
+"ink_px": "1831",
+"height_px": "96",
+"stroke_px": "3.84",
+"slant": "-88.4",
+"darkness": "0.552",
+"red_green": "1.237",
+"red_blue": "1.512"
+},
+{
+"mark": "fol-f75r",
+"set": "foliation",
+"page": "f75r",
+"ink_px": "1440",
+"height_px": "103",
+"stroke_px": "3.63",
+"slant": "80.4",
+"darkness": "0.681",
+"red_green": "1.257",
+"red_blue": "1.584"
+},
+{
+"mark": "fol-f71r",
+"set": "foliation",
+"page": "f71r",
+"ink_px": "1888",
+"height_px": "60",
+"stroke_px": "5.06",
+"slant": "-84.8",
+"darkness": "0.615",
+"red_green": "1.243",
+"red_blue": "1.561"
+},
+{
+"mark": "quire-f8v",
+"set": "quire",
+"page": "f8v",
+"ink_px": "2997",
+"height_px": "110",
+"stroke_px": "5.5",
+"slant": "84.7",
+"darkness": "0.512",
+"red_green": "1.275",
+"red_blue": "1.653"
+},
+{
+"mark": "quire-f24v",
+"set": "quire",
+"page": "f24v",
+"ink_px": "826",
+"height_px": "97",
+"stroke_px": "4.02",
+"slant": "22.7",
+"darkness": "0.515",
+"red_green": "1.313",
+"red_blue": "1.79"
+},
+{
+"mark": "quire-f32v",
+"set": "quire",
+"page": "f32v",
+"ink_px": "1624",
+"height_px": "98",
+"stroke_px": "5.19",
+"slant": "41.4",
+"darkness": "0.508",
+"red_green": "1.268",
+"red_blue": "1.609"
+},
+{
+"mark": "quire-f40v",
+"set": "quire",
+"page": "f40v",
+"ink_px": "1816",
+"height_px": "150",
+"stroke_px": "4.33",
+"slant": "28.7",
+"darkness": "0.518",
+"red_green": "1.231",
+"red_blue": "1.503"
+},
+{
+"mark": "quire-f48v",
+"set": "quire",
+"page": "f48v",
+"ink_px": "1939",
+"height_px": "109",
+"stroke_px": "6.53",
+"slant": "55.9",
+"darkness": "0.404",
+"red_green": "1.22",
+"red_blue": "1.451"
+},
+{
+"mark": "month-f71r",
+"set": "month",
+"page": "f71r",
+"ink_px": "1588",
+"height_px": "91",
+"stroke_px": "2.9",
+"slant": "88.8",
+"darkness": "0.503",
+"red_green": "1.247",
+"red_blue": "1.555"
+},
+{
+"mark": "month-f71v",
+"set": "month",
+"page": "f71v",
+"ink_px": "833",
+"height_px": "54",
+"stroke_px": "3.43",
+"slant": "-75.6",
+"darkness": "0.659",
+"red_green": "1.161",
+"red_blue": "1.426"
+},
+{
+"mark": "month-f72r1",
+"set": "month",
+"page": "f72r1",
+"ink_px": "1155",
+"height_px": "75",
+"stroke_px": "4.1",
+"slant": "-63.8",
+"darkness": "0.7",
+"red_green": "1.158",
+"red_blue": "1.38"
+},
+{
+"mark": "month-f72r2",
+"set": "month",
+"page": "f72r2",
+"ink_px": "1305",
+"height_px": "42",
+"stroke_px": "4.96",
+"slant": "-83.3",
+"darkness": "0.649",
+"red_green": "1.158",
+"red_blue": "1.384"
+},
+{
+"mark": "month-f72r3",
+"set": "month",
+"page": "f72r3",
+"ink_px": "798",
+"height_px": "43",
+"stroke_px": "3.71",
+"slant": "-87.0",
+"darkness": "0.564",
+"red_green": "1.171",
+"red_blue": "1.41"
+},
+{
+"mark": "f116v-1",
+"set": "f116v",
+"page": "f116v",
+"ink_px": "1819",
+"height_px": "60",
+"stroke_px": "2.82",
+"slant": "88.5",
+"darkness": "0.502",
+"red_green": "1.443",
+"red_blue": "2.137"
+},
+{
+"mark": "f116v-4",
+"set": "f116v",
+"page": "f116v",
+"ink_px": "2614",
+"height_px": "76",
+"stroke_px": "3.54",
+"slant": "88.7",
+"darkness": "0.63",
+"red_green": "1.249",
+"red_blue": "1.602"
+},
+{
+"mark": "f49v-num",
+"set": "f49v",
+"page": "f49v",
+"ink_px": "682",
+"height_px": "305",
+"stroke_px": "2.62",
+"slant": "-0.1",
+"darkness": "0.61",
+"red_green": "1.235",
+"red_blue": "1.497"
+},
+{
+"mark": "color-f4r",
+"set": "color",
+"page": "f4r",
+"ink_px": "379",
+"height_px": "127",
+"stroke_px": "3.0",
+"slant": "5.7",
+"darkness": "0.574",
+"red_green": "1.215",
+"red_blue": "1.542"
+},
+{
+"mark": "text-f2r",
+"set": "text",
+"page": "f2r",
+"ink_px": "209494",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.759",
+"red_green": "1.183",
+"red_blue": "1.433"
+},
+{
+"mark": "text-f17r",
+"set": "text",
+"page": "f17r",
+"ink_px": "151792",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.799",
+"red_green": "1.168",
+"red_blue": "1.412"
+},
+{
+"mark": "text-f25r",
+"set": "text",
+"page": "f25r",
+"ink_px": "79002",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.807",
+"red_green": "1.175",
+"red_blue": "1.4"
+},
+{
+"mark": "text-f33r",
+"set": "text",
+"page": "f33r",
+"ink_px": "188891",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.722",
+"red_green": "1.18",
+"red_blue": "1.386"
+},
+{
+"mark": "text-f43r",
+"set": "text",
+"page": "f43r",
+"ink_px": "90757",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.716",
+"red_green": "1.164",
+"red_blue": "1.33"
+},
+{
+"mark": "text-f75r",
+"set": "text",
+"page": "f75r",
+"ink_px": "903699",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.646",
+"red_green": "1.205",
+"red_blue": "1.436"
+},
+{
+"mark": "text-f71r",
+"set": "text",
+"page": "f71r",
+"ink_px": "117499",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.525",
+"red_green": "1.178",
+"red_blue": "1.357"
+},
+{
+"mark": "text-f8v",
+"set": "text",
+"page": "f8v",
+"ink_px": "277931",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.78",
+"red_green": "1.179",
+"red_blue": "1.461"
+},
+{
+"mark": "text-f24v",
+"set": "text",
+"page": "f24v",
+"ink_px": "168261",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.792",
+"red_green": "1.172",
+"red_blue": "1.419"
+},
+{
+"mark": "text-f32v",
+"set": "text",
+"page": "f32v",
+"ink_px": "158923",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.753",
+"red_green": "1.162",
+"red_blue": "1.36"
+},
+{
+"mark": "text-f40v",
+"set": "text",
+"page": "f40v",
+"ink_px": "127666",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.726",
+"red_green": "1.179",
+"red_blue": "1.384"
+},
+{
+"mark": "text-f48v",
+"set": "text",
+"page": "f48v",
+"ink_px": "195238",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.699",
+"red_green": "1.159",
+"red_blue": "1.347"
+},
+{
+"mark": "text-f116v",
+"set": "text",
+"page": "f116v",
+"ink_px": "1971",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.276",
+"red_green": "1.222",
+"red_blue": "1.425"
+},
+{
+"mark": "text-f49v",
+"set": "text",
+"page": "f49v",
+"ink_px": "299108",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.779",
+"red_green": "1.163",
+"red_blue": "1.381"
+},
+{
+"mark": "text-f4r",
+"set": "text",
+"page": "f4r",
+"ink_px": "130070",
+"height_px": "",
+"stroke_px": "",
+"slant": "",
+"darkness": "0.784",
+"red_green": "1.184",
+"red_blue": "1.456"
+}
+],
+"thin": 582
+}
