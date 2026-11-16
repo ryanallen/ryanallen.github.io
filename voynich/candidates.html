@@ -80,7 +80,10 @@
         return `<div class="cd-e"><b>${esc(e.exp)}</b> ${esc(e.question)}<br><i>Predicted:</i> ${esc(e.prediction)}<br>` +
           (e.run_at ? `<i>Result:</i> ${esc(e.result)}<br><span style="font-size:11px">written ${esc(e.written_at)}, run ${esc(e.run_at)}, ${esc(e.partition)} pages</span>` : `<i>Written ${esc(e.written_at)}, not yet run.</i>`) +
           (cells ? `<div class="cd-sc">${cells}</div>` : '') + '</div>';
-      }).join('');
+      }).join('') + (() => {
+        const un = c.scorecard.filter(s => !s.exp && s.verdict === 'untested');
+        return un.length ? `<div class="cd-e"><b>Scorecard</b> untested: ${esc(un[0].reason)}<div class="cd-sc">${un.map(s => `<div class="cd-m untested">${esc(NAMES[s.measurement] || s.measurement)}<span>untested</span></div>`).join('')}</div></div>` : '';
+      })();
       out.insertAdjacentHTML('beforeend', `<div class="cd-c" id="c-${esc(c.id)}-${esc(c.version)}"><h3>${esc(c.id)} v${esc(c.version)}<span class="cd-v v-${vk === 'pass' ? 'pass' : vk === 'none' ? 'none' : 'fail'}">${esc(vt)}</span></h3>
         <dl><dt>P, the text</dt><dd>${esc(c.P)}</dd><dt>E, into signs</dt><dd>${esc(c.E)}</dd><dt>T, further</dt><dd>${esc(c.T)}</dd><dt>Source</dt><dd>${esc(c.source)}</dd><dt>Method</dt><dd>${esc(c.method)}</dd>${c.test ? `<dt>Verdict</dt><dd><b>${esc(vt)}</b>: ${esc(c.test.reason)}${c.test.heldout_score ? ` (read ${esc(c.test.heldout_score)}, shuffled text ${esc(c.test.chance_score)})` : ''}</dd>` : ''}</dl>${exps}</div>`);
       const rd = (d.readings || {})[c.id];
