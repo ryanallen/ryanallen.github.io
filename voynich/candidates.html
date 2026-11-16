@@ -39,7 +39,9 @@
   <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
 <div id="cd-intro">Every proposed reading of the Voynich text, put to one test. Each <b>candidate</b> is written as three parts kept apart: <b>P</b>, the language or kind of text it claims; <b>E</b>, how that text becomes Voynich signs; and <b>T</b>, anything further done to it. Each <b>run</b> is written down, with its question and what it predicts, before it is run, and runs only on the pages held for development; the 40 final pages stay closed until a candidate is frozen. A run's text is measured the way the <a href="grid.html">sign grid</a> measures the Voynich. A measure is green when it lies within the Voynich's own spread, the gap between its two "languages" (Currier A and B), and red when it does not. A reading passes only if more than 80% of the repeated words read, above what the same method reads from the Voynich text shuffled, and every required measure is green.</div>
-<div id="cd-found"><b>So far</b><ul id="cd-sum"></ul></div>
+<div id="cd-found"><b>So far</b> <span id="cd-head"></span>
+  <p style="margin:6px 0">A one-for-one substitution of any period language is ruled out on behavior before any reading: it keeps that language's line effects and repeats, which are not the Voynich's. Every read share stands beside the same method's reading of the Voynich text shuffled, which runs from 0.001 to 0.53 depending on the word list. The Voynich's line effects, immediate repeats and near repeats together are the first test any candidate has to meet; no generator or cipher tried here meets all three.</p>
+  <details><summary>Every verdict</summary><ul id="cd-sum"></ul></details></div>
 <div id="cd-jump"></div>
 <div id="cd-out">Loading…</div>
 <script>
@@ -55,9 +57,10 @@
                  'REP.adjacent': 'word repeated at once', 'LINE.first': 'line-start effect', 'LINE.last': 'line-end effect', 'NEAR.edit1': 'next word one letter off',
                  'SLOT.fit': 'fits Stolfi\'s word order', 'NOVEL': 'words not in the Voynich'};
   const verdict = c => {
-    if (c.test) return [c.test.verdict, c.test.verdict];
+    if (c.test) return [c.test.verdict, {fail: 'fails', pass: 'passes', insufficient: 'too little to run'}[c.test.verdict] || c.test.verdict];
     const res = c.experiments.filter(e => e.run_at);
-    if (!res.length) return ['none', 'not yet run'];
+    if (!res.length) return ['none', /not run|never published|none given/.test(c.method) ? 'entered, not runnable' : 'not yet run'];
+    if (c.family === 'control') return ['none', 'control, run'];
     return ['fail', 'fails on the development pages'];
   };
   const brief = r => r.includes('measures match') ? r.split('; ').slice(1).join('; ') : r.split('; ').slice(0, 1).concat(r.split('; ').filter(x => x.startsWith('chance line'))).join('; ');
@@ -79,7 +82,7 @@
           (cells ? `<div class="cd-sc">${cells}</div>` : '') + '</div>';
       }).join('');
       out.insertAdjacentHTML('beforeend', `<div class="cd-c" id="c-${esc(c.id)}-${esc(c.version)}"><h3>${esc(c.id)} v${esc(c.version)}<span class="cd-v v-${vk === 'pass' ? 'pass' : vk === 'none' ? 'none' : 'fail'}">${esc(vt)}</span></h3>
-        <dl><dt>P, the text</dt><dd>${esc(c.P)}</dd><dt>E, into signs</dt><dd>${esc(c.E)}</dd><dt>T, further</dt><dd>${esc(c.T)}</dd><dt>Source</dt><dd>${esc(c.source)}</dd><dt>Method</dt><dd>${esc(c.method)}</dd></dl>${exps}</div>`);
+        <dl><dt>P, the text</dt><dd>${esc(c.P)}</dd><dt>E, into signs</dt><dd>${esc(c.E)}</dd><dt>T, further</dt><dd>${esc(c.T)}</dd><dt>Source</dt><dd>${esc(c.source)}</dd><dt>Method</dt><dd>${esc(c.method)}</dd>${c.test ? `<dt>Verdict</dt><dd><b>${esc(vt)}</b>: ${esc(c.test.reason)}${c.test.heldout_score ? ` (read ${esc(c.test.heldout_score)}, shuffled text ${esc(c.test.chance_score)})` : ''}</dd>` : ''}</dl>${exps}</div>`);
       const rd = (d.readings || {})[c.id];
       if (rd && rd.length && c === cs.filter(x => x.id === c.id).slice(-1)[0]) {
         const flags = r => [r.joined === '1' && 'joined across a space', r.emended === '1' && 'emended from the photograph',
@@ -95,10 +98,12 @@
           <div class="key">Each word he reads in his paper, beside the EVA word it stands on (ZL 3b, paired by order). <b>Grid</b>: whether his own sign table (version 4) turns the EVA into his Hebrew; "unwritten" names Hebrew letters the Voynich word does not write, "dropped" Voynich signs his Hebrew leaves out, "against" a sign read as a letter his table does not give it. <b>Period</b>: in the Torah when its letters are a word of the Torah, though not always in his sense (his by-form bˁm "with" is the Torah's "in the people"), or else from Klein's <i>Comprehensive Etymological Dictionary of the Hebrew Language</i> (1987), which he cites: Biblical, PBH (post-Biblical, Mishnah and Talmud), or unattested in the form or sense he gives.</div>
           <div class="wrap"><table><thead><tr><th>Line</th><th>EVA</th><th>His reading</th><th>Meaning</th><th>Grid</th><th>Period</th><th>Help needed</th></tr></thead><tbody>${rows}</tbody></table></div></details>`);
       }
-      if (c.experiments.some(e => e.run_at)) sum.push(`<li><b>${esc(c.id)} v${esc(c.version)}</b>: ${esc(vt)}. ${esc(brief(c.experiments.filter(e => e.run_at).slice(-1)[0].result))}.</li>`);
+      if (c.test) sum.push(`<li><a href="#c-${esc(c.id)}-${esc(c.version)}"><b>${esc(c.id)} v${esc(c.version)}</b></a>: ${esc(vt)}. ${esc(c.test.reason)}.</li>`);
     }
   }
   $('cd-jump').innerHTML = jump.join(' ');
+  const tally = v => d.candidates.filter(c => c.test && c.test.verdict === v).length;
+  $('cd-head').textContent = `${tally('pass')} pass, ${tally('fail')} fail and ${tally('insufficient')} have too little to run (no sign table published, or one not yet read), of ${d.candidates.length} candidate versions, on the development pages.`;
   $('cd-sum').innerHTML = sum.join('') || '<li>No candidate has been run yet.</li>';
 })();
 </script>
