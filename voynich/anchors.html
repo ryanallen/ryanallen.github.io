@@ -36,6 +36,7 @@
   .an-colour img{display:block;width:100%;height:auto;border-radius:4px;background:#2a2620}
   .an-colour figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.45}.an-colour figcaption b{color:var(--text)}
   .an-colour i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+  .an-note{font-size:14px;color:var(--muted);max-width:900px;line-height:1.5}.an-note b{color:var(--text)}
 </style>
 </head>
 <body>
@@ -112,6 +113,15 @@
       const el = document.getElementById('an-colour-cards');
       if (!el) return;
       el.innerHTML = c.notes.map(n => `<figure><img loading="lazy" src="${esc(n.crop)}" alt="${esc(n.page)} colour note"><figcaption><b>${esc(n.page)}</b> ${esc(n.where)}<br>Reads: <b>${esc(n.reading_here)}</b> (${esc(n.sure)})<br>Paint: ${n.paint_hex ? `<i style="background:${esc(n.paint_hex)}"></i>` : ''}${esc(n.paint)} · ${esc(n.matches)}</figcaption></figure>`).join('');
+    }).catch(() => {});
+    sec('an-formula', 'A fixed place for "hot and dry"?', 'A 1400s herbal entry follows a formula: the plant\'s name, then its qualities (hot or cold, dry or moist, and a degree), then its uses. If the Voynich\'s herbal pages did too, one place on each page would hold only a handful of words, and those words would mean hot, cold, dry or moist.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-formula-body"></div>');
+    fetch('data/formula.json').then(r => r.json()).then(f => {
+      const el = document.getElementById('an-formula-body');
+      if (!el) return;
+      const m = f.period.find(r => r.herbal === 'macer'), a = f.period.find(r => r.herbal === 'alchemical-herbal');
+      const at = f.at_macers_place.map(r => `Currier ${esc(r.currier)}: ${esc(r.distinct)} different words on ${esc(r.pages)} pages`).join('; ');
+      el.innerHTML = `<p class="an-note">Macer\'s herbal poem gives a quality in ${esc(m.with_quality)} of its ${esc(m.entries)} entries, usually in the entry\'s second line, about the third word, from ${esc(m.forms)} word forms. The prose <i>Alchemical Herbal</i> gives one in only ${esc(a.with_quality)} of ${esc(a.entries)}, late in the entry, so the formula belongs to some herbals, not all. <b>The Voynich has no such place.</b> At Macer\'s place (first paragraph, line 2, word 3) the herbal pages have ${at}. Of ${esc(f.places)} places tested (first two paragraphs, first three lines, first four words and the last word), ${f.candidates ? esc(f.candidates) + " are" : "none is"} filled from a closed set more than the lines\' own kind allows.</p>`;
     }).catch(() => {});
     out.insertAdjacentHTML('beforeend', `<details class="an-more"><summary>Labels tied to nothing (${d.unmatched.length})</summary>${tbl(['label', 'page', 'why'], d.unmatched.map(u => [word(u.eva) + ' ' + esc(u.locus), esc(u.page), esc(u.why)]))}</details>`);
     $('an-jump').innerHTML = jump.join(' ');

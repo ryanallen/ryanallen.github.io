@@ -1,0 +1,98 @@
+{
+ "period": [
+  {
+   "herbal": "macer",
+   "entries": "63",
+   "with_quality": "47",
+   "median_line": "2",
+   "median_word_in_line": "3",
+   "median_place_in_entry": "0.05",
+   "in_first_line": "17",
+   "forms": "17",
+   "commonest": "calidam 10, sicca 6, calidum 6, frigida 6, humida 4, calidae 3"
+  },
+  {
+   "herbal": "alchemical-herbal",
+   "entries": "98",
+   "with_quality": "40",
+   "median_line": "3",
+   "median_word_in_line": "8",
+   "median_place_in_entry": "0.73",
+   "in_first_line": "6",
+   "forms": "16",
+   "commonest": "frigidis 13, calido 5, calidum 3, frigidas 3, calidi 3, calida 2"
+  }
+ ],
+ "places": 60,
+ "candidates": 0,
+ "at_macers_place": [
+  {
+   "currier": "A",
+   "paragraph": "1",
+   "line": "2",
+   "word": "3",
+   "pages": "80",
+   "distinct": "65",
+   "p_corrected": "1.0000",
+   "candidate": "",
+   "commonest": "shol 4, chor 4, chol 3, daiin 3"
+  },
+  {
+   "currier": "B",
+   "paragraph": "1",
+   "line": "2",
+   "word": "3",
+   "pages": "30",
+   "distinct": "27",
+   "p_corrected": "1.0000",
+   "candidate": "",
+   "commonest": "qokedy 2, okeedy 2, okaiin 2, adeeody 1"
+  }
+ ],
+ "most_closed": [
+  {
+   "currier": "A",
+   "paragraph": "2",
+   "line": "1",
+   "word": "1",
+   "pages": "55",
+   "distinct": "48",
+   "p_corrected": "0.0105",
+   "candidate": "more closed than its lines, not a closed set",
+   "commonest": "tchor 3, toy 2, tshol 2, kchor 2"
+  },
+  {
+   "currier": "B",
+   "paragraph": "2",
+   "line": "2",
+   "word": "2",
+   "pages": "21",
+   "distinct": "17",
+   "p_corrected": "0.0221",
+   "candidate": "more closed than its lines, not a closed set",
+   "commonest": "chedy 4, ol 2, shedy 1, saiin 1"
+  },
+  {
+   "currier": "A",
+   "paragraph": "2",
+   "line": "1",
+   "word": "3",
+   "pages": "54",
+   "distinct": "44",
+   "p_corrected": "0.3297",
+   "candidate": "",
+   "commonest": "chor 4, shol 4, daiin 3, shor 3"
+  },
+  {
+   "currier": "A",
+   "paragraph": "2",
+   "line": "2",
+   "word": "3",
+   "pages": "55",
+   "distinct": "43",
+   "p_corrected": "0.7193",
+   "candidate": "",
+   "commonest": "daiin 6, chor 4, chol 4, sho 2"
+  }
+ ]
+}
