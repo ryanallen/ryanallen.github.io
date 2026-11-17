@@ -1,0 +1,280 @@
+{
+ "ring": [
+  {
+   "n": "1",
+   "locus": "f69v.4",
+   "clock": "09:30",
+   "eva": "okeey,sar",
+   "mansion": "Sharatan"
+  },
+  {
+   "n": "2",
+   "locus": "f69v.5",
+   "clock": "10:00",
+   "eva": "okeo,dy",
+   "mansion": "Butayn"
+  },
+  {
+   "n": "3",
+   "locus": "f69v.6",
+   "clock": "10:30",
+   "eva": "ochoyk",
+   "mansion": "Thuraya"
+  },
+  {
+   "n": "4",
+   "locus": "f69v.7",
+   "clock": "11:00",
+   "eva": "ykeey",
+   "mansion": "Dabaran"
+  },
+  {
+   "n": "5",
+   "locus": "f69v.8",
+   "clock": "11:30",
+   "eva": "ytory",
+   "mansion": "Haq'a"
+  },
+  {
+   "n": "6",
+   "locus": "f69v.9",
+   "clock": "00:00",
+   "eva": "oeesy",
+   "mansion": "Han'a"
+  },
+  {
+   "n": "7",
+   "locus": "f69v.10",
+   "clock": "00:15",
+   "eva": "ytody",
+   "mansion": "Dhira'a"
+  },
+  {
+   "n": "8",
+   "locus": "f69v.11",
+   "clock": "00:30",
+   "eva": "okody",
+   "mansion": "Nathra"
+  },
+  {
+   "n": "9",
+   "locus": "f69v.12",
+   "clock": "01:00",
+   "eva": "otody",
+   "mansion": "Tarf"
+  },
+  {
+   "n": "10",
+   "locus": "f69v.13",
+   "clock": "01:30",
+   "eva": "okeal",
+   "mansion": "Jabha"
+  },
+  {
+   "n": "11",
+   "locus": "f69v.14",
+   "clock": "02:00",
+   "eva": "okeod",
+   "mansion": "Zubra"
+  },
+  {
+   "n": "12",
+   "locus": "f69v.15",
+   "clock": "02:15",
+   "eva": "oteeys",
+   "mansion": "Sarfa"
+  },
+  {
+   "n": "13",
+   "locus": "f69v.16",
+   "clock": "02:45",
+   "eva": "oteol",
+   "mansion": "'Awa'"
+  },
+  {
+   "n": "14",
+   "locus": "f69v.17",
+   "clock": "03:00",
+   "eva": "ykeydy",
+   "mansion": "Simak"
+  },
+  {
+   "n": "15",
+   "locus": "f69v.18",
+   "clock": "03:15",
+   "eva": "okeod",
+   "mansion": "Ghafr"
+  },
+  {
+   "n": "16",
+   "locus": "f69v.19",
+   "clock": "03:30",
+   "eva": "saral",
+   "mansion": "Zubana"
+  },
+  {
+   "n": "17",
+   "locus": "f69v.20",
+   "clock": "04:00",
+   "eva": "saiir",
+   "mansion": "Iklil"
+  },
+  {
+   "n": "18",
+   "locus": "f69v.21",
+   "clock": "04:30",
+   "eva": "okolar",
+   "mansion": "Qalb"
+  },
+  {
+   "n": "19",
+   "locus": "f69v.22",
+   "clock": "05:00",
+   "eva": "ykeody",
+   "mansion": "Shawla"
+  },
+  {
+   "n": "20",
+   "locus": "f69v.23",
+   "clock": "05:15",
+   "eva": "sarydy",
+   "mansion": "Na'a'im"
+  },
+  {
+   "n": "21",
+   "locus": "f69v.24",
+   "clock": "05:45",
+   "eva": "otchy",
+   "mansion": "Balda"
+  },
+  {
+   "n": "22",
+   "locus": "f69v.25",
+   "clock": "06:00",
+   "eva": "okeey,dy",
+   "mansion": "Sa'd adh-Dhabih"
+  },
+  {
+   "n": "23",
+   "locus": "f69v.26",
+   "clock": "06:30",
+   "eva": "okey,d",
+   "mansion": "Sa'd Bul'"
+  },
+  {
+   "n": "24",
+   "locus": "f69v.27",
+   "clock": "07:00",
+   "eva": "okeod",
+   "mansion": "Sa'd as-Su'ud"
+  },
+  {
+   "n": "25",
+   "locus": "f69v.28",
+   "clock": "07:30",
+   "eva": "okodchy",
+   "mansion": "Sa'd al-Akhbiya"
+  },
+  {
+   "n": "26",
+   "locus": "f69v.29",
+   "clock": "08:00",
+   "eva": "okeody",
+   "mansion": "Fargh al-Awal"
+  },
+  {
+   "n": "27",
+   "locus": "f69v.30",
+   "clock": "08:30",
+   "eva": "okcheys",
+   "mansion": "Fargh ath-Thani"
+  },
+  {
+   "n": "28",
+   "locus": "f69v.31",
+   "clock": "08:45",
+   "eva": "oar.alys",
+   "mansion": "Hut"
+  }
+ ],
+ "tests": [
+  {
+   "words": "f69v ring",
+   "initial": "first sign",
+   "profile_distance": "34",
+   "profile_chance_mean": "24.36",
+   "profile_p": "0.997",
+   "best_agreement": "0.177",
+   "start": "f69v.31",
+   "direction": "clockwise",
+   "order_p": "0.7275",
+   "initials": "o o o y y o y o o o o o o y o s s o y s o o o o o o o o"
+  },
+  {
+   "words": "f69v ring",
+   "initial": "after a leading o or y",
+   "profile_distance": "28",
+   "profile_chance_mean": "14.55",
+   "profile_p": "1.0",
+   "best_agreement": "0.161",
+   "start": "f69v.6",
+   "direction": "clockwise",
+   "order_p": "0.986",
+   "initials": "k k c k t e t k t k k t t k k s s k k s t k k k k k k a"
+  },
+  {
+   "words": "star labels f67r1-f68v3 (79)",
+   "initial": "first sign",
+   "profile_distance": "28.44",
+   "profile_chance_mean": "24.36",
+   "profile_p": "0.896",
+   "best_agreement": "",
+   "start": "",
+   "direction": "",
+   "order_p": "",
+   "initials": ""
+  },
+  {
+   "words": "star labels f67r1-f68v3 (79)",
+   "initial": "after a leading o or y",
+   "profile_distance": "18.36",
+   "profile_chance_mean": "14.55",
+   "profile_p": "0.8975",
+   "best_agreement": "",
+   "start": "",
+   "direction": "",
+   "order_p": "",
+   "initials": ""
+  }
+ ],
+ "mansions": [
+  "Sharatan",
+  "Butayn",
+  "Thuraya",
+  "Dabaran",
+  "Haq'a",
+  "Han'a",
+  "Dhira'a",
+  "Nathra",
+  "Tarf",
+  "Jabha",
+  "Zubra",
+  "Sarfa",
+  "'Awa'",
+  "Simak",
+  "Ghafr",
+  "Zubana",
+  "Iklil",
+  "Qalb",
+  "Shawla",
+  "Na'a'im",
+  "Balda",
+  "Sa'd adh-Dhabih",
+  "Sa'd Bul'",
+  "Sa'd as-Su'ud",
+  "Sa'd al-Akhbiya",
+  "Fargh al-Awal",
+  "Fargh ath-Thani",
+  "Hut"
+ ]
+}

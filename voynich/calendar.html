@@ -28,6 +28,8 @@
   .ca-cmp th{color:var(--text);font-weight:normal}
   .ca-cmp img{width:150px;height:150px;object-fit:contain;background:#2a2620;border-radius:4px}
   @media (max-width:480px){.ca-sign>figure{width:100%}.ca-w{width:calc(33% - 4px);box-sizing:border-box}.ca-pool{width:calc(50% - 4px)}}
+  .ring69{max-width:900px;margin:24px auto;padding:0 16px;color:var(--muted);font-size:14px;line-height:1.5}.ring69 h2{font-size:17px;color:var(--text)}.ring69 b{color:var(--text)}
+  .ring69t{border-collapse:collapse;font-size:13px}.ring69t td,.ring69t th{padding:4px 8px;border-bottom:1px solid #353a43;text-align:left}.ring69t th{color:var(--text)}.ring69 code{color:var(--text)}.ring69n{font-size:12px}
 </style>
 </head>
 <body>
@@ -70,6 +72,16 @@
   out.insertAdjacentHTML('beforeend', `<table class="ca-cmp"><tr><th>Sign</th><th>Voynich</th><th>M.384</th><th>Cod. Sang. 827</th><th>Cod. Pal. germ. 832</th></tr>${d.compare.map(c => `<tr><td>${esc(c.sign)}<br>${esc(c.voynich)}</td><td>${c.region ? `<img loading="lazy" alt="Voynich ${esc(c.sign)}" src="${pic(c.iiif, c.region, '!300,300')}">` : ''}</td><td><img loading="lazy" alt="M.384 ${esc(c.sign)}" src="${esc(c.morgan)}"></td><td><img loading="lazy" alt="827 ${esc(c.sign)}" src="${esc(c.csg)}"></td><td><img loading="lazy" alt="832 ${esc(c.sign)}" src="${esc(c.cpg)}"></td></tr>`).join('')}</table>`);
   $('ca-jump').innerHTML = jump.join(' ');
 })();
+</script>
+<section id="ring69" class="ring69"><h2>f69v's ring of 28 words and the lunar mansions</h2><div id="ring69-body">Loading…</div></section>
+<script>
+fetch('data/stars.json').then(r => r.json()).then(d => {
+  const e = x => String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const t = d.tests.find(x => x.words === 'f69v ring' && x.initial === 'first sign'), t2 = d.tests.find(x => x.words === 'f69v ring' && x.initial !== 'first sign');
+  document.getElementById('ring69-body').innerHTML = `<p>f69v has 28 short words written along the rays of its circle. Twenty-eight is the number of the lunar mansions, the moon's stations, which Latin astrology took from Arabic astronomy. If the ring named them in a letter-for-letter script, words whose names share a first letter (the four Sa'd, the two Fargh) would share one too. <b>They don't.</b> The ring's words nearly all begin with o or y (${e(t.initials)}), far less varied than the mansions' names. Set against them at every starting point, both ways round, the best fit is no better than the same words shuffled (chance ${e(t.order_p)}; ${e(t2.order_p)} reading past a first o or y). So the ring is not the mansions' names written one letter for one sign. It could still name them some other way.</p>
+  <table class="ring69t"><thead><tr><th>#</th><th>Clock</th><th>Word (EVA)</th><th>Mansion in the same place of the list</th></tr></thead><tbody>${d.ring.map(r => `<tr><td>${e(r.n)}</td><td>${e(r.clock)}</td><td><code>${e(r.eva)}</code></td><td>${e(r.mansion)}</td></tr>`).join('')}</tbody></table>
+  <p class="ring69n">The words are ZL's, in its clock order round the circle from 09:30. The mansions are listed in their own order beside them only to show the count; no word is matched to one.</p>`;
+}).catch(e => { document.getElementById('ring69-body').textContent = 'Did not load: ' + e.message; });
 </script>
 </body>
 </html>
