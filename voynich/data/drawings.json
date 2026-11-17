@@ -861,6 +861,158 @@
    ]
   },
   {
+   "id": "fRos.o",
+   "page": "fRos",
+   "kind": "building",
+   "count": 1,
+   "named": "a hatched cone, a tower or spire",
+   "verdict": "possible",
+   "features": "a cone hatched in a grid with small dots, like a tower or spire seen from the side, above the top-right circle",
+   "reason": "a conical shape hatched like masonry; whether a building or a tent or a mound is open",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    7103,
+    518,
+    252,
+    218
+   ]
+  },
+  {
+   "id": "fRos.n",
+   "page": "fRos",
+   "kind": "building",
+   "count": 1,
+   "named": "a small crenellated tower",
+   "verdict": "possible",
+   "features": "a small box with three short strokes on top, like a crenellated tower, above the top-right circle",
+   "reason": "a box topped with merlons; too small to read its merlons' form",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    6691,
+    499,
+    68,
+    87
+   ]
+  },
+  {
+   "id": "fRos.l",
+   "page": "fRos",
+   "kind": "building",
+   "count": 1,
+   "named": "a tower drawn pointing out from a circle",
+   "verdict": "possible",
+   "features": "a small square tower hanging below the top-right circle's disc of stars, its pointed roof turned down and out",
+   "reason": "a square tower with a pointed roof, drawn pointing outward from the circle as town towers stand round the rim of a circular map; no source opened names it",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    6619,
+    1817,
+    107,
+    121
+   ]
+  },
+  {
+   "id": "fRos.p",
+   "page": "fRos",
+   "kind": "building",
+   "count": 6,
+   "named": "columns or towers crowned with domes",
+   "verdict": "possible",
+   "features": "in the center circle's inner oval, six tall columns on feet, each crowned with a bulbous dome, two more domes at the oval's top",
+   "reason": "tall shafts with bulbous domes on footed bases; read as Jerusalem's domes (Barbara), as jars or as figures; the drawing alone does not settle it",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    3755,
+    2907,
+    1090,
+    1114
+   ]
+  },
+  {
+   "id": "fRos.m",
+   "page": "fRos",
+   "kind": "building",
+   "count": 3,
+   "named": "towers drawn pointing out from a circle",
+   "verdict": "possible",
+   "features": "three towers with spired roofs hanging down from an arcaded rim in the neck below the top-right circle, a blue patch at the rim",
+   "reason": "three slender towers with conical roofs on an arcaded wall, turned outward as on a circular map; no source opened names them",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    6517,
+    2277,
+    315,
+    300
+   ]
+  },
+  {
+   "id": "fRos.s",
+   "page": "fRos",
+   "kind": "building",
+   "count": 1,
+   "named": "a banded rectangle like an arcaded façade",
+   "verdict": "unknown",
+   "features": "in the bottom-right circle, a rectangle of eight bands of small arches, tilted, like a façade or a grid of cells",
+   "reason": "rows of small arches stacked in a frame; an arcaded wall, a grid of cells or a field; nothing on it settles it",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    5839,
+    5281,
+    630,
+    751
+   ]
+  },
+  {
+   "id": "fRos.r",
+   "page": "fRos",
+   "kind": "building",
+   "count": 4,
+   "named": "a bundle of tube-shaped towers",
+   "verdict": "unknown",
+   "features": "a bundle of four tubes, open at their ends, between the top-left and center circles",
+   "reason": "four open cylinders tied together, like the center circle's ring of tubes; not marked as buildings",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    2689,
+    2132,
+    242,
+    194
+   ]
+  },
+  {
+   "id": "fRos.q",
+   "page": "fRos",
+   "kind": "building",
+   "count": 22,
+   "named": "a ring of tube-shaped towers",
+   "verdict": "unknown",
+   "features": "a ring of short tubes round the center circle's rim, about 22 groups of two or three, each open at its end",
+   "reason": "short cylinders standing out from the rim, open-ended like pipes or chimneys; called towers in the study's center-circle row, but nothing on them (roofs, merlons, windows) marks them as buildings",
+   "proposals": [],
+   "words": [],
+   "iiif": "https://collections.library.yale.edu/iiif/2/1006231",
+   "region": [
+    3149,
+    2398,
+    2423,
+    2520
+   ]
+  },
+  {
    "id": "fRos.k",
    "page": "fRos",
    "kind": "place",
