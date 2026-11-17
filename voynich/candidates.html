@@ -70,7 +70,8 @@
     'ardic': 'Old Turkic', 'hildegard': "Hildegard's invented language", 'croatian': 'Croatian',
     'newbold': "Newbold's Latin", 'feely': "Feely's Latin", 'strong': "Strong's English",
     'brumbaugh': "Brumbaugh's Latin", 'stojko': 'Old Ukrainian', 'levitov': 'Flemish-based creole',
-    'child': 'North Germanic dialect', 'tucker-talbert': 'Mesoamerican languages'
+    'child': 'North Germanic dialect', 'tucker-talbert': 'Mesoamerican languages',
+    'fontana': "Fontana's cipher (Venice, 1400s)", 'tranchedino': "Tranchedino's Milanese ciphers"
   };
   const verdict = c => {
     if (c.test) return [c.test.verdict, {fail: 'fails', pass: 'passes', insufficient: 'too little to run'}[c.test.verdict] || c.test.verdict];
