@@ -151,6 +151,16 @@
       el.innerHTML = `<p class="an-note"><b>They don't read as headings that name the page.</b> Their words turn up elsewhere on their own page ${Math.round(s.own_page * 100)}% of the time, against ${Math.round(s.own_page_chance * 100)}% on another page of the same section, but an ordinary paragraph's last line does that more (${Math.round(s.last_own_page * 100)}% against ${Math.round(s.last_chance * 100)}%), so that is just a page reusing its words. They hold fewer topic words than ordinary last lines (${Math.round(s.topic_share * 100)}% against ${Math.round(s.topic_share_last * 100)}%). The titles proper, on f1r, f8r, f25r and f46v, are mostly words found nowhere else on their page, as names would be, but every plant on those pages is unidentified, so there is no name to test them against. ${s.final_sealed} lines on pages saved for the final test are left out.</p>` +
         tbl(['line', 'kind', 'words', 'share found elsewhere on its page'], dev.map(l => [esc(l.locus), esc(l.kind), word(l.words.split('.')[0]) + (l.words.includes('.') ? ' <code>' + esc(l.words.split('.').slice(1).join(' ')) + '</code>' : ''), esc(l.own_page)]));
     }).catch(() => {});
+    sec('an-lost', 'Text known to be there and never read', 'Zandbergen lists the places where the manuscript has writing no transliteration reads: under paint, in the folds of the foldouts, under a stain, eaten by insects. Other copies may show more.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-lost-body"></div>');
+    fetch('data/recovered.json').then(r => r.json()).then(c => {
+      const el = document.getElementById('an-lost-body');
+      if (!el) return;
+      const n = c.rows.length;
+      el.innerHTML = `<p class="an-note"><b>None of the ${n} places can be read further from the copies anyone can get for free.</b> Each was looked at on Yale\'s 2014 image at full size. The copies Zandbergen names as showing more are not online at a size that can be read: the 2004 scans survive as small pictures, the copyflo (a black-and-white printout with the zodiac pages flattened), Friedman\'s photostats and Petersen\'s hand copy are on paper at Yale and the Marshall Library, and the Siloé facsimile is a book for sale. Two places on f116r cannot be recovered from any copy: insects ate the vellum.</p>` +
+        `<div class="an-colour">` + c.rows.filter(r => r.crop).filter((r, i, a) => a.findIndex(x => x.crop === r.crop) === i).map(r => `<figure><img loading="lazy" src="${esc(r.crop)}" alt="${esc(r.locus)} on Yale\'s image"><figcaption><b>${esc(r.page)}</b> ${esc(r.cause)}</figcaption></figure>`).join('') + `</div>` +
+        tbl(['place', 'what ZL has', 'why it is lost', 'may show more', 'status'], c.rows.map(r => [esc(r.locus), r.zl ? `<code>${esc(r.zl)}</code>` : '', esc(r.cause), esc(r.may_show), esc(r.status)]));
+    }).catch(() => {});
     sec('an-corrections', 'Corrections, and which came first', 'A working cipher or language has rules, so a scribe\'s corrections should follow a pattern; someone making up text has nothing to correct against.');
     out.insertAdjacentHTML('beforeend', '<div id="an-corr-body"></div>');
     fetch('data/corrections.json').then(r => r.json()).then(c => {

@@ -1,0 +1,202 @@
+{
+ "counts": {
+  "not recovered": 16,
+  "sealed": 1,
+  "lost": 2
+ },
+ "rows": [
+  {
+   "locus": "f67v2.21",
+   "page": "f67v2",
+   "zl": "oko???",
+   "cause": "a label under paint by the four faces",
+   "may_show": "Siloé facsimile (barely); Petersen's hand copy (partly)",
+   "status": "not recovered",
+   "reading": "",
+   "note": "the paint covers the end of the label on Yale's image"
+  },
+  {
+   "locus": "f68r2",
+   "page": "f68r2",
+   "zl": "",
+   "cause": "script round the sun face not told from cleartext",
+   "may_show": "the manuscript itself",
+   "status": "not recovered",
+   "reading": "",
+   "note": "not transliterated in ZL"
+  },
+  {
+   "locus": "f71v.1",
+   "page": "f71v",
+   "zl": "osheo.parar…",
+   "cause": "words hidden in the fold near 03:00",
+   "may_show": "the copyflo, where the zodiac pages were flattened; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": "the fold's gutter hides them on Yale's image"
+  },
+  {
+   "locus": "f72r3.1",
+   "page": "f72r3",
+   "zl": "…okarar.???.???teo.sheol…",
+   "cause": "words hidden in the fold",
+   "may_show": "the copyflo; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": "the fold's gutter hides them"
+  },
+  {
+   "locus": "f72r3.14",
+   "page": "f72r3",
+   "zl": "otochedy.otey…",
+   "cause": "words obliterated in the fold",
+   "may_show": "the copyflo; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f72r3.20",
+   "page": "f72r3",
+   "zl": "of???.o.eeesaly",
+   "cause": "a label hidden in the fold",
+   "may_show": "the copyflo; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f72v3.1",
+   "page": "f72v3",
+   "zl": "…oteokchd?.…",
+   "cause": "words hidden by the fold",
+   "may_show": "the copyflo; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f72v3.20",
+   "page": "f72v3",
+   "zl": "…okea???…",
+   "cause": "words hidden by the fold",
+   "may_show": "the copyflo; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f72v2.1",
+   "page": "f72v2",
+   "zl": "…ar?k?aly.che??…",
+   "cause": "many words beyond the folded edge near 03:00",
+   "may_show": "the copyflo; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "fRos.1",
+   "page": "fRos",
+   "zl": "saeeasa?",
+   "cause": "a barely visible label",
+   "may_show": "the Siloé facsimile; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "fRos.47",
+   "page": "fRos",
+   "zl": "…chekad?r…[y:?]tar…",
+   "cause": "two parts lost at the horizontal fold",
+   "may_show": "the Siloé facsimile; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": "Zandbergen names these two as recoverable"
+  },
+  {
+   "locus": "fRos.133",
+   "page": "fRos",
+   "zl": "…oees.???…",
+   "cause": "much lost at the damaged fold",
+   "may_show": "the Siloé facsimile; the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f86v4.1",
+   "page": "f86v4",
+   "zl": "…pch???ar…",
+   "cause": "a small loss at a crease",
+   "may_show": "the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f86v4.2",
+   "page": "f86v4",
+   "zl": "…otodeee[?:o]…",
+   "cause": "a small loss at a crease",
+   "may_show": "the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": ""
+  },
+  {
+   "locus": "f101v.19",
+   "page": "f101v",
+   "zl": "…otch???y…",
+   "cause": "the lines worn away at the horizontal fold, 19 to 28",
+   "may_show": "the 2004 scans; the Siloé facsimile",
+   "status": "not recovered",
+   "reading": "",
+   "note": "ten lines each lose two to four letters at the same height"
+  },
+  {
+   "locus": "f102r2.15",
+   "page": "f102r2",
+   "zl": "",
+   "cause": "the bottom jar's word under paint",
+   "may_show": "the Siloé facsimile",
+   "status": "sealed",
+   "reading": "",
+   "note": "a final page"
+  },
+  {
+   "locus": "f103r.5",
+   "page": "f103r",
+   "zl": "…yt???.rkar.ota?…",
+   "cause": "under a stain, lines 5 to 9",
+   "may_show": "the 2004 scans",
+   "status": "not recovered",
+   "reading": "",
+   "note": "dark partial letters under the stain cannot be told from it",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006254/1547,344,846,361/!480,480/0/default.jpg"
+  },
+  {
+   "locus": "f116r.43",
+   "page": "f116r",
+   "zl": "[a:o]s???.ar.al…",
+   "cause": "eaten by insects",
+   "may_show": "none: the vellum is gone",
+   "status": "lost",
+   "reading": "",
+   "note": "a hole where the first word stood",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006276/254,2687,531,219/!480,480/0/default.jpg"
+  },
+  {
+   "locus": "f116r.44",
+   "page": "f116r",
+   "zl": "s[?:o].o[k:?]eedy…",
+   "cause": "eaten by insects",
+   "may_show": "none: the vellum is gone",
+   "status": "lost",
+   "reading": "",
+   "note": "a hole through the first two words",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006276/254,2687,531,219/!480,480/0/default.jpg"
+  }
+ ]
+}
