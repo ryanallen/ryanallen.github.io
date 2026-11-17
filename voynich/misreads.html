@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misread letters</title>
+<meta name="description" content="How often the standard Voynich transcription misreads a letter, and whether each finding still holds when letters are misread.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #mr{max-width:960px;margin:0 auto;padding:8px 16px 40px}
+  #mr .lead{color:var(--muted);font-size:15px;margin:10px 0 4px;max-width:760px}#mr .lead b{color:var(--text)}
+  #mr h2{font-size:17px;margin:26px 0 8px;color:var(--text)}
+  #mr p{color:var(--muted);font-size:14px;line-height:1.5;max-width:760px}
+  #mr .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:10px 0}
+  #mr .stat{padding:10px 12px;border:1px solid #41454e;border-radius:10px;background:var(--panel);font-size:13px;color:var(--muted)}
+  #mr .stat b{display:block;font-size:20px;color:var(--text)}
+  #mr table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+  #mr th,#mr td{text-align:left;padding:7px 6px;border-bottom:1px solid #353a43;vertical-align:top;color:var(--muted)}
+  #mr th{color:var(--text);font-weight:600}
+  #mr td a{color:var(--accent)}
+  #mr .mark{display:inline-block;padding:1px 8px;border-radius:9px;font-size:12px;font-weight:600;white-space:nowrap}
+  #mr .holds{background:#1f3b2a;color:#8fd6a7}
+  #mr .fragile{background:#3e2f1a;color:#f0c27a}
+  @media (max-width:640px){#mr .hide-phone{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="research.html">Voynich research</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
+</header>
+<main id="mr">
+  <p class="lead"><b>Every finding here still holds when letters are misread.</b> The study reads the standard transcription (Zandbergen and Landini's, called ZL) as the manuscript's letters. ZL is good but not perfect. So we measured how often it misreads a letter, then reran every finding on 50 copies of the text with misreads put in at that rate.</p>
+
+  <h2>How often ZL misreads a letter</h2>
+  <p>We compared ZL with the ink on words people checked by hand: words approved on the <a href="./">tracing site</a>, and words Ryan checked because they looked doubtful. The doubtful words were chosen for doubt, so their rate is an upper bound.</p>
+  <div class="stats" id="stats"></div>
+  <p id="common"></p>
+
+  <h2>Each finding, with misread letters</h2>
+  <p>A finding <span class="mark holds">holds</span> when it stands in at least 95 of every 100 misread copies, and is <span class="mark fragile">fragile</span> otherwise. The last column repeats the test at twice the doubtful words' rate.</p>
+  <table>
+    <thead><tr><th>Page</th><th>Finding</th><th class="hide-phone">On the text as read</th><th>Measured rate</th><th class="hide-phone">Twice the doubtful rate</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <h2>What this does and doesn't show</h2>
+  <p>Misreads change the size of some numbers. The letter-to-letter predictability, for one, drops by about 0.2 bits. None of them changes what a finding says. A result that turns on the exact spelling of a few words is where a misread still matters. Those words go to the front of the tracing queue, and the study will be read again once every word is traced.</p>
+</main>
+<script>
+const pct = x => (100 * x).toFixed(1) + '%';
+const mark = (stands, copies) => stands == null ? '' :
+  `<span class="mark ${stands / copies >= 0.95 ? 'holds' : 'fragile'}">${stands / copies >= 0.95 ? 'holds' : 'fragile'}</span> ${stands} of ${copies}`;
+fetch('data/misreads.json').then(r => r.json()).then(d => {
+  const s = d.samples.site, o = d.samples.owner;
+  document.getElementById('stats').innerHTML = [
+    [pct(s.sub.rate), `of letters read as another letter (${s.sub.count} of ${s.letters}, approved words)`],
+    [pct(s['zl-only'].rate), `of letters in ZL that the ink doesn't have`],
+    [pct(s['ink-only'].rate), `of words missing a letter in ZL`],
+    [pct(s.breaks.rate), `of words that are really two`],
+    [pct(o.sub.rate), `of letters read as another letter in the ${o.words} doubtful words`],
+  ].map(([b, t]) => `<div class="stat"><b>${b}</b>${t}</div>`).join('');
+  document.getElementById('common').textContent = 'The changes seen most: ' +
+    d.common.map(c => `ZL ${c.zl} where the ink has ${c.ink} (${c.count})`).join(', ') + '. Letters are written in EVA, the usual alphabet for this script.';
+  document.getElementById('rows').innerHTML = d.findings.map(f => `<tr>
+    <td>${f.page ? `<a href="${f.page}">${f.title}</a>` : f.title}</td>
+    <td>${/^f\d/.test(f.finding) ? f.finding : f.finding[0].toUpperCase() + f.finding.slice(1)}</td>
+    <td class="hide-phone">${f.measure}: ${f.clean}</td>
+    <td>${mark(f.stands, f.copies)}</td>
+    <td class="hide-phone">${mark(f.strong_stands, f.copies)}</td></tr>`).join('');
+});
+</script>
+</body>
+</html>

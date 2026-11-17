@@ -1,0 +1,292 @@
+{
+ "samples": {
+  "site": {
+   "words": 118,
+   "letters": 634,
+   "sub": {
+    "count": 14,
+    "of": 634,
+    "rate": 0.0221,
+    "low": 0.0132,
+    "high": 0.0367
+   },
+   "zl-only": {
+    "count": 4,
+    "of": 634,
+    "rate": 0.0063,
+    "low": 0.0025,
+    "high": 0.0161
+   },
+   "ink-only": {
+    "count": 4,
+    "of": 118,
+    "rate": 0.0339,
+    "low": 0.0133,
+    "high": 0.0839
+   },
+   "breaks": {
+    "count": 1,
+    "of": 118,
+    "rate": 0.0085,
+    "low": 0.0015,
+    "high": 0.0464
+   }
+  },
+  "owner": {
+   "words": 130,
+   "letters": 773,
+   "sub": {
+    "count": 18,
+    "of": 773,
+    "rate": 0.0233,
+    "low": 0.0148,
+    "high": 0.0365
+   },
+   "zl-only": {
+    "count": 10,
+    "of": 773,
+    "rate": 0.0129,
+    "low": 0.007,
+    "high": 0.0236
+   },
+   "ink-only": {
+    "count": 5,
+    "of": 130,
+    "rate": 0.0385,
+    "low": 0.0165,
+    "high": 0.0869
+   },
+   "breaks": {
+    "count": 0,
+    "of": 130,
+    "rate": 0.0,
+    "low": 0.0,
+    "high": 0.0287
+   }
+  }
+ },
+ "findings": [
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "next-sign entropy below every European control (2.92 bits)",
+   "measure": "ENT.h2",
+   "clean": "2.1708",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "word lengths tighter than every European control (sd 2.36)",
+   "measure": "WL.sd",
+   "clean": "1.8227",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "a word repeated twice in a row more than in shuffles",
+   "measure": "REP.adjacent",
+   "clean": "0.0086",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "neighbouring words one sign apart more than in shuffles",
+   "measure": "NEAR.edit1",
+   "clean": "0.0323",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "lines open on signs of their own",
+   "measure": "LINE.first",
+   "clean": "0.4104",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "lines close on signs of their own",
+   "measure": "LINE.last",
+   "clean": "0.2898",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "grid.html",
+   "title": "Letter patterns",
+   "finding": "paragraphs open on gallows more often than other lines",
+   "measure": "PARA.gallows",
+   "clean": "2.9454",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "fingerprints.html",
+   "title": "Language comparisons",
+   "finding": "no language comes nearest: the nearest text is a generator or the cipher",
+   "measure": "nearest natural language's rank",
+   "clean": "5",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "fingerprints.html",
+   "title": "Language comparisons",
+   "finding": "the Naibbe cipher sits nearer than every natural language",
+   "measure": "cipher rank minus first language rank",
+   "clean": "-2",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "anchors.html",
+   "title": "Labels",
+   "finding": "pharmacy labels do not stand on their paired herbal page beyond chance",
+   "measure": "fragment-tied labels on the paired page",
+   "clean": "0",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "anchors.html",
+   "title": "Labels",
+   "finding": "pharmacy labels at page level do not stand on their paired herbal page beyond chance",
+   "measure": "page-level labels on the paired page",
+   "clean": "5",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 49,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "anchors.html",
+   "title": "Labels",
+   "finding": "pharmacy labels, fragment and page level, allowing a match one edit away, not beyond chance",
+   "measure": "near matches on the paired page",
+   "clean": "17",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "anchors.html",
+   "title": "Labels",
+   "finding": "zodiac pages of one sign do not share label words beyond chance",
+   "measure": "p of the shared share",
+   "clean": "0.1100",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 49,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "",
+   "title": "The order of the pages",
+   "finding": "f78v and f81r share words beyond random pairs, so they faced each other",
+   "measure": "word percentile",
+   "clean": "0.9990",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  },
+  {
+   "page": "candidates.html",
+   "title": "Proposed solutions",
+   "finding": "no proposed solution matches every required measure",
+   "measure": "solutions passing",
+   "clean": "0",
+   "copies": 50,
+   "stands": 50,
+   "verdict": "holds",
+   "strong_stands": 50,
+   "strong_verdict": "holds"
+  }
+ ],
+ "common": [
+  {
+   "zl": "o",
+   "ink": "a",
+   "count": 4
+  },
+  {
+   "zl": "e",
+   "ink": "s",
+   "count": 2
+  },
+  {
+   "zl": "o",
+   "ink": "e",
+   "count": 2
+  },
+  {
+   "zl": "a",
+   "ink": "o",
+   "count": 1
+  },
+  {
+   "zl": "c",
+   "ink": "k",
+   "count": 1
+  },
+  {
+   "zl": "c",
+   "ink": "p",
+   "count": 1
+  },
+  {
+   "zl": "h",
+   "ink": "e",
+   "count": 1
+  },
+  {
+   "zl": "l",
+   "ink": "a",
+   "count": 1
+  }
+ ]
+}

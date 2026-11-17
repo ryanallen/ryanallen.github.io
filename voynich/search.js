@@ -303,7 +303,58 @@
     return fails;
   }
 
-  const api = { parse, letters, keyLetters, prepare, search, litLetters, oneEdit, selfTest };
+  // ---- the filters ----------------------------------------------------------------------
+  // f: { section, quire, sheet, language, scribe, hand, letters ('h': every hit letter traced by hand),
+  //      readers ('disagree': another transcription reads a hit word otherwise), order (an order's id) };
+  // groups: data/search/groups.json (each page's sheet and ink scribe, and the orders of the pages).
+  function pageFilter(ready, groups, f) {
+    const order = f.order && (groups.orders.find(o => o.id === f.order) || { pages: [] });
+    const inOrder = order && new Set(order.pages.map(p => p[0]));
+    return m => {
+      const g = (groups.pages || {})[m.page] || ['', ''];
+      return (!f.section || m.illustration === f.section) && (!f.quire || m.quire === f.quire)
+        && (!f.sheet || g[0] === f.sheet) && (!f.language || m.currier === f.language)
+        && (!f.scribe || g[1] === f.scribe) && (!f.hand || m.hand === f.hand) && (!inOrder || inOrder.has(m.page));
+    };
+  }
+  function handOnly(ready, hit) {
+    let n = 0;
+    for (const [zl, a, b, text] of hit.spans) {
+      if (zl == null || zl < 0) return false;
+      const got = litLetters(ready, hit.locus, zl, a, b, text);
+      if (!got || got.box) return false;
+      for (const l of got.letters) { if (l.source !== 'h') return false; n++; }
+    }
+    return n > 0;
+  }
+  function readersDisagree(ready, hit) {
+    const loc = ready.lociById.get(hit.locus);
+    if (!loc) return false;
+    const texts = loc[4], maps = loc[5];
+    for (const [zl] of hit.spans) {
+      if (zl == null || zl < 0) continue;
+      const mine = letters((texts.ZL || [])[zl] || '');
+      for (const r of ['IT', 'RF', 'VT']) {
+        const ws = texts[r], m = maps[r] || [];
+        if (!ws) continue;
+        const theirs = ws.filter((_, i) => m[i] === zl).map(letters).join('');
+        if (theirs && theirs !== mine) return true;
+      }
+    }
+    return false;
+  }
+  // a search with the filters: the page filters inside the engine, the letter and reader filters on its hits
+  function filtered(ready, groups, query, opts, f) {
+    const res = search(ready, query, { ...opts, filter: pageFilter(ready, groups, f) });
+    let hits = res.hits;
+    if (f.letters === 'h') hits = hits.filter(h => handOnly(ready, h));
+    if (f.readers === 'disagree') hits = hits.filter(h => readersDisagree(ready, h));
+    if (hits === res.hits) return res;
+    const reader = ready.readers[opts.reader || 'BEST'];
+    return { ...res, hits, counts: counts(ready, reader, parse(query, opts.exact), hits) };
+  }
+
+  const api = { parse, letters, keyLetters, prepare, search, litLetters, oneEdit, selfTest, pageFilter, handOnly, readersDisagree, filtered };
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = api;
     if (require.main === module) {
@@ -312,7 +363,9 @@
       const at = k => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : undefined; };
       const fs = require('fs');
       const ready = prepare(JSON.parse(fs.readFileSync(at('--index') || __dirname + '/data/search/text.json', 'utf8')));
-      const res = search(ready, at('--query'), { reader: at('--reader') || 'BEST', exact: args.includes('--exact'), across: args.includes('--across') });
+      const groups = JSON.parse(fs.readFileSync(at('--groups') || __dirname + '/data/search/groups.json', 'utf8'));
+      const res = filtered(ready, groups, at('--query'), { reader: at('--reader') || 'BEST', exact: args.includes('--exact'), across: args.includes('--across') },
+        JSON.parse(at('--filter') || '{}'));
       const { bySection, byQuire, byLanguage, byHand, ...main } = res.counts;
       console.log(JSON.stringify({ query: res.query, reader: res.reader, ...main }));
     }

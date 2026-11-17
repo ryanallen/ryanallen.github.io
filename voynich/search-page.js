@@ -7,7 +7,10 @@
   const THUMB = 150;                       // a thumbnail's width
   const SOURCE = { h: '#ff3b5c', c: '#ff9f1c', m: '#c77dff' };
   const BOX = '#7fd3ff';
-  let ready = null, pages = null, last = null;
+  let ready = null, pages = null, last = null, groups = { pages: {}, orders: [] };
+  const FILTERS = ['section', 'quire', 'sheet', 'language', 'scribe', 'hand', 'letters', 'readers', 'order', 'show'];
+  const fv = () => Object.fromEntries(FILTERS.map(k => [k, $('f-' + k).value]));
+  const SECTION = { A: 'Astronomy', B: 'Bathing', C: 'Cosmology', H: 'Herbal', P: 'Pharmacy', S: 'Stars', T: 'Text only', Z: 'Zodiac' };
 
   const loadImage = src => new Promise((ok, bad) => { const i = new Image(); i.crossOrigin = 'anonymous'; i.onload = () => ok(i); i.onerror = bad; i.src = src; });
   const iiif = (im, w) => `${im.iiif}/full/${w},/0/default.jpg`;
@@ -15,8 +18,8 @@
   // ---- the state lives in the address, so a search can be sent: #q=otedy&r=BEST&m=exact&p=f46r
   const readHash = () => Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
   function writeHash(extra = {}) {
-    const h = { q: $('q').value.trim(), r: $('reader').value, m: $('match').value, ...extra };
-    for (const k of Object.keys(h)) if (!h[k] || (k === 'r' && h[k] === 'BEST') || (k === 'm' && h[k] === 'any')) delete h[k];
+    const h = { q: $('q').value.trim(), r: $('reader').value, m: $('match').value, ...fv(), ...extra };
+    for (const k of Object.keys(h)) if (!h[k] || (k === 'r' && h[k] === 'BEST') || (k === 'm' && h[k] === 'any') || (k === 'show' && h[k] === 'pages')) delete h[k];
     const s = new URLSearchParams(h).toString();
     if (location.hash.slice(1) !== s) history.replaceState(null, '', s ? '#' + s : location.pathname);
   }
@@ -55,7 +58,7 @@
     if (!q) { $('summary').innerHTML = 'Type EVA letters. <b>*</b> is one or more letters, <b>^</b> a word\'s start, <b>$</b> its end.'; return; }
     let res;
     try {
-      res = S.search(ready, q, { reader: $('reader').value, exact: $('match').value === 'exact', across: $('match').value === 'across' });
+      res = S.filtered(ready, groups, q, { reader: $('reader').value, exact: $('match').value === 'exact', across: $('match').value === 'across' }, fv());
     } catch (e) { $('summary').textContent = e.message; return; }
     last = res;
     const c = res.counts, byPage = new Map();
@@ -65,7 +68,12 @@
       `line start ${c.lineStart}, line end ${c.lineEnd}`, `paragraph start ${c.paragraphStart}, end ${c.paragraphEnd}`];
     if (c.variants != null) parts.push(`${c.variants} one letter away`);
     $('summary').innerHTML = parts.join(' · ');
-    for (const p of pages) {
+    chart(res.hits);
+    if ($('f-show').value !== 'pages') return gallery(res.hits);
+    const order = $('f-order').value && groups.orders.find(o => o.id === $('f-order').value);
+    const faces = new Map(order ? order.pages : []);
+    const laid = order ? order.pages.map(([pg]) => pages.find(x => x.page === pg)).filter(Boolean) : pages;
+    for (const p of laid) {
       const hits = byPage.get(p.page);
       if (!hits) continue;
       const b = document.createElement('button');
@@ -81,12 +89,67 @@
       img.src = `data/search/thumbs/${p.page}.webp`;
       cv.width = THUMB; cv.height = h;
       pic.append(img, cv);
-      label.textContent = `${p.page} · ${hits.length}`;
+      label.textContent = `${p.page} · ${hits.length}` + (faces.get(p.page) ? ` · faces ${faces.get(p.page)}` : '');
       b.append(pic, label);
       b.onclick = () => openPage(p.page);
       $('grid').append(b);
       drawHits(cv.getContext('2d'), hits, s);
     }
+  }
+
+  // ---- the splits of the hits, as bars -------------------------------------------------------
+  function chart(hits) {
+    const by = { Section: {}, Language: {}, Scribe: {}, "Davis's scribe": {} };
+    for (const h of hits) {
+      const m = ready.pages[h.page] || {}, g = groups.pages[h.page] || ['', ''];
+      for (const [k, v] of [['Section', SECTION[m.illustration] || m.illustration], ['Language', m.currier], ['Scribe', g[1]], ["Davis's scribe", m.hand]])
+        by[k][v || '?'] = (by[k][v || '?'] || 0) + 1;
+    }
+    const n = hits.length || 1;
+    $('chart').innerHTML = hits.length ? Object.entries(by).map(([k, vs]) => `<span class="split"><b>${k}</b>` +
+      Object.entries(vs).sort((a, b) => b[1] - a[1]).map(([v, c]) => `<span class="seg" title="${k} ${v}: ${c}"><i style="width:${Math.max(2, Math.round(80 * c / n))}px"></i>${v} ${c}</span>`).join('') + '</span>').join('') : '';
+  }
+
+  // ---- the gallery: every hit's word cut from Yale's scan, side by side ---------------------------
+  const GALLERY = 400;
+  function crop(h) {
+    const span = h.spans.find(([zl]) => zl != null && zl >= 0);
+    const w = span && ready.words[`${h.locus}.${span[0] + 1}`];
+    const p = pages.find(x => x.page === h.page);
+    if (!w || !p) return null;
+    const [x0, y0, x1, y1] = w.slice(2, 6);
+    const im = p.images.find(i => x0 >= i.offset && x0 < i.offset + i.w) || p.images[0];
+    const pad = 6, X = Math.max(0, x0 - im.offset - pad), Y = Math.max(0, y0 - pad);
+    const W = Math.min(im.w - X, x1 - x0 + 2 * pad), H = Math.min(im.h - Y, y1 - y0 + 2 * pad);
+    const pc = v => (100 * v).toFixed(3);
+    return `${im.iiif}/pct:${pc(X / im.w)},${pc(Y / im.h)},${pc(W / im.w)},${pc(H / im.h)}/,88/0/default.jpg`;
+  }
+  function gallery(hits) {
+    const byHand = $('f-show').value === 'gallery-hand';
+    const key = h => byHand ? (groups.pages[h.page] || ['', ''])[1] || '?' : '';
+    const at = new Map(pages.map((p, i) => [p.page, i]));
+    const sorted = [...hits].sort((a, b) => key(a).localeCompare(key(b)) || at.get(a.page) - at.get(b.page));
+    let head = null, shown = 0;
+    for (const h of sorted) {
+      if (shown >= GALLERY) break;
+      const src = crop(h);
+      if (!src) continue;
+      if (byHand && key(h) !== head) {
+        head = key(h);
+        const t = document.createElement('h3');
+        t.textContent = head === '?' ? 'Scribe not placed' : `Scribe ${head}`;
+        $('grid').append(t);
+      }
+      const b = document.createElement('button'), img = document.createElement('img'), label = document.createElement('span');
+      b.className = 'crop'; b.title = `${h.locus}: open the page`;
+      img.loading = 'lazy'; img.decoding = 'async'; img.alt = h.locus; img.src = src;
+      label.textContent = h.locus;
+      b.append(img, label);
+      b.onclick = () => openPage(h.page);
+      $('grid').append(b);
+      shown++;
+    }
+    if (sorted.length > shown) { const m = document.createElement('h3'); m.textContent = `The first ${shown} of ${sorted.length} with a word box are shown; filter to see the rest.`; $('grid').append(m); }
   }
 
   function drawHits(g, hits, s) {
@@ -164,17 +227,35 @@
   $('q').oninput = () => { clearTimeout(timer); timer = setTimeout(run, 350); };
   $('reader').onchange = run;
   $('match').onchange = run;
+  for (const k of FILTERS) $('f-' + k).onchange = run;
+  function fillFilters() {
+    const opt = (id, all, vals) => { $(id).innerHTML = `<option value="">${all}</option>` + vals.map(([v, t]) => `<option value="${v}">${t}</option>`).join(''); };
+    const nat = (a, b) => a.localeCompare(b, 'en', { numeric: true });
+    const ps = Object.values(ready.pages), uniq = f => [...new Set(ps.map(f).filter(Boolean))].sort(nat);
+    const gs = Object.values(groups.pages);
+    opt('f-section', 'Every section', uniq(p => p.illustration).map(v => [v, SECTION[v] || v]));
+    opt('f-quire', 'Every quire', uniq(p => p.quire).map(v => [v, 'Quire ' + v]));
+    opt('f-sheet', 'Every sheet', [...new Set(gs.map(g => g[0]).filter(Boolean))].sort(nat).map(v => [v, 'Sheet ' + v]));
+    opt('f-language', 'Both languages', uniq(p => p.currier).map(v => [v, 'Currier ' + v]));
+    opt('f-scribe', 'Every scribe', [...new Set(gs.map(g => g[1]).filter(Boolean))].sort().map(v => [v, 'Scribe ' + v + ' (ink)']));
+    opt('f-hand', "Davis's scribes", uniq(p => p.hand).map(v => [v, "Davis's scribe " + v]));
+    opt('f-order', 'Book order', groups.orders.filter(o => o.id !== 'present').map(o => [o.id, o.name]));
+  }
   (async () => {
     $('summary').textContent = 'Loading the text…';
-    const [index, pj] = await Promise.all([fetch('data/search/text.json').then(r => r.json()), fetch('data/pages.json').then(r => r.json())]);
+    const [index, pj, gj] = await Promise.all([fetch('data/search/text.json').then(r => r.json()), fetch('data/pages.json').then(r => r.json()),
+      fetch('data/search/groups.json').then(r => r.json()).catch(() => groups)]);
     ready = S.prepare(index);
     pages = pj;
+    groups = gj;
+    fillFilters();
     // the page follows its address: a link to a search, Back, or an edited address all run it
     const follow = () => {
       const h = readHash();
       $('q').value = h.q || '';
       $('reader').value = h.r || 'BEST';
       $('match').value = h.m || 'any';
+      for (const k of FILTERS) $('f-' + k).value = h[k] || (k === 'show' ? 'pages' : '');
       run();
       if (h.p && h.q) openPage(h.p); else $('view').hidden = true;
     };
