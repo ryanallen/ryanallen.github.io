@@ -334,5 +334,112 @@
   "repeated_share": 0.176,
   "chance": 0.136,
   "p": 0.1705
- }
+ },
+ "body": [
+  {
+   "reading": "the womb and conception",
+   "score": 7,
+   "of": 11,
+   "shows": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F6",
+    "F8",
+    "F10"
+   ],
+   "note": "nine units read as seven chambers and two openings, the walled center, the veins as the links, the castles as Schloss, the suns as heat, fluid, labels; the outward towers, the T-O map, the stars and the wheels unexplained",
+   "drawing": "fRos",
+   "who": "Keagan Brewer and Michelle L. Lewis, Social History of Medicine, 2024",
+   "must_be_true": "a seven-celled womb in the period's books",
+   "found": "true: the seven-celled womb is a medieval teaching (the Salernitan and later gynaecological texts), as Brewer and Lewis cite"
+  },
+  {
+   "reading": "cells of tissue, as a lens shows them",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F2",
+    "F3",
+    "F9"
+   ],
+   "note": "a walled center and fields of small round bodies, linked; no towers, suns, T-O map or labels",
+   "drawing": "fRos circles of cells; f86v4",
+   "who": "the owner, 16 November 2026, 8:23pm",
+   "must_be_true": "a lens strong enough to show cells before 1438",
+   "found": "not found: spectacles (Pisa, about 1286) and reading stones magnify a few times (https://en.wikipedia.org/wiki/Glasses; https://en.wikipedia.org/wiki/Reading_stone); the compound microscope dates from the 1590s and cells were first seen in 1665 (https://en.wikipedia.org/wiki/Microscope)"
+  },
+  {
+   "reading": "the organs of the bathing pages",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F3",
+    "F8",
+    "F10"
+   ],
+   "note": "tubes and fluid between organs, labelled; the foldout's circles, towers and heavens unexplained",
+   "drawing": "f75r–f84v",
+   "who": "voynich.nu illustration descriptions; Davis 2015 (f77v as a uterus)",
+   "must_be_true": "the tubes and pools drawn as organs",
+   "found": "open: the drawings' study reads them as pools and pipes; an organ reading rests on their shapes alone"
+  },
+  {
+   "reading": "Newbold's microscope and telescope",
+   "score": 2,
+   "of": 11,
+   "shows": [
+    "F9",
+    "F11"
+   ],
+   "note": "a nebula's stars and a spiral; nothing else",
+   "drawing": "f68v3; f86v3",
+   "who": "William Newbold, 1921–1928",
+   "must_be_true": "a microscope or telescope before 1438",
+   "found": "not found: neither instrument existed before about 1600 (https://en.wikipedia.org/wiki/Microscope); Manly refuted Newbold's cipher in 1931"
+  },
+  {
+   "reading": "the brain's cells, the medieval ventricles",
+   "score": 2,
+   "of": 11,
+   "shows": [
+    "F3",
+    "F10"
+   ],
+   "note": "the ventricles are three to five cells in a row joined by passages, labelled; not nine round units in a grid, and nothing in them is a tower, sun, star or map",
+   "drawing": "fRos",
+   "who": "the owner, 16 November 2026, 8:23pm",
+   "must_be_true": "the cells drawn as chambers in a head, known before 1438",
+   "found": "true: the ventricle theory and its diagrams in a head run from late antiquity through the 1400s; Mondino de Luzzi described the brain from dissection in 1316 (https://en.wikipedia.org/wiki/Mondino_de_Luzzi)"
+  },
+  {
+   "reading": "the brain, as it looks",
+   "score": 2,
+   "of": 11,
+   "shows": [
+    "F2",
+    "F8"
+   ],
+   "note": "a walled center and wavy folds; nothing else",
+   "drawing": "fRos center",
+   "who": "the owner's \"etc\"",
+   "must_be_true": "a drawing of the brain's surface before 1438",
+   "found": "not found: the brain's folds were drawn as such only from the 1500s on; period diagrams draw cells, not folds"
+  },
+  {
+   "reading": "the ear and how hearing works",
+   "score": 2,
+   "of": 11,
+   "shows": [
+    "F3",
+    "F8"
+   ],
+   "note": "tubes and fluid; the cochlea's spiral appears nowhere on the foldout, which has wheels of petals, not spirals",
+   "drawing": "fRos; the bathing pages' tubes",
+   "who": "the owner, 16 November 2026, 8:23pm",
+   "must_be_true": "a picture of the ear's inner parts before 1438",
+   "found": "partly: Avicenna's Canon describes the outer ear, the drum and a winding inner passage in words; the ossicles were first described in the 1500s, and no drawing of the inner ear before 1500 was found"
+  }
+ ]
 }
