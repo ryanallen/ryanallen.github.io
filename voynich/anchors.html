@@ -92,7 +92,7 @@
     out.insertAdjacentHTML('beforeend', tbl(['thing', 'drawn', 'pages', 'shared word', 'on', 'p'], d.matches.map(m => [esc(m.name), m.drawn, esc(m.pages), m.word ? word(m.word) : '', esc(m.with), esc(m.p)])));
     sec('an-bax', "Bax's sign values on the plants", "Stephen Bax (2014) proposed sounds for fourteen signs from ten plant and star names. Applied to the first word of each identified plant he did not use (? is a sign he gave no sound):");
     out.insertAdjacentHTML('beforeend', tbl(['page', 'plant', 'first word', 'read as', 'a name of its plant', 'names of other plants it opens'], d.bax.map(b => [esc(b.page), esc(b.plant), word(b.first_word), esc(b.reading), esc(b.own_matches || 'none'), esc(b.other_matches || 'none')])));
-    sec('an-topics', `Words that cluster by topic (${d.topics.length})`, 'Repeated words that keep to some pages more than a shuffled text would, and still do so within one scribe\'s hand. Grouped by the section on the largest share of whose pages each stands.');
+    sec('an-topics', `Words that cluster by topic (${d.topics.length})`, 'These words appear on pages about the same subject more often than chance predicts, even within one scribe\'s writing. The groups below show which subjects they follow.');
     const bySec = {};
     for (const t of d.topics) (bySec[t.keeps_to] ??= []).push(t);
     const SN = {H: 'Herbal', S: 'Stars', B: 'Biological (the pools)', P: 'Pharmaceutical', T: 'Text', C: 'Cosmological', Z: 'Zodiac', A: 'Astronomical'};

@@ -47,11 +47,11 @@
   let d;
   try { d = await (await fetch('data/reader.json')).json(); } catch (e) { $('rd-sum').textContent = 'The reader did not load: ' + e.message; return; }
   const a = d.all;
-  $('rd-sum').innerHTML = `<b>${pct(1 - a.cer_key)} of letters right</b> on whole page scans (letter error ${a.cer_key} against the traced letters, ${a.cer_zl} against the Zandbergen–Landini transcription), over ${a.lines} lines and ${a.letters.toLocaleString()} letters. When given cleanly cut lines, it gets ${pct(1 - a.cer_strip)} right. Most whole page errors come from finding and cutting the lines.`;
-  $('rd-hands').innerHTML = `<table><thead><tr><th>Davis label</th><th>Pages</th><th>Letters</th><th>Error, whole page</th><th>Against published text</th><th>Error on cut line</th></tr></thead><tbody>${d.hands.map(h => `<tr><td>${esc(h.hand === '@' ? 'mixed' : h.hand)}</td><td>${h.pages}</td><td>${h.letters}</td><td>${h.cer_key}</td><td>${h.cer_zl}</td><td>${h.cer_strip}</td></tr>`).join('')}</tbody></table>`;
+  $('rd-sum').innerHTML = `<b>${pct(1 - a.cer_key)} of letters right</b> on whole page scans, across ${a.lines} lines and ${a.letters.toLocaleString()} letters. The error rate is ${pct(a.cer_key)} against traced letters and ${pct(a.cer_zl)} against the published Zandbergen–Landini transcription. Given cleanly cut lines, it gets ${pct(1 - a.cer_strip)} right. Most whole page errors come from finding and cutting the lines.`;
+  $('rd-hands').innerHTML = `<table><thead><tr><th>Davis label</th><th>Pages</th><th>Letters</th><th>Error, whole page</th><th>Against published text</th><th>Error on cut line</th></tr></thead><tbody>${d.hands.map(h => `<tr><td>${esc(h.hand === '@' ? 'mixed' : h.hand)}</td><td>${h.pages}</td><td>${h.letters}</td><td>${pct(h.cer_key)}</td><td>${pct(h.cer_zl)}</td><td>${pct(h.cer_strip)}</td></tr>`).join('')}</tbody></table>`;
   const num = p => { const m = /^f(\d+)([rv])(\d*)$/.exec(p); return m ? [+m[1], m[2], +(m[3] || 0)] : [999, p, 0]; };
   d.pages.sort((x, y) => { const a = num(x.page), b = num(y.page); return a[0] - b[0] || (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0) || a[2] - b[2]; });
-  $('rd-page').innerHTML = d.pages.map((p, i) => `<option value="${i}">${esc(p.page)}, scribe ${esc(p.hand === '@' ? 'mixed' : p.hand)}, ${p.lines.length} lines, error ${p.cer_key}</option>`).join('');
+  $('rd-page').innerHTML = d.pages.map((p, i) => `<option value="${i}">${esc(p.page)}, Davis label ${esc(p.hand === '@' ? 'mixed' : p.hand)}, ${p.lines.length} lines, ${pct(p.cer_key)} error</option>`).join('');
   const show = i => {
     const p = d.pages[i];
     $('rd-pcer').textContent = `${pct(1 - p.cer_key)} of letters right on this page`;
@@ -59,7 +59,7 @@
   };
   $('rd-page').addEventListener('change', e => show(+e.target.value));
   show(0);
-  $('rd-scans').innerHTML = d.scans.length ? `<table><thead><tr><th>Page</th><th>Photograph</th><th>Error</th><th>Against published text</th><th>Yale's scan</th></tr></thead><tbody>${d.scans.filter(s => s.cer_key).map(s => `<tr><td>${esc(s.page)}</td><td>${esc(s.view)}</td><td>${esc(s.cer_key)}</td><td>${esc(s.cer_zl)}</td><td>${esc(s.cer_yale)}</td></tr>`).join('')}</tbody></table>` : '';
+  $('rd-scans').innerHTML = d.scans.length ? `<table><thead><tr><th>Page</th><th>Photograph</th><th>Error</th><th>Against published text</th><th>Yale's scan</th></tr></thead><tbody>${d.scans.filter(s => s.cer_key).map(s => `<tr><td>${esc(s.page)}</td><td>${esc(s.view)}</td><td>${pct(s.cer_key)}</td><td>${pct(s.cer_zl)}</td><td>${pct(s.cer_yale)}</td></tr>`).join('')}</tbody></table>` : '';
 })();
 </script>
 </body>

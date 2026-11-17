@@ -20,6 +20,7 @@
   .rrow .d{width:40px;flex:none;text-align:right;font-variant-numeric:tabular-nums}
   .key{padding:2px 12px;font-size:12px;color:var(--muted)}.key i{display:inline-block;width:10px;height:10px;margin:0 3px 0 10px;vertical-align:middle;border-radius:2px}
   .gmeta{padding:0 12px 6px;font-size:13px;color:var(--muted);max-width:900px}
+  .gmeta b{color:var(--text)}.gmeta summary{cursor:pointer;color:var(--accent)}
   .pages{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px}
   .pg{width:96px;font-size:11px;color:var(--muted);text-align:center}
   .pg img{width:96px;height:128px;object-fit:contain;background:#2a2620;border-radius:4px;display:block}
@@ -70,10 +71,20 @@
   const label = r => (texts[r.text] || r.text) + (forms[r.form] ? ` (${forms[r.form]})` : '');
   $('rank').innerHTML = d.ranking.map(r => `<div class="rrow"><span class="name" title="${esc(label(r))}">${esc(label(r))}</span><span class="track"><span class="fill ${cls(r)}" style="width:${(100 * (r.distance - min) / (max - min)).toFixed(1)}%"></span></span><span class="d">${r.distance.toFixed(2)}</span></div>`).join('');
   const out = $('groups');
+  const counts = (raw, names = {}) => raw.split(' ').map(part => {
+    const [key, count] = part.split(':');
+    return [names[key] || key, Number(count)];
+  });
+  const describe = rows => rows.map(([name, count]) => `${name}: ${count}`).join('; ');
+  const subjects = {H: 'herbal', S: 'stars', B: 'bathing', P: 'pharmacy', T: 'text', C: 'cosmology', Z: 'zodiac', A: 'astronomy'};
   for (const g of d.groups) {
     const h = document.createElement('h2'); h.className = 'sec'; h.textContent = `Group ${g.group}: ${g.pages.length} pages`; out.append(h);
     const m = document.createElement('div'); m.className = 'gmeta';
-    m.innerHTML = `Currier language ${esc(g.currier)} · hand ${esc(g.hand)} · section ${esc(g.section)}<br>Nearest: ${esc(g.nearest)}`; out.append(m);
+    const currier = counts(g.currier, {'-': 'unclassified'}).sort((a, b) => b[1] - a[1]);
+    const [main, n] = currier[0];
+    const mix = n === g.pages.length ? `All pages are Currier ${main}` : n / g.pages.length >= 0.75 ? `Mostly Currier ${main} (${n} of ${g.pages.length})` : 'Mixed Currier groups';
+    const nearest = g.nearest.replace(/([a-z]+(?:-[a-z]+)+) \(([^)]+)\)/g, (_, id, form) => `${texts[id] || id} (${forms[form] || form})`);
+    m.innerHTML = `<b>${esc(mix)}.</b> <details><summary>Earlier labels, subjects, and closest texts</summary>Currier groups: ${esc(describe(currier))}. Davis's proposed scribe labels: ${esc(describe(counts(g.hand, {'@': 'mixed'})))}. Subjects: ${esc(describe(counts(g.section, subjects)))}. Closest texts: ${esc(nearest)}.</details>`; out.append(m);
     const p = document.createElement('div'); p.className = 'pages'; out.append(p);
     p.innerHTML = g.pages.map(x => `<div class="pg"><img loading="lazy" alt="${esc(x.page)}" src="${esc(x.iiif)}/${esc(x.region)}/!150,200/0/default.jpg">${esc(x.page)}</div>`).join('');
   }

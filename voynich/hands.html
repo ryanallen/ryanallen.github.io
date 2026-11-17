@@ -47,7 +47,7 @@
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
   let d;
   try { d = await (await fetch('data/hands.json')).json(); } catch (e) { $('hd-found').textContent = 'The scribes did not load: ' + e.message; return; }
-  const names = {davis: "Davis's five scribes (2020)", currier_hand: "Currier's proposed scribes 1?5, X, Y (1976)", currier_language: "Currier's text groups A and B (Grant's two scribes)",
+  const names = {davis: "Davis's five scribes (2020)", currier_hand: "Currier's proposed scribes 1 to 5, X, Y (1976)", currier_language: "Currier's text groups A and B (Grant's two scribes)",
                  kluge_b: "Kluge's kinds of B (herbal, biological, other)", section: 'Page subject alone'};
   $('hd-found').innerHTML = `<b>The ink supports two groups of scribes.</b> Currier described one upright writing style in text group A and one slanted style in group B. One of our groups contains 110 of the 113 pages Davis assigns to scribe 1. The other contains her scribes 2, 3, and 5, which this test cannot separate. Ink color does not identify a scribe or painter. The herbal B pages are painted more neatly. ${esc(d.thin)} page and letter pairs had too few letters to measure.`;
   $('hd-stab').innerHTML = d.stability.map(([k, v]) => `<div>${k} groups <span class="bar" style="width:${Math.round(v * 200)}px"></span> ${v.toFixed(2)}${v >= 0.95 ? ' <b>passes</b>' : ''}</div>`).join('');
