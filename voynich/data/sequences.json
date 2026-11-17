@@ -1,0 +1,1033 @@
+{
+ "runs": [
+  {
+   "run": "f49v",
+   "signs": [
+    {
+     "sign": "f",
+     "locus": "f49v.1",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/831,436,126,152/,64/0/default.jpg"
+    },
+    {
+     "sign": "o",
+     "locus": "f49v.3",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/835,573,77,116/,64/0/default.jpg"
+    },
+    {
+     "sign": "r",
+     "locus": "f49v.5",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/941,631,13,13/,64/0/default.jpg"
+    },
+    {
+     "sign": "y",
+     "locus": "f49v.7",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/826,753,110,89/,64/0/default.jpg"
+    },
+    {
+     "sign": "e",
+     "locus": "f49v.9",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/850,816,86,106/,64/0/default.jpg"
+    },
+    {
+     "sign": "@140;",
+     "locus": "f49v.11",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/874,938,77,62/,64/0/default.jpg"
+    },
+    {
+     "sign": "k",
+     "locus": "f49v.13",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/806,968,154,132/,64/0/default.jpg"
+    },
+    {
+     "sign": "s",
+     "locus": "f49v.15",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/785,1047,154,142/,64/0/default.jpg"
+    },
+    {
+     "sign": "p",
+     "locus": "f49v.17",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/794,1162,154,112/,64/0/default.jpg"
+    },
+    {
+     "sign": "o",
+     "locus": "f49v.19",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/762,1234,154,161/,64/0/default.jpg"
+    },
+    {
+     "sign": "@192;",
+     "locus": "f49v.21",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/761,1371,154,102/,64/0/default.jpg"
+    },
+    {
+     "sign": "y",
+     "locus": "f49v.23",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/760,1443,154,132/,64/0/default.jpg"
+    },
+    {
+     "sign": "e",
+     "locus": "f49v.25",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/748,1521,154,172/,64/0/default.jpg"
+    },
+    {
+     "sign": "@140;",
+     "locus": "f49v.27",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/702,1641,150,181/,64/0/default.jpg"
+    },
+    {
+     "sign": "@164;",
+     "locus": "f49v.29",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/803,1782,59,75/,64/0/default.jpg"
+    },
+    {
+     "sign": "p",
+     "locus": "f49v.31",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/759,1824,110,161/,64/0/default.jpg"
+    },
+    {
+     "sign": "o",
+     "locus": "f49v.33",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/759,1920,119,122/,64/0/default.jpg"
+    },
+    {
+     "sign": "@192;",
+     "locus": "f49v.35",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/762,2002,85,132/,64/0/default.jpg"
+    },
+    {
+     "sign": "y",
+     "locus": "f49v.37",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/847,2117,15,74/,64/0/default.jpg"
+    },
+    {
+     "sign": "e",
+     "locus": "f49v.39",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/836,2178,29,74/,64/0/default.jpg"
+    },
+    {
+     "sign": "@140;",
+     "locus": "f49v.41",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/753,2228,100,112/,64/0/default.jpg"
+    },
+    {
+     "sign": "d",
+     "locus": "f49v.43",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/804,2340,59,84/,64/0/default.jpg"
+    },
+    {
+     "sign": "y",
+     "locus": "f49v.45",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/820,2389,32,44/,64/0/default.jpg"
+    },
+    {
+     "sign": "e",
+     "locus": "f49v.47",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/809,2492,32,98/,64/0/default.jpg"
+    },
+    {
+     "sign": "k",
+     "locus": "f49v.49",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/810,2590,29,33/,64/0/default.jpg"
+    },
+    {
+     "sign": "y",
+     "locus": "f49v.51",
+     "crop": "https://collections.library.yale.edu/iiif/2/1006171/823,2605,16,15/,64/0/default.jpg"
+    }
+   ]
+  },
+  {
+   "run": "f76r",
+   "signs": [
+    {
+     "sign": "s",
+     "locus": "f76r.4",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f76r.7",
+     "crop": ""
+    },
+    {
+     "sign": "q",
+     "locus": "f76r.10",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f76r.14",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f76r.18",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f76r.22",
+     "crop": ""
+    },
+    {
+     "sign": "k",
+     "locus": "f76r.27",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f76r.31",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f76r.37",
+     "crop": ""
+    }
+   ]
+  },
+  {
+   "run": "f75v",
+   "signs": [
+    {
+     "sign": "s",
+     "locus": "f75v.2",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f75v.4",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f75v.6",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f75v.8",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f75v.9",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f75v.11",
+     "crop": ""
+    }
+   ]
+  },
+  {
+   "run": "f11v",
+   "signs": [
+    {
+     "sign": "d",
+     "locus": "f11v.5",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f11v.5",
+     "crop": ""
+    }
+   ]
+  },
+  {
+   "run": "f57v ring",
+   "signs": [
+    {
+     "sign": "o",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "k",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "m",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@169;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@170;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@171;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "I",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@172;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "k",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "m",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@169;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@170;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@171;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "c",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@172;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "k",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "m",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "p",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@169;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@170;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@171;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "c",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@172;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "k",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "m",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "p",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@169;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@170;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@171;",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "c",
+     "locus": "f57v.3",
+     "crop": ""
+    },
+    {
+     "sign": "@172;",
+     "locus": "f57v.3",
+     "crop": ""
+    }
+   ]
+  },
+  {
+   "run": "f57v.5",
+   "signs": [
+    {
+     "sign": "o",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "v",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "m",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "@170;",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "c",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "k",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "a",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f57v.5",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f57v.5",
+     "crop": ""
+    }
+   ]
+  },
+  {
+   "run": "f66r column",
+   "signs": [
+    {
+     "sign": "y",
+     "locus": "f66r.16",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f66r.17",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f66r.18",
+     "crop": ""
+    },
+    {
+     "sign": "sh",
+     "locus": "f66r.19",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f66r.20",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f66r.21",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f66r.22",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f66r.23",
+     "crop": ""
+    },
+    {
+     "sign": "@169;",
+     "locus": "f66r.24",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f66r.25",
+     "crop": ""
+    },
+    {
+     "sign": "air",
+     "locus": "f66r.26",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f66r.27",
+     "crop": ""
+    },
+    {
+     "sign": "sh",
+     "locus": "f66r.28",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f66r.29",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f66r.30",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f66r.31",
+     "crop": ""
+    },
+    {
+     "sign": "y",
+     "locus": "f66r.32",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f66r.33",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f66r.34",
+     "crop": ""
+    },
+    {
+     "sign": "s",
+     "locus": "f66r.35",
+     "crop": ""
+    },
+    {
+     "sign": "f",
+     "locus": "f66r.36",
+     "crop": ""
+    },
+    {
+     "sign": "c",
+     "locus": "f66r.37",
+     "crop": ""
+    },
+    {
+     "sign": "@172;",
+     "locus": "f66r.38",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f66r.39",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f66r.40",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f66r.41",
+     "crop": ""
+    },
+    {
+     "sign": "@195;",
+     "locus": "f66r.42",
+     "crop": ""
+    },
+    {
+     "sign": "l",
+     "locus": "f66r.43",
+     "crop": ""
+    },
+    {
+     "sign": "r",
+     "locus": "f66r.44",
+     "crop": ""
+    },
+    {
+     "sign": "t",
+     "locus": "f66r.45",
+     "crop": ""
+    },
+    {
+     "sign": "o",
+     "locus": "f66r.46",
+     "crop": ""
+    },
+    {
+     "sign": "x",
+     "locus": "f66r.47",
+     "crop": ""
+    },
+    {
+     "sign": "p",
+     "locus": "f66r.48",
+     "crop": ""
+    },
+    {
+     "sign": "d",
+     "locus": "f66r.49",
+     "crop": ""
+    }
+   ]
+  }
+ ],
+ "tests": [
+  {
+   "run": "f49v",
+   "test": "margin sign is the next paragraph line's first sign",
+   "n": "26",
+   "real": "1",
+   "chance": "1.04",
+   "p": "0.6818"
+  },
+  {
+   "run": "f49v",
+   "test": "margin sign stands in the next line's first word",
+   "n": "26",
+   "real": "8",
+   "chance": "7.27",
+   "p": "0.4316"
+  },
+  {
+   "run": "f76r",
+   "test": "margin sign is the next paragraph line's first sign",
+   "n": "9",
+   "real": "1",
+   "chance": "1.22",
+   "p": "0.7588"
+  },
+  {
+   "run": "f76r",
+   "test": "margin sign stands in the next line's first word",
+   "n": "9",
+   "real": "3",
+   "chance": "3.34",
+   "p": "0.7611"
+  },
+  {
+   "run": "f75v",
+   "test": "margin sign is the next paragraph line's first sign",
+   "n": "6",
+   "real": "1",
+   "chance": "0.33",
+   "p": "0.3265"
+  },
+  {
+   "run": "f75v",
+   "test": "margin sign stands in the next line's first word",
+   "n": "6",
+   "real": "3",
+   "chance": "1.67",
+   "p": "0.1986"
+  },
+  {
+   "run": "f49v",
+   "test": "signs covered by a 3-sign stretch that comes back",
+   "n": "26",
+   "real": "15",
+   "chance": "0.6",
+   "p": "0.0"
+  },
+  {
+   "run": "f49v",
+   "test": "signs covered by a 4-sign stretch that comes back",
+   "n": "26",
+   "real": "12",
+   "chance": "0.06",
+   "p": "0.0"
+  },
+  {
+   "run": "f49v",
+   "test": "signs covered by a 5-sign stretch that comes back",
+   "n": "26",
+   "real": "12",
+   "chance": "0.0",
+   "p": "0.0"
+  },
+  {
+   "run": "f57v ring",
+   "test": "repeats of 18 signs, and the places they differ",
+   "n": "4",
+   "real": "2",
+   "chance": "",
+   "p": "9: f/f/p/p; 17: I/c/c/c"
+  },
+  {
+   "run": "f66r column",
+   "test": "longest run of f66r's items in the order of f57v's 18",
+   "n": "34",
+   "real": "6",
+   "chance": "6.3",
+   "p": "0.8395"
+  },
+  {
+   "run": "f49v",
+   "test": "different signs",
+   "n": "26",
+   "real": "12",
+   "chance": "",
+   "p": ""
+  },
+  {
+   "run": "f66r column",
+   "test": "different signs",
+   "n": "34",
+   "real": "16",
+   "chance": "",
+   "p": ""
+  },
+  {
+   "run": "f57v ring",
+   "test": "different signs",
+   "n": "72",
+   "real": "18",
+   "chance": "",
+   "p": ""
+  }
+ ]
+}

@@ -37,6 +37,7 @@
   .an-colour figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.45}.an-colour figcaption b{color:var(--text)}
   .an-colour i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
   .an-note{font-size:14px;color:var(--muted);max-width:900px;line-height:1.5}.an-note b{color:var(--text)}
+  .an-run{margin:8px 0 14px}.an-seq{display:inline-flex;flex-wrap:wrap;gap:4px;align-items:center;vertical-align:middle}.an-seq img{height:32px;background:#2a2620;border-radius:3px}.an-seq code{font-size:13px;color:var(--text)}
 </style>
 </head>
 <body>
@@ -113,6 +114,22 @@
       const el = document.getElementById('an-colour-cards');
       if (!el) return;
       el.innerHTML = c.notes.map(n => `<figure><img loading="lazy" src="${esc(n.crop)}" alt="${esc(n.page)} colour note"><figcaption><b>${esc(n.page)}</b> ${esc(n.where)}<br>Reads: <b>${esc(n.reading_here)}</b> (${esc(n.sure)})<br>Paint: ${n.paint_hex ? `<i style="background:${esc(n.paint_hex)}"></i>` : ''}${esc(n.paint)} · ${esc(n.matches)}</figcaption></figure>`).join('');
+    }).catch(() => {});
+    sec('an-runs', 'Runs of single signs', 'A few pages have columns or rings of single signs, the one place the script might list its own signs. Each run below is read from the transcription (EVA); f49v\'s are cut from Yale\'s page.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-runs-body"></div>');
+    fetch('data/sequences.json').then(r => r.json()).then(q => {
+      const el = document.getElementById('an-runs-body');
+      if (!el) return;
+      const t = (run, test) => q.tests.find(x => x.run === run && x.test.startsWith(test)) || {};
+      const run = name => (q.runs.find(r => r.run === name) || { signs: [] }).signs;
+      const row = (name, note) => `<div class="an-run"><b>${esc(name)}</b> <span class="an-seq">${run(name).map(x => x.crop ? `<img src="${esc(x.crop)}" alt="${esc(x.sign)}" title="${esc(x.locus)}: ${esc(x.sign)}" loading="lazy">` : `<code>${esc(x.sign.replace(/;$/, ''))}</code>`).join(' ')}</span><p class="an-note">${note}</p></div>`;
+      const rep = t('f49v', 'signs covered by a 5'), mk = t('f49v', "margin sign is the next");
+      const ring = t('f57v ring', 'repeats'), ord = t('f66r column', 'longest');
+      el.innerHTML = row('f49v', `<b>A count, not line markers.</b> The faded numbers 1 to 5 stand beside its first five signs after the gallows (o r y e and a rare sign). That five-sign block, with r swapped for another rare sign, comes back twice more: ${esc(rep.real)} of the 26 signs sit in a repeated five-sign stretch, where shuffles of the same signs give ${esc(rep.chance)}. The signs do not mark the lines beside them: ${esc(mk.real)} matches its line\'s first sign, as ${esc(mk.chance)} would by chance.`) +
+        row('f57v ring', `<b>Eighteen different signs, each once, written four times round the ring.</b> The four copies differ in only two places (${esc(ring.p)}), so the ring lists a fixed set in a fixed order, like an alphabet or a key.`) +
+        row('f66r column', `34 items, 16 different, down the margin. They do not follow the ring\'s order: the longest stretch in f57v\'s order is ${esc(ord.real)} items, as shuffles give ${esc(ord.chance)}.`) +
+        row('f76r', 'Nine single signs between paragraphs. They do not match the first sign of the line after them more than chance.') +
+        row('f75v', 'Six single signs between paragraphs, likewise no match with the lines after them.');
     }).catch(() => {});
     sec('an-formula', 'A fixed place for "hot and dry"?', 'A 1400s herbal entry follows a formula: the plant\'s name, then its qualities (hot or cold, dry or moist, and a degree), then its uses. If the Voynich\'s herbal pages did too, one place on each page would hold only a handful of words, and those words would mean hot, cold, dry or moist.');
     out.insertAdjacentHTML('beforeend', '<div id="an-formula-body"></div>');
