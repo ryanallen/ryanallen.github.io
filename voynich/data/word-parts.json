@@ -1,0 +1,81 @@
+{
+ "rows": [
+  {
+   "text": "latin-macer",
+   "kind": "proof",
+   "precision": "0.344",
+   "recall": "0.357",
+   "coverage50": "0.739",
+   "family_agreement": "",
+   "stolfi": "",
+   "stolfi_random": "",
+   "top_last_parts": ""
+  },
+  {
+   "text": "latin-alchemical-herbal",
+   "kind": "proof",
+   "precision": "0.331",
+   "recall": "0.212",
+   "coverage50": "0.97",
+   "family_agreement": "",
+   "stolfi": "",
+   "stolfi_random": "",
+   "top_last_parts": ""
+  },
+  {
+   "text": "italian-ricette",
+   "kind": "proof",
+   "precision": "0.148",
+   "recall": "0.0",
+   "coverage50": "0.95",
+   "family_agreement": "",
+   "stolfi": "",
+   "stolfi_random": "",
+   "top_last_parts": ""
+  },
+  {
+   "text": "voynich",
+   "kind": "voynich",
+   "precision": "",
+   "recall": "",
+   "coverage50": "0.899",
+   "family_agreement": "0.157",
+   "stolfi": "0.538",
+   "stolfi_random": "0.333",
+   "top_last_parts": "y:2242 dy:1930 ol:1526 aiin:1397 or:1185 ar:1005 daiin:984 chedy:806 s:615 chey:612 kain:541 al:523"
+  },
+  {
+   "text": "voynich A",
+   "kind": "voynich",
+   "precision": "",
+   "recall": "",
+   "coverage50": "0.974",
+   "family_agreement": "0.199",
+   "stolfi": "0.458",
+   "stolfi_random": "0.323",
+   "top_last_parts": "y:1072 ol:660 daiin:550 dy:437 or:429 aiin:424 chy:407 chol:334 s:312 chor:296 ar:241 al:206"
+  },
+  {
+   "text": "voynich B",
+   "kind": "voynich",
+   "precision": "",
+   "recall": "",
+   "coverage50": "0.937",
+   "family_agreement": "0.158",
+   "stolfi": "0.554",
+   "stolfi_random": "0.325",
+   "top_last_parts": "y:1429 dy:1130 ol:992 aiin:878 chedy:872 ain:646 ar:633 or:609 al:522 shedy:501 chey:443 daiin:404"
+  },
+  {
+   "text": "generated (Timm and Schinner)",
+   "kind": "generated",
+   "precision": "",
+   "recall": "",
+   "coverage50": "1.0",
+   "family_agreement": "",
+   "stolfi": "0.391",
+   "stolfi_random": "0.346",
+   "top_last_parts": "ol:1189 ar:1155 al:902 aiin:807 ain:696 or:661 y:426 cheedy:403 chedy:379 am:356 an:352 chol:343"
+  }
+ ]
+}

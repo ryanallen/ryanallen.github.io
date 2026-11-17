@@ -79,5 +79,15 @@ fetch('data/near-repeats.json').then(r => r.json()).then(d => {
   <table class="near-t"><thead><tr><th>Page</th><th>One copy</th><th>Page</th><th>The other</th><th>Changes</th></tr></thead><tbody>${d.pairs.map(p => `<tr><td>${e(p.locus_a)}</td><td><code>${e(p.words_a.replace(/\./g, ' '))}</code></td><td>${e(p.locus_b)}</td><td><code>${e(p.words_b.replace(/\./g, ' '))}</code></td><td>${e(p.edits)}</td></tr>`).join('')}</tbody></table>`;
 }).catch(e => { document.getElementById('near-body').textContent = 'Did not load: ' + e.message; });
 </script>
+<section id="parts" class="near"><h2>Word parts learned by a machine</h2><div id="parts-body">Loading…</div></section>
+<script>
+fetch('data/word-parts.json').then(r => r.json()).then(d => {
+  const e = x => String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const by = Object.fromEntries(d.rows.map(r => [r.text, r]));
+  const m = by['latin-macer'], v = by['voynich'];
+  document.getElementById('parts-body').innerHTML = `<p>We let Morfessor, a program that learns words' stems and endings with no help, split the words, as a check on the word families above. <b>It failed its test first, so it can't check them.</b> On Latin, where the endings are known, only ${Math.round(m.precision * 100)}% of its last pieces are real endings and it finds ${Math.round(m.recall * 100)}% of them; on Italian it finds almost none. Texts this short are too small for it. On the Voynich it splits a family word at its stem in ${Math.round(v.family_agreement * 100)}% of cases, and its cuts fall on Stolfi's layer boundaries ${Math.round(v.stolfi * 100)}% of the time against ${Math.round(v.stolfi_random * 100)}% for a cut put at random: the letters do come in layers, but this learner is not reliable enough to say more.</p>
+  <table class="near-t"><thead><tr><th>Text</th><th>Real endings found</th><th>Its last pieces that are real endings</th><th>Family words split at the stem</th><th>Cuts on Stolfi's layers (random)</th></tr></thead><tbody>${d.rows.map(r => `<tr><td>${e(r.text)}</td><td>${e(r.recall)}</td><td>${e(r.precision)}</td><td>${e(r.family_agreement)}</td><td>${r.stolfi ? e(r.stolfi) + ' (' + e(r.stolfi_random) + ')' : ''}</td></tr>`).join('')}</tbody></table>`;
+}).catch(e => { document.getElementById('parts-body').textContent = 'Did not load: ' + e.message; });
+</script>
 </body>
 </html>
