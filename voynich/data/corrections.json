@@ -1,0 +1,73 @@
+{
+ "counts": {
+  "none seen": 116,
+  "not read": 1
+ },
+ "notable": [
+  {
+   "locus": "f103r.5-6",
+   "page": "f103r",
+   "box": "1785,397,2168,555",
+   "first": "",
+   "became": "",
+   "status": "none seen",
+   "source": "voynich-nu.md #1581 (SantaColoma, the ink spill)",
+   "note": "the stain over lines 5 and 6 holds dark partial letters that ZL reads ???; on Yale's image the stain and the letters cannot be told apart, so whether the letters were rewritten after the spill cannot be read"
+  },
+  {
+   "locus": "f113r",
+   "page": "f113r",
+   "box": "",
+   "first": "",
+   "became": "",
+   "status": "not read",
+   "source": "voynich-nu.md #1581",
+   "note": "a possible correction raised on the mailing list; f113r is a final page, sealed"
+  }
+ ],
+ "eq_words": 115,
+ "order": [
+  {
+   "page": "f1v",
+   "where": "the green leaf low on the left branch",
+   "order": "note, then paint",
+   "evidence": "the colour note g lies under the green paint (the-colour-notes)"
+  },
+  {
+   "page": "f2r",
+   "where": "the stem through the lower paragraphs",
+   "order": "drawing, then text",
+   "evidence": "the lower lines stop short of the stem and go on past it, leaving the stem clear"
+  },
+  {
+   "page": "f2r",
+   "where": "the bottom right leaf",
+   "order": "note, then paint",
+   "evidence": "the colour note's round letters lie under the green paint (the-colour-notes)"
+  },
+  {
+   "page": "f4r",
+   "where": "the flowers beside the first paragraph",
+   "order": "drawing, then text",
+   "evidence": "the text runs short where the flowers stand, the lines kept clear of them"
+  },
+  {
+   "page": "f11v",
+   "where": "the trunk through the paragraph",
+   "order": "drawing, then text",
+   "evidence": "the lines break either side of the trunk and go on past it"
+  },
+  {
+   "page": "f39v",
+   "where": "the stem through the last paragraph",
+   "order": "drawing, then text",
+   "evidence": "the last lines are written either side of the stem"
+  },
+  {
+   "page": "fRos",
+   "where": "the circles and their labels",
+   "order": "drawing, then text",
+   "evidence": "the labels and circular text follow the drawn rings and causeways (the-buildings, the-rosettes-map)"
+  }
+ ]
+}

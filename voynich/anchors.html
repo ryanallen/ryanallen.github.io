@@ -151,6 +151,14 @@
       el.innerHTML = `<p class="an-note"><b>They don't read as headings that name the page.</b> Their words turn up elsewhere on their own page ${Math.round(s.own_page * 100)}% of the time, against ${Math.round(s.own_page_chance * 100)}% on another page of the same section, but an ordinary paragraph's last line does that more (${Math.round(s.last_own_page * 100)}% against ${Math.round(s.last_chance * 100)}%), so that is just a page reusing its words. They hold fewer topic words than ordinary last lines (${Math.round(s.topic_share * 100)}% against ${Math.round(s.topic_share_last * 100)}%). The titles proper, on f1r, f8r, f25r and f46v, are mostly words found nowhere else on their page, as names would be, but every plant on those pages is unidentified, so there is no name to test them against. ${s.final_sealed} lines on pages saved for the final test are left out.</p>` +
         tbl(['line', 'kind', 'words', 'share found elsewhere on its page'], dev.map(l => [esc(l.locus), esc(l.kind), word(l.words.split('.')[0]) + (l.words.includes('.') ? ' <code>' + esc(l.words.split('.').slice(1).join(' ')) + '</code>' : ''), esc(l.own_page)]));
     }).catch(() => {});
+    sec('an-corrections', 'Corrections, and which came first', 'A working cipher or language has rules, so a scribe\'s corrections should follow a pattern; someone making up text has nothing to correct against.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-corr-body"></div>');
+    fetch('data/corrections.json').then(r => r.json()).then(c => {
+      const el = document.getElementById('an-corr-body');
+      if (!el) return;
+      el.innerHTML = `<p class="an-note"><b>No correction can be seen on Yale\'s images, so there is no pattern to test.</b> We looked at the ${esc(c.eq_words)} words that open with e or qe, noted as perhaps hiding an erased a, o or y, and at the ink spill on f103r: at full size each shows only ordinary strokes, or a stain that cannot be told from the letters under it. That agrees with Anne Nill, who in 1953 had never seen corrections so unobtrusive; a correction scraped from vellum may need the multispectral scans to show. <b>Where text and drawing meet, the drawing came first</b>: the lines stop short of a stem and go on past it, and the colour notes lie under the paint.</p>` +
+        tbl(['page', 'where', 'what went on first', 'what shows it'], c.order.map(o => [esc(o.page), esc(o.where), esc(o.order), esc(o.evidence)]));
+    }).catch(() => {});
     sec('an-formula', 'A fixed place for "hot and dry"?', 'A 1400s herbal entry follows a formula: the plant\'s name, then its qualities (hot or cold, dry or moist, and a degree), then its uses. If the Voynich\'s herbal pages did too, one place on each page would hold only a handful of words, and those words would mean hot, cold, dry or moist.');
     out.insertAdjacentHTML('beforeend', '<div id="an-formula-body"></div>');
     fetch('data/formula.json').then(r => r.json()).then(f => {
