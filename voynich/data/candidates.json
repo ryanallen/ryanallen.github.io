@@ -7683,6 +7683,30 @@
 "verdict": "fail",
 "reason": "fitted to the measures, it matches the letters, word lengths, repeats and line starts, but not the line-end effect, the near repeats or the rate of new words together; no procedure of the family reached them"
 }
+},
+{
+"id": "cognate",
+"version": "1",
+"family": "language",
+"P": "each of ten candidate languages (Latin, Italian, German, French, Czech, Hebrew, Greek, Arabic)",
+"E": "a sign-to-letter mapping found by search, each Voynich word matched to a known word exactly: the core of Snyder, Barzilay and Knight's and of Luo's cognate models",
+"T": "the search's restarts",
+"source": "candidates/cognate.tsv",
+"method": "tools/cognate.py",
+"status": "draft",
+"experiments": [],
+"scorecard": [],
+"test": {
+"candidate": "cognate",
+"version": "1",
+"mapping": "the best mapping per language (candidates/cognate.tsv)",
+"heldout_score": "0.089-0.231",
+"chance_score": "generated text 0.093-0.164",
+"behavior": "",
+"recovery": "proved on Macer's Latin in a made-up script: 0.956 of letters read right",
+"verdict": "fail",
+"reason": "it reads 9 to 23 percent of the Voynich's tokens as words of every language tested, about as often as it reads a generated text and more than a true Latin cipher's words, with words that contradict (chedy and shedy one word); no language stands out"
+}
 }
 ],
 "readings": {
