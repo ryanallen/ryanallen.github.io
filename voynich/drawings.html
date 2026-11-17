@@ -23,6 +23,8 @@
   .v{display:inline-block;border-radius:9px;padding:0 7px;font-size:11px;color:#fff;margin-left:4px}
   .v.secure{background:#2e7d32}.v.likely{background:#4f7d2e}.v.possible{background:#8a6d1f}.v.unknown{background:#555}
   @media (max-width:480px){.card{width:calc(50% - 5px);box-sizing:border-box}.card img{height:150px}}
+  .rosmap{max-width:1000px;margin:24px auto;padding:0 16px;color:var(--muted);font-size:14px;line-height:1.5}.rosmap h2{font-size:17px;color:var(--text)}.rosmap b{color:var(--text)}.rosmap a{color:var(--accent)}
+  .rosmap-t{border-collapse:collapse;font-size:13px;margin:8px 0}.rosmap-t td,.rosmap-t th{padding:4px 8px;border-bottom:1px solid #353a43;text-align:left;vertical-align:top}.rosmap-t th{color:var(--text)}
 </style>
 </head>
 <body>
@@ -79,6 +81,18 @@
   $('many').onchange = $('unknown').onchange = draw;
   draw();
 })();
+</script>
+<section id="rosmap" class="rosmap"><h2>Is the Rosettes foldout a map?</h2><div id="rosmap-body">Loading…</div></section>
+<script>
+fetch('data/rosettes-map.json').then(r => r.json()).then(d => {
+  const e = x => String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const L = d.labels;
+  document.getElementById('rosmap-body').innerHTML = `<p><b>No map made before 1500 has its shape.</b> The foldout uses a map's signs: towns drawn as towers turned outward from a circle's rim, a walled center, water, a T-O map in one corner and suns in two. But no map has its plan of nine circles in a grid joined by causeways. We wrote down its features first, then scored ${d.ranking.length} maps and kinds of map on them. The best share about half.</p>
+  <table class="rosmap-t"><thead><tr><th>Feature</th><th>What the Rosettes show</th></tr></thead><tbody>${Object.entries(d.features).map(([k, v]) => `<tr><td>${e(k)}</td><td>${e(v)}</td></tr>`).join('')}</tbody></table>
+  <table class="rosmap-t"><thead><tr><th>Score</th><th>Map</th><th>Kind, date</th><th>What it shares</th></tr></thead><tbody>${d.ranking.map(r => `<tr><td><b>${e(r.score)}</b> of ${e(r.of)}</td><td><a href="${e(r.address)}">${e(r.map)}</a></td><td>${e(r.kind)}, ${e(r.date)}</td><td>${e(r.note)}</td></tr>`).join('')}</tbody></table>
+  <p>A map names each place once. Of the Rosettes' ${e(L.labels)} labels, ${e(Math.round(L.repeated_share * 100))}% are words that stand more than once among them, against ${e(Math.round(L.chance * 100))}% for as many labels from the rest of the book (chance ${e(L.p)}): no sign either way that they are place names.</p>
+  <p>Readings proposed so far: ${d.readings.map(r => `${e(r.reading)} (${e(r.who)}, ${e(r.when)})`).join('; ')}.</p>`;
+}).catch(e => { document.getElementById('rosmap-body').textContent = 'Did not load: ' + e.message; });
 </script>
 </body>
 </html>

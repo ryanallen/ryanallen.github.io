@@ -1,0 +1,338 @@
+{
+ "features": {
+  "F1": "fRos.a, fRos.b, fRos.c, fRos.d, fRos.e, fRos.f, fRos.g, fRos.h, fRos.i",
+  "F2": "fRos.e, fRos.p, fRos.q",
+  "F3": "fRos.k, fRos.r",
+  "F4": "fRos.j",
+  "F5": "fRos.l, fRos.m",
+  "F6": "fRos.k",
+  "F7": "fRos.k",
+  "F8": "fRos.k",
+  "F9": "fRos.c, fRos.h, fRos.i",
+  "F10": "fRos.k",
+  "F11": "fRos.b, fRos.h"
+ },
+ "ranking": [
+  {
+   "map": "Fra Mauro map",
+   "score": 6,
+   "of": 11,
+   "shows": [
+    "F4",
+    "F5",
+    "F8",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "kind": "world map (mappa mundi)",
+   "date": "c. 1450",
+   "address": "https://en.wikipedia.org/wiki/Fra_Mauro_map",
+   "note": "towns as walled buildings, seas, names; round diagrams of the spheres and heavens in its corners"
+  },
+  {
+   "map": "Catalan Atlas",
+   "score": 5,
+   "of": 11,
+   "shows": [
+    "F4",
+    "F5",
+    "F8",
+    "F10",
+    "F11"
+   ],
+   "kind": "portolan chart",
+   "date": "1375",
+   "address": "https://en.wikipedia.org/wiki/Catalan_Atlas",
+   "note": "towns as castles with towers and flags, seas, names, a compass rose and a calendar wheel; a chart, not circles"
+  },
+  {
+   "map": "Ebstorf Map",
+   "score": 5,
+   "of": 11,
+   "shows": [
+    "F2",
+    "F4",
+    "F5",
+    "F8",
+    "F10"
+   ],
+   "kind": "world map (mappa mundi)",
+   "date": "c. 1300",
+   "address": "https://en.wikipedia.org/wiki/Ebstorf_Map",
+   "note": "as Hereford: a walled Jerusalem at the center, towns as buildings, water, names"
+  },
+  {
+   "map": "Gough Map",
+   "score": 5,
+   "of": 11,
+   "shows": [
+    "F3",
+    "F4",
+    "F5",
+    "F8",
+    "F10"
+   ],
+   "kind": "regional map",
+   "date": "c. 1360",
+   "address": "https://en.wikipedia.org/wiki/Gough_Map",
+   "note": "towns as buildings, roads as red lines between them, rivers, names"
+  },
+  {
+   "map": "Hereford Mappa Mundi",
+   "score": 5,
+   "of": 11,
+   "shows": [
+    "F2",
+    "F4",
+    "F5",
+    "F8",
+    "F10"
+   ],
+   "kind": "world map (mappa mundi)",
+   "date": "c. 1300",
+   "address": "https://en.wikipedia.org/wiki/Hereford_Mappa_Mundi",
+   "note": "Jerusalem walled at the center; towns drawn as castles and towers; rivers and seas as bands; names written on it; one round world, not nine circles"
+  },
+  {
+   "map": "Matthew Paris's itinerary to Jerusalem",
+   "score": 5,
+   "of": 11,
+   "shows": [
+    "F3",
+    "F4",
+    "F5",
+    "F8",
+    "F10"
+   ],
+   "kind": "itinerary map",
+   "date": "c. 1250",
+   "address": "https://en.wikipedia.org/wiki/Matthew_Paris",
+   "note": "towns as buildings linked in a line of days' journeys, rivers, names"
+  },
+  {
+   "map": "Celestial maps",
+   "score": 4,
+   "of": 11,
+   "shows": [
+    "F6",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "kind": "map of the heavens",
+   "date": "to 1500",
+   "address": "https://en.wikipedia.org/wiki/Celestial_cartography",
+   "note": "stars filling circles, sun, the zodiac's ring, names"
+  },
+  {
+   "map": "Round maps of Jerusalem (the Hague, Uppsala and others)",
+   "score": 4,
+   "of": 11,
+   "shows": [
+    "F2",
+    "F4",
+    "F5",
+    "F10"
+   ],
+   "kind": "town plan (Jerusalem)",
+   "date": "1100s–1400s",
+   "address": "https://en.wikipedia.org/wiki/Jerusalem_maps",
+   "note": "a walled round city, its gates and holy buildings drawn, streets in a cross, names"
+  },
+  {
+   "map": "Sacrobosco's De sphaera and its diagrams",
+   "score": 4,
+   "of": 11,
+   "shows": [
+    "F6",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "kind": "map of the heavens and the spheres",
+   "date": "c. 1230, copied and printed to 1500",
+   "address": "https://en.wikipedia.org/wiki/De_sphaera_mundi",
+   "note": "the spheres as concentric circles, sun and moon, stars, names round the rings"
+  },
+  {
+   "map": "Andreas Walsperger's world map",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F5",
+    "F8",
+    "F10"
+   ],
+   "kind": "world map (mappa mundi)",
+   "date": "1448",
+   "address": "https://en.wikipedia.org/wiki/Andreas_Walsperger",
+   "note": "a round world, towns as dots and small buildings, water, names"
+  },
+  {
+   "map": "Erhard Etzlaub's Rom-Weg map",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F3",
+    "F8",
+    "F10"
+   ],
+   "kind": "itinerary map (Alpine and German roads)",
+   "date": "1500",
+   "address": "https://en.wikipedia.org/wiki/Erhard_Etzlaub",
+   "note": "towns as circles on dotted roads, rivers, names; south at the top"
+  },
+  {
+   "map": "Opicinus de Canistris's drawings",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F8",
+    "F10",
+    "F11"
+   ],
+   "kind": "map drawn as a body",
+   "date": "1330s",
+   "address": "https://en.wikipedia.org/wiki/Opicinus_de_Canistris",
+   "note": "lands drawn as bodies, circles of the calendar and the heavens, water, long writing round them"
+  },
+  {
+   "map": "Peter of Eboli's baths of Pozzuoli",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F4",
+    "F8",
+    "F10"
+   ],
+   "kind": "bath and spa book",
+   "date": "c. 1200, copied in the 1300s–1400s",
+   "address": "https://en.wikipedia.org/wiki/De_Balneis_Puteolanis",
+   "note": "bath houses drawn as buildings beside water, verses written round the pictures"
+  },
+  {
+   "map": "Zonal and other mappae mundi",
+   "score": 3,
+   "of": 11,
+   "shows": [
+    "F8",
+    "F10",
+    "F11"
+   ],
+   "kind": "zonal map",
+   "date": "400s, copied to 1500",
+   "address": "https://en.wikipedia.org/wiki/Mappa_mundi",
+   "note": "a world in climatic bands drawn as a circle of zones, the ocean round it, names"
+  },
+  {
+   "map": "T-O maps (Isidore, Etymologiae)",
+   "score": 2,
+   "of": 11,
+   "shows": [
+    "F7",
+    "F10"
+   ],
+   "kind": "T-O map",
+   "date": "600s, copied to 1500",
+   "address": "https://en.wikipedia.org/wiki/T_and_O_map",
+   "note": "the T-O map itself and its three continents' names; nothing else of the Rosettes"
+  }
+ ],
+ "readings": [
+  {
+   "reading": "Jerusalem at the center of a world map",
+   "who": "Barbara (mailing list)",
+   "when": "2008",
+   "where": "voynich.nu mailing list a2008H.txt; finding #1666",
+   "what it reads": "the center circle as Jerusalem, the others round it as the world",
+   "a map": "yes"
+  },
+  {
+   "reading": "the Antipodes, with the T-O map's Asia as oriens",
+   "who": "funny bunny",
+   "when": "2012",
+   "where": "finding #1666; voynich.ninja",
+   "what it reads": "the foldout as the far side of the world, oriented by the T-O map",
+   "a map": "yes"
+  },
+  {
+   "reading": "Spain, the corner suns as orientation",
+   "who": "j.haley",
+   "when": "2008",
+   "where": "a2008E/F.txt; finding #1666",
+   "what it reads": "a regional map of Spain, the suns marking east and west",
+   "a map": "yes"
+  },
+  {
+   "reading": "a game board",
+   "who": "Jurain",
+   "when": "2008",
+   "where": "a2008H.txt; finding #1666",
+   "what it reads": "nine fields of a board game",
+   "a map": "no"
+  },
+  {
+   "reading": "the houses of Bacon's New Atlantis",
+   "who": "Rich SantaColoma",
+   "when": "2008",
+   "where": "a2008H.txt; finding #1666",
+   "what it reads": "the buildings of Salomon's House",
+   "a map": "yes"
+  },
+  {
+   "reading": "no real map; the \"tower in a hole\" a fantasy",
+   "who": "Rich SantaColoma",
+   "when": "2008",
+   "where": "a2008H.txt message 183–186; finding #1666",
+   "what it reads": "towers and castles drawn as town signs, not a real place",
+   "a map": "no"
+  },
+  {
+   "reading": "ordinary buildings top right, the rest increasingly fantastic",
+   "who": "Elmar Vogt",
+   "when": "2008",
+   "where": "a2008H.txt message 192",
+   "what it reads": "a mix of a real townscape and invention",
+   "a map": "partly"
+  },
+  {
+   "reading": "the castle a fantasy",
+   "who": "René Zandbergen",
+   "when": "2008–2020s",
+   "where": "voynich.nu; findings #1666, #1695",
+   "what it reads": "not convinced it is a map",
+   "a map": "no"
+  },
+  {
+   "reading": "the castle as the Scaliger castle, the Sforza castle or the Kremlin",
+   "who": "j.haley; funny bunny",
+   "when": "2008; 2012",
+   "where": "drawings-proposed.tsv",
+   "what it reads": "one castle named, the rest unread",
+   "a map": "partly"
+  },
+  {
+   "reading": "the womb: seven chambers and two openings, the suns as the embryo's heat, the castles as Schloss (lock)",
+   "who": "Keagan Brewer and Michelle L. Lewis",
+   "when": "2024",
+   "where": "Social History of Medicine (2024); phys.org, 16 April 2024",
+   "what it reads": "a body, not a map",
+   "a map": "no"
+  },
+  {
+   "reading": "the brain, its cells and the ear",
+   "who": "the owner's question",
+   "when": "2026",
+   "where": "tickets/the-body-readings.md",
+   "what it reads": "a body, not a map",
+   "a map": "no"
+  }
+ ],
+ "labels": {
+  "labels": 136,
+  "repeated_share": 0.176,
+  "chance": 0.136,
+  "p": 0.1705
+ }
+}
