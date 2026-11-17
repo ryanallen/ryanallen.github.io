@@ -1,0 +1,327 @@
+{
+ "summary": {
+  "pairs": 19,
+  "shuffled_mean": 3.6,
+  "shuffled_max": 6,
+  "p": 0.0,
+  "swaps": 75,
+  "substitutions": 39,
+  "substitutions_in_grid": 21,
+  "in_grid_chance": 15.8,
+  "in_grid_p": 0.0222
+ },
+ "pairs": [
+  {
+   "locus_a": "f86v6.9",
+   "page_a": "f86v6",
+   "words_a": "dar.sheey.qokol.cheol",
+   "locus_b": "f89v1.6",
+   "page_b": "f89v1",
+   "words_b": "dor.sheey.qokol.cheol",
+   "edits": "1",
+   "alignment": "d a/o r . s h e e y . q o k o l . c h e o l"
+  },
+  {
+   "locus_a": "f76r.42",
+   "page_a": "f76r",
+   "words_a": "chey.lchedy.qolain.qotal",
+   "locus_b": "f83r.3",
+   "page_b": "f83r",
+   "words_b": "chey.lchedy.qokaiin.qotal",
+   "edits": "2",
+   "alignment": "c h e y . l c h e d y . q o l/k a -/i i n . q o t a l"
+  },
+  {
+   "locus_a": "f26v.5",
+   "page_a": "f26v",
+   "words_a": "qoteedy.qokody.qotedy.qotedy",
+   "locus_b": "f79v.12",
+   "page_b": "f79v",
+   "words_b": "qoteedy.qokedy.qoltedy.qotedy",
+   "edits": "2",
+   "alignment": "q o t e e d y . q o k o/e d y . q o -/l t e d y . q o t e d y"
+  },
+  {
+   "locus_a": "f19r.5",
+   "page_a": "f19r",
+   "words_a": "otchy.tchy.qoky.daiin",
+   "locus_b": "f20r.12",
+   "page_b": "f20r",
+   "words_b": "otchy.tchy.qoteey.daiin",
+   "edits": "3",
+   "alignment": "o t c h y . t c h y . q o -/t -/e k/e y . d a i i n"
+  },
+  {
+   "locus_a": "f108v.30",
+   "page_a": "f108v",
+   "words_a": "raiin.shedy.qotain.oteedy",
+   "locus_b": "f79r.41",
+   "page_b": "f79r",
+   "words_b": "qokain.shedy.qotain.oteedy",
+   "edits": "4",
+   "alignment": "-/q r/o a/k i/a i n . s h e d y . q o t a i n . o t e e d y"
+  },
+  {
+   "locus_a": "f108v.4",
+   "page_a": "f108v",
+   "words_a": "shedy.qokeed.qoteedy.qoteedy",
+   "locus_b": "f83r.7",
+   "page_b": "f83r",
+   "words_b": "rsheedy.qokedy.qoteedy.qoteedy",
+   "edits": "4",
+   "alignment": "-/r s h -/e e d y . q o k e e/d d/y . q o t e e d y . q o t e e d y"
+  },
+  {
+   "locus_a": "f29v.6",
+   "page_a": "f29v",
+   "words_a": "dchor.chol.chaiin.shaiin",
+   "locus_b": "f8v.3",
+   "page_b": "f8v",
+   "words_b": "chear.shol.chaiin.shaiin",
+   "edits": "4",
+   "alignment": "d/- c h -/e o/a r . c/s h o l . c h a i i n . s h a i i n"
+  },
+  {
+   "locus_a": "f111v.2",
+   "page_a": "f111v",
+   "words_a": "keedy.qokair.shecthy.qokeol",
+   "locus_b": "f112v.21",
+   "page_b": "f112v",
+   "words_b": "keedy.qokaiin.shedy.qokeol",
+   "edits": "5",
+   "alignment": "k e e d y . q o k a -/i i r/n . s h e c/- t/- h/d y . q o k e o l"
+  },
+  {
+   "locus_a": "f111v.16",
+   "page_a": "f111v",
+   "words_a": "lchedy.okaral.qotal.shedy",
+   "locus_b": "f76r.42",
+   "page_b": "f76r",
+   "words_b": "lchedy.qolain.qotal.shedy",
+   "edits": "5",
+   "alignment": "l c h e d y . -/q o k/l a r/- a/i l/n . q o t a l . s h e d y"
+  },
+  {
+   "locus_a": "f103r.33",
+   "page_a": "f103r",
+   "words_a": "qokeey.chechy.qokey.shckhy",
+   "locus_b": "f76r.41",
+   "page_b": "f76r",
+   "words_b": "okedy.lcheey.qokey.shckhy",
+   "edits": "5",
+   "alignment": "q/- o k e e/d y . -/l c h e c/- h/e y . q o k e y . s h c k h y"
+  },
+  {
+   "locus_a": "f103r.24",
+   "page_a": "f103r",
+   "words_a": "oty.opchedy.qotain.shcthy",
+   "locus_b": "f111v.20",
+   "page_b": "f111v",
+   "words_b": "qotain.chedy.qotain.shcthy",
+   "edits": "5",
+   "alignment": "-/q o t y/a ./i o/n p/. c h e d y . q o t a i n . s h c t h y"
+  },
+  {
+   "locus_a": "f103r.24",
+   "page_a": "f103r",
+   "words_a": "qotain.shcthy.otey.dain",
+   "locus_b": "f80r.40",
+   "page_b": "f80r",
+   "words_b": "qotain.shcthy.qokedy.daly",
+   "edits": "5",
+   "alignment": "q o t a i n . s h c t h y . -/q o t/k e -/d y . d a i/l n/y"
+  },
+  {
+   "locus_a": "f79r.41",
+   "page_a": "f79r",
+   "words_a": "shedy.qotain.oteedy.chkain",
+   "locus_b": "f79v.25",
+   "page_b": "f79v",
+   "words_b": "olshdy.qotain.oteedy.olkain",
+   "edits": "5",
+   "alignment": "-/o -/l s h e/- d y . q o t a i n . o t e e d y . c/o h/l k a i n"
+  },
+  {
+   "locus_a": "f108v.2",
+   "page_a": "f108v",
+   "words_a": "checkhy.lkeedy.qokeedar.araiin",
+   "locus_b": "f112v.34",
+   "page_b": "f112v",
+   "words_b": "checkhy.lkeedy.qokeedy.chkaiin",
+   "edits": "5",
+   "alignment": "c h e c k h y . l k e e d y . q o k e e d a/y r/. ./c a/h r/k a i i n"
+  },
+  {
+   "locus_a": "f10r.4",
+   "page_a": "f10r",
+   "words_a": "chaiin.chcthy.cthockhy.or",
+   "locus_b": "f44v.12",
+   "page_b": "f44v",
+   "words_b": "chaiin.chcthy.ctho.cthol",
+   "edits": "5",
+   "alignment": "c h a i i n . c h c t h y . c t h o -/. c k/t h y/- ./- o r/l"
+  },
+  {
+   "locus_a": "f115r.38",
+   "page_a": "f115r",
+   "words_a": "chot.qotchy.qokchy.sol",
+   "locus_b": "f18v.9",
+   "page_b": "f18v",
+   "words_b": "okchor.qotchy.qokchy.ytol",
+   "edits": "5",
+   "alignment": "-/o -/k c h o t/r . q o t c h y . q o k c h y . -/y s/t o l"
+  },
+  {
+   "locus_a": "f104v.33",
+   "page_a": "f104v",
+   "words_a": "cheeod.ykeey.kaiin.qokaiin",
+   "locus_b": "f50r.9",
+   "page_b": "f50r",
+   "words_b": "kchedy.ykeey.kaiin.qokain",
+   "edits": "5",
+   "alignment": "-/k c h e/- e o/d d/y . y k e e y . k a i i n . q o k a i/- i n"
+  },
+  {
+   "locus_a": "f50v.7",
+   "page_a": "f50v",
+   "words_a": "daiin.choky.qotchdy.kcy",
+   "locus_b": "f94r.6",
+   "page_b": "f94r",
+   "words_b": "saiin.choky.qotchdy.otaly",
+   "edits": "5",
+   "alignment": "d/s a i i n . c h o k y . q o t c h d y . -/o -/t k/a c/l y"
+  },
+  {
+   "locus_a": "f85r1.5",
+   "page_a": "f85r1",
+   "words_a": "qodaiin.olkeedy.oraiin.olshedy",
+   "locus_b": "f86v4.8",
+   "page_b": "f86v4",
+   "words_b": "daiin.olkeedy.otar.olshedy",
+   "edits": "6",
+   "alignment": "q/- o/- d a i i n . o l k e e d y . o r/t a i/- i/- n/r . o l s h e d y"
+  }
+ ],
+ "swaps": [
+  {
+   "a": "-",
+   "b": "q",
+   "count": "6",
+   "grid": "a gap"
+  },
+  {
+   "a": "-",
+   "b": "i",
+   "count": "5",
+   "grid": "a gap"
+  },
+  {
+   "a": "-",
+   "b": "e",
+   "count": "5",
+   "grid": "a gap"
+  },
+  {
+   "a": "-",
+   "b": "o",
+   "count": "4",
+   "grid": "a gap"
+  },
+  {
+   "a": "-",
+   "b": "t",
+   "count": "3",
+   "grid": "a gap"
+  },
+  {
+   "a": "-",
+   "b": "l",
+   "count": "3",
+   "grid": "a gap"
+  },
+  {
+   "a": "n",
+   "b": "r",
+   "count": "2",
+   "grid": "same column"
+  },
+  {
+   "a": "-",
+   "b": "c",
+   "count": "2",
+   "grid": "a gap"
+  },
+  {
+   "a": "a",
+   "b": "o",
+   "count": "2",
+   "grid": "same column"
+  },
+  {
+   "a": "k",
+   "b": "l",
+   "count": "2",
+   "grid": "neither"
+  },
+  {
+   "a": "-",
+   "b": "r",
+   "count": "2",
+   "grid": "a gap"
+  },
+  {
+   "a": "a",
+   "b": "i",
+   "count": "2",
+   "grid": "neither"
+  },
+  {
+   "a": "d",
+   "b": "e",
+   "count": "2",
+   "grid": "same column"
+  },
+  {
+   "a": "a",
+   "b": "y",
+   "count": "2",
+   "grid": "neither"
+  },
+  {
+   "a": "k",
+   "b": "t",
+   "count": "2",
+   "grid": "same column"
+  },
+  {
+   "a": "-",
+   "b": "d",
+   "count": "2",
+   "grid": "a gap"
+  },
+  {
+   "a": "r",
+   "b": "t",
+   "count": "2",
+   "grid": "neither"
+  },
+  {
+   "a": "a",
+   "b": "k",
+   "count": "2",
+   "grid": "neither"
+  },
+  {
+   "a": "-",
+   "b": "y",
+   "count": "2",
+   "grid": "a gap"
+  },
+  {
+   "a": "-",
+   "b": "k",
+   "count": "2",
+   "grid": "a gap"
+  }
+ ]
+}

@@ -23,6 +23,8 @@
   table{border-collapse:collapse;margin:4px 12px;font-size:13px;color:var(--muted)}td,th{padding:3px 8px;border-bottom:1px solid #41454e;text-align:left}
   td.w{font-family:ui-monospace,monospace;color:var(--text)}
   @media (max-width:480px){.sign{width:calc(50% - 5px);box-sizing:border-box}table{font-size:12px}}
+  .near{max-width:1000px;margin:24px auto;padding:0 16px;color:var(--muted);font-size:14px;line-height:1.5}.near h2{font-size:17px;color:var(--text)}.near b{color:var(--text)}
+  .near-t{border-collapse:collapse;font-size:13px}.near-t td,.near-t th{padding:4px 8px;border-bottom:1px solid #353a43;text-align:left}.near-t th{color:var(--text)}.near-t code{color:var(--text)}
 </style>
 </head>
 <body>
@@ -66,6 +68,16 @@
     d.families.map(f => `<tr><td class="w">${esc(f.stem)}-</td><td>${f.words}</td><td>${f.pages}</td><td class="w">${f.endings.map(esc).join(' ')}</td></tr>`).join('');
   out.append(t);
 })();
+</script>
+<section id="near" class="near"><h2>Passages that come back with small changes</h2><div id="near-body">Loading…</div></section>
+<script>
+fetch('data/near-repeats.json').then(r => r.json()).then(d => {
+  const e = x => String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const s = d.summary;
+  const show = a => a.split(' ').map(t => t.includes('/') ? `<mark>${e(t.split('/')[0] === '-' ? '+' + t.split('/')[1] : t.split('/')[1] === '-' ? '−' + t.split('/')[0] : t)}</mark>` : e(t === '.' ? ' ' : t)).join('');
+  document.getElementById('near-body').innerHTML = `<p>Runs of four words that turn up nearly the same on two different pages: ${e(s.pairs)} of them, where the same text with its words shuffled gives about ${e(s.shuffled_mean)} (at most ${e(s.shuffled_max)} in 20 tries). <b>So some passages do recur with small changes.</b> Lined up letter by letter, most changes add or drop a letter (q, i, e, o). Of the ${e(s.substitutions)} letters that swap for another, ${e(s.substitutions_in_grid)} swap within one column or row of the letter grid above, where ${e(s.in_grid_chance)} would by chance (${e(s.in_grid_p)}): the letters a scribe varied are the letters that behave alike, such as n and r, a and o.</p>
+  <table class="near-t"><thead><tr><th>Page</th><th>One copy</th><th>Page</th><th>The other</th><th>Changes</th></tr></thead><tbody>${d.pairs.map(p => `<tr><td>${e(p.locus_a)}</td><td><code>${e(p.words_a.replace(/\./g, ' '))}</code></td><td>${e(p.locus_b)}</td><td><code>${e(p.words_b.replace(/\./g, ' '))}</code></td><td>${e(p.edits)}</td></tr>`).join('')}</tbody></table>`;
+}).catch(e => { document.getElementById('near-body').textContent = 'Did not load: ' + e.message; });
 </script>
 </body>
 </html>
