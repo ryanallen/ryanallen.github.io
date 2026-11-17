@@ -142,6 +142,15 @@
         q.books.map(b => `<tr><td>${esc(name[b.text] || 'The Voynich, starred paragraphs')}</td><td>${esc(b.entries)}</td><td>${esc(b.median_words)}</td><td><code>${esc(b.top_opening)}</code></td><td>${esc(b.top_opening_share)}</td><td>${al[b.text] ? esc(al[b.text].best_correlation) : ''}</td><td>${al[b.text] ? esc(al[b.text].p) : ''}</td></tr>`).join('') + '</table>' +
         `<p class="an-note"><b>No.</b> The recipe book opens almost every entry the same way, and the prose herbal two in three. The Voynich's ${esc(v.entries)} starred paragraphs on the development pages open with a different word nearly every time (the commonest, <code>${esc(v.top_opening)}</code>, opens ${esc(v.top_opening_share)} of them). And no run of 20 paragraph lengths follows a run of any book's entries better than the same paragraphs shuffled.</p>`;
     }).catch(() => {});
+    sec('an-titles', 'The lines set apart', 'Some paragraphs end on a line the scribe set apart: centred, pushed right, or (on a few pages) a short "title" line. A heading or a name would be a good crib.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-titles-body"></div>');
+    fetch('data/titles.json').then(r => r.json()).then(q => {
+      const el = document.getElementById('an-titles-body');
+      if (!el) return;
+      const s = q.summary, dev = q.lines.filter(l => l.set === 'development');
+      el.innerHTML = `<p class="an-note"><b>They don't read as headings that name the page.</b> Their words turn up elsewhere on their own page ${Math.round(s.own_page * 100)}% of the time, against ${Math.round(s.own_page_chance * 100)}% on another page of the same section, but an ordinary paragraph's last line does that more (${Math.round(s.last_own_page * 100)}% against ${Math.round(s.last_chance * 100)}%), so that is just a page reusing its words. They hold fewer topic words than ordinary last lines (${Math.round(s.topic_share * 100)}% against ${Math.round(s.topic_share_last * 100)}%). The titles proper, on f1r, f8r, f25r and f46v, are mostly words found nowhere else on their page, as names would be, but every plant on those pages is unidentified, so there is no name to test them against. ${s.final_sealed} lines on pages saved for the final test are left out.</p>` +
+        tbl(['line', 'kind', 'words', 'share found elsewhere on its page'], dev.map(l => [esc(l.locus), esc(l.kind), word(l.words.split('.')[0]) + (l.words.includes('.') ? ' <code>' + esc(l.words.split('.').slice(1).join(' ')) + '</code>' : ''), esc(l.own_page)]));
+    }).catch(() => {});
     sec('an-formula', 'A fixed place for "hot and dry"?', 'A 1400s herbal entry follows a formula: the plant\'s name, then its qualities (hot or cold, dry or moist, and a degree), then its uses. If the Voynich\'s herbal pages did too, one place on each page would hold only a handful of words, and those words would mean hot, cold, dry or moist.');
     out.insertAdjacentHTML('beforeend', '<div id="an-formula-body"></div>');
     fetch('data/formula.json').then(r => r.json()).then(f => {
