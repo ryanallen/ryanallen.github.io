@@ -2202,7 +2202,7 @@
 "version": "1",
 "family": "generator",
 "P": "none, or a text carried by the column chosen",
-"E": "a text's own words split in three, each column shifted by the grille (his f9v table, Figure 1)",
+"E": "a text's own words split in three, each column shifted by the grille (his Figure 1 table, of a page held back as final here)",
 "T": "one column per word",
 "source": "Zandbergen 2021, arXiv:2104.12548",
 "method": "tools/generators.py grille (table_for, read_grille)",
@@ -2353,7 +2353,7 @@
 "test": {
 "candidate": "grille-zandbergen",
 "version": "1",
-"mapping": "his table and grille (f9v)",
+"mapping": "his table and grille (his Figure 1)",
 "heldout_score": "",
 "chance_score": "",
 "behavior": "",
