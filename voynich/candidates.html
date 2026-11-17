@@ -13,7 +13,8 @@
   #cd-jump{padding:4px 12px;font-size:13px;color:var(--muted)}#cd-jump a{color:var(--accent);margin-right:10px;white-space:nowrap}
   h2.cd-h{font-size:18px;margin:22px 12px 4px;color:var(--text)}
   p.cd-note{margin:0 12px 8px;font-size:13px;color:var(--muted);max-width:900px}
-  .cd-c{margin:8px 12px;padding:8px 10px;border:1px solid #41454e;border-radius:8px;max-width:900px;font-size:13px;color:var(--muted)}
+  .cd-c{margin:8px 12px;padding:8px 10px;border:1px solid #41454e;border-radius:8px;max-width:min(900px,calc(100% - 24px));box-sizing:border-box;min-width:0;font-size:13px;color:var(--muted)}
+  .cd-c>details{max-width:100%;min-width:0;overflow-wrap:anywhere}
   .cd-c summary{cursor:pointer;color:var(--text);font-size:15px;line-height:1.4}
   .cd-c summary b{font-weight:600}
   .cd-c dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 10px;margin:4px 0}
@@ -42,7 +43,7 @@
 <div id="cd-intro"><b>No proposed solution has passed.</b> We tested languages, ciphers, and published readings against the manuscript's letter and word patterns. Open a proposal for its claim, test, and verdict.</div>
 <div id="cd-found"><b>So far</b> <span id="cd-head"></span>
   <p style="margin:6px 0">A simple letter swap fails on the line patterns and repeats. No tested cipher or text generator matches all three kinds of patterns.</p>
-  <details><summary>How a solution can pass</summary><p>It must turn its claimed language or system into Voynich letters, explain the text's line and word patterns, read more than 80% of repeated words, and beat the same method on shuffled text. We use working pages for development and save 40 pages for a final test. Green scores fall within the range between the manuscript's two main text groups, Currier A and B.</p></details>
+  <details><summary>How a solution can pass</summary><p>It must turn its claimed language or system into Voynich letters, explain the text's line and word patterns, read more than 80% of repeated words, and beat the same method on shuffled text. We use working pages for development and save 40 pages for a final test. Green scores fall within the range between the manuscript's two main text groups, Currier A and B.</p><p>In the scorecards, <b>line patterns</b> are changes at the start or end of a handwritten line; <b>near repeats</b> are neighboring words that differ by one letter; and <b>new words</b> are words a proposed system creates that the manuscript never uses.</p></details>
   <details><summary>See all verdicts</summary><ul id="cd-sum"></ul></details></div>
 <div id="cd-jump"></div>
 <div id="cd-out">Loading…</div>
@@ -78,6 +79,16 @@
     if (c.family === 'control') return ['none', 'control, run'];
     return ['fail', 'fails on the working pages'];
   };
+  const finding = c => {
+    if (!c.test) return '';
+    if (c.family === 'language') {
+      const share = Math.round(100 * Number(c.test.heldout_score));
+      const matched = /([0-9]+ of 10) measures/.exec(c.test.behavior || '');
+      return `A fixed letter swap reads ${share}% of repeated words (the threshold is 80%)${matched ? ` and matches ${matched[1]} manuscript patterns` : ''}.`;
+    }
+    const reason = c.test.reason || '';
+    return reason ? reason[0].toUpperCase() + reason.slice(1).replace(/\bNOVEL\b/g, 'new words') : '';
+  };
   const brief = r => r.includes('measures match') ? r.split('; ').slice(1).join('; ') : r.split('; ').slice(0, 1).concat(r.split('; ').filter(x => x.startsWith('chance line'))).join('; ');
   const out = $('cd-out'); out.replaceChildren();
   const jump = [], sum = [];
@@ -100,7 +111,8 @@
         return un.length ? `<div class="cd-e"><b>Scorecard</b> untested: ${esc(un[0].reason)}<div class="cd-sc">${un.map(s => `<div class="cd-m untested">${esc(NAMES[s.measurement] || s.measurement)}<span>untested</span></div>`).join('')}</div></div>` : '';
       })();
       out.insertAdjacentHTML('beforeend', `<details class="cd-c" id="c-${esc(c.id)}-${esc(c.version)}"><summary><b>${esc(TITLES[c.id] || c.id)}</b> v${esc(c.version)}<span class="cd-v v-${vk === 'pass' ? 'pass' : vk === 'none' ? 'none' : 'fail'}">${esc(vt)}</span></summary>
-        <dl><dt>Claimed text</dt><dd>${esc(c.P)}</dd><dt>Version</dt><dd>${esc(c.id)} v${esc(c.version)}</dd><dt>How it makes Voynich letters</dt><dd>${esc(c.E)}</dd><dt>Other steps</dt><dd>${esc(c.T)}</dd><dt>Source</dt><dd>${esc(c.source)}</dd><dt>Method</dt><dd>${esc(c.method)}</dd>${c.test ? `<dt>Verdict</dt><dd><b>${esc(vt)}</b>: ${esc(c.test.reason)}${c.test.heldout_score ? ` (read ${esc(c.test.heldout_score)}, shuffled text ${esc(c.test.chance_score)})` : ''}</dd>` : ''}</dl>${exps}</details>`);
+        <p>${esc(finding(c) || 'The published method does not give enough information to run this test.')}</p>
+        <details><summary>Method and full test record</summary><dl><dt>Claimed text</dt><dd>${esc(c.P)}</dd><dt>Version</dt><dd>${esc(c.id)} v${esc(c.version)}</dd><dt>How it makes Voynich letters</dt><dd>${esc(c.E)}</dd><dt>Other steps</dt><dd>${esc(c.T)}</dd><dt>Source</dt><dd>${esc(c.source)}</dd><dt>Method</dt><dd>${esc(c.method)}</dd>${c.test ? `<dt>Full verdict</dt><dd>${esc(c.test.reason)}${c.test.heldout_score ? ` (read ${esc(c.test.heldout_score)}, shuffled text ${esc(c.test.chance_score)})` : ''}</dd>` : ''}</dl>${exps}</details></details>`);
       const rd = (d.readings || {})[c.id];
       if (rd && rd.length && c === cs.filter(x => x.id === c.id).slice(-1)[0]) {
         const flags = r => [r.joined === '1' && 'joined across a space', r.emended === '1' && 'emended from the photograph',
