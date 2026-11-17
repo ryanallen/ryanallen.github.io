@@ -1,0 +1,74 @@
+{
+ "books": [
+  {
+   "text": "macer",
+   "entries": "63",
+   "median_words": "206",
+   "mean_words": "250.4",
+   "cv": "0.685",
+   "top_opening": "est",
+   "top_opening_share": "0.095",
+   "distinct_openings_share": "0.73"
+  },
+  {
+   "text": "alchemical-herbal",
+   "entries": "98",
+   "median_words": "66.0",
+   "mean_words": "66.7",
+   "cv": "0.483",
+   "top_opening": "ad",
+   "top_opening_share": "0.643",
+   "distinct_openings_share": "0.041"
+  },
+  {
+   "text": "ricette",
+   "entries": "57",
+   "median_words": "144",
+   "mean_words": "166.3",
+   "cv": "0.674",
+   "top_opening": "se",
+   "top_opening_share": "0.982",
+   "distinct_openings_share": "0.035"
+  },
+  {
+   "text": "voynich stars section (development pages)",
+   "entries": "188",
+   "median_words": "31.0",
+   "mean_words": "40.3",
+   "cv": "0.98",
+   "top_opening": "tchedy",
+   "top_opening_share": "0.027",
+   "distinct_openings_share": "0.867"
+  }
+ ],
+ "align": [
+  {
+   "book": "macer",
+   "window": "20",
+   "best_correlation": "0.726",
+   "voynich_from": "f111v.34",
+   "book_from_entry": "32",
+   "shuffled_mean_best": "0.699",
+   "p": "0.2415"
+  },
+  {
+   "book": "alchemical-herbal",
+   "window": "20",
+   "best_correlation": "0.728",
+   "voynich_from": "f104r.30",
+   "book_from_entry": "33",
+   "shuffled_mean_best": "0.716",
+   "p": "0.3673"
+  },
+  {
+   "book": "ricette",
+   "window": "20",
+   "best_correlation": "0.765",
+   "voynich_from": "f107r.30",
+   "book_from_entry": "26",
+   "shuffled_mean_best": "0.713",
+   "p": "0.1198"
+  }
+ ],
+ "paragraphs": 188
+}

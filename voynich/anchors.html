@@ -131,6 +131,17 @@
         row('f76r', 'Nine single signs between paragraphs. They do not match the first sign of the line after them more than chance.') +
         row('f75v', 'Six single signs between paragraphs, likewise no match with the lines after them.');
     }).catch(() => {});
+    sec('an-recipes', 'Do the starred paragraphs read like a recipe book?', 'The last section is short paragraphs, each with a star. A recipe book of the period has a fixed shape: entries of a typical length, most opening the same way ("take", "if you want"). Matching shapes needs no reading.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-recipes-body"></div>');
+    fetch('data/recipes.json').then(r => r.json()).then(q => {
+      const el = document.getElementById('an-recipes-body');
+      if (!el) return;
+      const name = {macer: "Macer's herbal (verse)", 'alchemical-herbal': 'the Alchemical Herbal (prose)', ricette: 'the LVII Ricette (Tuscan recipes)'};
+      const v = q.books.find(b => b.text.startsWith('voynich')), al = Object.fromEntries(q.align.map(a => [a.book, a]));
+      el.innerHTML = `<table class="an-tbl"><tr><th>Text</th><th>Entries</th><th>Median words</th><th>Commonest opening</th><th>Share opening with it</th><th>Best 20-entry length match</th><th>Chance of as good</th></tr>` +
+        q.books.map(b => `<tr><td>${esc(name[b.text] || 'The Voynich, starred paragraphs')}</td><td>${esc(b.entries)}</td><td>${esc(b.median_words)}</td><td><code>${esc(b.top_opening)}</code></td><td>${esc(b.top_opening_share)}</td><td>${al[b.text] ? esc(al[b.text].best_correlation) : ''}</td><td>${al[b.text] ? esc(al[b.text].p) : ''}</td></tr>`).join('') + '</table>' +
+        `<p class="an-note"><b>No.</b> The recipe book opens almost every entry the same way, and the prose herbal two in three. The Voynich's ${esc(v.entries)} starred paragraphs on the development pages open with a different word nearly every time (the commonest, <code>${esc(v.top_opening)}</code>, opens ${esc(v.top_opening_share)} of them). And no run of 20 paragraph lengths follows a run of any book's entries better than the same paragraphs shuffled.</p>`;
+    }).catch(() => {});
     sec('an-formula', 'A fixed place for "hot and dry"?', 'A 1400s herbal entry follows a formula: the plant\'s name, then its qualities (hot or cold, dry or moist, and a degree), then its uses. If the Voynich\'s herbal pages did too, one place on each page would hold only a handful of words, and those words would mean hot, cold, dry or moist.');
     out.insertAdjacentHTML('beforeend', '<div id="an-formula-body"></div>');
     fetch('data/formula.json').then(r => r.json()).then(f => {
