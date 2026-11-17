@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Voynich sign grid</title>
-<meta name="description" content="The Voynich signs grouped by how they behave, as Kober and Ventris grouped Linear B's, with no sound values: where each sign stands in a word, which signs behave alike, and the word families that share a stem.">
+<title>Voynich letter patterns</title>
+<meta name="description" content="See which Voynich letters behave alike, where they appear in words, and which words share a start.">
 <link rel="stylesheet" href="style.css">
 <style>
   #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#intro b{color:var(--text)}
@@ -27,10 +27,10 @@
 </head>
 <body>
 <header>
-  <h1><a href="grid.html">Voynich sign grid</a></h1>
-  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><a href="hands.html">Hands</a><a href="reader.html">Reader</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
+  <h1><a href="grid.html">Voynich letter patterns</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
-<div id="intro">The Voynich signs grouped by how they behave, as Alice Kober and Michael Ventris grouped the signs of Linear B before anyone could read it, with <b>no sound values</b>. Each column holds signs that stand in like places and among like neighbours; the bar under each sign shows how often it opens a word, stands inside one, ends one, or is a word alone. Counted on the 187 development pages of the Zandbergen–Landini transliteration in EVA; the pictures are the signs as the tracing site keeps them.</div>
+<div id="intro"><b>Some Voynich letters behave alike.</b> These columns group letters by where they appear in words and which letters appear beside them. The colored bar under each letter shows how often it begins a word, sits inside one, ends one, or stands alone. We have not assigned sounds. The counts use 187 working pages of the published Zandbergen-Landini transcription, written in the common EVA alphabet. The pictures show the actual marks traced from the manuscript.</div>
 <div id="finding"></div>
 <div class="key"><i class="bi"></i>opens a word<i class="bm"></i>inside<i class="bf"></i>ends a word<i class="ba"></i>a word alone</div>
 <div id="out">Loading…</div>
@@ -54,15 +54,15 @@
       e.innerHTML = `<div class="pics">${s.pictures.map(p => `<img loading="lazy" alt="${esc(s.sign)}" src="${esc(p)}">`).join('')}</div>
         <b>${esc(s.sign)}</b> · ${s.n.toLocaleString()} times · row ${s.row}
         <div class="place"><span class="bi" style="width:${pct(s.initial)}%"></span><span class="bm" style="width:${pct(rest)}%"></span><span class="bf" style="width:${pct(s.final)}%"></span><span class="ba" style="width:${pct(s.alone)}%"></span></div>
-        opens ${pct(s.initial)}% · ends ${pct(s.final)}%<br>nearest by context: ${esc(s.nearest)}`;
+        opens ${pct(s.initial)}% · ends ${pct(s.final)}%<br>most similar neighbors: ${esc(s.nearest)}`;
       g.append(e);
     }
   }
-  const h = document.createElement('h2'); h.className = 'col'; h.textContent = 'The same columns in Currier\'s units (ch, sh, the bench gallows and the i runs as one sign)'; out.append(h);
+  const h = document.createElement('h2'); h.className = 'col'; h.textContent = 'The columns if joined marks are counted as one sign'; out.append(h);
   const p = document.createElement('div'); p.className = 'key'; p.innerHTML = d.currier.map((c, i) => `<b>${i + 1}</b>: ${c.map(esc).join(' ')}`).join(' &nbsp; '); out.append(p);
-  const h2 = document.createElement('h2'); h2.className = 'col'; h2.textContent = 'The largest word families: one stem, many endings (Kober\'s triplets)'; out.append(h2);
+  const h2 = document.createElement('h2'); h2.className = 'col'; h2.textContent = 'Words with the same start and different endings'; out.append(h2);
   const t = document.createElement('table');
-  t.innerHTML = '<tr><th>stem</th><th>words</th><th>pages</th><th>endings (how many words)</th></tr>' +
+  t.innerHTML = '<tr><th>Shared start</th><th>Words</th><th>Pages</th><th>Endings (word counts)</th></tr>' +
     d.families.map(f => `<tr><td class="w">${esc(f.stem)}-</td><td>${f.words}</td><td>${f.pages}</td><td class="w">${f.endings.map(esc).join(' ')}</td></tr>`).join('');
   out.append(t);
 })();

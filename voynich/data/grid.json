@@ -1,8 +1,8 @@
 {
  "finding": [
-  "Not a plain alphabet writing Latin or Italian: its next-sign entropy is 2.17 bits, where a Latin herbal, Macer's verse and Italian recipes give 2.92 to 3.41.",
-  "Not a syllabary like Linear B: the signs fall into clear columns, but the signs that swap at the ends of word families all join one row, a single set of endings.",
-  "Closest to a cipher in its letters, furthest in its order: Greshko's Naibbe cipher matches its entropy (2.08) but has none of its word repeats, one-sign neighbours, line-edge signs or paragraph-opening gallows."
+  "The next Voynich letter is unusually predictable: 2.17 bits of uncertainty, compared with 2.92 to 3.41 in the Latin and Italian texts we tested. A simple letter swap from either language does not explain this.",
+  "Letters fall into groups that behave alike, but the changing endings of related words all fit one row. That is unlike a syllable script such as Linear B.",
+  "The Naibbe cipher comes close to the Voynich's letter predictability (2.08 bits), but misses its repeated words, near matches, and patterns at line and paragraph starts."
  ],
  "columns": [
   {

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Voynich reader</title>
-<meta name="description" content="A program that reads the Voynich script from a page image into EVA, tested on twenty pages it never saw: each line as it reads it beside the scan and the transcription, every wrong letter marked, and its error rate by scribe.">
+<title>Voynich text reader</title>
+<meta name="description" content="A program reads twenty unseen Voynich pages into letters. Compare each scan with the transcription and see where it gets letters wrong.">
 <link rel="stylesheet" href="style.css">
 <style>
   #rd{max-width:960px;margin:0 auto;padding:8px 16px 40px;color:var(--muted);font-size:14px}
@@ -23,19 +23,19 @@
 </head>
 <body>
 <header>
-  <h1><a href="reader.html">Voynich reader</a></h1>
-  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><a href="hands.html">Hands</a><a href="reader.html">Reader</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
+  <h1><a href="reader.html">Voynich text reader</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
 <main id="rd">
-  <p>A program that reads the Voynich script from a photograph of a page and writes it in EVA, the alphabet most transcriptions use. It learned the letters from every line the tracing has keyed, and is tested here on <b>twenty pages it never saw</b>, drawn across all five scribes. It finds the lines itself, cuts them out and reads them. Each line below shows the scan, what the reader read, and the key (the tracing's own letters). <span class="bad">Red</span> marks a letter the reader got wrong, and <span class="bad">·</span> a letter it left out.</p>
+  <p>This program turns a page photograph into a letter-by-letter transcription. It learned from traced lines and was tested on <b>twenty pages it had never seen</b>, spanning Davis's five proposed scribe labels. It finds and cuts out each line itself. Below, compare the scan, the program's text, and the traced letters. <span class="bad">Red</span> marks a wrong letter; <span class="bad">&middot;</span> marks one left out. The letters use EVA, a common way to write the Voynich script in a regular alphabet.</p>
   <div class="box" id="rd-sum">Loading…</div>
-  <h2>By scribe</h2>
+  <h2>By Davis's scribe labels</h2>
   <div class="wrap" id="rd-hands"></div>
   <h2>A page, line by line</h2>
   <p><select id="rd-page" aria-label="Page"></select> <span id="rd-pcer"></span></p>
   <div id="rd-lines"></div>
   <h2>Other photographs of the same pages</h2>
-  <p>The 2014 multispectral capture (Lazarus and RIT) photographed five of these pages again. Its true-colour photographs read about as well as Yale's. Its processed views are made to bring out faded ink, not for reading, and read worse.</p>
+  <p>A 2014 imaging project photographed five of these pages again. The program reads those color photographs about as well as Yale's. Images processed to reveal faint ink give it more trouble.</p>
   <div class="wrap" id="rd-scans"></div>
 </main>
 <script>
@@ -47,19 +47,19 @@
   let d;
   try { d = await (await fetch('data/reader.json')).json(); } catch (e) { $('rd-sum').textContent = 'The reader did not load: ' + e.message; return; }
   const a = d.all;
-  $('rd-sum').innerHTML = `<b>${pct(1 - a.cer_key)} of letters right</b> reading whole pages from the scan (character error ${a.cer_key} against the key, ${a.cer_zl} against the Zandbergen–Landini transcription), over ${a.lines} lines and ${a.letters.toLocaleString()} letters. Given each line already cut out cleanly, it reads ${pct(1 - a.cer_strip)} right: most of what it gets wrong on a whole page comes from finding and cutting the lines, not from reading the letters.`;
-  $('rd-hands').innerHTML = `<table><thead><tr><th>Scribe</th><th>Pages</th><th>Letters</th><th>Error, whole page</th><th>Against ZL</th><th>Error, line cut out</th></tr></thead><tbody>${d.hands.map(h => `<tr><td>${esc(h.hand === '@' ? 'mixed' : h.hand)}</td><td>${h.pages}</td><td>${h.letters}</td><td>${h.cer_key}</td><td>${h.cer_zl}</td><td>${h.cer_strip}</td></tr>`).join('')}</tbody></table>`;
+  $('rd-sum').innerHTML = `<b>${pct(1 - a.cer_key)} of letters right</b> on whole page scans (letter error ${a.cer_key} against the traced letters, ${a.cer_zl} against the Zandbergen–Landini transcription), over ${a.lines} lines and ${a.letters.toLocaleString()} letters. When given cleanly cut lines, it gets ${pct(1 - a.cer_strip)} right. Most whole page errors come from finding and cutting the lines.`;
+  $('rd-hands').innerHTML = `<table><thead><tr><th>Davis label</th><th>Pages</th><th>Letters</th><th>Error, whole page</th><th>Against published text</th><th>Error on cut line</th></tr></thead><tbody>${d.hands.map(h => `<tr><td>${esc(h.hand === '@' ? 'mixed' : h.hand)}</td><td>${h.pages}</td><td>${h.letters}</td><td>${h.cer_key}</td><td>${h.cer_zl}</td><td>${h.cer_strip}</td></tr>`).join('')}</tbody></table>`;
   const num = p => { const m = /^f(\d+)([rv])(\d*)$/.exec(p); return m ? [+m[1], m[2], +(m[3] || 0)] : [999, p, 0]; };
   d.pages.sort((x, y) => { const a = num(x.page), b = num(y.page); return a[0] - b[0] || (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0) || a[2] - b[2]; });
   $('rd-page').innerHTML = d.pages.map((p, i) => `<option value="${i}">${esc(p.page)}, scribe ${esc(p.hand === '@' ? 'mixed' : p.hand)}, ${p.lines.length} lines, error ${p.cer_key}</option>`).join('');
   const show = i => {
     const p = d.pages[i];
     $('rd-pcer').textContent = `${pct(1 - p.cer_key)} of letters right on this page`;
-    $('rd-lines').innerHTML = p.lines.map(l => `<div class="line"><div class="loc">${esc(l.locus)}</div>${l.crop ? `<img src="${esc(l.crop)}" alt="${esc(l.locus)} in the scan" loading="lazy">` : ''}<div class="t"><div><span class="k">reader</span>${l.marked.map(([t, ok]) => ok ? esc(t) : `<span class="bad">${esc(t)}</span>`).join('') || '<i>not found</i>'}</div><div><span class="k">key</span>${esc(l.key)}</div><div><span class="k">ZL</span>${esc(l.zl)}</div></div></div>`).join('');
+    $('rd-lines').innerHTML = p.lines.map(l => `<div class="line"><div class="loc">${esc(l.locus)}</div>${l.crop ? `<img src="${esc(l.crop)}" alt="${esc(l.locus)} in the scan" loading="lazy">` : ''}<div class="t"><div><span class="k">program</span>${l.marked.map(([t, ok]) => ok ? esc(t) : `<span class="bad">${esc(t)}</span>`).join('') || '<i>not found</i>'}</div><div><span class="k">traced</span>${esc(l.key)}</div><div><span class="k">published</span>${esc(l.zl)}</div></div></div>`).join('');
   };
   $('rd-page').addEventListener('change', e => show(+e.target.value));
   show(0);
-  $('rd-scans').innerHTML = d.scans.length ? `<table><thead><tr><th>Page</th><th>Photograph</th><th>Error</th><th>Against ZL</th><th>Yale's scan</th></tr></thead><tbody>${d.scans.filter(s => s.cer_key).map(s => `<tr><td>${esc(s.page)}</td><td>${esc(s.view)}</td><td>${esc(s.cer_key)}</td><td>${esc(s.cer_zl)}</td><td>${esc(s.cer_yale)}</td></tr>`).join('')}</tbody></table>` : '';
+  $('rd-scans').innerHTML = d.scans.length ? `<table><thead><tr><th>Page</th><th>Photograph</th><th>Error</th><th>Against published text</th><th>Yale's scan</th></tr></thead><tbody>${d.scans.filter(s => s.cer_key).map(s => `<tr><td>${esc(s.page)}</td><td>${esc(s.view)}</td><td>${esc(s.cer_key)}</td><td>${esc(s.cer_zl)}</td><td>${esc(s.cer_yale)}</td></tr>`).join('')}</tbody></table>` : '';
 })();
 </script>
 </body>

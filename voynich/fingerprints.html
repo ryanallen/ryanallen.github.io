@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Voynich language fingerprints</title>
-<meta name="description" content="The Voynich text's numbers beside the languages around it in the 1400s, a cipher and text generators: which come nearest, and how the pages group by their own numbers.">
+<title>Voynich language comparisons</title>
+<meta name="description" content="Compare the Voynich text with eight languages, a cipher, and generated text. No tested language comes close.">
 <link rel="stylesheet" href="style.css">
 <style>
   #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#intro b{color:var(--text)}
@@ -28,16 +28,16 @@
 </head>
 <body>
 <header>
-  <h1><a href="fingerprints.html">Voynich language fingerprints</a></h1>
-  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><a href="hands.html">Hands</a><a href="reader.html">Reader</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
+  <h1><a href="fingerprints.html">Voynich language comparisons</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
-<div id="intro">The Voynich text measured the same way as the languages a writer in the Alps of the early 1400s could have known: <b>Latin, German, northern Italian, French, Czech, Hebrew, Greek and Arabic</b>, each its nearest free text of the period, plain and with its words abbreviated, its vowels taken out or written as a syllabary. Beside them stand a cipher made to look like the Voynich and texts generated from rules. Each bar is a text's distance from the Voynich on four groups of numbers: its letters, its words, the order of its words, and how predictable it is to a small language model. Shorter is nearer; the bars start a little short of the nearest, so the gaps show. Counted on the 187 development pages.</div>
+<div id="intro"><b>No tested language comes close to the Voynich text.</b> We compared its letters, words, word order, and predictability with eight languages a writer in the Alps around 1400 might have known. We also tested abbreviated forms, missing vowels, syllable writing, a cipher, and text made by rules. A shorter bar means a closer match. The bars start near the best score so you can see the gaps. These results use 187 working pages; the test pages are saved for a final check.</div>
 <div id="finding"></div>
-<h2 class="sec">Nearest first</h2>
+<h2 class="sec">Closest matches first</h2>
 <div class="key"><i class="lang"></i>a language<i class="ciph"></i>a cipher<i class="gen"></i>generated text</div>
 <div class="rank" id="rank">Loading…</div>
-<h2 class="sec">The pages, grouped by their own numbers</h2>
-<div class="gmeta">The pages were grouped with no labels given, from the shares of their commonest signs, a few of Zandbergen's criteria and their word lengths. The groups follow the scribes.</div>
+<h2 class="sec">How the manuscript pages group</h2>
+<div class="gmeta">We grouped pages by common letters and word lengths, without telling the test which scribe or subject each page belongs to. The three groups broadly follow the scribes.</div>
 <div id="groups"></div>
 <script>
 (async () => {
@@ -45,11 +45,29 @@
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
   let d;
-  try { d = await (await fetch('data/fingerprints.json')).json(); } catch (e) { $('rank').textContent = 'The fingerprints did not load: ' + e.message; return; }
+  try { d = await (await fetch('data/fingerprints.json')).json(); } catch (e) { $('rank').textContent = 'The language comparisons did not load: ' + e.message; return; }
   $('finding').innerHTML = d.finding.map(f => `<p>${esc(f)}</p>`).join('');
   const max = Math.max(...d.ranking.map(r => r.distance)), min = Math.min(...d.ranking.map(r => r.distance)) * 0.8;
   const cls = r => r.language === 'generated' ? 'gen' : r.language.startsWith('Naibbe') ? 'ciph' : 'lang';
-  const label = r => (r.language === 'generated' ? (/shuffled|last sign/.test(r.text) ? 'the Voynich remade: ' : '') + r.text.replace('generated: ', '') : `${r.language}: ${r.text.replace(/^[a-z]+-/, '').replace(/-/g, ' ')}`) + (r.form && !['plain', 'eva'].includes(r.form) ? ` (${r.form})` : '');
+  const texts = {
+    'generated: self-citation text (Timm and Schinner)': 'Timm and Schinner: generated Voynich-like text',
+    'generated: words shuffled': 'Voynich words shuffled',
+    'generated: last sign drawn at random (u/whiteapplex)': 'Voynich words with random endings',
+    'cipher-naibbe-pliny': 'Naibbe cipher on Pliny',
+    'latin-macer': "Macer's Latin herbal poem",
+    'italian-erbario': 'The Italian Erbario',
+    'latin-trotula': "The Latin Trotula",
+    'czech-dalimil': 'The Czech Dalimil Chronicle',
+    'hebrew-tanakh': 'The Hebrew Bible',
+    'greek-nt': 'The Greek New Testament',
+    'french-menagier': 'The French Menagier',
+    'italian-ricette': 'Italian recipes',
+    'latin-naibbe-plain': 'Latin source text for the Naibbe cipher',
+    'latin-alchemical-herbal': 'A Latin alchemical herbal',
+    'german-guter-spise': 'The German Guter Spise'
+  };
+  const forms = {abbreviated: 'abbreviated', 'vowels-out': 'vowels removed'};
+  const label = r => (texts[r.text] || r.text) + (forms[r.form] ? ` (${forms[r.form]})` : '');
   $('rank').innerHTML = d.ranking.map(r => `<div class="rrow"><span class="name" title="${esc(label(r))}">${esc(label(r))}</span><span class="track"><span class="fill ${cls(r)}" style="width:${(100 * (r.distance - min) / (max - min)).toFixed(1)}%"></span></span><span class="d">${r.distance.toFixed(2)}</span></div>`).join('');
   const out = $('groups');
   for (const g of d.groups) {

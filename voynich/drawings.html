@@ -28,11 +28,11 @@
 <body>
 <header>
   <h1><a href="drawings.html">Voynich drawings</a></h1>
-  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><a href="hands.html">Hands</a><a href="reader.html">Reader</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
-<div id="intro">Every drawing in the Voynich manuscript that is not a plant: the zodiac signs, the creatures, the castle, the suns, moons and stars, the wheels, the women, the jars and the pools, grouped by what they show and then by how surely each can be named. <b>Secure</b>: what is drawn is plain and nothing else fits. <b>Likely</b>: the features fit one reading better than the rest. <b>Possible</b>: a reading fits some features, or two fit as well. <b>Unknown</b>: nothing names it. Open a card for the reason, every published identification and who made it, and the words written on or beside it.</div>
+<div id="intro"><b>What do the Voynich drawings show?</b> Browse the people, animals, zodiac signs, stars, buildings, jars, and pools. Secure means the drawing is clear; Likely means one name fits best; Possible means some features fit, or two names fit equally well. Unknown means no name fits. Open a card for the evidence, published suggestions, and nearby words.</div>
 <div id="filters">
-  <label><input type="checkbox" id="many"> the many of a kind (jars, women, stars, pools)</label>
+  <label><input type="checkbox" id="many"> repeated items (jars, women, stars, pools)</label>
   <label><input type="checkbox" id="unknown" checked> unknown</label>
 </div>
 <div id="jump"></div>
@@ -68,7 +68,7 @@
           const words = d.words.length ? `<p class="w">${d.words.slice(0, 12).map(esc).join('<br>')}${d.words.length > 12 ? `<br>and ${d.words.length - 12} more` : ''}</p>` : '';
           c.innerHTML = `<img loading="lazy" alt="${esc(d.named)}, ${esc(d.page)}" src="${esc(d.iiif)}/${x},${y},${w},${hh}/!400,400/0/default.jpg">
             <b>${esc(d.named || d.id)}</b><span class="v ${esc(d.verdict)}">${esc(d.verdict)}</span><br>${esc(d.page)}${d.count > 1 ? `, ${d.count} drawn` : ''}
-            <details><summary>Why, who proposed what, the words</summary><p>${esc(d.features)}</p><p>${esc(d.reason)}</p>${props ? `<ul>${props}</ul>` : '<p>No published proposal.</p>'}${words ? '<p>Words on or beside it (EVA, locus):</p>' + words : ''}</details>`;
+            <details><summary>Evidence, proposals, and nearby words</summary><p><b>What is drawn:</b> ${esc(d.features)}</p><p><b>Why this name:</b> ${esc(d.reason)}</p>${props ? `<ul>${props}</ul>` : '<p>No published proposal.</p>'}${words ? '<p>Words on or beside it (EVA letters and page position):</p>' + words : ''}</details>`;
           g.append(c);
         }
       }

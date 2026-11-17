@@ -1,9 +1,9 @@
 {
  "finding": [
-  "No language comes near: every language text, in every form, stands at 1.9 or more from the Voynich, within 0.25 of one another.",
-  "Nearer than any language stand a self-citation generator (1.18) and the Naibbe cipher (1.72); per sign, the Voynich is as predictable as they are and more than any language.",
-  "Of the languages, Latin herbal verse (Macer) and the Veneto Erbario come first, by margins too small to rank on.",
-  "The pages fall into three groups by their own numbers, and the groups follow the scribes: one writing system in several hands, not several books in several languages."
+  "No tested language is close. Even the nearest text scores at least 1.9 on the distance measure below; the language texts are within 0.25 of one another.",
+  "A text generator built to imitate the Voynich scores 1.18, and the Naibbe cipher scores 1.72. Their letter sequences are about as predictable as the manuscript's, but that does not make either a solution.",
+  "Latin herbal verse by Macer and the Italian Erbario are the nearest languages. Their small lead over the others is not enough to rank them confidently.",
+  "The manuscript pages form three groups by their letter and word patterns. Those groups broadly follow the scribes; the result does not identify a language."
  ],
  "ranking": [
   {

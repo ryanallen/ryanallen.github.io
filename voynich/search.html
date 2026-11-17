@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Search the Voynich</title>
 <meta name="description" content="Search the Voynich manuscript for any word or run of letters and see every hit lit on Yale's scans, down to the ink of the letters.">
-<link rel="stylesheet" href="style.css?v=ccd12aae97">
+<link rel="stylesheet" href="style.css">
 <style>
   #search-bar input{font:inherit;font-size:16px;padding:4px 9px;min-width:0;flex:1 1 220px;max-width:360px;background:var(--bg);color:var(--text);border:1px solid #41454e;border-radius:6px}
   #summary{padding:6px 12px;color:var(--muted);font-size:13px}#summary b{color:var(--text)}
@@ -25,7 +25,7 @@
 <body>
 <header>
   <h1><a href="search.html">Search the Voynich</a></h1>
-  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Herbal likenesses</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Sign grid</a><a href="hands.html">Hands</a><a href="reader.html">Reader</a><b>Readings tested</b><a href="fingerprints.html">Language fingerprints</a><a href="candidates.html">Proposed readings</a></div></details><a href="./?credit">Get credited</a></nav>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
 <form class="bar" id="search-bar" role="search">
   <input id="q" type="search" placeholder="EVA letters, like otedy or ^qo*$" aria-label="Search" autocomplete="off" spellcheck="false">
@@ -44,7 +44,7 @@
     <a href="#" id="view-close">Close</a></div>
   <div id="view-wrap"><div id="view-stack"><canvas id="view-canvas"></canvas><canvas id="view-ink"></canvas></div></div>
 </div>
-<script src="search.js?v=ccd12aae97"></script>
-<script src="search-page.js?v=ccd12aae97"></script>
+<script src="search.js"></script>
+<script src="search-page.js"></script>
 </body>
 </html>
