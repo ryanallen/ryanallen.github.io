@@ -89,5 +89,16 @@ fetch('data/word-parts.json').then(r => r.json()).then(d => {
   <table class="near-t"><thead><tr><th>Text</th><th>Real endings found</th><th>Its last pieces that are real endings</th><th>Family words split at the stem</th><th>Cuts on Stolfi's layers (random)</th></tr></thead><tbody>${d.rows.map(r => `<tr><td>${e(r.text)}</td><td>${e(r.recall)}</td><td>${e(r.precision)}</td><td>${e(r.family_agreement)}</td><td>${r.stolfi ? e(r.stolfi) + ' (' + e(r.stolfi_random) + ')' : ''}</td></tr>`).join('')}</tbody></table>`;
 }).catch(e => { document.getElementById('parts-body').textContent = 'Did not load: ' + e.message; });
 </script>
+<section id="rare" class="near"><h2>Rare letters and where they fall</h2><div id="rare-body">Loading…</div></section>
+<script>
+fetch('data/rare-signs.json').then(r => r.json()).then(d => {
+  const e = x => String(x ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const g = d.rows.filter(r => r.gathers === 'yes');
+  const pct = x => Math.round(Number(x) * 100) + '%';
+  const x = d.rows.find(r => r.sign === 'x') || {};
+  document.getElementById('rare-body').innerHTML = `<p>${d.rows.length} rare letters (codes for one-off shapes, and letters seen fewer than 60 times) turn up three times or more on the pages we use. We asked whether each keeps to fewer pages than chance, with its writer's habits allowed for. <b>${g.length} do.</b> The "picnic table" (EVA x) stands on ${e(x.pages)} pages where chance gives ${e(x.pages_chance)}, nine times on the Rosettes foldout, and ${pct(x.in_labels)} of the time in a label (${pct(x.labels_chance)} by chance): a letter of labels and of the foldout. The other is one of the signs in f49v's margin count.</p>
+  <table class="near-t"><thead><tr><th>Letter</th><th>Times</th><th>Pages</th><th>Pages by chance</th><th>In labels</th><th>At a line's start</th><th>Where</th></tr></thead><tbody>${d.rows.map(r => `<tr><td><code>${e(r.sign.replace(/;$/, ''))}</code>${r.gathers ? ' <b>keeps together</b>' : ''}</td><td>${e(r.count)}</td><td>${e(r.pages)}</td><td>${e(r.pages_chance)}</td><td>${pct(r.in_labels)} (${pct(r.labels_chance)})</td><td>${pct(r.line_start)} (${pct(r.line_start_chance)})</td><td>${e(r.where)}</td></tr>`).join('')}</tbody></table>`;
+}).catch(e => { document.getElementById('rare-body').textContent = 'Did not load: ' + e.message; });
+</script>
 </body>
 </html>
