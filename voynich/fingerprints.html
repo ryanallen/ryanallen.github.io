@@ -67,7 +67,7 @@
     'latin-alchemical-herbal': 'A Latin alchemical herbal',
     'german-guter-spise': 'The German Guter Spise'
   };
-  const forms = {abbreviated: 'abbreviated', 'vowels-out': 'vowels removed'};
+  const forms = {abbreviated: 'abbreviated', 'vowels-out': 'vowels removed', cappelli: 'in real scribal abbreviation'};
   const label = r => (texts[r.text] || r.text) + (forms[r.form] ? ` (${forms[r.form]})` : '');
   $('rank').innerHTML = d.ranking.map(r => `<div class="rrow"><span class="name" title="${esc(label(r))}">${esc(label(r))}</span><span class="track"><span class="fill ${cls(r)}" style="width:${(100 * (r.distance - min) / (max - min)).toFixed(1)}%"></span></span><span class="d">${r.distance.toFixed(2)}</span></div>`).join('');
   const out = $('groups');

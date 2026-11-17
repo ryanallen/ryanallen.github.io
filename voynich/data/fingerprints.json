@@ -12,7 +12,7 @@
    "language": "generated",
    "kind": "generated (Timm and Schinner's own output)",
    "form": "eva",
-   "distance": 1.182
+   "distance": 1.195
   },
   {
    "rank": 2,
@@ -20,7 +20,7 @@
    "language": "generated",
    "kind": "generated from the Voynich's first block",
    "form": "eva",
-   "distance": 1.62
+   "distance": 1.622
   },
   {
    "rank": 3,
@@ -28,23 +28,23 @@
    "language": "Naibbe cipher",
    "kind": "cipher of natural history",
    "form": "plain",
-   "distance": 1.716
+   "distance": 1.72
   },
   {
    "rank": 4,
-   "text": "generated: last sign drawn at random (u/whiteapplex)",
-   "language": "generated",
-   "kind": "generated from the Voynich's first block",
-   "form": "eva",
-   "distance": 1.886
-  },
-  {
-   "rank": 5,
    "text": "latin-macer",
    "language": "Latin",
    "kind": "herbal verse",
    "form": "plain",
-   "distance": 1.889
+   "distance": 1.902
+  },
+  {
+   "rank": 5,
+   "text": "generated: last sign drawn at random (u/whiteapplex)",
+   "language": "generated",
+   "kind": "generated from the Voynich's first block",
+   "form": "eva",
+   "distance": 1.906
   },
   {
    "rank": 6,
@@ -52,71 +52,71 @@
    "language": "Italian (Veneto) and Latin",
    "kind": "herbal labels",
    "form": "plain",
-   "distance": 1.942
+   "distance": 1.968
   },
   {
    "rank": 7,
+   "text": "italian-erbario",
+   "language": "Italian (Veneto) and Latin",
+   "kind": "herbal labels",
+   "form": "cappelli",
+   "distance": 2.002
+  },
+  {
+   "rank": 8,
    "text": "latin-trotula",
    "language": "Latin",
    "kind": "women's medicine",
    "form": "vowels-out",
-   "distance": 1.979
+   "distance": 2.012
   },
   {
-   "rank": 8,
+   "rank": 9,
    "text": "czech-dalimil",
    "language": "Czech",
    "kind": "verse chronicle",
    "form": "plain",
-   "distance": 2.008
+   "distance": 2.035
   },
   {
-   "rank": 9,
+   "rank": 10,
    "text": "hebrew-tanakh",
    "language": "Hebrew",
    "kind": "scripture",
    "form": "plain",
-   "distance": 2.02
+   "distance": 2.04
   },
   {
-   "rank": 10,
+   "rank": 11,
+   "text": "latin-macer",
+   "language": "Latin",
+   "kind": "herbal verse",
+   "form": "cappelli",
+   "distance": 2.04
+  },
+  {
+   "rank": 12,
    "text": "greek-nt",
    "language": "Greek",
    "kind": "scripture",
    "form": "plain",
-   "distance": 2.043
+   "distance": 2.057
   },
   {
-   "rank": 11,
+   "rank": 13,
    "text": "french-menagier",
    "language": "French",
    "kind": "household book",
    "form": "plain",
-   "distance": 2.089
+   "distance": 2.106
   },
   {
-   "rank": 12,
+   "rank": 14,
    "text": "italian-ricette",
    "language": "Italian (Tuscan)",
    "kind": "recipes",
    "form": "plain",
-   "distance": 2.128
-  },
-  {
-   "rank": 13,
-   "text": "latin-naibbe-plain",
-   "language": "Latin",
-   "kind": "natural history of trees",
-   "form": "vowels-out",
-   "distance": 2.17
-  },
-  {
-   "rank": 14,
-   "text": "italian-erbario",
-   "language": "Italian (Veneto) and Latin",
-   "kind": "herbal labels",
-   "form": "abbreviated",
-   "distance": 2.175
+   "distance": 2.145
   },
   {
    "rank": 15,
@@ -124,79 +124,79 @@
    "language": "Latin",
    "kind": "herbal",
    "form": "plain",
-   "distance": 2.184
+   "distance": 2.198
   },
   {
    "rank": 16,
+   "text": "latin-naibbe-plain",
+   "language": "Latin",
+   "kind": "natural history of trees",
+   "form": "vowels-out",
+   "distance": 2.2
+  },
+  {
+   "rank": 17,
+   "text": "italian-erbario",
+   "language": "Italian (Veneto) and Latin",
+   "kind": "herbal labels",
+   "form": "abbreviated",
+   "distance": 2.201
+  },
+  {
+   "rank": 18,
+   "text": "italian-ricette",
+   "language": "Italian (Tuscan)",
+   "kind": "recipes",
+   "form": "cappelli",
+   "distance": 2.204
+  },
+  {
+   "rank": 19,
    "text": "czech-dalimil",
    "language": "Czech",
    "kind": "verse chronicle",
    "form": "vowels-out",
-   "distance": 2.187
-  },
-  {
-   "rank": 17,
-   "text": "latin-macer",
-   "language": "Latin",
-   "kind": "herbal verse",
-   "form": "abbreviated",
-   "distance": 2.22
-  },
-  {
-   "rank": 18,
-   "text": "latin-trotula",
-   "language": "Latin",
-   "kind": "women's medicine",
-   "form": "plain",
-   "distance": 2.248
-  },
-  {
-   "rank": 19,
-   "text": "french-menagier",
-   "language": "French",
-   "kind": "household book",
-   "form": "abbreviated",
-   "distance": 2.275
+   "distance": 2.229
   },
   {
    "rank": 20,
    "text": "latin-macer",
    "language": "Latin",
    "kind": "herbal verse",
-   "form": "vowels-out",
-   "distance": 2.277
+   "form": "abbreviated",
+   "distance": 2.241
   },
   {
    "rank": 21,
-   "text": "latin-alchemical-herbal",
+   "text": "latin-trotula",
    "language": "Latin",
-   "kind": "herbal",
-   "form": "vowels-out",
-   "distance": 2.282
+   "kind": "women's medicine",
+   "form": "plain",
+   "distance": 2.265
   },
   {
    "rank": 22,
-   "text": "czech-dalimil",
-   "language": "Czech",
-   "kind": "verse chronicle",
+   "text": "french-menagier",
+   "language": "French",
+   "kind": "household book",
    "form": "abbreviated",
-   "distance": 2.297
+   "distance": 2.293
   },
   {
    "rank": 23,
-   "text": "italian-ricette",
-   "language": "Italian (Tuscan)",
-   "kind": "recipes",
-   "form": "abbreviated",
-   "distance": 2.347
+   "text": "latin-macer",
+   "language": "Latin",
+   "kind": "herbal verse",
+   "form": "vowels-out",
+   "distance": 2.302
   },
   {
    "rank": 24,
-   "text": "german-guter-spise",
-   "language": "German (East Franconian)",
-   "kind": "recipes",
-   "form": "plain",
-   "distance": 2.353
+   "text": "latin-alchemical-herbal",
+   "language": "Latin",
+   "kind": "herbal",
+   "form": "cappelli",
+   "distance": 2.308
   }
  ],
  "groups": [
