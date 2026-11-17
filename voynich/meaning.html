@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Made up or meaningful?</title>
+<meta name="description" content="Tests of whether the Voynich text carries meaning, run on the Voynich beside real languages, generated text, and text people made up by hand.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #mt{max-width:980px;margin:0 auto;padding:8px 16px 40px}
+  #mt .lead{color:var(--muted);font-size:15px;margin:10px 0 4px;max-width:780px}#mt .lead b{color:var(--text)}
+  #mt h2{font-size:17px;margin:28px 0 6px;color:var(--text)}
+  #mt p{color:var(--muted);font-size:14px;line-height:1.5;max-width:780px}
+  #mt .answer{margin:14px 0;padding:12px 14px;border:1px solid #41454e;border-radius:10px;background:var(--panel);color:var(--text);font-size:15px;max-width:780px}
+  #mt .chart{margin:6px 0 4px;overflow-x:auto}
+  #mt svg{display:block;max-width:100%;height:auto}
+  #mt .legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin:8px 0}
+  #mt .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+  #mt table{border-collapse:collapse;font-size:13px;margin-top:6px}
+  #mt th,#mt td{text-align:left;padding:6px 8px;border-bottom:1px solid #353a43;color:var(--muted)}
+  #mt th{color:var(--text)}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="research.html">Voynich research</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="meaning.html">Made up or meaningful?</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
+</header>
+<main id="mt">
+  <p class="lead"><b>Could the Voynich text be made up?</b> People who write nonsense by hand don't write random letters. Gaskell and Bowern (2022) asked 42 volunteers to write made-up text and found it can look a lot like a real language. So the fair test isn't the Voynich against random text. It's the Voynich against text people made up. We ran each test on five kinds of text.</p>
+  <div class="answer" id="answer"></div>
+  <div class="legend" id="legend"></div>
+
+  <h2>1. Does it look like made-up text, letter by letter and word by word?</h2>
+  <p>Gaskell and Bowern's 42 measures (repeats, where letters and words fall in a line, how well it compresses, and more), with a classifier trained on their real texts and their made-up samples. Each dot is one text. Further right means more like made-up text.</p>
+  <div class="chart" id="c-measures"></div>
+  <div class="chart" id="c-compression"></div>
+  <div class="chart" id="c-repeats"></div>
+
+  <h2>2. Long-range order</h2>
+  <p>Whether long and short words cluster (word-length autocorrelation over the whole text), and how often a pair of words comes back.</p>
+  <div class="chart" id="c-autocorr"></div>
+  <div class="chart" id="c-pairs"></div>
+
+  <h2>3. Words that keep to their topic</h2>
+  <p>In a real book, some words gather on the pages about one thing. Montemurro and Zanette's measure counts the words that keep to fewer pages than chance would put them on. The made-up samples are too short for this test (Gaskell and Bowern's own limit), so it runs on everything else, cut into pages the length of the Voynich's.</p>
+  <div class="chart" id="c-topics"></div>
+
+  <h2>4. Words tied to pictures</h2>
+  <p>If a word means something drawn, the pages it appears on should share drawings more than chance. Here, pages' drawings are shuffled within their section 200 times.</p>
+  <div id="t-pictures"></div>
+
+  <h2>What this can and can't show</h2>
+  <p>No test can prove a text has no meaning, only fail to find it. And a text can be meaningful and still score like made-up text if its writing system hides its language. The made-up samples are short, and were written by volunteers, most of them Yale students in 2018 and 2019, not by a 1400s scribe. Every number here comes from the development pages; the pages kept for a final test stay closed.</p>
+</main>
+<script>
+const COLORS = { voynich: '#ff5c7a', language: '#7fd3ff', method: '#ffc857', 'made-up': '#b48cff', broken: '#8f96a3' };
+const LABEL = { voynich: 'The Voynich', language: 'Real languages', method: 'Made by a method', 'made-up': 'Made up by people', broken: 'The Voynich, meaning broken' };
+const KINDS = ['voynich', 'language', 'method', 'made-up', 'broken'];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function strip(id, rows, key, title, fmt = v => v.toFixed(2)) {
+  rows = rows.filter(r => r[key] != null && isFinite(r[key]));
+  if (!rows.length) return;
+  const W = 900, L = 170, R = 20, rowH = 26, H = KINDS.length * rowH + 44;
+  const vals = rows.map(r => r[key]); let lo = Math.min(...vals), hi = Math.max(...vals);
+  if (lo === hi) { lo -= 1; hi += 1; }
+  const pad = (hi - lo) * 0.05; lo -= pad; hi += pad;
+  const x = v => L + (W - L - R) * (v - lo) / (hi - lo);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}"><text x="0" y="14" fill="#e6e6e6" font-size="13" font-weight="600">${esc(title)}</text>`;
+  for (let t = 0; t <= 4; t++) { const v = lo + (hi - lo) * t / 4, X = x(v); s += `<line x1="${X}" x2="${X}" y1="24" y2="${H - 18}" stroke="#2c3038"/><text x="${X}" y="${H - 4}" fill="#8f96a3" font-size="11" text-anchor="middle">${fmt(v)}</text>`; }
+  KINDS.forEach((k, i) => {
+    const y = 36 + i * rowH;
+    s += `<text x="0" y="${y + 4}" fill="#aab0bb" font-size="12">${LABEL[k]}</text>`;
+    for (const r of rows.filter(r => r.kind === k)) {
+      const big = k === 'voynich' && r.text.startsWith('Voynich (');
+      s += `<circle cx="${x(r[key])}" cy="${y}" r="${big ? 7 : 5}" fill="${COLORS[k]}" fill-opacity="${k === 'voynich' ? 1 : 0.7}" stroke="${big ? '#fff' : 'none'}"><title>${esc(r.text)}: ${fmt(r[key])}</title></circle>`;
+    }
+  });
+  document.getElementById(id).innerHTML = s + '</svg>';
+}
+fetch('data/meaning.json').then(r => r.json()).then(d => {
+  document.getElementById('answer').innerHTML = esc(d.answer);
+  document.getElementById('legend').innerHTML = KINDS.map(k => `<span><i style="background:${COLORS[k]}"></i>${LABEL[k]}</span>`).join('');
+  strip('c-measures', d.measures, 'p_madeup', 'Chance the classifier calls it made up');
+  strip('c-compression', d.measures, 'compression', 'How well it compresses (lower = more repetitive)');
+  strip('c-repeats', d.measures, 'repeated_words', 'Words repeated right after themselves (share)', v => v.toFixed(3));
+  strip('c-autocorr', d.long, 'wordlen_autocorr', 'Word lengths cluster (Moran\'s I over the whole text)', v => v.toFixed(3));
+  strip('c-pairs', d.long, 'repeated_pairs', 'Word pairs that come back (share of pairs)', v => v.toFixed(3));
+  strip('c-topics', d.topics, 'bits', 'Information words carry about their page (bits a word)', v => v.toFixed(3));
+  document.getElementById('t-pictures').innerHTML = '<table><thead><tr><th>Text</th><th>Words tested</th><th>Pages share drawings</th><th>With drawings shuffled</th><th>Chance of this or more</th></tr></thead><tbody>' +
+    d.pictures.map(r => `<tr><td>${esc(r.text)}</td><td>${r.words ?? ''}</td><td>${r.likeness.toFixed(3)}</td><td>${r.null.toFixed(3)}</td><td>${r.p.toFixed(3)}</td></tr>`).join('') + '</tbody></table>';
+});
+</script>
+</body>
+</html>

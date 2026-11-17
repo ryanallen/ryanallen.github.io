@@ -1,0 +1,363 @@
+{
+ "notes": [
+  {
+   "page": "f1v",
+   "where": "in the green leaf low on the left branch",
+   "reading_here": "g, a cursive g with its tail looped (J is possible)",
+   "sure": "fairly sure",
+   "paint": "green",
+   "paint_hex": "#74927a",
+   "matches": "green: matches the paint",
+   "hand": "before the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006077/890,1270,160,170/!360,360/0/default.jpg"
+  },
+  {
+   "page": "f2r",
+   "where": "in the bottom right leaf",
+   "reading_here": "three or four small round letters, too faint under the paint to read one by one; ZL's ios an on is neither confirmed nor ruled out",
+   "sure": "unsure",
+   "paint": "green",
+   "paint_hex": "#677552",
+   "matches": "no colour word read",
+   "hand": "before the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006078/1865,2105,300,215/!360,360/0/default.jpg"
+  },
+  {
+   "page": "f4r",
+   "where": "down the bare stem above the root, one letter under another",
+   "reading_here": "rot",
+   "sure": "sure",
+   "paint": "none (bare parchment)",
+   "paint_hex": "",
+   "matches": "red: the paint here is none (bare parchment)",
+   "hand": "unsettled: on bare parchment beside the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006082/1620,2915,130,220/!360,360/0/default.jpg"
+  },
+  {
+   "page": "f7r",
+   "where": "under the root's paint",
+   "reading_here": "nothing visible: the root's paint is opaque on Yale's colour image",
+   "sure": "not read",
+   "paint": "red-brown",
+   "paint_hex": "#9c6d51",
+   "matches": "not read",
+   "hand": "before the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006088/1300,2730,400,490/!360,360/0/default.jpg"
+  },
+  {
+   "page": "f20r",
+   "where": "where the stem meets the root",
+   "reading_here": "r, a small r; p cannot be ruled out",
+   "sure": "unsure",
+   "paint": "red",
+   "paint_hex": "#ac8d6e",
+   "matches": "red: matches the paint",
+   "hand": "unsettled: on bare parchment beside the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006112/1485,3225,125,120/!360,360/0/default.jpg"
+  },
+  {
+   "page": "f29r",
+   "where": "where the stem meets the root",
+   "reading_here": "a few strokes that could be an r; not sure they are a letter",
+   "sure": "unsure",
+   "paint": "none (bare parchment)",
+   "paint_hex": "",
+   "matches": "no colour word read",
+   "hand": "unsettled: on bare parchment beside the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006130/1495,3020,130,145/!360,360/0/default.jpg"
+  },
+  {
+   "page": "f32r",
+   "where": "at the foot of the lower right flower head",
+   "reading_here": "p, perhaps with an r after it",
+   "sure": "fairly sure",
+   "paint": "blue",
+   "paint_hex": "#5a6265",
+   "matches": "purple or blue: matches the paint",
+   "hand": "unsettled: on bare parchment beside the paint",
+   "crop": "https://collections.library.yale.edu/iiif/2/1006136/1905,1885,115,105/!360,360/0/default.jpg"
+  }
+ ],
+ "f2r_test": [
+  {
+   "language": "German",
+   "colour": "green",
+   "word": "grün",
+   "letters": "4",
+   "pattern": "0123",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "green",
+   "word": "grun",
+   "letters": "4",
+   "pattern": "0123",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "green",
+   "word": "gruen",
+   "letters": "5",
+   "pattern": "01234",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "red",
+   "word": "rot",
+   "letters": "3",
+   "pattern": "012",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "red",
+   "word": "rôt",
+   "letters": "3",
+   "pattern": "012",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "blue",
+   "word": "blâ",
+   "letters": "3",
+   "pattern": "012",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "blue",
+   "word": "bla",
+   "letters": "3",
+   "pattern": "012",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "blue",
+   "word": "blau",
+   "letters": "4",
+   "pattern": "0123",
+   "matches_note": "no"
+  },
+  {
+   "language": "German",
+   "colour": "chance line",
+   "word": "529 words of 7 letters in german-guter-spise",
+   "letters": "7",
+   "pattern": "0123414",
+   "matches_note": "0.0038"
+  },
+  {
+   "language": "Latin",
+   "colour": "green",
+   "word": "viridis",
+   "letters": "7",
+   "pattern": "0121314",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "green",
+   "word": "viride",
+   "letters": "6",
+   "pattern": "012134",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "red",
+   "word": "ruber",
+   "letters": "5",
+   "pattern": "01230",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "red",
+   "word": "rubeus",
+   "letters": "6",
+   "pattern": "012314",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "red",
+   "word": "rubrum",
+   "letters": "6",
+   "pattern": "012013",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "blue",
+   "word": "caeruleus",
+   "letters": "9",
+   "pattern": "012345246",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "blue",
+   "word": "lazurius",
+   "letters": "8",
+   "pattern": "01234536",
+   "matches_note": "no"
+  },
+  {
+   "language": "Latin",
+   "colour": "chance line",
+   "word": "3569 words of 7 letters in latin-macer",
+   "letters": "7",
+   "pattern": "0123414",
+   "matches_note": "0.0000"
+  },
+  {
+   "language": "Italian",
+   "colour": "green",
+   "word": "verde",
+   "letters": "5",
+   "pattern": "01231",
+   "matches_note": "no"
+  },
+  {
+   "language": "Italian",
+   "colour": "red",
+   "word": "rosso",
+   "letters": "5",
+   "pattern": "01221",
+   "matches_note": "no"
+  },
+  {
+   "language": "Italian",
+   "colour": "blue",
+   "word": "azzurro",
+   "letters": "7",
+   "pattern": "0112334",
+   "matches_note": "no"
+  },
+  {
+   "language": "Italian",
+   "colour": "chance line",
+   "word": "899 words of 7 letters in italian-ricette",
+   "letters": "7",
+   "pattern": "0123414",
+   "matches_note": "0.0044"
+  },
+  {
+   "language": "French",
+   "colour": "green",
+   "word": "vert",
+   "letters": "4",
+   "pattern": "0123",
+   "matches_note": "no"
+  },
+  {
+   "language": "French",
+   "colour": "red",
+   "word": "rouge",
+   "letters": "5",
+   "pattern": "01234",
+   "matches_note": "no"
+  },
+  {
+   "language": "French",
+   "colour": "blue",
+   "word": "bleu",
+   "letters": "4",
+   "pattern": "0123",
+   "matches_note": "no"
+  },
+  {
+   "language": "French",
+   "colour": "chance line",
+   "word": "3825 words of 7 letters in french-menagier",
+   "letters": "7",
+   "pattern": "0123414",
+   "matches_note": "0.0005"
+  },
+  {
+   "language": "Czech",
+   "colour": "green",
+   "word": "zelený",
+   "letters": "6",
+   "pattern": "012134",
+   "matches_note": "no"
+  },
+  {
+   "language": "Czech",
+   "colour": "green",
+   "word": "zeleny",
+   "letters": "6",
+   "pattern": "012134",
+   "matches_note": "no"
+  },
+  {
+   "language": "Czech",
+   "colour": "red",
+   "word": "červený",
+   "letters": "7",
+   "pattern": "0123145",
+   "matches_note": "no"
+  },
+  {
+   "language": "Czech",
+   "colour": "red",
+   "word": "cerveny",
+   "letters": "7",
+   "pattern": "0123145",
+   "matches_note": "no"
+  },
+  {
+   "language": "Czech",
+   "colour": "blue",
+   "word": "modrý",
+   "letters": "5",
+   "pattern": "01234",
+   "matches_note": "no"
+  },
+  {
+   "language": "Czech",
+   "colour": "blue",
+   "word": "modry",
+   "letters": "5",
+   "pattern": "01234",
+   "matches_note": "no"
+  },
+  {
+   "language": "Czech",
+   "colour": "chance line",
+   "word": "1496 words of 7 letters in czech-dalimil",
+   "letters": "7",
+   "pattern": "0123414",
+   "matches_note": "0.0013"
+  },
+  {
+   "language": "Voynich",
+   "colour": "elsewhere",
+   "word": "ios",
+   "letters": "3",
+   "pattern": "",
+   "matches_note": "1"
+  },
+  {
+   "language": "Voynich",
+   "colour": "elsewhere",
+   "word": "an",
+   "letters": "2",
+   "pattern": "",
+   "matches_note": "4"
+  },
+  {
+   "language": "Voynich",
+   "colour": "elsewhere",
+   "word": "on",
+   "letters": "2",
+   "pattern": "",
+   "matches_note": "1"
+  }
+ ]
+}

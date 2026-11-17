@@ -1,0 +1,1375 @@
+{
+ "answer": "Still open. The Voynich has words that keep to their topic, as real languages do and simple generators and ciphers don't, but a self-citation generator does too, and Gaskell and Bowern's measures put it just on the made-up side of the line.",
+ "measures": [
+  {
+   "text": "Voynich (development pages)",
+   "kind": "voynich",
+   "p_madeup": 0.586,
+   "compression": 0.3821,
+   "repeated_words": 0.0079,
+   "repeated_chars": 0.0457,
+   "wordbias_mean": 1.848,
+   "charbias_mean": 0.4753,
+   "wordlen_autocorr": 0.0808,
+   "zipf": 7.9577
+  },
+  {
+   "text": "Voynich, Currier A",
+   "kind": "voynich",
+   "p_madeup": 0.582,
+   "compression": 0.3955,
+   "repeated_words": 0.008,
+   "repeated_chars": 0.0442,
+   "wordbias_mean": 1.8943,
+   "charbias_mean": 0.4949,
+   "wordlen_autocorr": 0.0629,
+   "zipf": 6.9881
+  },
+  {
+   "text": "Voynich, Currier B",
+   "kind": "voynich",
+   "p_madeup": 0.572,
+   "compression": 0.3704,
+   "repeated_words": 0.0077,
+   "repeated_chars": 0.0537,
+   "wordbias_mean": 1.8312,
+   "charbias_mean": 0.4619,
+   "wordlen_autocorr": 0.0864,
+   "zipf": 8.8593
+  },
+  {
+   "text": "latin-alchemical-herbal",
+   "kind": "language",
+   "p_madeup": 0.054,
+   "compression": 0.433,
+   "repeated_words": 0.0002,
+   "repeated_chars": 0.0155,
+   "wordbias_mean": 1.5782,
+   "charbias_mean": 0.4442,
+   "wordlen_autocorr": -0.131,
+   "zipf": 5.8676
+  },
+  {
+   "text": "latin-macer",
+   "kind": "language",
+   "p_madeup": 0.324,
+   "compression": 0.4993,
+   "repeated_words": 0.0017,
+   "repeated_chars": 0.0294,
+   "wordbias_mean": 1.9162,
+   "charbias_mean": 0.4537,
+   "wordlen_autocorr": 0.0512,
+   "zipf": 9.8563
+  },
+  {
+   "text": "latin-trotula",
+   "kind": "language",
+   "p_madeup": 0.126,
+   "compression": 0.4866,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0136,
+   "wordbias_mean": 1.8704,
+   "charbias_mean": 0.4199,
+   "wordlen_autocorr": 0.0008,
+   "zipf": 8.8341
+  },
+  {
+   "text": "latin-naibbe-plain",
+   "kind": "language",
+   "p_madeup": 0.146,
+   "compression": 0.5068,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0159,
+   "wordbias_mean": 1.9665,
+   "charbias_mean": 0.4202,
+   "wordlen_autocorr": -0.0332,
+   "zipf": 12.0155
+  },
+  {
+   "text": "cipher-naibbe-pliny",
+   "kind": "language",
+   "p_madeup": 0.494,
+   "compression": 0.407,
+   "repeated_words": 0.0014,
+   "repeated_chars": 0.0683,
+   "wordbias_mean": 1.9029,
+   "charbias_mean": 0.4435,
+   "wordlen_autocorr": -0.0321,
+   "zipf": 8.7655
+  },
+  {
+   "text": "italian-ricette",
+   "kind": "language",
+   "p_madeup": 0.202,
+   "compression": 0.4309,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0452,
+   "wordbias_mean": 1.4795,
+   "charbias_mean": 0.493,
+   "wordlen_autocorr": -0.2953,
+   "zipf": 5.9595
+  },
+  {
+   "text": "italian-erbario",
+   "kind": "language",
+   "p_madeup": 0.036,
+   "compression": 0.4889,
+   "repeated_words": 0.0025,
+   "repeated_chars": 0.0184,
+   "wordbias_mean": 1.6724,
+   "charbias_mean": 0.481,
+   "wordlen_autocorr": -0.0985,
+   "zipf": 4.5535
+  },
+  {
+   "text": "german-guter-spise",
+   "kind": "language",
+   "p_madeup": 0.07,
+   "compression": 0.4549,
+   "repeated_words": 0.0009,
+   "repeated_chars": 0.015,
+   "wordbias_mean": 1.5629,
+   "charbias_mean": 0.4774,
+   "wordlen_autocorr": -0.0893,
+   "zipf": 4.5323
+  },
+  {
+   "text": "french-menagier",
+   "kind": "language",
+   "p_madeup": 0.03,
+   "compression": 0.4736,
+   "repeated_words": 0.0007,
+   "repeated_chars": 0.0242,
+   "wordbias_mean": 1.6066,
+   "charbias_mean": 0.4792,
+   "wordlen_autocorr": -0.1456,
+   "zipf": 5.562
+  },
+  {
+   "text": "czech-dalimil",
+   "kind": "language",
+   "p_madeup": 0.348,
+   "compression": 0.5131,
+   "repeated_words": 0.0006,
+   "repeated_chars": 0.0014,
+   "wordbias_mean": 1.8975,
+   "charbias_mean": 0.4809,
+   "wordlen_autocorr": -0.0255,
+   "zipf": 8.6242
+  },
+  {
+   "text": "hebrew-tanakh",
+   "kind": "language",
+   "p_madeup": 0.232,
+   "compression": 0.3896,
+   "repeated_words": 0.0004,
+   "repeated_chars": 0.0109,
+   "wordbias_mean": 1.8689,
+   "charbias_mean": 0.3764,
+   "wordlen_autocorr": 0.0004,
+   "zipf": 8.2135
+  },
+  {
+   "text": "greek-nt",
+   "kind": "language",
+   "p_madeup": 0.006,
+   "compression": 0.4471,
+   "repeated_words": 0.0007,
+   "repeated_chars": 0.0056,
+   "wordbias_mean": 1.6438,
+   "charbias_mean": 0.4249,
+   "wordlen_autocorr": -0.1731,
+   "zipf": 5.7918
+  },
+  {
+   "text": "arabic-quran",
+   "kind": "language",
+   "p_madeup": 0.234,
+   "compression": 0.485,
+   "repeated_words": 0.0002,
+   "repeated_chars": 0.0247,
+   "wordbias_mean": 1.8524,
+   "charbias_mean": 0.4579,
+   "wordlen_autocorr": 0.0072,
+   "zipf": 5.7222
+  },
+  {
+   "text": "Rugg's grille (G1)",
+   "kind": "method",
+   "p_madeup": 0.484,
+   "compression": 0.4382,
+   "repeated_words": 0.0011,
+   "repeated_chars": 0.0577,
+   "wordbias_mean": 2.0789,
+   "charbias_mean": 0.43,
+   "wordlen_autocorr": 0.005,
+   "zipf": 18.0938
+  },
+  {
+   "text": "three-ring wheels, random (G2)",
+   "kind": "method",
+   "p_madeup": 0.518,
+   "compression": 0.4419,
+   "repeated_words": 0.0003,
+   "repeated_chars": 0.0794,
+   "wordbias_mean": 2.2122,
+   "charbias_mean": 0.4148,
+   "wordlen_autocorr": 0.0047,
+   "zipf": 22.5309
+  },
+  {
+   "text": "three-ring wheels, a vocabulary (G5)",
+   "kind": "method",
+   "p_madeup": 0.496,
+   "compression": 0.41,
+   "repeated_words": 0.0026,
+   "repeated_chars": 0.08,
+   "wordbias_mean": 1.8787,
+   "charbias_mean": 0.4232,
+   "wordlen_autocorr": 0.0039,
+   "zipf": 9.7868
+  },
+  {
+   "text": "the Naibbe cipher (C1)",
+   "kind": "method",
+   "p_madeup": 0.482,
+   "compression": 0.408,
+   "repeated_words": 0.0016,
+   "repeated_chars": 0.0675,
+   "wordbias_mean": 1.8995,
+   "charbias_mean": 0.4391,
+   "wordlen_autocorr": -0.0359,
+   "zipf": 8.8049
+  },
+  {
+   "text": "self-citation (Timm and Schinner) (C2)",
+   "kind": "method",
+   "p_madeup": 0.56,
+   "compression": 0.3664,
+   "repeated_words": 0.0107,
+   "repeated_chars": 0.0496,
+   "wordbias_mean": 1.5973,
+   "charbias_mean": 0.4363,
+   "wordlen_autocorr": -0.0093,
+   "zipf": 6.2199
+  },
+  {
+   "text": "Latin, letter substitution (F1)",
+   "kind": "method",
+   "p_madeup": 0.214,
+   "compression": 0.4486,
+   "repeated_words": 0.0018,
+   "repeated_chars": 0.0435,
+   "wordbias_mean": 1.8969,
+   "charbias_mean": 0.4069,
+   "wordlen_autocorr": 0.0623,
+   "zipf": 9.9737
+  },
+  {
+   "text": "Voynich, words shuffled within each page",
+   "kind": "broken",
+   "p_madeup": 0.484,
+   "compression": 0.3888,
+   "repeated_words": 0.0065,
+   "repeated_chars": 0.0493,
+   "wordbias_mean": 1.8419,
+   "charbias_mean": 0.4306,
+   "wordlen_autocorr": -0.0024,
+   "zipf": 7.9502
+  },
+  {
+   "text": "Voynich, words shuffled across the text",
+   "kind": "broken",
+   "p_madeup": 0.448,
+   "compression": 0.4114,
+   "repeated_words": 0.0024,
+   "repeated_chars": 0.0511,
+   "wordbias_mean": 1.9723,
+   "charbias_mean": 0.4358,
+   "wordlen_autocorr": -0.0054,
+   "zipf": 9.4229
+  },
+  {
+   "text": "Made up by hand, DA_01",
+   "kind": "made-up",
+   "p_madeup": 0.852,
+   "compression": 0.3732,
+   "repeated_words": 0.007,
+   "repeated_chars": 0.0429,
+   "wordbias_mean": 1.8443,
+   "charbias_mean": 0.5884,
+   "wordlen_autocorr": 0.03,
+   "zipf": 7.0309
+  },
+  {
+   "text": "Made up by hand, DA_02",
+   "kind": "made-up",
+   "p_madeup": 0.744,
+   "compression": 0.4033,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0057,
+   "wordbias_mean": 1.5896,
+   "charbias_mean": 0.5133,
+   "wordlen_autocorr": -0.0142,
+   "zipf": 4.0074
+  },
+  {
+   "text": "Made up by hand, DC_01",
+   "kind": "made-up",
+   "p_madeup": 0.86,
+   "compression": 0.4853,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0209,
+   "wordbias_mean": 2.0769,
+   "charbias_mean": 0.5056,
+   "wordlen_autocorr": 0.0539,
+   "zipf": 19.0836
+  },
+  {
+   "text": "Made up by hand, DC_03",
+   "kind": "made-up",
+   "p_madeup": 0.708,
+   "compression": 0.421,
+   "repeated_words": 0.004,
+   "repeated_chars": 0.0354,
+   "wordbias_mean": 1.5082,
+   "charbias_mean": 0.5533,
+   "wordlen_autocorr": -0.1225,
+   "zipf": 1.8839
+  },
+  {
+   "text": "Made up by hand, DC_04",
+   "kind": "made-up",
+   "p_madeup": 0.664,
+   "compression": 0.4544,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0472,
+   "wordbias_mean": 1.9193,
+   "charbias_mean": 0.5513,
+   "wordlen_autocorr": -0.1249,
+   "zipf": 7.6593
+  },
+  {
+   "text": "Made up by hand, DC_05",
+   "kind": "made-up",
+   "p_madeup": 0.93,
+   "compression": 0.4191,
+   "repeated_words": 0.0161,
+   "repeated_chars": 0.0162,
+   "wordbias_mean": 2.0109,
+   "charbias_mean": 0.5628,
+   "wordlen_autocorr": 0.1481,
+   "zipf": 10.2648
+  },
+  {
+   "text": "Made up by hand, DC_06",
+   "kind": "made-up",
+   "p_madeup": 0.676,
+   "compression": 0.4689,
+   "repeated_words": 0.0049,
+   "repeated_chars": 0.0457,
+   "wordbias_mean": 1.6995,
+   "charbias_mean": 0.4777,
+   "wordlen_autocorr": 0.1615,
+   "zipf": 3.0315
+  },
+  {
+   "text": "Made up by hand, DC_08",
+   "kind": "made-up",
+   "p_madeup": 0.804,
+   "compression": 0.4016,
+   "repeated_words": 0.0056,
+   "repeated_chars": 0.0206,
+   "wordbias_mean": 1.5297,
+   "charbias_mean": 0.5988,
+   "wordlen_autocorr": -0.0969,
+   "zipf": 9.7041
+  },
+  {
+   "text": "Made up by hand, DC_09",
+   "kind": "made-up",
+   "p_madeup": 0.92,
+   "compression": 0.4472,
+   "repeated_words": 0.0069,
+   "repeated_chars": 0.044,
+   "wordbias_mean": 2.0059,
+   "charbias_mean": 0.609,
+   "wordlen_autocorr": 0.0363,
+   "zipf": 23.6676
+  },
+  {
+   "text": "Made up by hand, DC_10",
+   "kind": "made-up",
+   "p_madeup": 0.848,
+   "compression": 0.4066,
+   "repeated_words": 0.0003,
+   "repeated_chars": 0.0015,
+   "wordbias_mean": 1.9195,
+   "charbias_mean": 0.5776,
+   "wordlen_autocorr": -0.0764,
+   "zipf": 7.5757
+  },
+  {
+   "text": "Made up by hand, DC_11",
+   "kind": "made-up",
+   "p_madeup": 0.792,
+   "compression": 0.4261,
+   "repeated_words": 0.0127,
+   "repeated_chars": 0.0806,
+   "wordbias_mean": 1.8494,
+   "charbias_mean": 0.5521,
+   "wordlen_autocorr": -0.0792,
+   "zipf": 2.2129
+  },
+  {
+   "text": "Made up by hand, DC_12",
+   "kind": "made-up",
+   "p_madeup": 0.94,
+   "compression": 0.4203,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0624,
+   "wordbias_mean": 2.0985,
+   "charbias_mean": 0.558,
+   "wordlen_autocorr": 0.0539,
+   "zipf": 20.5238
+  },
+  {
+   "text": "Made up by hand, DC_15",
+   "kind": "made-up",
+   "p_madeup": 0.818,
+   "compression": 0.499,
+   "repeated_words": 0.006,
+   "repeated_chars": 0.0284,
+   "wordbias_mean": 1.9617,
+   "charbias_mean": 0.5126,
+   "wordlen_autocorr": 0.0764,
+   "zipf": 4.8095
+  },
+  {
+   "text": "Made up by hand, DC_16",
+   "kind": "made-up",
+   "p_madeup": 0.94,
+   "compression": 0.5355,
+   "repeated_words": 0.0026,
+   "repeated_chars": 0.049,
+   "wordbias_mean": 2.1169,
+   "charbias_mean": 0.5466,
+   "wordlen_autocorr": 0.1297,
+   "zipf": 12.9825
+  },
+  {
+   "text": "Made up by hand, DC_18",
+   "kind": "made-up",
+   "p_madeup": 0.548,
+   "compression": 0.4766,
+   "repeated_words": 0.0024,
+   "repeated_chars": 0.0068,
+   "wordbias_mean": 1.8424,
+   "charbias_mean": 0.4602,
+   "wordlen_autocorr": -0.0955,
+   "zipf": 4.091
+  },
+  {
+   "text": "Made up by hand, DC_20",
+   "kind": "made-up",
+   "p_madeup": 0.786,
+   "compression": 0.3663,
+   "repeated_words": 0.0363,
+   "repeated_chars": 0.0565,
+   "wordbias_mean": 1.7354,
+   "charbias_mean": 0.4645,
+   "wordlen_autocorr": -0.084,
+   "zipf": 4.2672
+  },
+  {
+   "text": "Made up by hand, DC_21",
+   "kind": "made-up",
+   "p_madeup": 0.706,
+   "compression": 0.3613,
+   "repeated_words": 0.0003,
+   "repeated_chars": 0.036,
+   "wordbias_mean": 1.652,
+   "charbias_mean": 0.4904,
+   "wordlen_autocorr": -0.0592,
+   "zipf": 4.8868
+  },
+  {
+   "text": "Made up by hand, DC_22",
+   "kind": "made-up",
+   "p_madeup": 0.948,
+   "compression": 0.3515,
+   "repeated_words": 0.0116,
+   "repeated_chars": 0.0741,
+   "wordbias_mean": 2.1263,
+   "charbias_mean": 0.6934,
+   "wordlen_autocorr": 0.2534,
+   "zipf": 11.4493
+  },
+  {
+   "text": "Made up by hand, DC_23",
+   "kind": "made-up",
+   "p_madeup": 0.79,
+   "compression": 0.2829,
+   "repeated_words": 0.0006,
+   "repeated_chars": 0.0847,
+   "wordbias_mean": 1.7762,
+   "charbias_mean": 0.6966,
+   "wordlen_autocorr": -0.2414,
+   "zipf": 1.9025
+  },
+  {
+   "text": "Made up by hand, DC_24",
+   "kind": "made-up",
+   "p_madeup": 0.89,
+   "compression": 0.225,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0054,
+   "wordbias_mean": 1.9735,
+   "charbias_mean": 0.7807,
+   "wordlen_autocorr": -0.0587,
+   "zipf": 10.6423
+  },
+  {
+   "text": "Made up by hand, DC_25",
+   "kind": "made-up",
+   "p_madeup": 0.936,
+   "compression": 0.3971,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0259,
+   "wordbias_mean": 1.9894,
+   "charbias_mean": 0.6803,
+   "wordlen_autocorr": -0.0938,
+   "zipf": 12.4887
+  },
+  {
+   "text": "Made up by hand, DC_26",
+   "kind": "made-up",
+   "p_madeup": 0.924,
+   "compression": 0.4894,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0447,
+   "wordbias_mean": 2.1197,
+   "charbias_mean": 0.5606,
+   "wordlen_autocorr": -0.1058,
+   "zipf": 20.1503
+  },
+  {
+   "text": "Made up by hand, DC_27",
+   "kind": "made-up",
+   "p_madeup": 0.834,
+   "compression": 0.5179,
+   "repeated_words": 0.0021,
+   "repeated_chars": 0.0871,
+   "wordbias_mean": 2.1118,
+   "charbias_mean": 0.6468,
+   "wordlen_autocorr": 0.1587,
+   "zipf": 24.7762
+  },
+  {
+   "text": "Made up by hand, DC_28",
+   "kind": "made-up",
+   "p_madeup": 0.894,
+   "compression": 0.4041,
+   "repeated_words": 0.0002,
+   "repeated_chars": 0.0005,
+   "wordbias_mean": 1.9199,
+   "charbias_mean": 0.5768,
+   "wordlen_autocorr": 0.0977,
+   "zipf": 7.94
+  },
+  {
+   "text": "Made up by hand, DC_29",
+   "kind": "made-up",
+   "p_madeup": 0.94,
+   "compression": 0.3938,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0372,
+   "wordbias_mean": 1.9614,
+   "charbias_mean": 0.632,
+   "wordlen_autocorr": -0.0892,
+   "zipf": 4.5303
+  },
+  {
+   "text": "Made up by hand, DC_30",
+   "kind": "made-up",
+   "p_madeup": 0.916,
+   "compression": 0.4762,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0155,
+   "wordbias_mean": 2.1246,
+   "charbias_mean": 0.4763,
+   "wordlen_autocorr": 0.0319,
+   "zipf": 11.6409
+  },
+  {
+   "text": "Made up by hand, DC_31",
+   "kind": "made-up",
+   "p_madeup": 0.804,
+   "compression": 0.5109,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0241,
+   "wordbias_mean": 2.2086,
+   "charbias_mean": 0.4998,
+   "wordlen_autocorr": 0.1646,
+   "zipf": 25.2882
+  },
+  {
+   "text": "Made up by hand, DC_32",
+   "kind": "made-up",
+   "p_madeup": 0.78,
+   "compression": 0.419,
+   "repeated_words": 0.0223,
+   "repeated_chars": 0.0307,
+   "wordbias_mean": 1.5062,
+   "charbias_mean": 0.5891,
+   "wordlen_autocorr": -0.1363,
+   "zipf": 3.1374
+  },
+  {
+   "text": "Made up by hand, DC_33",
+   "kind": "made-up",
+   "p_madeup": 0.842,
+   "compression": 0.3237,
+   "repeated_words": 0.0091,
+   "repeated_chars": 0.0489,
+   "wordbias_mean": 1.6144,
+   "charbias_mean": 0.5806,
+   "wordlen_autocorr": -0.0352,
+   "zipf": 2.2842
+  },
+  {
+   "text": "Made up by hand, DC_34",
+   "kind": "made-up",
+   "p_madeup": 0.724,
+   "compression": 0.4654,
+   "repeated_words": 0.005,
+   "repeated_chars": 0.037,
+   "wordbias_mean": 1.7425,
+   "charbias_mean": 0.7274,
+   "wordlen_autocorr": -0.0148,
+   "zipf": 2.6449
+  },
+  {
+   "text": "Made up by hand, DC_35",
+   "kind": "made-up",
+   "p_madeup": 0.91,
+   "compression": 0.5005,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0573,
+   "wordbias_mean": 2.055,
+   "charbias_mean": 0.5982,
+   "wordlen_autocorr": 0.1383,
+   "zipf": 11.1995
+  },
+  {
+   "text": "Made up by hand, DC_36",
+   "kind": "made-up",
+   "p_madeup": 0.856,
+   "compression": 0.4691,
+   "repeated_words": 0.0001,
+   "repeated_chars": 0.0623,
+   "wordbias_mean": 2.1674,
+   "charbias_mean": 0.5136,
+   "wordlen_autocorr": 0.0373,
+   "zipf": 25.8298
+  },
+  {
+   "text": "Made up by hand, DC_37",
+   "kind": "made-up",
+   "p_madeup": 0.71,
+   "compression": 0.5044,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0264,
+   "wordbias_mean": 2.1849,
+   "charbias_mean": 0.4409,
+   "wordlen_autocorr": 0.0461,
+   "zipf": 31.7568
+  },
+  {
+   "text": "Made up by hand, DC_38",
+   "kind": "made-up",
+   "p_madeup": 0.618,
+   "compression": 0.4294,
+   "repeated_words": 0.0078,
+   "repeated_chars": 0.0237,
+   "wordbias_mean": 1.3782,
+   "charbias_mean": 0.5802,
+   "wordlen_autocorr": -0.0364,
+   "zipf": 2.5393
+  },
+  {
+   "text": "Made up by hand, DC_39",
+   "kind": "made-up",
+   "p_madeup": 0.848,
+   "compression": 0.5008,
+   "repeated_words": 0.0,
+   "repeated_chars": 0.0132,
+   "wordbias_mean": 1.9762,
+   "charbias_mean": 0.5178,
+   "wordlen_autocorr": 0.0174,
+   "zipf": 6.075
+  },
+  {
+   "text": "Made up by hand, DC_40",
+   "kind": "made-up",
+   "p_madeup": 0.778,
+   "compression": 0.508,
+   "repeated_words": 0.016,
+   "repeated_chars": 0.0309,
+   "wordbias_mean": 2.0776,
+   "charbias_mean": 0.4782,
+   "wordlen_autocorr": -0.1034,
+   "zipf": 10.0977
+  },
+  {
+   "text": "Made up by hand, DC_41",
+   "kind": "made-up",
+   "p_madeup": 0.974,
+   "compression": 0.331,
+   "repeated_words": 0.0071,
+   "repeated_chars": 0.0395,
+   "wordbias_mean": 1.9968,
+   "charbias_mean": 0.6383,
+   "wordlen_autocorr": 0.0388,
+   "zipf": 15.9321
+  },
+  {
+   "text": "Made up by hand, DC_42",
+   "kind": "made-up",
+   "p_madeup": 0.734,
+   "compression": 0.3992,
+   "repeated_words": 0.0034,
+   "repeated_chars": 0.0017,
+   "wordbias_mean": 1.8962,
+   "charbias_mean": 0.4785,
+   "wordlen_autocorr": 0.0633,
+   "zipf": 17.8642
+  }
+ ],
+ "long": [
+  {
+   "text": "Voynich (development pages)",
+   "kind": "voynich",
+   "wordlen_autocorr": 0.1161,
+   "repeated_pairs": 0.1482,
+   "serial": -0.036
+  },
+  {
+   "text": "Voynich, Currier A",
+   "kind": "voynich",
+   "wordlen_autocorr": 0.0893,
+   "repeated_pairs": 0.099,
+   "serial": -0.0354
+  },
+  {
+   "text": "Voynich, Currier B",
+   "kind": "voynich",
+   "wordlen_autocorr": 0.1105,
+   "repeated_pairs": 0.1735,
+   "serial": -0.0393
+  },
+  {
+   "text": "latin-alchemical-herbal",
+   "kind": "language",
+   "wordlen_autocorr": -0.1208,
+   "repeated_pairs": 0.5614,
+   "serial": -0.0068
+  },
+  {
+   "text": "latin-macer",
+   "kind": "language",
+   "wordlen_autocorr": 0.0996,
+   "repeated_pairs": 0.2697,
+   "serial": -0.0093
+  },
+  {
+   "text": "latin-trotula",
+   "kind": "language",
+   "wordlen_autocorr": 0.0246,
+   "repeated_pairs": 0.1707,
+   "serial": -0.008
+  },
+  {
+   "text": "latin-naibbe-plain",
+   "kind": "language",
+   "wordlen_autocorr": -0.0181,
+   "repeated_pairs": 0.0808,
+   "serial": -0.0112
+  },
+  {
+   "text": "cipher-naibbe-pliny",
+   "kind": "language",
+   "wordlen_autocorr": -0.0331,
+   "repeated_pairs": 0.1713,
+   "serial": -0.043
+  },
+  {
+   "text": "italian-ricette",
+   "kind": "language",
+   "wordlen_autocorr": -0.2906,
+   "repeated_pairs": 0.7185,
+   "serial": -0.0065
+  },
+  {
+   "text": "italian-erbario",
+   "kind": "language",
+   "wordlen_autocorr": -0.0744,
+   "repeated_pairs": 0.2724,
+   "serial": -0.0061
+  },
+  {
+   "text": "german-guter-spise",
+   "kind": "language",
+   "wordlen_autocorr": 0.0036,
+   "repeated_pairs": 0.522,
+   "serial": -0.0224
+  },
+  {
+   "text": "french-menagier",
+   "kind": "language",
+   "wordlen_autocorr": -0.1403,
+   "repeated_pairs": 0.4482,
+   "serial": -0.0255
+  },
+  {
+   "text": "czech-dalimil",
+   "kind": "language",
+   "wordlen_autocorr": -0.0072,
+   "repeated_pairs": 0.2916,
+   "serial": 0.0072
+  },
+  {
+   "text": "hebrew-tanakh",
+   "kind": "language",
+   "wordlen_autocorr": 0.0131,
+   "repeated_pairs": 0.1936,
+   "serial": -0.0212
+  },
+  {
+   "text": "greek-nt",
+   "kind": "language",
+   "wordlen_autocorr": -0.1658,
+   "repeated_pairs": 0.4882,
+   "serial": -0.0088
+  },
+  {
+   "text": "arabic-quran",
+   "kind": "language",
+   "wordlen_autocorr": 0.0378,
+   "repeated_pairs": 0.3856,
+   "serial": -0.0177
+  },
+  {
+   "text": "Rugg's grille (G1)",
+   "kind": "method",
+   "wordlen_autocorr": 0.0188,
+   "repeated_pairs": 0.8618,
+   "serial": -0.0355
+  },
+  {
+   "text": "three-ring wheels, random (G2)",
+   "kind": "method",
+   "wordlen_autocorr": -0.0009,
+   "repeated_pairs": 0.0007,
+   "serial": -0.03
+  },
+  {
+   "text": "three-ring wheels, a vocabulary (G5)",
+   "kind": "method",
+   "wordlen_autocorr": 0.0073,
+   "repeated_pairs": 0.2741,
+   "serial": -0.0282
+  },
+  {
+   "text": "the Naibbe cipher (C1)",
+   "kind": "method",
+   "wordlen_autocorr": -0.0331,
+   "repeated_pairs": 0.1713,
+   "serial": -0.043
+  },
+  {
+   "text": "self-citation (Timm and Schinner) (C2)",
+   "kind": "method",
+   "wordlen_autocorr": -0.0076,
+   "repeated_pairs": 0.1967,
+   "serial": -0.0049
+  },
+  {
+   "text": "Latin, letter substitution (F1)",
+   "kind": "method",
+   "wordlen_autocorr": 0.0766,
+   "repeated_pairs": 0.2697,
+   "serial": -0.0112
+  },
+  {
+   "text": "Voynich, words shuffled within each page",
+   "kind": "broken",
+   "wordlen_autocorr": 0.0326,
+   "repeated_pairs": 0.1108,
+   "serial": -0.0382
+  },
+  {
+   "text": "Voynich, words shuffled across the text",
+   "kind": "broken",
+   "wordlen_autocorr": 0.0021,
+   "repeated_pairs": 0.0961,
+   "serial": -0.0381
+  },
+  {
+   "text": "Made up by hand, DA_01",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0173,
+   "repeated_pairs": 0.0185,
+   "serial": -0.0196
+  },
+  {
+   "text": "Made up by hand, DA_02",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0135,
+   "repeated_pairs": 0.2129,
+   "serial": -0.0059
+  },
+  {
+   "text": "Made up by hand, DC_01",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0218,
+   "repeated_pairs": 0.0082,
+   "serial": -0.0314
+  },
+  {
+   "text": "Made up by hand, DC_03",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.1768,
+   "repeated_pairs": 0.127,
+   "serial": -0.0093
+  },
+  {
+   "text": "Made up by hand, DC_04",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0753,
+   "repeated_pairs": 0.0221,
+   "serial": -0.0122
+  },
+  {
+   "text": "Made up by hand, DC_05",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0579,
+   "repeated_pairs": 0.0,
+   "serial": -0.0191
+  },
+  {
+   "text": "Made up by hand, DC_06",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.169,
+   "repeated_pairs": 0.0749,
+   "serial": 0.0019
+  },
+  {
+   "text": "Made up by hand, DC_08",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.131,
+   "repeated_pairs": 0.0729,
+   "serial": -0.0219
+  },
+  {
+   "text": "Made up by hand, DC_09",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0924,
+   "repeated_pairs": 0.0459,
+   "serial": 0.0
+  },
+  {
+   "text": "Made up by hand, DC_10",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0614,
+   "repeated_pairs": 0.0271,
+   "serial": -0.0222
+  },
+  {
+   "text": "Made up by hand, DC_11",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0945,
+   "repeated_pairs": 0.0446,
+   "serial": -0.0164
+  },
+  {
+   "text": "Made up by hand, DC_12",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0762,
+   "repeated_pairs": 0.0192,
+   "serial": 0.0104
+  },
+  {
+   "text": "Made up by hand, DC_15",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0729,
+   "repeated_pairs": 0.0374,
+   "serial": 0.0056
+  },
+  {
+   "text": "Made up by hand, DC_16",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.2045,
+   "repeated_pairs": 0.0,
+   "serial": 0.0093
+  },
+  {
+   "text": "Made up by hand, DC_18",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.1108,
+   "repeated_pairs": 0.057,
+   "serial": 0.0477
+  },
+  {
+   "text": "Made up by hand, DC_20",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.1088,
+   "repeated_pairs": 0.08,
+   "serial": -0.0249
+  },
+  {
+   "text": "Made up by hand, DC_21",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0599,
+   "repeated_pairs": 0.0897,
+   "serial": 0.0217
+  },
+  {
+   "text": "Made up by hand, DC_22",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.3729,
+   "repeated_pairs": 0.0395,
+   "serial": 0.0724
+  },
+  {
+   "text": "Made up by hand, DC_23",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.3056,
+   "repeated_pairs": 0.084,
+   "serial": -0.0231
+  },
+  {
+   "text": "Made up by hand, DC_24",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0611,
+   "repeated_pairs": 0.0256,
+   "serial": 0.0236
+  },
+  {
+   "text": "Made up by hand, DC_25",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.1045,
+   "repeated_pairs": 0.0123,
+   "serial": -0.0124
+  },
+  {
+   "text": "Made up by hand, DC_26",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0487,
+   "repeated_pairs": 0.0307,
+   "serial": 0.0035
+  },
+  {
+   "text": "Made up by hand, DC_27",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.1373,
+   "repeated_pairs": 0.024,
+   "serial": -0.0044
+  },
+  {
+   "text": "Made up by hand, DC_28",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0703,
+   "repeated_pairs": 0.0279,
+   "serial": 0.013
+  },
+  {
+   "text": "Made up by hand, DC_29",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0602,
+   "repeated_pairs": 0.0,
+   "serial": -0.0182
+  },
+  {
+   "text": "Made up by hand, DC_30",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0474,
+   "repeated_pairs": 0.0,
+   "serial": -0.0417
+  },
+  {
+   "text": "Made up by hand, DC_31",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.1731,
+   "repeated_pairs": 0.0,
+   "serial": -0.0089
+  },
+  {
+   "text": "Made up by hand, DC_32",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0986,
+   "repeated_pairs": 0.1809,
+   "serial": 0.009
+  },
+  {
+   "text": "Made up by hand, DC_33",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0756,
+   "repeated_pairs": 0.1862,
+   "serial": -0.0074
+  },
+  {
+   "text": "Made up by hand, DC_34",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0075,
+   "repeated_pairs": 0.0578,
+   "serial": 0.0327
+  },
+  {
+   "text": "Made up by hand, DC_35",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.156,
+   "repeated_pairs": 0.0299,
+   "serial": 0.0053
+  },
+  {
+   "text": "Made up by hand, DC_36",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0703,
+   "repeated_pairs": 0.0,
+   "serial": 0.0203
+  },
+  {
+   "text": "Made up by hand, DC_37",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.1436,
+   "repeated_pairs": 0.0,
+   "serial": -0.0211
+  },
+  {
+   "text": "Made up by hand, DC_38",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.0406,
+   "repeated_pairs": 0.2329,
+   "serial": 0.0129
+  },
+  {
+   "text": "Made up by hand, DC_39",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0328,
+   "repeated_pairs": 0.0545,
+   "serial": 0.0194
+  },
+  {
+   "text": "Made up by hand, DC_40",
+   "kind": "made-up",
+   "wordlen_autocorr": -0.1339,
+   "repeated_pairs": 0.0152,
+   "serial": -0.0078
+  },
+  {
+   "text": "Made up by hand, DC_41",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0299,
+   "repeated_pairs": 0.0,
+   "serial": -0.0051
+  },
+  {
+   "text": "Made up by hand, DC_42",
+   "kind": "made-up",
+   "wordlen_autocorr": 0.0807,
+   "repeated_pairs": 0.1842,
+   "serial": 0.0083
+  }
+ ],
+ "topics": [
+  {
+   "text": "Voynich (development pages)",
+   "kind": "voynich",
+   "per_1000": 6.7805,
+   "bits": 0.2998
+  },
+  {
+   "text": "Voynich, Currier A",
+   "kind": "voynich",
+   "per_1000": 5.6832,
+   "bits": 0.1278
+  },
+  {
+   "text": "Voynich, Currier B",
+   "kind": "voynich",
+   "per_1000": 6.2927,
+   "bits": 0.2308
+  },
+  {
+   "text": "latin-alchemical-herbal",
+   "kind": "language",
+   "per_1000": 4.4372,
+   "bits": 0.1277
+  },
+  {
+   "text": "latin-macer",
+   "kind": "language",
+   "per_1000": 5.4664,
+   "bits": 0.1402
+  },
+  {
+   "text": "latin-trotula",
+   "kind": "language",
+   "per_1000": 4.4683,
+   "bits": 0.1583
+  },
+  {
+   "text": "latin-naibbe-plain",
+   "kind": "language",
+   "per_1000": 2.2227,
+   "bits": 0.0872
+  },
+  {
+   "text": "cipher-naibbe-pliny",
+   "kind": "language",
+   "per_1000": 0.6328,
+   "bits": -0.0043
+  },
+  {
+   "text": "italian-ricette",
+   "kind": "language",
+   "per_1000": 4.5363,
+   "bits": 0.121
+  },
+  {
+   "text": "italian-erbario",
+   "kind": "language",
+   "per_1000": 2.9681,
+   "bits": 0.1322
+  },
+  {
+   "text": "german-guter-spise",
+   "kind": "language",
+   "per_1000": 9.9851,
+   "bits": 0.3239
+  },
+  {
+   "text": "french-menagier",
+   "kind": "language",
+   "per_1000": 7.625,
+   "bits": 0.2499
+  },
+  {
+   "text": "czech-dalimil",
+   "kind": "language",
+   "per_1000": 4.6153,
+   "bits": 0.1263
+  },
+  {
+   "text": "hebrew-tanakh",
+   "kind": "language",
+   "per_1000": 13.075,
+   "bits": 0.4214
+  },
+  {
+   "text": "greek-nt",
+   "kind": "language",
+   "per_1000": 6.875,
+   "bits": 0.1978
+  },
+  {
+   "text": "arabic-quran",
+   "kind": "language",
+   "per_1000": 5.95,
+   "bits": 0.1691
+  },
+  {
+   "text": "Rugg's grille (G1)",
+   "kind": "method",
+   "per_1000": 0.975,
+   "bits": 0.0038
+  },
+  {
+   "text": "three-ring wheels, random (G2)",
+   "kind": "method",
+   "per_1000": 0.3897,
+   "bits": -0.0008
+  },
+  {
+   "text": "three-ring wheels, a vocabulary (G5)",
+   "kind": "method",
+   "per_1000": 5.0659,
+   "bits": 0.1326
+  },
+  {
+   "text": "the Naibbe cipher (C1)",
+   "kind": "method",
+   "per_1000": 0.4286,
+   "bits": -0.0059
+  },
+  {
+   "text": "self-citation (Timm and Schinner) (C2)",
+   "kind": "method",
+   "per_1000": 12.8395,
+   "bits": 0.4043
+  },
+  {
+   "text": "Latin, letter substitution (F1)",
+   "kind": "method",
+   "per_1000": 5.1438,
+   "bits": 0.1359
+  },
+  {
+   "text": "Voynich, words shuffled within each page",
+   "kind": "broken",
+   "per_1000": 6.6635,
+   "bits": 0.3019
+  },
+  {
+   "text": "Voynich, words shuffled across the text",
+   "kind": "broken",
+   "per_1000": 0.7794,
+   "bits": 0.0021
+  },
+  {
+   "text": "Voynich, Currier A (within the hand)",
+   "kind": "voynich",
+   "per_1000": 5.6832,
+   "bits": 0.1278
+  },
+  {
+   "text": "Voynich, Currier B (within the hand)",
+   "kind": "voynich",
+   "per_1000": 6.2927,
+   "bits": 0.2308
+  }
+ ],
+ "pictures": [
+  {
+   "text": "Voynich (development pages)",
+   "kind": "voynich",
+   "words": 1067,
+   "likeness": 0.2384,
+   "null": 0.2366,
+   "p": 0.39
+  },
+  {
+   "text": "Voynich, words shuffled within each page",
+   "kind": "broken",
+   "words": 1067,
+   "likeness": 0.2384,
+   "null": 0.2366,
+   "p": 0.39
+  },
+  {
+   "text": "Voynich, words shuffled across the text",
+   "kind": "broken",
+   "words": 1065,
+   "likeness": 0.1663,
+   "null": 0.1682,
+   "p": 0.705
+  }
+ ],
+ "tests": [
+  "measures",
+  "long",
+  "topics",
+  "pictures"
+ ]
+}

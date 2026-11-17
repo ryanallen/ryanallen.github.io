@@ -1,0 +1,1185 @@
+{
+ "summary": {
+  "labels": 100,
+  "pairs": 12,
+  "exact": 5,
+  "exact_chance": 3.35,
+  "exact_p": 0.2185,
+  "within1": 17,
+  "within1_chance": 17.3,
+  "within1_p": 0.5875,
+  "within2": 45,
+  "within2_chance": 44.73,
+  "within2_p": 0.528,
+  "untested_final": 15
+ },
+ "pairs": [
+  {
+   "pharma_page": "f88r",
+   "fragment": "11",
+   "herbal_page": "f90r2",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "osal",
+     "exact": "0",
+     "nearest": "al",
+     "distance": "2"
+    },
+    {
+     "word": "orald",
+     "exact": "0",
+     "nearest": "aral",
+     "distance": "2"
+    },
+    {
+     "word": "oldar",
+     "exact": "0",
+     "nearest": "ar",
+     "distance": "3"
+    },
+    {
+     "word": "otoky",
+     "exact": "0",
+     "nearest": "qoteody",
+     "distance": "3"
+    },
+    {
+     "word": "otaly",
+     "exact": "0",
+     "nearest": "al",
+     "distance": "3"
+    },
+    {
+     "word": "oram",
+     "exact": "0",
+     "nearest": "aral",
+     "distance": "2"
+    },
+    {
+     "word": "dary",
+     "exact": "0",
+     "nearest": "ar",
+     "distance": "2"
+    },
+    {
+     "word": "okol",
+     "exact": "0",
+     "nearest": "chol",
+     "distance": "2"
+    },
+    {
+     "word": "sorory",
+     "exact": "0",
+     "nearest": "qokor",
+     "distance": "3"
+    },
+    {
+     "word": "otyda",
+     "exact": "0",
+     "nearest": "oyr",
+     "distance": "3"
+    },
+    {
+     "word": "otor",
+     "exact": "0",
+     "nearest": "oyr",
+     "distance": "2"
+    },
+    {
+     "word": "ofaldo",
+     "exact": "0",
+     "nearest": "al",
+     "distance": "4"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f88v",
+   "fragment": "22",
+   "herbal_page": "f94v",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "cheocthy",
+     "exact": "0",
+     "nearest": "sheocthy",
+     "distance": "1"
+    },
+    {
+     "word": "cpheor",
+     "exact": "0",
+     "nearest": "cphedy",
+     "distance": "2"
+    },
+    {
+     "word": "otar",
+     "exact": "1",
+     "nearest": "otar",
+     "distance": "0"
+    },
+    {
+     "word": "otokol",
+     "exact": "0",
+     "nearest": "okal",
+     "distance": "3"
+    },
+    {
+     "word": "otora",
+     "exact": "0",
+     "nearest": "otor",
+     "distance": "1"
+    },
+    {
+     "word": "cheosdy",
+     "exact": "0",
+     "nearest": "chedy",
+     "distance": "2"
+    },
+    {
+     "word": "okaiin",
+     "exact": "1",
+     "nearest": "okaiin",
+     "distance": "0"
+    },
+    {
+     "word": "otydary",
+     "exact": "0",
+     "nearest": "otar",
+     "distance": "3"
+    },
+    {
+     "word": "otdordy",
+     "exact": "0",
+     "nearest": "otedy",
+     "distance": "3"
+    },
+    {
+     "word": "dararda",
+     "exact": "0",
+     "nearest": "air",
+     "distance": "4"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89r1",
+   "fragment": "25",
+   "herbal_page": "f57r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "qkol",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "oldam",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "otoldy",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "ararchodaiin",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "chol",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "otorain",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "okaiin",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "saldam",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "sydarary",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "ydcpody",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89r1",
+   "fragment": "28",
+   "herbal_page": "f30r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "qkol",
+     "exact": "0",
+     "nearest": "chol",
+     "distance": "2"
+    },
+    {
+     "word": "oldam",
+     "exact": "0",
+     "nearest": "ol",
+     "distance": "3"
+    },
+    {
+     "word": "otoldy",
+     "exact": "0",
+     "nearest": "chctheychor",
+     "distance": "4"
+    },
+    {
+     "word": "ararchodaiin",
+     "exact": "0",
+     "nearest": "chaiin",
+     "distance": "4"
+    },
+    {
+     "word": "chol",
+     "exact": "1",
+     "nearest": "chol",
+     "distance": "0"
+    },
+    {
+     "word": "otorain",
+     "exact": "0",
+     "nearest": "chorain",
+     "distance": "2"
+    },
+    {
+     "word": "okaiin",
+     "exact": "0",
+     "nearest": "chaiin",
+     "distance": "2"
+    },
+    {
+     "word": "saldam",
+     "exact": "0",
+     "nearest": "chctheychor",
+     "distance": "4"
+    },
+    {
+     "word": "sydarary",
+     "exact": "0",
+     "nearest": "chan",
+     "distance": "4"
+    },
+    {
+     "word": "ydcpody",
+     "exact": "0",
+     "nearest": "ychody",
+     "distance": "2"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89r1",
+   "fragment": "31",
+   "herbal_page": "f33r",
+   "strength": "similar",
+   "plant": "bladder campion (Silene vulgaris) (possible)",
+   "set": "development",
+   "labels": [
+    {
+     "word": "qkol",
+     "exact": "0",
+     "nearest": "kor",
+     "distance": "2"
+    },
+    {
+     "word": "oldam",
+     "exact": "0",
+     "nearest": "oldar",
+     "distance": "1"
+    },
+    {
+     "word": "otoldy",
+     "exact": "0",
+     "nearest": "okaldy",
+     "distance": "2"
+    },
+    {
+     "word": "ararchodaiin",
+     "exact": "0",
+     "nearest": "aiiin",
+     "distance": "4"
+    },
+    {
+     "word": "chol",
+     "exact": "0",
+     "nearest": "chos",
+     "distance": "1"
+    },
+    {
+     "word": "otorain",
+     "exact": "0",
+     "nearest": "okain",
+     "distance": "3"
+    },
+    {
+     "word": "okaiin",
+     "exact": "3",
+     "nearest": "okaiin",
+     "distance": "0"
+    },
+    {
+     "word": "saldam",
+     "exact": "0",
+     "nearest": "oldar",
+     "distance": "3"
+    },
+    {
+     "word": "sydarary",
+     "exact": "0",
+     "nearest": "aiin",
+     "distance": "4"
+    },
+    {
+     "word": "ydcpody",
+     "exact": "0",
+     "nearest": "cphody",
+     "distance": "3"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89r2",
+   "fragment": "35",
+   "herbal_page": "f35v",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "doly",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "opchosam",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "saloiinsheol",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "opcheor",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "okol",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "opchoroiin",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "sodar",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "cheys",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "cheody",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "oporain",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "okshdchos",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "ofakal",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "otalsy",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "ytarem",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "otolarol",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89v2",
+   "fragment": "50",
+   "herbal_page": "f10v",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "okam",
+     "exact": "0",
+     "nearest": "ckhy",
+     "distance": "3"
+    },
+    {
+     "word": "darcheor",
+     "exact": "0",
+     "nearest": "aiin",
+     "distance": "4"
+    },
+    {
+     "word": "chokaro",
+     "exact": "0",
+     "nearest": "chor",
+     "distance": "3"
+    },
+    {
+     "word": "sheol",
+     "exact": "0",
+     "nearest": "sheo",
+     "distance": "1"
+    },
+    {
+     "word": "chokam",
+     "exact": "0",
+     "nearest": "chckhan",
+     "distance": "3"
+    },
+    {
+     "word": "otair",
+     "exact": "0",
+     "nearest": "cthor",
+     "distance": "3"
+    },
+    {
+     "word": "dykaran",
+     "exact": "0",
+     "nearest": "chy",
+     "distance": "4"
+    },
+    {
+     "word": "opcheedey",
+     "exact": "0",
+     "nearest": "pcheey",
+     "distance": "3"
+    },
+    {
+     "word": "otaram",
+     "exact": "0",
+     "nearest": "dy",
+     "distance": "4"
+    },
+    {
+     "word": "chtchy",
+     "exact": "0",
+     "nearest": "cthy",
+     "distance": "2"
+    },
+    {
+     "word": "sada",
+     "exact": "0",
+     "nearest": "sain",
+     "distance": "2"
+    },
+    {
+     "word": "daseky",
+     "exact": "0",
+     "nearest": "cheky",
+     "distance": "3"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89v2",
+   "fragment": "54",
+   "herbal_page": "f48v",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "okam",
+     "exact": "0",
+     "nearest": "okar",
+     "distance": "1"
+    },
+    {
+     "word": "darcheor",
+     "exact": "0",
+     "nearest": "aiin",
+     "distance": "4"
+    },
+    {
+     "word": "chokaro",
+     "exact": "0",
+     "nearest": "okar",
+     "distance": "3"
+    },
+    {
+     "word": "sheol",
+     "exact": "0",
+     "nearest": "chtol",
+     "distance": "2"
+    },
+    {
+     "word": "chokam",
+     "exact": "0",
+     "nearest": "cheky",
+     "distance": "3"
+    },
+    {
+     "word": "otair",
+     "exact": "0",
+     "nearest": "otar",
+     "distance": "1"
+    },
+    {
+     "word": "dykaran",
+     "exact": "0",
+     "nearest": "dydain",
+     "distance": "3"
+    },
+    {
+     "word": "opcheedey",
+     "exact": "0",
+     "nearest": "ypchedy",
+     "distance": "3"
+    },
+    {
+     "word": "otaram",
+     "exact": "0",
+     "nearest": "otam",
+     "distance": "2"
+    },
+    {
+     "word": "chtchy",
+     "exact": "0",
+     "nearest": "chdy",
+     "distance": "3"
+    },
+    {
+     "word": "sada",
+     "exact": "0",
+     "nearest": "sary",
+     "distance": "2"
+    },
+    {
+     "word": "daseky",
+     "exact": "0",
+     "nearest": "cheky",
+     "distance": "3"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89v2",
+   "fragment": "56",
+   "herbal_page": "f24r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "okam",
+     "exact": "0",
+     "nearest": "otam",
+     "distance": "1"
+    },
+    {
+     "word": "darcheor",
+     "exact": "0",
+     "nearest": "cheor",
+     "distance": "3"
+    },
+    {
+     "word": "chokaro",
+     "exact": "0",
+     "nearest": "char",
+     "distance": "3"
+    },
+    {
+     "word": "sheol",
+     "exact": "0",
+     "nearest": "cheol",
+     "distance": "1"
+    },
+    {
+     "word": "chokam",
+     "exact": "0",
+     "nearest": "char",
+     "distance": "3"
+    },
+    {
+     "word": "otair",
+     "exact": "0",
+     "nearest": "otal",
+     "distance": "2"
+    },
+    {
+     "word": "dykaran",
+     "exact": "0",
+     "nearest": "am",
+     "distance": "4"
+    },
+    {
+     "word": "opcheedey",
+     "exact": "0",
+     "nearest": "am",
+     "distance": "4"
+    },
+    {
+     "word": "otaram",
+     "exact": "0",
+     "nearest": "otam",
+     "distance": "2"
+    },
+    {
+     "word": "chtchy",
+     "exact": "0",
+     "nearest": "cthy",
+     "distance": "2"
+    },
+    {
+     "word": "sada",
+     "exact": "0",
+     "nearest": "da",
+     "distance": "2"
+    },
+    {
+     "word": "daseky",
+     "exact": "0",
+     "nearest": "am",
+     "distance": "4"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f89v2",
+   "fragment": "61",
+   "herbal_page": "f48r",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "daseky",
+     "exact": "0",
+     "nearest": "daldy",
+     "distance": "3"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f99r",
+   "fragment": "80",
+   "herbal_page": "f51r",
+   "strength": "similar",
+   "plant": "henbane (Hyoscyamus niger) (possible)",
+   "set": "final",
+   "labels": [
+    {
+     "word": "oparal",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "oaro",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f99r",
+   "fragment": "94",
+   "herbal_page": "f96v",
+   "strength": "similar",
+   "plant": "black bryony (Tamus communis) (likely)",
+   "set": "final",
+   "labels": [
+    {
+     "word": "yteoldy",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "tolsasy",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f99v",
+   "fragment": "95",
+   "herbal_page": "f44r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "okaramy",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "otoldy",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f99v",
+   "fragment": "110",
+   "herbal_page": "f34v",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "otal",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "chor",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f100r",
+   "fragment": "116",
+   "herbal_page": "f96v",
+   "strength": "similar",
+   "plant": "black bryony (Tamus communis) (likely)",
+   "set": "development",
+   "labels": [
+    {
+     "word": "sochorcfhy",
+     "exact": "0",
+     "nearest": "alchey",
+     "distance": "4"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f100v",
+   "fragment": "133",
+   "herbal_page": "f13v",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "opchor",
+     "exact": "0",
+     "nearest": "kchor",
+     "distance": "2"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f100v",
+   "fragment": "136",
+   "herbal_page": "f90v2",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "ykchochdy",
+     "exact": "0",
+     "nearest": "cheey",
+     "distance": "4"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f101r",
+   "fragment": "150",
+   "herbal_page": "f30v",
+   "strength": "similar",
+   "plant": "meadowsweet (Filipendula ulmaria) (possible)",
+   "set": "development",
+   "labels": []
+  },
+  {
+   "pharma_page": "f101r",
+   "fragment": "155",
+   "herbal_page": "f49r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": []
+  },
+  {
+   "pharma_page": "f101r",
+   "fragment": "168",
+   "herbal_page": "f4v",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": []
+  },
+  {
+   "pharma_page": "f101v",
+   "fragment": "188",
+   "herbal_page": "f37r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "development",
+   "labels": [
+    {
+     "word": "sairaly",
+     "exact": "0",
+     "nearest": "chy",
+     "distance": "4"
+    },
+    {
+     "word": "otaldy",
+     "exact": "0",
+     "nearest": "otoly",
+     "distance": "2"
+    },
+    {
+     "word": "otol",
+     "exact": "0",
+     "nearest": "otod",
+     "distance": "1"
+    },
+    {
+     "word": "ytal",
+     "exact": "0",
+     "nearest": "chol",
+     "distance": "3"
+    },
+    {
+     "word": "dokor",
+     "exact": "0",
+     "nearest": "qokor",
+     "distance": "1"
+    },
+    {
+     "word": "orar",
+     "exact": "0",
+     "nearest": "dar",
+     "distance": "2"
+    },
+    {
+     "word": "otarar",
+     "exact": "0",
+     "nearest": "cthor",
+     "distance": "4"
+    },
+    {
+     "word": "otoly",
+     "exact": "1",
+     "nearest": "otoly",
+     "distance": "0"
+    },
+    {
+     "word": "soraly",
+     "exact": "0",
+     "nearest": "otoly",
+     "distance": "3"
+    },
+    {
+     "word": "okol",
+     "exact": "0",
+     "nearest": "kol",
+     "distance": "1"
+    },
+    {
+     "word": "arom",
+     "exact": "0",
+     "nearest": "chol",
+     "distance": "3"
+    },
+    {
+     "word": "oraram",
+     "exact": "0",
+     "nearest": "daiinychey",
+     "distance": "4"
+    },
+    {
+     "word": "oraeep",
+     "exact": "0",
+     "nearest": "daiinychey",
+     "distance": "4"
+    },
+    {
+     "word": "dytolg",
+     "exact": "0",
+     "nearest": "otoly",
+     "distance": "3"
+    },
+    {
+     "word": "olkor",
+     "exact": "0",
+     "nearest": "kor",
+     "distance": "2"
+    },
+    {
+     "word": "dolary",
+     "exact": "0",
+     "nearest": "dar",
+     "distance": "3"
+    },
+    {
+     "word": "odor",
+     "exact": "0",
+     "nearest": "dar",
+     "distance": "2"
+    },
+    {
+     "word": "olaran",
+     "exact": "0",
+     "nearest": "okaiin",
+     "distance": "3"
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r1",
+   "fragment": "203",
+   "herbal_page": "f37v",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "ddardsh",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r1",
+   "fragment": "204",
+   "herbal_page": "f1v",
+   "strength": "same",
+   "plant": "deadly nightshade (Atropa belladonna) (possible)",
+   "set": "final",
+   "labels": [
+    {
+     "word": "otodeeodor",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r2",
+   "fragment": "205",
+   "herbal_page": "f47v",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "koldarod",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "odalydary",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r2",
+   "fragment": "206",
+   "herbal_page": "f32v",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "koldarod",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "odalydary",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r2",
+   "fragment": "209",
+   "herbal_page": "f53r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "koldarod",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    },
+    {
+     "word": "odalydary",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r2",
+   "fragment": "212",
+   "herbal_page": "f18v",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "koldarod",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102r2",
+   "fragment": "213",
+   "herbal_page": "f23r",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "odalydary",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102v2",
+   "fragment": "225",
+   "herbal_page": "f36r",
+   "strength": "similar",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "sarol",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  },
+  {
+   "pharma_page": "f102v1",
+   "fragment": "240",
+   "herbal_page": "f19r",
+   "strength": "same",
+   "plant": "unknown",
+   "set": "final",
+   "labels": [
+    {
+     "word": "loralody",
+     "exact": "",
+     "nearest": "",
+     "distance": ""
+    }
+   ]
+  }
+ ]
+}

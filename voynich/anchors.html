@@ -31,12 +31,17 @@
   .an-tbl th{color:var(--text);font-weight:normal}
   details.an-more{margin:0 12px 10px;font-size:13px;color:var(--muted)}details.an-more summary{cursor:pointer;color:var(--accent)}
   @media (max-width:480px){.an-card{width:calc(50% - 5px);box-sizing:border-box}.an-card>img{height:140px}}
+  .an-colour{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:8px 0 16px}
+  .an-colour figure{margin:0;padding:8px;border:1px solid #41454e;border-radius:8px;background:var(--panel)}
+  .an-colour img{display:block;width:100%;height:auto;border-radius:4px;background:#2a2620}
+  .an-colour figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.45}.an-colour figcaption b{color:var(--text)}
+  .an-colour i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
 </style>
 </head>
 <body>
 <header>
   <h1><a href="anchors.html">Voynich labels</a></h1>
-  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="meaning.html">Made up or meaningful?</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
 <div id="an-intro"><b>Do the words beside the pictures name what they show?</b> So far, repeated words give us no reliable match. Look through the single words written beside stars, zodiac women, jars, roots, and leaves. Each appears with its picture from Yale and a letter-by-letter reading in EVA, the common transcription alphabet. Click a word to find it elsewhere. The tests and Latin-letter notes follow the pictures. Pages marked <span class="an-fin">final</span> are saved for a final test and were left out of these counts.</div>
 <div id="an-found"></div>
@@ -101,6 +106,13 @@
     }
     sec('an-latin', `Notes in the Latin alphabet (${d.latin.length})`, 'Everything written in Roman letters: the month names at the zodiac centres, the owner\'s name on f1r, the notes on f17r and f116v, the colour notes under the paint. Each with whose reading it is.');
     out.insertAdjacentHTML('beforeend', tbl(['page', 'where', 'text', 'meaning', 'language', 'read by'], d.latin.map(n => [esc(n.page), esc(n.where), esc(n.text), esc(n.translation), esc(n.language), esc(n.credit)])));
+    sec('an-colour', 'The colour notes, read here', 'Seven small notes on the herbal pages, read on Yale\'s images at full size, each beside the paint over or nearest it. Three are colour words that match their paint: g under green on f1v, r beside a red root on f20r, p beside a blue flower on f32r. rot on f4r is clear but stands on a bare stem. The note on f2r is the only one in Voynich script, and it is too faint under the green paint to read letter by letter. The notes on f9v and f99v are on pages saved for the final test.');
+    out.insertAdjacentHTML('beforeend', '<div id="an-colour-cards" class="an-colour"></div>');
+    fetch('data/colour-notes.json').then(r => r.json()).then(c => {
+      const el = document.getElementById('an-colour-cards');
+      if (!el) return;
+      el.innerHTML = c.notes.map(n => `<figure><img loading="lazy" src="${esc(n.crop)}" alt="${esc(n.page)} colour note"><figcaption><b>${esc(n.page)}</b> ${esc(n.where)}<br>Reads: <b>${esc(n.reading_here)}</b> (${esc(n.sure)})<br>Paint: ${n.paint_hex ? `<i style="background:${esc(n.paint_hex)}"></i>` : ''}${esc(n.paint)} · ${esc(n.matches)}</figcaption></figure>`).join('');
+    }).catch(() => {});
     out.insertAdjacentHTML('beforeend', `<details class="an-more"><summary>Labels tied to nothing (${d.unmatched.length})</summary>${tbl(['label', 'page', 'why'], d.unmatched.map(u => [word(u.eva) + ' ' + esc(u.locus), esc(u.page), esc(u.why)]))}</details>`);
     $('an-jump').innerHTML = jump.join(' ');
   }
