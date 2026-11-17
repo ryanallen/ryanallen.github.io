@@ -44,7 +44,7 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
   const NAMES = {secure: 'Secure', likely: 'Likely', possible: 'Possible', unknown: 'Unknown'};
   const MANY = new Set(['a pharmacy jar', 'naked women', 'women each holding a star', 'stars marking paragraph starts', 'pools, tubs and pipes', 'stars, each labeled', 'stars']);
-  const KINDS = {'zodiac sign': 'Zodiac signs', creature: 'Creatures', building: 'The castle', place: 'The Rosettes', star: 'Suns, moons and stars', diagram: 'Wheels and diagrams', figure: 'Figures', object: 'Jars and objects', water: 'Pools and pipes'};
+  const KINDS = {'zodiac sign': 'Zodiac signs', creature: 'Creatures', building: 'Buildings', place: 'The Rosettes', star: 'Suns, moons and stars', diagram: 'Wheels and diagrams', figure: 'Figures', object: 'Jars and objects', water: 'Pools and pipes'};
   let data;
   try { data = await (await fetch('data/drawings.json')).json(); } catch (e) { $('out').textContent = 'The drawings did not load: ' + e.message; return; }
   function draw() {
