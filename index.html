@@ -95,7 +95,7 @@
   .hero { position: relative; overflow: hidden; }
   .lockup::before { content: ""; position: absolute; left: -30%; right: -30%; top: 62%; height: 80%; pointer-events: none;
     background: radial-gradient(closest-side, rgba(242,241,237,.07), transparent); }
-  #logo { width: min(86vw, 1200px); height: auto; aspect-ratio: 560 / 260; display: block; cursor: pointer; }
+  #logo { width: min(86vw, 1200px); height: auto; aspect-ratio: 560 / 260; display: block; }
   .bar { width: min(34vw, 420px); height: 1px; margin-top: clamp(4px, 1vw, 14px);
     background: linear-gradient(90deg, transparent, var(--ink) 30%, var(--ink) 70%, transparent);
     box-shadow: 0 0 10px rgba(242, 241, 237, .35); transform: scaleX(0); opacity: 0;
@@ -1393,13 +1393,10 @@ const svg = document.getElementById('logo'), lockup = document.getElementById('l
 // The light bar and title arrive as the ink lands, this far before the end.
 const TITLE_LEAD = 0.9;
 let raf = 0, pauseLogo = null;
-// With motion enabled, the name draws, holds, undraws, and draws again.
-const HOLD = 4.5;
 function land() { lockup.classList.add('on'); nav.classList.add('on'); }
 function settleLogo() {
   cancelAnimationFrame(raf);
   pauseLogo = null;
-  clearTimeout(timer);
   onSeen = null;
   if (stopLight) { stopLight(); stopLight = null; }
   const anim = ANIMS[nextAnimation()].make(svg);
@@ -1527,7 +1524,7 @@ function swashLight() {
     addEventListener('load', watchMap, { once: true });
   else watchMap();
 }
-let timer = 0, stopLight = null;
+let stopLight = null;
 // Outside the viewport or in a hidden tab, the name's drawing and light wait.
 let heroSeen = true, onSeen = null;
 const syncHero = () => {
@@ -1543,10 +1540,7 @@ document.addEventListener('visibilitychange', syncHero);
 reducedMotion.addEventListener('change', syncHero);
 const whenSeen = f => { if (heroSeen && !document.hidden) f(); else onSeen = f; };
 function cycle() {
-  play(true, () => {
-    stopLight = swashLight();
-    timer = setTimeout(() => whenSeen(() => { if (stopLight) stopLight(); play(false, cycle); }), HOLD * 1000);
-  });
+  play(true, () => { stopLight = swashLight(); });
 }
 // ?a=<animation 0-7>&t=<seconds at site speed> holds one frame of the name;
 // ?all shows every section at rest. Both are for checking.
