@@ -1473,7 +1473,8 @@ function swashLight() {
     const active = () => !reducedMotion.matches;
     const measure = () => { heroRect = hero.getBoundingClientRect(); logoRect = svg.getBoundingClientRect(); };
     const reset = () => { lockup.style.removeProperty('--tx'); lockup.style.removeProperty('--ty');
-      grad.setAttribute('cx', 280); grad.setAttribute('cy', 40); };
+      grad.setAttribute('cx', 280); grad.setAttribute('cy', 40);
+      svg.querySelector('#prism-edge')?.removeAttribute('gradientTransform'); };
     hero.addEventListener('pointerenter', measure);
     addEventListener('resize', measure);
     hero.addEventListener('pointermove', e => { if (!active()) return; px = e.clientX; py = e.clientY; if (queued) return; queued = true;
@@ -1483,6 +1484,7 @@ function swashLight() {
         grad.setAttribute('cx', (VIEW.x + (px - logoRect.left) / logoRect.width * VIEW.w).toFixed(1));
         grad.setAttribute('cy', (VIEW.y + (py - logoRect.top) / logoRect.height * VIEW.h).toFixed(1));
         const r = heroRect, nx = (px - r.left) / r.width - .5, ny = (py - r.top) / r.height - .5;
+        svg.querySelector('#prism-edge')?.setAttribute('gradientTransform', `translate(${(nx * 48).toFixed(1)} ${(ny * 24).toFixed(1)})`);
         lockup.style.setProperty('--ty', (nx * 6).toFixed(2) + 'deg'); lockup.style.setProperty('--tx', (-ny * 4).toFixed(2) + 'deg'); }); });
     hero.addEventListener('pointerleave', () => { reset(); heroRect = logoRect = null; });
     reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) reset(); });
