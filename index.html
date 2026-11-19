@@ -330,6 +330,8 @@
   .fun .tile .stage { grid-row: 2; aspect-ratio: 16 / 9; }
   .fun .tile .stat { position: static; grid-row: 3; padding: 0 22px 20px; align-self: end; }
   .fun .tile .device.screen { width: 76%; margin-top: 0; }
+  .spacewar-art { display: grid; place-items: center; }
+  .spacewar-art img { position: relative; width: 94%; image-rendering: pixelated; filter: none; }
   .aip { position: absolute; inset: 0; display: grid; gap: 10px; align-content: start; padding: 18% 9% 0; }
   .aip-prompt { position: relative; display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px; border-radius: 999px; background: #1a1a1c;
     box-shadow: inset 0 0 0 1px rgba(159,232,232,.35), 0 0 18px rgba(159,232,232,.12); }
@@ -530,8 +532,8 @@
   </div>
 </section>
 <div id="work"></div>
-<section class="fun" id="fun" aria-label="Fun stuff">
-  <div class="words-head"><h2>Fun stuff</h2><p class="caps">Things I made to play with</p></div>
+<section class="fun" id="fun" aria-label="Independent projects">
+  <div class="words-head"><h2>Independent projects</h2><p class="caps">Games, tools, and research</p></div>
   <div class="tiles" id="funTiles"></div>
 </section>
 <section class="words" id="words" aria-label="Recommendations">
@@ -732,10 +734,12 @@ const LEAFTEXT_THEMES = ['ginger', 'amaranth', 'arabica', 'bloodleaf', 'camellia
   'fern', 'foxglove', 'github', 'goldenrod', 'halcyon', 'ivy', 'nightshade', 'pippin', 'sage'];
 const leaftextThemeImage = theme => `${M}leaftext/front-themes/${theme}.webp`;
 const ROLES = [
-  { name: 'GoDaddy', logo: ['0 0 24 24', '<path d="M17.8 5.528c-1.662-1.04-3.851-.792-5.8.436-1.95-1.228-4.138-1.475-5.8-.436-2.627 1.641-2.947 5.87-.713 9.444 1.647 2.635 4.221 4.18 6.513 4.15 2.292.03 4.867-1.514 6.513-4.15 2.234-3.574 1.914-7.803-.713-9.444m-11.106 8.69a8.6 8.6 0 0 1-1.03-2.361 6.8 6.8 0 0 1-.224-2.225c.1-1.32.638-2.349 1.514-2.897s2.037-.58 3.267-.09q.277.11.55.253a10 10 0 0 0-1.772 2.129c-1.357 2.172-1.77 4.584-1.297 6.512a9 9 0 0 1-1.008-1.322m11.642-2.361a8.6 8.6 0 0 1-1.03 2.36q-.453.722-1.01 1.323c.424-1.726.137-3.84-.901-5.822a.26.26 0 0 0-.375-.103l-3.235 2.021a.264.264 0 0 0-.084.365l.474.758c.077.124.24.162.364.085l2.097-1.31q.105.301.187.608c.201.767.277 1.515.223 2.225-.1 1.32-.637 2.348-1.513 2.896a2.960 2.960 0 0 1-1.5.434h-.066a2.960 2.960 0 0 1-1.5-.434c-.877-.548-1.414-1.576-1.514-2.897a6.8 6.8 0 0 1 .223-2.224 8.6 8.6 0 0 1 1.031-2.36 8.6 8.6 0 0 1 1.67-1.962c.6-.517 1.24-.913 1.902-1.176 1.23-.49 2.39-.457 3.267.091s1.413 1.577 1.513 2.897a6.7 6.7 0 0 1-.223 2.225"/>'], sub: 'Domain search & AI', line: 'I led design on the domain buy flow, the front door most people walk through to get to GoDaddy, and worked with teams across the site. AI naming started as a hackathon prototype a few volunteer devs and I built.',
+  { name: 'GoDaddy', logo: ['0 0 24 24', '<path d="M17.8 5.528c-1.662-1.04-3.851-.792-5.8.436-1.95-1.228-4.138-1.475-5.8-.436-2.627 1.641-2.947 5.87-.713 9.444 1.647 2.635 4.221 4.18 6.513 4.15 2.292.03 4.867-1.514 6.513-4.15 2.234-3.574 1.914-7.803-.713-9.444m-11.106 8.69a8.6 8.6 0 0 1-1.03-2.361 6.8 6.8 0 0 1-.224-2.225c.1-1.32.638-2.349 1.514-2.897s2.037-.58 3.267-.09q.277.11.55.253a10 10 0 0 0-1.772 2.129c-1.357 2.172-1.77 4.584-1.297 6.512a9 9 0 0 1-1.008-1.322m11.642-2.361a8.6 8.6 0 0 1-1.03 2.36q-.453.722-1.01 1.323c.424-1.726.137-3.84-.901-5.822a.26.26 0 0 0-.375-.103l-3.235 2.021a.264.264 0 0 0-.084.365l.474.758c.077.124.24.162.364.085l2.097-1.31q.105.301.187.608c.201.767.277 1.515.223 2.225-.1 1.32-.637 2.348-1.513 2.896a2.960 2.960 0 0 1-1.5.434h-.066a2.960 2.960 0 0 1-1.5-.434c-.877-.548-1.414-1.576-1.514-2.897a6.8 6.8 0 0 1 .223-2.224 8.6 8.6 0 0 1 1.031-2.36 8.6 8.6 0 0 1 1.67-1.962c.6-.517 1.24-.913 1.902-1.176 1.23-.49 2.39-.457 3.267.091s1.413 1.577 1.513 2.897a6.7 6.7 0 0 1-.223 2.225"/>'], sub: 'Domain search & AI', line: 'I led design on the domain buy flow and helped build AI domain search from a hackathon prototype. I also built Product Studio: agents and skills that take a ticket through research and design in Figma. Then I taught other designers how to use that workflow.',
     facts: [['Role', 'Lead UX Designer'], ['Areas', 'Search · AI · Buy Flow · Homepage · Navigation & IA · Design System · Research']],
     hero: [{ img: M + 'godaddy-aisearch-v2-web.webp', d: 'screen' }, { ui: 'aiphone', d: 'phone' }],
     tiles: [
+      { name: 'Agent Orchestration', ui: 'console', d: 'screen', stat: 'I built agents and skills around tickets, research and Figma' },
+      { name: 'Teaching Designers AI', ui: 'checks', d: 'screen', stat: 'I taught teams how to use agents in their design work' },
       { name: 'AI Domain Search', img: M + 'godaddy-aisearch-v1-web.webp', d: 'screen' },
       { name: 'GoDaddy in ChatGPT', logo: 'openai', ui: 'gpt', d: 'phone', stat: 'With OpenAI' },
       { name: 'Google UX Initiative', logo: 'google', ui: 'gsearch', d: 'screen', stat: 'With Google UX' },
@@ -749,16 +753,15 @@ const ROLES = [
       { name: 'Lease to Own', ui: 'steps', d: 'phone' },
       { name: 'Search Pattern Library', ui: 'kit', d: 'screen' },
       { name: 'User Research', ui: 'research', d: 'screen' },
-      { name: 'AI Design Tooling', ui: 'console', d: 'screen' },
       { name: 'Shipped to Production', ui: 'release', d: 'screen' },
       { name: 'Developer Tooling', ui: 'devtools', d: 'screen' },
     ] },
-  { name: 'Scholar', logo: ['0 0 64 64', '<polygon points="32.98 15.75 32 6 31.02 15.75 27.7 24.62 32 26.05 36.3 24.62 32.98 15.75"/><polygon points="26.05 32 24.62 27.7 15.75 31.02 6 32 15.75 32.98 24.62 36.3 26.05 32"/><polygon points="32.98 48.25 36.3 39.38 32 37.95 27.7 39.38 31.02 48.25 32 58 32.98 48.25"/><polygon points="58 32 49.26 31.03 40.38 27.7 38.95 32 40.38 36.3 49.26 32.97 58 32"/>'], sub: 'Blackboard', line: 'An AI study platform for college students. I led design and product from 0 to 1 and beyond.',
+  { name: 'Scholar', logo: ['0 0 64 64', '<polygon points="32.98 15.75 32 6 31.02 15.75 27.7 24.62 32 26.05 36.3 24.62 32.98 15.75"/><polygon points="26.05 32 24.62 27.7 15.75 31.02 6 32 15.75 32.98 24.62 36.3 26.05 32"/><polygon points="32.98 48.25 36.3 39.38 32 37.95 27.7 39.38 31.02 48.25 32 58 32.98 48.25"/><polygon points="58 32 49.26 31.03 40.38 27.7 38.95 32 40.38 36.3 49.26 32.97 58 32"/>'], sub: 'Blackboard', line: 'An AI study platform for college students. I led design and product from 0 to 1 and beyond, worked on early branding, and wrote agent workflows that helped the team move from design to working code.',
     facts: [['Role', 'Product Design Lead'], ['Areas', 'Research · UX · Dev · Product · Hiring']],
     heroArt: '<div class="art"><img src="media/scholar/logo-3d.png" alt="" loading="lazy" style="width:35%;left:32.5%;top:22%"><img src="media/scholar/study-flashcards-web.webp" alt="" loading="lazy" style="width:21%;left:7%;top:8%"><img src="media/scholar/study-quiz-web.webp" alt="" loading="lazy" style="width:20%;right:7%;top:6%"><img src="media/scholar/study-chat-web.webp" alt="" loading="lazy" style="width:19%;left:10%;bottom:10%"><img src="media/scholar/study-podcast-web.webp" alt="" loading="lazy" style="width:20%;right:9%;bottom:8%"></div>', hero: [],
     tiles: [
-      { name: 'Logo Design', art: '<div class="art scholar-logo-art"><img src="media/scholar/logo-3d.png" alt="" loading="lazy" style="width:42%"></div>' },
-      { name: 'Early Brand Direction', ui: 'brand', d: 'screen' },
+      { name: 'Early Branding', art: '<div class="art scholar-logo-art"><img src="media/scholar/logo-3d.png" alt="" loading="lazy" style="width:42%"></div>' },
+      { name: 'Agent Workflows', ui: 'checks', d: 'screen', stat: 'Design docs, coded prototypes, handoff and PR review' },
       { name: 'Shipped to Production', ui: 'console', d: 'screen' },
       { name: 'Tutoring', ui: 'chat', d: 'phone' },
       { name: 'Flashcards', ui: 'flashcards', d: 'phone' },
@@ -794,8 +797,8 @@ const ROLES = [
       { name: 'Glossary', ui: 'browser', d: 'window' },
       { name: 'Commits', figure: LEAFTEXT_COMMIT_COUNT.toLocaleString('en-US'), stat: 'Leaftext source' },
     ] },
-  { name: 'Transamerica', sub: 'Retirement', line: 'The system financial advisors use to send regulatory mailings. I worked it out with the outside mailing houses, built it on the design system and helped the contractor devs adopt that system.',
-    facts: [['Role', 'Lead UX Designer'], ['Areas', 'Mailings · Reports · Design System']],
+  { name: 'Transamerica', sub: 'Retirement', line: 'I designed a system for financial advisors to send regulatory mailings, worked with the outside mailing houses, and helped contractor developers adopt the design system. I also spent a lot of time training the team to use AI in their work.',
+    facts: [['Role', 'Lead UX Designer'], ['Areas', 'Mailings · Reports · Design System · AI Training']],
     hero: [{ video: M + 'transamerica-hero.mp4', poster: M + 'transamerica-hero-poster.webp', d: 'screen' }],
     tiles: [
       { name: 'Regulatory Mailings', video: M + 'transamerica-nav-send.mp4', poster: M + 'transamerica-nav-send-poster.webp', d: 'screen' },
@@ -804,6 +807,7 @@ const ROLES = [
       { name: 'Act on Behalf', ui: 'delegate', d: 'screen' },
       { name: 'Reports', ui: 'report', d: 'screen' },
       { name: 'Asset Manager', ui: 'assets', d: 'screen' },
+      { name: 'Teaching the Team AI', ui: 'checks', d: 'screen', stat: 'I trained the team to use AI in its work' },
     ] },
   { name: 'Charter', logo: ['0 0 1000.786 209.086', '<g> <polygon points="933.78,61.306 933.78,163.002 1000.786,112.168 "/> <path d="M166.332,193.412c0,8.211-6.393,15.674-15.68,15.674h-15.674V94.303 c1.825-30.536,12.928-54.874,59.314-56.534c20.063,0.252,34.621,8.229,43.223,18.29c9.219,11.989,13.173,26.885,13.173,45.62 c0,19.359-4.612,35.034-13.837,47.022c-9.219,11.68-21.048,17.517-35.492,17.517c-21.665,0-32.188-9.019-35.05-10.712 C166.31,156.553,166.332,193.412,166.332,193.412 M218.877,103.063c0-11.983-2.197-37.339-26.736-37.339 c-23.302,0-25.809,24.739-25.809,37.339c0,31.903,18.129,35.955,26.73,35.955C215.34,139.019,218.877,115.391,218.877,103.063"/> <path d="M18.341,152.741c10.387,8.87,25.986,13.294,46.782,13.294c20.184,0,35.783-4.27,46.787-12.836 c11.005-9.174,16.516-22.015,16.516-38.524c0-7.64-1.499-14.69-5.047-21.105c-3.25-5.871-8.768-11.411-15.439-14.752 c-4.234-2.112-6.811-3.033-12.018-4.636c-5.619-1.722-33.604-9.356-36.43-10.1c-15.588-3.8-25.488-8.99-25.557-18.215 c0.807-17.837,17.43-19.262,26.609-19.262c9.465,0,16.967,1.991,22.467,5.963c9.877,7.686,8.778,17.448,8.778,17.448h31.125 c-0.612-15.291-6.117-27.686-16.509-37.168C96.316,4.287,81.936,0,63.292,0c-19.88,0-35.011,4.132-45.409,12.384 C7.485,20.951,2.289,32.722,2.289,47.704c0.046,19.245,9.168,30.593,17.432,35.777c5.018,3.004,16.424,7.611,31.188,10.547 l12.4,2.701c21.506,5.242,33.85,11.881,33.466,22.53c-0.234,6.415-2.443,11.319-7.342,14.679 c-4.476,3.061-12.087,5.035-21.552,5.035c-10.713,0-19.113-2.129-25.225-6.415c-5.814-3.668-9.34-10.089-10.553-19.262H0 C0.916,130.721,7.027,143.877,18.341,152.741"/> <path d="M313.945,64.826c19.715-0.269,22.776,16.515,23.389,24.773h-46.782 C290.552,89.599,290.157,65.266,313.945,64.826 M315.325,138.676c-7.948-0.401-23.079-1.957-24.464-28.436l79.48,0.017 c0.012-0.813,0-9.528,0.023-9.54c-0.55-19.955-5.34-34.822-14.685-45.981c-10.095-11.01-24.31-16.509-42.656-16.509 c-17.419,0-31.033,5.66-40.813,16.967c-9.482,11.005-14.227,26.301-14.227,45.866c0,20.492,4.888,36.235,14.685,47.24 c9.786,11.318,23.394,16.973,40.813,16.973c14.381,0,26.301-3.508,35.777-10.547c9.477-6.724,15.943-16.543,19.309-29.391 l-27.617,0.006C336.888,136.867,326.501,139.236,315.325,138.676"/> <path d="M847.622,163.15h-31.801V84.786c0-9.036-3.715-21.208-21.666-21.208c-17.613,0-21.201,13.837-21.201,21.208 v78.365h-32.275v-71.91c0-20.893,6.197-33.66,16.365-41.946c10.072-8.212,22.965-10.907,36.184-11.525 c7.068,0,13.992,0.773,20.746,2.301c6.764,1.551,12.91,4.612,18.443,9.225c4.617-3.989,10.061-6.838,16.365-8.532 c6.295-1.683,12.814-2.958,19.59-2.993c39.359-0.206,55.154,17.814,56.465,23.594c0,0.086,0.01,101.787,0.01,101.787h-18.215 c-4.605,0-15.668-3.13-15.668-15.668V84.786c0.08-8.881-3.033-21.208-21.672-21.208c-18.449,0-21.67,13.837-21.67,21.208V163.15z" /> <path d="M457.994,125.382h30.152c0,0-8.184,39.892-53.734,39.892c-45.541,0-56.752-36.544-56.752-60.562 c0-24.012,4.264-65.037,54.982-66.474c46.863-0.704,54.588,39.898,54.588,39.898h-32.109c0,0-3.107-13.723-22.221-13.293 c-19.107,0.435-24.104,18.381-24.104,35.434c0,17.059,4.246,38.399,25.466,38.399C454.435,139.293,456.215,128.381,457.994,125.382 "/> <path d="M625.282,40.951h32.104v77.97c0,0-1.156,21.088,21.105,21.099c20.99,0.012,21.527-18.867,21.545-20.2 V56.082c0,0,1.082-15.13,15-15.13H731.7c0,0-0.018,71.727,0,72.413c-0.23,3.948,4.199,51.915-53.209,51.721 c-56.877,0-52.848-48.527-53.209-51.383V40.951z"/> <path d="M527.055,73.581h18.855l-0.018-32.144h-18.799V20.791c0-5.66-3.152-15.594-15.137-15.594h-16.509v134.858 c0,14.061,5.455,22.473,17.265,22.473c0.133,0,13.85,0.011,14.348,0.011L527.055,73.581z"/> <path d="M579.512,162.762v-62.84c0-9.167,2.129-15.897,6.422-20.178c4.275-4.28,10.844-6.426,19.719-6.426h10.541 V40.756c0,0-16.605-0.412-28.664,3.21c-7.742,2.329-14.598,5.505-20.4,10.083c-6.135,4.898-10.941,11.399-14.455,19.497 c-3.514,8.103-5.27,18.117-5.27,30.043v59.171H579.512z"/> </g>'], logoWide: true, sub: 'Spectrum', line: 'A zero-to-one app, with hardware and backend services, for older adults and the people who look after them. My manager said I was "amazing through the discovery process", so that\'s going on the website. I worked with outside vendors, VPs and teams across the company.',
     facts: [['Role', 'Lead Product Designer'], ['Areas', 'Mobile · Hardware · Backend Services · Discovery · Vendors · Leadership']],
@@ -828,12 +832,13 @@ const ROLES = [
       { name: 'Gold ADDY', logo: 'aaf', img: M + 'lexus-gold-addy-web.webp', d: 'screen', stat: 'American Advertising Federation' },
       { name: 'Interior', logo: 'lexus', video: M + 'lexus-interior.mp4', poster: M + 'lexus-interior-poster.webp', d: 'screen' },
     ] },
-  { name: 'Monsters Invade Oz', sub: 'Little Box', line: 'A mobile game. I built and led the team, and illustrated and animated its 15,000-plus assets. That\'s a lot of monsters.',
+  { name: 'Monsters Invade Oz', sub: 'Little Box', line: 'A mobile game that reached the top 10 free games on the iOS App Store. I built and led the team, and illustrated and animated its 15,000-plus assets. That\'s a lot of monsters.',
     facts: [['Role', 'Co-Founder · Game Designer'], ['Areas', 'Illustration · Motion · Game Design']],
     hero: [{ img: 'images/gdc-best-in-play.jpg', d: 'screen' }],
     tiles: [
       { name: 'Best in Play', logo: 'gdc', img: 'images/gdc-best-in-play.jpg', d: 'screen', stat: 'Game Developers Conference' },
       { name: 'Assets Drawn', figure: '15,000+', stat: 'Illustrated and animated' },
+      { name: 'Top 10 Free Games', figure: 'Top 10', stat: 'iOS App Store free games' },
     ] },
   { name: 'Dapper Gentlemen', sub: 'Studio', line: 'A studio I co-founded and ran. We made multiple #1 apps across the Apple App Store and Google Play, including the free and paid iPad charts. Ugly Meter reached #1 on both the free and paid App Store charts in every country where it was available. Our own apps were downloaded more than 30 million times in 94 countries, and I became a repeat guest on The Howard Stern Show. I am also a co-inventor on a granted U.S. patent for a wireless door lock. Clients hired us too, Microsoft, BMW, Disney and Google Ventures among them, and I worked on all of it, from the first sales call to launch.',
     facts: [['Role', 'Co-Founder · Head of Product'], ['Areas', 'Product · Design · Sales · Hiring · Client Work'], ['Clients', 'Microsoft · BMW · Disney · Google Ventures']],
@@ -868,13 +873,14 @@ const TIPS = {
     'Lease to Own': `I shaped another path to a domain someone wanted.`,
     'Search Pattern Library': `I turned recurring search patterns into shared building blocks.`,
     'User Research': `I used research to find what was getting in the way of the buy flow.`,
-    'AI Design Tooling': `I built tools to explore and test AI ideas in the product.`,
+    'Agent Orchestration': `I built Product Studio with agents and skills that take a Jira ticket through research and design in Figma.`,
+    'Teaching Designers AI': `I taught GoDaddy designers how to work with AI agents and connect them to Figma.`,
     'Shipped to Production': `I shipped GoDaddy work into the live product.`,
     'Developer Tooling': `I built tools for the developers making the product.`,
   },
   Scholar: {
-    'Logo Design': `I designed the mark that carries Scholar.`,
-    'Early Brand Direction': `I started Scholar's visual direction; another designer is evolving it now.`,
+    'Early Branding': `I worked on Scholar's early branding.`,
+    'Agent Workflows': `I wrote agent rules and skills for design docs, coded prototypes and development handoff, then reviewed the engineers' PRs against the designs.`,
     'Shipped to Production': `I took Scholar from zero to a shipped product.`,
     Tutoring: `I put help close to the moment a student gets stuck.`,
     Flashcards: `I turned study material into cards students can work through.`,
@@ -912,6 +918,7 @@ const TIPS = {
     'Act on Behalf': `I shaped a way to work for someone else without losing context.`,
     Reports: `I made reporting easier to find and read.`,
     'Asset Manager': `I gave teams a clearer place to manage their assets.`,
+    'Teaching the Team AI': `I trained the team to use AI in its work.`,
   },
   Charter: {
     'Caregiver App': `I designed for the people looking after someone else.`,
@@ -933,6 +940,7 @@ const TIPS = {
   'Monsters Invade Oz': {
     'Best in Play': `Our game was named Best in Play at GDC.`,
     'Assets Drawn': `I illustrated and animated more than 15,000 assets for the game.`,
+    'Top 10 Free Games': `Monsters Invade Oz reached the top 10 free games on the iOS App Store.`,
   },
   'Dapper Gentlemen': {
     Downloads: `Our own apps reached more than 30 million downloads in 94 countries.`,
@@ -949,6 +957,7 @@ const TIPS = {
   },
   Fun: {
     'Spacewar Live': `I brought a DOS classic into the browser to play together online.`,
+    'Voynich Research': `I trained a model to trace the manuscript, then opened the words to people for review. The research follows the pictures, writing, scribes and proposed readings.`,
     'Wallet Wars': `I made a trading game with rent due and a wallet to work with.`,
     'The Impossible Button': `I made a button that makes bad interaction design the whole joke.`,
     'System Designer': `I built a tool that grows a design system from one color.`,
@@ -1035,7 +1044,8 @@ function tile(t, role) {
   return `<article class="tile${t.logo ? ' has-logo' : ''}${t.stat ? ' has-stat' : ''}" data-motion="${motion}" aria-describedby="${tipId}"${role === 'Fun' ? '' : ' tabindex="0"'}><div class="stage">${body}</div><h3>${t.name}</h3>${t.logo ? `<img class="tile-logo" src="media/logos/${t.logo}.svg" alt="${t.logo}" loading="lazy">` : ''}${t.stat ? `<div class="stat caps">${t.stat}</div>` : ''}<p class="tile-tip" id="${tipId}">${tip}</p></article>`;
 }
 const FUN = [
-  { name: 'Spacewar Live', href: 'https://spacewarlive.com/', img: 'media/fun/spacewar.webp', d: 'screen', stat: 'A remake of the 1985 DOS Spacewar, online in your browser' },
+  { name: 'Spacewar Live', href: 'https://spacewarlive.com/', art: '<div class="art spacewar-art"><img src="media/fun/spacewar-title.png" alt="" loading="lazy"></div>', stat: 'A remake of the 1985 DOS Spacewar, online in your browser' },
+  { name: 'Voynich Research', href: '/voynich/research.html', img: 'voynich/share.jpg', d: 'screen', stat: 'I trained a model to trace it. People are checking thousands of words.' },
   { name: 'Wallet Wars', href: '/walletwars/', img: 'media/fun/walletwars.webp', d: 'screen', stat: 'A terminal crypto trading game. You found a wallet; rent is due' },
   { name: 'The Impossible Button', href: '/bad-button/', img: 'media/fun/bad-button.webp', d: 'screen', stat: 'How not to design a button. Try to click it' },
   { name: 'System Designer', href: '/system-designer/', img: 'media/fun/system-designer.webp', d: 'screen', stat: 'A whole design system from one color' },

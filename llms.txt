@@ -6,18 +6,19 @@ Ryan designs products from the first idea to production code: research, UX, AI p
 
 ## Work
 
-- [GoDaddy](https://ryanallen.com/#godaddy): Led design on the domain buy flow, the main way people get to GoDaddy, and worked with teams across the site. AI naming started as a hackathon prototype Ryan built with a few volunteer devs. Work includes AI domain search, GoDaddy in ChatGPT with OpenAI, a Google UX initiative, voice search and the add-to-cart confetti.
-- [Scholar](https://ryanallen.com/#scholar): An AI study platform for college students, from Blackboard. Ryan led design and product from 0 to 1 and beyond, including the logo, research, the roadmap, hiring and code shipped to production.
+- [GoDaddy](https://ryanallen.com/#godaddy): Led design on the domain buy flow and helped build AI domain search from a hackathon prototype. Ryan built Product Studio, using agents and skills to take a ticket through research and design in Figma, then taught other designers to use that workflow. Work also includes GoDaddy in ChatGPT with OpenAI, a Google UX initiative and voice search.
+- [Scholar](https://ryanallen.com/#scholar): An AI study platform for college students, from Blackboard. Ryan led design and product from 0 to 1 and beyond, worked on early branding, and wrote agent rules and skills for design docs, coded prototypes and development handoff. He reviewed engineers' PRs against those designs. His work also includes research, the roadmap, hiring and code shipped to production.
 - [Leaftext](https://leaftext.com/): A free, open-source desktop app for reading and writing your own files, Office and Google Workspace files included, with AI agents working inside it and agent harnesses holding them to your checks.
-- [Transamerica](https://ryanallen.com/#transamerica): The system financial advisors use to send regulatory mailings, built on the design system with outside mailing houses.
+- [Transamerica](https://ryanallen.com/#transamerica): Designed a system for financial advisors to send regulatory mailings, worked with outside mailing houses, helped contractor developers adopt the design system, and trained the team to use AI in their work.
 - [Charter / Spectrum](https://ryanallen.com/#charter): A zero-to-one app, with hardware and backend services, for older adults and the people who look after them.
 - [Lexus](https://ryanallen.com/#lexus): The Lexus IS iPad app, built by the studio team on a custom 3D engine and released on the App Store. Gold ADDY.
-- [Monsters Invade Oz](https://ryanallen.com/#monsters-invade-oz): A mobile game. Ryan built and led the team and illustrated and animated its 15,000-plus assets. GDC Best in Play.
+- [Monsters Invade Oz](https://ryanallen.com/#monsters-invade-oz): A mobile game that reached the top 10 free games on the iOS App Store. Ryan built and led the team and illustrated and animated its 15,000-plus assets. GDC Best in Play.
 - [Dapper Gentlemen](https://ryanallen.com/#dapper-gentlemen): A studio Ryan co-founded and ran. Its apps reached #1 across the Apple App Store and Google Play, including the free and paid iPad charts. Its own apps were downloaded more than 30 million times in 94 countries; clients included Microsoft, BMW, Disney and Google Ventures. Acquired by HIPO.
 
-## Fun stuff
+## Independent projects
 
 - [Spacewar Live](https://spacewarlive.com/): A remake of the 1985 DOS Spacewar, online in the browser.
+- [Voynich Research](https://ryanallen.com/voynich/research.html): Ryan trained a model to trace the Voynich manuscript. People are checking thousands of words, and the research examines its pictures, writing, scribes and proposed readings. [Trace the Voynich](https://ryanallen.com/voynich/) invites people to help correct the tracing.
 - [Wallet Wars](https://ryanallen.com/walletwars/): A terminal-style crypto trading game.
 - [The Impossible Button](https://ryanallen.com/bad-button/): How not to design a button.
 - [System Designer](https://ryanallen.com/system-designer/): A whole design system from one color.
