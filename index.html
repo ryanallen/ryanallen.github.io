@@ -82,6 +82,14 @@
   @keyframes topo-breathe { from { transform: scale(1.015); } to { transform: scale(1.075); } }
   /* The pointer is a studio key light: the ink is brightest where it points. */
   #logo path[fill="var(--ink)"] { fill: url(#keylight); }
+  .prism-flash { position: absolute; z-index: 2; width: clamp(6px, .75vw, 10px); aspect-ratio: 1; pointer-events: none;
+    background: conic-gradient(#b8e4ff, #d8c4ff, #ffd2d7, #ffeab9, #b8e4ff);
+    clip-path: polygon(50% 0, 59% 41%, 100% 50%, 59% 59%, 50% 100%, 41% 59%, 0 50%, 41% 41%);
+    filter: drop-shadow(0 0 5px rgba(190,220,255,.7)); opacity: 0;
+    animation: prism-flash 9s ease-in-out infinite; animation-play-state: paused; animation-delay: var(--delay); }
+  .hero-active .lockup.on .prism-flash { animation-play-state: running; }
+  @keyframes prism-flash { 0%, 16%, 29%, 100% { opacity: 0; transform: scale(.25) rotate(0deg); }
+    21% { opacity: .82; transform: scale(1.15) rotate(45deg); } 24% { opacity: .45; transform: scale(.8) rotate(65deg); } }
   /* The studio floor: the name stands on a dark, glossy ground with a faint reflection,
      and a soft pool of light where it meets the floor. */
   .hero { position: relative; overflow: hidden; }
@@ -487,6 +495,7 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; animation: none !important; }
     .nagare { transform: none !important; }
+    .prism-flash { opacity: 0 !important; }
     .device { opacity: 1; transform: var(--pose, rotateX(14deg) rotateY(-24deg) rotateZ(3deg)); }
     .aip-type { width: 62%; }
     .aip-card { opacity: 1; transform: none; }
@@ -531,6 +540,9 @@
     <stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#f2f1ed"/><stop offset="1" stop-color="#dedcd6"/></radialGradient></svg>
   <div class="lockup" id="lockup">
     <svg id="logo" role="img" aria-label="Ryan"></svg>
+    <span class="prism-flash" style="left:18%;top:13%;--delay:0s" aria-hidden="true"></span>
+    <span class="prism-flash" style="left:72%;top:25%;--delay:-3s" aria-hidden="true"></span>
+    <span class="prism-flash" style="left:91%;top:62%;--delay:-6s" aria-hidden="true"></span>
     <div class="bar" aria-hidden="true"></div>
     <h1 class="title" aria-label="Ryan Allen, Designer">Designer</h1>
   </div>
@@ -604,12 +616,14 @@ function scene(svg, { width = 0.9, yFrom = [496, -4] } = {}) {
   svg.innerHTML = '';
   svg.setAttribute('viewBox', `${VIEW.x} ${VIEW.y} ${VIEW.w} ${VIEW.h}`);
   const defs = el('defs', {}, svg);
+  defs.insertAdjacentHTML('beforeend', '<linearGradient id="prism-edge" gradientUnits="userSpaceOnUse" x1="0" y1="-130" x2="540" y2="80"><stop offset="0" stop-color="#b8e4ff"/><stop offset=".25" stop-color="#d8c4ff"/><stop offset=".5" stop-color="#ffd2d7"/><stop offset=".75" stop-color="#ffeab9"/><stop offset="1" stop-color="#b8e4ff"/></linearGradient>');
   const cam = el('g', {}, svg);
   const L = {};
   for (const ch of 'Ryan') {
     const g = el('g', {}, cam);
     const fillWrap = el('g', {}, g);
-    const fill = el('path', { d: FILLS[ch], fill: 'var(--ink)', 'fill-rule': 'evenodd', 'fill-opacity': 0 }, fillWrap);
+    const fill = el('path', { d: FILLS[ch], fill: 'var(--ink)', 'fill-rule': 'evenodd', 'fill-opacity': 0,
+      stroke: 'url(#prism-edge)', 'stroke-width': 1.25, 'stroke-linejoin': 'round', 'stroke-opacity': 0, 'paint-order': 'stroke fill' }, fillWrap);
     const lines = SHAPES[ch].map((d, i) => {
       const pts = ch === 'y' && i === 0 ? startNear(d, yFrom) : pointsOf(d);
       const fwd = el('path', { d: ringD(pts) }, g), back = el('path', { d: ringD(pts.slice().reverse()) }, g);
@@ -636,13 +650,14 @@ function scene(svg, { width = 0.9, yFrom = [496, -4] } = {}) {
       });
     },
     fade(ch, u) { for (const pair of L[ch].lines) for (const p of pair) p.setAttribute('stroke-opacity', 1 - u); },
-    ink(ch, u) { L[ch].fill.setAttribute('fill-opacity', u); },
+    ink(ch, u) { L[ch].fill.setAttribute('fill-opacity', u); L[ch].fill.setAttribute('stroke-opacity', u * .72); },
     // ink that rises up the letter from below instead of fading in
     risingInk(ch, from) {
       const id = 'r' + (uid++), l = L[ch];
       const r = el('rect', { x: l.x0 - 30, width: l.x1 - l.x0 + 60, y: from, height: 0 }, el('clipPath', { id }, defs));
       l.fillWrap.setAttribute('clip-path', `url(#${id})`);
       l.fill.setAttribute('fill-opacity', 1);
+      l.fill.setAttribute('stroke-opacity', .72);
       const top = Math.min(l.top, from) - 4;
       return u => { const h = (from - top) * u; r.setAttribute('y', from - h); r.setAttribute('height', h); };
     },
@@ -1444,17 +1459,22 @@ function swashLight() {
   const fine = matchMedia('(pointer: fine)').matches;
   // Key light and tilt follow the pointer, one update per frame at most.
   if (fine) {
-    let px = 0, py = 0, queued = false;
+    let px = 0, py = 0, queued = false, heroRect = null, logoRect = null;
     const active = () => !reducedMotion.matches;
+    const measure = () => { heroRect = hero.getBoundingClientRect(); logoRect = svg.getBoundingClientRect(); };
     const reset = () => { lockup.style.removeProperty('--tx'); lockup.style.removeProperty('--ty');
       grad.setAttribute('cx', 280); grad.setAttribute('cy', 40); };
+    hero.addEventListener('pointerenter', measure);
+    addEventListener('resize', measure);
     hero.addEventListener('pointermove', e => { if (!active()) return; px = e.clientX; py = e.clientY; if (queued) return; queued = true;
       requestAnimationFrame(() => { queued = false;
         if (!active()) return;
-        const m = svg.getScreenCTM(); if (m) { const p = new DOMPoint(px, py).matrixTransform(m.inverse()); grad.setAttribute('cx', p.x.toFixed(1)); grad.setAttribute('cy', p.y.toFixed(1)); }
-        const r = hero.getBoundingClientRect(), nx = (px - r.left) / r.width - .5, ny = (py - r.top) / r.height - .5;
+        if (!heroRect || !logoRect) measure();
+        grad.setAttribute('cx', (VIEW.x + (px - logoRect.left) / logoRect.width * VIEW.w).toFixed(1));
+        grad.setAttribute('cy', (VIEW.y + (py - logoRect.top) / logoRect.height * VIEW.h).toFixed(1));
+        const r = heroRect, nx = (px - r.left) / r.width - .5, ny = (py - r.top) / r.height - .5;
         lockup.style.setProperty('--ty', (nx * 6).toFixed(2) + 'deg'); lockup.style.setProperty('--tx', (-ny * 4).toFixed(2) + 'deg'); }); });
-    hero.addEventListener('pointerleave', reset);
+    hero.addEventListener('pointerleave', () => { reset(); heroRect = logoRect = null; });
     reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) reset(); });
   }
   // Draw the contours once per size change. The canvas moves as one layer.
