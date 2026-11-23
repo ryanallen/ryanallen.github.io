@@ -37,7 +37,9 @@
   <a class="all" id="all" href="glyph-map/glyph-map.zip" download>Download everything (zip)</a>
   <p class="small" id="made"></p>
 
-  <div class="warn"><b>Most of this is machine work.</b> Only words marked <b>owner-traced</b> or <b>owner-answered</b> have been checked by a person, me. AI or the text reader placed the rest, and no one has checked it yet, so treat it as a draft. Every word and letter has a <code>trust</code> column to filter on. The tracing is still going, and I remake this download as it does.</div>
+  <p class="lead">The tracing is shared work. Volunteers on the <a href="./">tracing site</a> trace words letter by letter, and I check every tracing, fix what's wrong and trace the rest by hand. <span id="thanks">Thank you to everyone who traces.</span></p>
+
+  <div class="warn"><b>Most of this is machine work.</b> Only words marked <b>owner-traced</b> or <b>owner-answered</b> have been checked by a person. Many of those were traced by volunteers, then checked and fixed by me. AI or the text reader placed the rest, and no one has checked it yet, so treat it as a draft. Every word and letter has a <code>trust</code> column to filter on. The tracing is still going, and I remake this download as it does.</div>
 
   <h2>How far to trust each letter</h2>
   <div class="wrap"><table class="trust"><thead><tr><th>Trust</th><th class="n">Words</th><th class="n">Letters</th><th>What it means</th></tr></thead><tbody id="trust"></tbody></table></div>
@@ -52,7 +54,7 @@
 
   <h2>What's in it</h2>
   <p class="small"><code>words.tsv</code> has one row per word: its ID in the Zandbergen–Landini transliteration (ZL 3b), its reading in EVA (the standard alphabet for typing Voynich letters), trust, word box and the box round its traced ink. <code>letters.tsv</code> has one row per letter, with its box and center. <code>masks/&lt;page&gt;.npz</code> holds every traced pixel, with its word and letter. <code>pages.tsv</code> links each of Yale's images. Coordinates are pixels of Yale's full-size JPEGs. No images are included; fetch them from Yale. The README in each zip gives every field and a short Python example.</p>
-  <p class="small">Free to use under CC BY 4.0. Please credit “Ryan Allen, Voynich glyph map, ryanallen.com/voynich”. The transliteration is ZL 3b (CC0), the word boxes come from the Voynichese project (Apache 2.0), and the manuscript is Beinecke MS 408, Yale University. <span id="credits"></span> <a href="./">Trace a few letters</a> to help.</p>
+  <p class="small">Free to use under CC BY 4.0. Please credit “Ryan Allen, Voynich glyph map, ryanallen.com/voynich”. The transliteration is ZL 3b (CC0), the word boxes come from the Voynichese project (Apache 2.0), and the manuscript is Beinecke MS 408, Yale University. <a href="./">Trace a few letters</a> to help.</p>
 </main>
 <script>
 (function () {
@@ -63,7 +65,7 @@
   fetch("glyph-map/index.json").then(function (r) { return r.json(); }).then(function (d) {
     document.getElementById("all").textContent = "Download everything (zip, " + mb(d.zip_bytes) + ")";
     document.getElementById("made").textContent = d.words.toLocaleString() + " words and " + d.letters.toLocaleString() + " letters on " + d.pages.length + " pages. Made " + d.made + ".";
-    if (d.credits) document.getElementById("credits").textContent = "Tracers on the site who asked to be named: " + d.credits + ".";
+    if (d.credits) document.getElementById("thanks").textContent = "Thank you to everyone who traces, and by name to " + d.credits + ".";
     var tb = document.getElementById("trust");
     d.trust.forEach(function (t) {
       var tr = el("tr");
