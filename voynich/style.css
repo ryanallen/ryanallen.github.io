@@ -4,6 +4,7 @@ html,body{height:100%}
 body{margin:0;font:14px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column}
 section{display:flex;flex-direction:column;flex:1;min-height:0}
 section[hidden]{display:none}
+section.near,section.ring69,section.rosmap{display:block;flex:none;min-height:auto}
 a{color:#dbe3ec}
 header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:5px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
 h1{font-size:16px;margin:0}h1 a{text-decoration:none;color:var(--text)}
@@ -29,6 +30,7 @@ button.primary{background:var(--accent);color:#171a20;border-color:var(--accent)
 button.link{background:none;border:none;color:#dbe3ec;text-decoration:underline;padding:0;min-height:0}
 #ask{font-size:15px}
 #ask-text{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+#maybe{display:inline-flex;align-items:center;gap:3px;flex-wrap:wrap}#maybe[hidden]{display:none}#maybe .hint{margin-right:4px}#maybe button{padding:1px 7px;min-width:26px;font-family:ui-monospace,monospace}
 .ask-what{color:var(--muted);font-size:13px}
 .tiles{display:inline-flex;align-items:center;flex-wrap:wrap;row-gap:6px;padding-top:4px}
 .tile{position:relative;display:inline-flex}

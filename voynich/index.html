@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Trace the Voynich">
 <meta name="twitter:description" content="Help fix the AI's tracing of a book no one can read, one letter at a time.">
 <meta name="twitter:image" content="https://ryanallen.com/voynich/share.jpg">
-<link rel="stylesheet" href="style.css?v=bf23b7e919">
+<link rel="stylesheet" href="style.css?v=c2054f6ac6">
 </head>
 <body>
 <header>
@@ -34,6 +34,8 @@
   <div class="bar" id="ask">
     <span id="ask-text"></span>
     <label>It's <select id="name"></select></label>
+    <button id="unsure" title="You can't tell which letter this is: mark it ? and pick the letters it could be, likeliest first">Not sure</button>
+    <span id="maybe" hidden></span>
     <button id="remove-letter" title="Take this letter out of the word, with its pixels (Undo puts it back)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>Delete letter</button>
     <select id="stack" title="Letters written over one another as one shape, like the bench in c+t+h"><option value="">Stack</option></select>
     <select id="break" title="This is really two words: mark where one ends and the next begins"><option value="">Two words?</option></select>
@@ -85,6 +87,7 @@
   <p>No one has read the Voynich manuscript. A computer has traced its letters, pixel by pixel, but it makes mistakes. You check them, one letter at a time.</p>
   <ul>
     <li>The letter to check is in bright color; the rest of the word is faint. Paint over its ink with the brush, and erase what isn't its ink. Shift-click draws a straight line from where your last stroke ended. Hold H (or press Hide) to see the page underneath, and U shows the UV scan on pages that have one. The turn buttons rotate the word and tracing together in 15° steps or by 180°; 0° returns to the scan's orientation. [ and ] make the brush smaller and bigger. Esc goes back to the page, and from a page to the list of pages.</li>
+    <li>If you can't tell which letter it is, press Not sure. The letter becomes ?, and you pick every letter it could be, likeliest first (a or o, say). Ryan tests each one.</li>
     <li>If it is a different letter, pick it under "It's". The word's letters are listed at the top: click one to go to it, a + between them to add a letter the reading left out, or the × on the outlined one (or Delete letter) to take it out. Undo puts it back. Examples of each letter from other pages are shown, and so is every version of this letter: the computer's and other people's.</li>
     <li>When the letter is right, press the button and the next one comes. Your work saves as you go; there is nothing to send.</li>
     <li>One person's check of a letter is enough: it goes to Ryan, who reviews every tracing, and a word is done once Ryan approves it. When every letter has been checked once, words come round again for a second, independent check. Missing words can be added from a page: "+ Add a missing word".</li>
@@ -119,7 +122,7 @@
   <p id="wrong-status" class="hint">Ryan reviews it. The word stays approved until then.</p>
   <div class="row"><button id="wrong-go" class="primary">Continue</button> <button id="wrong-close">Cancel</button></div>
 </dialog>
-<script src="search.js?v=3f321833ee"></script>
-<script src="app.js?v=bf23b7e919"></script>
+<script src="search.js?v=6f01425e69"></script>
+<script src="app.js?v=c2054f6ac6"></script>
 </body>
 </html>

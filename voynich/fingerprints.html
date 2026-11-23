@@ -4,27 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Voynich language comparisons</title>
-<meta name="description" content="Compare the Voynich text with eight languages, a cipher, and generated text. No tested language comes close.">
+<meta name="description" content="Does any language have the Voynich's habits? No. Nothing here is a translation: every language tested sits over twice as far from the Voynich as its own pages sit from each other.">
 <link rel="stylesheet" href="style.css">
 <style>
-  #intro{padding:8px 12px;color:var(--muted);font-size:14px;max-width:900px}#intro b{color:var(--text)}
-  #finding{margin:6px 12px 10px;padding:8px 12px;border-left:3px solid var(--accent);max-width:880px;font-size:14px;color:var(--text)}
-  #finding p{margin:4px 0}
-  h2.sec{font-size:17px;margin:20px 12px 6px;color:var(--text)}
-  .rank{padding:0 12px;max-width:900px}
-  .rrow{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin:3px 0}
-  .rrow .name{width:300px;flex:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)}
-  .rrow .track{flex:1;height:12px;background:#ffffff10;border-radius:3px;overflow:hidden}
-  .rrow .fill{display:block;height:12px}
-  .lang{background:#4a6fa5}.gen{background:#8a8f98}.ciph{background:#b5523b}
-  .rrow .d{width:40px;flex:none;text-align:right;font-variant-numeric:tabular-nums}
-  .key{padding:2px 12px;font-size:12px;color:var(--muted)}.key i{display:inline-block;width:10px;height:10px;margin:0 3px 0 10px;vertical-align:middle;border-radius:2px}
-  .gmeta{padding:0 12px 6px;font-size:13px;color:var(--muted);max-width:900px}
+  main{max-width:900px;padding:0 12px 40px}
+  .lead{font-size:22px;line-height:1.3;margin:16px 0 6px;color:var(--text)}
+  .notkey{display:inline-block;margin:4px 0 10px;padding:6px 10px;border:1px solid #b5523b;border-radius:6px;color:var(--text);font-size:14px;background:#b5523b22}
+  #finding p{margin:8px 0;font-size:15px;line-height:1.5;color:var(--text)}
+  h2.sec{font-size:18px;margin:28px 0 4px;color:var(--text)}
+  .sub{font-size:14px;color:var(--muted);margin:0 0 10px;line-height:1.5}
+  .how{margin:14px 0;padding:10px 12px;background:var(--panel);border-radius:8px;font-size:14px;line-height:1.5;color:var(--muted)}
+  .how b{color:var(--text)}
+  .how .ends{display:flex;justify-content:space-between;font-size:13px;margin-top:6px;color:var(--text)}
+  .chart{margin:6px 0}
+  .row{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr) 44px;gap:10px;align-items:center;padding:5px 0;border-bottom:1px solid #ffffff0d}
+  .row .name{font-size:14px;color:var(--text);line-height:1.3}
+  .row .name small{display:block;font-size:12px;color:var(--muted)}
+  .track{position:relative;height:18px}
+  .track .axis{position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line)}
+  .track .band,.scale .band{position:absolute;top:0;bottom:0;background:#3f9d5a33;border-left:1px solid #3f9d5a;border-right:1px solid #3f9d5a}
+  .track .dot{position:absolute;top:3px;width:12px;height:12px;margin-left:-6px;border-radius:50%}
+  .track .off{position:absolute;right:0;top:0;font-size:12px;color:var(--muted)}
+  .lang{background:#5b8fd6}.fake{background:#8a8f98}.ciph{background:#d0703f}
+  .row .d{font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+  .scale{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr) 44px;gap:10px;font-size:12px;color:var(--muted);margin-top:2px}
+  .scale .ticks{position:relative;height:30px}
+  .scale .ticks span{position:absolute;top:0;transform:translateX(-50%)}
+  .scale .ticks .band{top:16px;bottom:auto;height:12px;border:none;background:none;color:#6fc488;white-space:nowrap;transform:none}
+  .toggle{margin:8px 0;font-size:14px;color:var(--text)}
+  .toggle input{margin-right:6px}
+  .gmeta{font-size:14px;color:var(--muted);line-height:1.5;margin:4px 0 8px}
   .gmeta b{color:var(--text)}.gmeta summary{cursor:pointer;color:var(--accent)}
-  .pages{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px}
+  .pages{display:flex;flex-wrap:wrap;gap:6px}
   .pg{width:96px;font-size:11px;color:var(--muted);text-align:center}
   .pg img{width:96px;height:128px;object-fit:contain;background:#2a2620;border-radius:4px;display:block}
-  @media (max-width:480px){.rrow .name{width:140px}.pg{width:calc(25% - 5px)}.pg img{width:100%;height:100px}}
+  @media (max-width:560px){
+    .row,.scale{grid-template-columns:minmax(0,1fr) 40px}
+    .row .name,.scale .blank{grid-column:1 / -1}
+    .scale .blank{display:none}
+    .pg{width:calc(25% - 5px)}.pg img{width:100%;height:100px}
+  }
 </style>
 </head>
 <body>
@@ -32,44 +51,85 @@
   <h1><a href="fingerprints.html">Voynich language comparisons</a></h1>
   <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="meaning.html">Made up or meaningful?</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
 </header>
-<div id="intro"><b>No tested language comes close to the Voynich text.</b> We compared its letters, words, word order, and predictability with eight languages a writer in the Alps around 1400 might have known. We also tested abbreviated forms, missing vowels, syllable writing, a cipher, and text made by rules. A shorter bar means a closer match. The bars start near the best score so you can see the gaps. These results use 187 working pages; the test pages are saved for a final check.</div>
+<main>
+<p class="lead">Does any language have the Voynich's habits? No.</p>
+<div class="notkey">Nothing on this page cracks the code. No row is a translation, and the closest rows are fakes.</div>
 <div id="finding"></div>
-<h2 class="sec">Closest matches first</h2>
-<div class="key"><i class="lang"></i>a language<i class="ciph"></i>a cipher<i class="gen"></i>generated text</div>
-<div class="rank" id="rank">Loading…</div>
-<h2 class="sec">How the manuscript pages group</h2>
-<div class="gmeta">We grouped pages by common letters and word lengths, without telling the test which scribe or subject each page belongs to. The three groups broadly follow the scribes.</div>
+
+<div class="how">
+  <b>How to read the charts.</b> Each dot is one text. Its distance from the left edge is how different its habits are from the Voynich's. The <b style="color:#6fc488">green band</b> is where the Voynich lands against its own pages. A language would need a dot in the green band before it's worth trying to read the Voynich in it, and even then it would only be a lead. No language gets there.
+  <div class="ends"><span>← same habits as the Voynich</span><span>different habits →</span></div>
+</div>
+
+<h2 class="sec">Real languages</h2>
+<p class="sub">Eight languages a writer in the Alps around 1400 might have known, each from a real text of the period. The nearest is still more than twice as far as the green band.</p>
+<label class="toggle"><input type="checkbox" id="forms">Also show each text rewritten in medieval shorthand, without vowels, or as syllables</label>
+<div class="chart" id="langs">Loading…</div>
+
+<h2 class="sec">Fakes built to look like the Voynich</h2>
+<p class="sub">These are here as a check on the test. Most are made from the Voynich's own letters and words, so of course they land close. None of them means anything, and none is a key.</p>
+<div class="chart" id="fakes"></div>
+
+<h2 class="sec">Do the pages split into groups?</h2>
+<p class="gmeta">We sorted the pages by their most common letters and word lengths, without telling the test who wrote each page or what it's about. Three groups came out, and they mostly follow the <a href="hands.html">scribes</a>. They don't point to a language.</p>
 <div id="groups"></div>
+
+<p class="gmeta" style="margin-top:24px">These results use 187 working pages; the test pages are saved for a final check.</p>
+</main>
 <script>
 (async () => {
   'use strict';
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
   let d;
-  try { d = await (await fetch('data/fingerprints.json')).json(); } catch (e) { $('rank').textContent = 'The language comparisons did not load: ' + e.message; return; }
+  try { d = await (await fetch('data/fingerprints.json')).json(); } catch (e) { $('langs').textContent = 'The language comparisons did not load: ' + e.message; return; }
   $('finding').innerHTML = d.finding.map(f => `<p>${esc(f)}</p>`).join('');
-  const max = Math.max(...d.ranking.map(r => r.distance)), min = Math.min(...d.ranking.map(r => r.distance)) * 0.8;
-  const cls = r => r.language === 'generated' ? 'gen' : r.language.startsWith('Naibbe') ? 'ciph' : 'lang';
+  const MAX = 4.5;
+  const self = d.self || {low: 0.49, high: 1.0};
+  const pos = v => (100 * Math.min(v, MAX) / MAX).toFixed(1);
+  const band = `<span class="band" style="left:${pos(self.low)}%;width:${(pos(self.high) - pos(self.low)).toFixed(1)}%"></span>`;
   const texts = {
-    'generated: self-citation text (Timm and Schinner)': 'Timm and Schinner: generated Voynich-like text',
-    'generated: words shuffled': 'Voynich words shuffled',
-    'generated: last sign drawn at random (u/whiteapplex)': 'Voynich words with random endings',
-    'cipher-naibbe-pliny': 'Naibbe cipher on Pliny',
-    'latin-macer': "Macer's Latin herbal poem",
-    'italian-erbario': 'The Italian Erbario',
-    'latin-trotula': "The Latin Trotula",
-    'czech-dalimil': 'The Czech Dalimil Chronicle',
-    'hebrew-tanakh': 'The Hebrew Bible',
-    'greek-nt': 'The Greek New Testament',
-    'french-menagier': 'The French Menagier',
-    'italian-ricette': 'Italian recipes',
-    'latin-naibbe-plain': 'Latin source text for the Naibbe cipher',
-    'latin-alchemical-herbal': 'A Latin alchemical herbal',
-    'german-guter-spise': 'The German Guter Spise'
+    'latin-macer': ["Macer's herbal poem", 'Latin, plant verse'],
+    'italian-erbario': ['The Erbario', 'Northern Italian and Latin, plant notes'],
+    'latin-trotula': ['The Trotula', "Latin, women's medicine"],
+    'czech-dalimil': ['The Dalimil Chronicle', 'Czech, verse history'],
+    'hebrew-tanakh': ['The Hebrew Bible', 'Hebrew, scripture'],
+    'greek-nt': ['The Greek New Testament', 'Greek, scripture'],
+    'french-menagier': ['The Ménagier de Paris', 'French, household book'],
+    'italian-ricette': ['LVII Ricette', 'Tuscan Italian, recipes'],
+    'latin-alchemical-herbal': ['The Alchemical Herbal', 'Latin, plant notes'],
+    'latin-naibbe-plain': ["Pliny's book on trees", 'Latin, natural history'],
+    'german-guter-spise': ['Daz buoch von guoter spise', 'German, recipes'],
+    'arabic-quran': ["The Qur'an", 'Arabic, scripture']
   };
-  const forms = {abbreviated: 'abbreviated', 'vowels-out': 'vowels removed', cappelli: 'in real scribal abbreviation'};
-  const label = r => (texts[r.text] || r.text) + (forms[r.form] ? ` (${forms[r.form]})` : '');
-  $('rank').innerHTML = d.ranking.map(r => `<div class="rrow"><span class="name" title="${esc(label(r))}">${esc(label(r))}</span><span class="track"><span class="fill ${cls(r)}" style="width:${(100 * (r.distance - min) / (max - min)).toFixed(1)}%"></span></span><span class="d">${r.distance.toFixed(2)}</span></div>`).join('');
+  const fakes = {
+    'generated: self-citation text (Timm and Schinner)': ['Imitation program (Timm and Schinner)', 'Writes gibberish by copying and tweaking nearby Voynich words. Meaningless by design.'],
+    'generated: words shuffled': ["The Voynich's own words, shuffled", 'Same words, random order.'],
+    'cipher-naibbe-pliny': ['Naibbe cipher (Greshko, 2025)', "Hides Pliny's Latin in Voynich-looking text. Shows a cipher can come near; it isn't the Voynich's key."],
+    'generated: last sign drawn at random (u/whiteapplex)': ['The Voynich with scrambled word endings', "Each word's last letter swapped at random."],
+    'generated: grille of stems and endings': ['Random Voynich word parts', 'Word starts and endings stuck together at random.'],
+    'generated: signs at their frequencies': ['Random Voynich letters', "Picked in the Voynich's own proportions."],
+    'generated: uniform signs': ['Random Voynich letters, all equally likely', 'Pure noise.']
+  };
+  const forms = {abbreviated: 'simple shortening', cappelli: 'medieval shorthand', 'vowels-out': 'vowels removed', syllabary: 'written as syllables'};
+  const row = (name, small, cls, v) => `<div class="row"><div class="name">${esc(name)}<small>${esc(small)}</small></div><div class="track"><span class="axis"></span>${band}<span class="dot ${cls}" style="left:${pos(v)}%"></span>${v > MAX ? '<span class="off">off the chart →</span>' : ''}</div><div class="d">${v.toFixed(2)}</div></div>`;
+  const ticks = [0, 1, 2, 3, 4].map(t => `<span style="left:${pos(t)}%">${t}</span>`).join('');
+  const scale = `<div class="scale"><span class="blank"></span><div class="ticks">${ticks}<span class="band" style="left:${pos(self.low)}%">↑ Voynich vs itself</span></div><span></span></div>`;
+  const isFake = r => r.language === 'generated' || r.text.startsWith('cipher');
+  const drawLangs = () => {
+    const all = $('forms').checked;
+    $('langs').innerHTML = d.ranking.filter(r => !isFake(r) && (all || r.form === 'plain')).map(r => {
+      const [name, about] = texts[r.text] || [r.text, r.language];
+      return row(forms[r.form] ? `${name} (${forms[r.form]})` : name, about, 'lang', r.distance);
+    }).join('') + scale;
+  };
+  $('forms').addEventListener('change', drawLangs);
+  drawLangs();
+  $('fakes').innerHTML = d.ranking.filter(isFake).map(r => {
+    const [name, about] = fakes[r.text] || [r.text, ''];
+    return row(name, about, r.text.startsWith('cipher') ? 'ciph' : 'fake', r.distance);
+  }).join('') + scale;
+
   const out = $('groups');
   const counts = (raw, names = {}) => raw.split(' ').map(part => {
     const [key, count] = part.split(':');
@@ -83,8 +143,8 @@
     const currier = counts(g.currier, {'-': 'unclassified'}).sort((a, b) => b[1] - a[1]);
     const [main, n] = currier[0];
     const mix = n === g.pages.length ? `All pages are Currier ${main}` : n / g.pages.length >= 0.75 ? `Mostly Currier ${main} (${n} of ${g.pages.length})` : 'Mixed Currier groups';
-    const nearest = g.nearest.replace(/([a-z]+(?:-[a-z]+)+) \(([^)]+)\)/g, (_, id, form) => `${texts[id] || id} (${forms[form] || form})`);
-    m.innerHTML = `<b>${esc(mix)}.</b> <details><summary>Earlier labels, subjects, and closest texts</summary>Currier groups: ${esc(describe(currier))}. Davis's proposed scribe labels: ${esc(describe(counts(g.hand, {'@': 'mixed'})))}. Subjects: ${esc(describe(counts(g.section, subjects)))}. Closest texts: ${esc(nearest)}.</details>`; out.append(m);
+    const nearest = g.nearest.replace(/([a-z]+(?:-[a-z]+)+) \(([^)]+)\)/g, (_, id, form) => `${(texts[id] || [id])[0]}${forms[form] ? ' (' + forms[form] + ')' : ''}`);
+    m.innerHTML = `<b>${esc(mix)}.</b> Currier A and B are the two writing styles Prescott Currier told apart in the 1970s. <details><summary>Who wrote these pages and what they're about</summary>Currier styles: ${esc(describe(currier))}. Davis's proposed scribes: ${esc(describe(counts(g.hand, {'@': 'mixed'})))}. Subjects: ${esc(describe(counts(g.section, subjects)))}. Nearest languages for this group alone, none as close as the Voynich's pages are to each other:${esc(nearest)}.</details>`; out.append(m);
     const p = document.createElement('div'); p.className = 'pages'; out.append(p);
     p.innerHTML = g.pages.map(x => `<div class="pg"><img loading="lazy" alt="${esc(x.page)}" src="${esc(x.iiif)}/${esc(x.region)}/!150,200/0/default.jpg">${esc(x.page)}</div>`).join('');
   }

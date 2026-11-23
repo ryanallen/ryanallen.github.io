@@ -206,13 +206,42 @@
     const current = L.reading[L.k - 1];
     for (const n of all.includes(current) ? all : [current, ...all]) {
       const o = document.createElement('option');
-      o.value = n; o.textContent = n;
+      o.value = n; o.textContent = n === '?' ? '? not sure' : n;
       sel.append(o);
     }
     sel.value = current;
   }
 
+  // A letter the visitor cannot tell is named ?, with the letters it could be, likeliest first.
+  // L.guess runs beside L.reading: the list at each ?, null at every other letter. It is saved
+  // with the version as {letter number: [names]} (POST /api/trace, guesses) for the owner to test each.
+  const PLAIN = /^[a-z]$/;
+  function alignGuess() { L.guess = L.reading.map((n, i) => n === '?' ? ((L.guess && L.guess[i]) || []) : null); }
+  const guessIn = (reading, o) => reading.map((n, i) => n === '?' ? ((o && o[i + 1]) || []).slice() : null);
+  function guessesOut() {
+    const o = {};
+    (L.guess || []).forEach((g, i) => { if (L.reading[i] === '?' && g && g.length) o[i + 1] = g.slice(0, 8); });
+    return o;
+  }
+  async function maybe() {
+    const box = $('maybe'), k = L.k, open = L.reading[k - 1] === '?';
+    $('unsure').hidden = open || locked();
+    box.hidden = !open;
+    if (!open) return;
+    let all = [];
+    try { all = Object.keys(await examples()).filter(n => PLAIN.test(n)).sort(); } catch { /* the plain letters are offered once examples load */ }
+    if (!L.word || L.k !== k || L.reading[k - 1] !== '?') return;
+    const picked = L.guess[k - 1] || [], esc = n => n.replace(/[&<>"]/g, ch => `&#${ch.charCodeAt(0)};`);
+    box.innerHTML = `<span class="hint">${picked.length ? 'Could be' : 'Could be (pick each one, likeliest first)'}</span>`
+      + [...picked, ...all.filter(n => !picked.includes(n))].map(n => {
+        const at = picked.indexOf(n);
+        return `<button class="${at >= 0 ? 'on' : ''}" data-n="${esc(n)}" title="${at >= 0 ? `Guess ${at + 1}: press to take it away` : `It could be ${esc(n)}`}"${locked() ? ' disabled' : ''}>${at >= 0 ? `${at + 1}·` : ''}${esc(n)}</button>`;
+      }).join('');
+  }
+
   function ask() {
+    alignGuess();
+    maybe();
     // the word as a row of letter tiles in their paint colors: click a tile to go to that letter,
     // the round + between tiles to add a letter there, the red × on the open tile to delete it
     const esc = n => n.replace(/[&<>"]/g, ch => `&#${ch.charCodeAt(0)};`);
@@ -457,7 +486,11 @@
           if (v.labels[i] === k) L.labels[i] = k;
         }
         L.start = v;
-        if (v.reading[k - 1] !== undefined && v.reading.length === L.reading.length) L.reading[k - 1] = v.reading[k - 1];
+        if (v.reading[k - 1] !== undefined && v.reading.length === L.reading.length) {
+          alignGuess();
+          L.reading[k - 1] = v.reading[k - 1];
+          L.guess[k - 1] = L.reading[k - 1] === '?' ? ((v.guesses || {})[k] || L.guess[k - 1] || []).slice() : null;
+        }
         changed(); drawWord(); versionStrip(); names(); ask(); examplesFor(L.reading[k - 1]);
       };
     }
@@ -493,7 +526,7 @@
       if (second && !v.mine) continue;
       const labels = grids[j];
       const item = { label: v.mine ? 'Yours' : v.approved ? 'Approved' : `Person ${++n}`, labels, grid0: labels, crop0: v.crop || box,
-        reading: v.reading, checked: v.checked, approved: v.approved, retraced: v.retraced };
+        reading: v.reading, checked: v.checked, approved: v.approved, retraced: v.retraced, guesses: v.guesses || {} };
       if (v.mine) mine = item;
       versions.push(item);
     }
@@ -520,6 +553,8 @@
       for (const v of versions) v.labels = reframe(v.grid0, v.crop0, frame);
       L.labels = draft ? Uint8Array.from(draft.labels) : base.labels.slice();
       L.reading = draft ? draft.reading : base.reading.slice();
+      L.guess = draft ? draft.guess || null : guessIn(L.reading, base.guesses);
+      alignGuess();
       L.checked = draft ? draft.checked : (mine && base === mine ? mine.checked.slice() : []);
       L.start = base;
       L.undo = [];
@@ -674,7 +709,7 @@
 
   function changed() {
     L.changed = true; L.dirty = true;
-    store.set('voynich-draft:' + L.word.id, JSON.stringify({ labels: Array.from(L.labels), reading: L.reading, checked: L.checked, crop: boxOf(L.word) }));
+    store.set('voynich-draft:' + L.word.id, JSON.stringify({ labels: Array.from(L.labels), reading: L.reading, guess: L.guess, checked: L.checked, crop: boxOf(L.word) }));
     say('Saving soon…'); marks();
     clearTimeout(L.timer);
     L.timer = setTimeout(save, 2000);
@@ -720,6 +755,7 @@
   function unchanged() {
     const a = L.labels, b = L.start && L.start.labels;
     if (L.add || !b || a.length !== b.length || L.reading.join() !== L.start.reading.join() || !sameBox(boxOf(L.word), L.loadFrame)) return false;
+    if (JSON.stringify(guessesOut()) !== JSON.stringify(L.start.guesses || {})) return false;
     for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
     return true;
   }
@@ -732,6 +768,8 @@
     // everything is copied before the first wait, since the next word may open meanwhile
     const word = L.word, labels = L.labels.slice();
     const body = { word: word.id, tracer, labels: null, reading: L.reading.slice(), checked: L.checked.slice() };
+    const guesses = guessesOut();
+    if (Object.keys(guesses).length) body.guesses = guesses;
     if (L.retrace) body.retrace = true;
     if (L.add) { body.add = L.add; L.add = null; } else body.crop = boxOf(word);  // the box this version is in
     body.labels = await deflate(labels);
@@ -809,7 +847,7 @@
   $('move').onclick = () => { L.moving = !L.moving; marks(); };
   $('hide').onclick = () => { L.hidePinned = !L.hidePinned; letterHide(); };
   // a change to the word's letters is undone whole: its reading, the letters checked and the pixels
-  const snapshot = () => Object.assign(L.labels.slice(), { reading: L.reading.slice(), checked: L.checked.slice(), k: L.k });
+  const snapshot = () => Object.assign(L.labels.slice(), { reading: L.reading.slice(), guess: (L.guess || []).map(g => g && g.slice()), checked: L.checked.slice(), k: L.k });
   $('undo').onclick = () => {
     if (!L.undo.length) return;
     const u = L.undo.pop();
@@ -817,7 +855,7 @@
     L.labels = u;
     if (u.frame) { setFrame(u.frame); changed(); return; }  // a grown or shrunk box goes back as it was
     if (!u.reading) { drawWord(); changed(); return; }
-    L.reading = u.reading; L.checked = u.checked; L.word.verified = '';
+    L.reading = u.reading; L.guess = u.guess; L.checked = u.checked; L.word.verified = '';
     changed();
     const to = `#/w/${L.word.id}/${u.k}`;
     if (location.hash === to) openLetter(L.word.id, u.k); else location.hash = to;
@@ -832,8 +870,25 @@
   new ResizeObserver(() => { if (L.word && !$('letter-view').hidden) fitWord(); }).observe(wstage);
   document.querySelectorAll('.sz').forEach(b => b.onclick = () => setBrush(+b.dataset.s));
   $('name').onchange = () => {
-    L.reading[L.k - 1] = $('name').value;
-    changed(); ask(); versionStrip(); examplesFor($('name').value); bookWords(); $('name').blur();
+    const was = L.reading[L.k - 1], now = $('name').value;
+    alignGuess();
+    L.reading[L.k - 1] = now;
+    // picked as ? straight from the list, the letter it was is the first guess
+    L.guess[L.k - 1] = now === '?' ? (L.guess[L.k - 1] || (was && was !== '?' && !was.includes('+') ? [was] : [])) : null;
+    changed(); ask(); versionStrip(); examplesFor(now); bookWords(); $('name').blur();
+  };
+  $('unsure').onclick = () => {
+    if (!L.word || locked() || L.reading[L.k - 1] === '?') return;
+    $('name').value = '?';
+    $('name').onchange();
+  };
+  $('maybe').onclick = e => {
+    const b = e.target.closest('button');
+    if (!b || !L.word || locked() || L.reading[L.k - 1] !== '?') return;
+    alignGuess();
+    const g = L.guess[L.k - 1], n = b.dataset.n, at = g.indexOf(n);
+    if (at >= 0) g.splice(at, 1); else if (g.length < 8) g.push(n); else { say('Eight guesses at most', true); return; }
+    changed(); maybe();
   };
   $('remove-letter').onclick = () => {
     if (L.reading.length < 2) { say('A word needs at least one letter', true); return; }
@@ -843,7 +898,9 @@
       L.labels[i] = v === L.k ? 0 : v > L.k ? v - 1 : v;
     }
     L.note = `Deleted “${L.reading[L.k - 1]}”`;
+    alignGuess();
     L.reading.splice(L.k - 1, 1);
+    L.guess.splice(L.k - 1, 1);
     L.checked = L.checked.filter(c => c !== L.k).map(c => c > L.k ? c - 1 : c);
     L.word.verified = '';
     changed();
@@ -872,7 +929,9 @@
     }
     memos[joined] = memo;
     store.set(stackKey(L.word.id), JSON.stringify(memos));
+    alignGuess();
     L.reading.splice(a - 1, 2, joined);
+    L.guess.splice(a - 1, 2, null);
     L.checked = L.checked.filter(c => c !== a && c !== a + 1).map(c => c > a + 1 ? c - 1 : c);
     L.word.verified = '';
     changed();
@@ -900,7 +959,9 @@
     }
     delete memos[name];
     store.set(stackKey(L.word.id), Object.keys(memos).length ? JSON.stringify(memos) : null);
+    alignGuess();
     L.reading.splice(L.k - 1, 1, ...parts);
+    L.guess.splice(L.k - 1, 1, ...parts.map(p => p === '?' ? [] : null));
     L.checked = L.checked.filter(c => c !== L.k).map(c => c > L.k ? c + add : c);
     L.word.verified = '';
     changed();
@@ -915,7 +976,9 @@
     if (L.reading.length >= 20) { say('A word holds at most 20 letters', true); return; }
     L.undo.push(snapshot());
     for (let i = 0; i < L.labels.length; i++) if (L.labels[i] > at) L.labels[i]++;
+    alignGuess();
     L.reading.splice(at, 0, name);
+    L.guess.splice(at, 0, name === '?' ? [] : null);
     L.checked = L.checked.map(c => c > at ? c + 1 : c);
     L.fresh = at + 1;
     L.note = `Added “${name}”: paint its ink`;

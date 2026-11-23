@@ -1,10 +1,15 @@
 {
  "finding": [
-  "No tested language is close. Even the nearest text scores at least 1.9 on the distance measure below; the language texts are within 0.25 of one another.",
-  "A text generator built to imitate the Voynich scores 1.18, and the Naibbe cipher scores 1.72. Their letter sequences are about as predictable as the manuscript's, but that does not make either a solution.",
-  "Latin herbal verse by Macer and the Italian Erbario are the nearest languages. Their small lead over the others is not enough to rank them confidently.",
-  "The manuscript pages form three groups by their letter and word patterns. Those groups broadly follow the scribes; the result does not identify a language."
+  "The test only asks which texts share its habits: which letters it uses most, how long its words run, which words follow which, and how easy the next letter is to guess. Two texts can share habits and say completely different things.",
+  "The Voynich's own pages sit about 0.8 apart from one another. That's what a real match looks like. Every language sits at 1.9 or more, over twice as far, so none has the Voynich's habits.",
+  "The only texts nearer than the languages are fakes made to look like it: a program built to imitate it, the Voynich's own words shuffled, and a cipher published in 2025 that disguises Latin as Voynich-looking text. They're close because they were built to be. None of them is a reading of the manuscript.",
+  "Rewriting a language in medieval shorthand, without its vowels, or as syllables doesn't bring it into range. Those versions land about where the plain text does, or further away."
  ],
+ "self": {
+  "low": 0.49,
+  "high": 1.004,
+  "mean": 0.795
+ },
  "ranking": [
   {
    "rank": 1,
@@ -197,6 +202,230 @@
    "kind": "herbal",
    "form": "cappelli",
    "distance": 2.308
+  },
+  {
+   "rank": 25,
+   "text": "latin-alchemical-herbal",
+   "language": "Latin",
+   "kind": "herbal",
+   "form": "vowels-out",
+   "distance": 2.308
+  },
+  {
+   "rank": 26,
+   "text": "czech-dalimil",
+   "language": "Czech",
+   "kind": "verse chronicle",
+   "form": "abbreviated",
+   "distance": 2.328
+  },
+  {
+   "rank": 27,
+   "text": "italian-ricette",
+   "language": "Italian (Tuscan)",
+   "kind": "recipes",
+   "form": "abbreviated",
+   "distance": 2.367
+  },
+  {
+   "rank": 28,
+   "text": "latin-naibbe-plain",
+   "language": "Latin",
+   "kind": "natural history of trees",
+   "form": "plain",
+   "distance": 2.375
+  },
+  {
+   "rank": 29,
+   "text": "german-guter-spise",
+   "language": "German (East Franconian)",
+   "kind": "recipes",
+   "form": "plain",
+   "distance": 2.381
+  },
+  {
+   "rank": 30,
+   "text": "generated: grille of stems and endings",
+   "language": "generated",
+   "kind": "generated from the Voynich's first block",
+   "form": "eva",
+   "distance": 2.414
+  },
+  {
+   "rank": 31,
+   "text": "latin-trotula",
+   "language": "Latin",
+   "kind": "women's medicine",
+   "form": "cappelli",
+   "distance": 2.455
+  },
+  {
+   "rank": 32,
+   "text": "latin-naibbe-plain",
+   "language": "Latin",
+   "kind": "natural history of trees",
+   "form": "cappelli",
+   "distance": 2.461
+  },
+  {
+   "rank": 33,
+   "text": "german-guter-spise",
+   "language": "German (East Franconian)",
+   "kind": "recipes",
+   "form": "vowels-out",
+   "distance": 2.508
+  },
+  {
+   "rank": 34,
+   "text": "arabic-quran",
+   "language": "Arabic",
+   "kind": "scripture",
+   "form": "plain",
+   "distance": 2.524
+  },
+  {
+   "rank": 35,
+   "text": "latin-naibbe-plain",
+   "language": "Latin",
+   "kind": "natural history of trees",
+   "form": "abbreviated",
+   "distance": 2.539
+  },
+  {
+   "rank": 36,
+   "text": "french-menagier",
+   "language": "French",
+   "kind": "household book",
+   "form": "vowels-out",
+   "distance": 2.569
+  },
+  {
+   "rank": 37,
+   "text": "latin-trotula",
+   "language": "Latin",
+   "kind": "women's medicine",
+   "form": "abbreviated",
+   "distance": 2.58
+  },
+  {
+   "rank": 38,
+   "text": "latin-alchemical-herbal",
+   "language": "Latin",
+   "kind": "herbal",
+   "form": "abbreviated",
+   "distance": 2.646
+  },
+  {
+   "rank": 39,
+   "text": "french-menagier",
+   "language": "French",
+   "kind": "household book",
+   "form": "syllabary",
+   "distance": 2.723
+  },
+  {
+   "rank": 40,
+   "text": "german-guter-spise",
+   "language": "German (East Franconian)",
+   "kind": "recipes",
+   "form": "abbreviated",
+   "distance": 2.741
+  },
+  {
+   "rank": 41,
+   "text": "italian-erbario",
+   "language": "Italian (Veneto) and Latin",
+   "kind": "herbal labels",
+   "form": "vowels-out",
+   "distance": 2.771
+  },
+  {
+   "rank": 42,
+   "text": "latin-alchemical-herbal",
+   "language": "Latin",
+   "kind": "herbal",
+   "form": "syllabary",
+   "distance": 2.822
+  },
+  {
+   "rank": 43,
+   "text": "italian-ricette",
+   "language": "Italian (Tuscan)",
+   "kind": "recipes",
+   "form": "syllabary",
+   "distance": 2.878
+  },
+  {
+   "rank": 44,
+   "text": "latin-macer",
+   "language": "Latin",
+   "kind": "herbal verse",
+   "form": "syllabary",
+   "distance": 2.958
+  },
+  {
+   "rank": 45,
+   "text": "german-guter-spise",
+   "language": "German (East Franconian)",
+   "kind": "recipes",
+   "form": "syllabary",
+   "distance": 3.099
+  },
+  {
+   "rank": 46,
+   "text": "latin-trotula",
+   "language": "Latin",
+   "kind": "women's medicine",
+   "form": "syllabary",
+   "distance": 3.546
+  },
+  {
+   "rank": 47,
+   "text": "italian-ricette",
+   "language": "Italian (Tuscan)",
+   "kind": "recipes",
+   "form": "vowels-out",
+   "distance": 3.689
+  },
+  {
+   "rank": 48,
+   "text": "latin-naibbe-plain",
+   "language": "Latin",
+   "kind": "natural history of trees",
+   "form": "syllabary",
+   "distance": 3.829
+  },
+  {
+   "rank": 49,
+   "text": "generated: signs at their frequencies",
+   "language": "generated",
+   "kind": "generated from the Voynich's first block",
+   "form": "eva",
+   "distance": 3.928
+  },
+  {
+   "rank": 50,
+   "text": "italian-erbario",
+   "language": "Italian (Veneto) and Latin",
+   "kind": "herbal labels",
+   "form": "syllabary",
+   "distance": 3.956
+  },
+  {
+   "rank": 51,
+   "text": "czech-dalimil",
+   "language": "Czech",
+   "kind": "verse chronicle",
+   "form": "syllabary",
+   "distance": 4.319
+  },
+  {
+   "rank": 52,
+   "text": "generated: uniform signs",
+   "language": "generated",
+   "kind": "generated from the Voynich's first block",
+   "form": "eva",
+   "distance": 6.891
   }
  ],
  "groups": [
