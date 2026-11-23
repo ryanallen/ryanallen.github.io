@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voynich glyph map</title>
+<meta name="description" content="Download every traced word and letter of the Voynich manuscript, tied to the pixels of Yale's page photographs.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #gm{max-width:1000px;margin:0 auto;padding:8px 16px 40px}
+  #gm .lead{color:var(--muted);font-size:15px;margin:10px 0 4px;max-width:760px}#gm .lead b{color:var(--text)}
+  #gm h2{font-size:17px;margin:26px 0 8px;color:var(--text)}
+  #gm a{color:var(--accent)}
+  #gm .all{display:inline-block;margin:14px 0 4px;padding:10px 16px;border-radius:9px;background:var(--accent);color:#171a20;font-weight:600;text-decoration:none}
+  #gm .warn{margin:14px 0;padding:12px 14px;border:1px solid #8a6a2a;border-radius:10px;background:#2a2418;color:#f0dcae;font-size:14px;line-height:1.5}
+  #gm .warn b{color:#ffe7b0}
+  #gm table{border-collapse:collapse;width:100%;font-size:13px}
+  #gm th,#gm td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  #gm td.n,#gm th.n{text-align:right;font-variant-numeric:tabular-nums}
+  #gm th{position:sticky;top:0;background:var(--panel);color:var(--text);cursor:pointer;user-select:none}
+  #gm th[aria-sort=ascending]::after{content:" \25B4"}#gm th[aria-sort=descending]::after{content:" \25BE"}
+  #gm td{color:var(--muted)}#gm td:first-child{color:var(--text);font-weight:600}
+  #gm .wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;max-height:70vh}
+  #gm .bar{display:inline-block;height:8px;border-radius:4px;background:#5fd68a;vertical-align:middle}
+  #gm .trust td{white-space:normal}
+  #gm .small{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="research.html">Voynich research</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><a href="glyph-map.html">Glyph map</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="meaning.html">Made up or meaningful?</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
+</header>
+<main id="gm">
+  <p class="lead">The <b>glyph map</b> ties every traced word and letter of the Voynich manuscript to the exact pixels it covers in Yale's photographs. Most Voynich statistics are counted off a typed transcription. This lets you count, cluster and test on the ink itself. Take it all, or one page at a time.</p>
+  <a class="all" id="all" href="glyph-map/glyph-map.zip" download>Download everything (zip)</a>
+  <p class="small" id="made"></p>
+
+  <div class="warn"><b>Most of this is machine work.</b> Only words marked <b>owner-traced</b> or <b>owner-answered</b> have been checked by a person, me. AI or the text reader placed the rest, and no one has checked it yet, so treat it as a draft. Every word and letter has a <code>trust</code> column to filter on. The tracing is still going, and I remake this download as it does.</div>
+
+  <h2>How far to trust each letter</h2>
+  <div class="wrap"><table class="trust"><thead><tr><th>Trust</th><th class="n">Words</th><th class="n">Letters</th><th>What it means</th></tr></thead><tbody id="trust"></tbody></table></div>
+
+  <h2>By page</h2>
+  <p class="small">Click a column to sort. Language is Currier's A or B, the two spelling styles the text splits into. Each zip has that page's words, letters, pixel masks and a README.</p>
+  <div class="wrap"><table id="pages"><thead><tr>
+    <th data-k="page">Page</th><th data-k="section">Section</th><th data-k="language">Language</th><th data-k="hand">Scribe</th>
+    <th class="n" data-k="words">Words</th><th class="n" data-k="letters">Letters</th><th class="n" data-k="owner">Checked by a person</th>
+    <th class="n" data-k="checked">Looked over by AI</th><th class="n" data-k="auto">Unchecked</th><th class="n" data-k="bytes">Download</th>
+  </tr></thead><tbody></tbody></table></div>
+
+  <h2>What's in it</h2>
+  <p class="small"><code>words.tsv</code> has one row per word: its ID in the Zandbergen–Landini transliteration (ZL 3b), its reading in EVA (the standard alphabet for typing Voynich letters), trust, word box and the box round its traced ink. <code>letters.tsv</code> has one row per letter, with its box and center. <code>masks/&lt;page&gt;.npz</code> holds every traced pixel, with its word and letter. <code>pages.tsv</code> links each of Yale's images. Coordinates are pixels of Yale's full-size JPEGs. No images are included; fetch them from Yale. The README in each zip gives every field and a short Python example.</p>
+  <p class="small">Free to use under CC BY 4.0. Please credit “Ryan Allen, Voynich glyph map, ryanallen.com/voynich”. The transliteration is ZL 3b (CC0), the word boxes come from the Voynichese project (Apache 2.0), and the manuscript is Beinecke MS 408, Yale University. <span id="credits"></span> <a href="./">Trace a few letters</a> to help.</p>
+</main>
+<script>
+(function () {
+  var SECTION = {H: "Herbal", A: "Astronomical", C: "Cosmological", Z: "Zodiac", B: "Bathing", P: "Pharmaceutical", S: "Stars", T: "Text only"};
+  function mb(n) { return n >= 1e6 ? (n / 1e6).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1e3)) + " KB"; }
+  function natural(a, b) { return String(a).localeCompare(String(b), undefined, {numeric: true}); }
+  function el(tag, text, cls) { var e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; }
+  fetch("glyph-map/index.json").then(function (r) { return r.json(); }).then(function (d) {
+    document.getElementById("all").textContent = "Download everything (zip, " + mb(d.zip_bytes) + ")";
+    document.getElementById("made").textContent = d.words.toLocaleString() + " words and " + d.letters.toLocaleString() + " letters on " + d.pages.length + " pages. Made " + d.made + ".";
+    if (d.credits) document.getElementById("credits").textContent = "Tracers on the site who asked to be named: " + d.credits + ".";
+    var tb = document.getElementById("trust");
+    d.trust.forEach(function (t) {
+      var tr = el("tr");
+      tr.appendChild(el("td", t.trust)); tr.appendChild(el("td", (+t.words).toLocaleString(), "n"));
+      tr.appendChild(el("td", (+t.letters).toLocaleString(), "n")); tr.appendChild(el("td", t.meaning));
+      tb.appendChild(tr);
+    });
+    var rows = d.pages, body = document.querySelector("#pages tbody"), key = "page", dir = 1;
+    function draw() {
+      rows.sort(function (a, b) {
+        var x = a[key], y = b[key];
+        return dir * (typeof x === "number" ? x - y : natural(x, y)) || natural(a.page, b.page);
+      });
+      body.textContent = "";
+      rows.forEach(function (p) {
+        var tr = el("tr");
+        tr.appendChild(el("td", p.page));
+        tr.appendChild(el("td", SECTION[p.section] || p.section));
+        tr.appendChild(el("td", p.language));
+        tr.appendChild(el("td", p.hand && p.hand !== "@" ? "Scribe " + p.hand : ""));
+        ["words", "letters", "owner", "checked", "auto"].forEach(function (k) { tr.appendChild(el("td", p[k].toLocaleString(), "n")); });
+        var td = el("td", null, "n"), a = el("a", "zip, " + mb(p.bytes));
+        a.href = "glyph-map/pages/" + encodeURIComponent(p.page) + ".zip"; a.setAttribute("download", "");
+        td.appendChild(a); tr.appendChild(td); body.appendChild(tr);
+      });
+      document.querySelectorAll("#pages th").forEach(function (th) {
+        th.setAttribute("aria-sort", th.dataset.k === key ? (dir > 0 ? "ascending" : "descending") : "none");
+      });
+    }
+    document.querySelectorAll("#pages th").forEach(function (th) {
+      th.addEventListener("click", function () {
+        if (key === th.dataset.k) dir = -dir; else { key = th.dataset.k; dir = th.classList.contains("n") ? -1 : 1; }
+        draw();
+      });
+    });
+    draw();
+  }).catch(function () {
+    document.getElementById("made").textContent = "The page list could not load. The full zip above still works.";
+  });
+})();
+</script>
+</body>
+</html>
