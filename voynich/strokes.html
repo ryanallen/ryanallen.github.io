@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pen strokes</title>
+<meta name="description" content="Are Voynich letters mostly c-curves and i-strokes? Measured on the letters and the ink, beside a 1400s Italian hand.">
+<link rel="stylesheet" href="style.css">
+<style>
+  #ps{max-width:960px;margin:0 auto;padding:8px 16px 40px}
+  #ps .lead{color:var(--muted);font-size:15px;margin:10px 0 4px;max-width:760px}#ps .lead b{color:var(--text)}
+  #ps h2{font-size:17px;margin:26px 0 8px;color:var(--text)}
+  #ps p,#ps li{color:var(--muted);font-size:14px;line-height:1.5;max-width:760px}
+  #ps p a,#ps li a{color:var(--accent)}
+  #ps table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+  #ps th,#ps td{text-align:left;padding:7px 6px;border-bottom:1px solid #353a43;vertical-align:top;color:var(--muted)}
+  #ps th{color:var(--text);font-weight:600}
+  #ps .r{color:#8b919c;font-size:12px}
+  #ps figure{margin:12px 0}#ps figure img{width:100%;border-radius:8px;display:block}
+  #ps figcaption{color:var(--muted);font-size:12px;margin-top:4px}
+  #ps .keys{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin:6px 0}
+  #ps .key i{display:inline-block;width:14px;height:4px;border-radius:2px;margin-right:5px;vertical-align:middle}
+  @media (max-width:640px){#ps .hide-phone{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="research.html">Voynich research</a></h1>
+  <nav><a href="./">Trace the Voynich</a><a href="search.html">Search</a><details class="menu"><summary>Research</summary><div><a class="all" href="research.html">All the research</a><b>The pictures</b><a href="plants.html">Plants</a><a href="herbals.html">Plant comparisons</a><a href="drawings.html">Drawings</a><a href="calendar.html">Zodiac and bathing pages</a><b>The words</b><a href="anchors.html">Labels</a><a href="grid.html">Letter patterns</a><a href="strokes.html">Pen strokes</a><a href="hands.html">Scribes</a><a href="reader.html">Text reader</a><a href="glyph-map.html">Glyph map</a><b>Readings tested</b><a href="fingerprints.html">Language comparisons</a><a href="candidates.html">Proposed solutions</a><a href="meaning.html">Made up or meaningful?</a><a href="misreads.html">Misread letters</a></div></details><a href="./?credit">Get credited</a></nav>
+</header>
+<main id="ps">
+  <p class="lead"><b>Yes, most Voynich letters start with a c-shaped curve, and a 1400s scribe's don't.</b> Sort every letter by the first stroke the pen makes and the Voynich comes out 68% c-curves, 22% i-strokes and 11% gallows, almost the same in both of Currier's "languages". The same sort on medieval Latin and Italian, a 1400s herbal's own spelling among them, gives 35% to 45% c-curves. Measured in the ink itself, the Voynich has about 37% to 39% more c-curve than the scribe of a 1400s Italian herbal, and 18% to 30% less minim.</p>
+  <p>That second part is the surprise. Medieval scribes are known for drowning in minims, the short upright strokes of i, m, n and u; the old practice line <i>mimi numinum niuium</i> is nothing but minims. The Voynich scribes wrote fewer of them, not more.</p>
+  <p>Asked on Reddit in November 2026 ("Are most Voynich glyphs just c and i strokes with modifiers?"). The idea goes back to Prescott Currier, who wrote in 1976 that o, d, y and s all begin with a c-curve, that j, l and r begin with an i-stroke, and that "nearly every letter" can be built from the two. Brian Cham built his curve-line system on it in 2014. What no one had done is set the count beside a real 1400s hand.</p>
+
+  <h2>The letters: three c-curves for every minim</h2>
+  <p>Each letter goes in the class of the stroke it starts with. For the Voynich that follows Currier: o, a, d, y, s, e and the c and h of ch start with a c-curve; i, n, m, l, r, j and q with an i-stroke; k, t, p and f are the gallows. For Latin and Italian it follows how a humanistic hand builds its letters: a, c, d, e, g, o and q from a c-bowl; i, m, n, r, t, u, v, x, y and z from minims; b, f, h, k, l, long s and p from a tall stroke. The Voynich is the standard transcription (Zandbergen and Landini's, letters in EVA) on the working pages. The Erbario row is Penn's 1400s Italian herbal in its own scribe's spelling, abbreviations kept.</p>
+  <table>
+    <thead><tr><th>Text</th><th>Letters</th><th>c-curve</th><th>i-stroke</th><th>Tall (gallows)</th></tr></thead>
+    <tbody><tr><td>Voynich, all working pages</td><td>153,252</td><td>68%</td><td>22%</td><td>11%</td></tr><tr><td>Voynich, Currier A</td><td>44,453</td><td>68%</td><td>22%</td><td>10%</td></tr><tr><td>Voynich, Currier B</td><td>93,878</td><td>67%</td><td>22%</td><td>11%</td></tr><tr><td>Erbario, as written (Italian and Latin, 1400s)</td><td>16,581</td><td>45%</td><td>36%</td><td>19%</td></tr><tr><td>Alchemical herbal (Latin)</td><td>33,922</td><td>36%</td><td>45%</td><td>19%</td></tr><tr><td>Macer, De viribus herbarum (Latin)</td><td>145,162</td><td>35%</td><td>46%</td><td>19%</td></tr><tr><td>LVII Ricette (Italian)</td><td>38,703</td><td>45%</td><td>36%</td><td>19%</td></tr></tbody>
+  </table>
+  <p>The Voynich sits far outside the Latin and Italian texts: about 3 c-curve letters for every i-stroke letter where they have about one, and half their share of tall letters. Currier A and B differ by about a point in each class. This sort is a choice of where each letter begins, so the ink is measured next, with no letters assumed.</p>
+
+  <h2>The ink: the same lean, smaller</h2>
+  <p>The page photographs themselves, Yale's for the Voynich and Penn's for the <a href="herbals.html">Erbario</a> (LJS 419, northern Italy, written in "humanistic cursive script", the kind of hand Sergio Toresella saw in the Voynich in 1995). The ink is thinned to a one-pixel line, cut wherever strokes cross or join, and every piece longer than about half a letter's height is sorted by shape and weighed by its length. Both are scaled to the same letter size first.</p>
+  <figure><img src="data/strokes-voynich.png" alt="Four lines of Voynich f103v with each measured stroke coloured by its shape" loading="lazy"><figcaption>Voynich f103v, four lines, every measured stroke coloured by shape.</figcaption></figure>
+  <figure><img src="data/strokes-erbario.png" alt="Four lines of the Erbario, folio 76v, with each measured stroke coloured by its shape" loading="lazy"><figcaption>Erbario 76v, the same measure on a 1400s Italian hand.</figcaption></figure>
+  <div class="keys"><span class="key"><i style="background:rgb(230, 120, 20)"></i>c-curve</span><span class="key"><i style="background:rgb(150, 80, 200)"></i>reversed curve</span><span class="key"><i style="background:rgb(40, 150, 70)"></i>arch</span><span class="key"><i style="background:rgb(20, 150, 160)"></i>cup</span><span class="key"><i style="background:rgb(220, 60, 130)"></i>loop</span><span class="key"><i style="background:rgb(40, 90, 220)"></i>minim</span><span class="key"><i style="background:rgb(120, 120, 120)"></i>flat straight</span></div>
+  <table>
+    <thead><tr><th>Pages</th><th>Pages read</th><th>c-curve</th><th>Minim</th><th class=hide-phone>Reversed curve</th><th class=hide-phone>Arch</th><th class=hide-phone>Cup</th><th class=hide-phone>Flat</th><th class=hide-phone>Ink measured</th></tr></thead>
+    <tbody><tr><td>Erbario, 1400s humanistic cursive</td><td>4</td><td>16% <span class=r>(14%–17%)</span></td><td>24% <span class=r>(22%–27%)</span></td><td class=hide-phone>9%</td><td class=hide-phone>12%</td><td class=hide-phone>16%</td><td class=hide-phone>24%</td><td class=hide-phone>66%</td></tr><tr><td>Voynich, Currier A pages</td><td>25</td><td>22% <span class=r>(16%–27%)</span></td><td>17% <span class=r>(6%–22%)</span></td><td class=hide-phone>15%</td><td class=hide-phone>17%</td><td class=hide-phone>15%</td><td class=hide-phone>14%</td><td class=hide-phone>54%</td></tr><tr><td>Voynich, Currier B pages</td><td>19</td><td>22% <span class=r>(17%–28%)</span></td><td>19% <span class=r>(11%–21%)</span></td><td class=hide-phone>15%</td><td class=hide-phone>19%</td><td class=hide-phone>11%</td><td class=hide-phone>14%</td><td class=hide-phone>62%</td></tr></tbody>
+  </table>
+  <p>Shares are of stroke length; the range in brackets runs from the lowest page to the highest. No Voynich page reaches the Erbario's lowest minim share (21.6% at most, against 21.7%). The ink gap is smaller than the letter gap because every letter's tail, loop and join is in the ink too. The letter size each script is scaled to changes the numbers a little and the direction not at all:</p>
+  <table>
+    <thead><tr><th>Line spacing over x-height</th><th>Erbario c-curve / minim</th><th>Voynich A</th><th>Voynich B</th></tr></thead>
+    <tbody><tr><td>3</td><td>16% / 23%</td><td>23% / 15%</td><td>24% / 17%</td></tr><tr><td>4</td><td>16% / 24%</td><td>22% / 17%</td><td>22% / 19%</td></tr><tr><td>5</td><td>16% / 25%</td><td>21% / 18%</td><td>19% / 21%</td></tr></tbody>
+  </table>
+
+  <h2>The gallows: k goes with t, and p with f</h2>
+  <p>The Reddit post also paired the look-alike gallows, k with f and t with p, and found they change the next letter the same way (r = 0.93). Here's what follows each gallows, compared pair by pair (1 means the same next letters in the same shares), on alternate working pages so a pairing found on one half is checked on the other.</p>
+  <table>
+    <thead><tr><th>Pair</th><th>Even pages</th><th>Odd pages</th><th>Currier A</th><th>Currier B</th></tr></thead>
+    <tbody><tr><td><b>k and t</b> <span class=r>same height, one loop</span></td><td>0.95</td><td>0.95</td><td>0.79</td><td>0.98</td></tr><tr><td><b>p and f</b> <span class=r>same height, two loops</span></td><td>0.97</td><td>0.94</td><td>0.96</td><td>0.96</td></tr><tr><td><b>k and f</b> <span class=r>look-alikes</span></td><td>0.25</td><td>0.33</td><td>0.61</td><td>0.20</td></tr><tr><td><b>t and p</b> <span class=r>look-alikes</span></td><td>0.41</td><td>0.44</td><td>0.91</td><td>0.22</td></tr></tbody>
+  </table>
+  <p>The gallows pair by loop count, not by look-alike shape. An e follows k 37% of the time and t 27%, and never p or f, as Currier found. The look-alike pairing holds only for t and p in Currier A pages, where t, p and f are mostly followed by c or h, much of it inside the bench gallows cth, cph and cfh. That may be where the 0.93 came from.</p>
+
+  <h2>What it shows, and what it doesn't</h2>
+  <ul>
+    <li>A medieval hand is also mostly bowls and minims, so "made of c and i strokes" doesn't set the Voynich apart. The mix does: far more c-curves, fewer minims, and fewer tall letters than Latin and Italian written in a 1400s hand.</li>
+    <li>Currier A and B are written with the same strokes in nearly the same shares. Where they differ is which letters they put where, mostly the word endings (<a href="grid.html">letter patterns</a>).</li>
+    <li>The 1400s hand is one scribe, four pages. Its cursive joins letters where the Voynich lifts the pen; the measure still reads 66% of its ink, against 54% and 62% of the Voynich's. More dated hands would make this firmer.</li>
+    <li>None of this says what the script means. It does say the letters don't spell Latin or Italian one for one in an everyday hand of the time.</li>
+  </ul>
+  <p class="r">Measured with <code>voynich/tools/strokes.py</code> on 23 November 2026. Tables: <code>strokes/letters.tsv</code>, <code>strokes/ink.tsv</code>, <code>strokes/gallows.tsv</code>. The test pages were not read.</p>
+</main>
+</body>
+</html>
