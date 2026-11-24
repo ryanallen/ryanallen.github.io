@@ -1,0 +1,11 @@
+{
+  "name": "The Point at Infinity",
+  "documentBase": "",
+  "landing": "script.md",
+  "documents": [
+    {
+      "path": "script.md",
+      "links": {}
+    }
+  ]
+}
