@@ -21,6 +21,7 @@ Ryan designs products from the first idea to production code: research, UX, AI p
 - [Voynich Research](https://ryanallen.com/voynich/research.html): Ryan trained a model to trace the Voynich manuscript. People are checking thousands of words, and the research examines its pictures, writing, scribes and proposed readings. [Trace the Voynich](https://ryanallen.com/voynich/) invites people to help correct the tracing.
 - [Wallet Wars](https://ryanallen.com/walletwars/): A terminal-style crypto trading game.
 - [Design Canvas](https://ryanallen.com/design-canvas/): A board that lays HTML prototypes side by side, to view, play, edit and comment on them as HTML and CSS, with every edit written back into the prototype.
+- [Chenrezig](https://ryanallen.com/chenrezig/): A Tibetan prayer-wheel temple for H.E. Garchen Rinpoche's Chenrezig empowerment, ray traced in a WebGL2 shader in one hand-written page with no 3D library: turn the wheel, read the teaching and watch the empowerment.
 
 ## Honors
 
