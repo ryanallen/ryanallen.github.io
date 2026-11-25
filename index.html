@@ -779,7 +779,7 @@ const leaftextThemeImage = theme => `${M}leaftext/front-themes/${theme === 'ging
 const WIDTHS = {
   [M + 'godaddy-aisearch-v1-web.webp']: [1400, 360, 720], [M + 'godaddy-aisearch-v2-web.webp']: [1400, 360, 720],
   [M + 'lexus-finished-pc-web.webp']: [1400, 360, 720], [M + 'lexus-gold-addy-web.webp']: [1400, 360, 720],
-  [M + 'lexus-finished-screens-web.webp']: [1400, 360, 720], [M + 'fun/walletwars.webp']: [1400, 360, 720],
+  [M + 'lexus-finished-screens-web.webp']: [1400, 360, 720], [M + 'fun/walletwars.webp']: [1400, 360, 720], [M + 'fun/design-canvas.webp']: [920, 360, 720],
   [M + 'fun/voynich-research.webp']: [1200, 360, 720], 'images/gdc-best-in-play.jpg': [800, 400],
   'images/howard-stern-web.webp': [800, 400], [M + 'charter/vitals-dark-web.webp']: [750, 360],
   [M + 'charter/heart-dark-web.webp']: [750, 360], [M + 'charter/sleep-dark.webp']: [600, 360],
@@ -1023,6 +1023,7 @@ const TIPS = {
     'Spacewar Live': `I brought a DOS classic into the browser to play together online.`,
     'Voynich Research': `I trained a model to trace the manuscript, then opened the words to people for review. The research follows the pictures, writing, scribes and proposed readings.`,
     'Wallet Wars': `I made a trading game with rent due and a wallet to work with.`,
+    'Design Canvas': `I built a board that lays HTML prototypes side by side, to edit and comment on them as HTML and CSS.`,
   },
 };
 
@@ -1110,6 +1111,7 @@ const FUN = [
   { name: 'Spacewar Live', href: 'https://spacewarlive.com/', art: '<div class="art spacewar-art"><img src="media/fun/spacewar-title.png" alt="" loading="lazy"></div>', stat: 'A remake of the 1985 DOS Spacewar, online in your browser' },
   { name: 'Voynich Research', href: '/voynich/research.html', img: 'media/fun/voynich-research.webp', d: 'screen', stat: 'I trained a model to trace it. People are checking thousands of words.' },
   { name: 'Wallet Wars', href: '/walletwars/', img: 'media/fun/walletwars.webp', d: 'screen', stat: 'A terminal crypto trading game. You found a wallet; rent is due' },
+  { name: 'Design Canvas', href: '/design-canvas/', img: 'media/fun/design-canvas.webp', d: 'screen', stat: 'HTML prototypes on one board, to edit and comment on' },
 ];
 document.getElementById('funTiles').innerHTML = FUN.map(f => `<a class="tile-link" href="${f.href}"${f.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${tile(f, 'Fun').replace('</h3>', '</h3><span class="go" aria-hidden="true">↗</span>')}</a>`).join('');
 document.getElementById('work').innerHTML = ROLES.map(r => `
