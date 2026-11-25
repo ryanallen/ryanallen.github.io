@@ -776,7 +776,6 @@ const WIDTHS = {
   [M + 'godaddy-aisearch-v1-web.webp']: [1400, 360, 720], [M + 'godaddy-aisearch-v2-web.webp']: [1400, 360, 720],
   [M + 'lexus-finished-pc-web.webp']: [1400, 360, 720], [M + 'lexus-gold-addy-web.webp']: [1400, 360, 720],
   [M + 'lexus-finished-screens-web.webp']: [1400, 360, 720], [M + 'fun/walletwars.webp']: [1400, 360, 720],
-  [M + 'fun/bad-button.webp']: [1400, 360, 720], [M + 'fun/system-designer.webp']: [1400, 360, 720],
   [M + 'fun/voynich-research.webp']: [1200, 360, 720], 'images/gdc-best-in-play.jpg': [800, 400],
   'images/howard-stern-web.webp': [800, 400], [M + 'charter/vitals-dark-web.webp']: [750, 360],
   [M + 'charter/heart-dark-web.webp']: [750, 360], [M + 'charter/sleep-dark.webp']: [600, 360],
@@ -1020,8 +1019,6 @@ const TIPS = {
     'Spacewar Live': `I brought a DOS classic into the browser to play together online.`,
     'Voynich Research': `I trained a model to trace the manuscript, then opened the words to people for review. The research follows the pictures, writing, scribes and proposed readings.`,
     'Wallet Wars': `I made a trading game with rent due and a wallet to work with.`,
-    'The Impossible Button': `I made a button that makes bad interaction design the whole joke.`,
-    'System Designer': `I built a tool that grows a design system from one color.`,
   },
 };
 
@@ -1109,8 +1106,6 @@ const FUN = [
   { name: 'Spacewar Live', href: 'https://spacewarlive.com/', art: '<div class="art spacewar-art"><img src="media/fun/spacewar-title.png" alt="" loading="lazy"></div>', stat: 'A remake of the 1985 DOS Spacewar, online in your browser' },
   { name: 'Voynich Research', href: '/voynich/research.html', img: 'media/fun/voynich-research.webp', d: 'screen', stat: 'I trained a model to trace it. People are checking thousands of words.' },
   { name: 'Wallet Wars', href: '/walletwars/', img: 'media/fun/walletwars.webp', d: 'screen', stat: 'A terminal crypto trading game. You found a wallet; rent is due' },
-  { name: 'The Impossible Button', href: '/bad-button/', img: 'media/fun/bad-button.webp', d: 'screen', stat: 'How not to design a button. Try to click it' },
-  { name: 'System Designer', href: '/system-designer/', img: 'media/fun/system-designer.webp', d: 'screen', stat: 'A whole design system from one color' },
 ];
 document.getElementById('funTiles').innerHTML = FUN.map(f => `<a class="tile-link" href="${f.href}"${f.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${tile(f, 'Fun').replace('</h3>', '</h3><span class="go" aria-hidden="true">↗</span>')}</a>`).join('');
 document.getElementById('work').innerHTML = ROLES.map(r => `
