@@ -17,6 +17,7 @@ Ryan designs products from the first idea to production code: research, UX, AI p
 
 ## Independent projects
 
+- [Steer](https://ryanallen.com/steer/): A playable interface for working with an AI agent: edit its plan before anything runs, watch every action in words, steer it mid-run without starting over, approve the one action that can't be undone, and review each change by the step that made it, with the checks and a before-and-after preview as evidence. [How it's designed](https://ryanallen.com/steer/about.html).
 - [Spacewar Live](https://spacewarlive.com/): A remake of the 1985 DOS Spacewar, online in the browser.
 - [Voynich Research](https://ryanallen.com/voynich/research.html): Ryan trained a model to trace the Voynich manuscript. People are checking thousands of words, and the research examines its pictures, writing, scribes and proposed readings. [Trace the Voynich](https://ryanallen.com/voynich/) invites people to help correct the tracing.
 - [Wallet Wars](https://ryanallen.com/walletwars/): A terminal-style crypto trading game.
