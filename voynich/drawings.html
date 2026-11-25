@@ -68,7 +68,7 @@
           const c = document.createElement('div'); c.className = 'card';
           const props = d.proposals.map(q => `<li>${esc(q.named)} (${esc(q.by)}; ${esc(q.where)})</li>`).join('');
           const words = d.words.length ? `<p class="w">${d.words.slice(0, 12).map(esc).join('<br>')}${d.words.length > 12 ? `<br>and ${d.words.length - 12} more` : ''}</p>` : '';
-          c.innerHTML = `<img loading="lazy" alt="${esc(d.named)}, ${esc(d.page)}" src="${esc(d.iiif)}/${x},${y},${w},${hh}/!400,400/0/default.jpg">
+          c.innerHTML = `<img loading="lazy" alt="${esc(d.named)}, ${esc(d.page)}" src="${esc(d.iiif)}/${x},${y},${w},${hh}/!220,220/0/default.jpg" srcset="${esc(d.iiif)}/${x},${y},${w},${hh}/!220,220/0/default.jpg 1x, ${esc(d.iiif)}/${x},${y},${w},${hh}/!440,440/0/default.jpg 2x">
             <b>${esc(d.named || d.id)}</b><span class="v ${esc(d.verdict)}">${esc(d.verdict)}</span><br>${esc(d.page)}${d.count > 1 ? `, ${d.count} drawn` : ''}
             <details><summary>Evidence, proposals, and nearby words</summary><p><b>What is drawn:</b> ${esc(d.features)}</p><p><b>Why this name:</b> ${esc(d.reason)}</p>${props ? `<ul>${props}</ul>` : '<p>No published proposal.</p>'}${words ? '<p>Words on or beside it (EVA letters and page position):</p>' + words : ''}</details>`;
           g.append(c);
