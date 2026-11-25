@@ -568,10 +568,10 @@
 </section>
 <section class="honors" id="honors"><canvas aria-hidden="true"></canvas><h2>Honors</h2>
 <div class="billion"><b>$1B+</b><span>Earned by teams I've been part of</span></div><ul aria-label="Honors">
-  <li style="--k:0"><img class="h-logo" src="media/logos/appstore.svg" alt="" loading="lazy"><b>Multiple #1 Apps</b><i></i><span>Apple App Store &amp; Google Play<br>Free and paid charts</span></li>
-  <li style="--k:1"><img class="h-logo" src="media/logos/gdc.svg" alt="" loading="lazy"><b>Best in Play</b><i></i><span>Game Developers Conference<br>Monsters Invade Oz</span></li>
-  <li style="--k:2"><img class="h-logo" src="media/logos/aaf.svg" alt="" loading="lazy"><b>Gold ADDY</b><i></i><span>American Advertising Federation<br>Lexus</span></li>
-  <li style="--k:3"><img class="h-logo" src="media/logos/siriusxm.svg" alt="" loading="lazy"><b>The Howard Stern Show</b><i></i><span>Repeat guest, apps featured<br>Dapper Gentlemen</span></li>
+  <li style="--k:0"><img class="h-logo" src="media/logos/appstore.svg" width="30" height="30" alt="" loading="lazy"><b>Multiple #1 Apps</b><i></i><span>Apple App Store &amp; Google Play<br>Free and paid charts</span></li>
+  <li style="--k:1"><img class="h-logo" src="media/logos/gdc.svg" width="64" height="30" alt="" loading="lazy"><b>Best in Play</b><i></i><span>Game Developers Conference<br>Monsters Invade Oz</span></li>
+  <li style="--k:2"><img class="h-logo" src="media/logos/aaf.svg" width="64" height="30" alt="" loading="lazy"><b>Gold ADDY</b><i></i><span>American Advertising Federation<br>Lexus</span></li>
+  <li style="--k:3"><img class="h-logo" src="media/logos/siriusxm.svg" width="120" height="30" alt="" loading="lazy"><b>The Howard Stern Show</b><i></i><span>Repeat guest, apps featured<br>Dapper Gentlemen</span></li>
   <li style="--k:4"><b>30M+ Downloads</b><i></i><span>In 94 countries<br>Dapper Gentlemen</span></li>
   <li style="--k:5"><b>Successful Exit</b><i></i><span>Acquired by HIPO<br>Swing Dev</span></li>
   <li style="--k:6"><b>Most Innovative Organization</b><i></i><span>Trade Show Executive · Cosmoprof North America<br>Online education, live streaming, membership &amp; payments</span></li>
@@ -771,6 +771,29 @@ const LEAFTEXT_COMMIT_COUNT = 2525;
 const LEAFTEXT_THEMES = ['ginger', 'amaranth', 'arabica', 'bloodleaf', 'camellia', 'eucalyptus',
   'fern', 'foxglove', 'github', 'goldenrod', 'halcyon', 'ivy', 'nightshade', 'pippin', 'sage'];
 const leaftextThemeImage = theme => `${M}leaftext/front-themes/${theme === 'ginger' ? 'ginger-web' : theme}.webp`;
+// Large pictures also come as <name>-<width>.webp, so a small box loads a small file: full width first, then the copies.
+const WIDTHS = {
+  [M + 'godaddy-aisearch-v1-web.webp']: [1400, 360, 720], [M + 'godaddy-aisearch-v2-web.webp']: [1400, 360, 720],
+  [M + 'lexus-finished-pc-web.webp']: [1400, 360, 720], [M + 'lexus-gold-addy-web.webp']: [1400, 360, 720],
+  [M + 'lexus-finished-screens-web.webp']: [1400, 360, 720], [M + 'fun/walletwars.webp']: [1400, 360, 720],
+  [M + 'fun/bad-button.webp']: [1400, 360, 720], [M + 'fun/system-designer.webp']: [1400, 360, 720],
+  [M + 'fun/voynich-research.webp']: [1200, 360, 720], 'images/gdc-best-in-play.jpg': [800, 400],
+  'images/howard-stern-web.webp': [800, 400], [M + 'charter/vitals-dark-web.webp']: [750, 360],
+  [M + 'charter/heart-dark-web.webp']: [750, 360], [M + 'charter/sleep-dark.webp']: [600, 360],
+  [M + 'scholar/logo-3d-web.webp']: [1254, 360, 720],
+};
+LEAFTEXT_THEMES.forEach(theme => WIDTHS[leaftextThemeImage(theme)] = [1170, 360, 720]);
+const srcset = src => {
+  const [full, ...smaller] = WIDTHS[src] || [];
+  if (!full) return '';
+  const stem = src.replace(/\.\w+$/, '');
+  return [...smaller.map(w => `${stem}-${w}.webp ${w}w`), `${src} ${full}w`].join(', ');
+};
+// How wide each kind of device draws once scrolled in, measured in windows 390 to 2560 px wide.
+const deviceSizes = (d, where) => d.startsWith('phone')
+  ? (where === 'hero' ? '(max-width: 1000px) 28vw, 17vw' : '104px')
+  : (where === 'hero' ? '(max-width: 1000px) 68vw, 42vw' : '(max-width: 700px) 60vw, 340px');
+const LEAFTEXT_SIZES = deviceSizes('phone', 'hero');
 const ROLES = [
   { name: 'GoDaddy', logo: ['0 0 24 24', '<path d="M17.8 5.528c-1.662-1.04-3.851-.792-5.8.436-1.95-1.228-4.138-1.475-5.8-.436-2.627 1.641-2.947 5.87-.713 9.444 1.647 2.635 4.221 4.18 6.513 4.15 2.292.03 4.867-1.514 6.513-4.15 2.234-3.574 1.914-7.803-.713-9.444m-11.106 8.69a8.6 8.6 0 0 1-1.03-2.361 6.8 6.8 0 0 1-.224-2.225c.1-1.32.638-2.349 1.514-2.897s2.037-.58 3.267-.09q.277.11.55.253a10 10 0 0 0-1.772 2.129c-1.357 2.172-1.77 4.584-1.297 6.512a9 9 0 0 1-1.008-1.322m11.642-2.361a8.6 8.6 0 0 1-1.03 2.36q-.453.722-1.01 1.323c.424-1.726.137-3.84-.901-5.822a.26.26 0 0 0-.375-.103l-3.235 2.021a.264.264 0 0 0-.084.365l.474.758c.077.124.24.162.364.085l2.097-1.31q.105.301.187.608c.201.767.277 1.515.223 2.225-.1 1.32-.637 2.348-1.513 2.896a2.960 2.960 0 0 1-1.5.434h-.066a2.960 2.960 0 0 1-1.5-.434c-.877-.548-1.414-1.576-1.514-2.897a6.8 6.8 0 0 1 .223-2.224 8.6 8.6 0 0 1 1.031-2.36 8.6 8.6 0 0 1 1.67-1.962c.6-.517 1.24-.913 1.902-1.176 1.23-.49 2.39-.457 3.267.091s1.413 1.577 1.513 2.897a6.7 6.7 0 0 1-.223 2.225"/>'], sub: 'Domain search & AI', line: 'I led design on the domain buy flow and helped build AI domain search from a hackathon prototype. I design systems that orchestrate agents through research, design and development, then use them to ship production work as a designer. I teach teams how to work this way.',
     facts: [['Role', 'Lead UX Designer'], ['Areas', 'Search · AI · Buy Flow · Homepage · Navigation & IA · Design System · Research']],
@@ -796,9 +819,9 @@ const ROLES = [
     ] },
   { name: 'Scholar', logo: ['0 0 64 64', '<polygon points="32.98 15.75 32 6 31.02 15.75 27.7 24.62 32 26.05 36.3 24.62 32.98 15.75"/><polygon points="26.05 32 24.62 27.7 15.75 31.02 6 32 15.75 32.98 24.62 36.3 26.05 32"/><polygon points="32.98 48.25 36.3 39.38 32 37.95 27.7 39.38 31.02 48.25 32 58 32.98 48.25"/><polygon points="58 32 49.26 31.03 40.38 27.7 38.95 32 40.38 36.3 49.26 32.97 58 32"/>'], sub: 'Blackboard', line: 'An AI study platform for college students. I led design and product from 0 to 1 and beyond, worked on early branding, and wrote agent workflows that helped the team move from design to working code.',
     facts: [['Role', 'Product Design Lead'], ['Areas', 'Research · UX · Dev · Product · Hiring']],
-    heroArt: '<div class="art"><img data-src="media/scholar/logo-3d-web.webp" alt="" loading="lazy" style="width:35%;left:32.5%;top:22%"><img data-src="media/scholar/study-flashcards-web.webp" alt="" loading="lazy" style="width:21%;left:7%;top:8%"><img data-src="media/scholar/study-quiz-web.webp" alt="" loading="lazy" style="width:20%;right:7%;top:6%"><img data-src="media/scholar/study-chat-web.webp" alt="" loading="lazy" style="width:19%;left:10%;bottom:10%"><img data-src="media/scholar/study-podcast-web.webp" alt="" loading="lazy" style="width:20%;right:9%;bottom:8%"></div>', hero: [],
+    heroArt: `<div class="art"><img data-src="media/scholar/logo-3d-web.webp" data-srcset="${srcset(M + 'scholar/logo-3d-web.webp')}" sizes="(max-width: 1000px) 33vw, 19vw" alt="" loading="lazy" style="width:35%;left:32.5%;top:22%"><img data-src="media/scholar/study-flashcards-web.webp" alt="" loading="lazy" style="width:21%;left:7%;top:8%"><img data-src="media/scholar/study-quiz-web.webp" alt="" loading="lazy" style="width:20%;right:7%;top:6%"><img data-src="media/scholar/study-chat-web.webp" alt="" loading="lazy" style="width:19%;left:10%;bottom:10%"><img data-src="media/scholar/study-podcast-web.webp" alt="" loading="lazy" style="width:20%;right:9%;bottom:8%"></div>`, hero: [],
     tiles: [
-      { name: 'Early Branding', art: '<div class="art scholar-logo-art"><img data-src="media/scholar/logo-3d-web.webp" alt="" loading="lazy" style="width:42%"></div>' },
+      { name: 'Early Branding', art: `<div class="art scholar-logo-art"><img data-src="media/scholar/logo-3d-web.webp" data-srcset="${srcset(M + 'scholar/logo-3d-web.webp')}" sizes="(max-width: 700px) 30vw, 160px" alt="" loading="lazy" style="width:42%"></div>` },
       { name: 'Agent Workflows', ui: 'checks', d: 'screen', stat: 'Design docs, coded prototypes, handoff and PR review' },
       { name: 'Shipped to Production', ui: 'console', d: 'screen' },
       { name: 'Tutoring', ui: 'chat', d: 'phone' },
@@ -1062,9 +1085,10 @@ const UI = {
 };
 
 const work = document.getElementById('work');
-function device(v) {
-  const media = v.themes ? `<div class="theme-cycle" data-themes="${v.themes.join(',')}"><img class="visible" data-src="${leaftextThemeImage(v.themes[0])}" alt="" loading="lazy" decoding="async"><img alt="" decoding="async"></div>`
-    : v.img ? `<img src="${v.img}" alt="" loading="lazy" decoding="async">`
+function device(v, where = 'tile') {
+  const set = v.img && srcset(v.img);
+  const media = v.themes ? `<div class="theme-cycle" data-themes="${v.themes.join(',')}"><img class="visible" data-src="${leaftextThemeImage(v.themes[0])}" data-srcset="${srcset(leaftextThemeImage(v.themes[0]))}" sizes="${LEAFTEXT_SIZES}" alt="" loading="lazy" decoding="async"><img alt="" sizes="${LEAFTEXT_SIZES}" decoding="async"></div>`
+    : v.img ? `<img src="${v.img}"${set ? ` srcset="${set}" sizes="${deviceSizes(v.d, where)}"` : ''} alt="" loading="lazy" decoding="async">`
     : v.video ? `<video data-src="${v.video}" data-poster="${v.poster || ''}" muted loop playsinline preload="none"></video>`
     : `<div class="ui ui-${v.ui}" aria-hidden="true">${UI[v.ui] || ''}</div>`;
   return `<div class="device ${v.d}"><div class="glass">${media}</div></div>`;
@@ -1083,7 +1107,7 @@ function tile(t, role) {
 }
 const FUN = [
   { name: 'Spacewar Live', href: 'https://spacewarlive.com/', art: '<div class="art spacewar-art"><img src="media/fun/spacewar-title.png" alt="" loading="lazy"></div>', stat: 'A remake of the 1985 DOS Spacewar, online in your browser' },
-  { name: 'Voynich Research', href: '/voynich/research.html', img: 'voynich/share.jpg', d: 'screen', stat: 'I trained a model to trace it. People are checking thousands of words.' },
+  { name: 'Voynich Research', href: '/voynich/research.html', img: 'media/fun/voynich-research.webp', d: 'screen', stat: 'I trained a model to trace it. People are checking thousands of words.' },
   { name: 'Wallet Wars', href: '/walletwars/', img: 'media/fun/walletwars.webp', d: 'screen', stat: 'A terminal crypto trading game. You found a wallet; rent is due' },
   { name: 'The Impossible Button', href: '/bad-button/', img: 'media/fun/bad-button.webp', d: 'screen', stat: 'How not to design a button. Try to click it' },
   { name: 'System Designer', href: '/system-designer/', img: 'media/fun/system-designer.webp', d: 'screen', stat: 'A whole design system from one color' },
@@ -1100,7 +1124,7 @@ document.getElementById('work').innerHTML = ROLES.map(r => `
         <dl class="facts caps">${r.facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         <div class="lightline"></div>
       </div>
-      <div class="stage hero-stage">${r.backdrop ? `<img class="backdrop" src="${r.backdrop}" alt="" aria-hidden="true">` : ''}${r.heroArt || ''}${r.hero.map(device).join('')}</div>
+      <div class="stage hero-stage">${r.backdrop ? `<img class="backdrop" src="${r.backdrop}" alt="" aria-hidden="true">` : ''}${r.heroArt || ''}${r.hero.map(v => device(v, 'hero')).join('')}</div>
     </div>
     <p class="highlights-label caps">Big wins</p>
     <div class="tiles">${r.tiles.map(t => tile(t, r.name)).join('')}</div>
@@ -1112,13 +1136,15 @@ if ('IntersectionObserver' in window) {
   const imageNear = new IntersectionObserver((entries, observer) => {
     for (const entry of entries) if (entry.isIntersecting) {
       const img = entry.target;
+      if (img.dataset.srcset) img.srcset = img.dataset.srcset;
       img.src = img.dataset.src;
       img.removeAttribute('data-src');
+      img.removeAttribute('data-srcset');
       observer.unobserve(img);
     }
   }, { rootMargin: '1200px 0px' });
   deferredImages.forEach(img => imageNear.observe(img));
-} else deferredImages.forEach(img => { img.src = img.dataset.src; img.removeAttribute('data-src'); });
+} else deferredImages.forEach(img => { if (img.dataset.srcset) img.srcset = img.dataset.srcset; img.src = img.dataset.src; img.removeAttribute('data-src'); });
 
 // ---- Kind words --------------------------------------------------------
 // From LinkedIn recommendations, word for word; each card carries one line.
@@ -1262,6 +1288,7 @@ document.querySelectorAll('.tile, .hero-stage, .lane').forEach(el => onScreen.ob
     if (busy || !visible || document.hidden || reducedMotion.matches) return;
     busy = true;
     const next = (index + 1) % themes.length, incoming = frames[1 - shown];
+    incoming.srcset = srcset(leaftextThemeImage(themes[next]));
     incoming.src = leaftextThemeImage(themes[next]);
     try {
       await incoming.decode();

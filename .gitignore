@@ -108,3 +108,6 @@ typings/
 
 # The ryan skill, copied from Studio/work/writing/.agents/skills/ryan (private; never commit)
 .agents/
+
+# The site audit ticket and its screenshots (private)
+/.dev/
