@@ -67,7 +67,7 @@ fetch('data/plant-pairs.json').then(r => r.json()).then(d => {
         const [x, y, w, hh] = p.region;
         const c = document.createElement('div'); c.className = 'card';
         const props = p.proposals.map(q => `<li>${esc(q.plant)} (${esc(q.by)}; ${esc(q.where)})</li>`).join('');
-        c.innerHTML = `<img loading="lazy" alt="${esc(p.id)}" src="${esc(p.iiif)}/${x},${y},${w},${hh}/!400,400/0/default.jpg">
+        c.innerHTML = `<img loading="lazy" alt="${esc(p.id)}" src="${esc(p.iiif)}/${x},${y},${w},${hh}/!220,220/0/default.jpg" srcset="${esc(p.iiif)}/${x},${y},${w},${hh}/!220,220/0/default.jpg 1x, ${esc(p.iiif)}/${x},${y},${w},${hh}/!440,440/0/default.jpg 2x">
           <b>${esc(p.plant || p.id)}</b><span class="v ${esc(p.verdict)}">${esc(p.verdict)}</span><br>${esc(p.page)}${p.pharma ? ', a row of plant parts' : ''}
           <details><summary>Why this name?</summary><p>${esc(p.reason)}</p>${p.women ? `<p>Use for women's health: ${esc(p.women)}. ${esc(p.women_source)}</p>` : ''}${props ? `<ul>${props}</ul>` : '<p>No published proposal.</p>'}</details>`;
         g.append(c);
