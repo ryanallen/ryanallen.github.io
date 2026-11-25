@@ -17,7 +17,7 @@ Ryan designs products from the first idea to production code: research, UX, AI p
 
 ## Independent projects
 
-- [The Quiet Hours](https://ryanallen.com/the-quiet-hours/): A night watch in the browser. At 03:12 you're the only person awake at Home on Earth, keeping watch over nine places run almost entirely by robots; three people went into a new cut on 16 Psyche and their cameras are still on.
+- [Vigil](https://ryanallen.com/vigil/): A night watch in the browser. At 03:12 you're the only person awake at Home on Earth, keeping watch over nine places run almost entirely by robots; three people went into a new cut on 16 Psyche and their cameras are still on.
 - [Spacewar Live](https://spacewarlive.com/): A remake of the 1985 DOS Spacewar, online in the browser.
 - [Voynich Research](https://ryanallen.com/voynich/research.html): Ryan trained a model to trace the Voynich manuscript. People are checking thousands of words, and the research examines its pictures, writing, scribes and proposed readings. [Trace the Voynich](https://ryanallen.com/voynich/) invites people to help correct the tracing.
 - [Wallet Wars](https://ryanallen.com/walletwars/): A terminal-style crypto trading game.
