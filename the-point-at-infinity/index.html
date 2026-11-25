@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <!-- `leaf-site` is the open HTML page's own folder, and it is named here because a frame drawn from `srcdoc` inherits this policy and enforces its own on top: the two are additive, so a contained page can only ever be tighter than this and never looser. Without these four the page's own stylesheet, pictures, fonts and media would be refused by the app page before its own policy was ever asked. Nothing on this page can reach that folder itself — the app's markup is written here, and the sanitizer a note's raw HTML crosses allows neither a style block nor a stylesheet link. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data: blob:; script-src 'self' https://leaftext.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://leaftext.com 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://leaftext.com data: https://fonts.gstatic.com; connect-src 'self' https://leaftext.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data: blob:; script-src 'self' https://leaftext.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://leaftext.com 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://leaftext.com data: https://fonts.gstatic.com; connect-src 'self' https://leaftext.com https://fonts.googleapis.com https://fonts.gstatic.com">
 
 <script>window.__leafPending=[];window.__leafIpc={postMessage:(m)=>window.__leafPending.push(m)};</script><script>window.__leafSettings = {"agentNotices":true,"arrangement":"","arrangements":[],"calendarField":"field:due","chatFraction":0.4,"chatSide":"left","codeIntelEnabled":true,"codeUnlocked":false,"elevenLabsModel":"eleven_flash_v2_5","flashReaderChunk":1,"flashReaderWpm":300,"graphScope":"small","hintLastLaunch":0,"hintLaunches":0,"hintsSeen":[],"homeBoxes":["scheduled","recent","favorites","books-online"],"keepRunning":true,"libraryClosed":false,"libraryList":"folders","libraryProjectPath":"","libraryWidth":240,"minimapShut":false,"readAloudSpeed":100,"readAloudVoice":"","readingUnlocked":false,"speedReaderEnabled":false,"splitFraction":0.5,"themeFamily":"random","themeMode":"daylight","themeRandomUsed":[],"updateLastChecked":0,"updateStagedVersion":"","wispAccount":"","wispAgent":"","wispDiscordMember":"","wispEffort":"","wispFolder":"","wispImessageMember":"","wispLit":false,"wispModel":"","wispName":"","wispSlackMember":""};
 window.__leafInitialState = {"active":null,"document":null,"favorites":[],"recent":[],"tabs":[]};
 window.__leafDocumentExts = ["md","markdown","mdown","mdc","xml","json","yaml","yml","eml","mht","mhtml","html","htm","txt","ini","css","csv","tsv","docx","docm","xlsx","xlsm","pptx","pptm","odt","ods","odp","epub","azw","mobi","azw3","gsheet","gdoc","gslides","ts","tsx","js","jsx","jsonc","scss","sh","bash","zsh","toml","rs","py","sql","diff","patch","env","graphql","gql"]; window.__leafPointerSuffix = ".leafpointer.json";
-window.__leafVersion = "5.43.2";
+window.__leafVersion = "5.44.2";
 window.__leafRepository = "https://github.com/ryanallen/leaftext";
 window.__leafUpdateAsset = "";
 window.__leafEmbedded = false;</script><script>window.__leafSite=true;window.__leafAssetBase="https://leaftext.com/assets/leaftext/app/";</script><script src="https://leaftext.com/assets/leaftext/app/settings.js"></script><script>// Where the vendored runtimes are served from. Injected rather than written into the fragments, because the asset scheme differs by platform and a fragment that carries a placeholder cannot be served as a static file.
@@ -33,7 +33,7 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
   const FAMILY_FALLBACK = 'fern';
   const MODE_FALLBACK = 'system';
   // Family -> Google Fonts stylesheet URL. Fonts are fetched from Google (never bundled); only the active family's font is requested and WebView2 caches it. Families absent from the map (e.g. github) use the OS's native fonts.
-  const FAMILY_FONTS = {"amaranth":"https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap","arabica":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","artemisia":"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","birch":"https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap","bloodleaf":"https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono:wght@400;500;700&display=swap","bluebell":"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","camellia":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap","copperleaf":"https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","eucalyptus":"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap","fern":"https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap","ginger":"https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","goldenrod":"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap","halcyon":"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","ivy":"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap","laurel":"https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap","lavender":"https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap","nightshade":"https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","pippin":"https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","saffron":"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap","sage":"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap","spearmint":"https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lexend:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap","sumac":"https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap","woad":"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=swap"};
+  const FAMILY_FONTS = {"amaranth":"https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=optional","arabica":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","artemisia":"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","birch":"https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional","bloodleaf":"https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono:wght@400;500;700&display=optional","bluebell":"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","camellia":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=optional","copperleaf":"https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","eucalyptus":"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;600&display=optional","fern":"https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional","ginger":"https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","goldenrod":"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=optional","halcyon":"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","ivy":"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=optional","laurel":"https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional","lavender":"https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional","nightshade":"https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","pippin":"https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","saffron":"https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional","sage":"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=optional","spearmint":"https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lexend:ital,wght@0,400;0,500;0,600;0,700;1,400&display=optional","sumac":"https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional","woad":"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500;600;700&display=optional"};
   const DAY_START = 9;
   const DAY_END = 18;
   const root = document.documentElement;
@@ -99,15 +99,48 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
     return media && media.matches ? 'dark' : 'light';
   };
   const snapshot = () => ({ family, mode, resolvedTheme: resolvedTheme() });
+  // A published site's first page is painted in the face the theme falls back to, unless this browser already holds the theme's fonts: on a slow phone every font file a theme asks for stood between the response and the words, 2.3 seconds with none and 4.5 with seven. The owner's word of 25 November 2026, 1:01pm: fonts after the paint, so later pages and visits use them. So the first page links no font; once it has loaded, the theme's stylesheet and its files are fetched into the browser's cache without being applied, and the stylesheet is remembered, and every later page links it from that cache. A theme picked by the reader is applied at once, as it always was.
+  const FONTS_KEY = 'leaftext.fonts';
+  const heldFonts = () => {
+    try {
+      const held = JSON.parse(window.localStorage.getItem(FONTS_KEY) || '[]');
+      return Array.isArray(held) ? held : [];
+    } catch {
+      return [];
+    }
+  };
+  const fetchFontsLater = (href) => {
+    const fetchThem = () => fetch(href)
+      .then((answer) => (answer.ok ? answer.text() : Promise.reject(new Error(`the font stylesheet answered ${answer.status}`))))
+      .then((css) => Promise.all([...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)\s]+)\)/g)].slice(0, 24).map((hit) => fetch(hit[1]).then((file) => file.arrayBuffer()))))
+      .then(() => {
+        try {
+          window.localStorage.setItem(FONTS_KEY, JSON.stringify([href, ...heldFonts().filter((one) => one !== href)].slice(0, 24)));
+        } catch {}
+      })
+      .catch(() => {});
+    const afterLoad = () => setTimeout(fetchThem, 3000);
+    if (document.readyState === 'complete') afterLoad();
+    else window.addEventListener('load', afterLoad, { once: true });
+  };
+  let firstFont = true;
   // Point a single <link> at the active family's Google Fonts stylesheet, so the font is fetched and applied on activation and swaps when the theme changes. Families with no entry (system-font themes) get the link removed.
   const applyFamilyFont = (fam) => {
     const href = FAMILY_FONTS[fam];
     let link = document.getElementById('leafThemeFont');
+    const first = firstFont;
+    firstFont = false;
     if (!href) { if (link) { link.remove(); } return; }
+    if (window.__leafSite && first && !link && !heldFonts().includes(href)) {
+      fetchFontsLater(href);
+      return;
+    }
     if (!link) {
       link = document.createElement('link');
       link.id = 'leafThemeFont';
       link.rel = 'stylesheet';
+      // A published site paints its words before any script of the app's has run, so a face defined after that paint swaps in under them and moves every line: up to 0.17 of a phone's window. Where a site links its fonts at all they are already in the browser's cache, and held to the paint, with the faces asked `display=optional`, the words are painted once in the face they keep.
+      if (window.__leafSite) link.setAttribute('blocking', 'render');
       document.head.appendChild(link);
     }
     if (link.getAttribute('href') !== href) { link.setAttribute('href', href); }
@@ -222,8 +255,8 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
   scheduleDaylight();
 })();
 </script>
-<link rel="stylesheet" href="https://leaftext.com/assets/leaftext/app/katex/katex.min.css">
-<link rel="stylesheet" href="https://leaftext.com/assets/leaftext/app/app.css" crossorigin="anonymous">
+<link rel="preload" as="style" href="https://leaftext.com/assets/leaftext/app/katex/katex.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://leaftext.com/assets/leaftext/app/katex/katex.min.css"></noscript>
+<link rel="stylesheet" href="https://leaftext.com/assets/leaftext/app/first.css" crossorigin="anonymous"><link rel="preload" as="style" href="https://leaftext.com/assets/leaftext/app/app.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://leaftext.com/assets/leaftext/app/app.css" crossorigin="anonymous"></noscript>
 <title>The Point at Infinity: script</title>
     <meta name="description" content="Every line the film The Point at Infinity puts on screen, in order, with its sources and timings." />
     <link rel="canonical" href="https://ryanallen.com/the-point-at-infinity/" />
@@ -258,7 +291,7 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
      window into the one the reader left, so it never has to fade against a layout
      that is still moving. Declared here rather than built in script, so it is in
      the page from the first parse and is what the first pixel draws. -->
-<div id="startupCard" class="startup-card" role="status" aria-label="Leaftext is starting">
+<div id="startupCard" class="startup-card" hidden role="status" aria-label="Leaftext is starting">
   <span class="lt-icon lt-icon-leaf startup-card-mark" aria-hidden="true"></span>
   <span class="lt-spinner startup-card-spinner" aria-hidden="true"></span>
   <span class="startup-card-name">Leaftext</span>
@@ -391,7 +424,7 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
     <div id="newMenuBrowseList" class="library-browse-list leaf-scroll" role="menu" aria-label="Folders"></div>
   </div>
 </div>
-<div id="libraryShell" class="library-shell">
+<div id="libraryShell" class="library-shell"><script>(()=>{const s=window.__leafSettings||{},w=innerWidth,d=document,b=d.body,sh=d.getElementById('libraryShell'),app=d.getElementById('app'),bar=d.getElementById('appBar'),lay=app&&app.querySelector('.reader-layout');if(!sh)return;const narrow=w<=720||w<240+360,closed=narrow||s.libraryClosed===true,kept=Number.isFinite(s.libraryWidth)&&s.libraryWidth>0?s.libraryWidth:240,pane=closed?0:kept,rail=!narrow&&s.minimapShut!==true;b.classList.add('is-site','has-reader-toolbar');if(app)app.classList.add('has-document');if(rail){b.classList.add('has-minimap');if(app)app.classList.add('has-minimap')}else if(lay)lay.classList.add('reader-layout-no-minimap');sh.classList.toggle('library-narrow',narrow);sh.classList.toggle('library-closed',closed);const col=rail?120:0;sh.style.setProperty('grid-template-areas','"pane card-a rail-a gutter" ". . . ."');sh.style.setProperty('grid-template-columns',pane+'px minmax(0, 1fr) '+col+'px var(--reader-gutter)');if(bar){bar.classList.toggle('has-rail',!closed);bar.style.setProperty('--library-rail-width',pane+'px');bar.style.setProperty('--reader-minimap-column',col+'px')}const me=d.currentScript;if(me)me.remove()})();</script>
 <aside id="libraryPane" class="library-pane">
   <div class="library-scroll">
     <!-- The open document's headings. One of the two lists this box holds, and
@@ -440,7 +473,7 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
     <button type="button" id="libraryProfile" class="library-profile" aria-haspopup="dialog" hidden><span class="lt-icon lt-icon-leaf library-profile-mark" aria-hidden="true"></span><span class="library-profile-label" id="libraryProfileLabel">Grove</span><span class="library-profile-bar" id="libraryProfileBar" aria-hidden="true"><span class="library-profile-bar-fill" id="libraryProfileBarFill"></span></span></button>
   </div>
 </aside>
-<main id="app" class="reader-shell reader-column is-keyed"><div class="reader-layout baked-page"><article class="document-body"><h1 id="the-point-at-infinity-script">THE POINT AT INFINITY: script</h1>
+<main id="app" class="reader-shell reader-column is-keyed"><div class="reader-layout baked-page"><script>(()=>{const s=window.__leafSettings||{},w=innerWidth,d=document,b=d.body,sh=d.getElementById('libraryShell'),app=d.getElementById('app'),bar=d.getElementById('appBar'),lay=app&&app.querySelector('.reader-layout');if(!sh)return;const narrow=w<=720||w<240+360,closed=narrow||s.libraryClosed===true,kept=Number.isFinite(s.libraryWidth)&&s.libraryWidth>0?s.libraryWidth:240,pane=closed?0:kept,rail=!narrow&&s.minimapShut!==true;b.classList.add('is-site','has-reader-toolbar');if(app)app.classList.add('has-document');if(rail){b.classList.add('has-minimap');if(app)app.classList.add('has-minimap')}else if(lay)lay.classList.add('reader-layout-no-minimap');sh.classList.toggle('library-narrow',narrow);sh.classList.toggle('library-closed',closed);const col=rail?120:0;sh.style.setProperty('grid-template-areas','"pane card-a rail-a gutter" ". . . ."');sh.style.setProperty('grid-template-columns',pane+'px minmax(0, 1fr) '+col+'px var(--reader-gutter)');if(bar){bar.classList.toggle('has-rail',!closed);bar.style.setProperty('--library-rail-width',pane+'px');bar.style.setProperty('--reader-minimap-column',col+'px')}const me=d.currentScript;if(me)me.remove()})();</script><article class="document-body"><div class="document-run"><h1 data-lead-heading="" id="the-point-at-infinity-script">THE POINT AT INFINITY: script</h1>
 <p>Every line the film puts on screen, in order. Captions are the narration; notes, in italics, are the sources and caveats shown under them. Times are minutes:seconds into the film, start to end. Generated by <code>python subtitles.py</code> from the film's code.</p>
 <h2 id="prologue">Prologue</h2>
 <p><strong>0:02.2–0:07.0</strong>  This is a point.<br>
@@ -609,7 +642,7 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
 <strong>12:15.7–12:21.6</strong>  From outside, a point has no size. From inside, it has no edge.<br>
 <strong>12:22.2–12:26.3</strong>  You are not a small thing inside an endless universe.<br>
 <strong>12:26.9–12:31.8</strong>  You are the point where it comes back to itself.</p>
-<nav class="docs-pager docs-pager-loading" aria-label="Document navigation" aria-busy="true"><span class="docs-pager-skeleton"><span class="lt-skeleton docs-pager-label-skeleton"></span><span class="lt-skeleton docs-pager-title-skeleton"></span></span><span class="docs-pager-skeleton docs-pager-next"><span class="lt-skeleton docs-pager-label-skeleton"></span><span class="lt-skeleton docs-pager-title-skeleton"></span></span></nav></article></div></main>
+<nav class="docs-pager docs-pager-loading" aria-label="Document navigation" aria-busy="true"><span class="docs-pager-skeleton"><span class="lt-skeleton docs-pager-label-skeleton"></span><span class="lt-skeleton docs-pager-title-skeleton"></span></span><span class="docs-pager-skeleton docs-pager-next"><span class="lt-skeleton docs-pager-label-skeleton"></span><span class="lt-skeleton docs-pager-title-skeleton"></span></span></nav></div></article></div></main>
 <!-- The graph, in the page rather than the pane. A map of the whole vault needs
      the room the reader has; at 240px in the sidebar its labels were unreadable
      and clicking a node shoved the answer somewhere you were not looking. Same
@@ -1151,9 +1184,9 @@ window.__lt = Object.assign(window.__lt || {}, { assets: {"mermaid":"https://lea
      already drawn rather than sitting blank for the whole of the script's own
      execution. See app_shell_html and app_shell_html_for_host in lib.rs. -->
 
-<script src="https://leaftext.com/assets/leaftext/app/app.js" crossorigin="anonymous" defer></script>
+
 </div>
 <noscript>
       <p>The script as plain Markdown: <a href="script.md">script.md</a>.</p>
-    </noscript><script type="module" src="https://leaftext.com/assets/leaftext/app/boot.js"></script></body>
+    </noscript><script>(()=>{let started=false;const go=()=>{if(started)return;started=true;const app=document.createElement('script');app.src="https://leaftext.com/assets/leaftext/app/app.js";app.crossOrigin="anonymous";app.onload=()=>{const boot=document.createElement('script');boot.type='module';boot.src="https://leaftext.com/assets/leaftext/app/boot.js";document.body.appendChild(boot)};document.body.appendChild(app)};const twoFrames=()=>requestAnimationFrame(()=>requestAnimationFrame(go));const P=window.PerformanceObserver;if(P&&P.supportedEntryTypes&&P.supportedEntryTypes.includes('largest-contentful-paint')){let parsed=false,painted=false;const ready=()=>{if(parsed&&painted)setTimeout(go,0)};const seen=new P((list,watch)=>{if(list.getEntries().some((e)=>e.element&&e.element.closest&&e.element.closest('.baked-page'))){watch.disconnect();painted=true;ready()}});seen.observe({type:'largest-contentful-paint',buffered:true});const whole=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{parsed=true;ready()}));if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',whole);else whole()}else addEventListener('load',twoFrames);setTimeout(go,4000)})();</script></body>
 </html>
