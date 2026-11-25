@@ -75,6 +75,8 @@ button:has(> .ic:only-child) .ic,#zoomout .ic,#zoomin .ic,#p-zoomout .ic,#p-zoom
 #side{display:flex;gap:16px;flex-wrap:wrap;padding:4px 12px;background:var(--panel);border-top:1px solid var(--line)}
 .strip{display:flex;gap:6px;overflow-x:auto;padding:4px 0;max-width:calc(100vw - 24px)}
 .counts{display:flex;gap:5px;flex-wrap:wrap;align-items:center;padding:4px 0;max-width:calc(100vw - 24px)}
+/* The strips under the drawing hold the height they fill to, so the drawing does not shrink as they load. */
+.strip{min-height:87px}.counts{min-height:38px}
 .counts .count{min-height:30px;padding:0 9px;font-weight:400;font-size:14px;letter-spacing:.5px}
 .counts .count b{color:#ffd166;font-weight:700}
 .counts .count span{margin-left:4px;padding:1px 6px;border-radius:9px;background:#11131899;font-size:12px;font-weight:700;color:var(--text)}
@@ -116,6 +118,7 @@ button:disabled{opacity:.4;cursor:default}
   header,.bar,#side{padding-left:16px;padding-right:16px}
   #ask{font-size:14px}
   .strip figure canvas{height:52px}
+  .strip{min-height:75px}
 }
 #toast{position:fixed;left:50%;bottom:72px;transform:translate(-50%,12px);z-index:30;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 14px;border-radius:9px;background:#1f5135;border:1px solid #4fbf72;color:#fff;font-weight:600;box-shadow:0 8px 24px #000a;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
 #toast.del{background:#5a231c;border-color:#e0533f}
