@@ -17,7 +17,7 @@ Ryan designs products from the first idea to production code: research, UX, AI p
 
 ## Independent projects
 
-- [Steer](https://ryanallen.com/steer/): A design concept with a launch page and a playable console: one console for everything an owner's agents and robots run, from a house on Mars to a mine on an asteroid. [The console](https://ryanallen.com/steer/app/) runs one job, bringing a seized drill back: edit the plan before anything runs, watch every action in words, steer the crew mid-job without starting over, decide on the one action that can't be undone, and review each change with its proof. [How it's designed](https://ryanallen.com/steer/about.html).
+- [Steer: The Quiet Hours](https://ryanallen.com/steer/): A playable mystery with a photo-essay launch page. 380 billion agents run nine trillion machines across the solar system for about 2,400 people; tonight a drill on 16 Psyche stopped and one agent's report is wrong. [The console](https://ryanallen.com/steer/app/) runs the repair: edit the plan before anything runs, read every check and the stores, steer the robots mid-job, and decide whether ore launch KR-112 fires. Five clues, three endings. [How it's designed](https://ryanallen.com/steer/about.html).
 - [Spacewar Live](https://spacewarlive.com/): A remake of the 1985 DOS Spacewar, online in the browser.
 - [Voynich Research](https://ryanallen.com/voynich/research.html): Ryan trained a model to trace the Voynich manuscript. People are checking thousands of words, and the research examines its pictures, writing, scribes and proposed readings. [Trace the Voynich](https://ryanallen.com/voynich/) invites people to help correct the tracing.
 - [Wallet Wars](https://ryanallen.com/walletwars/): A terminal-style crypto trading game.
