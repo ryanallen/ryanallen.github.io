@@ -471,6 +471,15 @@
   .hires .hero-stage:hover .device { transform: rotate(0deg) translateY(-4px); }
   .hires :is(.device, .art img, .mark, .backdrop, .number-wrap),
   .hires .device .glass::after { transition-duration: 150ms; transition-delay: 0ms; }
+  /* Work boxes are fully drawn at rest. Only the large role hero enters on scroll. */
+  .tile .stage::after { transform: scaleX(1); transition: none; }
+  .tile .device { opacity: 1; transform: var(--pose, rotateX(14deg) rotateY(-24deg) rotateZ(3deg));
+    transition: transform 650ms var(--ease); }
+  .hires .tile .device { transform: rotate(3deg); }
+  .tile .device .glass::after { background-position: -60% 0; transition: none; }
+  .tile .mark { opacity: 1; transform: none; animation: none; transition: transform 650ms var(--ease); }
+  .tile .art img { opacity: 1; transform: none; transition: transform 650ms var(--ease); transition-delay: 0ms; }
+  .tile .number-wrap { opacity: 1; transform: none; transition: transform 650ms var(--ease); }
   /* One work box moves at a time: pointer hover on desktop or the centered box on a phone. */
   .tile *, .tile *::before, .tile *::after { animation-play-state: paused !important; }
   html:not(.tab-hidden) .tile.motion-on:not(.off) *,
@@ -1192,7 +1201,7 @@ const seen = new IntersectionObserver(entries => {
     seen.unobserve(e.target);
   }
 }, { threshold: 0.18 });
-document.querySelectorAll('.role-head, .tile, .contact, .fun').forEach(el => seen.observe(el));
+document.querySelectorAll('.role-head, .contact, .fun').forEach(el => seen.observe(el));
 const loadVideo = v => {
   if (document.hidden || reducedMotion.matches) {
     if (v.dataset.poster && !v.poster) v.poster = v.dataset.poster;
