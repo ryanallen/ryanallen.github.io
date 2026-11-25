@@ -779,7 +779,7 @@ const leaftextThemeImage = theme => `${M}leaftext/front-themes/${theme === 'ging
 const WIDTHS = {
   [M + 'godaddy-aisearch-v1-web.webp']: [1400, 360, 720], [M + 'godaddy-aisearch-v2-web.webp']: [1400, 360, 720],
   [M + 'lexus-finished-pc-web.webp']: [1400, 360, 720], [M + 'lexus-gold-addy-web.webp']: [1400, 360, 720],
-  [M + 'lexus-finished-screens-web.webp']: [1400, 360, 720], [M + 'fun/walletwars.webp']: [1400, 360, 720], [M + 'fun/design-canvas.webp']: [920, 360, 720], [M + 'fun/chenrezig.webp']: [1382, 360, 720], [M + 'fun/steer.webp']: [1040, 360, 720],
+  [M + 'lexus-finished-screens-web.webp']: [1400, 360, 720], [M + 'fun/walletwars.webp']: [1400, 360, 720], [M + 'fun/design-canvas.webp']: [920, 360, 720], [M + 'fun/chenrezig.webp']: [1382, 360, 720], [M + 'fun/the-quiet-hours.webp']: [1040, 360, 720],
   [M + 'fun/voynich-research.webp']: [1200, 360, 720], 'images/gdc-best-in-play-web.webp': [1600, 400, 800],
   'images/howard-stern-web.webp': [1600, 400, 800], [M + 'charter/vitals-dark-web.webp']: [750, 360],
   [M + 'charter/heart-dark-web.webp']: [750, 360], [M + 'charter/sleep-dark.webp']: [600, 360],
@@ -1023,7 +1023,7 @@ const TIPS = {
     'Spacewar Live': `I brought a DOS classic into the browser to play together online.`,
     'Voynich Research': `I trained a model to trace the manuscript, then opened the words to people for review. The research follows the pictures, writing, scribes and proposed readings.`,
     'Wallet Wars': `I made a trading game with rent due and a wallet to work with.`,
-    Steer: `A playable mystery I wrote and designed: 380 billion agents run nine trillion machines for about 2,400 people, and one of them is wrong tonight. Read Kirra's repair plan, steer the robots in the shaft, and decide whether to fire an ore launch that can't be called back.`,
+    'The Quiet Hours': `A night watch I wrote and designed. At 03:12 you're the only person awake at Home on Earth, keeping watch over nine places run almost entirely by robots. Three people went into a new cut on 16 Psyche. Their cameras are still on. When their reports stop, you choose how far to send the last robot.`,
     Chenrezig: `I ray traced a Tibetan prayer-wheel temple in one hand-written page, with no 3D library, for H.E. Garchen Rinpoche's Chenrezig empowerment.`,
     'Design Canvas': `I built a board that lays HTML prototypes side by side, to edit and comment on them as HTML and CSS.`,
   },
@@ -1110,7 +1110,7 @@ function tile(t, role) {
   return `<article class="tile${t.logo ? ' has-logo' : ''}${t.stat ? ' has-stat' : ''}" data-motion="${motion}" aria-describedby="${tipId}"${role === 'Fun' ? '' : ' tabindex="0"'}><div class="stage">${body}</div><h3>${t.name}</h3>${t.logo ? `<img class="tile-logo" src="media/logos/${t.logo}.svg" alt="${t.logo}" loading="lazy">` : ''}${t.stat ? `<div class="stat caps">${t.stat}</div>` : ''}<p class="tile-tip" id="${tipId}">${tip}</p></article>`;
 }
 const FUN = [
-  { name: 'Steer', href: '/steer/', img: 'media/fun/steer.webp', d: 'screen', stat: 'One of 380 billion agents is wrong. Find it' },
+  { name: 'The Quiet Hours', href: '/the-quiet-hours/', img: 'media/fun/the-quiet-hours.webp', d: 'screen', stat: 'Their cameras are still on' },
   { name: 'Spacewar Live', href: 'https://spacewarlive.com/', art: '<div class="art spacewar-art"><img src="media/fun/spacewar-title.png" alt="" loading="lazy"></div>', stat: 'A remake of the 1985 DOS Spacewar, online in your browser' },
   { name: 'Voynich Research', href: '/voynich/research.html', img: 'media/fun/voynich-research.webp', d: 'screen', stat: 'I trained a model to trace it. People are checking thousands of words.' },
   { name: 'Wallet Wars', href: '/walletwars/', img: 'media/fun/walletwars.webp', d: 'screen', stat: 'A terminal crypto trading game. You found a wallet; rent is due' },
