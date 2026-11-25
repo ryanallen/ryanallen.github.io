@@ -652,8 +652,12 @@ function scene(svg, { width = 0.9, yFrom = [496, -4] } = {}) {
       }
       return [fwd, back];
     });
-    const b = fill.getBBox();
-    L[ch] = { g, fillWrap, fill, lines, top: b.y, bottom: b.y + b.height, x0: b.x, x1: b.x + b.width };
+    L[ch] = { g, fillWrap, fill, lines };
+  }
+  // Measured once all four letters are in, so layout runs once rather than once a letter.
+  for (const ch of 'Ryan') {
+    const b = L[ch].fill.getBBox();
+    Object.assign(L[ch], { top: b.y, bottom: b.y + b.height, x0: b.x, x1: b.x + b.width });
   }
   return {
     defs, cam, L,
